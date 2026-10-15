@@ -20,13 +20,22 @@ coverage/
 .tmp/
 temp/
 .DS_Store
+# Private course materials / media excluded by default
 *.wav
 *.mp3
+*.ogg
 *.m4a
+*.flac
 *.mp4
 *.pdf
 *.zip
-# Learning content belongs in Google Drive, not GitHub
+
+# Only license-verified, individually manifested assets under this dedicated folder can bypass media exclusions.
+# Each approved asset is still reviewed and validated by tools/validate_public_assets.py.
+!public/learning-assets/
+!public/learning-assets/**
+
+# Private learning resources belong in Google Drive, not GitHub.
 private-content/
 personal-data/
 model-weights/
