@@ -173,25 +173,33 @@ function renderCourses() {
     return;
   }
   const selectedGroup=trackSet().find(t=>t.id===(state.language==="en"?state.track:state.level));
-  const list=activeUnits();
-  if (!list.some(u=>u.id===state.unitId))state.unitId=list[0]?.id||"";
-  const u=list.find(u=>u.id===state.unitId);
   const kpi=`<div class="page-kpi"><div><strong>${state.language==="en"?48:60}</strong><span>规划单元</span></div><div><strong>6</strong><span>学习阶段</span></div></div>`;
   outlet.innerHTML=sectionTitle(state.language==="en"?"英语课程":"法语课程",
     state.language==="en"?"雅思学术听读、写作、口语与语言强化":"从 A1 入门逐步推进至 C2",kpi)+
     `<div class="search-bar"><label class="sr-only" for="course-search">搜索课程</label><input id="course-search" type="search" autocomplete="off" placeholder="搜索课程标题或学习目标" value="${escapeHTML(state.query)}"></div>`+
     `<div class="workspace"><section class="panel unit-panel" aria-label="课程单元"><div class="card-padding panel-head" style="margin:0;padding-bottom:8px"><h2>${escapeHTML(selectedGroup?.title||"单元")}</h2><small>交互样例</small></div><div id="unit-entries"></div></section><article class="panel reader" id="reader" aria-label="课件阅读区"></article></div>`+
     `<p class="footer-note">这是独立设计原型。正式课程需从获授权的学习数据接口读取完整正文，不能由设计样例代替。</p>`;
+  updateCourseList();
+}
+function updateCourseList() {
+  const list=activeUnits();
+  if (!list.some(u=>u.id===state.unitId))state.unitId=list[0]?.id||"";
   const items=document.getElementById("unit-entries");
-  if(!list.length)items.innerHTML='<div class="empty">当前筛选下没有设计示例。</div>';
+  if(!items)return;
+  items.replaceChildren();
+  if(!list.length) {
+    const empty=document.createElement("div");empty.className="empty";
+    empty.textContent="当前筛选下没有设计示例。";items.append(empty);
+  }
   for(const item of list){
     const b=document.createElement("button");
     b.className="unit-entry"+(item.id===state.unitId?" active":"");b.type="button";b.dataset.unit=item.id;
     b.innerHTML=`<span class="unit-n">${escapeHTML(item.number)}</span><span class="unit-info"><strong>${escapeHTML(item.title)}</strong><small>${item.status==="review"?"完整阅读布局示范":"框架状态示范"}</small></span>`;
     items.append(b);
   }
-  renderReader(u);
+  renderReader(list.find(u=>u.id===state.unitId));
 }
+
 function renderReader(u) {
   const reader=document.getElementById("reader");if(!reader)return;
   if(!u){reader.innerHTML='<div class="empty">请选择一个课程单元。</div>';return;}
@@ -321,12 +329,9 @@ document.addEventListener("click",e=>{
   }
 });
 document.addEventListener("input",e=>{
-  if(e.target.id==="course-search"){
-    const selection=e.target.selectionStart;
+  if(e.target.id==="course-search" && !e.isComposing){
     state.query=e.target.value;
-    renderCourses();
-    const search=document.getElementById("course-search");
-    search.focus();try{search.setSelectionRange(selection,selection);}catch(_){}
+    updateCourseList(); // keep search input mounted; preserve IME/cursor
   }
 });
 window.addEventListener("hashchange",()=>{
