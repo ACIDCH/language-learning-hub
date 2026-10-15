@@ -430,6 +430,111 @@
       "access": "free_online",
       "ingestion": "link_only",
       "license_note": "Audio, transcripts and exercises are public to access, but RFI copyright and third-party sources apply. Link to original pages; do not mirror."
+    },
+    {
+      "id": "en-british-council-reading",
+      "language": "en",
+      "title": "British Council CEFR A1-C1 reading",
+      "organization": "British Council",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/reading",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "reading",
+        "vocabulary"
+      ],
+      "audio": false,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Levelled reading exercises and original texts; public access does not permit copy/rehost of copyrighted material."
+    },
+    {
+      "id": "en-british-council-speaking",
+      "language": "en",
+      "title": "British Council CEFR A1-B2 speaking",
+      "organization": "British Council",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/speaking",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "topics": [
+        "speaking",
+        "listening",
+        "pronunciation"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Includes graded dialogue/video practice; original site links or expressly allowed embed only."
+    },
+    {
+      "id": "en-british-council-stories",
+      "language": "en",
+      "title": "British Council story zone A2-C1",
+      "organization": "British Council",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/general/story-zone",
+      "levels": [
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "reading",
+        "vocabulary"
+      ],
+      "audio": false,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Free learner stories but copyrighted texts; use official links without republication."
+    },
+    {
+      "id": "fr-openlearn-beginner",
+      "language": "fr",
+      "title": "Open University OpenLearn: Getting started with French 1",
+      "organization": "The Open University",
+      "url": "https://www.open.edu/openlearn/languages/getting-started-french-1",
+      "levels": [
+        "A1"
+      ],
+      "topics": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "speaking"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Course indicates CC BY-NC-SA 4.0 unless exceptions; default to linking and evaluate third-party media before any public mirroring."
+    },
+    {
+      "id": "fr-rfi-neighbours",
+      "language": "fr",
+      "title": "RFI Les voisins du 12 bis bilingual introductory podcast",
+      "organization": "Radio France Internationale",
+      "url": "https://francaisfacile.rfi.fr/fr/",
+      "levels": [
+        "A1",
+        "A2"
+      ],
+      "topics": [
+        "listening",
+        "speaking",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "RFI produced 13-episode multilingual beginner series; link to official provider. Do not mirror recordings/transcripts without rights."
     }
   ]
 }
