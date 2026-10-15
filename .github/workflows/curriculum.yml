@@ -1,0 +1,19 @@
+name: Curriculum framework integrity
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-curriculum:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate English/French curriculum IDs, source links, coverage
+        run: python3 tools/validate_curriculum.py
+      - name: Python syntax validation
+        run: python3 -m py_compile tools/validate_curriculum.py

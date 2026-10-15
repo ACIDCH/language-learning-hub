@@ -1,0 +1,19 @@
+name: Learning source registry checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-source-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate registry structure and source URLs
+        run: python3 tools/validate_sources.py
+      - name: Check validator syntax
+        run: python3 -m py_compile tools/validate_sources.py

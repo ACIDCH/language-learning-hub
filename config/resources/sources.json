@@ -1,0 +1,690 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "en-british-council-grammar",
+      "language": "en",
+      "title": "British Council LearnEnglish Grammar",
+      "organization": "British Council",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/grammar",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "grammar"
+      ],
+      "audio": false,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Free access does not authorize mirroring of the site's full copyrighted material; link and summarize in original words."
+    },
+    {
+      "id": "en-cambridge-activities",
+      "language": "en",
+      "title": "Cambridge English: Activities for Learners",
+      "organization": "Cambridge English",
+      "url": "https://www.cambridgeenglish.org/learning-english/activities-for-learners/",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "topics": [
+        "grammar",
+        "listening",
+        "pronunciation",
+        "reading",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Free interactive access; link, do not copy proprietary exercises or audio without explicit reuse permission."
+    },
+    {
+      "id": "en-voa-learning",
+      "language": "en",
+      "title": "VOA Learning English",
+      "organization": "Voice of America",
+      "url": "https://learningenglish.voanews.com/",
+      "rights_url": "https://learningenglish.voanews.com/p/6861.html",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "topics": [
+        "listening",
+        "reading",
+        "pronunciation",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "VOA-original text and MP3 may be in the US public domain with source credit; exclude third-party AP, Reuters, AFP and other licensed components."
+    },
+    {
+      "id": "en-us-state-dialogues",
+      "language": "en",
+      "title": "Everyday Conversations: Learning American English",
+      "organization": "U.S. Department of State",
+      "url": "https://americanenglish.state.gov/resources/everyday-conversations-learning-american-english",
+      "levels": [
+        "A1",
+        "A2"
+      ],
+      "topics": [
+        "listening",
+        "speaking",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "PDF and MP3 provided on official site; check individual rights/credits before republishing."
+    },
+    {
+      "id": "en-mozilla-common-voice",
+      "language": "en",
+      "title": "Common Voice English speech datasets",
+      "organization": "Mozilla Data Collective",
+      "url": "https://commonvoice.mozilla.org/en/datasets",
+      "levels": [],
+      "topics": [
+        "pronunciation",
+        "speech-data"
+      ],
+      "audio": true,
+      "access": "download",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "Datasets individually labelled CC0-1.0; check version, terms and suitability. Corpus is ASR data, NOT validated reference pronunciation or a grammar course."
+    },
+    {
+      "id": "fr-hachette-inspire-a1",
+      "language": "fr",
+      "title": "Inspire 1 A1 official supplementary audio",
+      "organization": "Hachette FLE",
+      "url": "https://inspire.hachettefle.fr/inspire-1_livre-de-l-eleve_fr.html",
+      "rights_url": "https://inspire1.parcoursdigital.fr/home/mentions_legales",
+      "levels": [
+        "A1"
+      ],
+      "topics": [
+        "listening",
+        "speaking",
+        "pronunciation",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Commercial copyrighted material. Audio download availability is not permission to rehost publicly; personal licensed materials may be stored privately when the terms allow."
+    },
+    {
+      "id": "fr-tv5monde",
+      "language": "fr",
+      "title": "TV5MONDE Apprendre le français",
+      "organization": "TV5MONDE",
+      "url": "https://apprendre.tv5monde.com/fr/collection-all",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "topics": [
+        "listening",
+        "grammar",
+        "vocabulary",
+        "reading"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Public interactive exercises/videos; no blanket right to redistribute footage or audio. Use official links and allowed embeds."
+    },
+    {
+      "id": "fr-francais-interactif",
+      "language": "fr",
+      "title": "Français interactif",
+      "organization": "COERLL, University of Texas at Austin",
+      "url": "https://coerll.utexas.edu/coerll/oer/francais-interactif/",
+      "levels": [
+        "A1",
+        "A2"
+      ],
+      "topics": [
+        "grammar",
+        "listening",
+        "speaking",
+        "pronunciation",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "COERLL lists the curriculum as CC-BY; review individual media and embedded third-party exceptions, preserve full attribution."
+    },
+    {
+      "id": "fr-tex-french-grammar",
+      "language": "fr",
+      "title": "Tex's French Grammar",
+      "organization": "COERLL, University of Texas at Austin",
+      "url": "https://coerll.utexas.edu/coerll/oer/texs-french-grammar/",
+      "levels": [
+        "A1",
+        "A2",
+        "B1"
+      ],
+      "topics": [
+        "grammar",
+        "listening"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "COERLL lists the grammar resource as CC-BY; preserve license attribution and audit any third-party audio/artwork individually."
+    },
+    {
+      "id": "fr-coerll-oer-collection",
+      "language": "fr",
+      "title": "COERLL French OER collection",
+      "organization": "COERLL, University of Texas at Austin",
+      "url": "https://coerll.utexas.edu/coerll/materials/language/french/",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "topics": [
+        "grammar",
+        "listening",
+        "reading",
+        "speaking"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "Collection is NOT a single license; includes CC-BY, CC-BY-SA and CC-BY-NC-SA. Each work and media asset require separate verification."
+    },
+    {
+      "id": "fr-commons-pronunciation",
+      "language": "fr",
+      "title": "French pronunciation audio on Wikimedia Commons",
+      "organization": "Wikimedia Commons contributors",
+      "url": "https://commons.wikimedia.org/wiki/Category:French_pronunciation",
+      "rights_url": "https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia/licenses",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "topics": [
+        "pronunciation",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "License varies for each audio file; verify original Commons file description, attribution, and license requirements."
+    },
+    {
+      "id": "en-commons-pronunciation",
+      "language": "en",
+      "title": "English-language audio on Wikimedia Commons",
+      "organization": "Wikimedia Commons contributors",
+      "url": "https://commons.wikimedia.org/wiki/Commons:Audio",
+      "rights_url": "https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia/licenses",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "topics": [
+        "pronunciation",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "Only an audio discovery entry; file-specific licenses apply and an individual example must be selected and verified before republishing."
+    },
+    {
+      "id": "fr-mozilla-common-voice",
+      "language": "fr",
+      "title": "Common Voice French speech datasets",
+      "organization": "Mozilla Data Collective",
+      "url": "https://commonvoice.mozilla.org/fr/datasets",
+      "levels": [],
+      "topics": [
+        "pronunciation",
+        "speech-data"
+      ],
+      "audio": true,
+      "access": "download",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "Datasets individually labelled CC0-1.0; check dataset version and release conditions; not a validated reference-pronunciation collection."
+    },
+    {
+      "id": "en-voa-course-1",
+      "language": "en",
+      "title": "Let's Learn English — Level 1 (52 sequential lessons)",
+      "organization": "Voice of America",
+      "url": "https://learningenglish.voanews.com/p/5644.html",
+      "rights_url": "https://learningenglish.voanews.com/p/6861.html",
+      "levels": [
+        "A1",
+        "A2"
+      ],
+      "topics": [
+        "grammar",
+        "listening",
+        "speaking",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "Full sequential beginner course; 52 official lessons. Individual topics do not map one-to-one to CEFR. VOA-original content re-use possible with credit; exclude third-party assets."
+    },
+    {
+      "id": "en-voa-course-2",
+      "language": "en",
+      "title": "Let's Learn English — Level 2 (30 sequential lessons)",
+      "organization": "Voice of America",
+      "url": "https://learningenglish.voanews.com/p/6765.html",
+      "rights_url": "https://learningenglish.voanews.com/p/6861.html",
+      "levels": [
+        "B1"
+      ],
+      "topics": [
+        "grammar",
+        "listening",
+        "speaking",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "Intermediate sequential course with 30 lessons, supplementary to independently reviewed B1 teaching framework. Exclude third-party components."
+    },
+    {
+      "id": "en-british-council-listening",
+      "language": "en",
+      "title": "LearnEnglish levelled listening",
+      "organization": "British Council",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/listening",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "listening",
+        "speaking",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "CEFR A1-C1 graded authentic audio; not permission to rehost audio or transcripts."
+    },
+    {
+      "id": "en-bbc-grammar",
+      "language": "en",
+      "title": "BBC Learning English grammar podcast",
+      "organization": "BBC Learning English",
+      "url": "https://www.bbclearningenglish.org/programme/learning-english-grammar",
+      "levels": [
+        "B1",
+        "B2"
+      ],
+      "topics": [
+        "grammar",
+        "listening",
+        "pronunciation"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Free episodes do not authorize public mirroring; only official links unless permission."
+    },
+    {
+      "id": "fr-alliance-auckland-a1-syllabus",
+      "language": "fr",
+      "title": "Alliance Française Auckland — A1 curriculum",
+      "organization": "Alliance Française Auckland",
+      "url": "https://www.alliance-francaise.co.nz/media/website_pages/learn-french/adults/A1.pdf",
+      "levels": [
+        "A1"
+      ],
+      "topics": [
+        "grammar",
+        "vocabulary",
+        "speaking"
+      ],
+      "audio": false,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Reference the official skill progression and syllabus; PDF itself is not presumed redistributable."
+    },
+    {
+      "id": "fr-france-education-reference",
+      "language": "fr",
+      "title": "France Éducation international — CEFR linguistic inventory",
+      "organization": "France Éducation international",
+      "url": "https://www.france-education-international.fr/document/cecrl",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "grammar",
+        "vocabulary",
+        "speaking"
+      ],
+      "audio": false,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Official reference for French language functions and grammatical progression; do not copy PDF wholesale into public assets."
+    },
+    {
+      "id": "fr-rfi-learning",
+      "language": "fr",
+      "title": "Le français facile avec RFI",
+      "organization": "Radio France Internationale",
+      "url": "https://francaisfacile.rfi.fr/fr/",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "topics": [
+        "listening",
+        "reading",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Audio, transcripts and exercises are public to access, but RFI copyright and third-party sources apply. Link to original pages; do not mirror."
+    },
+    {
+      "id": "en-british-council-reading",
+      "language": "en",
+      "title": "British Council CEFR A1-C1 reading",
+      "organization": "British Council",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/reading",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "reading",
+        "vocabulary"
+      ],
+      "audio": false,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Levelled reading exercises and original texts; public access does not permit copy/rehost of copyrighted material."
+    },
+    {
+      "id": "en-british-council-speaking",
+      "language": "en",
+      "title": "British Council CEFR A1-B2 speaking",
+      "organization": "British Council",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/speaking",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "topics": [
+        "speaking",
+        "listening",
+        "pronunciation"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Includes graded dialogue/video practice; original site links or expressly allowed embed only."
+    },
+    {
+      "id": "en-british-council-stories",
+      "language": "en",
+      "title": "British Council story zone A2-C1",
+      "organization": "British Council",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/general/story-zone",
+      "levels": [
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "reading",
+        "vocabulary"
+      ],
+      "audio": false,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Free learner stories but copyrighted texts; use official links without republication."
+    },
+    {
+      "id": "fr-openlearn-beginner",
+      "language": "fr",
+      "title": "Open University OpenLearn: Getting started with French 1",
+      "organization": "The Open University",
+      "url": "https://www.open.edu/openlearn/languages/getting-started-french-1",
+      "levels": [
+        "A1"
+      ],
+      "topics": [
+        "grammar",
+        "vocabulary",
+        "reading",
+        "speaking"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Course indicates CC BY-NC-SA 4.0 unless exceptions; default to linking and evaluate third-party media before any public mirroring."
+    },
+    {
+      "id": "fr-rfi-neighbours",
+      "language": "fr",
+      "title": "RFI Les voisins du 12 bis bilingual introductory podcast",
+      "organization": "Radio France Internationale",
+      "url": "https://francaisfacile.rfi.fr/fr/",
+      "levels": [
+        "A1",
+        "A2"
+      ],
+      "topics": [
+        "listening",
+        "speaking",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "RFI produced 13-episode multilingual beginner series; link to official provider. Do not mirror recordings/transcripts without rights."
+    },
+    {
+      "id": "ielts-official-academic",
+      "language": "en",
+      "title": "IELTS Academic official sample questions",
+      "organization": "IELTS Partners",
+      "url": "https://www.ielts.org/take-a-test/preparation-resources/sample-test-questions/academic-test",
+      "levels": [
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "listening",
+        "reading",
+        "speaking",
+        "grammar",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Official public practice tests may be linked; copying exam audio, questions, texts and score guides to GitHub requires explicit permission."
+    },
+    {
+      "id": "ielts-cambridge",
+      "language": "en",
+      "title": "Cambridge English IELTS preparation and sample papers",
+      "organization": "Cambridge English",
+      "url": "https://www.cambridgeenglish.org/exams-and-tests/ielts/preparation/",
+      "levels": [
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "listening",
+        "reading",
+        "speaking",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Official preparation source, sample papers and related products; free access is not a republication licence."
+    },
+    {
+      "id": "ielts-british-council-nz",
+      "language": "en",
+      "title": "British Council New Zealand IELTS preparation",
+      "organization": "British Council",
+      "url": "https://www.britishcouncil.org.nz/exam/ielts/prepare",
+      "levels": [
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "listening",
+        "reading",
+        "speaking",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Official preparation tutorials and practice materials; no copying test media or transcripts into public repository."
+    },
+    {
+      "id": "ielts-idp-academic",
+      "language": "en",
+      "title": "IDP IELTS Academic preparation hub",
+      "organization": "IDP IELTS",
+      "url": "https://ielts.idp.com/prepare/academic-and-ukvi",
+      "levels": [
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "listening",
+        "reading",
+        "speaking",
+        "grammar",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Free and paid materials with distinct rights; link to official hub, not mirror proprietary audio or test pages."
+    },
+    {
+      "id": "ielts-british-council-prepare",
+      "language": "en",
+      "title": "British Council IELTS practice and familiarisation",
+      "organization": "British Council",
+      "url": "https://takeielts.britishcouncil.org/prepare",
+      "levels": [
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "listening",
+        "reading",
+        "speaking",
+        "grammar",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Many free resources; account-gated and premium resources may require signup/purchase. No blanket right to redistribute."
+    },
+    {
+      "id": "en-british-council-b2-reading",
+      "language": "en",
+      "title": "British Council graded B2 reading",
+      "organization": "British Council",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/reading/b2",
+      "levels": [
+        "B2"
+      ],
+      "topics": [
+        "reading",
+        "vocabulary"
+      ],
+      "audio": false,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Original reading passages and tasks are copyrighted; link to source and generate independent readings."
+    },
+    {
+      "id": "en-british-council-b2-listening",
+      "language": "en",
+      "title": "British Council graded B2 listening",
+      "organization": "British Council",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b2",
+      "levels": [
+        "B2"
+      ],
+      "topics": [
+        "listening",
+        "speaking",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Do not mirror recordings or transcripts without permission; provide official links."
+    }
+  ]
+}

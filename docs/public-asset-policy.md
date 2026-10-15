@@ -14,6 +14,10 @@ This repository is **public**. Small, **individually verified, legally redistrib
 
 An item's `storage_kind` controls how it is retrieved. Supabase stores asset metadata, ownership, licence terms and location, **not the file itself**. GitHub and Drive are not mirrored automatically.
 
+## Boundary between curriculum drafts and deployable teaching assets
+
+Project-authored **review-only sample lessons and course frameworks** may live in `docs/curriculum/` or `config/curriculum/` as source specifications. They are already public GitHub text, so must not contain private learning data or third-party restricted passages. Once a lesson's text/audio becomes a **deployable public site asset**, it must be placed in `public/learning-assets/` and added to the manifest with a per-item provenance and file hash. GitHub documentation drafts are not equivalent to published lessons.
+
 ## Mandatory verification before adding a public file
 
 1. Confirm the **individual audio/text file's** copyright status. Free-to-access, open-source software, and educational use do **not** automatically confer redistribution rights. Check for any third-party components, performances, translations, images and sublicensing restrictions.
