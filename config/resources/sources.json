@@ -280,6 +280,156 @@
       "access": "download",
       "ingestion": "per_item_review_for_public_asset",
       "license_note": "Datasets individually labelled CC0-1.0; check dataset version and release conditions; not a validated reference-pronunciation collection."
+    },
+    {
+      "id": "en-voa-course-1",
+      "language": "en",
+      "title": "Let's Learn English — Level 1 (52 sequential lessons)",
+      "organization": "Voice of America",
+      "url": "https://learningenglish.voanews.com/p/5644.html",
+      "rights_url": "https://learningenglish.voanews.com/p/6861.html",
+      "levels": [
+        "A1",
+        "A2"
+      ],
+      "topics": [
+        "grammar",
+        "listening",
+        "speaking",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "Full sequential beginner course; 52 official lessons. Individual topics do not map one-to-one to CEFR. VOA-original content re-use possible with credit; exclude third-party assets."
+    },
+    {
+      "id": "en-voa-course-2",
+      "language": "en",
+      "title": "Let's Learn English — Level 2 (30 sequential lessons)",
+      "organization": "Voice of America",
+      "url": "https://learningenglish.voanews.com/p/6765.html",
+      "rights_url": "https://learningenglish.voanews.com/p/6861.html",
+      "levels": [
+        "B1"
+      ],
+      "topics": [
+        "grammar",
+        "listening",
+        "speaking",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "Intermediate sequential course with 30 lessons, supplementary to independently reviewed B1 teaching framework. Exclude third-party components."
+    },
+    {
+      "id": "en-british-council-listening",
+      "language": "en",
+      "title": "LearnEnglish levelled listening",
+      "organization": "British Council",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/listening",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "listening",
+        "speaking",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "CEFR A1-C1 graded authentic audio; not permission to rehost audio or transcripts."
+    },
+    {
+      "id": "en-bbc-grammar",
+      "language": "en",
+      "title": "BBC Learning English grammar podcast",
+      "organization": "BBC Learning English",
+      "url": "https://www.bbclearningenglish.org/programme/learning-english-grammar",
+      "levels": [
+        "B1",
+        "B2"
+      ],
+      "topics": [
+        "grammar",
+        "listening",
+        "pronunciation"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Free episodes do not authorize public mirroring; only official links unless permission."
+    },
+    {
+      "id": "fr-alliance-auckland-a1-syllabus",
+      "language": "fr",
+      "title": "Alliance Française Auckland — A1 curriculum",
+      "organization": "Alliance Française Auckland",
+      "url": "https://www.alliance-francaise.co.nz/media/website_pages/learn-french/adults/A1.pdf",
+      "levels": [
+        "A1"
+      ],
+      "topics": [
+        "grammar",
+        "vocabulary",
+        "speaking"
+      ],
+      "audio": false,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Reference the official skill progression and syllabus; PDF itself is not presumed redistributable."
+    },
+    {
+      "id": "fr-france-education-reference",
+      "language": "fr",
+      "title": "France Éducation international — CEFR linguistic inventory",
+      "organization": "France Éducation international",
+      "url": "https://www.france-education-international.fr/document/cecrl",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "grammar",
+        "vocabulary",
+        "speaking"
+      ],
+      "audio": false,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Official reference for French language functions and grammatical progression; do not copy PDF wholesale into public assets."
+    },
+    {
+      "id": "fr-rfi-learning",
+      "language": "fr",
+      "title": "Le français facile avec RFI",
+      "organization": "Radio France Internationale",
+      "url": "https://francaisfacile.rfi.fr/fr/",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "topics": [
+        "listening",
+        "reading",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Audio, transcripts and exercises are public to access, but RFI copyright and third-party sources apply. Link to original pages; do not mirror."
     }
   ]
 }
