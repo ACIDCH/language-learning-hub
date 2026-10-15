@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "en-british-council-grammar",
+      "language": "en",
+      "title": "British Council LearnEnglish Grammar",
+      "organization": "British Council",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/grammar",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "grammar"
+      ],
+      "audio": false,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Free access does not authorize mirroring of the site's full copyrighted material; link and summarize in original words."
+    },
+    {
+      "id": "en-cambridge-activities",
+      "language": "en",
+      "title": "Cambridge English: Activities for Learners",
+      "organization": "Cambridge English",
+      "url": "https://www.cambridgeenglish.org/learning-english/activities-for-learners/",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "topics": [
+        "grammar",
+        "listening",
+        "pronunciation",
+        "reading",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Free interactive access; link, do not copy proprietary exercises or audio without explicit reuse permission."
+    },
+    {
+      "id": "en-voa-learning",
+      "language": "en",
+      "title": "VOA Learning English",
+      "organization": "Voice of America",
+      "url": "https://learningenglish.voanews.com/",
+      "rights_url": "https://learningenglish.voanews.com/p/6861.html",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "topics": [
+        "listening",
+        "reading",
+        "pronunciation",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "VOA-original text and MP3 may be in the US public domain with source credit; exclude third-party AP, Reuters, AFP and other licensed components."
+    },
+    {
+      "id": "en-us-state-dialogues",
+      "language": "en",
+      "title": "Everyday Conversations: Learning American English",
+      "organization": "U.S. Department of State",
+      "url": "https://americanenglish.state.gov/resources/everyday-conversations-learning-american-english",
+      "levels": [
+        "A1",
+        "A2"
+      ],
+      "topics": [
+        "listening",
+        "speaking",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "PDF and MP3 provided on official site; check individual rights/credits before republishing."
+    },
+    {
+      "id": "en-mozilla-common-voice",
+      "language": "en",
+      "title": "Common Voice English speech datasets",
+      "organization": "Mozilla Data Collective",
+      "url": "https://commonvoice.mozilla.org/en/datasets",
+      "levels": [],
+      "topics": [
+        "pronunciation",
+        "speech-data"
+      ],
+      "audio": true,
+      "access": "download",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "Datasets individually labelled CC0-1.0; check version, terms and suitability. Corpus is ASR data, NOT validated reference pronunciation or a grammar course."
+    },
+    {
+      "id": "fr-hachette-inspire-a1",
+      "language": "fr",
+      "title": "Inspire 1 A1 official supplementary audio",
+      "organization": "Hachette FLE",
+      "url": "https://inspire.hachettefle.fr/inspire-1_livre-de-l-eleve_fr.html",
+      "rights_url": "https://inspire1.parcoursdigital.fr/home/mentions_legales",
+      "levels": [
+        "A1"
+      ],
+      "topics": [
+        "listening",
+        "speaking",
+        "pronunciation",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Commercial copyrighted material. Audio download availability is not permission to rehost publicly; personal licensed materials may be stored privately when the terms allow."
+    },
+    {
+      "id": "fr-tv5monde",
+      "language": "fr",
+      "title": "TV5MONDE Apprendre le français",
+      "organization": "TV5MONDE",
+      "url": "https://apprendre.tv5monde.com/fr/collection-all",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "topics": [
+        "listening",
+        "grammar",
+        "vocabulary",
+        "reading"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Public interactive exercises/videos; no blanket right to redistribute footage or audio. Use official links and allowed embeds."
+    },
+    {
+      "id": "fr-francais-interactif",
+      "language": "fr",
+      "title": "Français interactif",
+      "organization": "COERLL, University of Texas at Austin",
+      "url": "https://coerll.utexas.edu/coerll/oer/francais-interactif/",
+      "levels": [
+        "A1",
+        "A2"
+      ],
+      "topics": [
+        "grammar",
+        "listening",
+        "speaking",
+        "pronunciation",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "COERLL lists the curriculum as CC-BY; review individual media and embedded third-party exceptions, preserve full attribution."
+    },
+    {
+      "id": "fr-tex-french-grammar",
+      "language": "fr",
+      "title": "Tex's French Grammar",
+      "organization": "COERLL, University of Texas at Austin",
+      "url": "https://coerll.utexas.edu/coerll/oer/texs-french-grammar/",
+      "levels": [
+        "A1",
+        "A2",
+        "B1"
+      ],
+      "topics": [
+        "grammar",
+        "listening"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "COERLL lists the grammar resource as CC-BY; preserve license attribution and audit any third-party audio/artwork individually."
+    },
+    {
+      "id": "fr-coerll-oer-collection",
+      "language": "fr",
+      "title": "COERLL French OER collection",
+      "organization": "COERLL, University of Texas at Austin",
+      "url": "https://coerll.utexas.edu/coerll/materials/language/french/",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "topics": [
+        "grammar",
+        "listening",
+        "reading",
+        "speaking"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "Collection is NOT a single license; includes CC-BY, CC-BY-SA and CC-BY-NC-SA. Each work and media asset require separate verification."
+    },
+    {
+      "id": "fr-commons-pronunciation",
+      "language": "fr",
+      "title": "French pronunciation audio on Wikimedia Commons",
+      "organization": "Wikimedia Commons contributors",
+      "url": "https://commons.wikimedia.org/wiki/Category:French_pronunciation",
+      "rights_url": "https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia/licenses",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "topics": [
+        "pronunciation",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "License varies for each audio file; verify original Commons file description, attribution, and license requirements."
+    },
+    {
+      "id": "en-commons-pronunciation",
+      "language": "en",
+      "title": "English-language audio on Wikimedia Commons",
+      "organization": "Wikimedia Commons contributors",
+      "url": "https://commons.wikimedia.org/wiki/Commons:Audio",
+      "rights_url": "https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia/licenses",
+      "levels": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "topics": [
+        "pronunciation",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "Only an audio discovery entry; file-specific licenses apply and an individual example must be selected and verified before republishing."
+    },
+    {
+      "id": "fr-mozilla-common-voice",
+      "language": "fr",
+      "title": "Common Voice French speech datasets",
+      "organization": "Mozilla Data Collective",
+      "url": "https://commonvoice.mozilla.org/fr/datasets",
+      "levels": [],
+      "topics": [
+        "pronunciation",
+        "speech-data"
+      ],
+      "audio": true,
+      "access": "download",
+      "ingestion": "per_item_review_for_public_asset",
+      "license_note": "Datasets individually labelled CC0-1.0; check dataset version and release conditions; not a validated reference-pronunciation collection."
+    }
+  ]
+}
