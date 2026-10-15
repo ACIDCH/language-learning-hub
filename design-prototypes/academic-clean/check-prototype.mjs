@@ -33,6 +33,7 @@ assert(css.includes('prefers-reduced-motion'), 'Motion preferences required');
 assert(!js.includes('fetch('), 'Prototype intentionally has no private data fetching');
 assert(!js.includes('localStorage'), 'Prototype does not keep selected filenames');
 assert(!js.includes('service_role'), 'Never embed Supabase privileged credentials');
+assert(!/drive\\.google\\.com\\/drive\\/folders\\/[A-Za-z0-9_-]+/.test(js), 'Never publish private Drive folder locator');
 
 const routes = JSON.parse(readFileSync(new URL('../../docs/design-v3/route-map.json', root), 'utf8'));
 assert.equal(routes.schema_version, 1);
