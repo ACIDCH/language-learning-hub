@@ -1,117 +1,71 @@
-# Language Learning Hub — English & French instructional framework v1.0
+# English–French Curriculum V2: IELTS Academic-style English and Foundation French
 
-**Phase:** structural curriculum approved for review only; lesson authoring / media attachment / database import not yet complete.
+**Current status:** architecture and original learning outlines, not 108 complete licensed lessons or a deployed learning application. Approved learning model: **six integrated segments per unit**, both languages.
 
-## Design objective
+## English: academic competence first; no compulsory beginners course
 
-Provide a **coherent, high-quality, detailed bilingual curriculum owned by this project**, not a collection of bookmarks. Ground teaching in the [Council of Europe CEFR descriptors](https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors) for communicative outcomes and evaluate French vocabulary/grammar sequencing against [France Éducation international linguistic inventory](https://www.france-education-international.fr/document/cecrl).
+The learner has studied ordinary English already. No English A1/A2 course with numbers, simple greetings, family labels, colours or alphabet. English instead begins with useful academic English (approximately B1/B2+) and takes inspiration from IELTS **Academic** four skills, but is **not** an official IELTS product or a mandatory test preparation schedule.
 
-There is NO user placement test, compulsory unit test, periodic exam, proficiency score or aggregate pronunciation grade. Learners may freely enter any unit; prerequisites are recommended links, not locked gates.
+Six independent but linked tracks, **8 original unit outlines each = 48 English units**:
 
-## Frozen structural coverage
+1. IELTS-style **Listening**: lecture structure, speakers' stance, paraphrase, visual/map description, detail, completion, discourse and synthesis.
+2. Academic **Reading**: skim/scan, text organization, evidence, true/false/not given reasoning, reference, inference and synthesis.
+3. Academic **Writing Task 1-style**: overviews, trends, tables, figures, map/process reports, precision and revision.
+4. Academic **Writing Task 2-style**: question analysis, thesis, reasoning, views, pros/cons, problems/solutions, counterarguments, revision.
+5. **Speaking**: extended opinions, storytelling, coherent long turns, comparisons, abstract reasoning, intonation and AI-dialogue practice.
+6. **Language upgrade**: complex grammar, academic collocation, paraphrase accuracy, hedging, nominalisation, reference and personalised self-editing.
 
-| Level | English units | French units | Intent |
-| --- | ---: | ---: | --- |
-| A1 | 12 | 12 | Greeting, survival communication, basic grammar and phonetics |
-| A2 | 12 | 12 | Everyday experiences, past/future, conversations and practical texts |
-| B1 | 10 | 10 | Connected narrative, reasoning, listening comprehension and argument |
-| B2 | 10 | 10 | Extended argument, academic/professional communication |
-| C1 | 8 | 8 | Precision, synthesis and nuanced discourse (source audit required) |
-| C2 | 8 | 8 | Complex synthesis and advanced pragmatics (source audit required) |
-| **Total** | **60** | **60** | **120 unit blueprints, not 120 authored full lessons** |
+**Not a test system:** IELTS official assessment dimensions are referenced for writing/speaking teaching **feedback**, but no placement tests, recurring exams, overall pronunciation score, or enforced band prediction. If the learner needs a missing elementary grammar rule, an optional contextual micro-explanation is allowed without reopening a basics curriculum.
 
-Each unit is made of six integrated **learning segments**:
+## French: CEFR A1 to C2 with detailed A1 starter curriculum
 
-1. **Situation** — real-world use case, why it matters, measurable can-do description.
-2. **Grammar** — accurate structured explanation, formation, use, exceptions, contrasted mistakes and graded self-practice.
-3. **Vocabulary** — common words/phrases with part of speech, collocations, meaning, variant and modeled context.
-4. **Reception** — source-linked listening and/or reading passages, transcripts when licensed, optional comprehension practice.
-5. **Pronunciation** — target phonemes and connected speech, replayable reference audio, shadowing, per-word highlight when calibrated.
-6. **Production** — original guided speaking and writing task, in-context self correction and optional AI tutor.
+French begins genuinely at **A1**: pronunciation basics, introductions, nationality, everyday routines, questioning, food, directions, housing, future plans, first past events. French unit outline structure: A1 12; A2 12; B1 10; B2 10; C1 8; C2 8 = **60 units**.
 
-An optional **return to this point** affordance (bookmark or personal error notebook) is allowed, but it is not a scheduled test, placement diagnosis or mandatory revision.
+Hachette Inspire 1 A1 remains a familiar **pedagogical reference**, but our 12 original A1 units are not the publisher's 8 units, and the Hachette textbook / recorded audio cannot simply be rehosted on public GitHub. An important open curriculum is COERLL UT Austin Français interactif (CC BY, subject to per-media exceptions), supplemented with Tex's French Grammar, TV5MONDE and RFI.
 
-### Key distinction: structural readiness vs material readiness
+## Universal six-segment learning chain (both languages)
 
-- **Outline**: an original CEFR-informed unit specification and learning outcome exists (currently **120 units**).
-- **Authored lesson**: all six segments have approved original explanations, vocabulary, examples, tasks and references.
-- **Media-linked lesson**: actual exact lesson-level permitted audio/readings and usable transcripts are linked (not simply a publisher homepage).
-- **Validated lesson**: fact-checked grammar and sources, complete audio mapping, proper attribution and rights, learner review.
-- **Released lesson**: website renders it correctly with progress, pronunciation support and privacy controls.
+1. **Context / 情境**: real-life or academic situation and clear communicative outcome.
+2. **Grammar / 语法**: correct patterns, contextual application, contrasted errors, nuanced alternatives.
+3. **Vocabulary / 词汇**: appropriately leveled high-utility words and collocations, examples and context.
+4. **Reading & Listening / 听读**: actual lesson-level legally accessible media and texts; original readings where necessary.
+5. **Pronunciation / 发音**: replay, shadowing and word coloring only where algorithm has been validated; neutral for uncertain; no total scores.
+6. **Production / 输出**: extended talk and writing with explanation-level feedback, no forced tests.
 
-**Do not represent an outline as a complete lesson or all sources as already mapped.** See `config/curriculum/units.v1.json`. The two first original lesson samples are in `docs/curriculum/samples/` and are not released.
+## Content readiness tiers
 
-## Content quality gate (per authored unit)
+- **Planned**: original outline (currently 108 units).
+- **Drafted**: authored explanation, examples, vocabulary, exercises and rights metadata.
+- **Audio-linked**: exact authorised matching audio and text resources integrated.
+- **Reviewed**: pedagogical accuracy, accessibility, provenance/licensing and content quality verified.
+- **Published**: fully rendered functional site.
 
-Mandatory before publishing any unit:
+At present, **108 planned**, **two original sample lessons uploaded to PRIVATE Google Drive** (IELTS-style English writing & French A1 introductions), **zero fully audio-integrated/production-published lessons**. Course-source list: **32 candidate official/open resources**, neither all full textbooks nor 32 licensed audio collections.
 
-- CEFR can-do statement; specific learner action; recommend preceding/succeeding knowledge points; free navigation.
-- 2-4 primary grammar concepts or fewer if complexity requires, each with explicit form/use, variations, at least 3 contrasting examples and known confusions.
-- For A1/A2 typically 12-20 target lexemes/collocations per unit, including meaningful original example usage; adjust density for advanced levels.
-- Minimum **8 original example sentences per unit**, checked for idiomatic usage. Include Chinese explanation and accurate FR/EN target-language usage.
-- At least one authentic source-linked listening item and one reading item (or documented legal alternatives) **for each published core unit**, not merely a top-level content-provider link. Keep provenance and transcript availability on each asset.
-- Original pronunciation goals appropriate to language (English: stress / weak forms / phonemes; French: vowel contrasts / liaison / e muet / group rhythm). Only display phoneme-level defects supported by evaluator evidence; use neutral gray when uncertain.
-- A coherent original speaking task and original short writing task with practical scoring-free feedback criteria. Answer keys for close-ended practice are permitted but no forced exam.
-- A provenance record for all imported content. Individual permission for public GitHub rehosting; other resources accessed via authorized external link or private Drive.
-- Subject-matter review for high-risk grammar inaccuracies, culture-sensitive claims, inappropriate accent discrimination, and accessibility.
-- Test content rendering with desktop/mobile keyboard navigation; ensure audio controls also have text alternatives.
-- Quality gate fails if lesson audio is missing; the unit may remain in authoring or reading-only draft, not falsely marked fully complete.
+## Source and rights policy
 
-## Source hierarchy
+Main external sources (link rather than rehost without per-item license):
+- https://www.ielts.org/take-a-test/preparation-resources/sample-test-questions/academic-test
+- https://www.cambridgeenglish.org/exams-and-tests/ielts/preparation/
+- https://www.britishcouncil.org.nz/exam/ielts/prepare
+- https://ielts.idp.com/prepare/academic-and-ukvi
+- https://learnenglish.britishcouncil.org/free-resources/listening/b2
+- https://coerll.utexas.edu/coerll/oer/francais-interactif/
+- https://coerll.utexas.edu/coerll/oer/texs-french-grammar/
+- https://apprendre.tv5monde.com/fr/exercices/a1-debutant
+- https://inspire.hachettefle.fr/inspire-1_livre-de-l-eleve_fr.html
 
-**English course spine**
+**Public GitHub**: code and individually verified public/licensed small media only. **Private Google Drive**: project-authored courses, personal studies, commercially licensed private materials, AI-generated content. **Supabase**: search index, progress, authorization and job metadata, never textbook/audio payloads.
 
-- [VOA Let's Learn English — Level 1 (52 lessons)](https://learningenglish.voanews.com/p/5644.html): strong coherent beginner pathway, dialogue and speech integration; note its own lessons reach some higher structures, so **do not claim one-to-one CEFR equivalence**.
-- [VOA Let's Learn English — Level 2 (30 lessons)](https://learningenglish.voanews.com/p/6765.html): coherent intermediate supplement.
-- [British Council grammar](https://learnenglish.britishcouncil.org/free-resources/grammar), [graded listening](https://learnenglish.britishcouncil.org/free-resources/listening) and Cambridge resources: validated grammar and levelled authentic input.
-- [BBC Learning English](https://www.bbclearningenglish.org/programme/learning-english-grammar): supplementary grammar and later authentic speech. Do not mirror BBC audio by default.
-- [British Council graded reading](https://learnenglish.britishcouncil.org/free-resources/reading), [graded speaking](https://learnenglish.britishcouncil.org/free-resources/speaking), and [stories](https://learnenglish.britishcouncil.org/free-resources/general/story-zone) provide diversified input and practice, without copying their copyrighted media.
-- [U.S. Department of State Everyday Conversations](https://americanenglish.state.gov/resources/everyday-conversations-learning-american-english): beginner real-life dialogues.
+## User-owned Drive content created
 
-**French course spine**
+- `01-English/IELTS-Academic`: V2 English curriculum, an original academic Task 2-style unit.
+- `02-French/A1-Foundation`: A1 roadmap, an original introductions unit.
+- `06-Source-Registry/Verified-Learning-Sources`: 32-item source ledger.
+- `00-System/Course-Design`: front-end information architecture and UX draft.
 
-- [Hachette Inspire A1](https://inspire.hachettefle.fr/inspire-1_livre-de-l-eleve_fr.html): familiar **study-sequence reference** for A1; not a source of freely redistributable audio or textbook scans.
-- [UT Austin Français interactif](https://laits.utexas.edu/fi/): original 00-13 chapters covering phonetics, grammar, audio, videos, and vocabulary; each asset's rights must be checked for public hosting.
-- [Tex's French Grammar](https://coerll.utexas.edu/coerll/oer/texs-french-grammar/): grammar concept explanations.
-- [TV5MONDE Apprendre](https://apprendre.tv5monde.com/fr/collection-all): large, levelled comprehension resource across A1–B2; many useful authentic clips but not an automatic reproduction license.
-- [Alliance Française Auckland A1 learning syllabus](https://www.alliance-francaise.co.nz/media/website_pages/learn-french/adults/A1.pdf): evidence that French A1 grammar / communication should be ordered by learning progression.
-- [RFI French learning](https://francaisfacile.rfi.fr/fr/): audio/transcripts and bilingual introductory series, including the 13-episode `Les voisins du 12 bis`; link only by default.
-- [OpenLearn Getting started with French 1](https://www.open.edu/openlearn/languages/getting-started-french-1): extended beginner learning material; license is generally CC BY-NC-SA with exceptions, so do not publicly mirror by default.
-- [France Éducation international](https://www.france-education-international.fr/document/cecrl): linguistic progression inventory. CEFR alignment is a pedagogic design choice, not an official grammatical topic mandate.
+These private files must not be referenced by raw Drive ID in public application code. The owner may explicitly authorize frontend Drive retrieval via OAuth.
 
-**C1/C2:** currently intentionally have **no certified full-coverage French teaching source** in the machine-readable index. Advanced units are a roadmap; advanced source alignment is a separate content-research gate.
+## UI design gate
 
-## Concept and media relation model
-
-Course → level → unit → learning segment → grammar/vocabulary/pronunciation concept → referenced reading/audio asset.
-
-Specific source mapping unit-by-unit records:
-- `source_id`
-- `external_lesson_url`
-- `exact_asset_id` or canonical media URL if permitted
-- `CEFR evidence`
-- `language` / `regional variety`
-- `media transcript permission`
-- `owner` / `license` / `source attribution`
-- `provenance verification timestamp`.
-
-Avoid hardcoding a copyrighted work's exact chapter-to-topic mapping without reading the source TOC. For Inspire 1, only the public official resource index's confirmed 8 units and their audio numbers are known so far; **our 12 A1 units are not presented as Inspire's 8 official units**.
-
-## Initial delivery sequence
-
-1. Architectural unit catalog (**implemented as proposal**, 120 outlines).
-2. Human-reviewed **English A1 U01 and French A1 U01 original lessons**; attach exact audio assets as a subsequent deliverable.
-3. Full A1 authored content in both languages: 12+12 units, concept graph, at least one licensed audio sample per unit.
-4. A2 authoring, then B1, B2, then C1/C2 source audit and authoring.
-5. Each stage requires both an actual content QA review and a UI prototype review before release. Structural catalogs may be merged separately from user-visible lessons.
-
-## Progress metrics (not learner scores)
-
-- 120/120 units have a planned learning outcome and grammar, lexicon, pronunciation and real-world production goal.
-- Fully authored published units: currently **0**.
-- Exact per-unit licensed audio/transcript mappings: currently **0**.
-- Verified instruction-level source/lesson alignments: currently **0**.
-- AI content generated and approved: currently **0**.
-- Curated provider/source discovery entries: **25** (including several source indices and research corpora, NOT 25 complete textbook courses).
-
-Reporting must disclose these numbers rather than claiming course completion.
+Before React application implementation, show the user a visible example of the separate English and French home pages, a six-tab unit detail, an audio playback/speaking card and AI provider settings. Require review before deployment or affecting public main. Neither GitHub PR nor Drive document automatically publishes lesson content.
