@@ -93,8 +93,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
-        "en-british-council-grammar"
+        "en-voa-course-1",
+        "en-british-council-grammar",
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -129,8 +130,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
-        "en-british-council-grammar"
+        "en-voa-course-1",
+        "en-british-council-grammar",
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -165,8 +167,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
-        "en-british-council-grammar"
+        "en-voa-course-1",
+        "en-british-council-grammar",
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -201,8 +204,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
-        "en-british-council-grammar"
+        "en-voa-course-1",
+        "en-british-council-grammar",
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -237,8 +241,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
-        "en-british-council-grammar"
+        "en-voa-course-1",
+        "en-british-council-grammar",
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -273,8 +278,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
-        "en-british-council-grammar"
+        "en-voa-course-1",
+        "en-british-council-grammar",
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -309,8 +315,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
-        "en-british-council-grammar"
+        "en-voa-course-1",
+        "en-british-council-grammar",
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -345,8 +352,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
-        "en-british-council-grammar"
+        "en-voa-course-1",
+        "en-british-council-grammar",
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -381,8 +389,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
-        "en-british-council-grammar"
+        "en-voa-course-1",
+        "en-british-council-grammar",
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -417,8 +426,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
-        "en-british-council-grammar"
+        "en-voa-course-1",
+        "en-british-council-grammar",
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -452,8 +462,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
-        "en-british-council-grammar"
+        "en-voa-course-1",
+        "en-british-council-grammar",
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -488,8 +499,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
-        "en-british-council-grammar"
+        "en-voa-course-1",
+        "en-british-council-grammar",
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -524,9 +536,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
+        "en-voa-course-1",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -560,9 +572,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
+        "en-voa-course-1",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -595,9 +607,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
+        "en-voa-course-1",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -631,9 +643,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
+        "en-voa-course-1",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -667,9 +679,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
+        "en-voa-course-1",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -704,9 +716,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
+        "en-voa-course-1",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -741,9 +753,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
+        "en-voa-course-1",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -777,9 +789,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
+        "en-voa-course-1",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -813,9 +825,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
+        "en-voa-course-1",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -849,9 +861,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
+        "en-voa-course-1",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -886,9 +898,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
+        "en-voa-course-1",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -923,9 +935,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-learning",
+        "en-voa-course-1",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -958,8 +970,9 @@
         "production"
       ],
       "source_candidates": [
+        "en-voa-course-2",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -993,8 +1006,9 @@
         "production"
       ],
       "source_candidates": [
+        "en-voa-course-2",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1028,8 +1042,9 @@
         "production"
       ],
       "source_candidates": [
+        "en-voa-course-2",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1063,8 +1078,9 @@
         "production"
       ],
       "source_candidates": [
+        "en-voa-course-2",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1098,8 +1114,9 @@
         "production"
       ],
       "source_candidates": [
+        "en-voa-course-2",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1133,8 +1150,9 @@
         "production"
       ],
       "source_candidates": [
+        "en-voa-course-2",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1168,8 +1186,9 @@
         "production"
       ],
       "source_candidates": [
+        "en-voa-course-2",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1203,8 +1222,9 @@
         "production"
       ],
       "source_candidates": [
+        "en-voa-course-2",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1238,8 +1258,9 @@
         "production"
       ],
       "source_candidates": [
+        "en-voa-course-2",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1273,8 +1294,9 @@
         "production"
       ],
       "source_candidates": [
+        "en-voa-course-2",
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1309,7 +1331,8 @@
       ],
       "source_candidates": [
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening",
+        "en-bbc-grammar"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1344,7 +1367,8 @@
       ],
       "source_candidates": [
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening",
+        "en-bbc-grammar"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1378,7 +1402,8 @@
       ],
       "source_candidates": [
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening",
+        "en-bbc-grammar"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1413,7 +1438,8 @@
       ],
       "source_candidates": [
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening",
+        "en-bbc-grammar"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1448,7 +1474,8 @@
       ],
       "source_candidates": [
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening",
+        "en-bbc-grammar"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1483,7 +1510,8 @@
       ],
       "source_candidates": [
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening",
+        "en-bbc-grammar"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1518,7 +1546,8 @@
       ],
       "source_candidates": [
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening",
+        "en-bbc-grammar"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1552,7 +1581,8 @@
       ],
       "source_candidates": [
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening",
+        "en-bbc-grammar"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1587,7 +1617,8 @@
       ],
       "source_candidates": [
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening",
+        "en-bbc-grammar"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1620,7 +1651,8 @@
       ],
       "source_candidates": [
         "en-british-council-grammar",
-        "en-cambridge-activities"
+        "en-british-council-listening",
+        "en-bbc-grammar"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1653,6 +1685,7 @@
         "production"
       ],
       "source_candidates": [
+        "en-british-council-listening",
         "en-cambridge-activities"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
@@ -1687,6 +1720,7 @@
         "production"
       ],
       "source_candidates": [
+        "en-british-council-listening",
         "en-cambridge-activities"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
@@ -1720,6 +1754,7 @@
         "production"
       ],
       "source_candidates": [
+        "en-british-council-listening",
         "en-cambridge-activities"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
@@ -1753,6 +1788,7 @@
         "production"
       ],
       "source_candidates": [
+        "en-british-council-listening",
         "en-cambridge-activities"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
@@ -1786,6 +1822,7 @@
         "production"
       ],
       "source_candidates": [
+        "en-british-council-listening",
         "en-cambridge-activities"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
@@ -1819,6 +1856,7 @@
         "production"
       ],
       "source_candidates": [
+        "en-british-council-listening",
         "en-cambridge-activities"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
@@ -1851,6 +1889,7 @@
         "production"
       ],
       "source_candidates": [
+        "en-british-council-listening",
         "en-cambridge-activities"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
@@ -1884,6 +1923,7 @@
         "production"
       ],
       "source_candidates": [
+        "en-british-council-listening",
         "en-cambridge-activities"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
@@ -2182,7 +2222,8 @@
       "source_candidates": [
         "fr-hachette-inspire-a1",
         "fr-francais-interactif",
-        "fr-tex-french-grammar"
+        "fr-tex-french-grammar",
+        "fr-alliance-auckland-a1-syllabus"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2219,7 +2260,8 @@
       "source_candidates": [
         "fr-hachette-inspire-a1",
         "fr-francais-interactif",
-        "fr-tex-french-grammar"
+        "fr-tex-french-grammar",
+        "fr-alliance-auckland-a1-syllabus"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2256,7 +2298,8 @@
       "source_candidates": [
         "fr-hachette-inspire-a1",
         "fr-francais-interactif",
-        "fr-tex-french-grammar"
+        "fr-tex-french-grammar",
+        "fr-alliance-auckland-a1-syllabus"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2293,7 +2336,8 @@
       "source_candidates": [
         "fr-hachette-inspire-a1",
         "fr-francais-interactif",
-        "fr-tex-french-grammar"
+        "fr-tex-french-grammar",
+        "fr-alliance-auckland-a1-syllabus"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2330,7 +2374,8 @@
       "source_candidates": [
         "fr-hachette-inspire-a1",
         "fr-francais-interactif",
-        "fr-tex-french-grammar"
+        "fr-tex-french-grammar",
+        "fr-alliance-auckland-a1-syllabus"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2366,7 +2411,8 @@
       "source_candidates": [
         "fr-hachette-inspire-a1",
         "fr-francais-interactif",
-        "fr-tex-french-grammar"
+        "fr-tex-french-grammar",
+        "fr-alliance-auckland-a1-syllabus"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2403,7 +2449,8 @@
       "source_candidates": [
         "fr-hachette-inspire-a1",
         "fr-francais-interactif",
-        "fr-tex-french-grammar"
+        "fr-tex-french-grammar",
+        "fr-alliance-auckland-a1-syllabus"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2439,7 +2486,8 @@
       "source_candidates": [
         "fr-hachette-inspire-a1",
         "fr-francais-interactif",
-        "fr-tex-french-grammar"
+        "fr-tex-french-grammar",
+        "fr-alliance-auckland-a1-syllabus"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2476,7 +2524,8 @@
       "source_candidates": [
         "fr-hachette-inspire-a1",
         "fr-francais-interactif",
-        "fr-tex-french-grammar"
+        "fr-tex-french-grammar",
+        "fr-alliance-auckland-a1-syllabus"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2513,7 +2562,8 @@
       "source_candidates": [
         "fr-hachette-inspire-a1",
         "fr-francais-interactif",
-        "fr-tex-french-grammar"
+        "fr-tex-french-grammar",
+        "fr-alliance-auckland-a1-syllabus"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2550,7 +2600,8 @@
       "source_candidates": [
         "fr-hachette-inspire-a1",
         "fr-francais-interactif",
-        "fr-tex-french-grammar"
+        "fr-tex-french-grammar",
+        "fr-alliance-auckland-a1-syllabus"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2586,7 +2637,8 @@
       "source_candidates": [
         "fr-hachette-inspire-a1",
         "fr-francais-interactif",
-        "fr-tex-french-grammar"
+        "fr-tex-french-grammar",
+        "fr-alliance-auckland-a1-syllabus"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2622,7 +2674,8 @@
       "source_candidates": [
         "fr-francais-interactif",
         "fr-tex-french-grammar",
-        "fr-tv5monde"
+        "fr-tv5monde",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2657,7 +2710,8 @@
       "source_candidates": [
         "fr-francais-interactif",
         "fr-tex-french-grammar",
-        "fr-tv5monde"
+        "fr-tv5monde",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2693,7 +2747,8 @@
       "source_candidates": [
         "fr-francais-interactif",
         "fr-tex-french-grammar",
-        "fr-tv5monde"
+        "fr-tv5monde",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2729,7 +2784,8 @@
       "source_candidates": [
         "fr-francais-interactif",
         "fr-tex-french-grammar",
-        "fr-tv5monde"
+        "fr-tv5monde",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2765,7 +2821,8 @@
       "source_candidates": [
         "fr-francais-interactif",
         "fr-tex-french-grammar",
-        "fr-tv5monde"
+        "fr-tv5monde",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2802,7 +2859,8 @@
       "source_candidates": [
         "fr-francais-interactif",
         "fr-tex-french-grammar",
-        "fr-tv5monde"
+        "fr-tv5monde",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2837,7 +2895,8 @@
       "source_candidates": [
         "fr-francais-interactif",
         "fr-tex-french-grammar",
-        "fr-tv5monde"
+        "fr-tv5monde",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2874,7 +2933,8 @@
       "source_candidates": [
         "fr-francais-interactif",
         "fr-tex-french-grammar",
-        "fr-tv5monde"
+        "fr-tv5monde",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2910,7 +2970,8 @@
       "source_candidates": [
         "fr-francais-interactif",
         "fr-tex-french-grammar",
-        "fr-tv5monde"
+        "fr-tv5monde",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2946,7 +3007,8 @@
       "source_candidates": [
         "fr-francais-interactif",
         "fr-tex-french-grammar",
-        "fr-tv5monde"
+        "fr-tv5monde",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -2982,7 +3044,8 @@
       "source_candidates": [
         "fr-francais-interactif",
         "fr-tex-french-grammar",
-        "fr-tv5monde"
+        "fr-tv5monde",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3018,7 +3081,8 @@
       "source_candidates": [
         "fr-francais-interactif",
         "fr-tex-french-grammar",
-        "fr-tv5monde"
+        "fr-tv5monde",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3051,7 +3115,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3085,7 +3150,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3120,7 +3186,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3155,7 +3222,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3190,7 +3258,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3225,7 +3294,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3260,7 +3330,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3295,7 +3366,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3330,7 +3402,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3365,7 +3438,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3400,7 +3474,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3435,7 +3510,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3470,7 +3546,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3505,7 +3582,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3540,7 +3618,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3575,7 +3654,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3610,7 +3690,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3645,7 +3726,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3680,7 +3762,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3715,7 +3798,8 @@
       ],
       "source_candidates": [
         "fr-tv5monde",
-        "fr-coerll-oer-collection"
+        "fr-rfi-learning",
+        "fr-france-education-reference"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -3747,7 +3831,9 @@
         "pronunciation",
         "production"
       ],
-      "source_candidates": [],
+      "source_candidates": [
+        "fr-france-education-reference"
+      ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
@@ -3779,7 +3865,9 @@
         "pronunciation",
         "production"
       ],
-      "source_candidates": [],
+      "source_candidates": [
+        "fr-france-education-reference"
+      ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
@@ -3811,7 +3899,9 @@
         "pronunciation",
         "production"
       ],
-      "source_candidates": [],
+      "source_candidates": [
+        "fr-france-education-reference"
+      ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
@@ -3842,7 +3932,9 @@
         "pronunciation",
         "production"
       ],
-      "source_candidates": [],
+      "source_candidates": [
+        "fr-france-education-reference"
+      ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
@@ -3874,7 +3966,9 @@
         "pronunciation",
         "production"
       ],
-      "source_candidates": [],
+      "source_candidates": [
+        "fr-france-education-reference"
+      ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
@@ -3905,7 +3999,9 @@
         "pronunciation",
         "production"
       ],
-      "source_candidates": [],
+      "source_candidates": [
+        "fr-france-education-reference"
+      ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
@@ -3935,7 +4031,9 @@
         "pronunciation",
         "production"
       ],
-      "source_candidates": [],
+      "source_candidates": [
+        "fr-france-education-reference"
+      ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
@@ -3966,7 +4064,9 @@
         "pronunciation",
         "production"
       ],
-      "source_candidates": [],
+      "source_candidates": [
+        "fr-france-education-reference"
+      ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
