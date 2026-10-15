@@ -1,55 +1,38 @@
-# English and French online learning source registry (Phase 01)
+# English and French sources: candidate resource registry (V2)
 
-**Status:** curated, verified at source-page level; not yet imported into any learning database or Google Drive. The registry is a discovery/index of public teaching resources, not a claim to redistribute their contents.
+**32 cataloged provider/resource entries**, not 32 confirmed full courses and not downloadable content. Machine-readable records: `config/resources/sources.json`. Every external page is a discovery entry, and specific media needs separate validation.
 
-## Principles
+## English: IELTS Academic style — highest priority
 
-1. All accessible public web learning sources can be considered for **discovery and navigational linking**; keep source links, creator, topic and CEFR metadata. We do not need every publisher to release its media under an open license to link to legitimate official pages.
-2. **Copying/rehosting** PDF, MP3, course videos and entire exercises into public GitHub requires **specific redistribution rights**. Attribution alone does not grant these rights; a CC BY/CC0/public-domain or explicit permission applies subject to its conditions. Respect embeds, access controls and anti-scraping restrictions.
-3. **Private personal materials** and authorized personal copies belong in Google Drive, not public GitHub; Google Drive storage must still respect the file's applicable license/terms.
-4. Avoid forced tests: source pages may offer placement tests or quizzes, but our learning system does **not** impose any placement or scheduled examinations.
-5. Use original teacher/publisher content as a reference, original explanations for user-facing summaries, and the user's own AI API for supplementary *clearly labeled* study content.
-6. Only import a public audio file after adding an asset-specific license/sha256/attribution record under `public/learning-assets/manifest.json` and passing the existing CI.
+| Provider | Role | Rehosting |
+| --- | --- | --- |
+| [IELTS official Academic sample tasks](https://www.ielts.org/take-a-test/preparation-resources/sample-test-questions/academic-test) | Exact format, task types, public sample links | Link only; no public copy without permission |
+| [Cambridge IELTS prep](https://www.cambridgeenglish.org/exams-and-tests/ielts/preparation/) | Official partner papers and advice | Link only |
+| [British Council IELTS NZ](https://www.britishcouncil.org.nz/exam/ielts/prepare) | NZ-relevant preparation materials | Link only |
+| [British Council IELTS preparation](https://takeielts.britishcouncil.org/prepare) | Official skill materials and familiarisation | Link only |
+| [IDP Academic preparation](https://ielts.idp.com/prepare/academic-and-ukvi) | Podcasts, examples and skill training | Link only |
+| [British Council B2 listening](https://learnenglish.britishcouncil.org/free-resources/listening/b2) | Academic-relevant listening | Link only |
+| [British Council B2 reading](https://learnenglish.britishcouncil.org/free-resources/reading/b2) | Argumentative/academic reading | Link only |
 
-## English sources
+Other entries include British Council grammar, Cambridge language activities, VOA listening, academic reading and speech corpora. **English beginners' greetings/numbers are not in the main course.** VOA beginner materials remain an optional general resource, not a required curricular spine.
 
-| Source | Suitable features | Audio | Integration |
-| --- | --- | --- | --- |
-| [British Council LearnEnglish Grammar](https://learnenglish.britishcouncil.org/free-resources/grammar) | Structured A1-C1 grammar explanations | Not central to grammar pages | Link only |
-| [Cambridge English activities](https://www.cambridgeenglish.org/learning-english/activities-for-learners/) | Grammar, pronunciation, listening and other skill practice | Some lessons | Link only |
-| [VOA Learning English](https://learningenglish.voanews.com/) | Slow English listening, reading and spoken examples | Yes | Official link; review original vs third-party rights per asset before copying |
-| [Everyday Conversations](https://americanenglish.state.gov/resources/everyday-conversations-learning-american-english) | Real-world dialogue, beginner listening | Yes, MP3 | Official link; review media rights per file before copying |
-| [Wikimedia Commons](https://commons.wikimedia.org/wiki/Commons:Audio) | Individual word/phrase audio | File-dependent | Check each media-file license before rehosting |
-| [Mozilla Common Voice](https://commonvoice.mozilla.org/en/datasets) | Open research voice corpora (not a course or teacher-verified standard) | Yes | Use for ASR research only; avoid large bulk download to GitHub |
+## French: foundational structured pathway
 
-## French sources
+| Provider | Role | Rehosting |
+| --- | --- | --- |
+| [Inspire 1 A1 official audio](https://inspire.hachettefle.fr/inspire-1_livre-de-l-eleve_fr.html) | Familiar A1 course sequence | Link / privately licensed only |
+| [UT Austin Français interactif](https://coerll.utexas.edu/coerll/oer/francais-interactif/) | Open comprehensive first-year FLE course | CC BY main work; check individual media and credit |
+| [Tex's French Grammar](https://coerll.utexas.edu/coerll/oer/texs-french-grammar/) | Grammar and dialogue audio | CC BY, check individual items |
+| [TV5MONDE A1](https://apprendre.tv5monde.com/fr/exercices/a1-debutant) | Hundreds of listening exercises | Link only |
+| [RFI Français facile](https://francaisfacile.rfi.fr/fr/) | Real francophone listening and transcripts | Link only |
+| [OpenLearn French beginner](https://www.open.edu/openlearn/languages/getting-started-french-1) | Additional beginner courses | Link by default; rights vary |
 
-| Source | Suitable features | Audio | Integration |
-| --- | --- | --- | --- |
-| [Inspire 1 A1 official audio](https://inspire.hachettefle.fr/inspire-1_livre-de-l-eleve_fr.html) | Familiar A1 curricular reference and audio sequence | Yes | Official links; no public copying of Hachette textbook/audio by default |
-| [TV5MONDE Apprendre le français](https://apprendre.tv5monde.com/fr/collection-all) | Levelled French comprehension with authentic media | Yes, videos with speech | Link only or officially authorized embed |
-| [Français interactif](https://coerll.utexas.edu/coerll/oer/francais-interactif/) | Open first-year curriculum, phonetics and grammatical scaffolding | Yes | Per-item CC BY review |
-| [Tex’s French Grammar](https://coerll.utexas.edu/coerll/oer/texs-french-grammar/) | Clear grammar explanations and audio dialogues | Yes | Per-item CC BY review |
-| [COERLL French OER collection](https://coerll.utexas.edu/coerll/materials/language/french/) | More intermediate reading, grammar and conversation | Depends on work | License varies: CC BY, CC BY-SA, CC BY-NC-SA |
-| [Wikimedia Commons French pronunciation](https://commons.wikimedia.org/wiki/Category:French_pronunciation) | Word pronunciation and pronunciation contrasts | Individual clips | Verify and attribute each media file |
-| [Mozilla Common Voice French](https://commonvoice.mozilla.org/fr/datasets) | French ASR/accent corpus research | Yes | Version-level rights; not pedagogical gold-standard |
+## Import workflow
 
-## Technical ingest contract
+1. Record source rights and original URL.
+2. Match exact resource to **specific** unit and learning segment, not just a homepage.
+3. Keep publisher PDFs/audio link-only without reproduction rights.
+4. Put **project-authored teaching content** in private Google Drive; small public domain/CC items may be publicly hosted by GitHub when reviewed and manifested.
+5. Store only metadata and storage locator kinds in Supabase.
 
-Machine-readable discovery seeds: `config/resources/sources.json`.
-
-Each entry contains `id, language, title, organization, url, levels, topics, audio, access, ingestion, license_note`, with optional `rights_url`.
-
-- `ingestion: link_only`: publish link, do not download and rehost media.
-- `ingestion: per_item_review_for_public_asset`: review *each* candidate file's rights before hosting, never infer approval from the provider's open-access status.
-- `audio: true`: indicates the source includes audio **somewhere**, not every lesson.
-- `levels: []`: non-curricular dataset; do not present as a graded course.
-
-After database-schema approval, the indexer will map resources to specific CEFR and grammar point IDs, track canonical URL, source provenance, revision and `github_public|google_drive_private|external_link` for each individual asset. Every public rehosted file must have a manifest record with a checksum, actual license, reviewer and attribution.
-
-## References
-
-- https://learningenglish.voanews.com/p/6861.html
-- https://coerll.utexas.edu/coerll/materials/language/french/
-- https://inspire1.parcoursdigital.fr/home/mentions_legales
-- https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia/licenses
+The separate private Google Drive source ledger contains the complete 32-entry source notes and restrictions. This GitHub file intentionally does not reveal private course document identifiers.
