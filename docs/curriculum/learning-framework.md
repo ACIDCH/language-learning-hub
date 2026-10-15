@@ -65,6 +65,7 @@ Mandatory before publishing any unit:
 - [VOA Let's Learn English — Level 2 (30 lessons)](https://learningenglish.voanews.com/p/6765.html): coherent intermediate supplement.
 - [British Council grammar](https://learnenglish.britishcouncil.org/free-resources/grammar), [graded listening](https://learnenglish.britishcouncil.org/free-resources/listening) and Cambridge resources: validated grammar and levelled authentic input.
 - [BBC Learning English](https://www.bbclearningenglish.org/programme/learning-english-grammar): supplementary grammar and later authentic speech. Do not mirror BBC audio by default.
+- [British Council graded reading](https://learnenglish.britishcouncil.org/free-resources/reading), [graded speaking](https://learnenglish.britishcouncil.org/free-resources/speaking), and [stories](https://learnenglish.britishcouncil.org/free-resources/general/story-zone) provide diversified input and practice, without copying their copyrighted media.
 - [U.S. Department of State Everyday Conversations](https://americanenglish.state.gov/resources/everyday-conversations-learning-american-english): beginner real-life dialogues.
 
 **French course spine**
@@ -74,7 +75,8 @@ Mandatory before publishing any unit:
 - [Tex's French Grammar](https://coerll.utexas.edu/coerll/oer/texs-french-grammar/): grammar concept explanations.
 - [TV5MONDE Apprendre](https://apprendre.tv5monde.com/fr/collection-all): large, levelled comprehension resource across A1–B2; many useful authentic clips but not an automatic reproduction license.
 - [Alliance Française Auckland A1 learning syllabus](https://www.alliance-francaise.co.nz/media/website_pages/learn-french/adults/A1.pdf): evidence that French A1 grammar / communication should be ordered by learning progression.
-- [RFI French learning](https://francaisfacile.rfi.fr/fr/): audio and transcripts for advanced authentic listening (often A2-B2). Link only by default.
+- [RFI French learning](https://francaisfacile.rfi.fr/fr/): audio/transcripts and bilingual introductory series, including the 13-episode `Les voisins du 12 bis`; link only by default.
+- [OpenLearn Getting started with French 1](https://www.open.edu/openlearn/languages/getting-started-french-1): extended beginner learning material; license is generally CC BY-NC-SA with exceptions, so do not publicly mirror by default.
 - [France Éducation international](https://www.france-education-international.fr/document/cecrl): linguistic progression inventory. CEFR alignment is a pedagogic design choice, not an official grammatical topic mandate.
 
 **C1/C2:** currently intentionally have **no certified full-coverage French teaching source** in the machine-readable index. Advanced units are a roadmap; advanced source alignment is a separate content-research gate.
@@ -110,5 +112,6 @@ Avoid hardcoding a copyrighted work's exact chapter-to-topic mapping without rea
 - Exact per-unit licensed audio/transcript mappings: currently **0**.
 - Verified instruction-level source/lesson alignments: currently **0**.
 - AI content generated and approved: currently **0**.
+- Curated provider/source discovery entries: **25** (including several source indices and research corpora, NOT 25 complete textbook courses).
 
 Reporting must disclose these numbers rather than claiming course completion.
