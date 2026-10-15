@@ -1,10 +1,17 @@
 {
-  "schema_version": 1,
-  "method": "CEFR-informed learner-owned original modular curriculum; level and grammar allocations are pedagogical draft, not official CEFR grammar mandates.",
+  "schema_version": 2,
+  "design": "English: IELTS Academic-style 48-skill-unit curriculum for prior English knowledge, no basic numbers/greetings. French: CEFR A1-C2 60 units starting at A1. All units use six-step chain.",
   "no_placement_testing": true,
   "no_periodic_exams": true,
   "no_aggregate_pronunciation_score": true,
-  "level_scope": "A1-B2 structured core; C1-C2 advanced extension blueprint requires additional expert source alignment",
+  "english_tracks": [
+    "listening",
+    "reading",
+    "writing-task1",
+    "writing-task2",
+    "speaking",
+    "language-upgrade"
+  ],
   "learning_steps": [
     {
       "id": "context",
@@ -66,24 +73,25 @@
   ],
   "units": [
     {
-      "id": "en-a1-u01",
+      "id": "en-ielts-listening-u01",
       "language": "en",
-      "level": "A1",
+      "track": "listening",
+      "level": "B1-B2",
       "unit": 1,
-      "title": "Greetings and identity",
-      "can_do": "Introduce yourself and ask basic identity questions",
+      "title": "Academic lecture structure and signposting",
+      "can_do": "Apply academic lecture structure and signposting in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "subject pronouns",
-        "be: statements and negatives",
-        "be: questions"
+        "signposting",
+        "modality and stance",
+        "paraphrase"
       ],
       "vocabulary_domains": [
-        "names",
-        "countries",
-        "occupations"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "alphabet;word stress;basic greeting intonation",
-      "performance_task": "Record a 30-second self-introduction",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating academic lecture structure and signposting",
       "learning_steps": [
         "context",
         "grammar",
@@ -93,11 +101,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
+        "ielts-official-academic",
+        "ielts-british-council-nz",
+        "en-british-council-b2-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -105,24 +111,25 @@
       "prerequisite_unit": null
     },
     {
-      "id": "en-a1-u02",
+      "id": "en-ielts-listening-u02",
       "language": "en",
-      "level": "A1",
+      "track": "listening",
+      "level": "B1-B2",
       "unit": 2,
-      "title": "People and family",
-      "can_do": "Introduce relatives and describe relationships",
+      "title": "Identifying speaker stance and purpose",
+      "can_do": "Apply identifying speaker stance and purpose in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "possessive adjectives",
-        "have/has",
-        "possessive 's"
+        "signposting",
+        "modality and stance",
+        "paraphrase"
       ],
       "vocabulary_domains": [
-        "family",
-        "relationships",
-        "numbers"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "/ɪ/ vs /iː/;plural endings",
-      "performance_task": "Create a family description",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating identifying speaker stance and purpose",
       "learning_steps": [
         "context",
         "grammar",
@@ -132,36 +139,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
+        "ielts-official-academic",
+        "ielts-british-council-nz",
+        "en-british-council-b2-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-a1-u01"
+      "prerequisite_unit": "en-ielts-listening-u01"
     },
     {
-      "id": "en-a1-u03",
+      "id": "en-ielts-listening-u03",
       "language": "en",
-      "level": "A1",
+      "track": "listening",
+      "level": "B1-B2",
       "unit": 3,
-      "title": "Things around me",
-      "can_do": "Name everyday items and identify ownership",
+      "title": "Paraphrase in speech and note-taking",
+      "can_do": "Apply paraphrase in speech and note-taking in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "a/an/the",
-        "this/that/these/those",
-        "singular plural nouns"
+        "signposting",
+        "modality and stance",
+        "paraphrase"
       ],
       "vocabulary_domains": [
-        "classroom",
-        "home items",
-        "colors"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "final consonants;articles reduction",
-      "performance_task": "Describe items on your desk",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating paraphrase in speech and note-taking",
       "learning_steps": [
         "context",
         "grammar",
@@ -171,36 +177,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
+        "ielts-official-academic",
+        "ielts-british-council-nz",
+        "en-british-council-b2-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-a1-u02"
+      "prerequisite_unit": "en-ielts-listening-u02"
     },
     {
-      "id": "en-a1-u04",
+      "id": "en-ielts-listening-u04",
       "language": "en",
-      "level": "A1",
+      "track": "listening",
+      "level": "B1-B2",
       "unit": 4,
-      "title": "Home and directions",
-      "can_do": "Describe a room and give simple directions",
+      "title": "Map and process descriptions",
+      "can_do": "Apply map and process descriptions in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "there is/are",
-        "place prepositions",
-        "imperatives"
+        "signposting",
+        "modality and stance",
+        "paraphrase"
       ],
       "vocabulary_domains": [
-        "rooms",
-        "furniture",
-        "directions"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "/θ/ and /ð/ awareness",
-      "performance_task": "Explain a route through your home",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating map and process descriptions",
       "learning_steps": [
         "context",
         "grammar",
@@ -210,36 +215,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
+        "ielts-official-academic",
+        "ielts-british-council-nz",
+        "en-british-council-b2-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-a1-u03"
+      "prerequisite_unit": "en-ielts-listening-u03"
     },
     {
-      "id": "en-a1-u05",
+      "id": "en-ielts-listening-u05",
       "language": "en",
-      "level": "A1",
+      "track": "listening",
+      "level": "B1-B2",
       "unit": 5,
-      "title": "Daily routines",
-      "can_do": "Describe ordinary habits and ask about routines",
+      "title": "Detail and distractor awareness",
+      "can_do": "Apply detail and distractor awareness in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "present simple affirmative",
-        "time expressions",
-        "frequency adverbs"
+        "signposting",
+        "modality and stance",
+        "paraphrase"
       ],
       "vocabulary_domains": [
-        "daily activities",
-        "time",
-        "days"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "third-person -s;sentence rhythm",
-      "performance_task": "Narrate a weekday timetable",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating detail and distractor awareness",
       "learning_steps": [
         "context",
         "grammar",
@@ -249,36 +253,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
+        "ielts-official-academic",
+        "ielts-british-council-nz",
+        "en-british-council-b2-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-a1-u04"
+      "prerequisite_unit": "en-ielts-listening-u04"
     },
     {
-      "id": "en-a1-u06",
+      "id": "en-ielts-listening-u06",
       "language": "en",
-      "level": "A1",
+      "track": "listening",
+      "level": "B1-B2",
       "unit": 6,
-      "title": "Questions and social life",
-      "can_do": "Ask and answer simple WH questions",
+      "title": "Information completion with context",
+      "can_do": "Apply information completion with context in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "present simple questions",
-        "do/does",
-        "question words"
+        "signposting",
+        "modality and stance",
+        "paraphrase"
       ],
       "vocabulary_domains": [
-        "friends",
-        "social phrases",
-        "events"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "yes-no vs WH intonation",
-      "performance_task": "Record a short meeting dialogue",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating information completion with context",
       "learning_steps": [
         "context",
         "grammar",
@@ -288,36 +291,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
+        "ielts-official-academic",
+        "ielts-british-council-nz",
+        "en-british-council-b2-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-a1-u05"
+      "prerequisite_unit": "en-ielts-listening-u05"
     },
     {
-      "id": "en-a1-u07",
+      "id": "en-ielts-listening-u07",
       "language": "en",
-      "level": "A1",
+      "track": "listening",
+      "level": "B1-B2",
       "unit": 7,
-      "title": "Food and cafés",
-      "can_do": "Order food and discuss needs",
+      "title": "Multiple speakers and argument development",
+      "can_do": "Apply multiple speakers and argument development in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "countable vs uncountable",
-        "some/any",
-        "polite requests with can"
+        "signposting",
+        "modality and stance",
+        "paraphrase"
       ],
       "vocabulary_domains": [
-        "food",
-        "drinks",
-        "portions"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "/æ/ vs /ʌ/;polite intonation",
-      "performance_task": "Role-play ordering lunch",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating multiple speakers and argument development",
       "learning_steps": [
         "context",
         "grammar",
@@ -327,36 +329,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
+        "ielts-official-academic",
+        "ielts-british-council-nz",
+        "en-british-council-b2-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-a1-u06"
+      "prerequisite_unit": "en-ielts-listening-u06"
     },
     {
-      "id": "en-a1-u08",
+      "id": "en-ielts-listening-u08",
       "language": "en",
-      "level": "A1",
+      "track": "listening",
+      "level": "B1-B2",
       "unit": 8,
-      "title": "Shopping and prices",
-      "can_do": "Ask about quantities, cost and preferences",
+      "title": "Synthesis from extended academic audio",
+      "can_do": "Apply synthesis from extended academic audio in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "how much/many",
-        "demonstratives",
-        "adjective position"
+        "signposting",
+        "modality and stance",
+        "paraphrase"
       ],
       "vocabulary_domains": [
-        "clothes",
-        "prices",
-        "sizes"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "numbers and stress contrasts",
-      "performance_task": "Compare two items for purchase",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating synthesis from extended academic audio",
       "learning_steps": [
         "context",
         "grammar",
@@ -366,191 +367,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
+        "ielts-official-academic",
+        "ielts-british-council-nz",
+        "en-british-council-b2-listening"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-a1-u07"
+      "prerequisite_unit": "en-ielts-listening-u07"
     },
     {
-      "id": "en-a1-u09",
+      "id": "en-ielts-reading-u01",
       "language": "en",
-      "level": "A1",
-      "unit": 9,
-      "title": "Abilities and hobbies",
-      "can_do": "Describe interests and what you can do",
-      "grammar": [
-        "can/cannot",
-        "like + ing",
-        "and/but/because"
-      ],
-      "vocabulary_domains": [
-        "sports",
-        "music",
-        "hobbies"
-      ],
-      "pronunciation_focus": "connected speech in can/can't",
-      "performance_task": "Explain your favorite hobby",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-a1-u08"
-    },
-    {
-      "id": "en-a1-u10",
-      "language": "en",
-      "level": "A1",
-      "unit": 10,
-      "title": "Weather and plans",
-      "can_do": "Talk about weather and near-future plans",
-      "grammar": [
-        "present continuous",
-        "now vs habits",
-        "be going to: introduction"
-      ],
-      "vocabulary_domains": [
-        "weather",
-        "seasons",
-        "places"
-      ],
-      "pronunciation_focus": "/w/ and /v/;unstressed to",
-      "performance_task": "Plan a simple weekend",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-a1-u09"
-    },
-    {
-      "id": "en-a1-u11",
-      "language": "en",
-      "level": "A1",
-      "unit": 11,
-      "title": "Yesterday and last week",
-      "can_do": "Describe very simple completed events",
-      "grammar": [
-        "past simple of be",
-        "regular past introduction",
-        "time adverbs"
-      ],
-      "vocabulary_domains": [
-        "past activities",
-        "weekend"
-      ],
-      "pronunciation_focus": "-ed endings introduction",
-      "performance_task": "Tell three things you did yesterday",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-a1-u10"
-    },
-    {
-      "id": "en-a1-u12",
-      "language": "en",
-      "level": "A1",
-      "unit": 12,
-      "title": "Travel and everyday help",
-      "can_do": "Handle transport, directions and a simple problem",
-      "grammar": [
-        "polite can/could",
-        "basic sequencing",
-        "review of A1 forms"
-      ],
-      "vocabulary_domains": [
-        "transport",
-        "travel",
-        "problem solving"
-      ],
-      "pronunciation_focus": "clarification and repair phrases",
-      "performance_task": "Give directions and ask for help",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-a1-u11"
-    },
-    {
-      "id": "en-a2-u01",
-      "language": "en",
-      "level": "A2",
+      "track": "reading",
+      "level": "B1-B2",
       "unit": 1,
-      "title": "Growing routines",
-      "can_do": "Contrast habits and actions happening now",
+      "title": "Skimming research-based articles",
+      "can_do": "Apply skimming research-based articles in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "present simple vs continuous",
-        "frequency modifiers",
-        "stative verbs introduction"
+        "clause analysis",
+        "discourse signals",
+        "hedging and reference"
       ],
       "vocabulary_domains": [
-        "work",
-        "study",
-        "habits"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "weak vowels in unstressed syllables",
-      "performance_task": "Compare two daily routines",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating skimming research-based articles",
       "learning_steps": [
         "context",
         "grammar",
@@ -560,11 +405,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
+        "ielts-official-academic",
+        "en-british-council-b2-reading",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -572,23 +415,25 @@
       "prerequisite_unit": null
     },
     {
-      "id": "en-a2-u02",
+      "id": "en-ielts-reading-u02",
       "language": "en",
-      "level": "A2",
+      "track": "reading",
+      "level": "B1-B2",
       "unit": 2,
-      "title": "Stories in the past",
-      "can_do": "Narrate completed events with sequence",
+      "title": "Locating detailed evidence efficiently",
+      "can_do": "Apply locating detailed evidence efficiently in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "past simple regular irregular",
-        "time sequencing",
-        "negative questions"
+        "clause analysis",
+        "discourse signals",
+        "hedging and reference"
       ],
       "vocabulary_domains": [
-        "travel",
-        "memories"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "past -ed endings",
-      "performance_task": "Describe a memorable day",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating locating detailed evidence efficiently",
       "learning_steps": [
         "context",
         "grammar",
@@ -598,34 +443,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
+        "ielts-official-academic",
+        "en-british-council-b2-reading",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-a2-u01"
+      "prerequisite_unit": "en-ielts-reading-u01"
     },
     {
-      "id": "en-a2-u03",
+      "id": "en-ielts-reading-u03",
       "language": "en",
-      "level": "A2",
+      "track": "reading",
+      "level": "B1-B2",
       "unit": 3,
-      "title": "Background and interruption",
-      "can_do": "Contrast past situations and events",
+      "title": "Matching headings by paragraph function",
+      "can_do": "Apply matching headings by paragraph function in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "past continuous vs past simple",
-        "when/while"
+        "clause analysis",
+        "discourse signals",
+        "hedging and reference"
       ],
       "vocabulary_domains": [
-        "events",
-        "incidents"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "sentence focus for narrative",
-      "performance_task": "Tell an interrupted-event story",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating matching headings by paragraph function",
       "learning_steps": [
         "context",
         "grammar",
@@ -635,35 +481,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
+        "ielts-official-academic",
+        "en-british-council-b2-reading",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-a2-u02"
+      "prerequisite_unit": "en-ielts-reading-u02"
     },
     {
-      "id": "en-a2-u04",
+      "id": "en-ielts-reading-u04",
       "language": "en",
-      "level": "A2",
+      "track": "reading",
+      "level": "B1-B2",
       "unit": 4,
-      "title": "Future appointments",
-      "can_do": "Arrange meetings and explain plans",
+      "title": "True False Not Given: evidence and scope",
+      "can_do": "Apply true false not given: evidence and scope in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "going to vs will",
-        "present continuous future",
-        "date and time expressions"
+        "clause analysis",
+        "discourse signals",
+        "hedging and reference"
       ],
       "vocabulary_domains": [
-        "calendar",
-        "appointments"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "future contractions",
-      "performance_task": "Arrange and reschedule an appointment",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating true false not given: evidence and scope",
       "learning_steps": [
         "context",
         "grammar",
@@ -673,35 +519,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
+        "ielts-official-academic",
+        "en-british-council-b2-reading",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-a2-u03"
+      "prerequisite_unit": "en-ielts-reading-u03"
     },
     {
-      "id": "en-a2-u05",
+      "id": "en-ielts-reading-u05",
       "language": "en",
-      "level": "A2",
+      "track": "reading",
+      "level": "B1-B2",
       "unit": 5,
-      "title": "Experiences",
-      "can_do": "Talk about life experiences and recent events",
+      "title": "Paraphrase and lexical cohesion",
+      "can_do": "Apply paraphrase and lexical cohesion in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "present perfect simple",
-        "ever/never",
-        "past vs present perfect introduction"
+        "clause analysis",
+        "discourse signals",
+        "hedging and reference"
       ],
       "vocabulary_domains": [
-        "travel",
-        "achievements"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "weak forms have/has",
-      "performance_task": "Interview a peer about experiences",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating paraphrase and lexical cohesion",
       "learning_steps": [
         "context",
         "grammar",
@@ -711,36 +557,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
+        "ielts-official-academic",
+        "en-british-council-b2-reading",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-a2-u04"
+      "prerequisite_unit": "en-ielts-reading-u04"
     },
     {
-      "id": "en-a2-u06",
+      "id": "en-ielts-reading-u06",
       "language": "en",
-      "level": "A2",
+      "track": "reading",
+      "level": "B1-B2",
       "unit": 6,
-      "title": "Comparisons",
-      "can_do": "Compare options and express preferences",
+      "title": "Inference, hedging and author attitude",
+      "can_do": "Apply inference, hedging and author attitude in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "comparatives/superlatives",
-        "as...as",
-        "too/enough"
+        "clause analysis",
+        "discourse signals",
+        "hedging and reference"
       ],
       "vocabulary_domains": [
-        "products",
-        "places",
-        "preferences"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "comparative endings",
-      "performance_task": "Recommend one of three destinations",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating inference, hedging and author attitude",
       "learning_steps": [
         "context",
         "grammar",
@@ -750,36 +595,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
+        "ielts-official-academic",
+        "en-british-council-b2-reading",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-a2-u05"
+      "prerequisite_unit": "en-ielts-reading-u05"
     },
     {
-      "id": "en-a2-u07",
+      "id": "en-ielts-reading-u07",
       "language": "en",
-      "level": "A2",
+      "track": "reading",
+      "level": "B1-B2",
       "unit": 7,
-      "title": "Health and suggestions",
-      "can_do": "Discuss symptoms and give basic advice",
+      "title": "Matching information across sections",
+      "can_do": "Apply matching information across sections in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "should/shouldn't",
-        "have to/must",
-        "imperatives in advice"
+        "clause analysis",
+        "discourse signals",
+        "hedging and reference"
       ],
       "vocabulary_domains": [
-        "body",
-        "health",
-        "medicine"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "modals in connected speech",
-      "performance_task": "Explain a basic health problem",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating matching information across sections",
       "learning_steps": [
         "context",
         "grammar",
@@ -789,35 +633,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
+        "ielts-official-academic",
+        "en-british-council-b2-reading",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-a2-u06"
+      "prerequisite_unit": "en-ielts-reading-u06"
     },
     {
-      "id": "en-a2-u08",
+      "id": "en-ielts-reading-u08",
       "language": "en",
-      "level": "A2",
+      "track": "reading",
+      "level": "B1-B2",
       "unit": 8,
-      "title": "Food quantities and services",
-      "can_do": "Order and request services in detail",
+      "title": "Critical synthesis of two academic passages",
+      "can_do": "Apply critical synthesis of two academic passages in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "quantifiers",
-        "requests could/would",
-        "indefinite pronouns"
+        "clause analysis",
+        "discourse signals",
+        "hedging and reference"
       ],
       "vocabulary_domains": [
-        "menus",
-        "service situations"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "polite requests;prominence",
-      "performance_task": "Handle a café complaint politely",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating critical synthesis of two academic passages",
       "learning_steps": [
         "context",
         "grammar",
@@ -827,188 +671,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
+        "ielts-official-academic",
+        "en-british-council-b2-reading",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-a2-u07"
+      "prerequisite_unit": "en-ielts-reading-u07"
     },
     {
-      "id": "en-a2-u09",
+      "id": "en-ielts-writing-task1-u01",
       "language": "en",
-      "level": "A2",
-      "unit": 9,
-      "title": "Connected conversation",
-      "can_do": "Explain reasons and sequence steps",
-      "grammar": [
-        "because/so/although",
-        "first/then/finally",
-        "relative who/which"
-      ],
-      "vocabulary_domains": [
-        "interests",
-        "decisions"
-      ],
-      "pronunciation_focus": "chunking and pauses",
-      "performance_task": "Give a three-minute explanation",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-a2-u08"
-    },
-    {
-      "id": "en-a2-u10",
-      "language": "en",
-      "level": "A2",
-      "unit": 10,
-      "title": "Describing your world",
-      "can_do": "Describe spaces and objects precisely",
-      "grammar": [
-        "prepositions",
-        "relative clauses introduction",
-        "adverbs"
-      ],
-      "vocabulary_domains": [
-        "environment",
-        "housing"
-      ],
-      "pronunciation_focus": "word stress in longer nouns",
-      "performance_task": "Describe your local area",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-a2-u09"
-    },
-    {
-      "id": "en-a2-u11",
-      "language": "en",
-      "level": "A2",
-      "unit": 11,
-      "title": "Rules and possibilities",
-      "can_do": "Discuss rules, obligations and likely outcomes",
-      "grammar": [
-        "must vs have to",
-        "may/might",
-        "first conditional"
-      ],
-      "vocabulary_domains": [
-        "travel",
-        "rules",
-        "planning"
-      ],
-      "pronunciation_focus": "modal reduction and contrastive stress",
-      "performance_task": "Give advice for a trip",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-a2-u10"
-    },
-    {
-      "id": "en-a2-u12",
-      "language": "en",
-      "level": "A2",
-      "unit": 12,
-      "title": "Messages and everyday writing",
-      "can_do": "Write short messages and explain an experience",
-      "grammar": [
-        "basic paragraphing",
-        "email register",
-        "review of A2 grammar"
-      ],
-      "vocabulary_domains": [
-        "emails",
-        "social life",
-        "service"
-      ],
-      "pronunciation_focus": "clear spoken summaries",
-      "performance_task": "Write and read a brief email",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-voa-course-1",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-a2-u11"
-    },
-    {
-      "id": "en-b1-u01",
-      "language": "en",
-      "level": "B1",
+      "track": "writing-task1",
+      "level": "B2",
       "unit": 1,
-      "title": "Storytelling and narrative",
-      "can_do": "Tell coherent stories with background and sequence",
+      "title": "Selecting key features and overview",
+      "can_do": "Apply selecting key features and overview in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "past simple/continuous/perfect",
-        "linking time clauses"
+        "comparatives",
+        "academic reporting",
+        "data-appropriate tense"
       ],
       "vocabulary_domains": [
-        "memories",
-        "narrative verbs"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "stress to mark event sequence",
-      "performance_task": "Tell a two-minute story",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating selecting key features and overview",
       "learning_steps": [
         "context",
         "grammar",
@@ -1018,12 +709,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-2",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-idp-academic",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1031,23 +719,25 @@
       "prerequisite_unit": null
     },
     {
-      "id": "en-b1-u02",
+      "id": "en-ielts-writing-task1-u02",
       "language": "en",
-      "level": "B1",
+      "track": "writing-task1",
+      "level": "B2",
       "unit": 2,
-      "title": "Experience and change",
-      "can_do": "Explain experiences and changes over time",
+      "title": "Reporting trends accurately",
+      "can_do": "Apply reporting trends accurately in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "present perfect vs past",
-        "for/since",
-        "used to"
+        "comparatives",
+        "academic reporting",
+        "data-appropriate tense"
       ],
       "vocabulary_domains": [
-        "career",
-        "life changes"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "contractions and linking",
-      "performance_task": "Describe how your life changed",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating reporting trends accurately",
       "learning_steps": [
         "context",
         "grammar",
@@ -1057,36 +747,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-2",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-idp-academic",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-b1-u01"
+      "prerequisite_unit": "en-ielts-writing-task1-u01"
     },
     {
-      "id": "en-b1-u03",
+      "id": "en-ielts-writing-task1-u03",
       "language": "en",
-      "level": "B1",
+      "track": "writing-task1",
+      "level": "B2",
       "unit": 3,
-      "title": "Opinions and reasons",
-      "can_do": "Defend an opinion with reasons",
+      "title": "Comparisons in charts and tables",
+      "can_do": "Apply comparisons in charts and tables in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "opinion clauses",
-        "because/however",
-        "comparatives"
+        "comparatives",
+        "academic reporting",
+        "data-appropriate tense"
       ],
       "vocabulary_domains": [
-        "society",
-        "preferences"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "hedging and intonation",
-      "performance_task": "Record a short reasoned opinion",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating comparisons in charts and tables",
       "learning_steps": [
         "context",
         "grammar",
@@ -1096,36 +785,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-2",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-idp-academic",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-b1-u02"
+      "prerequisite_unit": "en-ielts-writing-task1-u02"
     },
     {
-      "id": "en-b1-u04",
+      "id": "en-ielts-writing-task1-u04",
       "language": "en",
-      "level": "B1",
+      "track": "writing-task1",
+      "level": "B2",
       "unit": 4,
-      "title": "Future and probabilities",
-      "can_do": "Discuss intentions, predictions and possibilities",
+      "title": "Proportions and multi-series graphs",
+      "can_do": "Apply proportions and multi-series graphs in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "future continuous introduction",
-        "conditionals 0/1",
-        "modals of possibility"
+        "comparatives",
+        "academic reporting",
+        "data-appropriate tense"
       ],
       "vocabulary_domains": [
-        "technology",
-        "planning"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "prominence for uncertainty",
-      "performance_task": "Discuss possible outcomes",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating proportions and multi-series graphs",
       "learning_steps": [
         "context",
         "grammar",
@@ -1135,36 +823,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-2",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-idp-academic",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-b1-u03"
+      "prerequisite_unit": "en-ielts-writing-task1-u03"
     },
     {
-      "id": "en-b1-u05",
+      "id": "en-ielts-writing-task1-u05",
       "language": "en",
-      "level": "B1",
+      "track": "writing-task1",
+      "level": "B2",
       "unit": 5,
-      "title": "Explaining processes",
-      "can_do": "Describe how something works",
+      "title": "Processes and passive constructions",
+      "can_do": "Apply processes and passive constructions in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "passive present/past",
-        "sequencing",
-        "relative clauses"
+        "comparatives",
+        "academic reporting",
+        "data-appropriate tense"
       ],
       "vocabulary_domains": [
-        "processes",
-        "science"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "chunking technical explanations",
-      "performance_task": "Explain a simple process",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating processes and passive constructions",
       "learning_steps": [
         "context",
         "grammar",
@@ -1174,36 +861,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-2",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-idp-academic",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-b1-u04"
+      "prerequisite_unit": "en-ielts-writing-task1-u04"
     },
     {
-      "id": "en-b1-u06",
+      "id": "en-ielts-writing-task1-u06",
       "language": "en",
-      "level": "B1",
+      "track": "writing-task1",
+      "level": "B2",
       "unit": 6,
-      "title": "Interaction and negotiation",
-      "can_do": "Agree, disagree and make compromises",
+      "title": "Map and spatial change reports",
+      "can_do": "Apply map and spatial change reports in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "indirect questions",
-        "polite modals",
-        "verb patterns"
+        "comparatives",
+        "academic reporting",
+        "data-appropriate tense"
       ],
       "vocabulary_domains": [
-        "meetings",
-        "social decisions"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "turn-taking and stress",
-      "performance_task": "Negotiate an event plan",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating map and spatial change reports",
       "learning_steps": [
         "context",
         "grammar",
@@ -1213,36 +899,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-2",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-idp-academic",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-b1-u05"
+      "prerequisite_unit": "en-ielts-writing-task1-u05"
     },
     {
-      "id": "en-b1-u07",
+      "id": "en-ielts-writing-task1-u07",
       "language": "en",
-      "level": "B1",
+      "track": "writing-task1",
+      "level": "B2",
       "unit": 7,
-      "title": "News and reported speech",
-      "can_do": "Summarize media and report statements",
+      "title": "Cohesion without memorised templates",
+      "can_do": "Apply cohesion without memorised templates in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "reported speech basics",
-        "reporting verbs",
-        "tense backshift"
+        "comparatives",
+        "academic reporting",
+        "data-appropriate tense"
       ],
       "vocabulary_domains": [
-        "news",
-        "media"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "reporting tone;quoting",
-      "performance_task": "Summarize a news interview",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating cohesion without memorised templates",
       "learning_steps": [
         "context",
         "grammar",
@@ -1252,36 +937,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-2",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-idp-academic",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-b1-u06"
+      "prerequisite_unit": "en-ielts-writing-task1-u06"
     },
     {
-      "id": "en-b1-u08",
+      "id": "en-ielts-writing-task1-u08",
       "language": "en",
-      "level": "B1",
+      "track": "writing-task1",
+      "level": "B2",
       "unit": 8,
-      "title": "Goals and regrets",
-      "can_do": "Discuss hypothetical choices and regret",
+      "title": "Editing accuracy, overview and precision",
+      "can_do": "Apply editing accuracy, overview and precision in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "second conditional",
-        "wish introduction",
-        "modal advice"
+        "comparatives",
+        "academic reporting",
+        "data-appropriate tense"
       ],
       "vocabulary_domains": [
-        "goals",
-        "education"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "contrastive emphasis",
-      "performance_task": "Advise a friend on a choice",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating editing accuracy, overview and precision",
       "learning_steps": [
         "context",
         "grammar",
@@ -1291,36 +975,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-2",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-idp-academic",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-b1-u07"
+      "prerequisite_unit": "en-ielts-writing-task1-u07"
     },
     {
-      "id": "en-b1-u09",
+      "id": "en-ielts-writing-task2-u01",
       "language": "en",
-      "level": "B1",
-      "unit": 9,
-      "title": "Work and studies",
-      "can_do": "Participate in school and workplace discussions",
+      "track": "writing-task2",
+      "level": "B2-C1",
+      "unit": 1,
+      "title": "Question analysis and thesis",
+      "can_do": "Apply question analysis and thesis in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "gerund vs infinitive",
-        "functional register",
-        "relative clauses"
+        "argument framing",
+        "complex sentences",
+        "cautious claims"
       ],
       "vocabulary_domains": [
-        "jobs",
-        "study"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "formal vs informal speaking",
-      "performance_task": "Present a project update",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating question analysis and thesis",
       "learning_steps": [
         "context",
         "grammar",
@@ -1330,36 +1013,301 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-2",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-british-council-prepare",
+        "ielts-idp-academic"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-b1-u08"
+      "prerequisite_unit": null
     },
     {
-      "id": "en-b1-u10",
+      "id": "en-ielts-writing-task2-u02",
       "language": "en",
-      "level": "B1",
-      "unit": 10,
-      "title": "Extended reading and writing",
-      "can_do": "Write connected paragraphs and summaries",
+      "track": "writing-task2",
+      "level": "B2-C1",
+      "unit": 2,
+      "title": "Reasons, explanation and examples",
+      "can_do": "Apply reasons, explanation and examples in an original academic-English context and explain reasoning in coherent English",
+      "grammar": [
+        "argument framing",
+        "complex sentences",
+        "cautious claims"
+      ],
+      "vocabulary_domains": [
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
+      ],
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating reasons, explanation and examples",
+      "learning_steps": [
+        "context",
+        "grammar",
+        "vocabulary",
+        "reception",
+        "pronunciation",
+        "production"
+      ],
+      "source_candidates": [
+        "ielts-official-academic",
+        "ielts-british-council-prepare",
+        "ielts-idp-academic"
+      ],
+      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
+      "content_status": "outline_only",
+      "optional_revisit": true,
+      "prerequisite_unit": "en-ielts-writing-task2-u01"
+    },
+    {
+      "id": "en-ielts-writing-task2-u03",
+      "language": "en",
+      "track": "writing-task2",
+      "level": "B2-C1",
+      "unit": 3,
+      "title": "Argument and counterargument",
+      "can_do": "Apply argument and counterargument in an original academic-English context and explain reasoning in coherent English",
+      "grammar": [
+        "argument framing",
+        "complex sentences",
+        "cautious claims"
+      ],
+      "vocabulary_domains": [
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
+      ],
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating argument and counterargument",
+      "learning_steps": [
+        "context",
+        "grammar",
+        "vocabulary",
+        "reception",
+        "pronunciation",
+        "production"
+      ],
+      "source_candidates": [
+        "ielts-official-academic",
+        "ielts-british-council-prepare",
+        "ielts-idp-academic"
+      ],
+      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
+      "content_status": "outline_only",
+      "optional_revisit": true,
+      "prerequisite_unit": "en-ielts-writing-task2-u02"
+    },
+    {
+      "id": "en-ielts-writing-task2-u04",
+      "language": "en",
+      "track": "writing-task2",
+      "level": "B2-C1",
+      "unit": 4,
+      "title": "Discussion of two views",
+      "can_do": "Apply discussion of two views in an original academic-English context and explain reasoning in coherent English",
+      "grammar": [
+        "argument framing",
+        "complex sentences",
+        "cautious claims"
+      ],
+      "vocabulary_domains": [
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
+      ],
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating discussion of two views",
+      "learning_steps": [
+        "context",
+        "grammar",
+        "vocabulary",
+        "reception",
+        "pronunciation",
+        "production"
+      ],
+      "source_candidates": [
+        "ielts-official-academic",
+        "ielts-british-council-prepare",
+        "ielts-idp-academic"
+      ],
+      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
+      "content_status": "outline_only",
+      "optional_revisit": true,
+      "prerequisite_unit": "en-ielts-writing-task2-u03"
+    },
+    {
+      "id": "en-ielts-writing-task2-u05",
+      "language": "en",
+      "track": "writing-task2",
+      "level": "B2-C1",
+      "unit": 5,
+      "title": "Advantages and disadvantages",
+      "can_do": "Apply advantages and disadvantages in an original academic-English context and explain reasoning in coherent English",
+      "grammar": [
+        "argument framing",
+        "complex sentences",
+        "cautious claims"
+      ],
+      "vocabulary_domains": [
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
+      ],
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating advantages and disadvantages",
+      "learning_steps": [
+        "context",
+        "grammar",
+        "vocabulary",
+        "reception",
+        "pronunciation",
+        "production"
+      ],
+      "source_candidates": [
+        "ielts-official-academic",
+        "ielts-british-council-prepare",
+        "ielts-idp-academic"
+      ],
+      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
+      "content_status": "outline_only",
+      "optional_revisit": true,
+      "prerequisite_unit": "en-ielts-writing-task2-u04"
+    },
+    {
+      "id": "en-ielts-writing-task2-u06",
+      "language": "en",
+      "track": "writing-task2",
+      "level": "B2-C1",
+      "unit": 6,
+      "title": "Causes, problems and solutions",
+      "can_do": "Apply causes, problems and solutions in an original academic-English context and explain reasoning in coherent English",
+      "grammar": [
+        "argument framing",
+        "complex sentences",
+        "cautious claims"
+      ],
+      "vocabulary_domains": [
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
+      ],
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating causes, problems and solutions",
+      "learning_steps": [
+        "context",
+        "grammar",
+        "vocabulary",
+        "reception",
+        "pronunciation",
+        "production"
+      ],
+      "source_candidates": [
+        "ielts-official-academic",
+        "ielts-british-council-prepare",
+        "ielts-idp-academic"
+      ],
+      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
+      "content_status": "outline_only",
+      "optional_revisit": true,
+      "prerequisite_unit": "en-ielts-writing-task2-u05"
+    },
+    {
+      "id": "en-ielts-writing-task2-u07",
+      "language": "en",
+      "track": "writing-task2",
+      "level": "B2-C1",
+      "unit": 7,
+      "title": "Coherence and referencing",
+      "can_do": "Apply coherence and referencing in an original academic-English context and explain reasoning in coherent English",
+      "grammar": [
+        "argument framing",
+        "complex sentences",
+        "cautious claims"
+      ],
+      "vocabulary_domains": [
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
+      ],
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating coherence and referencing",
+      "learning_steps": [
+        "context",
+        "grammar",
+        "vocabulary",
+        "reception",
+        "pronunciation",
+        "production"
+      ],
+      "source_candidates": [
+        "ielts-official-academic",
+        "ielts-british-council-prepare",
+        "ielts-idp-academic"
+      ],
+      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
+      "content_status": "outline_only",
+      "optional_revisit": true,
+      "prerequisite_unit": "en-ielts-writing-task2-u06"
+    },
+    {
+      "id": "en-ielts-writing-task2-u08",
+      "language": "en",
+      "track": "writing-task2",
+      "level": "B2-C1",
+      "unit": 8,
+      "title": "Editing claims, hedging and register",
+      "can_do": "Apply editing claims, hedging and register in an original academic-English context and explain reasoning in coherent English",
+      "grammar": [
+        "argument framing",
+        "complex sentences",
+        "cautious claims"
+      ],
+      "vocabulary_domains": [
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
+      ],
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating editing claims, hedging and register",
+      "learning_steps": [
+        "context",
+        "grammar",
+        "vocabulary",
+        "reception",
+        "pronunciation",
+        "production"
+      ],
+      "source_candidates": [
+        "ielts-official-academic",
+        "ielts-british-council-prepare",
+        "ielts-idp-academic"
+      ],
+      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
+      "content_status": "outline_only",
+      "optional_revisit": true,
+      "prerequisite_unit": "en-ielts-writing-task2-u07"
+    },
+    {
+      "id": "en-ielts-speaking-u01",
+      "language": "en",
+      "track": "speaking",
+      "level": "B1-C1",
+      "unit": 1,
+      "title": "Developing nuanced opinions",
+      "can_do": "Apply developing nuanced opinions in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
         "discourse markers",
-        "pronoun reference",
-        "paragraph cohesion"
+        "examples and qualification",
+        "self-repair"
       ],
       "vocabulary_domains": [
-        "articles",
-        "ideas"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "structured oral summarizing",
-      "performance_task": "Write a sourced 250-word explanation",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating developing nuanced opinions",
       "learning_steps": [
         "context",
         "grammar",
@@ -1369,51 +1317,9 @@
         "production"
       ],
       "source_candidates": [
-        "en-voa-course-2",
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-b1-u09"
-    },
-    {
-      "id": "en-b2-u01",
-      "language": "en",
-      "level": "B2",
-      "unit": 1,
-      "title": "Nuanced arguments",
-      "can_do": "Develop and rebut structured arguments",
-      "grammar": [
-        "concession",
-        "advanced linking",
-        "nominalization introduction"
-      ],
-      "vocabulary_domains": [
-        "policy",
-        "ethics"
-      ],
-      "pronunciation_focus": "stance intonation",
-      "performance_task": "Deliver a balanced argument",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-bbc-grammar",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-british-council-nz",
+        "ielts-idp-academic"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
@@ -1421,23 +1327,25 @@
       "prerequisite_unit": null
     },
     {
-      "id": "en-b2-u02",
+      "id": "en-ielts-speaking-u02",
       "language": "en",
-      "level": "B2",
+      "track": "speaking",
+      "level": "B1-C1",
       "unit": 2,
-      "title": "Complex narratives",
-      "can_do": "Use layered tenses and emphasis",
+      "title": "Extending answers without fillers",
+      "can_do": "Apply extending answers without fillers in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "past perfect continuous",
-        "present perfect continuous",
-        "participle clauses"
+        "discourse markers",
+        "examples and qualification",
+        "self-repair"
       ],
       "vocabulary_domains": [
-        "narrative",
-        "biography"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "rhythm in long clauses",
-      "performance_task": "Narrate events with causes",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating extending answers without fillers",
       "learning_steps": [
         "context",
         "grammar",
@@ -1447,35 +1355,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-bbc-grammar",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-british-council-nz",
+        "ielts-idp-academic"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-b2-u01"
+      "prerequisite_unit": "en-ielts-speaking-u01"
     },
     {
-      "id": "en-b2-u03",
+      "id": "en-ielts-speaking-u03",
       "language": "en",
-      "level": "B2",
+      "track": "speaking",
+      "level": "B1-C1",
       "unit": 3,
-      "title": "Hypotheses and alternatives",
-      "can_do": "Evaluate unreal conditions and consequences",
+      "title": "Narrative for sustained speech",
+      "can_do": "Apply narrative for sustained speech in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "second/third/mixed conditionals",
-        "modal deduction"
+        "discourse markers",
+        "examples and qualification",
+        "self-repair"
       ],
       "vocabulary_domains": [
-        "decisions",
-        "counterfactuals"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "weak vs strong modal stress",
-      "performance_task": "Discuss alternative outcomes",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating narrative for sustained speech",
       "learning_steps": [
         "context",
         "grammar",
@@ -1485,36 +1393,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-bbc-grammar",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-british-council-nz",
+        "ielts-idp-academic"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-b2-u02"
+      "prerequisite_unit": "en-ielts-speaking-u02"
     },
     {
-      "id": "en-b2-u04",
+      "id": "en-ielts-speaking-u04",
       "language": "en",
-      "level": "B2",
+      "track": "speaking",
+      "level": "B1-C1",
       "unit": 4,
-      "title": "Evidence and uncertainty",
-      "can_do": "Evaluate claims and degrees of certainty",
+      "title": "Describing experiences and events",
+      "can_do": "Apply describing experiences and events in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "hedging",
-        "modal perfect",
-        "reporting structures"
+        "discourse markers",
+        "examples and qualification",
+        "self-repair"
       ],
       "vocabulary_domains": [
-        "research",
-        "evidence"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "uncertainty intonation",
-      "performance_task": "Compare evidence in two reports",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating describing experiences and events",
       "learning_steps": [
         "context",
         "grammar",
@@ -1524,36 +1431,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-bbc-grammar",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-british-council-nz",
+        "ielts-idp-academic"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-b2-u03"
+      "prerequisite_unit": "en-ielts-speaking-u03"
     },
     {
-      "id": "en-b2-u05",
+      "id": "en-ielts-speaking-u05",
       "language": "en",
-      "level": "B2",
+      "track": "speaking",
+      "level": "B1-C1",
       "unit": 5,
-      "title": "Formal explanation",
-      "can_do": "Explain complex processes in formal register",
+      "title": "Explaining comparisons and causes",
+      "can_do": "Apply explaining comparisons and causes in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "passive variants",
-        "causatives",
-        "relative clauses advanced"
+        "discourse markers",
+        "examples and qualification",
+        "self-repair"
       ],
       "vocabulary_domains": [
-        "business",
-        "technology"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "sentence stress and segmentation",
-      "performance_task": "Explain a research method",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating explaining comparisons and causes",
       "learning_steps": [
         "context",
         "grammar",
@@ -1563,36 +1469,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-bbc-grammar",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-british-council-nz",
+        "ielts-idp-academic"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-b2-u04"
+      "prerequisite_unit": "en-ielts-speaking-u04"
     },
     {
-      "id": "en-b2-u06",
+      "id": "en-ielts-speaking-u06",
       "language": "en",
-      "level": "B2",
+      "track": "speaking",
+      "level": "B1-C1",
       "unit": 6,
-      "title": "Media and persuasion",
-      "can_do": "Analyze opinionated media",
+      "title": "Abstract questions and evaluation",
+      "can_do": "Apply abstract questions and evaluation in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "inversion for emphasis",
-        "cleft sentences",
-        "stance markers"
+        "discourse markers",
+        "examples and qualification",
+        "self-repair"
       ],
       "vocabulary_domains": [
-        "media",
-        "persuasion"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "rhetorical emphasis",
-      "performance_task": "Compare two media positions",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating abstract questions and evaluation",
       "learning_steps": [
         "context",
         "grammar",
@@ -1602,36 +1507,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-bbc-grammar",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-british-council-nz",
+        "ielts-idp-academic"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-b2-u05"
+      "prerequisite_unit": "en-ielts-speaking-u05"
     },
     {
-      "id": "en-b2-u07",
+      "id": "en-ielts-speaking-u07",
       "language": "en",
-      "level": "B2",
+      "track": "speaking",
+      "level": "B1-C1",
       "unit": 7,
-      "title": "Meetings and debate",
-      "can_do": "Lead a discussion and respond to counterarguments",
+      "title": "Connected speech and intonation",
+      "can_do": "Apply connected speech and intonation in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "advanced question forms",
-        "concession clauses",
-        "discourse moves"
+        "discourse markers",
+        "examples and qualification",
+        "self-repair"
       ],
       "vocabulary_domains": [
-        "workplace",
-        "negotiation"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "strategic pausing",
-      "performance_task": "Chair a short structured debate",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating connected speech and intonation",
       "learning_steps": [
         "context",
         "grammar",
@@ -1641,35 +1545,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-bbc-grammar",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-british-council-nz",
+        "ielts-idp-academic"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-b2-u06"
+      "prerequisite_unit": "en-ielts-speaking-u06"
     },
     {
-      "id": "en-b2-u08",
+      "id": "en-ielts-speaking-u08",
       "language": "en",
-      "level": "B2",
+      "track": "speaking",
+      "level": "B1-C1",
       "unit": 8,
-      "title": "Academic reading",
-      "can_do": "Read complex argument structures",
+      "title": "Long-form discussion and self-correction",
+      "can_do": "Apply long-form discussion and self-correction in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
-        "nominalization",
-        "reference chains",
-        "logical relations"
+        "discourse markers",
+        "examples and qualification",
+        "self-repair"
       ],
       "vocabulary_domains": [
-        "academic text"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "spoken summary organization",
-      "performance_task": "Produce an annotated reading summary",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating long-form discussion and self-correction",
       "learning_steps": [
         "context",
         "grammar",
@@ -1679,627 +1583,35 @@
         "production"
       ],
       "source_candidates": [
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-bbc-grammar",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
+        "ielts-official-academic",
+        "ielts-british-council-nz",
+        "ielts-idp-academic"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-b2-u07"
+      "prerequisite_unit": "en-ielts-speaking-u07"
     },
     {
-      "id": "en-b2-u09",
+      "id": "en-ielts-language-upgrade-u01",
       "language": "en",
-      "level": "B2",
-      "unit": 9,
-      "title": "Professional writing",
-      "can_do": "Create coherent professional documents",
-      "grammar": [
-        "register",
-        "advanced connectors",
-        "parallel structures"
-      ],
-      "vocabulary_domains": [
-        "reports",
-        "business correspondence"
-      ],
-      "pronunciation_focus": "formal oral delivery",
-      "performance_task": "Write a brief recommendation memo",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-bbc-grammar",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-b2-u08"
-    },
-    {
-      "id": "en-b2-u10",
-      "language": "en",
-      "level": "B2",
-      "unit": 10,
-      "title": "Synthesis and presentation",
-      "can_do": "Synthesize several related sources",
-      "grammar": [
-        "complex clause review",
-        "precision and register"
-      ],
-      "vocabulary_domains": [
-        "cross-disciplinary topics"
-      ],
-      "pronunciation_focus": "presentations;intonation",
-      "performance_task": "Deliver a five-minute synthesis",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-british-council-grammar",
-        "en-british-council-listening",
-        "en-bbc-grammar",
-        "en-british-council-reading",
-        "en-british-council-speaking",
-        "en-british-council-stories"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-b2-u09"
-    },
-    {
-      "id": "en-c1-u01",
-      "language": "en",
-      "level": "C1",
+      "track": "language-upgrade",
+      "level": "B2-C1",
       "unit": 1,
-      "title": "Precision and style",
-      "can_do": "Select precise register and word choices",
-      "grammar": [
-        "colligation",
-        "register variation",
-        "advanced clause control"
-      ],
-      "vocabulary_domains": [
-        "lexical nuance"
-      ],
-      "pronunciation_focus": "stress for subtle contrasts",
-      "performance_task": "Revise an advanced essay",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-british-council-listening",
-        "en-cambridge-activities",
-        "en-british-council-reading",
-        "en-british-council-stories"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": null
-    },
-    {
-      "id": "en-c1-u02",
-      "language": "en",
-      "level": "C1",
-      "unit": 2,
-      "title": "Argument architecture",
-      "can_do": "Integrate multiple lines of reasoning",
-      "grammar": [
-        "rhetorical framing",
-        "nominalization",
-        "concession"
-      ],
-      "vocabulary_domains": [
-        "debate",
-        "logic"
-      ],
-      "pronunciation_focus": "prosodic argument structure",
-      "performance_task": "Write an editorial",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-british-council-listening",
-        "en-cambridge-activities",
-        "en-british-council-reading",
-        "en-british-council-stories"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-c1-u01"
-    },
-    {
-      "id": "en-c1-u03",
-      "language": "en",
-      "level": "C1",
-      "unit": 3,
-      "title": "Advanced evidence synthesis",
-      "can_do": "Integrate evidence without overclaiming",
-      "grammar": [
-        "attribution",
-        "hedges",
-        "evidential stance"
-      ],
-      "vocabulary_domains": [
-        "research synthesis"
-      ],
-      "pronunciation_focus": "balanced spoken sourcing",
-      "performance_task": "Produce a source-based brief",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-british-council-listening",
-        "en-cambridge-activities",
-        "en-british-council-reading",
-        "en-british-council-stories"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-c1-u02"
-    },
-    {
-      "id": "en-c1-u04",
-      "language": "en",
-      "level": "C1",
-      "unit": 4,
-      "title": "Intercultural communication",
-      "can_do": "Handle implied meaning and pragmatics",
-      "grammar": [
-        "indirectness",
-        "pragmatic markers",
-        "implicature"
-      ],
-      "vocabulary_domains": [
-        "professional culture"
-      ],
-      "pronunciation_focus": "nuanced speech acts",
-      "performance_task": "Simulate a delicate meeting",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-british-council-listening",
-        "en-cambridge-activities",
-        "en-british-council-reading",
-        "en-british-council-stories"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-c1-u03"
-    },
-    {
-      "id": "en-c1-u05",
-      "language": "en",
-      "level": "C1",
-      "unit": 5,
-      "title": "Narrative voice",
-      "can_do": "Create engaging advanced narratives",
-      "grammar": [
-        "narrative aspect",
-        "stylistic inversion",
-        "cohesion"
-      ],
-      "vocabulary_domains": [
-        "literary prose"
-      ],
-      "pronunciation_focus": "performance reading",
-      "performance_task": "Write and deliver a narrative",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-british-council-listening",
-        "en-cambridge-activities",
-        "en-british-council-reading",
-        "en-british-council-stories"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-c1-u04"
-    },
-    {
-      "id": "en-c1-u06",
-      "language": "en",
-      "level": "C1",
-      "unit": 6,
-      "title": "Technical communication",
-      "can_do": "Explain expert information for non-experts",
-      "grammar": [
-        "terminology management",
-        "reformulation"
-      ],
-      "vocabulary_domains": [
-        "science",
-        "technology"
-      ],
-      "pronunciation_focus": "accessible prosody",
-      "performance_task": "Give a technical explainer",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-british-council-listening",
-        "en-cambridge-activities",
-        "en-british-council-reading",
-        "en-british-council-stories"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-c1-u05"
-    },
-    {
-      "id": "en-c1-u07",
-      "language": "en",
-      "level": "C1",
-      "unit": 7,
-      "title": "Critical media literacy",
-      "can_do": "Analyze bias and persuasion techniques",
-      "grammar": [
-        "stance rhetoric",
-        "framing devices"
-      ],
-      "vocabulary_domains": [
-        "media"
-      ],
-      "pronunciation_focus": "critical intonation",
-      "performance_task": "Critique two positions",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-british-council-listening",
-        "en-cambridge-activities",
-        "en-british-council-reading",
-        "en-british-council-stories"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-c1-u06"
-    },
-    {
-      "id": "en-c1-u08",
-      "language": "en",
-      "level": "C1",
-      "unit": 8,
-      "title": "Extended discourse",
-      "can_do": "Manage seminar interaction",
-      "grammar": [
-        "turn-management",
-        "interruption repair",
-        "advanced hedging"
-      ],
-      "vocabulary_domains": [
-        "discussion"
-      ],
-      "pronunciation_focus": "discourse prosody",
-      "performance_task": "Conduct a seminar discussion",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-british-council-listening",
-        "en-cambridge-activities",
-        "en-british-council-reading",
-        "en-british-council-stories"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-c1-u07"
-    },
-    {
-      "id": "en-c2-u01",
-      "language": "en",
-      "level": "C2",
-      "unit": 1,
-      "title": "Fine shades of meaning",
-      "can_do": "Recognize and produce subtle semantic distinctions",
-      "grammar": [
-        "advanced lexical contrasts",
-        "idiomatic nuance"
-      ],
-      "vocabulary_domains": [
-        "idiom",
-        "collocation"
-      ],
-      "pronunciation_focus": "subtle emphatic shifts",
-      "performance_task": "Rewrite passages for nuance",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-cambridge-activities"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": null
-    },
-    {
-      "id": "en-c2-u02",
-      "language": "en",
-      "level": "C2",
-      "unit": 2,
-      "title": "Audience adaptation",
-      "can_do": "Shift tone across sophisticated contexts",
-      "grammar": [
-        "genre conventions",
-        "stylistic register"
-      ],
-      "vocabulary_domains": [
-        "public discourse"
-      ],
-      "pronunciation_focus": "audience-aligned delivery",
-      "performance_task": "Adapt one speech for two audiences",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-cambridge-activities"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-c2-u01"
-    },
-    {
-      "id": "en-c2-u03",
-      "language": "en",
-      "level": "C2",
-      "unit": 3,
-      "title": "Complex synthesis",
-      "can_do": "Reconstruct complex argument networks",
-      "grammar": [
-        "metadiscourse",
-        "dense reference chains"
-      ],
-      "vocabulary_domains": [
-        "academic debate"
-      ],
-      "pronunciation_focus": "advanced cohesion",
-      "performance_task": "Produce a synthetic review",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-cambridge-activities"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-c2-u02"
-    },
-    {
-      "id": "en-c2-u04",
-      "language": "en",
-      "level": "C2",
-      "unit": 4,
-      "title": "Literary interpretation",
-      "can_do": "Interpret voice and figurative language",
-      "grammar": [
-        "rhetorical figures",
-        "voice",
-        "narrative distance"
-      ],
-      "vocabulary_domains": [
-        "literature"
-      ],
-      "pronunciation_focus": "expressive reading",
-      "performance_task": "Interpret a literary extract",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-cambridge-activities"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-c2-u03"
-    },
-    {
-      "id": "en-c2-u05",
-      "language": "en",
-      "level": "C2",
-      "unit": 5,
-      "title": "Expert negotiation",
-      "can_do": "Negotiate nuanced disagreement",
-      "grammar": [
-        "face-saving",
-        "pragmatic inference"
-      ],
-      "vocabulary_domains": [
-        "professional policy"
-      ],
-      "pronunciation_focus": "pragmatic phrasing",
-      "performance_task": "Simulate high-stakes discussion",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-cambridge-activities"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-c2-u04"
-    },
-    {
-      "id": "en-c2-u06",
-      "language": "en",
-      "level": "C2",
-      "unit": 6,
-      "title": "Advanced academic writing",
-      "can_do": "Write precise publishable-style prose",
-      "grammar": [
-        "cohesion",
-        "citation ethics",
-        "qualification"
-      ],
-      "vocabulary_domains": [
-        "academic style"
-      ],
-      "pronunciation_focus": "oral defense",
-      "performance_task": "Write a critical research commentary",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-cambridge-activities"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-c2-u05"
-    },
-    {
-      "id": "en-c2-u07",
-      "language": "en",
-      "level": "C2",
-      "unit": 7,
-      "title": "Humor and cultural inference",
-      "can_do": "Interpret humor and indirect social cues",
-      "grammar": [
-        "irony",
-        "allusion",
-        "pragmatic reversal"
-      ],
-      "vocabulary_domains": [
-        "culture"
-      ],
-      "pronunciation_focus": "ironic intonation",
-      "performance_task": "Explain culturally layered humor",
-      "learning_steps": [
-        "context",
-        "grammar",
-        "vocabulary",
-        "reception",
-        "pronunciation",
-        "production"
-      ],
-      "source_candidates": [
-        "en-cambridge-activities"
-      ],
-      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
-      "content_status": "outline_only",
-      "optional_revisit": true,
-      "prerequisite_unit": "en-c2-u06"
-    },
-    {
-      "id": "en-c2-u08",
-      "language": "en",
-      "level": "C2",
-      "unit": 8,
-      "title": "Mastery portfolio",
-      "can_do": "Create a cohesive self-selected body of work",
+      "title": "Clause complexity and accuracy",
+      "can_do": "Apply clause complexity and accuracy in an original academic-English context and explain reasoning in coherent English",
       "grammar": [
         "accuracy",
-        "register",
-        "style review"
+        "lexical collocations",
+        "register"
       ],
       "vocabulary_domains": [
-        "personal interests"
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
       ],
-      "pronunciation_focus": "professional delivery",
-      "performance_task": "Present a long-form synthesis",
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating clause complexity and accuracy",
       "learning_steps": [
         "context",
         "grammar",
@@ -2309,12 +1621,280 @@
         "production"
       ],
       "source_candidates": [
-        "en-cambridge-activities"
+        "en-british-council-grammar",
+        "en-british-council-b2-reading",
+        "ielts-cambridge"
       ],
       "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
       "content_status": "outline_only",
       "optional_revisit": true,
-      "prerequisite_unit": "en-c2-u07"
+      "prerequisite_unit": null
+    },
+    {
+      "id": "en-ielts-language-upgrade-u02",
+      "language": "en",
+      "track": "language-upgrade",
+      "level": "B2-C1",
+      "unit": 2,
+      "title": "Tense/aspect for evidence",
+      "can_do": "Apply tense/aspect for evidence in an original academic-English context and explain reasoning in coherent English",
+      "grammar": [
+        "accuracy",
+        "lexical collocations",
+        "register"
+      ],
+      "vocabulary_domains": [
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
+      ],
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating tense/aspect for evidence",
+      "learning_steps": [
+        "context",
+        "grammar",
+        "vocabulary",
+        "reception",
+        "pronunciation",
+        "production"
+      ],
+      "source_candidates": [
+        "en-british-council-grammar",
+        "en-british-council-b2-reading",
+        "ielts-cambridge"
+      ],
+      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
+      "content_status": "outline_only",
+      "optional_revisit": true,
+      "prerequisite_unit": "en-ielts-language-upgrade-u01"
+    },
+    {
+      "id": "en-ielts-language-upgrade-u03",
+      "language": "en",
+      "track": "language-upgrade",
+      "level": "B2-C1",
+      "unit": 3,
+      "title": "Academic collocation and word families",
+      "can_do": "Apply academic collocation and word families in an original academic-English context and explain reasoning in coherent English",
+      "grammar": [
+        "accuracy",
+        "lexical collocations",
+        "register"
+      ],
+      "vocabulary_domains": [
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
+      ],
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating academic collocation and word families",
+      "learning_steps": [
+        "context",
+        "grammar",
+        "vocabulary",
+        "reception",
+        "pronunciation",
+        "production"
+      ],
+      "source_candidates": [
+        "en-british-council-grammar",
+        "en-british-council-b2-reading",
+        "ielts-cambridge"
+      ],
+      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
+      "content_status": "outline_only",
+      "optional_revisit": true,
+      "prerequisite_unit": "en-ielts-language-upgrade-u02"
+    },
+    {
+      "id": "en-ielts-language-upgrade-u04",
+      "language": "en",
+      "track": "language-upgrade",
+      "level": "B2-C1",
+      "unit": 4,
+      "title": "Paraphrase and meaning boundaries",
+      "can_do": "Apply paraphrase and meaning boundaries in an original academic-English context and explain reasoning in coherent English",
+      "grammar": [
+        "accuracy",
+        "lexical collocations",
+        "register"
+      ],
+      "vocabulary_domains": [
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
+      ],
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating paraphrase and meaning boundaries",
+      "learning_steps": [
+        "context",
+        "grammar",
+        "vocabulary",
+        "reception",
+        "pronunciation",
+        "production"
+      ],
+      "source_candidates": [
+        "en-british-council-grammar",
+        "en-british-council-b2-reading",
+        "ielts-cambridge"
+      ],
+      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
+      "content_status": "outline_only",
+      "optional_revisit": true,
+      "prerequisite_unit": "en-ielts-language-upgrade-u03"
+    },
+    {
+      "id": "en-ielts-language-upgrade-u05",
+      "language": "en",
+      "track": "language-upgrade",
+      "level": "B2-C1",
+      "unit": 5,
+      "title": "Hedging, stance and inference",
+      "can_do": "Apply hedging, stance and inference in an original academic-English context and explain reasoning in coherent English",
+      "grammar": [
+        "accuracy",
+        "lexical collocations",
+        "register"
+      ],
+      "vocabulary_domains": [
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
+      ],
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating hedging, stance and inference",
+      "learning_steps": [
+        "context",
+        "grammar",
+        "vocabulary",
+        "reception",
+        "pronunciation",
+        "production"
+      ],
+      "source_candidates": [
+        "en-british-council-grammar",
+        "en-british-council-b2-reading",
+        "ielts-cambridge"
+      ],
+      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
+      "content_status": "outline_only",
+      "optional_revisit": true,
+      "prerequisite_unit": "en-ielts-language-upgrade-u04"
+    },
+    {
+      "id": "en-ielts-language-upgrade-u06",
+      "language": "en",
+      "track": "language-upgrade",
+      "level": "B2-C1",
+      "unit": 6,
+      "title": "Nominalisation and concision",
+      "can_do": "Apply nominalisation and concision in an original academic-English context and explain reasoning in coherent English",
+      "grammar": [
+        "accuracy",
+        "lexical collocations",
+        "register"
+      ],
+      "vocabulary_domains": [
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
+      ],
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating nominalisation and concision",
+      "learning_steps": [
+        "context",
+        "grammar",
+        "vocabulary",
+        "reception",
+        "pronunciation",
+        "production"
+      ],
+      "source_candidates": [
+        "en-british-council-grammar",
+        "en-british-council-b2-reading",
+        "ielts-cambridge"
+      ],
+      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
+      "content_status": "outline_only",
+      "optional_revisit": true,
+      "prerequisite_unit": "en-ielts-language-upgrade-u05"
+    },
+    {
+      "id": "en-ielts-language-upgrade-u07",
+      "language": "en",
+      "track": "language-upgrade",
+      "level": "B2-C1",
+      "unit": 7,
+      "title": "Reference and cohesive progression",
+      "can_do": "Apply reference and cohesive progression in an original academic-English context and explain reasoning in coherent English",
+      "grammar": [
+        "accuracy",
+        "lexical collocations",
+        "register"
+      ],
+      "vocabulary_domains": [
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
+      ],
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating reference and cohesive progression",
+      "learning_steps": [
+        "context",
+        "grammar",
+        "vocabulary",
+        "reception",
+        "pronunciation",
+        "production"
+      ],
+      "source_candidates": [
+        "en-british-council-grammar",
+        "en-british-council-b2-reading",
+        "ielts-cambridge"
+      ],
+      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
+      "content_status": "outline_only",
+      "optional_revisit": true,
+      "prerequisite_unit": "en-ielts-language-upgrade-u06"
+    },
+    {
+      "id": "en-ielts-language-upgrade-u08",
+      "language": "en",
+      "track": "language-upgrade",
+      "level": "B2-C1",
+      "unit": 8,
+      "title": "Personalised error correction through authentic drafts",
+      "can_do": "Apply personalised error correction through authentic drafts in an original academic-English context and explain reasoning in coherent English",
+      "grammar": [
+        "accuracy",
+        "lexical collocations",
+        "register"
+      ],
+      "vocabulary_domains": [
+        "academic collocations",
+        "topic-specific terminology",
+        "paraphrase in context"
+      ],
+      "pronunciation_focus": "sentence stress; connected speech; intelligibility without a total score",
+      "performance_task": "Produce an original spoken explanation plus a written reflection demonstrating personalised error correction through authentic drafts",
+      "learning_steps": [
+        "context",
+        "grammar",
+        "vocabulary",
+        "reception",
+        "pronunciation",
+        "production"
+      ],
+      "source_candidates": [
+        "en-british-council-grammar",
+        "en-british-council-b2-reading",
+        "ielts-cambridge"
+      ],
+      "source_alignment": "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS",
+      "content_status": "outline_only",
+      "optional_revisit": true,
+      "prerequisite_unit": "en-ielts-language-upgrade-u07"
     },
     {
       "id": "fr-a1-u01",
