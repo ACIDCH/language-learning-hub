@@ -535,6 +535,156 @@
       "access": "free_online",
       "ingestion": "link_only",
       "license_note": "RFI produced 13-episode multilingual beginner series; link to official provider. Do not mirror recordings/transcripts without rights."
+    },
+    {
+      "id": "ielts-official-academic",
+      "language": "en",
+      "title": "IELTS Academic official sample questions",
+      "organization": "IELTS Partners",
+      "url": "https://www.ielts.org/take-a-test/preparation-resources/sample-test-questions/academic-test",
+      "levels": [
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "listening",
+        "reading",
+        "speaking",
+        "grammar",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Official public practice tests may be linked; copying exam audio, questions, texts and score guides to GitHub requires explicit permission."
+    },
+    {
+      "id": "ielts-cambridge",
+      "language": "en",
+      "title": "Cambridge English IELTS preparation and sample papers",
+      "organization": "Cambridge English",
+      "url": "https://www.cambridgeenglish.org/exams-and-tests/ielts/preparation/",
+      "levels": [
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "listening",
+        "reading",
+        "speaking",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Official preparation source, sample papers and related products; free access is not a republication licence."
+    },
+    {
+      "id": "ielts-british-council-nz",
+      "language": "en",
+      "title": "British Council New Zealand IELTS preparation",
+      "organization": "British Council",
+      "url": "https://www.britishcouncil.org.nz/exam/ielts/prepare",
+      "levels": [
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "listening",
+        "reading",
+        "speaking",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Official preparation tutorials and practice materials; no copying test media or transcripts into public repository."
+    },
+    {
+      "id": "ielts-idp-academic",
+      "language": "en",
+      "title": "IDP IELTS Academic preparation hub",
+      "organization": "IDP IELTS",
+      "url": "https://ielts.idp.com/prepare/academic-and-ukvi",
+      "levels": [
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "listening",
+        "reading",
+        "speaking",
+        "grammar",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Free and paid materials with distinct rights; link to official hub, not mirror proprietary audio or test pages."
+    },
+    {
+      "id": "ielts-british-council-prepare",
+      "language": "en",
+      "title": "British Council IELTS practice and familiarisation",
+      "organization": "British Council",
+      "url": "https://takeielts.britishcouncil.org/prepare",
+      "levels": [
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "topics": [
+        "listening",
+        "reading",
+        "speaking",
+        "grammar",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Many free resources; account-gated and premium resources may require signup/purchase. No blanket right to redistribute."
+    },
+    {
+      "id": "en-british-council-b2-reading",
+      "language": "en",
+      "title": "British Council graded B2 reading",
+      "organization": "British Council",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/reading/b2",
+      "levels": [
+        "B2"
+      ],
+      "topics": [
+        "reading",
+        "vocabulary"
+      ],
+      "audio": false,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Original reading passages and tasks are copyrighted; link to source and generate independent readings."
+    },
+    {
+      "id": "en-british-council-b2-listening",
+      "language": "en",
+      "title": "British Council graded B2 listening",
+      "organization": "British Council",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b2",
+      "levels": [
+        "B2"
+      ],
+      "topics": [
+        "listening",
+        "speaking",
+        "vocabulary"
+      ],
+      "audio": true,
+      "access": "free_online",
+      "ingestion": "link_only",
+      "license_note": "Do not mirror recordings or transcripts without permission; provide official links."
     }
   ]
 }
