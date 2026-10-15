@@ -1,100 +1,78 @@
 #!/usr/bin/env python3
-"""Check bilingual curriculum structural integrity. Does NOT grade content accuracy."""
+"""Validate language learning curricula. This validates structure, not teaching quality."""
 from __future__ import annotations
-
 import json
 import sys
 from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-COURSE = ROOT / "config" / "curriculum" / "units.v1.json"
-SOURCES = ROOT / "config" / "resources" / "sources.json"
-LEVEL_COUNTS = {"A1": 12, "A2": 12, "B1": 10, "B2": 10, "C1": 8, "C2": 8}
+CURRICULUM = ROOT / "config/curriculum/units.v1.json"  # retained path, v2 schema
+SOURCES = ROOT / "config/resources/sources.json"
+FR = {"A1": 12, "A2": 12, "B1": 10, "B2": 10, "C1": 8, "C2": 8}
+EN = {"listening", "reading", "writing-task1", "writing-task2", "speaking", "language-upgrade"}
 STEPS = ["context", "grammar", "vocabulary", "reception", "pronunciation", "production"]
-REQUIRED = {
-    "id", "language", "level", "unit", "title", "can_do", "grammar",
-    "vocabulary_domains", "pronunciation_focus", "performance_task",
-    "learning_steps", "source_candidates", "source_alignment",
-    "content_status", "optional_revisit", "prerequisite_unit"
-}
-
+FIELDS = {"id","language","level","unit","title","can_do","grammar","vocabulary_domains","pronunciation_focus","performance_task","learning_steps","source_candidates","source_alignment","content_status","optional_revisit","prerequisite_unit"}
 
 def validate() -> list[str]:
-    errors = []
-    c = json.loads(COURSE.read_text(encoding="utf-8"))
-    src = json.loads(SOURCES.read_text(encoding="utf-8"))
-    source_ids = {i["id"] for i in src["sources"]}
-    if c.get("schema_version") != 1:
-        errors.append("Invalid curriculum schema version")
-    for key in ("no_placement_testing", "no_periodic_exams", "no_aggregate_pronunciation_score"):
-        if c.get(key) is not True:
-            errors.append(f"{key} must be true")
-    steps = c.get("learning_steps", [])
-    if not isinstance(steps, list) or [x.get("id") for x in steps] != STEPS:
-        errors.append("Six required learning steps do not match")
-    units = c.get("units", [])
-    if not isinstance(units, list) or len(units) != 120:
-        errors.append(f"Expected 120 curriculum outlines; found {len(units)}")
-        return errors
-    counts = Counter()
-    ids = set()
-    for i, unit in enumerate(units):
-        ctx = f"unit[{i}]"
-        if not isinstance(unit, dict):
-            errors.append(f"{ctx} must be object")
-            continue
-        if REQUIRED - unit.keys():
-            errors.append(f"{ctx} missing: {sorted(REQUIRED - unit.keys())}")
-            continue
-        lang, level, number = unit["language"], unit["level"], unit["unit"]
-        if lang not in ("en", "fr") or level not in LEVEL_COUNTS:
-            errors.append(f"{ctx}: invalid language or CEFR level")
-            continue
-        counts[(lang, level)] += 1
-        if not isinstance(number, int) or number < 1 or number > LEVEL_COUNTS[level]:
-            errors.append(f"{ctx}: invalid unit order")
-            continue
-        expected_id = f"{lang}-{level.lower()}-u{number:02d}"
-        if unit["id"] != expected_id or unit["id"] in ids:
-            errors.append(f"{ctx}: duplicate/malformed ID")
-        ids.add(unit["id"])
-        if unit["learning_steps"] != STEPS:
-            errors.append(f"{ctx}: missing or out-of-order learning steps")
-        if unit["content_status"] != "outline_only":
-            errors.append(f"{ctx}: do not claim full course content is complete")
-        if unit["source_alignment"] != "NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS":
-            errors.append(f"{ctx}: course-level links do not prove lesson-level media mapping")
-        if unit["optional_revisit"] is not True:
-            errors.append(f"{ctx}: optional revisit incorrectly disabled")
-        if number == 1:
-            if unit["prerequisite_unit"] is not None:
-                errors.append(f"{ctx}: first unit must have no prerequisite")
-        elif unit["prerequisite_unit"] != f"{lang}-{level.lower()}-u{number-1:02d}":
-            errors.append(f"{ctx}: unexpected prerequisite")
-        for attr in ("title", "can_do", "pronunciation_focus", "performance_task"):
-            if not isinstance(unit[attr], str) or not unit[attr].strip():
-                errors.append(f"{ctx}: {attr} must be present")
-        for attr in ("grammar", "vocabulary_domains", "source_candidates"):
-            if not isinstance(unit[attr], list) or any(not isinstance(x, str) or not x.strip() for x in unit[attr]):
-                errors.append(f"{ctx}: invalid {attr}")
-        if not unit["grammar"] or not unit["vocabulary_domains"]:
-            errors.append(f"{ctx}: incomplete teaching targets")
-        if not set(unit["source_candidates"]).issubset(source_ids):
-            errors.append(f"{ctx}: unknown source reference")
-        if not unit["source_candidates"] and level in ("A1", "A2", "B1", "B2"):
-            errors.append(f"{ctx}: core course must contain source discovery candidates")
-    for lang in ("en", "fr"):
-        for level, expected in LEVEL_COUNTS.items():
-            if counts[(lang, level)] != expected:
-                errors.append(f"{lang} {level}: expected {expected} units, got {counts[(lang, level)]}")
+    errors=[]
+    c=json.loads(CURRICULUM.read_text(encoding="utf-8"))
+    src=json.loads(SOURCES.read_text(encoding="utf-8"))
+    refs={s["id"] for s in src["sources"]}
+    if c.get("schema_version") != 2: errors.append("schema_version must be 2")
+    for key in ("no_placement_testing","no_periodic_exams","no_aggregate_pronunciation_score"):
+        if c.get(key) is not True:errors.append(key + " must remain true")
+    if [s.get("id") for s in c.get("learning_steps",[])]!=STEPS:
+        errors.append("six-step teaching chain mismatch")
+    units=c.get("units",[])
+    if not isinstance(units,list) or len(units)!=108:
+        return errors+[f"expected 108 units, got {len(units)}"]
+    counts=Counter();seen=set()
+    for i,u in enumerate(units):
+        ctx=f"unit[{i}]"
+        if not isinstance(u,dict): errors.append(ctx+" not object");continue
+        missing=FIELDS-set(u)
+        if missing: errors.append(ctx+f" missing {sorted(missing)}");continue
+        lang=u["language"];idx=u["unit"];level=u["level"]
+        if lang=="en":
+            track=u.get("track")
+            if track not in EN:errors.append(ctx+" invalid IELTS track");continue
+            counts[("en",track)]+=1
+            expected=f"en-ielts-{track}-u{idx:02d}" if type(idx)==int and 1<=idx<=8 else "BAD"
+            previous=f"en-ielts-{track}-u{idx-1:02d}" if type(idx)==int and idx>1 else None
+            if level in {"A1","A2"}:errors.append(ctx+" beginner English level must not appear")
+        elif lang=="fr":
+            if level not in FR:errors.append(ctx+" invalid French level");continue
+            counts[("fr",level)]+=1
+            expected=f"fr-{level.lower()}-u{idx:02d}" if type(idx)==int and 1<=idx<=FR[level] else "BAD"
+            previous=f"fr-{level.lower()}-u{idx-1:02d}" if type(idx)==int and idx>1 else None
+        else:errors.append(ctx+" invalid language");continue
+        if u["id"]!=expected or u["id"] in seen:errors.append(ctx+" invalid/duplicate unit ID")
+        seen.add(u["id"])
+        if u["prerequisite_unit"]!=previous:errors.append(ctx+" unexpected prerequisite")
+        if u["learning_steps"]!=STEPS:errors.append(ctx+" not six learning steps")
+        if u["content_status"]!="outline_only":errors.append(ctx+" must not claim full lesson completion")
+        if u["source_alignment"]!="NOT_YET_MAPPED_TO_INDIVIDUAL_SOURCE_LESSONS":errors.append(ctx+" media mapping is unverified")
+        if u["optional_revisit"] is not True:errors.append(ctx+" forced revision must not appear")
+        for field in ("title","can_do","pronunciation_focus","performance_task"):
+            if not isinstance(u[field],str) or not u[field].strip():errors.append(ctx+" empty "+field)
+        for field in ("grammar","vocabulary_domains","source_candidates"):
+            if not isinstance(u[field],list) or any(not isinstance(k,str) for k in u[field]):
+                errors.append(ctx+" invalid "+field)
+        if not u["grammar"] or not u["vocabulary_domains"]:errors.append(ctx+" missing grammar/lexis")
+        if not set(u["source_candidates"]).issubset(refs):errors.append(ctx+" unknown source")
+        if lang=="en" and not u["source_candidates"]:errors.append(ctx+" IELTS source candidates empty")
+        if lang=="fr" and level in ("A1","A2","B1","B2") and not u["source_candidates"]:
+            errors.append(ctx+" missing French core references")
+    for t in EN:
+        if counts[("en",t)]!=8:errors.append(f"English {t}: expected 8, got {counts[('en',t)]}")
+    for lv,count in FR.items():
+        if counts[("fr",lv)]!=count:errors.append(f"French {lv}: expected {count}, got {counts[('fr',lv)]}")
     return errors
 
-
-if __name__ == "__main__":
-    failures = validate()
-    if failures:
-        for failure in failures:
-            print("ERROR:", failure, file=sys.stderr)
+if __name__=="__main__":
+    issues=validate()
+    if issues:
+        for err in issues:print("ERROR:",err,file=sys.stderr)
         raise SystemExit(1)
-    print("Bilingual curriculum outline: 120 units, 6 learning steps per unit, sources and prerequisites OK")
+    print("Curriculum v2: English IELTS-style 48 + French CEFR 60 = 108 outline units; structural integrity OK")
