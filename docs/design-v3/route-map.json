@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "stage": "design_proposal_not_deployed",
+  "default_route": "/courses",
+  "routes": [
+    {
+      "path": "/courses",
+      "auth": "optional",
+      "feature": "catalog",
+      "children": [
+        "CourseNavigation",
+        "LanguageSwitcher",
+        "UnitList"
+      ]
+    },
+    {
+      "path": "/courses/:language/:unitId",
+      "auth": "asset_dependent",
+      "feature": "full_lesson",
+      "children": [
+        "LessonReader",
+        "SixStageNav",
+        "MediaResolver",
+        "TutorContext"
+      ]
+    },
+    {
+      "path": "/library",
+      "auth": "optional_public_or_owner",
+      "feature": "resource_catalog",
+      "children": [
+        "SourceCatalog",
+        "AssetStatus"
+      ]
+    },
+    {
+      "path": "/materials/import",
+      "auth": "owner",
+      "feature": "personal_import",
+      "children": [
+        "MaterialUploader",
+        "DriveInboxCard",
+        "ImportQueue",
+        "ImportReview"
+      ]
+    },
+    {
+      "path": "/materials/:materialId",
+      "auth": "owner",
+      "feature": "original_and_converted",
+      "children": [
+        "OriginalSourceViewer",
+        "StructuredContentView",
+        "MediaAlignment"
+      ]
+    },
+    {
+      "path": "/practice",
+      "auth": "owner",
+      "feature": "free_practice",
+      "children": [
+        "ExerciseList",
+        "WritingDrafts",
+        "FeedbackHistory"
+      ]
+    },
+    {
+      "path": "/ai-tutor",
+      "auth": "owner_and_consent",
+      "feature": "grounded_tutor",
+      "children": [
+        "ProviderSelector",
+        "CitationPanel",
+        "TutorContext"
+      ]
+    },
+    {
+      "path": "/settings",
+      "auth": "owner",
+      "feature": "account_preferences",
+      "children": [
+        "LanguagePreference",
+        "OAuthConnectionState",
+        "PrivacyAndAISettings"
+      ]
+    }
+  ],
+  "invariants": {
+    "no_marketing_hero": true,
+    "full_original_text_always_retrievable": true,
+    "english_entry": "ielts-academic",
+    "french_entry": "A1",
+    "pronunciation_total_score": false,
+    "testing_compulsory": false,
+    "personal_upload_public_by_default": false
+  },
+  "allowed_ingest_extensions": [
+    "pdf",
+    "docx",
+    "epub",
+    "txt",
+    "md",
+    "mp3",
+    "m4a",
+    "ogg",
+    "wav",
+    "srt",
+    "vtt",
+    "zip"
+  ],
+  "owner_drive_inbox": "https://drive.google.com/drive/folders/1IAuP7IzcVP6bGCtqSMquq29piEu8CDl1"
+}
