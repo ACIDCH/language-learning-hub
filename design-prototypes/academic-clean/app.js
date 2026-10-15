@@ -122,7 +122,7 @@ const sourceItems = [
   { id:"tex",lang:"fr",title:"Tex's French Grammar",owner:"UT Austin / COERLL",url:"https://coerll.utexas.edu/coerll/oer/texs-french-grammar/",rights:"开放语法课程；具体媒体另行核验许可。" },
   { id:"french",lang:"fr",title:"Français interactif",owner:"UT Austin / COERLL",url:"https://coerll.utexas.edu/coerll/oer/francais-interactif/",rights:"完整课程主项目 CC BY；个别第三方素材需核查。" }
 ];
-const inboxUrl = "https://drive.google.com/drive/folders/1IAuP7IzcVP6bGCtqSMquq29piEu8CDl1";
+const inboxUrl = "https://drive.google.com/drive/my-drive"; // public-safe entry; resolve private Inbox URL after user auth
 const outlet = document.getElementById("page-outlet");
 const nav = document.getElementById("track-nav");
 
@@ -239,7 +239,7 @@ function renderMaterials() {
        </div></section>
       <section class="panel card-padding"><div class="panel-head"><h2>Google Drive 上传目录</h2><span class="badge">已创建目录</span></div>
         <p class="page-subtitle">你可以直接把全套教材和音频放进 YUNPAN / Language-Learning-Hub / 03-Personal / 00-Inbox。实际导入需等待受权后台扫描。</p>
-        <p><a class="button" href="${inboxUrl}" target="_blank" rel="noopener noreferrer">打开 Drive Inbox ↗</a></p>
+        <p><a class="button" href="${inboxUrl}" target="_blank" rel="noopener noreferrer">打开 Google Drive（手动进入 Inbox）↗</a></p>
         <div class="info-list" style="margin-top:25px">
           <div class="info-row"><strong>原始文件</strong><span>01-Originals</span></div>
           <div class="info-row"><strong>结构化课程</strong><span>02-Converted</span></div>
