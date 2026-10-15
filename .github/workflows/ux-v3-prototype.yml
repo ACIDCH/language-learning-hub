@@ -1,0 +1,31 @@
+name: Academic-clean V3 prototype checks
+
+on:
+  pull_request:
+    paths:
+      - 'design-prototypes/academic-clean/**'
+      - 'docs/design-v3/**'
+      - '.github/workflows/ux-v3-prototype.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'design-prototypes/academic-clean/**'
+      - 'docs/design-v3/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-prototype:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Parse prototype JavaScript
+        run: node --check design-prototypes/academic-clean/app.js
+      - name: Check prototype rules and route map
+        run: node design-prototypes/academic-clean/check-prototype.mjs
+      - name: JSON syntax check
+        run: node -e 'JSON.parse(require("fs").readFileSync("docs/design-v3/route-map.json","utf8"))'

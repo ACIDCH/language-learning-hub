@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F3F7FB">
+  <meta name="description" content="Language Hub – bilingual course and personal learning material interface design prototype">
+  <title>Language Hub — 前端设计原型 V3</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转至主要内容</a>
+  <div class="shell">
+    <header class="header">
+      <a class="brand" href="#courses" aria-label="Language Hub 课程"><span class="brand-mark" aria-hidden="true">L<span>H</span></span><span>Language Hub</span></a>
+      <nav class="top-nav" aria-label="主要导航">
+        <button type="button" data-page="courses">课程</button>
+        <button type="button" data-page="materials">我的资料</button>
+        <button type="button" data-page="sources">资源库</button>
+        <button type="button" data-page="architecture">系统架构</button>
+      </nav>
+      <span class="demo-tag"><span class="status-dot"></span>设计原型 · 未连接账户</span>
+    </header>
+    <div class="layout">
+      <aside class="side" aria-label="学习目录">
+        <div class="side-section">
+          <p class="eyebrow">语言</p>
+          <div class="language-tabs" role="group" aria-label="语言选择">
+            <button id="lang-en" data-lang="en" type="button">English</button>
+            <button id="lang-fr" data-lang="fr" type="button">Français</button>
+            <button id="lang-other" data-lang="other" type="button">其他</button>
+          </div>
+        </div>
+        <div class="side-section">
+          <div class="side-title"><p class="eyebrow">课程目录</p><span id="course-total"></span></div>
+          <nav id="track-nav" class="track-nav" aria-label="课程技能或等级"></nav>
+        </div>
+        <div class="side-foot">
+          <div class="foot-label">资料上传</div>
+          <p>PDF、EPUB、Word、MP3、字幕和 ZIP</p>
+          <button class="link-button" type="button" data-page="materials">打开导入入口 <span aria-hidden="true">→</span></button>
+        </div>
+      </aside>
+      <main id="main" class="main" tabindex="-1">
+        <div id="page-outlet" aria-live="polite"></div>
+      </main>
+    </div>
+  </div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
