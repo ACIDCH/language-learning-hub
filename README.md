@@ -1,13 +1,13 @@
 # Language Learning Hub
 
-A private, independent English–French learning platform.
+An independent English–French learning platform. **Public code and individually approved open assets; private personal learning data.**
 
 ## Status
 **Phase 00 — infrastructure and architecture (in progress).** The project is not deployed and does not yet have learning features.
 
 ## Architecture boundaries
-- **This GitHub repository:** source code, tests, technical specifications and CI/CD only.
-- **Google Drive (YUNPAN):** source-of-truth for course files, licensed audio, personal materials and AI-generated learning documents. Root folder: `Language-Learning-Hub`.
+- **This public GitHub repository:** source code, tests, technical specifications, CI/CD and small **license-verified, redistributable** learning assets in `public/learning-assets/` only.
+- **Google Drive (YUNPAN):** private source-of-truth for commercial/personal course files, private audio, personal materials and AI-generated learning documents. Root folder: `Language-Learning-Hub`.
 - **Dedicated Supabase project:** `language-learning-hub` (Sydney region); authentication, relational metadata, learning state, job audit trails and secure API endpoints. **Do not upload textbook/audio binaries to the database.**
 - **Third-party/open-source engines:** only via replaceable adapters; pronunciation assessment must be independently validated for English and French.
 - **AI agents:** separate content and engineering agents. Engineering agent changes require a branch, tests and an approved pull request.
@@ -16,7 +16,7 @@ A private, independent English–French learning platform.
 1. English and French courses include grammar, vocabulary, listening, reading and speaking.
 2. No placement tests, scheduled learning exams or overall pronunciation scores.
 3. Pronunciation feedback is word-level color highlighting (green, yellow, orange, red), plus a neutral "uncertain" state. Phoneme explanations require adequate evidence.
-4. Personal content remains private. Do not publish third-party copyrighted materials without authorization.
+4. Personal content remains private. Public third-party audio/text requires **item-level redistribution rights**, license compliance and attribution (see `docs/public-asset-policy.md`).
 5. Content is grounded in traceable sources; AI additions are versioned and kept separate from authoritative materials.
 6. Never commit API keys, OAuth credentials, refresh tokens, personal recordings or private course files.
 
@@ -31,7 +31,7 @@ A private, independent English–French learning platform.
 07. End-to-end testing, security, backup and optimization
 
 ## Deployment notice
-The repository is currently private. GitHub Pages availability for private repositories depends on the account plan. Keep hosting decisions separate from repository privacy. Do not make this repository public merely to enable hosting without an explicit privacy review.
+Repository visibility is **PUBLIC** as approved by the owner. Future deployment may use GitHub Pages at a dedicated project path. This repo does **not** replace `ACIDCH.github.io`. No Pages site or learning app has been deployed yet. Approved public assets are capped at a conservative initial 200 MB (5 MiB each by default). Private data belongs in Drive; only non-secret identifiers and metadata belong in Supabase.
 
 ## Isolation
 Do **not** write project files into `ACIDCH/ACIDCH.github.io` or `ACIDCH/ACIDCH`. No operational dependency on either existing repository is permitted.

@@ -1,0 +1,41 @@
+# Never commit credentials, tokens or personal data
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+credentials*.json
+token*.json
+*.sqlite
+*.sqlite3
+*.db
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.tmp/
+temp/
+.DS_Store
+# Private course materials / media excluded by default
+*.wav
+*.mp3
+*.ogg
+*.m4a
+*.flac
+*.mp4
+*.pdf
+*.zip
+
+# Only license-verified, individually manifested assets under this dedicated folder can bypass media exclusions.
+# Each approved asset is still reviewed and validated by tools/validate_public_assets.py.
+!public/learning-assets/
+!public/learning-assets/**
+
+# Private learning resources belong in Google Drive, not GitHub.
+private-content/
+personal-data/
+model-weights/
