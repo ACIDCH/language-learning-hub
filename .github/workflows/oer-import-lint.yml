@@ -1,0 +1,22 @@
+name: OER import script checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check importer Python syntax without downloading anything
+        run: python3 -m py_compile tools/import_french_oer_colab.py
+      - name: Confirm script doesn't contain Google secrets or auto-upload in CI
+        run: |
+          test -f docs/oer-import.md
+          grep -q 'drive.mount' tools/import_french_oer_colab.py
+          grep -q 'Français interactif' tools/import_french_oer_colab.py
