@@ -1,0 +1,32 @@
+# Never commit credentials, tokens or personal data
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+credentials*.json
+token*.json
+*.sqlite
+*.sqlite3
+*.db
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.tmp/
+temp/
+.DS_Store
+*.wav
+*.mp3
+*.m4a
+*.mp4
+*.pdf
+*.zip
+# Learning content belongs in Google Drive, not GitHub
+private-content/
+personal-data/
+model-weights/
