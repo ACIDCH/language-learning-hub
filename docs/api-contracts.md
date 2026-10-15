@@ -6,7 +6,7 @@ No endpoint listed here is deployed. Schemas are deliberately provider-independe
 
 - `GET /v1/courses?language=en|fr` => courses list + CEFR levels + source metadata.
 - `GET /v1/lessons/{lessonId}` => lesson metadata; links to authorized content assets; grammar associations.
-- `GET /v1/assets/{assetId}/metadata` => mime type, Drive ID reference, revision, license, duration and allowed usage; no public bearer-token leakage.
+- `GET /v1/assets/{assetId}/metadata` => mime type, `storageKind` (`github_public|google_drive_private|external_link`), authorized locator, revision, per-item license/attribution, duration, allowed usage; no public bearer-token leakage. A public repository path is safe only after license review. Private Drive file access still requires authorization.
 - `GET /v1/progress/{lessonId}` and `PUT /v1/progress/{lessonId}` => authenticated user's learning position only.
 
 ## AI Provider Adapter
@@ -49,7 +49,7 @@ No sentence total score, percentage or forced phoneme diagnosis. `neutral` is al
 
 ## Drive sync adapter
 
-`POST /v1/content/reindex`: authenticated, explicit file IDs from a user-authorized root; upsert metadata and checksum to Supabase. Use constrained Drive scopes, verify ownership/access, enforce maximum file sizes.
+`POST /v1/content/reindex`: authenticated, explicit file IDs from a user-authorized Drive root; upsert metadata and checksum to Supabase. Public repository assets are indexed only from the reviewed `public/learning-assets/manifest.json`. Use constrained Drive scopes, verify ownership/access, enforce maximum file sizes.
 
 `GET /v1/jobs/{jobId}`: returns task status without private prompt or credentials.
 
