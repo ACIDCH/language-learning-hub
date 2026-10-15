@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import curriculumData from '../config/curriculum/units.v2.json';
 import sourceData from '../config/resources/sources.json';
-import assetManifest from '../public/learning-assets/manifest.json';
 
 type Lang = 'en' | 'fr';
 type DisplayView = 'courses' | 'sources';
@@ -34,11 +33,9 @@ type Source = {
   levels: string[];
   audio: boolean;
 };
-type Asset = { id: string; path: string; title: string; language: Lang; bytes: number; sha256: string };
 
 const curriculum = curriculumData as unknown as { units: Lesson[] };
 const sources = sourceData as unknown as { sources: Source[] };
-const assets = assetManifest as unknown as { assets: Asset[] };
 
 const TRACKS = [
   { id: 'listening', label: 'Listening' },
@@ -61,7 +58,6 @@ const ASSET_MAP: Record<string, string> = {
   'fr-a1-u02': 'fr-a1-u02.txt',
   'fr-a1-u03': 'fr-a1-u03.txt',
 };
-const TEXT_ASSETS = new Map(assets.assets.map(a => [a.path.split('/').pop(), a]));
 const sourceById = new Map(sources.sources.map(s => [s.id, s]));
 
 function stepFromLine(line: string): string | undefined {
@@ -133,7 +129,7 @@ export default function App() {
 
   const selected = curriculum.units.find(unit => unit.id === selectedId) ?? curriculum.units[0];
   const assetName = ASSET_MAP[selected.id];
-  const hasLesson = Boolean(assetName && TEXT_ASSETS.has(assetName));
+  const hasLesson = Boolean(assetName);
   const authoredCount = Object.keys(ASSET_MAP).filter(key => curriculum.units.some(unit => unit.id === key && unit.language === lang)).length;
 
   useEffect(() => {
