@@ -7,7 +7,7 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRICULUM = ROOT / "config/curriculum/units.v1.json"  # retained path, v2 schema
+CURRICULUM = ROOT / "config/curriculum/units.v2.json"  # retained path, v2 schema
 SOURCES = ROOT / "config/resources/sources.json"
 FR = {"A1": 12, "A2": 12, "B1": 10, "B2": 10, "C1": 8, "C2": 8}
 EN = {"listening", "reading", "writing-task1", "writing-task2", "speaking", "language-upgrade"}
