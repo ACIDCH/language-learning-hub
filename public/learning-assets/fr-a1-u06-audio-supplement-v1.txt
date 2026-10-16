@@ -1,0 +1,24 @@
+# 法语 A1 · 12 单元参考音频练习与语法补充 V1
+
+状态：新增教学补充稿，保留所有旧正文。每节的录音是 Français interactif 原版词汇参考音频，不是对本项目原创对话的配音。标准音轨、实际时长、哈希及完整原站词表见 `config/assets/lesson-audio.json`。语法提示和练习答案为本项目原创，仍待专业语言审校。录音均已下载校验；人工听辨验收未完成，不标为正式有声课。
+
+使用方式：先完成原课的六段正文，再听本节指定音轨。第一次不看词表抓类别；第二次对照完整词表辨认；第三次选短片段跟读。下列练习不需要计分，不作为课程解锁条件。时间点由学习者用 A/B 标记，尚无经过核验的逐词时间轴。
+
+## fr-a1-u06 · Questions et échanges
+
+参考音轨：`fi-voc-015`，[原站 mots interrogatifs](https://laits.utexas.edu/fi/voc/02/#015)。先把 où、quand、qui、comment、pourquoi 分别对应地点、时间、人、方式、原因。
+
+补充讲解：Tu habites ici ? 可凭语调提问；Est-ce que tu habites ici ? 用疑问框架；Habites-tu ici ? 使用倒装，语域较正式。不能叠加成 Est-ce que habites-tu ici ? quel 与所修饰的名词配合：quel livre、quelle langue、quels cours、quelles villes。Pourquoi ? 常用 parce que 引出回答；parce que 不是疑问词。问句并非全部升调，疑问词句的自然语调依话语而异，不能把“问句末尾一律上扬”作为总规则。
+
+练习：①对 Je pars lundi 中 lundi 提问。②对 Elle habite à Lyon 中 à Lyon 提问。③___ langues parlez-vous ? ④修正 Est-ce que aimez-vous le café ?
+
+答案：①Quand est-ce que tu pars ? 或 Tu pars quand ? ②Où est-ce qu'elle habite ? ③Quelles。④Est-ce que vous aimez le café ? 或 Aimez-vous le café ? 原创对话任务：问同伴地点、时间和原因各一次，回答后追问一轮，不把词表单个词误当完整对话。
+
+
+## 版本与验收记录
+
+- 新增材料：十二组定位明确的听前/听后任务、语法边界、改错题、答案及原创表达示范。
+- 保留：此前每个单元的独立正文、U04–U12 分册及扩充稿；本文件不替换任何旧段落。
+- 资料关系：2019 第四版教材与 legacy 网站词汇音频分开登记，不默认与新版 Pressbooks 音轨相同。
+- 待补：每课情境对话/长阅读的匹配录音、人工试听、专业逐课语言审校，以及高级别课程。完成本练习不意味着 12 节有声课已发布。
+- 许可：原站录音/词表按 [FI 采用页](https://laits.utexas.edu/fi/page/adopt/) CC BY 3.0 署名 COERLL / UT Austin；本项目原创讲解没有因此自动转为 CC 授权。

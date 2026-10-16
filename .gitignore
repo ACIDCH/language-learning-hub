@@ -39,3 +39,5 @@ temp/
 private-content/
 personal-data/
 model-weights/
+__pycache__/
+*.pyc

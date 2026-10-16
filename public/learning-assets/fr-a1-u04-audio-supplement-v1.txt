@@ -1,0 +1,26 @@
+# 法语 A1 · 12 单元参考音频练习与语法补充 V1
+
+状态：新增教学补充稿，保留所有旧正文。每节的录音是 Français interactif 原版词汇参考音频，不是对本项目原创对话的配音。标准音轨、实际时长、哈希及完整原站词表见 `config/assets/lesson-audio.json`。语法提示和练习答案为本项目原创，仍待专业语言审校。录音均已下载校验；人工听辨验收未完成，不标为正式有声课。
+
+使用方式：先完成原课的六段正文，再听本节指定音轨。第一次不看词表抓类别；第二次对照完整词表辨认；第三次选短片段跟读。下列练习不需要计分，不作为课程解锁条件。时间点由学习者用 A/B 标记，尚无经过核验的逐词时间轴。
+
+## fr-a1-u04 · Objets et espaces
+
+参考音轨：`fi-voc-007`，[原站 la salle de classe](https://laits.utexas.edu/fi/voc/01/#007)。听前把词表合上，先记听到的教室物品，再区分哪些带 un，哪些带 une。
+
+补充讲解：un livre 首次引入一个对象；le livre sur la table 把对象确定下来。Il y a un livre 表示存在，Le livre est sur la table 说明已知书的位置；不能用这两个句型互换一切语境。Il n'y a pas de livre 是常见否定；C'est un livre → Ce n'est pas un livre，être 后的表语冠词不按一般宾语否定规则改成 de。à côté de + le bureau → à côté du bureau；près de + les fenêtres → près des fenêtres。
+
+完整变换练习：①C'est une chaise → 复数。②Il y a des cahiers → 否定。③Le sac est à côté de le bureau → 改错。④Ce n'est pas de dictionnaire → 改错。⑤听原站词表，列三件位于“Sur le bureau”组的物品。
+
+答案：①Ce sont des chaises。②Il n'y a pas de cahiers。③Le sac est à côté du bureau。④Ce n'est pas un dictionnaire。⑤如 une craie、un crayon、un stylo，也可 un cahier、un livre、un dictionnaire、un sac à dos。词表分组不能证明你自己的教室实际如此。
+
+原创输出示范：Dans notre salle, il y a huit tables. Le tableau est devant les chaises. Mon sac est sous ma chaise. Il n'y a pas de télévision. Il y a un dictionnaire sur le bureau. Ce n'est pas mon dictionnaire. 接着描述另一间房，至少改变两个数量和两个位置。自查 article、être 主谓一致和 de 的缩合。跟读只使用原站音轨中的词组，以上原创段落尚无对应录音。
+
+
+## 版本与验收记录
+
+- 新增材料：十二组定位明确的听前/听后任务、语法边界、改错题、答案及原创表达示范。
+- 保留：此前每个单元的独立正文、U04–U12 分册及扩充稿；本文件不替换任何旧段落。
+- 资料关系：2019 第四版教材与 legacy 网站词汇音频分开登记，不默认与新版 Pressbooks 音轨相同。
+- 待补：每课情境对话/长阅读的匹配录音、人工试听、专业逐课语言审校，以及高级别课程。完成本练习不意味着 12 节有声课已发布。
+- 许可：原站录音/词表按 [FI 采用页](https://laits.utexas.edu/fi/page/adopt/) CC BY 3.0 署名 COERLL / UT Austin；本项目原创讲解没有因此自动转为 CC 授权。

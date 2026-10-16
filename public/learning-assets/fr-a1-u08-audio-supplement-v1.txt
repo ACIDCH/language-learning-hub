@@ -1,0 +1,24 @@
+# 法语 A1 · 12 单元参考音频练习与语法补充 V1
+
+状态：新增教学补充稿，保留所有旧正文。每节的录音是 Français interactif 原版词汇参考音频，不是对本项目原创对话的配音。标准音轨、实际时长、哈希及完整原站词表见 `config/assets/lesson-audio.json`。语法提示和练习答案为本项目原创，仍待专业语言审校。录音均已下载校验；人工听辨验收未完成，不标为正式有声课。
+
+使用方式：先完成原课的六段正文，再听本节指定音轨。第一次不看词表抓类别；第二次对照完整词表辨认；第三次选短片段跟读。下列练习不需要计分，不作为课程解锁条件。时间点由学习者用 A/B 标记，尚无经过核验的逐词时间轴。
+
+## fr-a1-u08 · Au café et au marché
+
+参考音轨：`fi-voc-043`，[原站 au café](https://laits.utexas.edu/fi/voc/05/#043)。原词表含酒精和非酒精饮料；练习可只选择咖啡、茶、水和食物。
+
+补充讲解：du café 表示不定量的咖啡，un café 在点单时通常是一份/一杯。de l'eau 的 l' 不能用来推断名词是阳性；eau 为阴性。一般否定宾语用 de：Je ne bois pas de café。明确对比可保留原冠词：Je ne bois pas du thé, mais du café。数量词后常用 de：un verre d'eau、beaucoup de café；不是 beaucoup du café，除非 du 指特定限定结构。
+
+练习：①Je voudrais ___ eau；un verre ___ eau。②把 Je prends du café 改为一般否定。③纠正 J'aime du thé（要表达一般喜欢茶）。④写一段确认订单的四轮对话。
+
+答案：①de l'；d'。②Je ne prends pas de café。③J'aime le thé。④Bonjour, je voudrais un thé, s'il vous plaît. — Un thé et autre chose ? — Un sandwich, s'il vous plaît. — Très bien。跟读练习：先保留完整冠词词组 de l'eau / du café，不要只重复裸名词。
+
+
+## 版本与验收记录
+
+- 新增材料：十二组定位明确的听前/听后任务、语法边界、改错题、答案及原创表达示范。
+- 保留：此前每个单元的独立正文、U04–U12 分册及扩充稿；本文件不替换任何旧段落。
+- 资料关系：2019 第四版教材与 legacy 网站词汇音频分开登记，不默认与新版 Pressbooks 音轨相同。
+- 待补：每课情境对话/长阅读的匹配录音、人工试听、专业逐课语言审校，以及高级别课程。完成本练习不意味着 12 节有声课已发布。
+- 许可：原站录音/词表按 [FI 采用页](https://laits.utexas.edu/fi/page/adopt/) CC BY 3.0 署名 COERLL / UT Austin；本项目原创讲解没有因此自动转为 CC 授权。

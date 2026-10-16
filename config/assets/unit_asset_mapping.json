@@ -1,0 +1,1321 @@
+{
+  "schema_version": 1,
+  "mappings": [
+    {
+      "lesson_id": "fr-a1-u01",
+      "asset_id": "fi-voc-005",
+      "role": "vocabulary_supplement",
+      "title": "salutations",
+      "source_url": "https://media.la.utexas.edu:443/fi/aud/voc/005.mp3",
+      "transcript_url": "https://laits.utexas.edu/fi/voc/01/#005",
+      "official_chapter": 1,
+      "archive_asset_id": "fi-voc-01",
+      "duration_seconds": 119.197,
+      "bytes": 1447769,
+      "sha256": "1a826402eea6d224a7bb88065d8c5ff87c3edc1515d4b2147f733c97a0bb8659",
+      "license": "CC-BY-3.0",
+      "rights_url": "https://laits.utexas.edu/fi/page/adopt/",
+      "attribution": "COERLL / University of Texas at Austin. Original audio unchanged. Vocabulary table reproduced from the legacy FI website.",
+      "alignment_reason": "Formal/informal greetings; source includes older Mademoiselle usage: prefer Madame for an adult woman whose preference is unknown.",
+      "transcript_type": "publisher_vocabulary_table_not_time_aligned",
+      "transcript": [
+        [
+          "salutations",
+          "greetings"
+        ],
+        [
+          "Monsieur",
+          "Sir"
+        ],
+        [
+          "Madame",
+          "Ma'am (Mrs.)"
+        ],
+        [
+          "Mademoiselle",
+          "Miss"
+        ],
+        [
+          "Bonjour, Monsieur",
+          "Good day (Hello), Sir"
+        ],
+        [
+          "Bonsoir",
+          "Good evening"
+        ],
+        [
+          "Au revoir",
+          "Goodbye"
+        ],
+        [
+          "Salut!",
+          "Hi!"
+        ],
+        [
+          "À tout à l'heure!",
+          "See you in a little while."
+        ],
+        [
+          "À ce soir.",
+          "See you this evening."
+        ],
+        [
+          "À demain.",
+          "See you tomorrow."
+        ],
+        [
+          "À bientôt.",
+          "See you soon."
+        ],
+        [
+          "Comment vous appelez-vous?",
+          "What's your name? (formal)"
+        ],
+        [
+          "Comment tu t'appelles? (Comment t'appelles-tu?)",
+          "What's your name? (informal)"
+        ],
+        [
+          "Je m'appelle ...",
+          "My name is ..."
+        ],
+        [
+          "Comment allez-vous?",
+          "How are you? (formal)"
+        ],
+        [
+          "Comment vas-tu?",
+          "How are you? (informal)"
+        ],
+        [
+          "Je vais très bien, merci.",
+          "I am very well, thank you."
+        ],
+        [
+          "Je vais bien, merci.",
+          "I am fine, thank you."
+        ],
+        [
+          "Pas mal, merci.",
+          "Not bad, thank you."
+        ],
+        [
+          "Comment ça va?",
+          "How are things going?"
+        ],
+        [
+          "Bien, merci!",
+          "Great, thanks!"
+        ],
+        [
+          "Ça va (bien)?",
+          "Are things going (well)?"
+        ],
+        [
+          "Ça va bien.",
+          "Things are going (well)."
+        ],
+        [
+          "Et vous? Vous êtes d'où?",
+          "And you? Where are you from? (formal)"
+        ],
+        [
+          "Et toi? Tu es d'où?",
+          "And you? Where are you from? (informal)"
+        ]
+      ],
+      "transcript_columns": [
+        "法语",
+        "原站英文释义"
+      ],
+      "verification": "official_stream_matches_verified_archive",
+      "linguistic_review": "pending",
+      "manual_listening": "pending"
+    },
+    {
+      "lesson_id": "fr-a1-u02",
+      "asset_id": "fi-voc-020",
+      "role": "vocabulary_supplement",
+      "title": "continents, pays, nationalités _______________",
+      "source_url": "https://media.la.utexas.edu:443/fi/aud/voc/020.mp3",
+      "transcript_url": "https://laits.utexas.edu/fi/voc/02/#020",
+      "official_chapter": 2,
+      "archive_asset_id": "fi-voc-02",
+      "duration_seconds": 207.203,
+      "bytes": 2505895,
+      "sha256": "5952e236b5175c40d33c1ee41765e7e75dead8bc1cb80569c090945eb7f325c9",
+      "license": "CC-BY-3.0",
+      "rights_url": "https://laits.utexas.edu/fi/page/adopt/",
+      "attribution": "COERLL / University of Texas at Austin. Original audio unchanged. Vocabulary table reproduced from the legacy FI website.",
+      "alignment_reason": "Country and nationality vocabulary; does not by itself teach all city/country prepositions.",
+      "transcript_type": "publisher_vocabulary_table_not_time_aligned",
+      "transcript": [
+        [
+          "continents, pays, nationalités _______________",
+          "continents, countries, nationalities _______________"
+        ],
+        [
+          "un continent",
+          "continent"
+        ],
+        [
+          "un pays",
+          "country"
+        ],
+        [
+          "l'Afrique (f) / africain (e)",
+          "Africa / African"
+        ],
+        [
+          "l'Algérie (f) / algérien(ne)",
+          "Algeria / Algerian"
+        ],
+        [
+          "le Maroc / marocain(e)",
+          "Morocco / Moroccan"
+        ],
+        [
+          "le Sénégal / sénégalais(e)",
+          "Senegal / Senegalese"
+        ],
+        [
+          "la Tunisie / tunisien(ne)",
+          "Tunisia / Tunisian"
+        ],
+        [
+          "l'Amérique du Nord",
+          "North America"
+        ],
+        [
+          "le Canada / canadien(ne)",
+          "Canada / Canadian"
+        ],
+        [
+          "les Etats-Unis / américain(e)",
+          "United States / American"
+        ],
+        [
+          "le Mexique / mexicain(e)",
+          "Mexico / Mexican"
+        ],
+        [
+          "l'Amérique du Sud",
+          "South America"
+        ],
+        [
+          "la Guyane française / guyanais(e)",
+          "French Guyana / Guyanese"
+        ],
+        [
+          "l'Asie (f) / asiatique",
+          "Asia / Asian"
+        ],
+        [
+          "la Chine / chinois(e)",
+          "China / Chinese"
+        ],
+        [
+          "le Japon / japonais(e)",
+          "Japan / Japanese"
+        ],
+        [
+          "le Vietnam / vietnamien(ne)",
+          "Vietnam / Vietnamese"
+        ],
+        [
+          "l'Océanie",
+          "Oceania (the South Sea Islands)"
+        ],
+        [
+          "l'Australie (f) / australien(ne)",
+          "Australia / Australian"
+        ],
+        [
+          "l'Europe (f) / européen(ne)",
+          "Europe / European"
+        ],
+        [
+          "l'Allemagne (f) / allemand(e)",
+          "Germany / German"
+        ],
+        [
+          "l'Angleterre (f) / anglais(e)",
+          "England / English"
+        ],
+        [
+          "la Belgique / belge",
+          "Belgium / Belgian"
+        ],
+        [
+          "l'Espagne (f) / espagnol(e)",
+          "Spain / Spanish"
+        ],
+        [
+          "la France / français(e)",
+          "France / French"
+        ],
+        [
+          "l'Italie (f) / italien(ne)",
+          "Italy / Italian"
+        ],
+        [
+          "la Suisse / suisse",
+          "Switzerland / Swiss"
+        ]
+      ],
+      "transcript_columns": [
+        "法语",
+        "原站英文释义"
+      ],
+      "verification": "official_stream_matches_verified_archive",
+      "linguistic_review": "pending",
+      "manual_listening": "pending"
+    },
+    {
+      "lesson_id": "fr-a1-u03",
+      "asset_id": "fi-voc-013",
+      "role": "vocabulary_supplement",
+      "title": "la famille",
+      "source_url": "https://media.la.utexas.edu:443/fi/aud/voc/013.mp3",
+      "transcript_url": "https://laits.utexas.edu/fi/voc/02/#013",
+      "official_chapter": 2,
+      "archive_asset_id": "fi-voc-02",
+      "duration_seconds": 92.891,
+      "bytes": 1132105,
+      "sha256": "41536edcef31e667abd08e59e0d1def37b89baaf5cae6cb225e8aa08b8cd4242",
+      "license": "CC-BY-3.0",
+      "rights_url": "https://laits.utexas.edu/fi/page/adopt/",
+      "attribution": "COERLL / University of Texas at Austin. Original audio unchanged. Vocabulary table reproduced from the legacy FI website.",
+      "alignment_reason": "Family nouns; possessive agreement still needs the lesson grammar explanation.",
+      "transcript_type": "publisher_vocabulary_table_not_time_aligned",
+      "transcript": [
+        [
+          "la famille",
+          "the family"
+        ],
+        [
+          "un homme",
+          "man"
+        ],
+        [
+          "une femme",
+          "woman, wife"
+        ],
+        [
+          "un mari",
+          "husband"
+        ],
+        [
+          "un fiancé / une fiancée",
+          "fiancé / fiancée"
+        ],
+        [
+          "des parents",
+          "parents, relatives"
+        ],
+        [
+          "un père",
+          "father"
+        ],
+        [
+          "une mère",
+          "mother"
+        ],
+        [
+          "un/une enfant",
+          "child"
+        ],
+        [
+          "un fils",
+          "son"
+        ],
+        [
+          "une fille",
+          "daughter"
+        ],
+        [
+          "un fils unique",
+          "only child (male)"
+        ],
+        [
+          "une fille unique",
+          "only child (female)"
+        ],
+        [
+          "un frère",
+          "brother"
+        ],
+        [
+          "une soeur",
+          "sister"
+        ],
+        [
+          "des grands-parents (m)",
+          "grandparents"
+        ],
+        [
+          "un grand-père",
+          "grandfather"
+        ],
+        [
+          "une grand-mère",
+          "grandmother"
+        ],
+        [
+          "un petit-enfant",
+          "grandchild"
+        ],
+        [
+          "un oncle",
+          "uncle"
+        ],
+        [
+          "une tante",
+          "aunt"
+        ],
+        [
+          "un neveu",
+          "nephew"
+        ],
+        [
+          "une nièce",
+          "niece"
+        ]
+      ],
+      "transcript_columns": [
+        "法语",
+        "原站英文释义"
+      ],
+      "verification": "official_stream_matches_verified_archive",
+      "linguistic_review": "pending",
+      "manual_listening": "pending"
+    },
+    {
+      "lesson_id": "fr-a1-u04",
+      "asset_id": "fi-voc-007",
+      "role": "vocabulary_supplement",
+      "title": "la salle de classe",
+      "source_url": "https://media.la.utexas.edu:443/fi/aud/voc/007.mp3",
+      "transcript_url": "https://laits.utexas.edu/fi/voc/01/#007",
+      "official_chapter": 1,
+      "archive_asset_id": "fi-voc-01",
+      "duration_seconds": 123.794,
+      "bytes": 1501915,
+      "sha256": "5c734f920d8702e1a958a0c9079348e4da1c77f535ffe5216a9555809522ed7b",
+      "license": "CC-BY-3.0",
+      "rights_url": "https://laits.utexas.edu/fi/page/adopt/",
+      "attribution": "COERLL / University of Texas at Austin. Original audio unchanged. Vocabulary table reproduced from the legacy FI website.",
+      "alignment_reason": "Classroom objects, articles and il y a are present in the source table.",
+      "transcript_type": "publisher_vocabulary_table_not_time_aligned",
+      "transcript": [
+        [
+          "la salle de classe",
+          "the classroom"
+        ],
+        [
+          "Qu'est-ce que c'est?",
+          "What is it?"
+        ],
+        [
+          "C'est ...",
+          "It's ..."
+        ],
+        [
+          "C'est une salle de classe.",
+          "It's a classroom."
+        ],
+        [
+          "Dans la salle de classe, il y a ...",
+          "In the classroom, there is ..."
+        ],
+        [
+          "une porte",
+          "door"
+        ],
+        [
+          "une fenêtre",
+          "window"
+        ],
+        [
+          "un tableau (noir)",
+          "blackboard"
+        ],
+        [
+          "une télévision",
+          "television"
+        ],
+        [
+          "une carte (du monde)",
+          "map (of the world)"
+        ],
+        [
+          "une affiche",
+          "poster"
+        ],
+        [
+          "une chaise",
+          "chair"
+        ],
+        [
+          "un bureau",
+          "desk"
+        ],
+        [
+          "Sur le bureau, il y a ...",
+          "On the desk, there is ..."
+        ],
+        [
+          "une craie",
+          "chalk"
+        ],
+        [
+          "un crayon",
+          "pencil"
+        ],
+        [
+          "un stylo",
+          "pen"
+        ],
+        [
+          "un cahier",
+          "notebook"
+        ],
+        [
+          "un livre",
+          "book"
+        ],
+        [
+          "un dictionnaire",
+          "dictionary"
+        ],
+        [
+          "un sac à dos",
+          "backpack"
+        ],
+        [
+          "Au labo, il y a ...",
+          "In the lab, there are ..."
+        ],
+        [
+          "des ordinateurs (m)",
+          "computers"
+        ],
+        [
+          "Les étudiants travaillent!",
+          "The students work!"
+        ],
+        [
+          "des devoirs (m)",
+          "homework"
+        ],
+        [
+          "un exercice",
+          "exercise"
+        ],
+        [
+          "un examen",
+          "test"
+        ]
+      ],
+      "transcript_columns": [
+        "法语",
+        "原站英文释义"
+      ],
+      "verification": "official_stream_matches_verified_archive",
+      "linguistic_review": "pending",
+      "manual_listening": "pending"
+    },
+    {
+      "lesson_id": "fr-a1-u05",
+      "asset_id": "fi-voc-018",
+      "role": "vocabulary_supplement",
+      "title": "passe-temps et activités",
+      "source_url": "https://media.la.utexas.edu:443/fi/aud/voc/018.mp3",
+      "transcript_url": "https://laits.utexas.edu/fi/voc/02/#018",
+      "official_chapter": 2,
+      "archive_asset_id": "fi-voc-02",
+      "duration_seconds": 154.462,
+      "bytes": 1874024,
+      "sha256": "732e88dd1574ffa44ad12c12de4af9e3e5fda8237a95e87d37feadb2f12a9cdf",
+      "license": "CC-BY-3.0",
+      "rights_url": "https://laits.utexas.edu/fi/page/adopt/",
+      "attribution": "COERLL / University of Texas at Austin. Original audio unchanged. Vocabulary table reproduced from the legacy FI website.",
+      "alignment_reason": "Present-tense routine activities; no claim that this is a complete routine dialogue.",
+      "transcript_type": "publisher_vocabulary_table_not_time_aligned",
+      "transcript": [
+        [
+          "passe-temps et activités",
+          "pastimes and activities"
+        ],
+        [
+          "avoir",
+          "to have"
+        ],
+        [
+          "avoir besoin de...",
+          "to need"
+        ],
+        [
+          "avoir envie de...",
+          "to feel like (to want to)"
+        ],
+        [
+          "avoir l'intention de...",
+          "to intend (to)"
+        ],
+        [
+          "chercher",
+          "to look for"
+        ],
+        [
+          "trouver",
+          "to find"
+        ],
+        [
+          "(Qui cherche, trouve!)",
+          "(Who looks for (searches), finds!)"
+        ],
+        [
+          "tomber amoureux (de) /amoureuse (de)",
+          "to fall in love"
+        ],
+        [
+          "embrasser",
+          "to kiss"
+        ],
+        [
+          "écouter...",
+          "to listen to..."
+        ],
+        [
+          "de la musique",
+          "music"
+        ],
+        [
+          "chanter",
+          "to sing"
+        ],
+        [
+          "danser",
+          "to dance"
+        ],
+        [
+          "aimer",
+          "to like, to love"
+        ],
+        [
+          "la musique classique / le jazz /",
+          "classical music / jazz /"
+        ],
+        [
+          "le hip-hop / la techno /",
+          "hip-hop / techno /"
+        ],
+        [
+          "le sport / le tennis / le football /",
+          "sports / tennis / soccer /"
+        ],
+        [
+          "le basket / le golf / le footing",
+          "basketball / golf / running"
+        ],
+        [
+          "préférer",
+          "to prefer"
+        ],
+        [
+          "adorer",
+          "to adore"
+        ],
+        [
+          "détester",
+          "to detest"
+        ],
+        [
+          "habiter",
+          "to live"
+        ],
+        [
+          "rester à la maison",
+          "to stay at home"
+        ],
+        [
+          "étudier",
+          "to study"
+        ],
+        [
+          "lire",
+          "to read *"
+        ],
+        [
+          "oublier",
+          "to forget"
+        ],
+        [
+          "regarder la télévision",
+          "to watch television"
+        ],
+        [
+          "téléphoner à",
+          "to telephone"
+        ],
+        [
+          "parler",
+          "to speak"
+        ],
+        [
+          "jouer...",
+          "to play..."
+        ],
+        [
+          "au foot / au tennis / aux cartes",
+          "soccer / tennis / cards"
+        ],
+        [
+          "de la guitare / du piano",
+          "guitar / piano"
+        ],
+        [
+          "nager",
+          "to swim"
+        ],
+        [
+          "rencontrer",
+          "to meet"
+        ],
+        [
+          "rêver",
+          "to dream"
+        ],
+        [
+          "travailler",
+          "to work"
+        ],
+        [
+          "voyager",
+          "to travel"
+        ],
+        [
+          "* irregular: Refer to Tex's French Grammar: lire, dire,écrire for conjugation.",
+          ""
+        ]
+      ],
+      "transcript_columns": [
+        "法语",
+        "原站英文释义"
+      ],
+      "verification": "official_stream_matches_verified_archive",
+      "linguistic_review": "pending",
+      "manual_listening": "pending"
+    },
+    {
+      "lesson_id": "fr-a1-u06",
+      "asset_id": "fi-voc-015",
+      "role": "vocabulary_supplement",
+      "title": "mots interrogatifs",
+      "source_url": "https://media.la.utexas.edu:443/fi/aud/voc/015.mp3",
+      "transcript_url": "https://laits.utexas.edu/fi/voc/02/#015",
+      "official_chapter": 2,
+      "archive_asset_id": "fi-voc-02",
+      "duration_seconds": 34.273,
+      "bytes": 429726,
+      "sha256": "da464e5b65e4fb892fe2da205f9c75904a1907b8c0fe3919299033b071624bad",
+      "license": "CC-BY-3.0",
+      "rights_url": "https://laits.utexas.edu/fi/page/adopt/",
+      "attribution": "COERLL / University of Texas at Austin. Original audio unchanged. Vocabulary table reproduced from the legacy FI website.",
+      "alignment_reason": "Interrogative words; question syntax and negation are separate lesson objectives.",
+      "transcript_type": "publisher_vocabulary_table_not_time_aligned",
+      "transcript": [
+        [
+          "mots interrogatifs",
+          "interrogative words"
+        ],
+        [
+          "où?",
+          "where?"
+        ],
+        [
+          "quand?",
+          "when?"
+        ],
+        [
+          "qui?",
+          "who?"
+        ],
+        [
+          "comment?",
+          "how?"
+        ],
+        [
+          "quel / quelle / quels / quelles",
+          "which?"
+        ],
+        [
+          "pourquoi?",
+          "why?"
+        ],
+        [
+          "parce que",
+          "because"
+        ]
+      ],
+      "transcript_columns": [
+        "法语",
+        "原站英文释义"
+      ],
+      "verification": "official_stream_matches_verified_archive",
+      "linguistic_review": "pending",
+      "manual_listening": "pending"
+    },
+    {
+      "lesson_id": "fr-a1-u07",
+      "asset_id": "fi-voc-026",
+      "role": "vocabulary_supplement",
+      "title": "les activités",
+      "source_url": "https://media.la.utexas.edu:443/fi/aud/voc/026.mp3",
+      "transcript_url": "https://laits.utexas.edu/fi/voc/03/#026",
+      "official_chapter": 3,
+      "archive_asset_id": "fi-voc-03",
+      "duration_seconds": 84.245,
+      "bytes": 1028347,
+      "sha256": "2a5cf2dd9875a3f13183ef84f885860475976ad035d949269d3855c5a5e31fb7",
+      "license": "CC-BY-3.0",
+      "rights_url": "https://laits.utexas.edu/fi/page/adopt/",
+      "attribution": "COERLL / University of Texas at Austin. Original audio unchanged. Vocabulary table reproduced from the legacy FI website.",
+      "alignment_reason": "Leisure activities; original speaking tasks must add preferences and reasons.",
+      "transcript_type": "publisher_vocabulary_table_not_time_aligned",
+      "transcript": [
+        [
+          "les activités",
+          "activities"
+        ],
+        [
+          "aller",
+          "to go"
+        ],
+        [
+          "aller au cinéma",
+          "to go to the movies"
+        ],
+        [
+          "aller en boîte",
+          "to go clubbing"
+        ],
+        [
+          "aller au concert",
+          "to go to a concert"
+        ],
+        [
+          "aller à l'université",
+          "to go to the university"
+        ],
+        [
+          "aller au parc",
+          "to go to the park"
+        ],
+        [
+          "faire de la bicyclette",
+          "to go bicycle riding"
+        ],
+        [
+          "faire du bateau",
+          "to go boating"
+        ],
+        [
+          "faire de la planche à voile",
+          "to go windsurfing"
+        ],
+        [
+          "faire des randonnées",
+          "to go hiking"
+        ],
+        [
+          "faire du ski",
+          "to go skiing"
+        ],
+        [
+          "faire du vélo",
+          "to go cycling"
+        ],
+        [
+          "faire de la voile",
+          "to go sailing"
+        ],
+        [
+          "faire une promenade",
+          "to take a walk"
+        ],
+        [
+          "passer les vacances (f pl)",
+          "spend a vacation"
+        ],
+        [
+          "visiter... (un lieu, pas une personne)",
+          "to visit... (a place, not a person)"
+        ],
+        [
+          "une cathédrale",
+          "a cathedral"
+        ],
+        [
+          "un château",
+          "a castle"
+        ],
+        [
+          "une exposition",
+          "an exhibition, show"
+        ],
+        [
+          "un monument",
+          "a monument"
+        ],
+        [
+          "un musée",
+          "a museum"
+        ]
+      ],
+      "transcript_columns": [
+        "法语",
+        "原站英文释义"
+      ],
+      "verification": "official_stream_matches_verified_archive",
+      "linguistic_review": "pending",
+      "manual_listening": "pending"
+    },
+    {
+      "lesson_id": "fr-a1-u08",
+      "asset_id": "fi-voc-043",
+      "role": "vocabulary_supplement",
+      "title": "au café",
+      "source_url": "https://media.la.utexas.edu:443/fi/aud/voc/043.mp3",
+      "transcript_url": "https://laits.utexas.edu/fi/voc/05/#043",
+      "official_chapter": 5,
+      "archive_asset_id": "fi-voc-05",
+      "duration_seconds": 90.149,
+      "bytes": 1104311,
+      "sha256": "d9c217c4f137a917cc999b20a96007b2f392f8f8ceaf799f6082ee536261643e",
+      "license": "CC-BY-3.0",
+      "rights_url": "https://laits.utexas.edu/fi/page/adopt/",
+      "attribution": "COERLL / University of Texas at Austin. Original audio unchanged. Vocabulary table reproduced from the legacy FI website.",
+      "alignment_reason": "Ordering food/drink at a cafe; quantity grammar is taught separately.",
+      "transcript_type": "publisher_vocabulary_table_not_time_aligned",
+      "transcript": [
+        [
+          "au café",
+          "at the café"
+        ],
+        [
+          "Au café, on commande ...",
+          "At the café, you order ..."
+        ],
+        [
+          "des boissons non-alcoolisées",
+          "non-alcoholic beverages"
+        ],
+        [
+          "du café",
+          "coffee"
+        ],
+        [
+          "du thé",
+          "tea"
+        ],
+        [
+          "du coca-cola",
+          "cola"
+        ],
+        [
+          "de l'eau (f)",
+          "water"
+        ],
+        [
+          "de l'eau minérale",
+          "mineral water"
+        ],
+        [
+          "du jus de fruit",
+          "fruit juice"
+        ],
+        [
+          "des boissons alcoolisées",
+          "alcoholic beverages"
+        ],
+        [
+          "de la bière",
+          "beer"
+        ],
+        [
+          "du champagne",
+          "champagne"
+        ],
+        [
+          "du vin",
+          "wine"
+        ],
+        [
+          "du vin blanc (du blanc)",
+          "white wine"
+        ],
+        [
+          "du vin rosé (du rosé)",
+          "rosé wine"
+        ],
+        [
+          "du vin rouge (du rouge)",
+          "red wine"
+        ],
+        [
+          "un sandwich jambon beurre",
+          "sandwich with ham and butter"
+        ],
+        [
+          "un croque-monsieur",
+          "toasted cheese sandwich with ham"
+        ],
+        [
+          "un croque-madame",
+          "croque-monsieur with a fried egg"
+        ],
+        [
+          "une quiche (lorraine, au saumon, etc.)",
+          "quiche (lorraine, salmon, etc.)"
+        ],
+        [
+          "une omelette (aux fines herbes, au fromage)",
+          "omelette (with herbs, cheese)"
+        ]
+      ],
+      "transcript_columns": [
+        "法语",
+        "原站英文释义"
+      ],
+      "verification": "official_stream_matches_verified_archive",
+      "linguistic_review": "pending",
+      "manual_listening": "pending"
+    },
+    {
+      "lesson_id": "fr-a1-u09",
+      "asset_id": "fi-voc-051",
+      "role": "vocabulary_supplement",
+      "title": "s'orienter",
+      "source_url": "https://media.la.utexas.edu:443/fi/aud/voc/051.mp3",
+      "transcript_url": "https://laits.utexas.edu/fi/voc/06/#051",
+      "official_chapter": 6,
+      "archive_asset_id": "fi-voc-06",
+      "duration_seconds": 96.836,
+      "bytes": 1179439,
+      "sha256": "d2fbb40d38304908f07710f720e51f938bf16f6ac8459ae70beae6282b960757",
+      "license": "CC-BY-3.0",
+      "rights_url": "https://laits.utexas.edu/fi/page/adopt/",
+      "attribution": "COERLL / University of Texas at Austin. Original audio unchanged. Vocabulary table reproduced from the legacy FI website.",
+      "alignment_reason": "Location and direction expressions; distinguish tout droit from a droite.",
+      "transcript_type": "publisher_vocabulary_table_not_time_aligned",
+      "transcript": [
+        [
+          "s'orienter",
+          "getting your bearings"
+        ],
+        [
+          "Où se trouve... ?",
+          "Where is... ?"
+        ],
+        [
+          "(Où se trouve la poste?)",
+          "(Where is the post office?)"
+        ],
+        [
+          "à côté (de)",
+          "beside, next to"
+        ],
+        [
+          "à deux pas (de)",
+          "just a step from"
+        ],
+        [
+          "à droite (de)",
+          "on the right"
+        ],
+        [
+          "à gauche (de)",
+          "on the left"
+        ],
+        [
+          "au bout (de)",
+          "at the far end of"
+        ],
+        [
+          "au carrefour (de)",
+          "at the intersection of"
+        ],
+        [
+          "au centre",
+          "in the center"
+        ],
+        [
+          "au coin (de)",
+          "at the corner of"
+        ],
+        [
+          "chez",
+          "at someones house"
+        ],
+        [
+          "derrière",
+          "behind"
+        ],
+        [
+          "devant",
+          "in front of"
+        ],
+        [
+          "en face (de)",
+          "facing, opposite"
+        ],
+        [
+          "en ville",
+          "in the city"
+        ],
+        [
+          "loin (de)",
+          "far"
+        ],
+        [
+          "près (de)",
+          "near, close"
+        ],
+        [
+          "sous",
+          "under"
+        ],
+        [
+          "sur",
+          "on"
+        ],
+        [
+          "sur votre droite/gauche",
+          "on your right/left"
+        ],
+        [
+          "tout droit",
+          "straight ahead"
+        ],
+        [
+          "tout près",
+          "nearby"
+        ]
+      ],
+      "transcript_columns": [
+        "法语",
+        "原站英文释义"
+      ],
+      "verification": "official_stream_matches_verified_archive",
+      "linguistic_review": "pending",
+      "manual_listening": "pending"
+    },
+    {
+      "lesson_id": "fr-a1-u10",
+      "asset_id": "fi-voc-060",
+      "role": "vocabulary_supplement",
+      "title": "à la maison",
+      "source_url": "https://media.la.utexas.edu:443/fi/aud/voc/060.mp3",
+      "transcript_url": "https://laits.utexas.edu/fi/voc/08/#060",
+      "official_chapter": 8,
+      "archive_asset_id": "fi-voc-08",
+      "duration_seconds": 37.46,
+      "bytes": 301799,
+      "sha256": "d18179228ad3e9ce718483db503047f0cad23f773065794ef2d558a0a921e073",
+      "license": "CC-BY-3.0",
+      "rights_url": "https://laits.utexas.edu/fi/page/adopt/",
+      "attribution": "COERLL / University of Texas at Austin. Original audio unchanged. Vocabulary table reproduced from the legacy FI website.",
+      "alignment_reason": "Home and housing nouns; adjective agreement remains a separate explanation.",
+      "transcript_type": "publisher_vocabulary_table_not_time_aligned",
+      "transcript": [
+        [
+          "à la maison",
+          "at home"
+        ],
+        [
+          "une maison",
+          "house"
+        ],
+        [
+          "un appartement",
+          "apartment"
+        ],
+        [
+          "une résidence universitaire",
+          "university dorm"
+        ],
+        [
+          "une pièce",
+          "a room (general term)"
+        ],
+        [
+          "une fenêtre",
+          "window"
+        ],
+        [
+          "un meuble / des meubles",
+          "a piece of furniture / furniture"
+        ],
+        [
+          "le rez-de-chaussée",
+          "ground floor, first floor"
+        ],
+        [
+          "un escalier",
+          "staircase, stairs"
+        ],
+        [
+          "un balcon",
+          "balcony"
+        ],
+        [
+          "une terrasse",
+          "terrace"
+        ],
+        [
+          "un jardin",
+          "garden, yard"
+        ]
+      ],
+      "transcript_columns": [
+        "法语",
+        "原站英文释义"
+      ],
+      "verification": "official_stream_matches_verified_archive",
+      "linguistic_review": "pending",
+      "manual_listening": "pending"
+    },
+    {
+      "lesson_id": "fr-a1-u11",
+      "asset_id": "fi-voc-028",
+      "role": "vocabulary_supplement",
+      "title": "verbes",
+      "source_url": "https://media.la.utexas.edu:443/fi/aud/voc/028.mp3",
+      "transcript_url": "https://laits.utexas.edu/fi/voc/03/#028",
+      "official_chapter": 3,
+      "archive_asset_id": "fi-voc-03",
+      "duration_seconds": 41.77,
+      "bytes": 516088,
+      "sha256": "f2d279569e1e0a78188c243fa062cf71017fcddbde0d39f819483ff9ae43b440",
+      "license": "CC-BY-3.0",
+      "rights_url": "https://laits.utexas.edu/fi/page/adopt/",
+      "attribution": "COERLL / University of Texas at Austin. Original audio unchanged. Vocabulary table reproduced from the legacy FI website.",
+      "alignment_reason": "Movement/activity verbs for future plans; vocabulary supplement only, not a futur proche demonstration.",
+      "transcript_type": "publisher_vocabulary_table_not_time_aligned",
+      "transcript": [
+        [
+          "verbes",
+          "verbs"
+        ],
+        [
+          "acheter",
+          "to buy"
+        ],
+        [
+          "amener",
+          "to bring somebody (along)"
+        ],
+        [
+          "changer",
+          "to change"
+        ],
+        [
+          "dormir",
+          "to sleep"
+        ],
+        [
+          "emmener",
+          "to take somebody (along)"
+        ],
+        [
+          "espérer",
+          "to hope"
+        ],
+        [
+          "essayer",
+          "to try"
+        ],
+        [
+          "manger",
+          "to eat"
+        ],
+        [
+          "nager",
+          "to swim"
+        ],
+        [
+          "partager",
+          "to share"
+        ],
+        [
+          "partir",
+          "to leave"
+        ],
+        [
+          "sortir",
+          "to go out"
+        ]
+      ],
+      "transcript_columns": [
+        "法语",
+        "原站英文释义"
+      ],
+      "verification": "official_stream_matches_verified_archive",
+      "linguistic_review": "pending",
+      "manual_listening": "pending"
+    },
+    {
+      "lesson_id": "fr-a1-u12",
+      "asset_id": "fi-voc-055",
+      "role": "vocabulary_supplement",
+      "title": "participes passés irréguliers",
+      "source_url": "https://media.la.utexas.edu:443/fi/aud/voc/055.mp3",
+      "transcript_url": "https://laits.utexas.edu/fi/voc/06/#055",
+      "official_chapter": 6,
+      "archive_asset_id": "fi-voc-06",
+      "duration_seconds": 56.163,
+      "bytes": 690343,
+      "sha256": "78c68ca3d30cc3804cf7b196ef40ea19f7a14a1fac6493b97bc0f880a3166118",
+      "license": "CC-BY-3.0",
+      "rights_url": "https://laits.utexas.edu/fi/page/adopt/",
+      "attribution": "COERLL / University of Texas at Austin. Original audio unchanged. Vocabulary table reproduced from the legacy FI website.",
+      "alignment_reason": "Irregular past participles; auxiliary selection and agreement require lesson grammar.",
+      "transcript_type": "publisher_vocabulary_table_not_time_aligned",
+      "transcript": [
+        [
+          "participes passés irréguliers",
+          "..."
+        ],
+        [
+          "avoir: j'ai eu ...",
+          "boire: j'ai bu ..."
+        ],
+        [
+          "être: j'ai été ...",
+          "croire: j'ai cru ..."
+        ],
+        [
+          "faire: j'ai fait ...",
+          "voir: j'ai vu ..."
+        ],
+        [
+          "prendre: j'ai pris ...",
+          "mourir: il est mort / elle est mort(e) ..."
+        ],
+        [
+          "mettre: j'ai mis ...",
+          "naître: il est né / elle est né(e) ..."
+        ]
+      ],
+      "transcript_columns": [
+        "法语例句",
+        "法语例句"
+      ],
+      "verification": "official_stream_matches_verified_archive",
+      "linguistic_review": "pending",
+      "manual_listening": "pending"
+    }
+  ]
+}

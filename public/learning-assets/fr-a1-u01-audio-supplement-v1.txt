@@ -1,0 +1,28 @@
+# 法语 A1 · 12 单元参考音频练习与语法补充 V1
+
+状态：新增教学补充稿，保留所有旧正文。每节的录音是 Français interactif 原版词汇参考音频，不是对本项目原创对话的配音。标准音轨、实际时长、哈希及完整原站词表见 `config/assets/lesson-audio.json`。语法提示和练习答案为本项目原创，仍待专业语言审校。录音均已下载校验；人工听辨验收未完成，不标为正式有声课。
+
+使用方式：先完成原课的六段正文，再听本节指定音轨。第一次不看词表抓类别；第二次对照完整词表辨认；第三次选短片段跟读。下列练习不需要计分，不作为课程解锁条件。时间点由学习者用 A/B 标记，尚无经过核验的逐词时间轴。
+
+## fr-a1-u01 · Salutations et présentations
+
+参考音轨：`fi-voc-005`，[原站 salutations](https://laits.utexas.edu/fi/voc/01/#005)。目标：根据对象选择 tu / vous，听出问候和告别的功能。先把自己的身份设为新同学，再设为向陌生老师问路；同一句问候在不同关系中可能需要不同称呼。
+
+补充讲解：vous 可以表示一人时的礼貌，也可以表示多人；tu 通常用于熟悉关系，不能只按年龄判断。Je m'appelle 是 s'appeler 的第一人称，不应写 Je s'appelle。常用形式：je m'appelle、tu t'appelles、il/elle s'appelle、nous nous appelons、vous vous appelez、ils/elles s'appellent。名词 Monsieur / Madame 作称呼时与冠词搭配不同于句中介绍；Bonjour, Madame 是自然称呼，不说 Bonjour, la Madame。
+
+原站旧词表收录 Mademoiselle；学习者不应把它当成询问成年女性婚姻状态的必选称呼。未知偏好时通常使用 Madame。原站词表照原样保留，这里补充当前交际选择，不修改原教材。
+
+练习：①分别写一组对陌生人和同学问姓名的表达。②将 À demain 与 À bientôt 按“是否指定明天”区分。③把 Je s'appelle Lina 改正。④写一个先问候、再自我介绍、最后告别的三轮对话。
+
+答案：①Comment vous appelez-vous ? / Comment tu t'appelles ?（也可 Comment t'appelles-tu ?）。②À demain 明天见；À bientôt 不指定某一天。③Je m'appelle Lina。④示例：Bonjour, je m'appelle Lina. — Bonjour, moi, c'est Paul. — Enchantée, Paul. À bientôt ! 对话中 Enchantée 的书写配合说话人，此处 Lina 是女性。
+
+跟读：在 Comment vous appelez-vous ? 中先抓整组语流，不给每个音节加英语式词重音。原课 être 的结构继续保留；不要把 s'appeler 的代词与 être 的变位混为一谈。
+
+
+## 版本与验收记录
+
+- 新增材料：十二组定位明确的听前/听后任务、语法边界、改错题、答案及原创表达示范。
+- 保留：此前每个单元的独立正文、U04–U12 分册及扩充稿；本文件不替换任何旧段落。
+- 资料关系：2019 第四版教材与 legacy 网站词汇音频分开登记，不默认与新版 Pressbooks 音轨相同。
+- 待补：每课情境对话/长阅读的匹配录音、人工试听、专业逐课语言审校，以及高级别课程。完成本练习不意味着 12 节有声课已发布。
+- 许可：原站录音/词表按 [FI 采用页](https://laits.utexas.edu/fi/page/adopt/) CC BY 3.0 署名 COERLL / UT Austin；本项目原创讲解没有因此自动转为 CC 授权。
