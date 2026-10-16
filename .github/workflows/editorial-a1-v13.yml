@@ -19,3 +19,4 @@ jobs:
         with:
           node-version: '22'
       - run: node docs/editorial/a1-qa-v13/validate.mjs
+      - run: node docs/editorial/a1-qa-v13/validate-audio-segments.mjs
