@@ -19,7 +19,8 @@ for(const version of versions){
     for(const field of ['text_complete','publishable']){
       assert.equal(u[field],false,version+'/'+id+' has invalid '+field);
     }
-    assert.equal(u.expert_QA_approved,false,version+'/'+id+' misreports expert QA');
+    const expert=(u.expert_QA_approved ?? u.expert_qa_approved);
+    assert.equal(expert,false,version+'/'+id+' misreports expert QA');
     const audio=(u.exact_audio_verified ?? u.licensed_audio_mapped);
     assert.equal(audio,false,version+'/'+id+' misreports audio alignment');
   }
