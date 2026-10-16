@@ -1,0 +1,29 @@
+name: Frontend build and typecheck
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Check TypeScript and build
+        run: npm run build
+      - name: Ensure built GitHub Pages base path and content
+        run: |
+          test -f dist/index.html
+          test -f dist/learning-assets/manifest.json
+          test -f dist/learning-assets/fr-a1-u01.txt
+          test -f dist/learning-assets/en-ielts-reading-u01.txt
+          grep -q 'assets/' dist/index.html

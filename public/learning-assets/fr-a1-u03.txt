@@ -1,0 +1,132 @@
+FR-A1-U03｜Famille, âge et possessifs（原创教学样课 v0.1）
+学习目标：介绍家庭成员、表达年龄、理解 mon/ma/mes 和 avoir 的高频用法，保持 A1 初学进度。
+① 情景对话（原创）
+A : Tu as des frères et sœurs ?
+B : Oui, j'ai une sœur. Elle a vingt ans. Et toi ?
+A : J'ai un frère. Il s'appelle Thomas.
+B : Tes parents habitent ici ?
+A : Non, ils habitent dans une autre ville.
+中文：Tu as...? 表示“你有……吗”；J'ai... 是 avoir 第一人称形式；âge 用 avoir：J'ai vingt ans，不能按英语习惯写 Je suis vingt ans。
+② 系统语法：
+avoir 现在时：j'ai, tu as, il/elle a, nous avons, vous avez, ils/elles ont。
+人称与所有关系：mon père / ma mère / mes parents；ton frère / ta sœur / tes amis；son frère / sa sœur / ses parents。
+难点：mon / ma / mes 随被修饰名词的性数变化，而不是机械根据物主的性别决定；ma amie 错误，应使用 mon amie（女性单数名词元音开头时常用 mon）。
+否定：Je n'ai pas de frère，法语一般否定中的不定冠词往往变为 de；存在例外，初级先掌握常见模式。
+原创例句：
+1. J'ai une sœur.
+2. Nous avons deux frères.
+3. Mon père travaille à Lyon.
+4. Ma mère parle français.
+5. Mes amis sont étudiants.
+6. Tu as quel âge ?
+7. Elle a vingt ans.
+8. Je n'ai pas de frère.
+9. Mon amie habite à Paris.
+10. Leurs parents vivent au Canada. （此例为后续补充词组，不要求现在掌握所有词形）
+③ 核心词汇：famille, parents, père, mère, frère, sœur, fils, fille, ami(e), enfant, avoir, âge, mari, femme, grand-parent, habiter。
+④ 阅读原创：
+"Je m'appelle Chloé. Dans ma famille, nous sommes quatre personnes. J'ai un frère et mes parents habitent à Lille. Mon frère s'appelle Hugo. Il a dix-neuf ans. Mes parents parlent français. Mon amie Sarah habite à Paris."
+理解：Chloé 有几位家人？弟弟/哥哥的名字是什么？Sarah 在哪里？
+听力：后续可配项目原创 TTS，或查找 CC BY 对应的家人话题短音频；当前不冒充已录制。
+⑤ 发音：/ɛ̃/ dans, /ɔ̃/ mon 的鼻化元音对比（注意 dans 实际常见为 /dɑ̃/；因此训练目标应调整为单词 pain /pɛ̃/ 与 mon /mɔ̃/），关注 mon amie 的连接读法；先有听辨示范，再跟读。
+⑥ 实际表达：用 30–45 秒介绍家庭中两个人；写 8 句描述自己的家庭或一个虚构家庭（不要求暴露真实私人信息）。AI 根据冠词、所有限定词和 avoir 提出修改建议。
+来源提示：https://coerll.utexas.edu/coerll/oer/francais-interactif/
+本课全部短文/例句原创，需进一步语言审校及音频绑定后才可发布。
+
+===== V0.2 ADDENDUM — U03: Famille, âge et possessifs =====
+所有原有内容保留，本追加增加完整变位、用法对比、原创材料和参考答案。
+
+A. 课堂交际情境：la photo de famille
+A : Qui est-ce sur la photo ?
+B : C'est ma sœur, Julie, et c'est mon frère, Lucas.
+A : Quel âge a ta sœur ?
+B : Elle a vingt-deux ans. Mon frère a dix-huit ans.
+A : Tes parents habitent près d'ici ?
+B : Non, ils habitent à Toulouse.
+释义：Qui est-ce ? 问人物；Quel âge a...? 使用 avoir，不能逐字按英语 be 翻译年龄；près d'ici 在这附近。
+
+B. avoir 现在时完整变位
+j'ai；tu as；il/elle/on a；nous avons；vous avez；ils/elles ont。
+avoir 描述拥有和年龄，例如 J'ai un frère；J'ai vingt ans；Il a une sœur。
+“年龄”必须采用 avoir：Elle a dix-neuf ans；不是 Elle est dix-neuf ans。
+
+C. 物主限定词的完整表
+je → mon (阳性单数), ma (阴性单数), mes (复数)；
+tu → ton, ta, tes；
+il/elle/on → son, sa, ses；
+nous → notre（单数）, nos（复数）；
+vous → votre（单数）, vos（复数）；
+ils/elles → leur（单数）, leurs（复数）。
+重要：物主限定词通常跟随被拥有的名词的性数，而不是按物主本人性别选择：
+Paul parle de sa sœur.（sa 因 sœur 为阴性）
+Marie parle de son frère.（son 因 frère 为阳性）
+Mon amie arrive.（阴性 amie 以元音开头，避免元音冲突使用 mon）
+Mes amis arrivent.（复数）
+不要把法语 son 机械等同英语 his：son livre 可为他或她的书，需要上下文识别。
+
+D. 冠词、否定和复数的衔接
+J'ai un frère. → Je n'ai pas de frère.
+Elle a une sœur. → Elle n'a pas de sœur.
+J'ai des amis. → Je n'ai pas d'amis.
+在普通否定结构中不定冠词和部分冠词通常变 de/d'；être 的否定有不同情况，例如 Ce n'est pas un étudiant，不应把规则推广到所有句子。
+复数词尾并不都显性发音；需结合正确口音和连音示例学习。
+
+E. 与家庭相关的常用词组
+un membre de la famille 家庭成员；
+les parents 父母；
+le père 父亲；
+la mère 母亲；
+un frère / une sœur 兄弟/姐妹；
+un enfant 孩子；
+un fils / une fille 儿子/女儿；
+le grand-père / la grand-mère 祖父母；
+un oncle / une tante 叔伯舅舅/姑姨；
+un cousin / une cousine 堂表兄弟姐妹；
+un ami / une amie 朋友；
+les proches 亲近的人；
+avoir ... ans ...岁；
+habiter avec ... 和...同住。
+以例句承载词汇：
+Ma sœur étudie le français.
+Nos parents habitent à Lille.
+Ses amis travaillent à Paris.
+Leur fils a dix-huit ans.
+Je n'ai pas d'oncle à Lyon.
+Mon amie s'appelle Clara.
+
+F. 原创阅读：trois générations
+"Dans la famille de Nadia, il y a cinq personnes : Nadia, ses parents et ses deux frères. Nadia a vingt ans. Son petit frère, Sami, a seize ans et son grand frère, Malik, a vingt-quatre ans. Leurs parents habitent à Lille. Leur grand-mère habite à Lyon. Le dimanche, Nadia téléphone à sa grand-mère."
+答案：
+1. Combien de personnes dans la famille immédiate mentionnée ? Cinq（Nadia、父母、两位兄弟；祖母单独另外提及）。
+2. Quel âge a Sami ? Seize ans。
+3. Où habitent les parents ? À Lille。
+4. À qui Nadia téléphone-t-elle ? À sa grand-mère。
+5. son petit frère 与 sa grand-mère 的选词依据？名词 frère / grand-mère 的语法性别。
+
+G. 发音对比与语流
+/ɑ̃/ dans "parents" 的第一个元音；
+/ɔ̃/ dans "mon"；
+/ɛ̃/ dans "pain"。
+三者都属于法语鼻化元音（主流法语音系描述中可分辨）。原旧样课曾把 dans 与 /ɛ̃/ 混写，**以此纠正为准**：dans 常发 /dɑ̃/，不是 /dɛ̃/。
+连音示例："mes amis" /mezami/（标准连音环境）；录音演示必须来自真实授权音频，不仅依靠 IPA 自动生成声音。
+有地区口音差异时，纠音不应把正常变体判成严重错误。
+
+H. 完整练习与参考答案
+1. Je ___ vingt ans. ai。
+2. Tu ___ une sœur ? as。
+3. Nous ___ trois enfants. avons。
+4. Elle parle à ___ père. son。
+5. Ils visitent ___ parents. leurs。
+6. Je ne ___ pas de frère. n'ai（完整句 Je n'ai pas de frère）。
+7. ___ amie s'appelle Sarah. Mon。
+8. 变否定：J'ai des cousins. → Je n'ai pas de cousins。
+9. 把 Ma sœur habite ici 改为“我们的姐姐” → Notre sœur habite ici。
+10. 独立口头任务：介绍一个真实或虚构家庭成员，避免被强制填写私人家庭信息。
+11. 独立写作：用 8–12 句介绍任意虚构家庭的人数、年龄、居住地和关系。
+答案用于自主校对，不设考试分数。
+
+参考来源：
+https://coerll.utexas.edu/coerll/oer/texs-french-grammar/
+https://coerll.utexas.edu/coerll/oer/francais-interactif/
+===== END FR-A1-U03-V02 =====
+
