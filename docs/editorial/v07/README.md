@@ -29,3 +29,9 @@ The Google Drive `Audio-Phonetics` folder contains `pho_00.zip` through `pho_13.
 4. For audio: require source rights, asset hash, duration, decoded audio, sentence/paragraph alignment and listen-through verification; record a separate exact match for each lesson.
 5. Do not overwrite the previous V0.4 working manuscripts or copy owner/private audio/text into public Github Pages.
 6. The existing UI V3 design remains the visual contract, and no course is automatically published by this metadata PR.
+
+## English IELTS deep writing batch (additive)
+
+Six further project-original six-stage manuscripts reside in the separate private YUNPAN directory `01-English/IELTS-Academic/Assistant-IELTS-Deep-Manuscripts-V0.7-2026-10-16`. Two full documents contain respectively Listening U04, Reading U04, Writing Task 1 U03 (22 worked questions), and Writing Task 2 U03, Speaking U03, Language Upgrade U03 (21 worked questions). The IELTS reading False/Not Given and speaking tense model questions were reviewed for unambiguous evidence and language naturalness, with direct corrections in their private originals. They are not official IELTS test papers and have no verified matching playable audio.
+
+**Across this V0.7 batch:** 16 new unique detailed drafted units. Combining this with V0.6 produces 34 distinct editorial target IDs, but it is NOT correct to add this figure to Codex's reported 19 drafts without unit-ID reconciliation. Neither 34 nor 19 is a count of publishable courses.
