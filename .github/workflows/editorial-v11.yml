@@ -1,0 +1,21 @@
+name: Editorial V1.1 IELTS U07-U08 checks
+on:
+  pull_request:
+    paths:
+      - 'docs/editorial/v11/**'
+      - '.github/workflows/editorial-v11.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'docs/editorial/v11/**'
+permissions:
+  contents: read
+jobs:
+  check-v11:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node docs/editorial/v11/validate.mjs

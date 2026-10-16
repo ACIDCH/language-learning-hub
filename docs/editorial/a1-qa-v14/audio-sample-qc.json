@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-16",
+  "scope": "THREE ZIP archives were actually downloaded and inspected, not all 31 ZIP archives",
+  "audit": {
+    "sample_archives": 3,
+    "real_audio_candidates": 12,
+    "real_audio_decoded": 12,
+    "appledouble_fake_mp3_excluded": 6,
+    "per_lesson_exact_matches": 0
+  },
+  "archive_summaries": [
+    {
+      "archive": "pho_00.zip",
+      "sha256": "8078621a105ddd8b379df4aa83ad511821df7081918e5e922b8281cc817189fa",
+      "audio_candidates": 1,
+      "appledouble_entries": 0,
+      "crc_ok": true
+    },
+    {
+      "archive": "pho_13.zip",
+      "sha256": "de8f60893fcc68f4593808bf7303ec25075e0755642b7738b1d45cb5ada67884",
+      "audio_candidates": 4,
+      "appledouble_entries": 0,
+      "crc_ok": true
+    },
+    {
+      "archive": "voc_13.zip",
+      "sha256": "3e6d35128445df44daabde56dfb23cc49d2a246f38c071c22baeb46a9a6bf3f6",
+      "audio_candidates": 7,
+      "appledouble_entries": 6,
+      "crc_ok": true
+    }
+  ],
+  "caveats": [
+    "pho_00/pho_13 files decoded audio but ffmpeg reported some nonfatal ID3 comment or lyrics BOM warnings, not corrupted audio frames",
+    "AppleDouble files begin __MACOSX/._ and have a .mp3 suffix despite being resource metadata, so must not be treated as tracks",
+    "No speech transcription or comparison with user-original A1 dialogue/reading was made",
+    "No individual license/public redistribution permission was determined; candidate audio cannot yet be shipped in a public frontend"
+  ],
+  "tracks": [
+    {
+      "archive": "pho_00.zip",
+      "entry": "pho_00/001.mp3",
+      "sha256": "2f3067e5173f2b8d87a3e8baa5620894b5f26e12969eb34a148527256c1d715a",
+      "duration_s": 65.62,
+      "sample_rate_hz": 44100,
+      "decoded_audio_stream": true,
+      "exact_lesson_text_match_verified": false,
+      "redistribution_rights_verified": false
+    },
+    {
+      "archive": "pho_13.zip",
+      "entry": "pho_13/080.mp3",
+      "sha256": "42ff029bc6bf8c66673f06e2c48623ea53d91582d2219634989fc2dd2bf856ec",
+      "duration_s": 35.892,
+      "sample_rate_hz": 44100,
+      "decoded_audio_stream": true,
+      "exact_lesson_text_match_verified": false,
+      "redistribution_rights_verified": false
+    },
+    {
+      "archive": "pho_13.zip",
+      "entry": "pho_13/081.mp3",
+      "sha256": "9233465c937c9dd19973e18791cfabcac07124fac639a34cfdb579026c1a6693",
+      "duration_s": 17.136,
+      "sample_rate_hz": 44100,
+      "decoded_audio_stream": true,
+      "exact_lesson_text_match_verified": false,
+      "redistribution_rights_verified": false
+    },
+    {
+      "archive": "pho_13.zip",
+      "entry": "pho_13/082.mp3",
+      "sha256": "9de29be1fa81a395d7d6edef7bd4759f8538b7bed0da7abc13ea1de7975c32e8",
+      "duration_s": 15.752,
+      "sample_rate_hz": 44100,
+      "decoded_audio_stream": true,
+      "exact_lesson_text_match_verified": false,
+      "redistribution_rights_verified": false
+    },
+    {
+      "archive": "pho_13.zip",
+      "entry": "pho_13/083.mp3",
+      "sha256": "ee0478b9e39606e75bf7f11d32928312c3dfd0a98555e55a380a3e40acad82e8",
+      "duration_s": 85.159,
+      "sample_rate_hz": 44100,
+      "decoded_audio_stream": true,
+      "exact_lesson_text_match_verified": false,
+      "redistribution_rights_verified": false
+    },
+    {
+      "archive": "voc_13.zip",
+      "entry": "voc_13/097.mp3",
+      "sha256": "2e334cb7af94fdc1c4598158b945799060cd5f59ab85bb918e403a45f70e83d7",
+      "duration_s": 4.989,
+      "sample_rate_hz": 44100,
+      "decoded_audio_stream": true,
+      "exact_lesson_text_match_verified": false,
+      "redistribution_rights_verified": false
+    },
+    {
+      "archive": "voc_13.zip",
+      "entry": "voc_13/102.mp3",
+      "sha256": "7427ba9d018c76bc5392bfb600a4ac2688cef2398b74c3cb91d898ba7ba5481b",
+      "duration_s": 60.682,
+      "sample_rate_hz": 44100,
+      "decoded_audio_stream": true,
+      "exact_lesson_text_match_verified": false,
+      "redistribution_rights_verified": false
+    },
+    {
+      "archive": "voc_13.zip",
+      "entry": "voc_13/100.mp3",
+      "sha256": "4b541b4f98bdbcf83932625c6f36f8993b50a7843450dfa4061a9e6918ff874a",
+      "duration_s": 35.056,
+      "sample_rate_hz": 44100,
+      "decoded_audio_stream": true,
+      "exact_lesson_text_match_verified": false,
+      "redistribution_rights_verified": false
+    },
+    {
+      "archive": "voc_13.zip",
+      "entry": "voc_13/101.mp3",
+      "sha256": "c3d6c2fb72206a7e857c5cf3fdf7b72462c4d69c56a65d0c80f8cebeeefbf1db",
+      "duration_s": 19.749,
+      "sample_rate_hz": 44100,
+      "decoded_audio_stream": true,
+      "exact_lesson_text_match_verified": false,
+      "redistribution_rights_verified": false
+    },
+    {
+      "archive": "voc_13.zip",
+      "entry": "voc_13/098.mp3",
+      "sha256": "2d7e5e1ac12bbb23d7ba1ed9b082b8390532e76bd67bb11bc8bfb0594c202a6f",
+      "duration_s": 29.101,
+      "sample_rate_hz": 44100,
+      "decoded_audio_stream": true,
+      "exact_lesson_text_match_verified": false,
+      "redistribution_rights_verified": false
+    },
+    {
+      "archive": "voc_13.zip",
+      "entry": "voc_13/099.mp3",
+      "sha256": "fcf6e46ce4b68b110fd9482d262b4c3d02927c2c5a26109174d9b26035a809aa",
+      "duration_s": 24.79,
+      "sample_rate_hz": 44100,
+      "decoded_audio_stream": true,
+      "exact_lesson_text_match_verified": false,
+      "redistribution_rights_verified": false
+    },
+    {
+      "archive": "voc_13.zip",
+      "entry": "voc_13/096.mp3",
+      "sha256": "303881c563329d8e300e1a5e393616d5750ef3f9579b3a41f562ad1e053e8494",
+      "duration_s": 53.551,
+      "sample_rate_hz": 44100,
+      "decoded_audio_stream": true,
+      "exact_lesson_text_match_verified": false,
+      "redistribution_rights_verified": false
+    }
+  ]
+}

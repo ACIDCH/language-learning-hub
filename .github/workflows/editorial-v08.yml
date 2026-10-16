@@ -1,0 +1,21 @@
+name: Editorial V0.8 B2 checks
+on:
+  pull_request:
+    paths:
+      - 'docs/editorial/v08/**'
+      - '.github/workflows/editorial-v08.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'docs/editorial/v08/**'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node docs/editorial/v08/validate.mjs
