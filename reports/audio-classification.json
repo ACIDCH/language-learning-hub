@@ -1,0 +1,6377 @@
+{
+  "unique_tracks": 352,
+  "categories": {
+    "FI phonetics": 83,
+    "FI vocabulary": 103,
+    "Inspire A1": 166
+  },
+  "mapped_vocabulary_references": 12,
+  "original_full_lesson_matches": 0,
+  "tracks": [
+    {
+      "id": "2f3067e5173f2b8d87a3e8baa5620894b5f26e12969eb34a148527256c1d715a",
+      "title": "001",
+      "category": "FI phonetics",
+      "chapter": 0,
+      "duration": 65.62,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_00.zip",
+          "entry": "pho_00/001.mp3",
+          "chapter": 0
+        }
+      ]
+    },
+    {
+      "id": "919cfcc0e0f1063b2353e05eaee0b9e96dd9803742138689c9ea597accd665d9",
+      "title": "002",
+      "category": "FI phonetics",
+      "chapter": 1,
+      "duration": 15.02,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_01.zip",
+          "entry": "pho_01/002.mp3",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "id": "ea338863bb1ece3727ffc3a3d89a732f89ea83ce72775f9ae77b01158662322c",
+      "title": "003",
+      "category": "FI phonetics",
+      "chapter": 1,
+      "duration": 13.897,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_01.zip",
+          "entry": "pho_01/003.mp3",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "id": "5c0823daebd562f0010b66fc18286a6f75a8472917495abfc6acee6a05a5c5b6",
+      "title": "004",
+      "category": "FI phonetics",
+      "chapter": 1,
+      "duration": 21.316,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_01.zip",
+          "entry": "pho_01/004.mp3",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "id": "0c596e4d86bbe303a341a01f4d040040e918fc9a84e2878f14198cc52364c1be",
+      "title": "005",
+      "category": "FI phonetics",
+      "chapter": 1,
+      "duration": 14.733,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_01.zip",
+          "entry": "pho_01/005.mp3",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "id": "a49459ba09daac104eada3b3ab25a4f30e68540da873febdd178dc932a4b81eb",
+      "title": "006",
+      "category": "FI phonetics",
+      "chapter": 1,
+      "duration": 7.314,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_01.zip",
+          "entry": "pho_01/006.mp3",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "id": "ba8fdd90f98bca2a50fd3d3f0c701e9cceb980bffb0676c462fd19ec5a93276b",
+      "title": "007",
+      "category": "FI phonetics",
+      "chapter": 1,
+      "duration": 12.121,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_01.zip",
+          "entry": "pho_01/007.mp3",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "id": "c7207754ef3c6dec087e7c2c8a22cd58f33e786adfcda643be52f65df2c75c8d",
+      "title": "008",
+      "category": "FI phonetics",
+      "chapter": 1,
+      "duration": 10.371,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_01.zip",
+          "entry": "pho_01/008.mp3",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "id": "0b1c04d2839ee1641ec48541e70bad0c18680c16a7071c9bb919d0a90efae751",
+      "title": "009",
+      "category": "FI phonetics",
+      "chapter": 2,
+      "duration": 116.166,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_02.zip",
+          "entry": "pho_02/009.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "c18a0eb514f14111ed47b58d1f4241e5e96e7d88fd5671951d76c0f9fee23fd2",
+      "title": "010",
+      "category": "FI phonetics",
+      "chapter": 2,
+      "duration": 38.792,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_02.zip",
+          "entry": "pho_02/010.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "a13e09d4cab200561860face3d0cc4eed53e71c46a5a5c2bf19124e2299a6ebc",
+      "title": "011",
+      "category": "FI phonetics",
+      "chapter": 2,
+      "duration": 31.739,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_02.zip",
+          "entry": "pho_02/011.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "c143fcd1b431b43e57c48766a39beff366dd61c33897e3f0538b6b8cbf028d53",
+      "title": "012",
+      "category": "FI phonetics",
+      "chapter": 2,
+      "duration": 166.949,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_02.zip",
+          "entry": "pho_02/012.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "c5e417d76a54f27b841637d939e7a3b9d8ab02d3f403cd5d6c132de708a8a47b",
+      "title": "013",
+      "category": "FI phonetics",
+      "chapter": 2,
+      "duration": 37.12,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_02.zip",
+          "entry": "pho_02/013.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "d6e5cc57ed81f222282b13bdb7f3341ff21b5c292d6f23564da8afea3e152b9d",
+      "title": "014",
+      "category": "FI phonetics",
+      "chapter": 2,
+      "duration": 53.29,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_02.zip",
+          "entry": "pho_02/014.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "b34f3575b1f240e5aaedd7152d8862c9fda8074e60317a1130184427f546f0a1",
+      "title": "015",
+      "category": "FI phonetics",
+      "chapter": 2,
+      "duration": 40.542,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_02.zip",
+          "entry": "pho_02/015.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "cd8223bbee8cec489e0acb543f521a499f6e4460502e69d50115f35877b0a81f",
+      "title": "016",
+      "category": "FI phonetics",
+      "chapter": 2,
+      "duration": 43.52,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_02.zip",
+          "entry": "pho_02/016.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "c666b423955445358f12d6044a7352b0602159c8e2d4bbe424486308b9bff4c0",
+      "title": "017",
+      "category": "FI phonetics",
+      "chapter": 3,
+      "duration": 45.375,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_03.zip",
+          "entry": "pho_03/017.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "4a25086b0439185a154d20fee8858591d8df1feb30d33089bbab061ecc7997bd",
+      "title": "018",
+      "category": "FI phonetics",
+      "chapter": 3,
+      "duration": 39.993,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_03.zip",
+          "entry": "pho_03/018.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "dfa39b11c1b7882c0372db66be41ca23fb3a164766f98dddd521ddac48791db8",
+      "title": "019",
+      "category": "FI phonetics",
+      "chapter": 3,
+      "duration": 53.838,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_03.zip",
+          "entry": "pho_03/019.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "413dc986e1569da162c25ef8215f768075563716140c6da84ce9c6b5a71c5ff0",
+      "title": "020",
+      "category": "FI phonetics",
+      "chapter": 3,
+      "duration": 11.285,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_03.zip",
+          "entry": "pho_03/020.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "a3a2f6410b26d7887b63207cce9ea9645685924f2ee496bc4be45ff8811ab44b",
+      "title": "021",
+      "category": "FI phonetics",
+      "chapter": 3,
+      "duration": 6.844,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_03.zip",
+          "entry": "pho_03/021.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "48693f9ed7f94e497d253373ddba7f74da748fdc84f27c8e768bfcd53f1ef042",
+      "title": "022",
+      "category": "FI phonetics",
+      "chapter": 3,
+      "duration": 16.953,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_03.zip",
+          "entry": "pho_03/022.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "b03685b23ae7d2b016451b26ea4545225b804d9c7e989aecb9a795bc2d315f0d",
+      "title": "023",
+      "category": "FI phonetics",
+      "chapter": 3,
+      "duration": 24.006,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_03.zip",
+          "entry": "pho_03/023.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "16cfd9e3ef72666c571b9447fc2d872553e3b57d8bcb1ab6e7358d0b45872cdd",
+      "title": "024",
+      "category": "FI phonetics",
+      "chapter": 3,
+      "duration": 17.894,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_03.zip",
+          "entry": "pho_03/024.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "a1f33bd5213736dbcb4727ffb5257fdf5399af83b751d9fdf728ec4686688fac",
+      "title": "025",
+      "category": "FI phonetics",
+      "chapter": 3,
+      "duration": 10.371,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_03.zip",
+          "entry": "pho_03/025.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "2588da666b5cffb7aff5b8aa9d7a5b09a985ebf6f42d16dbe591d9dc3506c4c6",
+      "title": "026",
+      "category": "FI phonetics",
+      "chapter": 4,
+      "duration": 31.086,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_04.zip",
+          "entry": "pho_04/026.mp3",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "id": "1751fe667be9abd5a7cfbca25516d452a219d33f266451092edeb8078ed70001",
+      "title": "027",
+      "category": "FI phonetics",
+      "chapter": 4,
+      "duration": 51.879,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_04.zip",
+          "entry": "pho_04/027.mp3",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "id": "d9f8281dec90d6ccc3c9ae0fb50408f1d05e7f0ebc715493768afd8e7b7f7968",
+      "title": "028",
+      "category": "FI phonetics",
+      "chapter": 4,
+      "duration": 34.717,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_04.zip",
+          "entry": "pho_04/028.mp3",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "id": "fb8dd2bb045b5173779bf3da7b5e5185ca819c00c78b3f852a426adb5fb54c26",
+      "title": "029",
+      "category": "FI phonetics",
+      "chapter": 5,
+      "duration": 22.544,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_05.zip",
+          "entry": "pho_05/029.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "7fa35dada472a027cd3cfdf8d5f0296e4be9c00a289e17d3dbae5a8f6aed9852",
+      "title": "030",
+      "category": "FI phonetics",
+      "chapter": 5,
+      "duration": 16.953,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_05.zip",
+          "entry": "pho_05/030.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "ce2600ae1085dab5c49d7b531e15158c33d3bacf9458a96666f93fb7b84f0e7c",
+      "title": "031",
+      "category": "FI phonetics",
+      "chapter": 5,
+      "duration": 44.643,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_05.zip",
+          "entry": "pho_05/031.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "22a527f2ec963339e2bf8de814e5fd20b3351c80fdd9ba19e1fb46f36e67ee80",
+      "title": "032",
+      "category": "FI phonetics",
+      "chapter": 5,
+      "duration": 99.448,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_05.zip",
+          "entry": "pho_05/032.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "e8afedf7977a661621d20ce73d91f1c114b9176855d733e31903e5b68491a857",
+      "title": "033",
+      "category": "FI phonetics",
+      "chapter": 6,
+      "duration": 43.337,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_06.zip",
+          "entry": "pho_06/033.mp3",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "id": "d34aa604f08aac8afb225a6e1b0f2d3f3b586cebdd41fc95f8e6de9f5c68c3de",
+      "title": "034",
+      "category": "FI phonetics",
+      "chapter": 6,
+      "duration": 55.145,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_06.zip",
+          "entry": "pho_06/034.mp3",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "id": "08afb1297ca08a0ab05b3b30718f808bf98fbf4f23aa687c860c56a249848535",
+      "title": "035",
+      "category": "FI phonetics",
+      "chapter": 6,
+      "duration": 47.151,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_06.zip",
+          "entry": "pho_06/035.mp3",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "id": "76ba4a70085fdfb083b101ef5dec7df3a289f42d225356562118fa36e7064d81",
+      "title": "036",
+      "category": "FI phonetics",
+      "chapter": 7,
+      "duration": 61.544,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_07.zip",
+          "entry": "pho_07/036.mp3",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "id": "7246ece1c62327a7f4c4d701d51b49192d730c931dfd0070a217b34969901a7c",
+      "title": "037",
+      "category": "FI phonetics",
+      "chapter": 7,
+      "duration": 37.303,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_07.zip",
+          "entry": "pho_07/037.mp3",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "id": "a044b952aae1007a5c231518ae1ecf58d5cc2d4b3ebc09bd1eb17e4730c70975",
+      "title": "038",
+      "category": "FI phonetics",
+      "chapter": 7,
+      "duration": 36.101,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_07.zip",
+          "entry": "pho_07/038.mp3",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "id": "1e531598021ca227d4c48880e1641f07bfd1cb7be36a32e33bd708dd2e747c18",
+      "title": "039",
+      "category": "FI phonetics",
+      "chapter": 7,
+      "duration": 22.544,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_07.zip",
+          "entry": "pho_07/039.mp3",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "id": "28118a86f5cfbc1e878b5a355e2388c6034a8a064fd858a2e4140e165dd62689",
+      "title": "040",
+      "category": "FI phonetics",
+      "chapter": 8,
+      "duration": 30.694,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_08.zip",
+          "entry": "pho_08/040.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "c4ebe610194e59f0a7f7bb8136e8c64fa2b9941cadd2a8d55f15dcb542b23159",
+      "title": "041",
+      "category": "FI phonetics",
+      "chapter": 8,
+      "duration": 30.616,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_08.zip",
+          "entry": "pho_08/041.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "b3a2f18bedaeb1ab03a6a8b90ada6b88f039bb7d3141d29e9e3bf80e234000f8",
+      "title": "042",
+      "category": "FI phonetics",
+      "chapter": 8,
+      "duration": 33.202,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_08.zip",
+          "entry": "pho_08/042.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "7608ccf6bd46796647d991249c4c1f741420d592561cc7b240d2d2b16d6d36cc",
+      "title": "043",
+      "category": "FI phonetics",
+      "chapter": 8,
+      "duration": 30.433,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_08.zip",
+          "entry": "pho_08/043.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "358bef0ad12296b6a8ee253e6579adf46e7bf8954ed8a2b9b211765167e0ecd3",
+      "title": "044",
+      "category": "FI phonetics",
+      "chapter": 8,
+      "duration": 20.402,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_08.zip",
+          "entry": "pho_08/044.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "162517ebd5b1446dfb040c3ee5935201f8401b0b6af779cc19f86469f39d8dde",
+      "title": "045",
+      "category": "FI phonetics",
+      "chapter": 8,
+      "duration": 24.111,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_08.zip",
+          "entry": "pho_08/045.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "66fc72760484789a81ace5cda24c65c10a520334e2c20bfc1f9504cd59d55922",
+      "title": "046",
+      "category": "FI phonetics",
+      "chapter": 8,
+      "duration": 30.433,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_08.zip",
+          "entry": "pho_08/046.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "b927d2f5f250f18dba4b7d1959f5e661522ddcbff86af77d42b80c494d047d96",
+      "title": "047",
+      "category": "FI phonetics",
+      "chapter": 8,
+      "duration": 31.739,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_08.zip",
+          "entry": "pho_08/047.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "eeefcb31748c23ea2b21c506fe7ef5ebd7573c37d23769ae02e68f2bb77f35ad",
+      "title": "048",
+      "category": "FI phonetics",
+      "chapter": 8,
+      "duration": 29.858,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_08.zip",
+          "entry": "pho_08/048.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "1b9e7ebadcffacf68737bb7a5c5e6170599a14078e3fd220563c7f3937baa7ea",
+      "title": "049",
+      "category": "FI phonetics",
+      "chapter": 9,
+      "duration": 36.284,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_09.zip",
+          "entry": "pho_09/049.mp3",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "id": "88fe3d7f4ac6a315a2e42e967fa29775a92a27f705769838d08a318af6985b0d",
+      "title": "050",
+      "category": "FI phonetics",
+      "chapter": 9,
+      "duration": 61.362,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_09.zip",
+          "entry": "pho_09/050.mp3",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "id": "dc9dbb010f039ef8a592c69511b722fb632e0a58f8026eeb4cc1c9a267896be1",
+      "title": "051",
+      "category": "FI phonetics",
+      "chapter": 9,
+      "duration": 66.874,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_09.zip",
+          "entry": "pho_09/051.mp3",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "id": "81d839ee22338c2d31ccbacda448040e6e5558c91d1883032f44754eba84df59",
+      "title": "052",
+      "category": "FI phonetics",
+      "chapter": 9,
+      "duration": 46.315,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_09.zip",
+          "entry": "pho_09/052.mp3",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "id": "5d9467a04e7b489aecd81d5b033ae192403e97c46462758a87fe75994a5feb76",
+      "title": "053",
+      "category": "FI phonetics",
+      "chapter": 9,
+      "duration": 48.222,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_09.zip",
+          "entry": "pho_09/053.mp3",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "id": "7b09c0d22fd5339e0f519a8f48acf412b5c8b04bb2f43bd321038f8b950b8da6",
+      "title": "054",
+      "category": "FI phonetics",
+      "chapter": 9,
+      "duration": 50.913,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_09.zip",
+          "entry": "pho_09/054.mp3",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "id": "7601c3f87e5f65b5c2f05543fe3de9134fded32dae7f2c96db54ee81324667ec",
+      "title": "055",
+      "category": "FI phonetics",
+      "chapter": 9,
+      "duration": 47.621,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_09.zip",
+          "entry": "pho_09/055.mp3",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "id": "d2ba7966a2e987f1b88374de100accdc6e8698de8f44a1ba44dd91957098f46a",
+      "title": "056",
+      "category": "FI phonetics",
+      "chapter": 10,
+      "duration": 14.55,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_10.zip",
+          "entry": "pho_10/056.mp3",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "id": "82723f04ab5c7a2819e6015c10f0eddec9e8d8668c9a84dffeaa4d86e03f74ab",
+      "title": "057",
+      "category": "FI phonetics",
+      "chapter": 10,
+      "duration": 120.712,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_10.zip",
+          "entry": "pho_10/057.mp3",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "id": "4c2e963a84d871ec6eae8d75e17f5fc4aceb4e05498bf4151b7ba46b072bc473",
+      "title": "058",
+      "category": "FI phonetics",
+      "chapter": 10,
+      "duration": 41.482,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_10.zip",
+          "entry": "pho_10/058.mp3",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "id": "288099edfc35591f47f341b195a672f484460258019abf26901872c1b979bf67",
+      "title": "059",
+      "category": "FI phonetics",
+      "chapter": 10,
+      "duration": 36.754,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_10.zip",
+          "entry": "pho_10/059.mp3",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "id": "205ddcd4311dd6119cdf666255b222119747e6f32624f44e30d5194d1f7f2fe9",
+      "title": "060",
+      "category": "FI phonetics",
+      "chapter": 10,
+      "duration": 39.053,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_10.zip",
+          "entry": "pho_10/060.mp3",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "id": "1fa81eed409858dcab3a4ec14c736672c103bbbea60d8eef307952df90881061",
+      "title": "061",
+      "category": "FI phonetics",
+      "chapter": 10,
+      "duration": 60.709,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_10.zip",
+          "entry": "pho_10/061.mp3",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "id": "ce8fa3c58841c735868b42687cd52fccffa18f89d73ecaf353cc2fbb4f0be024",
+      "title": "062",
+      "category": "FI phonetics",
+      "chapter": 10,
+      "duration": 78.263,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_10.zip",
+          "entry": "pho_10/062.mp3",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "id": "58de9a5734c06dcc10f5e66d2986c1380be77c9086c63e9239017ddaa0c1870e",
+      "title": "063",
+      "category": "FI phonetics",
+      "chapter": 11,
+      "duration": 22.909,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_11.zip",
+          "entry": "pho_11/063.mp3",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "id": "0917172d24e6422753a61a64e40527d9aaa9a1ba195f315de1bf940502df357e",
+      "title": "064",
+      "category": "FI phonetics",
+      "chapter": 11,
+      "duration": 20.95,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_11.zip",
+          "entry": "pho_11/064.mp3",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "id": "c0e05480cf1abf7ce5a36b7db51729b4e210b52dab284232b675cb336c8039da",
+      "title": "065",
+      "category": "FI phonetics",
+      "chapter": 11,
+      "duration": 18.442,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_11.zip",
+          "entry": "pho_11/065.mp3",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "id": "d55e21c8cc691b72e4e2b7c35b258366373436aa5b80744d06d43d0e64c23899",
+      "title": "066",
+      "category": "FI phonetics",
+      "chapter": 11,
+      "duration": 23.85,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_11.zip",
+          "entry": "pho_11/066.mp3",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "id": "4563075bab960d83f67674e68eccdf2e02d902ec824077ef29b4055055a51fb1",
+      "title": "067",
+      "category": "FI phonetics",
+      "chapter": 11,
+      "duration": 81.502,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_11.zip",
+          "entry": "pho_11/067.mp3",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "id": "54d60cded7ef2e6a68ec099429b5a93e7973dd6094c76b06cf220659a2da9a20",
+      "title": "068",
+      "category": "FI phonetics",
+      "chapter": 12,
+      "duration": 6.087,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_12.zip",
+          "entry": "pho_12/068.mp3",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "id": "0930368a5414c6aea63033409e85988743819c8f22c85fefd856496a17690f25",
+      "title": "069",
+      "category": "FI phonetics",
+      "chapter": 12,
+      "duration": 9.718,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_12.zip",
+          "entry": "pho_12/069.mp3",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "id": "ec96566c0ffdaec75990b26f3e9c7c0f8ea027e05d2bab6ed2eeffc023aa9e4f",
+      "title": "070",
+      "category": "FI phonetics",
+      "chapter": 12,
+      "duration": 12.878,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_12.zip",
+          "entry": "pho_12/070.mp3",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "id": "af1b2e9259c7f2743e4ba1eb3ca68f5872cd627d6466d0aa8aa84b86c77a6259",
+      "title": "071",
+      "category": "FI phonetics",
+      "chapter": 12,
+      "duration": 14.263,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_12.zip",
+          "entry": "pho_12/071.mp3",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "id": "1d7693b272192486f29b2937f75f0ffae0700f203417299eecdb75853b0b3356",
+      "title": "072",
+      "category": "FI phonetics",
+      "chapter": 12,
+      "duration": 8.516,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_12.zip",
+          "entry": "pho_12/072.mp3",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "id": "dffdfc8399ba0c55b8b2c29a537bd7d9d1ae7864036a594a32fe025072975269",
+      "title": "073",
+      "category": "FI phonetics",
+      "chapter": 12,
+      "duration": 6.087,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_12.zip",
+          "entry": "pho_12/073.mp3",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "id": "482994619d9628863745b55c4b55b99d37a2c899200118f5af241544911e8d19",
+      "title": "074",
+      "category": "FI phonetics",
+      "chapter": 12,
+      "duration": 21.891,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_12.zip",
+          "entry": "pho_12/074.mp3",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "id": "9709e0b1e71a0cbace96ea212c5bb5305ce8e556c23caf0c139514949ae5bf73",
+      "title": "075",
+      "category": "FI phonetics",
+      "chapter": 12,
+      "duration": 6.087,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_12.zip",
+          "entry": "pho_12/075.mp3",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "id": "180819d38a53ac6529e6dd5b22c9537b5caf21e2cc986a5b70c0797558850547",
+      "title": "076",
+      "category": "FI phonetics",
+      "chapter": 12,
+      "duration": 6.087,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_12.zip",
+          "entry": "pho_12/076.mp3",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "id": "d9636f484961cd9872eac823e8b4b1cdaa3853a91fcf087a44ff239b719d083f",
+      "title": "077",
+      "category": "FI phonetics",
+      "chapter": 12,
+      "duration": 6.087,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_12.zip",
+          "entry": "pho_12/077.mp3",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "id": "dd8f7e44bad5d98f34175a6e4dc52cef2db5f12745b2af5cc9d40d854a97371d",
+      "title": "078",
+      "category": "FI phonetics",
+      "chapter": 12,
+      "duration": 22.727,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_12.zip",
+          "entry": "pho_12/078.mp3",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "id": "38c1712df6b4a549b89d775ec56e29e6161978d09b3227ee823c9cb20b4654a2",
+      "title": "079",
+      "category": "FI phonetics",
+      "chapter": 12,
+      "duration": 100.362,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_12.zip",
+          "entry": "pho_12/079.mp3",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "id": "42ff029bc6bf8c66673f06e2c48623ea53d91582d2219634989fc2dd2bf856ec",
+      "title": "080",
+      "category": "FI phonetics",
+      "chapter": 13,
+      "duration": 35.892,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_13.zip",
+          "entry": "pho_13/080.mp3",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "id": "9233465c937c9dd19973e18791cfabcac07124fac639a34cfdb579026c1a6693",
+      "title": "081",
+      "category": "FI phonetics",
+      "chapter": 13,
+      "duration": 17.136,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_13.zip",
+          "entry": "pho_13/081.mp3",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "id": "9de29be1fa81a395d7d6edef7bd4759f8538b7bed0da7abc13ea1de7975c32e8",
+      "title": "082",
+      "category": "FI phonetics",
+      "chapter": 13,
+      "duration": 15.752,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_13.zip",
+          "entry": "pho_13/082.mp3",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "id": "ee0478b9e39606e75bf7f11d32928312c3dfd0a98555e55a380a3e40acad82e8",
+      "title": "083",
+      "category": "FI phonetics",
+      "chapter": 13,
+      "duration": 85.159,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "pho_13.zip",
+          "entry": "pho_13/083.mp3",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "id": "d2b501659602210289fafbfe83b46f787dd2a571b38f0fdb1a2c834166a977d8",
+      "title": "001",
+      "category": "FI vocabulary",
+      "chapter": 0,
+      "duration": 92.186,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_00.zip",
+          "entry": "voc_00/001.mp3",
+          "chapter": 0
+        }
+      ]
+    },
+    {
+      "id": "ed54629a25a4bf35e3a54148a5ab69eeddb788ba092d984f640d1d0e9c1b6ed2",
+      "title": "002",
+      "category": "FI vocabulary",
+      "chapter": 0,
+      "duration": 67.762,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_00.zip",
+          "entry": "voc_00/002.mp3",
+          "chapter": 0
+        }
+      ]
+    },
+    {
+      "id": "870e082e1ed5417acbfabef168311dc968d51cc351f1dfa6e661b335a26b6a78",
+      "title": "003",
+      "category": "FI vocabulary",
+      "chapter": 0,
+      "duration": 58.018,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_00.zip",
+          "entry": "voc_00/003.mp3",
+          "chapter": 0
+        }
+      ]
+    },
+    {
+      "id": "aa64320c13bf72aa8a90ed6b6f53bfa0f5024f3473ae8de177d1573132e70d68",
+      "title": "004",
+      "category": "FI vocabulary",
+      "chapter": 0,
+      "duration": 29.309,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_00.zip",
+          "entry": "voc_00/004.mp3",
+          "chapter": 0
+        }
+      ]
+    },
+    {
+      "id": "1a826402eea6d224a7bb88065d8c5ff87c3edc1515d4b2147f733c97a0bb8659",
+      "title": "salutations",
+      "category": "FI vocabulary",
+      "chapter": 1,
+      "duration": 119.197,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [
+        "fr-a1-u01"
+      ],
+      "locations": [
+        {
+          "archive": "voc_01.zip",
+          "entry": "voc_01/005.mp3",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "id": "2b5d4e035a7339538f1ae220c2600d59d1cc9e3028ba18b8af58dfbcd9d9d3b5",
+      "title": "006",
+      "category": "FI vocabulary",
+      "chapter": 1,
+      "duration": 124.238,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_01.zip",
+          "entry": "voc_01/006.mp3",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "id": "5c734f920d8702e1a958a0c9079348e4da1c77f535ffe5216a9555809522ed7b",
+      "title": "la salle de classe",
+      "category": "FI vocabulary",
+      "chapter": 1,
+      "duration": 123.794,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [
+        "fr-a1-u04"
+      ],
+      "locations": [
+        {
+          "archive": "voc_01.zip",
+          "entry": "voc_01/007.mp3",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "id": "0b199c8c2ad425e0b11a6350d915c2ef57d13a0208f91a5d03d4dfb2d00fb7f7",
+      "title": "008",
+      "category": "FI vocabulary",
+      "chapter": 1,
+      "duration": 60.291,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_01.zip",
+          "entry": "voc_01/008.mp3",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "id": "cc01129f7b964d9e612d668bd1a2121b4c7a7f0030e03974ecb6706c636db4dd",
+      "title": "009",
+      "category": "FI vocabulary",
+      "chapter": 1,
+      "duration": 115.069,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_01.zip",
+          "entry": "voc_01/009.mp3",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "id": "5d666fbe4477d5e73c3353a2ddbab6ca0b6a1ec1b0d655cef0500ee0910ad4f1",
+      "title": "010",
+      "category": "FI vocabulary",
+      "chapter": 1,
+      "duration": 120.973,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_01.zip",
+          "entry": "voc_01/010.mp3",
+          "chapter": 1
+        }
+      ]
+    },
+    {
+      "id": "b51f001c908134e57f4d9cabab49730fbe841cffae5b01c24954e82938125e1e",
+      "title": "011",
+      "category": "FI vocabulary",
+      "chapter": 2,
+      "duration": 49.424,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_02.zip",
+          "entry": "voc_02/011.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "5ad6eb21350fad25b539a93b48ed6b6efded9a8b0e55568482a677ce9afe6b4a",
+      "title": "012",
+      "category": "FI vocabulary",
+      "chapter": 2,
+      "duration": 36.859,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_02.zip",
+          "entry": "voc_02/012.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "41536edcef31e667abd08e59e0d1def37b89baaf5cae6cb225e8aa08b8cd4242",
+      "title": "la famille",
+      "category": "FI vocabulary",
+      "chapter": 2,
+      "duration": 92.891,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [
+        "fr-a1-u03"
+      ],
+      "locations": [
+        {
+          "archive": "voc_02.zip",
+          "entry": "voc_02/013.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "d981afad6de5a768d1ad96f5aee13ab5ef22172ecc7cdac5e891547d2acc2417",
+      "title": "014",
+      "category": "FI vocabulary",
+      "chapter": 2,
+      "duration": 26.096,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_02.zip",
+          "entry": "voc_02/014.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "da464e5b65e4fb892fe2da205f9c75904a1907b8c0fe3919299033b071624bad",
+      "title": "mots interrogatifs",
+      "category": "FI vocabulary",
+      "chapter": 2,
+      "duration": 34.273,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [
+        "fr-a1-u06"
+      ],
+      "locations": [
+        {
+          "archive": "voc_02.zip",
+          "entry": "voc_02/015.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "88c788c58de1610036fde4bde6a43b9502a61b986583dc357d611e2d25a55b8f",
+      "title": "016",
+      "category": "FI vocabulary",
+      "chapter": 2,
+      "duration": 80.849,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_02.zip",
+          "entry": "voc_02/016.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "3b1e6f77ba4891a09f163ac0a012db37379bc31a21a4547be6f02f2ab133e377",
+      "title": "017",
+      "category": "FI vocabulary",
+      "chapter": 2,
+      "duration": 41.143,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_02.zip",
+          "entry": "voc_02/017.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "732e88dd1574ffa44ad12c12de4af9e3e5fda8237a95e87d37feadb2f12a9cdf",
+      "title": "passe-temps et activités",
+      "category": "FI vocabulary",
+      "chapter": 2,
+      "duration": 154.462,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [
+        "fr-a1-u05"
+      ],
+      "locations": [
+        {
+          "archive": "voc_02.zip",
+          "entry": "voc_02/018.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "0eb24308cb08d4fad72378a583ce4c4cbbb12962e594d9345ae10fe6481f9123",
+      "title": "019",
+      "category": "FI vocabulary",
+      "chapter": 2,
+      "duration": 46.367,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_02.zip",
+          "entry": "voc_02/019.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "5952e236b5175c40d33c1ee41765e7e75dead8bc1cb80569c090945eb7f325c9",
+      "title": "continents, pays, nationalités _______________",
+      "category": "FI vocabulary",
+      "chapter": 2,
+      "duration": 207.203,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [
+        "fr-a1-u02"
+      ],
+      "locations": [
+        {
+          "archive": "voc_02.zip",
+          "entry": "voc_02/020.mp3",
+          "chapter": 2
+        }
+      ]
+    },
+    {
+      "id": "cac79c24b97594f7cef2ce10a638d657146ca2b421c42f6418579dd71e300852",
+      "title": "021",
+      "category": "FI vocabulary",
+      "chapter": 3,
+      "duration": 68.493,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_03.zip",
+          "entry": "voc_03/021.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "ebc25bf9fc25898f1fa017446d067cc584c5e0588a06b8be282f3f14efeac8b2",
+      "title": "022",
+      "category": "FI vocabulary",
+      "chapter": 3,
+      "duration": 33.672,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_03.zip",
+          "entry": "voc_03/022.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "267f5ba7adb68419b4c21d2563faf9a9807a4e411ca75ebc61361e3de3dd96a1",
+      "title": "023",
+      "category": "FI vocabulary",
+      "chapter": 3,
+      "duration": 80.483,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_03.zip",
+          "entry": "voc_03/023.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "a09a031ec8686f44b3296f387d410c2df57c92a2def2ef1b5314661924918deb",
+      "title": "024",
+      "category": "FI vocabulary",
+      "chapter": 3,
+      "duration": 40.359,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_03.zip",
+          "entry": "voc_03/024.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "782bf3f6b6e12eb91a3fe54796cb7c81f303cff4e9eca7cb26632842cb99e4b0",
+      "title": "025",
+      "category": "FI vocabulary",
+      "chapter": 3,
+      "duration": 51.67,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_03.zip",
+          "entry": "voc_03/025.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "2a5cf2dd9875a3f13183ef84f885860475976ad035d949269d3855c5a5e31fb7",
+      "title": "les activités",
+      "category": "FI vocabulary",
+      "chapter": 3,
+      "duration": 84.245,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [
+        "fr-a1-u07"
+      ],
+      "locations": [
+        {
+          "archive": "voc_03.zip",
+          "entry": "voc_03/026.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "eb09356f3ce38355a095120685420f858350ca612095bbe5b4f1d4364b0348b0",
+      "title": "027",
+      "category": "FI vocabulary",
+      "chapter": 3,
+      "duration": 124.291,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_03.zip",
+          "entry": "voc_03/027.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "f2d279569e1e0a78188c243fa062cf71017fcddbde0d39f819483ff9ae43b440",
+      "title": "verbes",
+      "category": "FI vocabulary",
+      "chapter": 3,
+      "duration": 41.77,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [
+        "fr-a1-u11"
+      ],
+      "locations": [
+        {
+          "archive": "voc_03.zip",
+          "entry": "voc_03/028.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "fdb73816b734f394e1de5164d7feb1aab96b643f48de40967e6b013093d49115",
+      "title": "029",
+      "category": "FI vocabulary",
+      "chapter": 3,
+      "duration": 116.297,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_03.zip",
+          "entry": "voc_03/029.mp3",
+          "chapter": 3
+        }
+      ]
+    },
+    {
+      "id": "717ec06c7713d1d99bfc8c88f807ef1938d7c41a188e09eee081c5df0c5cdd5e",
+      "title": "030",
+      "category": "FI vocabulary",
+      "chapter": 4,
+      "duration": 59.402,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_04.zip",
+          "entry": "voc_04/030.mp3",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "id": "bb170050b822612b2452f673046cda05db619eba0722268bd820a2f8c1318e8a",
+      "title": "031",
+      "category": "FI vocabulary",
+      "chapter": 4,
+      "duration": 50.26,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_04.zip",
+          "entry": "voc_04/031.mp3",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "id": "8228af1a27cd30a00084282e01e2de9546a2548b88e26fceb3eefc7ccbeb45ec",
+      "title": "032",
+      "category": "FI vocabulary",
+      "chapter": 4,
+      "duration": 203.99,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_04.zip",
+          "entry": "voc_04/032.mp3",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "id": "7a5c7822286bedf4cece581566c6c329e0c73414e935cc863df42247a347eda6",
+      "title": "033",
+      "category": "FI vocabulary",
+      "chapter": 4,
+      "duration": 242.312,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_04.zip",
+          "entry": "voc_04/033.mp3",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "id": "47cdd60cda7baa09614084eb5b6b13ad8c81e0270e9a23aede72bbf198b48d97",
+      "title": "034",
+      "category": "FI vocabulary",
+      "chapter": 4,
+      "duration": 75.781,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_04.zip",
+          "entry": "voc_04/034.mp3",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "id": "f22c9bf7f90bd5f40ec7fbded935df2dc3c1bc1c50d57059819f40ce32582b71",
+      "title": "035",
+      "category": "FI vocabulary",
+      "chapter": 4,
+      "duration": 55.667,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_04.zip",
+          "entry": "voc_04/035.mp3",
+          "chapter": 4
+        }
+      ]
+    },
+    {
+      "id": "867c840104de8894ca19890b4cc9508243d03f51792e8e64a3b188a2e6147478",
+      "title": "036",
+      "category": "FI vocabulary",
+      "chapter": 5,
+      "duration": 61.127,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_05.zip",
+          "entry": "voc_05/036.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "9ae0b035200a2a39b64b997e0c1493f3aac8adf715b2a46c7577e36ffc32aec6",
+      "title": "037",
+      "category": "FI vocabulary",
+      "chapter": 5,
+      "duration": 105.874,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_05.zip",
+          "entry": "voc_05/037.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "b76e3eb0638433a5ed3ea6ffb1e95e2f58d712ab7d9c3b8987576f3f1c60e4cb",
+      "title": "038",
+      "category": "FI vocabulary",
+      "chapter": 5,
+      "duration": 34.691,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_05.zip",
+          "entry": "voc_05/038.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "bc9993e553ee542589c0a1a7e9467e8fd935146ef69df11f209b5b277d662c8a",
+      "title": "039",
+      "category": "FI vocabulary",
+      "chapter": 5,
+      "duration": 22.727,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_05.zip",
+          "entry": "voc_05/039.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "697b90d552ae3b0fac8e7e83d0a14c0d28888915b050aa6480d48d47d0a1b12f",
+      "title": "040",
+      "category": "FI vocabulary",
+      "chapter": 5,
+      "duration": 21.159,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_05.zip",
+          "entry": "voc_05/040.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "deb8692a2bf45569f730134b73f789145f53604c9472f579948d4f1ac4a61133",
+      "title": "041",
+      "category": "FI vocabulary",
+      "chapter": 5,
+      "duration": 62.694,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_05.zip",
+          "entry": "voc_05/041.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "7d312912b81f2c5e0d8cbad86ce6909de1fb420d3e8968ca48c94c8eca1f9c60",
+      "title": "042",
+      "category": "FI vocabulary",
+      "chapter": 5,
+      "duration": 63.504,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_05.zip",
+          "entry": "voc_05/042.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "d9c217c4f137a917cc999b20a96007b2f392f8f8ceaf799f6082ee536261643e",
+      "title": "au café",
+      "category": "FI vocabulary",
+      "chapter": 5,
+      "duration": 90.149,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [
+        "fr-a1-u08"
+      ],
+      "locations": [
+        {
+          "archive": "voc_05.zip",
+          "entry": "voc_05/043.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "7547a26fe4fec369cf19ef29165dce75c0fe6baa367d8c55a3c3f2d06e963f76",
+      "title": "044",
+      "category": "FI vocabulary",
+      "chapter": 5,
+      "duration": 31.269,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_05.zip",
+          "entry": "voc_05/044.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "4745df88e58240eb4456e40ecf0bd288f296ea468176c39cb98ae33ce3299269",
+      "title": "045",
+      "category": "FI vocabulary",
+      "chapter": 5,
+      "duration": 79.909,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_05.zip",
+          "entry": "voc_05/045.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "07e4e37fc5f4a5405a9ec9094d1977b771ab20b6bdfa36d2b84dbbfcb049e60d",
+      "title": "046",
+      "category": "FI vocabulary",
+      "chapter": 5,
+      "duration": 56.294,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_05.zip",
+          "entry": "voc_05/046.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "3bd687b22b148575880862e0ff87d67447ec7ba7d045928764ce05a10289c3e6",
+      "title": "047",
+      "category": "FI vocabulary",
+      "chapter": 5,
+      "duration": 39.863,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_05.zip",
+          "entry": "voc_05/047.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "36d14cf081077c115348c23cbb26ba4abef553d3d707225f2f79be87b34c0d10",
+      "title": "048",
+      "category": "FI vocabulary",
+      "chapter": 5,
+      "duration": 107.938,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_05.zip",
+          "entry": "voc_05/048.mp3",
+          "chapter": 5
+        }
+      ]
+    },
+    {
+      "id": "03e3f758a50eef0f1c9fa43b3bb6679c431e56604726712c2fe616ac4ddd24ad",
+      "title": "049",
+      "category": "FI vocabulary",
+      "chapter": 6,
+      "duration": 248.451,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_06.zip",
+          "entry": "voc_06/049.mp3",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "id": "4d8fa07e8c4071eb0578e1833519bac634f89666ecac7ecfb57287ee465ee09d",
+      "title": "050",
+      "category": "FI vocabulary",
+      "chapter": 6,
+      "duration": 39.915,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_06.zip",
+          "entry": "voc_06/050.mp3",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "id": "d2fbb40d38304908f07710f720e51f938bf16f6ac8459ae70beae6282b960757",
+      "title": "s'orienter",
+      "category": "FI vocabulary",
+      "chapter": 6,
+      "duration": 96.836,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [
+        "fr-a1-u09"
+      ],
+      "locations": [
+        {
+          "archive": "voc_06.zip",
+          "entry": "voc_06/051.mp3",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "id": "ab3639108323aea19ef426fd2a9335f03ed1a01566ac6160603e1c1948c96557",
+      "title": "052",
+      "category": "FI vocabulary",
+      "chapter": 6,
+      "duration": 62.093,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_06.zip",
+          "entry": "voc_06/052.mp3",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "id": "a352ef590565afaac9ffddad2faec7bf3e5abbba438171b7ff4bdedb32851d87",
+      "title": "053",
+      "category": "FI vocabulary",
+      "chapter": 6,
+      "duration": 47.935,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_06.zip",
+          "entry": "voc_06/053.mp3",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "id": "0c772d6350f1acfee255d161fd94d55024144db175ff6d6f268f3a38929c7af0",
+      "title": "054",
+      "category": "FI vocabulary",
+      "chapter": 6,
+      "duration": 64.47,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_06.zip",
+          "entry": "voc_06/054.mp3",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "id": "78c68ca3d30cc3804cf7b196ef40ea19f7a14a1fac6493b97bc0f880a3166118",
+      "title": "participes passés irréguliers",
+      "category": "FI vocabulary",
+      "chapter": 6,
+      "duration": 56.163,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [
+        "fr-a1-u12"
+      ],
+      "locations": [
+        {
+          "archive": "voc_06.zip",
+          "entry": "voc_06/055.mp3",
+          "chapter": 6
+        }
+      ]
+    },
+    {
+      "id": "b4f565746c72b93c0d9d6e04b1e38a138926201ff0696bd3654435e514a9929a",
+      "title": "056",
+      "category": "FI vocabulary",
+      "chapter": 7,
+      "duration": 143.412,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_07.zip",
+          "entry": "voc_07/056.mp3",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "id": "bfe3cbd383d1bb378c8b9327b66a89282ca0e784fd1a67b3c84465a7c260176e",
+      "title": "057",
+      "category": "FI vocabulary",
+      "chapter": 7,
+      "duration": 27.533,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_07.zip",
+          "entry": "voc_07/057.mp3",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "id": "4c27e733ee7d0607fd9d5366fad031618f0aa89d5fcef2b555e8139383d5f95a",
+      "title": "058",
+      "category": "FI vocabulary",
+      "chapter": 7,
+      "duration": 106.031,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_07.zip",
+          "entry": "voc_07/058.mp3",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "id": "207373103d0ee31a7db6bdb8e4ee9e29c7f5a287fb45f7e1fac3ca190cb4bbf8",
+      "title": "059",
+      "category": "FI vocabulary",
+      "chapter": 7,
+      "duration": 46.629,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_07.zip",
+          "entry": "voc_07/059.mp3",
+          "chapter": 7
+        }
+      ]
+    },
+    {
+      "id": "7679949ce3f9c9eb128de44df5699f3b2a0fcad529d7cc2c03baec1c7d345edc",
+      "title": "063",
+      "category": "FI vocabulary",
+      "chapter": 8,
+      "duration": 11.337,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_08.zip",
+          "entry": "voc_08/063.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "d18179228ad3e9ce718483db503047f0cad23f773065794ef2d558a0a921e073",
+      "title": "à la maison",
+      "category": "FI vocabulary",
+      "chapter": 8,
+      "duration": 37.46,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [
+        "fr-a1-u10"
+      ],
+      "locations": [
+        {
+          "archive": "voc_08.zip",
+          "entry": "voc_08/060.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "9833dd2b3ba0e72ffe46e6cd5490af75d5e62d346ca89a272ae426589971ea85",
+      "title": "069",
+      "category": "FI vocabulary",
+      "chapter": 8,
+      "duration": 24.843,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_08.zip",
+          "entry": "voc_08/069.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "4e21e256ae091701a1657aeafb6f52cc18a2d0cb38f27dfb9e6551835961bdb3",
+      "title": "072",
+      "category": "FI vocabulary",
+      "chapter": 8,
+      "duration": 9.091,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_08.zip",
+          "entry": "voc_08/072.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "db2b9d7d8fab989eac8dde5041b4ac5397736f1f097003971c2832fd2da82bdc",
+      "title": "071",
+      "category": "FI vocabulary",
+      "chapter": 8,
+      "duration": 13.427,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_08.zip",
+          "entry": "voc_08/071.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "4312ba4813a3dfbb85e48ecf2d57aa7b86fee57c48f3165db339f5f896f054b0",
+      "title": "064",
+      "category": "FI vocabulary",
+      "chapter": 8,
+      "duration": 21.159,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_08.zip",
+          "entry": "voc_08/064.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "392b2a5c875dd181b574b13cc6c9a1472584b666def7844ea3bfb1d57d71e7f9",
+      "title": "068",
+      "category": "FI vocabulary",
+      "chapter": 8,
+      "duration": 31.765,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_08.zip",
+          "entry": "voc_08/068.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "efdadbdd84205182e7c8af014b618b5785faaafecaaecb7ca4a748d7c5c09961",
+      "title": "065",
+      "category": "FI vocabulary",
+      "chapter": 8,
+      "duration": 8.464,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_08.zip",
+          "entry": "voc_08/065.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "7eb1fc681ed31dfd202318deb17bc3ad9372bb6c0434ebcabe8a6da8a0268555",
+      "title": "061",
+      "category": "FI vocabulary",
+      "chapter": 8,
+      "duration": 44.408,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_08.zip",
+          "entry": "voc_08/061.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "6cbd55619f5e7b7758bf30d47d860964d20234e2b401269018c5b0b39eac9c0e",
+      "title": "062",
+      "category": "FI vocabulary",
+      "chapter": 8,
+      "duration": 33.724,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_08.zip",
+          "entry": "voc_08/062.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "72acce56d9367585e8d81e844cbbc13946f12a3cd64dc84978313773bb875fea",
+      "title": "073",
+      "category": "FI vocabulary",
+      "chapter": 8,
+      "duration": 110.184,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_08.zip",
+          "entry": "voc_08/073.mp3",
+          "chapter": 8
+        },
+        {
+          "archive": "voc_09.zip",
+          "entry": "voc_09/073.mp3",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "id": "ae29c766a09676db0d0e5606a7d408e46c116327a1df5ae863916bd200ca14de",
+      "title": "070",
+      "category": "FI vocabulary",
+      "chapter": 8,
+      "duration": 3.631,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_08.zip",
+          "entry": "voc_08/070.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "0f5cb4693ce5d207ece5f14affe270e45ff080cc73e0048c6f607c9479ba06e7",
+      "title": "067",
+      "category": "FI vocabulary",
+      "chapter": 8,
+      "duration": 6.609,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_08.zip",
+          "entry": "voc_08/067.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "5124847d50a40da08ddddd1607e5420309a60e6dbff74619c6118196d2d4e7cc",
+      "title": "066",
+      "category": "FI vocabulary",
+      "chapter": 8,
+      "duration": 25.835,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_08.zip",
+          "entry": "voc_08/066.mp3",
+          "chapter": 8
+        }
+      ]
+    },
+    {
+      "id": "3d13fe1c492a270e1fe4ac71e7de80e6c54931f2de366c44c9103dbc974e335e",
+      "title": "078",
+      "category": "FI vocabulary",
+      "chapter": 9,
+      "duration": 29.414,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_09.zip",
+          "entry": "voc_09/078.mp3",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "id": "1776e6018eb59af646ec66d72dee6af4bbf93d2bc7c7a597579f0fb310c09c41",
+      "title": "080",
+      "category": "FI vocabulary",
+      "chapter": 9,
+      "duration": 20.219,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_09.zip",
+          "entry": "voc_09/080.mp3",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "id": "6087e784f21ef0e5f7c8218446d81c219fd5b8d3d94a832fbbe92e02bd09b6f6",
+      "title": "074",
+      "category": "FI vocabulary",
+      "chapter": 9,
+      "duration": 18.887,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_09.zip",
+          "entry": "voc_09/074.mp3",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "id": "c5293763073aedf8fbe75be282b1fe7d68457a123a20b03c9779f9232c580a6e",
+      "title": "076",
+      "category": "FI vocabulary",
+      "chapter": 9,
+      "duration": 22.544,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_09.zip",
+          "entry": "voc_09/076.mp3",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "id": "1646f59cfc5db6cff1dab67b446043b16bf603872a24852d32d8dc8b18c23efc",
+      "title": "079",
+      "category": "FI vocabulary",
+      "chapter": 9,
+      "duration": 32.444,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_09.zip",
+          "entry": "voc_09/079.mp3",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "id": "0b3b4a4afcd5e2e166beaedb5baa1e0d27c5e9dfab28cf574022358adb0b84de",
+      "title": "075",
+      "category": "FI vocabulary",
+      "chapter": 9,
+      "duration": 9.404,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_09.zip",
+          "entry": "voc_09/075.mp3",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "id": "686b010bb973f8a671c6dd2ea3513343eb85f4414e2a81e5405d15e267f4623a",
+      "title": "077",
+      "category": "FI vocabulary",
+      "chapter": 9,
+      "duration": 12.199,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_09.zip",
+          "entry": "voc_09/077.mp3",
+          "chapter": 9
+        }
+      ]
+    },
+    {
+      "id": "5fe58287c2b81b55e061fb67a7206756208bf0ee7df8d0fc9560089bbd982468",
+      "title": "087",
+      "category": "FI vocabulary",
+      "chapter": 10,
+      "duration": 33.855,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_10.zip",
+          "entry": "voc_10/087.mp3",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "id": "be8d357f96020f80cc46530aac1333fe32acf991d904c94b9072542e77dcb7f7",
+      "title": "081",
+      "category": "FI vocabulary",
+      "chapter": 10,
+      "duration": 123.638,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_10.zip",
+          "entry": "voc_10/081.mp3",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "id": "bc1b5f15189c454c60d12e3299c63ca36dc6720d0e7a34c859ef91ab8417c358",
+      "title": "083",
+      "category": "FI vocabulary",
+      "chapter": 10,
+      "duration": 21.473,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_10.zip",
+          "entry": "voc_10/083.mp3",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "id": "6211d30fde44ae716e7f277cf1c2d56ba44e9d8773b4492224f161710f2f66c8",
+      "title": "086b",
+      "category": "FI vocabulary",
+      "chapter": 10,
+      "duration": 21.63,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_10.zip",
+          "entry": "voc_10/086b.mp3",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "id": "e42c674dba08a5137b9d71e4a249e3f01125cf97e130509357d8525a6cc60160",
+      "title": "084",
+      "category": "FI vocabulary",
+      "chapter": 10,
+      "duration": 39.132,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_10.zip",
+          "entry": "voc_10/084.mp3",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "id": "c7cc241c8216f63a5d56b9d62f52924e327faa6fbaa8402cfba93b4610d2d3e7",
+      "title": "086",
+      "category": "FI vocabulary",
+      "chapter": 10,
+      "duration": 57.783,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_10.zip",
+          "entry": "voc_10/086.mp3",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "id": "b80726f5953a9d30b28023874f22b6b1f016ec2d3da33bb4ab50d6dc9bf3f4f1",
+      "title": "082",
+      "category": "FI vocabulary",
+      "chapter": 10,
+      "duration": 68.807,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_10.zip",
+          "entry": "voc_10/082.mp3",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "id": "7d9a462134112e6e976951ef9c9afafe688bfa995e96dec240ab588b63dd98dd",
+      "title": "085",
+      "category": "FI vocabulary",
+      "chapter": 10,
+      "duration": 24.712,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_10.zip",
+          "entry": "voc_10/085.mp3",
+          "chapter": 10
+        }
+      ]
+    },
+    {
+      "id": "4ddf815cc890b503fdf2b5cf1f0d0047ea578a082bdec2eb23681a06083b3e2c",
+      "title": "091",
+      "category": "FI vocabulary",
+      "chapter": 11,
+      "duration": 63.19,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_11.zip",
+          "entry": "voc_11/091.mp3",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "id": "23d4b7bffea5909942562aab308ce4026fadf9c04894883d22d3e8719ef7819c",
+      "title": "088",
+      "category": "FI vocabulary",
+      "chapter": 11,
+      "duration": 102.374,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_11.zip",
+          "entry": "voc_11/088.mp3",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "id": "9807bc02cfa0490a36feaf7d0207d07167fff0176f7979a09625402bf47969b8",
+      "title": "089",
+      "category": "FI vocabulary",
+      "chapter": 11,
+      "duration": 57.705,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_11.zip",
+          "entry": "voc_11/089.mp3",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "id": "c6de5bc2a84d88bbd055f3a89701113307f52e6b3489945912cf426cf34d4d12",
+      "title": "090",
+      "category": "FI vocabulary",
+      "chapter": 11,
+      "duration": 10.188,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_11.zip",
+          "entry": "voc_11/090.mp3",
+          "chapter": 11
+        }
+      ]
+    },
+    {
+      "id": "0ebeb64c4ab9f27a9ae05a4c82e4794c93474d94eb9f044e2494e8528a6649fe",
+      "title": "095",
+      "category": "FI vocabulary",
+      "chapter": 12,
+      "duration": 42.057,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_12.zip",
+          "entry": "voc_12/095.mp3",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "id": "3ff2b87e36bbe30f93a53d47be430a366360b079fd6edee9edf0ced56d8a013b",
+      "title": "092",
+      "category": "FI vocabulary",
+      "chapter": 12,
+      "duration": 86.361,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_12.zip",
+          "entry": "voc_12/092.mp3",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "id": "fe27784560a5c4a3b98e8108c2b350a5d60a3b5edb1e91477b57207f2f735af5",
+      "title": "094",
+      "category": "FI vocabulary",
+      "chapter": 12,
+      "duration": 23.719,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_12.zip",
+          "entry": "voc_12/094.mp3",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "id": "2f65407dc2b9df41da68f391ff28b17e73b3d8d2c1e00be7f96367c0a6b5e952",
+      "title": "093",
+      "category": "FI vocabulary",
+      "chapter": 12,
+      "duration": 231.994,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_12.zip",
+          "entry": "voc_12/093.mp3",
+          "chapter": 12
+        }
+      ]
+    },
+    {
+      "id": "2e334cb7af94fdc1c4598158b945799060cd5f59ab85bb918e403a45f70e83d7",
+      "title": "097",
+      "category": "FI vocabulary",
+      "chapter": 13,
+      "duration": 4.989,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_13.zip",
+          "entry": "voc_13/097.mp3",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "id": "7427ba9d018c76bc5392bfb600a4ac2688cef2398b74c3cb91d898ba7ba5481b",
+      "title": "102",
+      "category": "FI vocabulary",
+      "chapter": 13,
+      "duration": 60.682,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_13.zip",
+          "entry": "voc_13/102.mp3",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "id": "4b541b4f98bdbcf83932625c6f36f8993b50a7843450dfa4061a9e6918ff874a",
+      "title": "100",
+      "category": "FI vocabulary",
+      "chapter": 13,
+      "duration": 35.056,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_13.zip",
+          "entry": "voc_13/100.mp3",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "id": "c3d6c2fb72206a7e857c5cf3fdf7b72462c4d69c56a65d0c80f8cebeeefbf1db",
+      "title": "101",
+      "category": "FI vocabulary",
+      "chapter": 13,
+      "duration": 19.749,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_13.zip",
+          "entry": "voc_13/101.mp3",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "id": "2d7e5e1ac12bbb23d7ba1ed9b082b8390532e76bd67bb11bc8bfb0594c202a6f",
+      "title": "098",
+      "category": "FI vocabulary",
+      "chapter": 13,
+      "duration": 29.101,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_13.zip",
+          "entry": "voc_13/098.mp3",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "id": "fcf6e46ce4b68b110fd9482d262b4c3d02927c2c5a26109174d9b26035a809aa",
+      "title": "099",
+      "category": "FI vocabulary",
+      "chapter": 13,
+      "duration": 24.79,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_13.zip",
+          "entry": "voc_13/099.mp3",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "id": "303881c563329d8e300e1a5e393616d5750ef3f9579b3a41f562ad1e053e8494",
+      "title": "096",
+      "category": "FI vocabulary",
+      "chapter": 13,
+      "duration": 53.551,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "voc_13.zip",
+          "entry": "voc_13/096.mp3",
+          "chapter": 13
+        }
+      ]
+    },
+    {
+      "id": "df537cb321d862f8f7bd1c7ac0187cada262ff354572f0533dcaf7aa5c03d4e6",
+      "title": "INSP1_LE_Piste001",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 15.533,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste001.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "190c834b57f21346189f2ed14a970cae79b4d00605904eb157e26940c09da7c5",
+      "title": "INSP1_LE_Piste002",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 73.783,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste002.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "aaf891ca588a1fce57e816ad1989ec3417c1fe08927712fff0eaba6b9f057569",
+      "title": "INSP1_LE_Piste003",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 56.947,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste003.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "7ca26c769b937849a05a2ea6aba77b2aedf6507dc9f0f1f5a30d21d7c2d463c9",
+      "title": "INSP1_LE_Piste004",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 36.904,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste004.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "ed912d495d71bf3691452b6247a197928405635c96bf4920a22abd2c0dcd9f29",
+      "title": "INSP1_LE_Piste005",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 11.937,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste005.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "18696e86e5974d2e0221df6c36b4ceedea1fcfdf8e7bb8c6c71ad3c53d5ed6b9",
+      "title": "INSP1_LE_Piste006",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 65.104,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste006.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "117ced56d1ee5b721e60adf153ad4e7c102f4adbbba6340af063941fa463c77e",
+      "title": "INSP1_LE_Piste007",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 23.248,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste007.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "4167c602d08b2692adce8ee19cc0df2cec9fa9988b0ebc69ca9eea89242d6cac",
+      "title": "INSP1_LE_Piste008",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 44.02,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste008.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "2249285089dbda55ec140245788a6914a53b68655d81291dd8694995073d962f",
+      "title": "INSP1_LE_Piste009",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 80.663,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste009.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "3850b83727e1f843d0fc6c67634bfbd1867e90fa99ff93ba6edff7b211ff22a2",
+      "title": "INSP1_LE_Piste010",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 111.495,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste010.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "c0c7dc10db60b8f63b5c3ba6c50c2724614f0188bc6b7aac51e041a73e203a12",
+      "title": "INSP1_LE_Piste011",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 48.007,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste011.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "1b42c4e647e9dd71a42c04eb96462d7d4d73a9dd21ac7d022e6ccc62f0739b5b",
+      "title": "INSP1_LE_Piste012",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 51.421,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste012.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "881f62c188c6b948fbde9d11fb55d619ef3f340f8db2fd776df9ce16379c81c3",
+      "title": "INSP1_LE_Piste013",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 107.742,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste013.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "e0538bbfd4c6373a561276cf131524359a7efe38c20eb1ca6c43062ebbd03664",
+      "title": "INSP1_LE_Piste014",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 86.032,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste014.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "2f31ec0cd9e4fbf9758d09a5278065a74cfe72d349d5a4fc2294c08adbc27e02",
+      "title": "INSP1_LE_Piste015",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 32.761,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste015.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "3db4d442691fd0d24416fc9b3c291a6ad15aaba7bc59efcca64f16dc4f02452f",
+      "title": "INSP1_LE_Piste016",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 89.837,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste016.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "0d215edc88e710ff4df6d91b42ff85a6826246e22cbc16de61f578ab2a83d228",
+      "title": "INSP1_LE_Piste017",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 86.528,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste017.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "88a30495d42393f66e0b2c41ebc645fbc5e3449578d6d08441d5d30ebea863da",
+      "title": "INSP1_LE_Piste018",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 38.677,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste018.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "5402c2222d49a3e5fbfe59ef5a175f4cd653dc0540b331bb76ab232601d271c7",
+      "title": "INSP1_LE_Piste019",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 22.179,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste019.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "b5c9c600e4a8927d4bbd34e51b7dcc60c4a66ba16f07b9ff8e1dfc8a8cf75b07",
+      "title": "INSP1_LE_Piste020",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 72.74,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste020.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "069200faf6c3eb44bc3b6dd2c7cea7cd2d2adbfd0196661c5a33938763a12533",
+      "title": "INSP1_LE_Piste021",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 80.976,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste021.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "dbf9a4f9924a7aa84e0a9efe606f509620871a7999769d153c7cb98b7d90a328",
+      "title": "INSP1_LE_Piste022",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 99.924,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste022.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "f51cb715f5f6efa0517177dec22be708c30f3299544e7881d00376bbba3a7d90",
+      "title": "INSP1_LE_Piste023",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 62.394,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste023.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "1641fc38608ee3919406213f43210cc1c49279a8c886ff16932db72ab3d446ce",
+      "title": "INSP1_LE_Piste024",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 72.845,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste024.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "0fd0433cdb8493f6832db478a918a72f11076fe1597689b4b9a1e1ad2294d49e",
+      "title": "INSP1_LE_Piste025",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 22.309,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste025.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "300a1abc6d6b59ae136e192abc111f966056b88249d15a1476596f2a79eaca3b",
+      "title": "INSP1_LE_Piste026",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 129.192,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste026.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "aa3b5184e7315702288906f9b6e22d16a67248ca5715a840b77841e1bdde808a",
+      "title": "INSP1_LE_Piste027",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 69.013,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste027.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "d28d2654e1f5e92bd1efa7a0241ae05c641ed71606579624c8233e750ad7a8e0",
+      "title": "INSP1_LE_Piste028",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 76.207,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste028.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "c2cccbd307e2795f36e553a1d984f40ffb17a2acc715ff23c33a89acf58c131b",
+      "title": "INSP1_LE_Piste029",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 67.893,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste029.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "edc1ddbee0d54db4299b655743f2bcde7b8f18d3888a3c977f68a63212cca3f8",
+      "title": "INSP1_LE_Piste030",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 42.065,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste030.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "e49f3d45e1a6a54a1071000f3f42e6451d6dd62e6885415610a3ce10e31327bb",
+      "title": "INSP1_LE_Piste031",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 14.673,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste031.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "7fbf22beabc5cd56acd8c9c02fe5796b058638006c5ad01e57fd63a2f32ab504",
+      "title": "INSP1_LE_Piste032",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 73.731,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste032.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "9e0875c11498c8ccc826a4a269f4b8055b953fd5415f343288994b9611b6bbee",
+      "title": "INSP1_LE_Piste033",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 138.965,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste033.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "db97cea42e745b3ad9c49cf65faddfc0ba953c041037fcbd5c39bd5bb3138977",
+      "title": "INSP1_LE_Piste034",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 55.487,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste034.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "7ac826ae576680fcb4fcbef9923a7bed69fc2ef236e0261a8e66e6b52ff242f5",
+      "title": "INSP1_LE_Piste035",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 50.196,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste035.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "c7bea2224eb9751b268769538bc564baa18d2091fccb7e334fce380cc4855483",
+      "title": "INSP1_LE_Piste036",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 89.394,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste036.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "1a79b56a62a7dcb67dcc9e5e9e28a3bfbefe006c55f9a0b52237e79331f11d21",
+      "title": "INSP1_LE_Piste037",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 88.404,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste037.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "3de3833813ae0a0dc95c46282f2156be24d7658360e20ebd1c0541060618a34c",
+      "title": "INSP1_LE_Piste038",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 62.55,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste038.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "74fc87e2ff80275b2c0114ab7630e69249e103196c18a120bcf4b1c9a6f4b5e5",
+      "title": "INSP1_LE_Piste039",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 45.844,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste039.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "2caec8f3ee6f1356fc627e189ce2f132f08e57d1ebd4bb105f439676972f6b17",
+      "title": "INSP1_LE_Piste040",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 84.364,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste040.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "915a21d6c8b31c1260a215eb3d6cc2386fa7240c15cea1111270befc0b1e2e2e",
+      "title": "INSP1_LE_Piste041",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 103.755,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste041.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "87a04797d41619522596d38aabef55dd240c775b26fabaccf11e266ca703de2d",
+      "title": "INSP1_LE_Piste042",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 30.441,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste042.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "4aa0bf9398797e5577f11f5591b92fb21753ae517c617e3d7715fb9ee92b8d50",
+      "title": "INSP1_LE_Piste043",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 80.716,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste043.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "ba49e57c284655ec67bd3ab847075a70adb9fc1b55d05c0d632bf8990d34b7c4",
+      "title": "INSP1_LE_Piste044",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 37.035,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste044.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "a01049f9e7df2aa62f12299bcaa61d0f721c63db5eb6047b4a92981030884909",
+      "title": "INSP1_LE_Piste045",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 36.592,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste045.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "02af065386e0489e1b37b9d058164e49d38b8200b0849ddb1607ca0a585c5d3b",
+      "title": "INSP1_LE_Piste046",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 36.409,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste046.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "21f894c23c3b659d396f2c728367997c7e2cdf5e0acf3623a14766b71324062e",
+      "title": "INSP1_LE_Piste047",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 110.114,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste047.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "f070a4c26778a1794b2f495426cba98167d47bf4f34ae517d80bfa4ad2ce7535",
+      "title": "INSP1_LE_Piste048",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 121.165,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste048.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "3844d06f443a0ed4edf38325fc0c488cdfb34599466c09d2aeffffea9748f7fb",
+      "title": "INSP1_LE_Piste049",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 27.783,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste049.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "1957f8dab7ef9331ba5314fba584fd2beca4b5c67f8b217c8abe0c2321c512ae",
+      "title": "INSP1_LE_Piste050",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 22.283,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste050.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "714bc8fa111b930692e587ea1073f7c027a70d957a014dfd6e4610a62b7eddca",
+      "title": "INSP1_LE_Piste051",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 99.09,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste051.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "f81f0704d28c5e0cb1211e81b9d936200fa496d89b1ece936f72113f33d949ef",
+      "title": "INSP1_LE_Piste052",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 46.756,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste052.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "bd5dfc9c8c25c8af4ddec1031913dd92e4a44c1a702eac11704bcc1dd0d54345",
+      "title": "INSP1_LE_Piste053",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 48.893,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste053.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "cee12c363255aeec4b1d964600b364db5dc1d12c64434b8b00183234aaeb739f",
+      "title": "INSP1_LE_Piste054",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 50.9,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste054.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "bdddae1d5479679017da836cfd91a2cf5c27b32dc8c3217139b17f70094a963c",
+      "title": "INSP1_LE_Piste055",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 50.04,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste055.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "0168e658eb173f5c61e0f25a436bfdb208830e995ff60a9b89e0d79b456472e9",
+      "title": "INSP1_LE_Piste056",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 106.387,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste056.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "9f3f9b535d1710c17fdcc78a32a9253067536c6f6e3277b39a600ac45485722b",
+      "title": "INSP1_LE_Piste057",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 112.929,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste057.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "2812408cf3407e5fd0fba864631273e02b6af89398360b4b6f48e8745bf43a91",
+      "title": "INSP1_LE_Piste058",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 94.529,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste058.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "3e7dcc27f0bef1243f908689a286b8914586f660b471b8e8c7684f42e8062997",
+      "title": "INSP1_LE_Piste059",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 14.36,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste059.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "01e92af4d7c5b564f0b6331b88c4048d8f524f774a2e9b233e0ac9014cd05969",
+      "title": "INSP1_LE_Piste060",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 25.515,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste060.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "1ec38847ee3d4f893900b2dc45b6c1b543af5b7515030e7ff71be505c0a44e76",
+      "title": "INSP1_LE_Piste061",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 56.06,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-01.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste061.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "a4a481793c946ca57a75067041e6aa25c62913f6461edd33369f8c9548d6eb60",
+      "title": "INSP1_LE_Piste062",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 95.888,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste062.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "57d571ed2d3c6f8ad4058fe6bdaabccbee95f8ab31340f4682f16eb149ee1354",
+      "title": "INSP1_LE_Piste063",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 114.459,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste063.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "7869588879be72ca55654de9d3e5984ef02391443d49bdbdfebd89894c66b7f4",
+      "title": "INSP1_LE_Piste064",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 92.652,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste064.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "3b590055ca0603938d9dd830277db92c939995fa2a757dee1108711659a3335a",
+      "title": "INSP1_LE_Piste065",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 37.712,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste065.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "72664bcb90b7dbe2ef79bc56ae6b5e80af36a0f79830f683544b04df404abc34",
+      "title": "INSP1_LE_Piste066",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 64.635,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste066.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "4e9a7068c5cd4928ca5e0085784abbbf0f1585f5f24d19cc872434cd0e38db14",
+      "title": "INSP1_LE_Piste067",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 68.414,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste067.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "4f67e032e6c95e32552399aa1add70bff8d5b050683e47f6848f0af385d36953",
+      "title": "INSP1_LE_Piste068",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 74.174,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste068.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "291d716c10c48d522501202a061fe02daae5594a000b03e89a4829223ad65261",
+      "title": "INSP1_LE_Piste069",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 42.69,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste069.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "06ee06575fa51cfb6d9fbaa71530a84425c5b0a7b4561f1786c77f22fd029fa3",
+      "title": "INSP1_LE_Piste070",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 31.379,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste070.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "3011d9dfea571a6e3ea52c6201e343f723962d9019d4bdc687de7feb9ecd96c1",
+      "title": "INSP1_LE_Piste071",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 34.559,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste071.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "31b1bb71686e4768bacbd8f5dfd5330d31d5ed5580f693a23c7fc9ea23de61fe",
+      "title": "INSP1_LE_Piste072",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 73.809,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste072.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "f75b0d6a3afbf83cef148e289109961f52843327aeadaff4bd1f0f0d3c94da70",
+      "title": "INSP1_LE_Piste073",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 31.979,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste073.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "ab793ade0743ee864c26e92ef0b34b8a6acdc28aee546be3534318efdb0362e7",
+      "title": "INSP1_LE_Piste074",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 33.125,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste074.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "ae8184667a694ec151d400d987e9d58b287ca445668d45a222d72da38b98a292",
+      "title": "INSP1_LE_Piste075",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 46.522,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste075.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "4c76c5eb231f995f5578d12335f4ada1a274d17e00d5fd5ea37131df8c7df7b0",
+      "title": "INSP1_LE_Piste076",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 55.696,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste076.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "b4e7388d60335f0f1b5cd3ed46ef522871ef5745d011a180cf68c99e220f1d9d",
+      "title": "INSP1_LE_Piste077",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 46.913,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste077.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "e84aed9e6cce1d89ab0ecb88031899687e422320c696fb9226d864c037842618",
+      "title": "INSP1_LE_Piste078",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 105.423,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste078.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "90fb8b6ff5d39b59d2ab4addd69ae58939bfdd5f3f25e06b62ad84e97d94d9ba",
+      "title": "INSP1_LE_Piste079",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 54.862,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste079.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "32c7f8615c4f763f8f2197a8bdd174e83bcb9c3988a8057a2af15f25f12e1119",
+      "title": "INSP1_LE_Piste080",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 22.049,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste080.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "44dff679f1b59afe8e811ff4304a753fef4a8f1bbaccae38647a819f354ba6bb",
+      "title": "INSP1_LE_Piste081",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 12.197,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste081.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "7d9144f011f1f731ab2e77bd339b7c268f6803f291da2caee047863ee17f1387",
+      "title": "INSP1_LE_Piste082",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 59.084,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste082.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "b6a7f2e89b39406cd81f326a192f7e84bc1f13f4153e8a748cad30e646f43e61",
+      "title": "INSP1_LE_Piste083",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 76.586,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste083.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "89d264292da6704efc4d84333acdaac4ce1bdf926878670fce0417336e17c233",
+      "title": "INSP1_LE_Piste084",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 25.202,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste084.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "41a7ef6d030b4961e91efcbc84cda2b6e1cfaff21ce241e149e190363a8c36ef",
+      "title": "INSP1_LE_Piste085",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 99.428,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste085.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "425a09086ffb3f6d9f135d0b08584b316db770154496b46c42bc11b6aa1ea926",
+      "title": "INSP1_LE_Piste086",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 17.905,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste086.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "6ea15c0cfc716633958a177f7ac3af30f3ac95aeefac8b1e0262f1e819a880ed",
+      "title": "INSP1_LE_Piste087",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 13.526,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste087.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "611d33292ea8eb63dfc16bf650d519fe2ac416468c79aa8ae60f6cc9cc135f1b",
+      "title": "INSP1_LE_Piste088",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 81.054,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste088.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "e0eac12b04b6a4753520d30b8802799c9667b677ec9699c11014055494e29b6e",
+      "title": "INSP1_LE_Piste089",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 133.779,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste089.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "252caf3f5d559d8bd2cd39d3ee84d61ba3381e336e5e8922e7233e5aa67ffe36",
+      "title": "INSP1_LE_Piste090",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 26.74,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste090.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "550eb61611eeecedd473f2e3c13d602e45f60c058aefdaa20b11713d58b9ff1d",
+      "title": "INSP1_LE_Piste091",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 10.894,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste091.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "fdf57bfdce854245556f5d251e48127127dc194991505edd80bbada15a183373",
+      "title": "INSP1_LE_Piste092",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 18.713,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste092.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "6705b2abf8ea126fa01d488028b1fe12f520080f49f0909ea39616cfd1b7c688",
+      "title": "INSP1_LE_Piste093",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 18.061,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste093.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "8b97759002cad49129471e7a26f965b686669e441abaa8e7bc35031a0055023b",
+      "title": "INSP1_LE_Piste094",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 23.3,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste094.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "6f9934e6f98bad41714b96c65ac64ede2a36d489a85031879377776dfbc41533",
+      "title": "INSP1_LE_Piste095",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 30.18,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste095.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "43366e7af17873460501a7c49937a100af852cc98bf9e198db74db07938c84a4",
+      "title": "INSP1_LE_Piste096",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 71.281,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste096.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "860a9ecfa40b9295b0db317ab022482bccd2ae6f93048da76022153b994e8373",
+      "title": "INSP1_LE_Piste097",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 36.983,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste097.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "ea3ed7211c24afcb99e9710ead31fa4564e65325aa088080c57e0a50236f2152",
+      "title": "INSP1_LE_Piste098",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 60.934,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste098.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "899bac1c8a2716691c64cec92c90af9a60e2011cefc9a0de7348d678c88a0ce0",
+      "title": "INSP1_LE_Piste099",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 45.87,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste099.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "ac0c993ef9a1b8433f0d486e5310c3db3112700b686eff7d5ffe973f4fb68f97",
+      "title": "INSP1_LE_Piste100",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 57.676,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste100.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "fd0a2e26a8c883931e8f05e6a8ff72029f9f64bb67d2592a1b9787f016be97f1",
+      "title": "INSP1_LE_Piste101",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 53.272,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste101.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "7fdcbcdaae89c62b31f8c0e6c122c83025d03469d98808234674dbd51e65e46e",
+      "title": "INSP1_LE_Piste102",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 57.702,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste102.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "319dd44e9f909ae50f769d1a7b76d70c65b6cb770622fbbb73a2a9945faa214b",
+      "title": "INSP1_LE_Piste103",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 47.72,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste103.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "e6acffb07015c03dc66a7fe61057cf6bc6b286b1a6795596894fd4166c796f88",
+      "title": "INSP1_LE_Piste104",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 30.754,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste104.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "2de0fdf9be47eb1769619b8b282db913b85ae79594d24fb3c5e005dde875ac6f",
+      "title": "INSP1_LE_Piste105",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 9.956,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste105.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "c24c207b3db2fbd1711ac21c34479d3944a3f06330ec4e79a277f9e3192f7cc3",
+      "title": "INSP1_LE_Piste106",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 27.444,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste106.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "ac834a7cdbf0a2579381b0a60e33c8123e92b7389d941a480c2730fc2c783a89",
+      "title": "INSP1_LE_Piste107",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 12.249,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste107.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "2142db1aa1c5d181ffd0f9b8c977628ecbcaa7ba868298253430f0eaef41c6e4",
+      "title": "INSP1_LE_Piste108",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 104.224,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste108.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "baee91189685a42cd0da4cd403006456fb63c0375235916573f96fc0eec95819",
+      "title": "INSP1_LE_Piste109",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 107.664,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste109.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "328591677c2c2bdf722f9d67c11d1a791f29dbf36b2bfe8676230a5f27e3f6dc",
+      "title": "INSP1_LE_Piste110",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 49.988,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste110.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "f3bff04e286bca0c4b61ab571f57d319e5d68028050b41095b82ef518b12c404",
+      "title": "INSP1_LE_Piste111",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 69.222,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste111.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "c8ed4eda4489883b899c300ce4b2fefbf7dcb345e39c88991ce20639f8e46f3d",
+      "title": "INSP1_LE_Piste112",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 38.286,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste112.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "7646d92f88faace09024e4872bf932cdbbd9867c544c173315b87a56dfc5d76c",
+      "title": "INSP1_LE_Piste113",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 27.444,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste113.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "8590abf7cbbc2565723aeb32baa3db28f9fe2823ffa2bea4567f99fc21897014",
+      "title": "INSP1_LE_Piste114",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 11.676,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste114.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "6451422a37c1abcb385547c59080c46fd65f2d7be73a79a39c788c6afd618e50",
+      "title": "INSP1_LE_Piste115",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 22.414,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste115.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "e623f0efbc95c87f4718773fd23a38d4a00d35b19fcad889d65884d38424779d",
+      "title": "INSP1_LE_Piste116",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 53.089,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste116.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "cf4f040986ce8d41050fba5a24456f544c3188f136480f72b202eef36313562f",
+      "title": "INSP1_LE_Piste117",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 40.214,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste117.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "e0129df2be34a9dd9e309289e71138fe650fbd3f7444aedffe96d14aad39b4a5",
+      "title": "INSP1_LE_Piste118",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 57.468,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste118.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "560d2af3fcf8bc81ea081fe6153f5ac71cd7d5a9de0a37fab0eeb3642fd413e0",
+      "title": "INSP1_LE_Piste119",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 95.024,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste119.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "a5de961fd3e45f0f4e8b5a09d643b0a212c0c35d48bcc930a8b65e440258bef4",
+      "title": "INSP1_LE_Piste120",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 42.039,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste120.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "f1b84fe4158788f34de0846d742d9bb7ac63a1fb1b5aa0eb298ed95596afa662",
+      "title": "INSP1_LE_Piste121",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 42.977,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste121.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "3ebecd423177789fa15d7d3f5697038691dd2a171f05a8b23146d7417a5c0567",
+      "title": "INSP1_LE_Piste122",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 14.126,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste122.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "0062954076b5886f16ba57b81e6bccca6dff3f8ad835716854e62f55ebed46af",
+      "title": "INSP1_LE_Piste123",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 15.194,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste123.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "6f6ffe943c432a01303422f6c15b3ac00a661041a2dcb9ceee43806b9cd9a7ce",
+      "title": "INSP1_LE_Piste124",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 18.713,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste124.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "a812665d3f50e4143719676b1b86366b51b45ffba60794c217d2702ad5950528",
+      "title": "INSP1_LE_Piste125",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 88.639,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste125.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "c7395c4d21c8b1ff39951fe22bc66334258375a87c112766bcc7f5fddf98fa6f",
+      "title": "INSP1_LE_Piste126",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 15.846,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste126.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "c95f7b193d4ef32522818d66486a7b4f777420595f75b61ff35f71f306c51a23",
+      "title": "INSP1_LE_Piste127",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 9.018,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste127.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "1230224e8a049ba585ed68bb5b54e10ca82f36c216523ce5f1d6e201ce42a52f",
+      "title": "INSP1_LE_Piste128",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 32.37,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste128.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "07ac9158fef38ebb4f9d3f0c7df482ab5a25bfd0a48191adbe77c7629b406e6c",
+      "title": "INSP1_LE_Piste129",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 12.536,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste129.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "cac3c7488d95b36a15cfab5e026ad02ce90984880354a579e0ad981aa85000e0",
+      "title": "INSP1_LE_Piste130",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 71.959,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste130.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "bf064f3cfee8744730145e12e2a7c5923d1762b09b38931315b9a5f616dc9400",
+      "title": "INSP1_LE_Piste131",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 31.379,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste131.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "8a18384ac80f9b9feafc6c4c7e2f8947935791c223cff1583ad92d2646c7efcb",
+      "title": "INSP1_LE_Piste132",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 23.482,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste132.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "ed25c56a24f47380a542d68e555efb7975ee83544345dade5271655ce77ffa5f",
+      "title": "INSP1_LE_Piste133",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 13.083,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste133.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "4f3634142c0c1185854e4310ab34511e7c996245ef09ac6eccae3b4d0eac9609",
+      "title": "INSP1_LE_Piste134",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 8.783,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste134.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "26a73eaaeca9d1829b41503fc0717db15bdf169c66873f691fe8a58fe3853d54",
+      "title": "INSP1_LE_Piste135",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 74.747,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste135.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "394657c88b6993ab3424d8bb0279143ee105f9e50ca65b5169f485eea517c712",
+      "title": "INSP1_LE_Piste136",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 56.842,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste136.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "4bfd84d9ee6e4655364786abda0273954cebb0e17842478c1fbb04cfd24f9a26",
+      "title": "INSP1_LE_Piste137",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 42.847,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste137.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "b6a83e02b16264bd48cf0e3a6ee48bbf477c08b428e4d6b5108dd4d7f375cb29",
+      "title": "INSP1_LE_Piste138",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 44.124,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste138.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "68601663acc119340c982f7f68a421992ab356f4c952783a9c234595feb98566",
+      "title": "INSP1_LE_Piste139",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 44.515,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste139.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "822a28be8af36cf748b07ba94c09eed9237c48fff8f57bb6f6539a9393f9edb3",
+      "title": "INSP1_LE_Piste140",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 104.954,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-02.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste140.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "4b492fc26f893a8ab46e1fdaa8e573b9604ad8e415a59bad1b08b9a4f13fec14",
+      "title": "INSP1_LE_Piste141",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 94.451,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste141.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "93d53e89348962d61b34d8ef27ed0d2a3d834bf5088cbf9d8b775a106e2a453b",
+      "title": "INSP1_LE_Piste142",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 44.541,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste142.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "599355e869640f163f84386d857788287e356d6e8d21eb790d80075787b24edc",
+      "title": "INSP1_LE_Piste143",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 32.109,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste143.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "108e75027439566a926a90869354d447b88282a389327658eaf63ac7e6c4d067",
+      "title": "INSP1_LE_Piste144",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 72.871,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste144.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "652c15ab5791799a13742c2ba920d796ccdc8233f07e935b297ef94075289dfb",
+      "title": "INSP1_LE_Piste145",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 95.389,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste145.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "9c600800a3f132d063095b06ec42dedbe70905b8a54403ff6cce7f78de709254",
+      "title": "INSP1_LE_Piste146",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 20.381,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste146.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "9bfdfe1027c18e0adc68714488b10b7bd32c402efa278099fb210a9129ba7466",
+      "title": "INSP1_LE_Piste147",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 24.108,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste147.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "3a573645146e1865743c0e61781e0e9633b78513fa1619ed2d0e85f417ca9e46",
+      "title": "INSP1_LE_Piste148",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 15.794,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste148.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "18a0e77682ba2929a80139557ec9a33bb86cc2f5dd7f9cab1597c5fc9f3f3020",
+      "title": "INSP1_LE_Piste149",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 26.349,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste149.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "f506f1e403ffe1f2d2b9dd4ebe8b634defde500cb77fe90fa31475f2870e1c6e",
+      "title": "INSP1_LE_Piste150",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 112.382,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste150.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "c2e71668d635f2c6807117d71ea88ce8c4512a647de858da0f51748336c5b3f2",
+      "title": "INSP1_LE_Piste151",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 138.991,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste151.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "cd17d19f61f2846d7343f5491b14d2c641ddd60580f213bc8eb06e40bfe8aaec",
+      "title": "INSP1_LE_Piste152",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 47.095,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste152.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "55321dbc4662c6a75fc77c2bcd7d1595862bb2f2f24e715aece9eba4ea4ef14f",
+      "title": "INSP1_LE_Piste153",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 78.839,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste153.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "fb7ec21751091973940ed43537195d2f2f0c4c13fe64ebf622dee5b0ed45e3d8",
+      "title": "INSP1_LE_Piste154",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 34.793,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste154.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "0093ad5663383e3b23fab3e0dacd70cb6b1afa867934f7c2b9487414b68cc8bd",
+      "title": "INSP1_LE_Piste155",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 20.381,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste155.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "bb4b5516ba3ea95b54f55c48d0174de548a01932ae70d818a9b34378e347a538",
+      "title": "INSP1_LE_Piste156",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 22.231,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste156.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "9ab83b517258d91423432dcba65546ee70e32c879b84a785ee605349ca158487",
+      "title": "INSP1_LE_Piste157",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 52.542,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste157.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "397cf22c37afafeaf25b5c6c75727d5d34b45820175f2eefe82fbce11568cfae",
+      "title": "INSP1_LE_Piste158",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 40.527,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste158.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "0d1b83fcaf56420a3ca4134451c5019c863b603584ac5af0f3d2dbd14f88ad77",
+      "title": "INSP1_LE_Piste159",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 43.368,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste159.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "4179ccd43f01520c23c86176631109dc7eb000f11a453507005d30f71f958012",
+      "title": "INSP1_LE_Piste160",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 56.816,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste160.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "a41857b3b81872f0f345cdc0e30cc71dcf8aa494f6ea16068bb8a81645025f91",
+      "title": "INSP1_LE_Piste161",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 36.487,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste161.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "a7573694772460ca0b134deaac53dc512cba58377a8859f9b3a1b4f00738507c",
+      "title": "INSP1_LE_Piste162",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 158.827,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste162.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "6cbcca862a8181fe52d400df5a8173b57e786d431bb928415af89219ede8b5df",
+      "title": "INSP1_LE_Piste163",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 142.29,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste163.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "7d7da05b5ce1e8e83cef477fcd2369cf3fd9643b450f14bffbc79e46a2abf105",
+      "title": "INSP1_LE_Piste164",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 156.636,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste164.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "7f51008a817665ecba850a57fe306f4f6d3af7d4c2ee11077fabbeb3e36f625e",
+      "title": "INSP1_LE_Piste165",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 282.775,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste165.mp3",
+          "chapter": null
+        }
+      ]
+    },
+    {
+      "id": "4787c9e0c101e37f29e90998a3144ee79b68f7d75b9892e546b47023630edcbd",
+      "title": "INSP1_LE_Piste166",
+      "category": "Inspire A1",
+      "chapter": null,
+      "duration": 146.724,
+      "sample_rate": 44100,
+      "decoded": true,
+      "original_lesson_match": false,
+      "reference_lessons": [],
+      "locations": [
+        {
+          "archive": "Inspire-A1-official-audio-part-03.zip",
+          "entry": "inspire-1_livre-de-l-eleve_audio/INSP1_LE_Piste166.mp3",
+          "chapter": null
+        }
+      ]
+    }
+  ]
+}

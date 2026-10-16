@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-16 Pacific/Auckland",
+  "as_of": "2026-10-17 Pacific/Auckland",
   "summary": {
     "unit_total": 108,
     "baseline_six_section_drafts": 18,
-    "units_with_six_authored_sections": 19,
+    "units_with_six_authored_sections": 108,
     "text_complete": 0,
     "audio_verified": 0,
     "QA_approved": 0,
@@ -28,15 +28,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "41dc293091e99abc0825701da4f14fdc94979df48cb1dd3395148956714d87b6"
     },
     {
       "lesson_id": "en-ielts-listening-u02",
       "language": "en",
       "level_or_track": "listening",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -45,15 +47,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "ce3f75c8662311174d0971f27b1261c8e0713a507f508eeefd2c10ecd2a88ad7"
     },
     {
       "lesson_id": "en-ielts-listening-u03",
       "language": "en",
       "level_or_track": "listening",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -62,15 +66,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "19fa6652b9f8369ab88f8c159398194f89e29d5e2784762b17b6562a0cc1209d"
     },
     {
       "lesson_id": "en-ielts-listening-u04",
       "language": "en",
       "level_or_track": "listening",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -79,15 +85,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "c138376d41e44f404b8331165e48de721518dfaab721b2b0042f47f13f4167a1"
     },
     {
       "lesson_id": "en-ielts-listening-u05",
       "language": "en",
       "level_or_track": "listening",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -96,15 +104,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "a765b7b39f02b5d1995211b83726af03bfc23e7d1167080e028e992bd1e812ef"
     },
     {
       "lesson_id": "en-ielts-listening-u06",
       "language": "en",
       "level_or_track": "listening",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -113,15 +123,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "f1404b492bdf8a24edfdac159750e32e47c5e29bd46e00c39f4ee2d15eda2faa"
     },
     {
       "lesson_id": "en-ielts-listening-u07",
       "language": "en",
       "level_or_track": "listening",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -130,15 +142,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "9385170c306a8f4e0559aa227548e541fa58e74abb4706bf974b44247be8a81a"
     },
     {
       "lesson_id": "en-ielts-listening-u08",
       "language": "en",
       "level_or_track": "listening",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -147,7 +161,9 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "c5c9e68cded25b153ab6312fb6cfa918532dce50a5b525e97e1a7c4b7122e81e"
     },
     {
       "lesson_id": "en-ielts-reading-u01",
@@ -164,7 +180,9 @@
       "public_snapshot": true,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "ba5b93d128693117a4919a3d7a88b3e708e789bce7c66c6e475dfa31850ee216"
     },
     {
       "lesson_id": "en-ielts-reading-u02",
@@ -181,15 +199,17 @@
       "public_snapshot": true,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "22e21e86a7ae20a8977c87bda14e7ce5caff0f8606c28cc5c94a5c793693d272"
     },
     {
       "lesson_id": "en-ielts-reading-u03",
       "language": "en",
       "level_or_track": "reading",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -198,15 +218,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "fa01594a0194949330e064465b665a0569f681f4a8e14c1b4deca4cd7e805784"
     },
     {
       "lesson_id": "en-ielts-reading-u04",
       "language": "en",
       "level_or_track": "reading",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -215,15 +237,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "bea903abf1b8df194e7d52521863de1ee35f75ed3702b4f575902daf569403a3"
     },
     {
       "lesson_id": "en-ielts-reading-u05",
       "language": "en",
       "level_or_track": "reading",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -232,15 +256,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "799f05e82f9de08ab596138beee21005d592ddd0a7114eaf1c55c74d7623036f"
     },
     {
       "lesson_id": "en-ielts-reading-u06",
       "language": "en",
       "level_or_track": "reading",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -249,15 +275,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "d56527577c134907a2eaa15b3c14ea8a9083dc2dc07a35cf36af5b9f48be8395"
     },
     {
       "lesson_id": "en-ielts-reading-u07",
       "language": "en",
       "level_or_track": "reading",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -266,15 +294,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "776ce2c5c6bc37b0226494d251485737861bf0b16f61b268f59cb814071d26fe"
     },
     {
       "lesson_id": "en-ielts-reading-u08",
       "language": "en",
       "level_or_track": "reading",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -283,7 +313,9 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "cc89ebe56bd66355194210be5afaa720771bd0482599073f88ac5ccd7db6aa99"
     },
     {
       "lesson_id": "en-ielts-writing-task1-u01",
@@ -300,15 +332,17 @@
       "public_snapshot": true,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "dd145ca266c1461c0d0adde9f2ddfe62f4cd5046b05b0141065a5b829e5bc221"
     },
     {
       "lesson_id": "en-ielts-writing-task1-u02",
       "language": "en",
       "level_or_track": "writing-task1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -317,15 +351,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "d890873ecef92044d5e63db411e949377af5538676e3071b697b09efded2e37f"
     },
     {
       "lesson_id": "en-ielts-writing-task1-u03",
       "language": "en",
       "level_or_track": "writing-task1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -334,15 +370,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "03ce72d47528d74d9c639cf42fed3ccd9f75a825f97ea7bf78688348aab61b1d"
     },
     {
       "lesson_id": "en-ielts-writing-task1-u04",
       "language": "en",
       "level_or_track": "writing-task1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -351,15 +389,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "233d2940f81fd87f38e810926b92e57406e7b4c868f6f77f20f11fda0cbe2c40"
     },
     {
       "lesson_id": "en-ielts-writing-task1-u05",
       "language": "en",
       "level_or_track": "writing-task1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -368,15 +408,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "0e2db33cf514f31c03b5f9a82d8038efa82f4f81d7157927338a6078cd771535"
     },
     {
       "lesson_id": "en-ielts-writing-task1-u06",
       "language": "en",
       "level_or_track": "writing-task1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -385,15 +427,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "008b00c7bfa4968135fd62f63a9fe2b242db6d7dee9f8be6b1e85b3196c53265"
     },
     {
       "lesson_id": "en-ielts-writing-task1-u07",
       "language": "en",
       "level_or_track": "writing-task1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -402,15 +446,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "6a4ac9734c9e2d3d8a1e847b669618414418884f36dbc53dd4a8db4767f72774"
     },
     {
       "lesson_id": "en-ielts-writing-task1-u08",
       "language": "en",
       "level_or_track": "writing-task1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -419,7 +465,9 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "e154fd3011aac9459e1e7f57912be0ba5bb0806db006b766a2045297fa00ec31"
     },
     {
       "lesson_id": "en-ielts-writing-task2-u01",
@@ -436,15 +484,17 @@
       "public_snapshot": true,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "af3fc0a736e526593cedadc7672d9c9cf1985e3c8dc86ae1c66a95a06f62aab1"
     },
     {
       "lesson_id": "en-ielts-writing-task2-u02",
       "language": "en",
       "level_or_track": "writing-task2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -453,15 +503,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "fef690b374b63cce01e0a41bc30cc28f06178cc52cbb5360d0d7f02fd7c51b1d"
     },
     {
       "lesson_id": "en-ielts-writing-task2-u03",
       "language": "en",
       "level_or_track": "writing-task2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -470,15 +522,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "c374705da2eafba3fbb2a96c1fb0ca0aaaa5c95648f01d004b8255edafd5602e"
     },
     {
       "lesson_id": "en-ielts-writing-task2-u04",
       "language": "en",
       "level_or_track": "writing-task2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -487,15 +541,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "082c34a3e90cf93320059ade8d6b05da3bf74c211caa18ea12691e4d6bb0f791"
     },
     {
       "lesson_id": "en-ielts-writing-task2-u05",
       "language": "en",
       "level_or_track": "writing-task2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -504,15 +560,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "82c840dd884a2fba4bd2669a6501761c8e50cb6a85a6a9b8fb1459c8f67b04fb"
     },
     {
       "lesson_id": "en-ielts-writing-task2-u06",
       "language": "en",
       "level_or_track": "writing-task2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -521,15 +579,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "ddaf54ab555cb7e7883b9d4e430124dc7c95c00a65db1539b054787a2c015090"
     },
     {
       "lesson_id": "en-ielts-writing-task2-u07",
       "language": "en",
       "level_or_track": "writing-task2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -538,15 +598,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "22ca41db96b57e07c7fd50cb2ef4499606e137fde737291a8abb7ae059481103"
     },
     {
       "lesson_id": "en-ielts-writing-task2-u08",
       "language": "en",
       "level_or_track": "writing-task2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -555,7 +617,9 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "c17ebcb0b3f323c9c77fb1eac87cd74619f9da9408864af702cc3b048cd7072d"
     },
     {
       "lesson_id": "en-ielts-speaking-u01",
@@ -572,15 +636,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "91bac371fc471ac8dfea141ac483f37e73e223d9e24344571437211e3ed27795"
     },
     {
       "lesson_id": "en-ielts-speaking-u02",
       "language": "en",
       "level_or_track": "speaking",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -589,15 +655,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "c1eef70d415ea42b489388c034fd8ec9ef5c44a8642eee69736fa9125a747fb7"
     },
     {
       "lesson_id": "en-ielts-speaking-u03",
       "language": "en",
       "level_or_track": "speaking",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -606,15 +674,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "a42420c4ce2dda8671c55d52c5ab8c9010c387b498cae1183b4258c615598999"
     },
     {
       "lesson_id": "en-ielts-speaking-u04",
       "language": "en",
       "level_or_track": "speaking",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -623,15 +693,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "462b4100892132efea833634b3f2da3dfa02d8dbb84c78da8c76a173d83025a7"
     },
     {
       "lesson_id": "en-ielts-speaking-u05",
       "language": "en",
       "level_or_track": "speaking",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -640,15 +712,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "8681d8c571daadceca303122318f33f50c87afe84f1f3f67702207c8e9132f33"
     },
     {
       "lesson_id": "en-ielts-speaking-u06",
       "language": "en",
       "level_or_track": "speaking",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -657,15 +731,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "14026e366d9a80f40fb28002ffe32c4ae0dd3fef883a124736544e45227b39d9"
     },
     {
       "lesson_id": "en-ielts-speaking-u07",
       "language": "en",
       "level_or_track": "speaking",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -674,15 +750,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "34908a93e36ff31005c0688a6dc94e11f05842ca54b598b2128237c2f4df810c"
     },
     {
       "lesson_id": "en-ielts-speaking-u08",
       "language": "en",
       "level_or_track": "speaking",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -691,7 +769,9 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "17f2f8efda5d653a6d162c7c55a02cc6691df35dc19cb10f29a5886b4135b8d4"
     },
     {
       "lesson_id": "en-ielts-language-upgrade-u01",
@@ -708,15 +788,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "b1187df3d4bbdb43f0eac8d429b050cb45b014168c9e200239725803a7f9d1aa"
     },
     {
       "lesson_id": "en-ielts-language-upgrade-u02",
       "language": "en",
       "level_or_track": "language-upgrade",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -725,15 +807,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "d4dc1bfe5e05b79fa4b62f204d1094d3cb360a490d768a99f67b3d58c57b6ad3"
     },
     {
       "lesson_id": "en-ielts-language-upgrade-u03",
       "language": "en",
       "level_or_track": "language-upgrade",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -742,15 +826,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "de2f608f36bc76cc72b81754922e42e0c12d9b94e983480678081d4969436937"
     },
     {
       "lesson_id": "en-ielts-language-upgrade-u04",
       "language": "en",
       "level_or_track": "language-upgrade",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -759,15 +845,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "df1c2b509e2b10baa4e07955ebe8294e9864bb2df501fb470136dedeae8893eb"
     },
     {
       "lesson_id": "en-ielts-language-upgrade-u05",
       "language": "en",
       "level_or_track": "language-upgrade",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -776,15 +864,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "d48936aebe4a96648b761144de7aa38a7e581b487fb50882a8d30b9040fd7702"
     },
     {
       "lesson_id": "en-ielts-language-upgrade-u06",
       "language": "en",
       "level_or_track": "language-upgrade",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -793,15 +883,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "f11582bcb30d04371a9a3c54d4985ca5aa1229ac7facc7cd07fbda0478f90614"
     },
     {
       "lesson_id": "en-ielts-language-upgrade-u07",
       "language": "en",
       "level_or_track": "language-upgrade",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -810,15 +902,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "92a704871adcedb09186e80daba04e4f33a769949fb05053b85c61eaa65349b2"
     },
     {
       "lesson_id": "en-ielts-language-upgrade-u08",
       "language": "en",
       "level_or_track": "language-upgrade",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -827,7 +921,9 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "1d8bc0fb26a6607d229ab1a854bacf8f05af63a411befca236d7d4d3a37f363d"
     },
     {
       "lesson_id": "fr-a1-u01",
@@ -846,7 +942,9 @@
       "public_snapshot": true,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "09897459e3fe9982650690c3128122488b6555ac5aa0cd7925eb8adc2c9dfa54"
     },
     {
       "lesson_id": "fr-a1-u02",
@@ -865,7 +963,9 @@
       "public_snapshot": true,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "5e7a9a0ec45c3c85345a2197a45ebebe46e235c82b663f23cc4f9bcebcbed8f4"
     },
     {
       "lesson_id": "fr-a1-u03",
@@ -884,7 +984,9 @@
       "public_snapshot": true,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "7447ece6d3a90a24c5e67f7044361067de0f32d971443b6e15e6110731806e86"
     },
     {
       "lesson_id": "fr-a1-u04",
@@ -903,7 +1005,9 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "8d916fb90766986fe138a5f01a2c69c9064901ca9777d2cea98609d31be6c9f0"
     },
     {
       "lesson_id": "fr-a1-u05",
@@ -922,7 +1026,9 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "59246410219772050e1004b34f53a143fd2a3c83b61791d12f3e6659d3c4d4b9"
     },
     {
       "lesson_id": "fr-a1-u06",
@@ -941,7 +1047,9 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "1fa945e4f582fd96c9dbfbf420227a3004a5eea00dbc3a337dd082ccee4c4036"
     },
     {
       "lesson_id": "fr-a1-u07",
@@ -960,7 +1068,9 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "f428d91619bd5e2df7d10371cecd2e09fdf495922b578b892f32e199b3cc14a8"
     },
     {
       "lesson_id": "fr-a1-u08",
@@ -979,7 +1089,9 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "894232590e1cd6648cc47226027e59a9f36ccf05ba75abcf25f32bbc02602a42"
     },
     {
       "lesson_id": "fr-a1-u09",
@@ -998,7 +1110,9 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "3ae1a0accd7b14cf443dffc7e16febb6fce2378510f77435a291fcc6d7bf0861"
     },
     {
       "lesson_id": "fr-a1-u10",
@@ -1017,7 +1131,9 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "007ea48aecb4f0d3150b6e793a158d8451c27708b25dbd5f1ff4f4b8e8e60baa"
     },
     {
       "lesson_id": "fr-a1-u11",
@@ -1036,7 +1152,9 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "6bafaedd9d7a7f4b8068e9c9beb2d68fc1613662353edc9a990e97a73a697b65"
     },
     {
       "lesson_id": "fr-a1-u12",
@@ -1055,15 +1173,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Review and deepen existing manuscript; align listening transcript, exercises and answers"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "ed99b8f4df346f5bbfe37c6257a1cfd545acd7d498d5c12cd126b8bd3ab91448"
     },
     {
       "lesson_id": "fr-a2-u01",
       "language": "fr",
       "level_or_track": "A2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1072,15 +1192,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "76a218067bd3ba78d668ade35df482e0ecda8f855e3cdd4673820e6bf5666a9e"
     },
     {
       "lesson_id": "fr-a2-u02",
       "language": "fr",
       "level_or_track": "A2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1089,15 +1211,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "338fded6d7a8fea936cf737ca989a9532a488a5f6817f164d3a7e254a246d828"
     },
     {
       "lesson_id": "fr-a2-u03",
       "language": "fr",
       "level_or_track": "A2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1106,15 +1230,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "e267b62696228e4433503cbc1da6bdcf5673e4da257de088c35dd815ca5492a1"
     },
     {
       "lesson_id": "fr-a2-u04",
       "language": "fr",
       "level_or_track": "A2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1123,15 +1249,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "dac2041273abe670b03f3d37976bb662485c8bbf1cb2cc69ddba9df4b843fead"
     },
     {
       "lesson_id": "fr-a2-u05",
       "language": "fr",
       "level_or_track": "A2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1140,15 +1268,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "977e33bd5c41042119b76e963fe4c118ec8002e8fd746db0e08ec8899f2087d0"
     },
     {
       "lesson_id": "fr-a2-u06",
       "language": "fr",
       "level_or_track": "A2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1157,15 +1287,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "c3c16b951e4138484705b040b9038dc2dd6c9faea30aeff7ef484961850d74b5"
     },
     {
       "lesson_id": "fr-a2-u07",
       "language": "fr",
       "level_or_track": "A2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1174,15 +1306,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "e253021c1d1e674b3ef5d33afa877494aeee3fa40ed7f59a49fda4d813103c1f"
     },
     {
       "lesson_id": "fr-a2-u08",
       "language": "fr",
       "level_or_track": "A2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1191,15 +1325,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "88f515d8105f7453e50b4bfe2a4bfe6ada0c6b648f012d2f658eef6e9b49f88f"
     },
     {
       "lesson_id": "fr-a2-u09",
       "language": "fr",
       "level_or_track": "A2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1208,15 +1344,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "822e5c73a065fd44f133294cd3ac34039702bec34f4444721864f70c000cf7c7"
     },
     {
       "lesson_id": "fr-a2-u10",
       "language": "fr",
       "level_or_track": "A2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1225,15 +1363,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "651a1edcf161b36041c099da4bc3bc5fbb2098dd5c94f68ae3e39f5ed4fc7477"
     },
     {
       "lesson_id": "fr-a2-u11",
       "language": "fr",
       "level_or_track": "A2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1242,15 +1382,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "4ae85399f22eddddaeb369216b90c21fbf8706656da3cf8e32ace8b5aef80f1a"
     },
     {
       "lesson_id": "fr-a2-u12",
       "language": "fr",
       "level_or_track": "A2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1259,15 +1401,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "40da7b9a02f58502d8dfb080406c79ac9bc773d44e1d0ba88bc62aec75bed38e"
     },
     {
       "lesson_id": "fr-b1-u01",
       "language": "fr",
       "level_or_track": "B1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1276,15 +1420,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "dd971506b8e0e5eb1c50b80d528d3bd6ccac5bce2566232368bc49c1fa9fd28f"
     },
     {
       "lesson_id": "fr-b1-u02",
       "language": "fr",
       "level_or_track": "B1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1293,15 +1439,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "42c854d4c2988a6dc41fc4ef3a99189a6f792175a32734e266c499b6ebf40199"
     },
     {
       "lesson_id": "fr-b1-u03",
       "language": "fr",
       "level_or_track": "B1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1310,15 +1458,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "ff56a7b09c1058566ce4246188c853a6420b433370ac8c6db133907690ca8ee9"
     },
     {
       "lesson_id": "fr-b1-u04",
       "language": "fr",
       "level_or_track": "B1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1327,15 +1477,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "41f9863c7037eb4c5cb429f6e9c2bcaf2b6499603dfa4d59fda39ee32d56320f"
     },
     {
       "lesson_id": "fr-b1-u05",
       "language": "fr",
       "level_or_track": "B1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1344,15 +1496,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "766c612777027d07c6687937ed837a869964abcc2d1b49dafef3143d982bec5e"
     },
     {
       "lesson_id": "fr-b1-u06",
       "language": "fr",
       "level_or_track": "B1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1361,15 +1515,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "9314582efd178d80217a9949cf1a6f65090cbd4ef96e78f188bc096aecc801db"
     },
     {
       "lesson_id": "fr-b1-u07",
       "language": "fr",
       "level_or_track": "B1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1378,15 +1534,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "f93e3c58cf0947070a7937ef6e888043f0b50a4b45c60cab3051620f041d71c4"
     },
     {
       "lesson_id": "fr-b1-u08",
       "language": "fr",
       "level_or_track": "B1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1395,15 +1553,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "6e9280d94fc9bc1e5a4757ffc78b5f0ef24fe611989f8f3885d2abd5c200c0cb"
     },
     {
       "lesson_id": "fr-b1-u09",
       "language": "fr",
       "level_or_track": "B1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1412,15 +1572,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "abb227d9c1456f8ce3763b7e2c9f91157c517e076a534f5894d130c6dff156ff"
     },
     {
       "lesson_id": "fr-b1-u10",
       "language": "fr",
       "level_or_track": "B1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1429,15 +1591,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "5c16deaf90ee6c4f989b988249cc95baa9ec595884855da681bcf15ade64a5a6"
     },
     {
       "lesson_id": "fr-b2-u01",
       "language": "fr",
       "level_or_track": "B2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1446,15 +1610,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "ac8594989beff496e13ff46c56ae4009409c42e54a204fc045a107c7b8602119"
     },
     {
       "lesson_id": "fr-b2-u02",
       "language": "fr",
       "level_or_track": "B2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1463,15 +1629,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "b2767821502afb0b4c4e907a29a87d647b56a735e3947ef1af068ce4f00823d0"
     },
     {
       "lesson_id": "fr-b2-u03",
       "language": "fr",
       "level_or_track": "B2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1480,15 +1648,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "ec131f6a6c7dfb6009b12a926774ca77df0bad7c6448c67dcfc932a9fbeb4249"
     },
     {
       "lesson_id": "fr-b2-u04",
       "language": "fr",
       "level_or_track": "B2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1497,15 +1667,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "2c0593b1f1369f2e2571ba0fbf69f35754871700661fd058d4fbd9613e934900"
     },
     {
       "lesson_id": "fr-b2-u05",
       "language": "fr",
       "level_or_track": "B2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1514,15 +1686,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "1e705fdf39bef57eb9e2a6cee15729cdf70f3710f475877c6786e1fa9e5b9219"
     },
     {
       "lesson_id": "fr-b2-u06",
       "language": "fr",
       "level_or_track": "B2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1531,15 +1705,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "7b7f1b4cf2677b4e0e968aea8b5f68f930bb6471494ae7741b2ea2d9e250653a"
     },
     {
       "lesson_id": "fr-b2-u07",
       "language": "fr",
       "level_or_track": "B2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1548,15 +1724,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "ad1f49f932a50427a9b8a6ce2731ff136ed20bfd1055a487b074b93dad4202e6"
     },
     {
       "lesson_id": "fr-b2-u08",
       "language": "fr",
       "level_or_track": "B2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1565,15 +1743,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "b7541f60cdfa17115f3bd64b2b93774c966b5e6658a6a6797be6a2dfabef29b6"
     },
     {
       "lesson_id": "fr-b2-u09",
       "language": "fr",
       "level_or_track": "B2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1582,15 +1762,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "d4549c1705d13a26bea632c181217ee9de92cf7177b17842155eb51a9aa90e58"
     },
     {
       "lesson_id": "fr-b2-u10",
       "language": "fr",
       "level_or_track": "B2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1599,15 +1781,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "b74bc51071d68cef816a414876fead27cfb9be48632cf40a0a2146bdf03c98f7"
     },
     {
       "lesson_id": "fr-c1-u01",
       "language": "fr",
       "level_or_track": "C1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1616,15 +1800,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "2b24b1030e33950bdf4c03742df7be40d6eac1f40f10ae6081a2e3bc97fe2cca"
     },
     {
       "lesson_id": "fr-c1-u02",
       "language": "fr",
       "level_or_track": "C1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1633,15 +1819,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "15c4a551c67cec4db503bb1c080fa59feb8a98a75c4b356a1efc82a73acdb0bd"
     },
     {
       "lesson_id": "fr-c1-u03",
       "language": "fr",
       "level_or_track": "C1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1650,15 +1838,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "aaf1b2cde262889bf2df2bb032df192253260362f0cf9c2e5d36d2aa853cc874"
     },
     {
       "lesson_id": "fr-c1-u04",
       "language": "fr",
       "level_or_track": "C1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1667,15 +1857,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "cfad9d4c21a5272b6194240c6f4c8a511161f207a9289fa9ab21d547f6f245dc"
     },
     {
       "lesson_id": "fr-c1-u05",
       "language": "fr",
       "level_or_track": "C1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1684,15 +1876,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "1f166140fd7b3d60a5d152136f7833bf87396a848f8089005b8a3f8ed8d3e8e3"
     },
     {
       "lesson_id": "fr-c1-u06",
       "language": "fr",
       "level_or_track": "C1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1701,15 +1895,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "eb737f09da4ec0f6cb4476cabe5ffa0e64cdf0727fb412fc5bead4f7501cbaeb"
     },
     {
       "lesson_id": "fr-c1-u07",
       "language": "fr",
       "level_or_track": "C1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1718,15 +1914,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "4415d3d5f8a3fb5b53aa172f552de4c503ee05e015186eea74aecd8830cb649e"
     },
     {
       "lesson_id": "fr-c1-u08",
       "language": "fr",
       "level_or_track": "C1",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1735,15 +1933,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "8d4224a86ea3f5ae058ee67d47e45db7b25220616a23b0fb87ec02147e8c38bf"
     },
     {
       "lesson_id": "fr-c2-u01",
       "language": "fr",
       "level_or_track": "C2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1752,15 +1952,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "2f38d82be97d84607d19f1a143c214235c827d47372501ece8db83b74abd328c"
     },
     {
       "lesson_id": "fr-c2-u02",
       "language": "fr",
       "level_or_track": "C2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1769,15 +1971,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "95b8d9ad6cbc28228a4dc83628d1a9bb6b64402b9853db3766f863662695d3ee"
     },
     {
       "lesson_id": "fr-c2-u03",
       "language": "fr",
       "level_or_track": "C2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1786,15 +1990,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "cde0e8ebaf47731116fc0725ee20cb04246daad13617b613396039442a76ee1d"
     },
     {
       "lesson_id": "fr-c2-u04",
       "language": "fr",
       "level_or_track": "C2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1803,15 +2009,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "117fa5090e2d5e95621af4d97246eb05c56a08034721c046f8d552fae03162e5"
     },
     {
       "lesson_id": "fr-c2-u05",
       "language": "fr",
       "level_or_track": "C2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1820,15 +2028,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "d9a5c626447f2e6f4f7ddca706276bd522e25083b09e97299a058d9aa4179aad"
     },
     {
       "lesson_id": "fr-c2-u06",
       "language": "fr",
       "level_or_track": "C2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1837,15 +2047,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "159541e4618dfc773c7f7fe059f583167872154d9d263ab28e92449dc79ac1b1"
     },
     {
       "lesson_id": "fr-c2-u07",
       "language": "fr",
       "level_or_track": "C2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1854,15 +2066,17 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "c9204cc20e12d56834bba8c988a021f5a21ffb55ca9ec95f4d2bcbd00be44581"
     },
     {
       "lesson_id": "fr-c2-u08",
       "language": "fr",
       "level_or_track": "C2",
       "baseline_content_status": "expanded_outline",
-      "content_status": "expanded_outline",
-      "six_authored_sections": false,
+      "content_status": "six_section_draft",
+      "six_authored_sections": true,
       "text_complete": false,
       "audio_verified": false,
       "QA_approved": false,
@@ -1871,7 +2085,9 @@
       "public_snapshot": false,
       "review": "pending",
       "source_location": "private Drive course master; locator in private-source-index.json",
-      "next_action": "Author distinct full lesson, exercises, answers and level-appropriate audio"
+      "next_action": "Review preserved versions, verify every exercise and complete full-script audio audition",
+      "integration_evidence": "reports/integration-acceptance.json",
+      "source_text_sha256": "2e97e320bdcb118bd33caa1d93e84310c1ed7d062f464e00220af775ff2d8c48"
     }
   ]
 }

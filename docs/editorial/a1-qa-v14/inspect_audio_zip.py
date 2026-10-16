@@ -13,6 +13,8 @@ import subprocess
 import tempfile
 import wave
 import zipfile
+import shutil
+import os
 
 SUFFIXES = {'.mp3', '.m4a', '.wav', '.ogg', '.flac'}
 MAX_SINGLE_FILE = 150 * 1024 * 1024
@@ -40,6 +42,16 @@ def classify(name):
     return 'audio_candidate'
 
 def probe_audio(raw, entry):
+    ffmpeg=os.environ.get('FFMPEG') or shutil.which('ffmpeg')
+    if not ffmpeg:
+        import imageio_ffmpeg
+        ffmpeg=imageio_ffmpeg.get_ffmpeg_exe()
+    if not shutil.which('ffprobe'):
+        from mutagen import File
+        audio=File(io.BytesIO(raw))
+        if audio is None: return {'decode_ok':False,'error':'Unrecognised audio format'}
+        result=subprocess.run([ffmpeg,'-v','error','-xerror','-i','pipe:0','-map','0:a:0','-f','null','-'],input=raw,capture_output=True,timeout=120)
+        return {'decode_ok':result.returncode==0,'codec':audio.mime[0],'sample_rate_hz':audio.info.sample_rate,'duration_s':round(audio.info.length,3),'metadata_engine':'mutagen; ffmpeg full decode','warnings_or_errors':result.stderr.decode(errors='replace')[:500]}
     suffix = PurePosixPath(entry).suffix.lower()
     with tempfile.TemporaryDirectory() as temp:
         fn = Path(temp) / ('source' + suffix)
@@ -76,6 +88,10 @@ def scan_archive(zip_path, perform_decode=True):
                'transcript_match_verified': False,
                'redistribution_rights_verified': False}
     with zipfile.ZipFile(zip_path) as zin:
+        if len(zin.infolist())>2000 or sum(x.file_size for x in zin.infolist())>500*1024*1024:
+            raise ValueError('Archive expansion limit exceeded')
+        if any((x.external_attr>>16)&0o170000==0o120000 for x in zin.infolist()):
+            raise ValueError('Archive symlink rejected')
         first_bad = zin.testzip()
         if first_bad is not None:
             raise ValueError('ZIP CRC mismatch: ' + first_bad)

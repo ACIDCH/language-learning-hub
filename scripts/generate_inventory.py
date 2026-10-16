@@ -31,9 +31,11 @@ def main():
           'same_normalized_text_as_drive':public in normalized,'matches_original_git_sha256':hashlib.sha256(p.read_bytes()).hexdigest()==asset['sha256'],
           'action':'preserved_unchanged','note':'Drive masters and earlier public snapshots are separate versions; no replacement or reconciliation performed.'})
     new_drafts={'en-ielts-reading-u02'}
+    integration_path=repo/'reports/integration-acceptance.json'
+    integrated={r['lesson_id']:r for r in json.loads(integration_path.read_text(encoding='utf-8'))['units']} if integration_path.exists() else {}
     baseline=[]
     for u in units:
-        draft=u['id'] in detailed|new_drafts
+        draft=integrated.get(u['id'],{}).get('six_stages',u['id'] in detailed|new_drafts)
         baseline.append({'lesson_id':u['id'],'language':u['language'],'level_or_track':u.get('track',u['level']),
           'baseline_content_status':'six_section_draft' if u['id'] in detailed else 'expanded_outline',
           'content_status':'six_section_draft' if draft else 'expanded_outline',
