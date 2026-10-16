@@ -40,4 +40,5 @@ private-content/
 personal-data/
 model-weights/
 __pycache__/
+supabase/.temp/
 *.pyc
