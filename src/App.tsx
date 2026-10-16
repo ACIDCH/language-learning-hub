@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import curriculumData from '../config/curriculum/units.v2.json';
 import sourceData from '../config/resources/sources.json';
+import { ReferenceAudio } from './ReferenceAudio';
 
 type Lang = 'en' | 'fr';
 type DisplayView = 'courses' | 'sources';
@@ -53,6 +54,7 @@ const STEPS = [
 const ASSET_MAP: Record<string, string> = {
   'en-ielts-writing-task2-u01': 'en-ielts-writing-task2-u01.txt',
   'en-ielts-reading-u01': 'en-ielts-reading-u01.txt',
+  'en-ielts-reading-u02': 'en-ielts-reading-u02-v1.txt',
   'en-ielts-writing-task1-u01': 'en-ielts-writing-task1-u01.txt',
   'fr-a1-u01': 'fr-a1-u01.txt',
   'fr-a1-u02': 'fr-a1-u02.txt',
@@ -61,7 +63,7 @@ const ASSET_MAP: Record<string, string> = {
 const sourceById = new Map(sources.sources.map(s => [s.id, s]));
 
 function stepFromLine(line: string): string | undefined {
-  const match = line.trimStart().match(/^([①②③④⑤⑥])(?=[\s\p{L}\p{N}：.:])/u);
+  const match = line.trimStart().replace(/^#+\s*/, '').match(/^([①②③④⑤⑥])(?=[\s\p{L}\p{N}：.:])/u);
   return match?.[1];
 }
 
@@ -79,6 +81,23 @@ function FullText({ text }: { text: string }) {
       >{line || '\u00a0'}</div>;
     })}
   </div>;
+}
+
+function AudioSupplement({ lessonId }: { lessonId: string }) {
+  const [body,setBody]=useState('');
+  const [error,setError]=useState(false);
+  useEffect(()=>{
+    setBody('');setError(false);
+    if (!/^fr-a1-u(0[1-9]|1[0-2])$/.test(lessonId)) return;
+    const controller=new AbortController();
+    fetch(import.meta.env.BASE_URL+'learning-assets/'+lessonId+'-audio-supplement-v1.txt',{signal:controller.signal})
+      .then(r=>{if(!r.ok)throw new Error('Supplement unavailable');return r.text();})
+      .then(text=>{if(!controller.signal.aborted)setBody(text);})
+      .catch(()=>{if(!controller.signal.aborted)setError(true);});
+    return ()=>controller.abort();
+  },[lessonId]);
+  if(error)return <p role="alert">听读补充稿暂时无法读取，请稍后重试。</p>;
+  return body ? <section><h3>新增听读练习与语法补充 · 待审校</h3><FullText text={body}/></section> : null;
 }
 
 function UnitOutline({ lesson }: { lesson: Lesson }) {
@@ -257,7 +276,7 @@ export default function App() {
                 onClick={()=>setSelectedId(u.id)}
               >
                 <span className="unit-number">{String(u.unit).padStart(2,'0')}</span>
-                <span className="unit-entry-copy"><strong>{u.title}</strong><small>{ASSET_MAP[u.id]?'已编写完整文字稿':'教学框架'}</small></span>
+                <span className="unit-entry-copy"><strong>{u.title}</strong><small>{ASSET_MAP[u.id]?'教学正文 · 待审校':'教学框架'}</small></span>
               </button>)}
               {!catalog.length && <div className="empty">没有匹配的单元。</div>}
             </div>
@@ -279,9 +298,11 @@ export default function App() {
                 {text !== null && <FullText text={text}/>}
               </div>
               <div className="lesson-bottom">
-                <strong>音频状态</strong><p>这节课的授权参考录音尚未逐课核对及绑定，因此暂不显示播放按钮或虚假的发音分析结果。</p>
+                <strong>整课音频状态</strong><p>整课情境配音与逐句对齐尚未完成。已核验的词汇参考录音如有提供，会单独列在下方。发音评估待验证。</p>
               </div>
             </> : <UnitOutline lesson={selected}/>}
+            <ReferenceAudio key={selected.id} lessonId={selected.id}/>
+            <AudioSupplement lessonId={selected.id}/>
           </article>
         </div>}
         <footer className="app-footer">
