@@ -7,6 +7,7 @@ type Course = { id: string; language: string; level: string; track: string | nul
   title: string; unit: number; text_complete: boolean; audio_verified: boolean; publishable: boolean };
 type State = { stage?: number; notes?: string; completed?: boolean; [key: string]: unknown };
 type Progress = { course_id: string; state: State; updated_at: string };
+type PrivateLesson = { course_id: string; content_body: string; source_version: string; qa_status: string; updated_at: string };
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL?.trim() || cloudPublicDefaults.supabaseUrl;
 const publicKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY?.trim() || cloudPublicDefaults.supabasePublishableKey;
 const apiBase = (import.meta.env.VITE_WORKER_API_URL?.trim() || cloudPublicDefaults.workerApiUrl).replace(/\/$/, '');
@@ -32,6 +33,8 @@ export default function CloudWorkspace() {
   const [catalog, setCatalog] = useState<Course[]>([]);
   const [selected, setSelected] = useState('');
   const [state, setState] = useState<State>({});
+  const [lesson, setLesson] = useState<PrivateLesson | null>(null);
+  const [lessonStatus, setLessonStatus] = useState('登录后可读取私人课程正文。');
   const [status, setStatus] = useState('正在连接…');
   const [busy, setBusy] = useState(false);
 
@@ -81,6 +84,33 @@ export default function CloudWorkspace() {
       });
     return () => {alive=false;};
   },[session,selected]);
+
+  useEffect(() => {
+    if (!session || !selected) {
+      setLesson(null);
+      setLessonStatus('登录后可读取私人课程正文。');
+      return;
+    }
+    let alive = true;
+    setLesson(null);
+    setLessonStatus('正在读取已同步的私人课程正文…');
+    void worker<{lesson:PrivateLesson}>('/v1/private-courses/'+encodeURIComponent(selected),session.access_token)
+      .then(({lesson}) => {
+        if (!alive) return;
+        setLesson(lesson);
+        setLessonStatus(lesson.qa_status === 'approved'
+          ? '已同步且通过审校的正文。'
+          : 'V4 个人草稿 · 尚未完成教学与音频验收。');
+      })
+      .catch(e => {
+        if (!alive) return;
+        setLesson(null);
+        setLessonStatus(e.message === 'lesson_not_synced'
+          ? '这节课程的私人正文尚未同步到云端；课程目录仍可使用。'
+          : '正文读取暂不可用：'+e.message);
+      });
+    return () => {alive=false;};
+  }, [session, selected]);
 
   function editState(patch: Partial<State>) {
     const next = {...state,...patch};
@@ -155,6 +185,14 @@ export default function CloudWorkspace() {
           </select>
         </label>
         <p className="cloud-disclaimer">本模块保存学习进度，不将“已存在目录”误认为“教材已通过质量验收”。</p>
+        <section className="cloud-reader" aria-label="私人课程正文">
+          <h3>我的课程正文</h3>
+          <p role="status" className="cloud-disclaimer">{lessonStatus}</p>
+          {lesson && <>
+            <p className="cloud-disclaimer">来源版本：{lesson.source_version} · 状态：{lesson.qa_status === 'approved' ? '已审核' : '草稿/待核验'}</p>
+            <pre className="cloud-manuscript">{lesson.content_body}</pre>
+          </>}
+        </section>
         <fieldset className="cloud-stages"><legend>当前学习环节</legend>
           {stages.map((label,i)=><label key={label}><input type="radio" checked={state.stage===i}
             onChange={()=>editState({stage:i})}/>{label}</label>)}
