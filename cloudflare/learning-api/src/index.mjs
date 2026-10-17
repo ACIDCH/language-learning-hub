@@ -112,7 +112,7 @@ export async function handle(request, env = {}, fetchFn = fetch) {
     }
     // Authenticated metadata only. Indexed audio is not guaranteed to be
     // licensed, human-reviewed, remotely uploaded or playable.
-    const audioMatch = new RegExp('^/v1/audio-index/([^/]+)
+    const audioMatch = new RegExp('^/v1/audio-index/([^/]+)$').exec(url.pathname);
     if (audioMatch && verb === 'GET') {
       let courseId;
       try {courseId=decodeURIComponent(audioMatch[1]);}
