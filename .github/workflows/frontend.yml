@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version: '24'
           cache: npm
       - name: Install pinned dependencies
         run: npm ci --no-fund
@@ -32,8 +32,8 @@ jobs:
         run: node --experimental-strip-types --test tests/learningProgress.test.mjs
       - name: Verify already-synced private inventory helpers
         run: node --experimental-strip-types --test tests/resourceInventory.test.mjs
-      - name: Verify MIT G2P registry package metadata
-        run: npm view @piper-plus/g2p@0.4.2 dist.integrity --json
+      - name: Confirm lockfile integrity of MIT G2P
+        run: node -e "const p=require('./package-lock.json').packages['node_modules/@piper-plus/g2p'];if(!p.integrity?.startsWith('sha512-'))process.exit(1)"
       - name: Smoke-test actual English and French IPA runtime
         run: node --test tests/ipaRuntime.test.mjs
       - name: Test speech V3 lifecycle, privacy and fallback adapters
