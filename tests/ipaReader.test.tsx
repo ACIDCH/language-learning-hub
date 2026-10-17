@@ -1,6 +1,7 @@
 import {act,cleanup,fireEvent,render,screen,waitFor} from '@testing-library/react';
 import {afterEach,describe,expect,it,vi} from 'vitest';
 import IpaText from '../src/IpaText';
+import IpaStudio from '../src/IpaStudio';
 import LessonReader from '../src/LessonReader';
 import SpeechPractice from '../src/SpeechPractice';
 import {clearIpaCache,normalizeIpaLocale,sliceIpaText,splitIpaRuns,toIpaLine} from '../src/ipaEngine';
@@ -84,5 +85,18 @@ describe('full-text learning UI',()=>{
   await waitFor(()=>expect(screen.getByLabelText('参考国际音标与课程原文')).toBeTruthy());
   fireEvent.change(screen.getByRole('textbox'),{target:{value:'Chloé'}});
   await waitFor(()=>expect(screen.getByLabelText('参考国际音标与课程原文').textContent).toContain('Chloé'));
+ });
+});
+
+describe('no-login whole-document IPA lab',()=>{
+ it('accepts arbitrary full text, switches language and reveals live IPA without a remote API',async()=>{
+  render(<IpaStudio/>);
+  const input=screen.getByRole('textbox',{name:'待注音的原文'}) as HTMLTextAreaElement;
+  fireEvent.change(input,{target:{value:'bonjour'}});
+  expect(input.value).toBe('bonjour');
+  expect(screen.queryByLabelText('参考国际音标与课程原文')).toBeNull();
+  fireEvent.click(screen.getByRole('button',{name:'显示全文 IPA 音标'}));
+  await waitFor(()=>expect(screen.getByLabelText('参考国际音标与课程原文').textContent).toContain('bɔ̃ʒuʁ'));
+  expect(screen.getByText(/不上传全文/)).toBeTruthy();
  });
 });
