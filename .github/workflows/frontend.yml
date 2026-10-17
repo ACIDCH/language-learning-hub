@@ -40,12 +40,24 @@ jobs:
         run: node --experimental-strip-types --test tests/referenceCatalog.test.mjs
       - name: Verify multilingual QA markers and independent human approval
         run: node --test tests/qaMarkers.test.mjs
-      - name: Validate original 24-unit beginner course quality contract
+      - name: Validate 48-unit original beginner and A2 bridge teaching contract
         run: node --experimental-strip-types --test tests/foundationCurriculum.test.mjs
       - name: Verify full 108-course learning guidance and prerequisites
         run: node --experimental-strip-types --test tests/courseGuide.test.mjs
       - name: Audit real section headings and manual QA separation
         run: node --experimental-strip-types --test tests/stageAudit.test.mjs
+      - name: Test all foundation active-recall cards
+        run: node --experimental-strip-types --test tests/foundationRecall.test.mjs
+      - name: Validate 192 meaning checks against foundation and A2 bridge vocabulary
+        run: node --experimental-strip-types --test tests/foundationQuiz.test.mjs
+      - name: Check all 48 course listening dictation text contracts
+        run: node --experimental-strip-types --test tests/foundationDictation.test.mjs
+      - name: Check saved-answer review scheduling and progress safety
+        run: node --experimental-strip-types --test tests/foundationReview.test.mjs
+      - name: Verify every English and French alphabet reference card
+        run: node --experimental-strip-types --test tests/foundationAlphabet.test.mjs
+      - name: Test 0-30 English and French number-spelling and oral-drill references
+        run: node --experimental-strip-types --test tests/foundationNumbers.test.mjs
       - name: Check TypeScript and build
         run: npm run build
       - name: Confirm Cloudflare root-path static bundle and verified public lessons

@@ -1,11 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {FOUNDATION_UNITS,foundationUnitsFor,validateFoundationUnits} from '../src/foundationCurriculum.ts';
-test('24 distinct original foundation lessons have six-stage teaching coverage',()=>{
- assert.equal(FOUNDATION_UNITS.length,24);
+test('48 distinct original and bridge lessons have six-stage teaching coverage',()=>{
+ assert.equal(FOUNDATION_UNITS.length,48);
  assert.deepEqual(validateFoundationUnits(FOUNDATION_UNITS),[]);
- assert.equal(foundationUnitsFor('en').length,12);
- assert.equal(foundationUnitsFor('fr').length,12);
+ assert.equal(foundationUnitsFor('en').length,24);
+ assert.equal(foundationUnitsFor('fr').length,24);
 });
 test('every multiple choice prompt has exactly one documented answer',()=>{
  for(const unit of FOUNDATION_UNITS){
@@ -41,4 +41,13 @@ test("beginner lessons preserve learner's requested progression without inventin
 test('bad or duplicated IDs cannot silently pass the curriculum validator',()=>{
  const broken=[...FOUNDATION_UNITS,{...FOUNDATION_UNITS[0]}];
  assert.ok(validateFoundationUnits(broken).length>0);
+});
+
+test('all A2 bridge IDs 13–24 provide nonempty scenario and explained questions',()=>{
+ for(const lang of ['en','fr'])for(let i=13;i<=24;i++){
+   const id=lang+'-fnd-'+String(i).padStart(2,'0');
+   const unit=FOUNDATION_UNITS.find(x=>x.id===id);
+   assert.ok(unit,id);assert.ok(unit.reading.length>=100,id);
+   assert.ok(unit.questions.every(q=>q.choices[q.answer].trim().length>0),id);
+ }
 });
