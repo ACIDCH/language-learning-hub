@@ -83,3 +83,20 @@
 .audio-review{border-top:1px solid #d3e3eb;margin-top:18px;padding-top:14px}
 .audio-review h4{margin:0}
 @media(max-width:650px){.review-checklist{grid-template-columns:1fr}}
+
+
+/* Speech practice V2 — legible, accessible text alignment. */
+.speech-presets{display:flex;flex-wrap:wrap;gap:8px}
+.cloud-workspace .speech-presets button{background:#f0f6f9;color:#244f66;
+ border:1px solid #d0e0e9;border-radius:8px;text-align:left;font-size:.83rem;padding:8px 11px}
+.speech-settings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.speech-interim{border-left:3px solid #236b8e;padding:10px 12px;background:#eef5fa;
+ color:#24546c;overflow-wrap:anywhere}
+.speech-compare{display:flex;align-items:flex-start;flex-wrap:wrap;gap:7px;margin:12px 0}
+.speech-token{display:inline-flex;flex-direction:column;gap:3px;border-radius:9px;
+ padding:6px 9px;border:1px solid #cbdbe4;font-size:.95rem;font-weight:600}
+.speech-token small{font-size:.75rem;font-weight:400}
+.speech-match{background:#edf6f2;border-color:#a9d8bd;color:#1e6442}
+.speech-substitution{background:#fff3e7;border-color:#efc29d;color:#8c4821}
+.speech-missing{background:#faeeee;border-color:#e9adad;color:#8d3838;text-decoration:underline dotted}
+@media(max-width:650px){.speech-settings{grid-template-columns:1fr}.speech-presets{display:grid}}
