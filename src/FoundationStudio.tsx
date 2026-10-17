@@ -9,6 +9,8 @@ import FoundationAlphabet from './FoundationAlphabet';
 import FoundationNumberDrill from './FoundationNumberDrill';
 import {buildFoundationReviewPlan} from './foundationReview';
 import SpeechPractice from './SpeechPractice';
+import IpaText from './IpaText';
+import IpaReference from './IpaReference';
 
 type Draft={answers:Record<string,number>;notes:string;completed:boolean};
 const EMPTY:Draft={answers:{},notes:'',completed:false};
@@ -18,6 +20,7 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
  const [language,setLanguage]=useState<FoundationLanguage>('en');
  const [selected,setSelected]=useState('en-fnd-01');
  const [segment,setSegment]=useState(0);
+ const [showIpa,setShowIpa]=useState(false);
  const [records,setRecords]=useState<Record<string,FoundationRecord>>({});
  const [draft,setDraft]=useState<Draft>(EMPTY);
  const [dirty,setDirty]=useState(false);
@@ -153,6 +156,14 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
      </button>)}</div>}
    {dirty&&<p role="status">先保存本课尚未同步的练习或笔记，才能跳转复习。</p>}
   </details>
+  <div className="ipa-reader-controls" aria-label="基础课程音标阅读设置">
+    <label><input type="checkbox" checked={showIpa}
+      onChange={e=>setShowIpa(e.target.checked)}/>
+      显示本课单词、例句及短文的 IPA 音标
+    </label>
+    <p className="cloud-disclaimer">音标在浏览器中即时生成，换课自动更新。
+      初次打开需加载英法语言包，不使用付费 API。规则与连诵的机器预测可能出现偏差。</p>
+  </div>
   <div className="foundation-layout">
    <aside className="foundation-menu" aria-label="基础课目录">
      {units.map(item=><button type="button" key={item.id} disabled={busy||!loaded}
@@ -186,7 +197,8 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
       <p><strong>常见误区：</strong>{unit.commonMistake}</p>
       <h5>例句</h5>
       {unit.examples.map((s,i)=><div className="foundation-example" key={i}>
-        <span>{s}</span><button type="button" onClick={()=>pronounce(s)}>听例句</button>
+        <span>{showIpa?<IpaText text={s} language={unit.language} compact/>:s}</span>
+        <button type="button" onClick={()=>pronounce(s)}>听例句</button>
       </div>)}
       {(unit.id==='en-fnd-01'||unit.id==='fr-fnd-01')&&
         <FoundationAlphabet language={unit.language} onSpeak={pronounce}/>}
@@ -198,7 +210,7 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
       <h5>词汇与用法</h5>
       <table className="foundation-words"><thead><tr><th>词汇</th><th>中文释义</th><th>发音示范</th></tr></thead>
       <tbody>{unit.vocab.map(([word,meaning],i)=><tr key={i}>
-        <td>{word}</td><td>{meaning}</td><td><button type="button" onClick={()=>pronounce(word)}>播放</button></td>
+        <td>{showIpa?<IpaText text={word} language={unit.language} compact/>:word}</td><td>{meaning}</td><td><button type="button" onClick={()=>pronounce(word)}>播放</button></td>
       </tr>)}</tbody></table>
       <p className="cloud-disclaimer">注意词性、固定搭配以及在本课情境中的准确含义。</p>
       <FoundationRecall key={unit.id} id={unit.id} words={unit.vocab} language={unit.language}/>
@@ -206,15 +218,22 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
     {segment===3&&<section>
       <h5>听力练习</h5><p>先不看文字听一遍，再展示原文核对。</p>
       <button type="button" onClick={()=>pronounce(unit.listening)}>播放本课合成听力</button>
-      <details><summary>展开本课听力文本</summary><p>{unit.listening}</p></details>
+      <details><summary>展开本课听力文本</summary>
+        <div>{showIpa?<IpaText text={unit.listening} language={unit.language}/>:unit.listening}</div>
+      </details>
       <FoundationDictation key={unit.id} text={unit.listening} language={unit.language}
         onPlay={()=>pronounce(unit.listening)} onAddNote={appendListeningNote}/>
-      <h5>阅读短文</h5><p>{unit.reading}</p>
+      <h5>阅读短文</h5><div className="foundation-reading-text">
+        {showIpa?<IpaText text={unit.reading} language={unit.language}/>:unit.reading}
+      </div>
       <button type="button" onClick={()=>pronounce(unit.reading)}>朗读全文</button>
       <p className="cloud-disclaimer">声音来自当前设备 TTS，不是带时轴的真人教学录音。</p>
     </section>}
     {segment===4&&<section>
       <h5>发音与跟读</h5><p>{unit.pronunciation}</p>
+      <IpaReference language={unit.language}/>
+      {showIpa&&<IpaText text={unit.pronunciation} language={unit.language}/>}
+
       <p>建议先听一遍，再从本课单词或例句开始跟读。下面可以直接用浏览器识别并得到文字对照与复练建议，不要求安装 1.26GB 的本机声学模型。</p>
       <SpeechPractice key={unit.id} language={unit.language} lessonText={speechLessonText} initialTarget={starter} accessToken={session.access_token}/>
       <p className="cloud-disclaimer">这里的反馈适合日常自练，不是专业音素／口音打分。本课原始进度及笔记继续单独保存。</p>
