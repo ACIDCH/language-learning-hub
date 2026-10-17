@@ -4,6 +4,7 @@ const LocalPronunciation=lazy(()=>import('./LocalPronunciation'));
 import {analyzeTranscript,practiceHint} from './speechCompare';
 import {appendAttempt,learnerCoaching,type RecentAttempt} from './speechCoach';
 import {practiceChunks,addReviewWords,clearReviewedWord,type ReviewWord} from './speechLearningTools';
+import IpaText from './IpaText';
 
 type Alternative={transcript:string;confidence?:number};
 type Result={isFinal:boolean;length:number;[index:number]:Alternative};
@@ -47,6 +48,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
  const [recent,setRecent]=useState<RecentAttempt[]>([]);
  const [reviewWords,setReviewWords]=useState<ReviewWord[]>([]);
  const [blindMode,setBlindMode]=useState(false);
+ const [showIpa,setShowIpa]=useState(false);
  const [revealed,setRevealed]=useState(false);
  const [returnSentence,setReturnSentence]=useState('');
  const attemptId=useRef(0);
@@ -209,6 +211,15 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
         onChange={e=>updateTarget(e.target.value)}
         placeholder={SAMPLE[lang][0]}/>
     </label>}
+    {!masked&&<label className="speech-ipa-toggle">
+      <input type="checkbox" checked={showIpa} onChange={e=>setShowIpa(e.target.checked)}/>
+      在练习句下方实时显示 IPA 参考音标
+    </label>}
+    {showIpa&&!masked&&target.trim()&&<section aria-label="当前跟读目标音标"
+      className="speech-ipa-preview">
+      <IpaText text={target} language={locale}/>
+      <p className="cloud-disclaimer">依据上下文自动生成，可能无法正确区分所有同形异音词或法语连诵，不代表发音评分。</p>
+    </section>}
     {!masked&&chunks.length>1&&<section className="speech-chunk-practice" aria-label="长句分块跟读">
       <h4>先分块，再读整句</h4>
       <p className="cloud-disclaimer">使用现有浏览器朗读。可以单独练习片段，也可以返回原文一次读完整句。</p>

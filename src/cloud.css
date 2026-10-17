@@ -353,3 +353,69 @@ border:1px solid var(--foundation-border);padding:10px;overflow-wrap:anywhere}
  background:#eaf4f9;color:#205976;border-radius:8px;padding:7px 10px;cursor:pointer}
 .speech-focus-word small{color:#4b7286}
 @media(max-width:500px){.speech-chunk span{flex-basis:100%}}
+
+
+/* IPA full-text reading: generated in local browser WASM, never a pronunciation score. */
+.ipa-reader-controls{border:1px solid #cbdfe9;border-radius:12px;padding:12px 14px;
+ background:#f6fafc;margin:12px 0 17px}
+.ipa-reader-controls>label,.speech-ipa-toggle{display:flex!important;align-items:flex-start;
+ flex-direction:row!important;gap:9px!important;font-weight:600!important;line-height:1.5}
+.ipa-reader-controls input[type=checkbox],.speech-ipa-toggle input[type=checkbox]{
+ flex:0 0 auto;margin-top:.3em}
+.ipa-reader-controls p{margin:7px 0}
+.ipa-text{max-width:100%;min-width:0;overflow-wrap:anywhere;color:inherit}
+.ipa-transcript,.ipa-original-pending{white-space:pre-wrap;overflow-wrap:anywhere;
+ font-size:1rem;line-height:2.65}
+.ipa-line{white-space:pre-wrap}
+.ipa-newline{white-space:pre}
+.ipa-ruby-action{display:inline!important;min-width:0!important;max-width:100%;
+ width:auto!important;padding:0 2px!important;margin:0!important;border:0!important;
+ border-radius:3px!important;background:transparent!important;color:inherit!important;
+ font:inherit!important;text-decoration:none!important;text-align:left;
+ line-height:inherit!important;vertical-align:baseline;white-space:pre-wrap;
+ cursor:pointer;overflow-wrap:anywhere}
+.ipa-ruby-action:hover{background:#e0f2fa!important}
+.ipa-ruby-action:focus-visible{outline:2px solid #247cad;outline-offset:2px}
+.ipa-ruby-action ruby{ruby-position:over}
+.ipa-ruby-action rt{color:#236c90;font-size:.66em;font-family:"Noto Sans","Arial Unicode MS",sans-serif;
+ line-height:1.25;white-space:normal;letter-spacing:.025em}
+.ipa-fallback{display:inline-flex;flex-wrap:wrap;gap:5px;align-items:baseline;margin:3px 4px;
+ padding:4px 6px;border-radius:8px;background:#eff6fa}
+.ipa-fallback small{font-size:.79em;font-family:"Noto Sans","Arial Unicode MS",sans-serif;
+ color:#235879;overflow-wrap:anywhere}
+.ipa-fallback button{padding:3px 7px!important;font-size:.75em!important}
+.ipa-text-compact .ipa-transcript{font-size:.95rem;line-height:2.3}
+.ipa-status{font-size:.79rem;color:#597385;margin:4px 0;display:block}
+.ipa-reference{border:1px solid #c4dce8;border-radius:10px;background:#f6fafc;
+ padding:11px 13px;margin:15px 0}
+.ipa-reference summary{cursor:pointer;font-weight:700;color:#215b7b}
+.ipa-reference h5{margin:17px 0 8px;color:#235b7d}
+.ipa-reference-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:9px}
+.ipa-reference-item{display:grid;gap:5px;min-width:0;padding:10px;border:1px solid #d3e3ec;
+ background:white;border-radius:9px}
+.ipa-reference-symbol{font-size:1.25rem;color:#195d7f;font-family:"Noto Sans","Arial Unicode MS",sans-serif}
+.ipa-reference-item span{font-size:.85rem;color:#425e71;overflow-wrap:anywhere}
+.ipa-reference-item button{justify-self:start;padding:5px 9px!important;font-size:.85rem!important}
+.ipa-reference-item button span{color:inherit!important}
+.speech-ipa-preview{border:1px solid #cbdce6;padding:13px;border-radius:11px;
+ background:#f8fbfd}
+.foundation-reading-text{white-space:pre-wrap;line-height:1.8;margin:10px 0}
+@media(max-width:520px){
+ .ipa-transcript,.ipa-original-pending{line-height:2.85}
+ .ipa-reference-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .ipa-ruby-action rt{font-size:.6em}
+}
+
+
+/* Standalone paste-and-read IPA lab, using native Web Speech TTS. */
+.ipa-studio{margin:24px 0;max-width:100%}
+.ipa-studio>label{display:grid;gap:7px;margin:12px 0;font-weight:600}
+.ipa-studio textarea{box-sizing:border-box;max-width:100%;min-height:120px;
+ resize:vertical;width:100%;font:inherit;padding:12px;border:1px solid #a8c5d3;
+ border-radius:9px;background:white;color:#223947}
+.ipa-studio-controls{display:flex;flex-wrap:wrap;gap:15px;align-items:center}
+.ipa-studio-controls label{display:grid;gap:6px;flex:1 1 170px}
+.ipa-studio-controls select,.ipa-studio-controls input{box-sizing:border-box;width:100%;
+ font:inherit;padding:8px;border:1px solid #9eb9c8;border-radius:8px}
+.ipa-studio-reading{border:1px solid #cfdee8;padding:15px;border-radius:11px;
+ background:#fafcfe;margin-top:16px;max-height:70vh;overflow:auto}
