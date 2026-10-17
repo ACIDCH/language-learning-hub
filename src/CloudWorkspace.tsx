@@ -7,6 +7,7 @@ import LessonReader from './LessonReader';
 import AudioVault from './AudioVault';
 import AITutor from './AITutor';
 import SpeechPractice from './SpeechPractice';
+import CourseAudit from './CourseAudit';
 
 type Course = { id: string; language: string; level: string; track: string | null;
   title: string; unit: number; text_complete: boolean; audio_verified: boolean; publishable: boolean };
@@ -236,6 +237,7 @@ export default function CloudWorkspace() {
         </section>
         <AudioVault client={client!} session={session} courseId={selected}
           assets={audioAssets} status={audioStatus}/>
+        <CourseAudit client={client!} session={session} onSelect={id=>setSelected(id)}/>
         <SpeechPractice key={selected} language={catalog.find(c=>c.id===selected)?.language||'fr'}/>
         <AITutor key={'ai-'+selected} session={session} apiBase={apiBase} courseId={selected}
           language={catalog.find(c=>c.id===selected)?.language||'fr'}
