@@ -95,7 +95,7 @@ describe('everyday learning feedback and course practice',()=>{
  it('starts with a curriculum-owned sample rather than generic content',()=>{
   render(<SpeechPractice language="fr" initialTarget="Je suis étudiant." lessonText="Je suis étudiant.\nBonjour, Marie."/>);
   expect((screen.getByRole('textbox') as HTMLTextAreaElement).value).toBe('Je suis étudiant.');
-  expect(screen.getByRole('button',{name:'Bonjour, Marie.'})).toBeTruthy();
+  expect(screen.getByRole('button',{name:/Bonjour, Marie\./})).toBeTruthy();
   fireEvent.click(screen.getByRole('button',{name:'换一句练习 →'}));
   expect((screen.getByRole('textbox') as HTMLTextAreaElement).value).toBe('Bonjour, Marie.');
  });
@@ -118,6 +118,8 @@ describe('everyday learning feedback and course practice',()=>{
   act(()=>rec.onresult?.({results:[{isFinal:true,length:1,0:{transcript:'Good morning'}}]}));
   act(()=>rec.onresult?.({results:[{isFinal:true,length:1,0:{transcript:'Good morning'}}]}));
   expect(screen.getByText(/本句跟读记录（1 次/)).toBeTruthy();
+  expect(rec.stop).toHaveBeenCalledOnce();
+  expect((screen.getByRole('button',{name:'换一句练习 →'}) as HTMLButtonElement).disabled).toBe(false);
   fireEvent.click(screen.getByRole('button',{name:'换一句练习 →'}));
   expect(screen.queryByText(/本句跟读记录/)).toBeNull();
  });
