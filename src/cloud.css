@@ -405,3 +405,17 @@ border:1px solid var(--foundation-border);padding:10px;overflow-wrap:anywhere}
  .ipa-reference-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
  .ipa-ruby-action rt{font-size:.6em}
 }
+
+
+/* Standalone paste-and-read IPA lab, using native Web Speech TTS. */
+.ipa-studio{margin:24px 0;max-width:100%}
+.ipa-studio>label{display:grid;gap:7px;margin:12px 0;font-weight:600}
+.ipa-studio textarea{box-sizing:border-box;max-width:100%;min-height:120px;
+ resize:vertical;width:100%;font:inherit;padding:12px;border:1px solid #a8c5d3;
+ border-radius:9px;background:white;color:#223947}
+.ipa-studio-controls{display:flex;flex-wrap:wrap;gap:15px;align-items:center}
+.ipa-studio-controls label{display:grid;gap:6px;flex:1 1 170px}
+.ipa-studio-controls select,.ipa-studio-controls input{box-sizing:border-box;width:100%;
+ font:inherit;padding:8px;border:1px solid #9eb9c8;border-radius:8px}
+.ipa-studio-reading{border:1px solid #cfdee8;padding:15px;border-radius:11px;
+ background:#fafcfe;margin-top:16px;max-height:70vh;overflow:auto}
