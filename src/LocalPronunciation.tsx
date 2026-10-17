@@ -27,7 +27,14 @@ export default function LocalPronunciation({target,language}:{target:string;lang
    const response=await evaluateLocal(pcm,target,language,controller.signal);
    if(current.current!==controller||controller.signal.aborted)return;
    setMetrics({total_ms:Math.round(performance.now()-started),max_frame_gap_ms:Math.round(maxGap),js_heap_bytes:(performance as Performance & {memory?:{usedJSHeapSize:number}}).memory?.usedJSHeapSize??null});
-   setResult(response);setNote(response.status==='unscorable'?'本次信号不足，未输出音素判断；请检查音量后重试。':'实验性、未校准观察完成。模型差异可能来自识别或参考读音，不是确诊错误。');
+   setResult(response);
+   setNote(response.status==='unscorable'
+     ? response.reason==='empty_model_output'
+       ? '模型没有识别出可用音素；本次不可判定，不应将缺失结果视为发音错误。请尝试更完整的短句。'
+       : response.reason==='empty_reference'
+         ? '参考读音未能生成可用音素；本次不可判定，请换一个适合当前语言的词句。'
+         : '本次信号不足，未输出音素判断；请检查音量后重试。'
+     : '实验性、未校准观察完成。模型差异可能来自识别或参考读音，不是确诊错误。');
   }catch(e){if(current.current===controller&&!controller.signal.aborted)setNote((e instanceof Error?e.message:'录音失败')+' 可重试，或切回免费浏览器识别。');}
   finally{clearTimeout(deadline);cancelAnimationFrame(frame);if(current.current===controller){setState('idle');stop.current=null;}}
  }
@@ -44,9 +51,9 @@ export default function LocalPronunciation({target,language}:{target:string;lang
    {metrics&&<details><summary>本次运行信息</summary><p>总耗时（含录音/解码）：{metrics.total_ms} ms；最大绘制帧间隔：{metrics.max_frame_gap_ms} ms；JS 堆占用：{metrics.js_heap_bytes??'浏览器未提供'} bytes（不包含本机模型进程）。</p></details>}
    {result.signal?.rejection&&<p>信号限制：{result.signal.rejection}</p>}
    {!!result.reference_unknown?.length&&<p>参考读音含模型词表外字符，相关差异不能解读：{result.reference_unknown.join(' ')}</p>}
-   <p>以下为参考 IPA 与声学模型候选的序列对照；时间为 CTC 发射位置近似值。相同也不能证明发音正确。</p>
-   <div className="speech-compare">{result.phones?.map((p,i)=><span className={'speech-token '+(p.kind==='match'?'':'speech-substitution')} key={i}>{p.expected||'∅'} → {p.phone||'未检测'}{p.start_s!==undefined&&<small>{p.start_s.toFixed(2)}–{p.end_s?.toFixed(2)} s</small>}</span>)}</div>
-   {[...new Set(result.phones?.filter(p=>p.kind!=='match'&&p.expected).map(p=>p.expected as string))].slice(0,6).map(p=><p key={p}><strong>可复练 /{p}/：</strong>{phoneHint(p,language)}</p>)}
+   {result.status!=='unscorable'&&<p>以下为参考 IPA 与声学模型候选的序列对照；时间为 CTC 发射位置近似值。相同也不能证明发音正确。</p>}
+   {result.status!=='unscorable'&&<div className="speech-compare">{result.phones?.map((p,i)=><span className={'speech-token '+(p.kind==='match'?'':'speech-substitution')} key={i}>{p.expected||'∅'} → {p.phone||'未检测'}{p.start_s!==undefined&&<small>{p.start_s.toFixed(2)}–{p.end_s?.toFixed(2)} s</small>}</span>)}</div>}
+   {result.status!=='unscorable'&&[...new Set(result.phones?.filter(p=>p.kind!=='match'&&p.expected).map(p=>p.expected as string))].slice(0,6).map(p=><p key={p}><strong>可复练 /{p}/：</strong>{phoneHint(p,language)}</p>)}
    <p>重音与节奏练习：先标出词重音/意群，听示范并拍节奏，再回到原句；本模型没有验证这些项目。</p>
   </div>}
  </section>;
