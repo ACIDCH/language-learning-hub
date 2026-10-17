@@ -168,6 +168,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
   };
   engine.current=rec;setHeard('');setAlternatives([]);setInterim('');
   if(blindMode)setRevealed(false);
+  if(blindMode)setRevealed(false);
   try{
     rec.start();setListening(true);
     watchdog.current=setTimeout(()=>{if(engine.current===rec){engine.current=null;rec.abort();setListening(false);setInterim('');setNote('识别服务等待超时，请重试；如已部署云端声学服务，也可选择云端模式。');}},20000);
