@@ -1,0 +1,24 @@
+.cloud-workspace{max-width:1050px;margin:0 auto;padding:clamp(20px,5vw,56px);line-height:1.65;color:#243b44;font-family:system-ui,-apple-system,Arial,sans-serif}
+.cloud-head{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:34px}
+.cloud-head h1{font-size:clamp(1.8rem,4vw,2.8rem);margin:.1em 0}
+.cloud-head p{max-width:680px}
+.cloud-kicker{font-size:.75rem;text-transform:uppercase;letter-spacing:.18em;color:#37678a}
+.cloud-return{color:#185b80;text-decoration:underline;white-space:nowrap}
+.cloud-panel{background:#fff;border:1px solid #d9e3eb;border-radius:18px;padding:clamp(16px,4vw,32px);box-shadow:0 10px 30px #2030400b}
+.cloud-panel h2{margin-top:0;font-size:1.3rem}
+.cloud-status{padding:12px 16px;background:#eef5fb;border-radius:10px}
+.cloud-fields{display:grid;gap:14px;max-width:550px}
+.cloud-workspace label{display:grid;gap:6px;font-weight:600}
+.cloud-workspace input:not([type=radio]):not([type=checkbox]),.cloud-workspace textarea,.cloud-workspace select{min-width:0;width:100%;border:1px solid #aebecb;border-radius:9px;padding:10px 12px;background:white;color:#1b303b;font:inherit}
+.cloud-workspace button{border:1px solid #1f6287;border-radius:9px;background:#17658b;color:white;padding:9px 16px;font:inherit;cursor:pointer}
+.cloud-workspace button:disabled{opacity:.55;cursor:not-allowed}
+.cloud-workspace :focus-visible{outline:3px solid #1882bd;outline-offset:3px}
+.cloud-flex{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.cloud-account,.cloud-disclaimer{color:#526776;font-size:.9rem}
+.cloud-select,.cloud-notes{margin-block:18px}
+.cloud-stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0;border:1px solid #d9e3eb;border-radius:10px;padding:16px}
+.cloud-stages legend{font-weight:700}
+.cloud-stages label,.cloud-completed{display:flex!important;align-items:center;gap:9px;font-weight:400!important}
+.cloud-completed{margin:12px 0 20px}
+@media(max-width:650px){.cloud-head{display:block}.cloud-stages{grid-template-columns:repeat(2,minmax(0,1fr))}.cloud-flex{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.cloud-workspace *{scroll-behavior:auto!important;transition:none!important}}
