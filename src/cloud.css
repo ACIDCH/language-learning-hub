@@ -235,3 +235,61 @@ border:1px solid var(--foundation-border);padding:10px;overflow-wrap:anywhere}
 .stage-audit-rows article span{color:#6b8390;font-size:.82rem}
 .stage-audit-rows article p{font-size:.86rem;color:#496778}
 .cloud-workspace .stage-audit-rows button{padding:6px 9px;font-size:.82rem}
+
+
+.foundation-recall{border:1px solid #d6e4ea;border-radius:12px;background:#f7fafc;padding:16px;margin:18px 0}
+.foundation-recall h5{margin-top:0}
+.foundation-recall-direction{display:flex!important;align-items:center;gap:8px}
+.foundation-recall-card{padding:14px;border:1px solid #cadde8;background:#fff;border-radius:10px;margin-top:12px}
+.foundation-recall-prompt{font-size:1.3rem;font-weight:700;overflow-wrap:anywhere}
+.foundation-recall-answer{padding:10px 0;border-top:1px solid #dbe7ed;font-size:1.1rem}
+.foundation-recall-ratings{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.foundation-recall-complete{display:grid;justify-items:start;gap:9px;padding:12px;background:#f3f9f6;border-radius:10px}
+@media(max-width:650px){.foundation-recall-ratings button{flex:1}}
+
+
+/* Listening dictation and cross-lesson review: text practice only, no audio upload. */
+.foundation-review-agenda{border:1px solid #d2e3eb;border-radius:12px;background:#f7fafc;
+ padding:12px 14px;margin:15px 0}
+.foundation-review-agenda summary{cursor:pointer;color:#1d5069;font-weight:700}
+.foundation-review-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.cloud-workspace .foundation-review-rows button{display:grid;gap:5px;text-align:left;white-space:normal;
+ background:#fff;color:#214d65;border:1px solid #d5e3ec}
+.foundation-review-rows small{color:#577486}
+.foundation-dictation{margin:18px 0;padding:14px;border:1px solid #ccdfeb;border-radius:12px;background:#f7fafc}
+.foundation-dictation label{display:block;margin-top:12px;font-weight:600}
+.foundation-dictation textarea{display:block;resize:vertical;width:100%;box-sizing:border-box;
+ min-height:80px;border:1px solid #aabfce;border-radius:9px;padding:10px;margin-top:6px;font:inherit}
+.foundation-dictation-result{padding:12px;background:#eef7f1;border-left:3px solid #54886c;margin:12px 0}
+.foundation-dictation-reference{white-space:pre-wrap;overflow-wrap:anywhere;padding:12px;background:#fff;
+ border:1px solid #d2e3eb;border-radius:9px}
+@media(max-width:650px){.foundation-review-rows{grid-template-columns:1fr}}
+
+
+/* First-lesson alphabet phonetics: name IPA is different from a letter's sound in words. */
+.foundation-alphabet{margin:20px 0;padding:14px;border:1px solid #cedee9;border-radius:12px;background:#f8fafc}
+.foundation-alphabet-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0}
+.foundation-alphabet-card{padding:10px;border:1px solid #d4e2ea;border-radius:10px;background:#fff;min-width:0}
+.foundation-alphabet-card>div:first-child{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.foundation-alphabet-card strong{font-size:1.4rem;color:#184c6b}
+.foundation-alphabet-card span{font-size:.9rem;color:#336580}
+.foundation-alphabet-card small{font-size:.75rem;color:#546a7d}
+.foundation-alphabet-card p{font-size:.84rem;margin:6px 0;overflow-wrap:anywhere}
+.foundation-alphabet-card>div:last-child{display:flex;flex-wrap:wrap;gap:5px}
+.cloud-workspace .foundation-alphabet-card button{background:#eaf5f9;color:#225d79;padding:5px;font-size:.75rem}
+.foundation-alphabet-accents li{margin:8px 0}
+.foundation-alphabet-accents li button{margin-left:8px}
+@media(max-width:840px){.foundation-alphabet-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:550px){.foundation-alphabet-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+
+/* Individual 0-30 number-listening cards with independent read-only reference table. */
+.foundation-number-drill{background:#f8fafc;border:1px solid #d3e3eb;border-radius:12px;padding:16px;margin:16px 0}
+.foundation-number-task{padding:14px;border:1px solid #d0e0e9;border-radius:10px;background:#fff}
+.foundation-number-counter{font-weight:700;color:#235671;margin-bottom:10px}
+.foundation-number-task label{display:block;font-weight:600;margin-top:14px}
+.foundation-number-task input{width:100%;box-sizing:border-box;padding:10px 12px;font:inherit;
+ border:1px solid #9bb8c7;border-radius:9px;margin:6px 0}
+.foundation-number-feedback{padding:12px;background:#edf7f0;border-radius:8px;overflow-wrap:anywhere}
+.foundation-number-feedback button{margin-left:8px}
+.foundation-number-reference{max-height:350px;overflow:auto;border:1px solid #d5e3eb;border-radius:8px;margin-top:12px}
