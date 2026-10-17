@@ -235,3 +235,14 @@ border:1px solid var(--foundation-border);padding:10px;overflow-wrap:anywhere}
 .stage-audit-rows article span{color:#6b8390;font-size:.82rem}
 .stage-audit-rows article p{font-size:.86rem;color:#496778}
 .cloud-workspace .stage-audit-rows button{padding:6px 9px;font-size:.82rem}
+
+
+.foundation-recall{border:1px solid #d6e4ea;border-radius:12px;background:#f7fafc;padding:16px;margin:18px 0}
+.foundation-recall h5{margin-top:0}
+.foundation-recall-direction{display:flex!important;align-items:center;gap:8px}
+.foundation-recall-card{padding:14px;border:1px solid #cadde8;background:#fff;border-radius:10px;margin-top:12px}
+.foundation-recall-prompt{font-size:1.3rem;font-weight:700;overflow-wrap:anywhere}
+.foundation-recall-answer{padding:10px 0;border-top:1px solid #dbe7ed;font-size:1.1rem}
+.foundation-recall-ratings{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.foundation-recall-complete{display:grid;justify-items:start;gap:9px;padding:12px;background:#f3f9f6;border-radius:10px}
+@media(max-width:650px){.foundation-recall-ratings button{flex:1}}
