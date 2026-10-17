@@ -7,14 +7,16 @@ import './styles.css';
 // available for local development, never silently exposed in a public build.
 const PublicLearningApp = lazy(() => import('./App'));
 const PersonalWorkspace = lazy(() => import('./PersonalHub'));
+const CloudWorkspace = lazy(() => import('./CloudWorkspace'));
 const enablePersonal = import.meta.env.DEV || import.meta.env.VITE_APP_MODE === 'personal';
+const cloudRoute = location.pathname === '/cloud' || location.pathname.startsWith('/cloud/');
 
 const root = document.getElementById('root');
 if (!root) throw new Error('Missing #root mount element');
 createRoot(root).render(
   <React.StrictMode>
     <Suspense fallback={<main aria-live="polite">正在加载学习系统…</main>}>
-      {enablePersonal ? <PersonalWorkspace /> : <PublicLearningApp />}
+      {cloudRoute ? <CloudWorkspace /> : enablePersonal ? <PersonalWorkspace /> : <PublicLearningApp />}
     </Suspense>
   </React.StrictMode>
 );
