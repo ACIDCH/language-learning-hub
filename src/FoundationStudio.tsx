@@ -134,7 +134,7 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
   </div>
   <details className="foundation-review-agenda">
    <summary>跨课程复习建议 · {loaded?dueReviews.length:'…'} 节待回顾</summary>
-   <p className="cloud-disclaimer">根据 24 节基础课现有云端进度、答题结果及上次保存时间生成。
+   <p className="cloud-disclaimer">根据全部 48 节基础与 A2 衔接课现有云端进度、答题结果及上次保存时间生成。
      答错题优先复习；未完成的题目提醒续学；已学完课程约 3 天后建议回顾。
      这只是复习提示，不是经过校准的遗忘曲线模型。</p>
    {!loaded?<p>正在读取个人复习记录…</p>:
