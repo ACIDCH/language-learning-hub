@@ -2,45 +2,43 @@
 
 ## Product requirement (2026-10-18)
 
-Learners must be able to encounter an unfamiliar English or French word anywhere in their lesson and obtain a **useful IPA reading cue** beside the printed text, without leaving the lesson or submitting each word to an AI model. Cover **the whole displayed foreign-language passage**, not merely a fixed beginner alphabet chart. Follow the same behavior in 108 main course reading stages, 48 foundation/A2 units (vocabulary, examples, reading and listening transcript), and native Web Speech shadowing practice.
+An English/French learner encountering an unfamiliar word must see an approximate **International Phonetic Alphabet** reading in-context. The system must cover **whole foreign-language lesson text** on demand, not just fixed alphabet tables or a handful of vocabulary examples, and remain useful after switching computers. The user specifically requested this as a standing learning-system requirement.
 
-## Architecture and implementation
+## Implementation (no new server, ASR or TTS)
 
-- Browser-only on-demand **eSpeak NG phonemizer**, via pinned **ephone 1.0.2** WASM. Original project: https://github.com/sjmik/ephone-js. English language pack `en_all` supplies American and British variants; `roa` supplies France French. Loaded only after the IPA toggle is switched on.
-- Asynchronous chunking updates long passages progressively, with bounded in-memory cache, while keeping the original manuscript characters unchanged; Chinese annotations remain plain text and are never sent to an English or French phonemizer.
-- Shows original letters and generated IPA in `<ruby><rt>` annotations when the eSpeak source alignment is consistent. If its source mapping fails, **never place an IPA under the wrong graphemes**: display the source and one separately identified phrase transcription instead.
-- Clicking IPA source text or symbol chart's example word uses **existing browser SpeechSynthesis**, not a new TTS service. Playable audio is the orthographic text, not fabricated IPA pronunciation.
-- The English/France French IPA learning reference covers consonants, vowel types, nasal vowels and glide contrasts, with example words.
-- Normal manuscript and speech exercise reading is unchanged by default; learners explicitly enable IPA overlay. If WASM fails to load, original lesson and normal browser reading remain available.
-- No Cloudflare Workers AI, Whisper, new login system, phoneme cloud server, paid API or backend storage is required for generating reference symbols. Optional independent acoustic practice remains a separate feature.
+- Browser-side **@piper-plus/g2p 0.4.2**, MIT-licensed rule-based English/French grapheme-to-phoneme library. Lazy-loaded only after enabling IPA, no external phonemization API. No Wav2Vec2 model or Whisper inference needed for reference IPA text.
+- Original text remains untouched; Unicode-aware tokenization finds Latin-script words, generates IPA for each word and keeps punctuation, whitespace, accents, apostrophes, headings and Chinese pedagogic commentary intact. Unlike a heuristic source-map reconstruction, each IPA token is guaranteed to display next to **that original word**.
+- Long manuscripts are processed in chunks with incremental rendering, small in-memory word cache, and clear plain-text fallback if a browser cannot load the module or lacks a conversion.
+- The main 108-course manuscript reader gets an IPA toggle in each six-stage page and complete original view.
+- The 48-course foundation/A2 learning system gets an IPA toggle for vocabulary, examples, listening transcripts and reading passages.
+- Existing native Web Speech practice gets instant IPA for its editable target. A separate free IPA reading lab at `/speech-lab#ipa-studio` accepts pasted EN/FR passages of up to 40,000 characters.
+- English and French IPA phoneme charts include learner-friendly articulation hints and example-word playback using **existing browser SpeechSynthesis**, never by directly asking a TTS engine to pronounce isolated IPA symbols.
+- No new speech-recognition service, paid model endpoint, back-end account, storage table or cloud server. Actual audio/pronunciation scoring remains separate.
 
-## Teaching quality and limitations
+## Limits, honesty and teaching safeguards
 
-This is **automatic grapheme-to-phoneme (G2P)**, not a pronunciation dictionary whose every headword has been manually verified. In context:
-- English spelling is not one-to-one with pronunciation. Homographs such as *read*, *lead*, *wind*, *record* require grammatical or temporal context. No guarantee that the synthetic engine chooses correctly.
-- English accent can be switched American/British in the speech target; main manuscript defaults to American English unless course language indicates otherwise. Regional differences include rhotic /r/, merged vowels and stress.
-- French words can change in connected speech (liaison, elision, schwa deletion, resyllabification); generated IPA is a learning reference, not an authoritative narrow transcription of every speaker.
-- eSpeak output and browser system TTS come from **different engines** and may choose slightly different accent or lexical pronunciations.
-- A written IPA hint cannot grade the learner's actual pronunciation. Existing Web Speech transcript matching and optional separately hosted acoustic experiment must remain distinct.
-- Do not fill missing transcriptions using guessed hand-written rules while labeling them 'standard IPA.' If the source cannot be aligned, use explicit whole-phrase fallback, or leave plain text.
+The project uses **rule-based automatically generated approximations**, not a phonetics dictionary individually reviewed by professional linguists.
 
-## Explicit rollout and acceptance checks
+- English spelling is irregular; homographs such as *read, lead, wind, record* can vary by context. A word-level G2P cannot always infer the correct lexical reading. Do not display pronunciation confidence or invent professional accuracy percentages.
+- French **liaison**, *enchaînement*, schwa deletion and elision are context-sensitive. Per-word IPA illustrates a word's sound inventory but may not capture its realized pronunciation inside the exact spoken sentence.
+- English IPA is currently **one unified English rule set** in this library; selecting US vs GB changes browser TTS accent but **does not generate independently verified American/British phonetic forms**. This must be clear in interface labels.
+- Browser SpeechSynthesis TTS and the G2P engine are independent; their accents can differ, especially for unusual words.
+- Unknown proper nouns and loanwords can be mistaken. If a conversion fails or looks non-IPA, keep the source plain rather than fabricating a notation.
+- Static IPA teaching symbols are examples; phonological variation among dialects is normal.
+- Do not derive phoneme pronunciation *scores* from spelling or transcribed text matches. Those belong only to a separately validated acoustic scoring engine.
 
-1. Enable `显示 IPA` in a French/English main course and use "查看完整原稿" to verify the entire foreign-language manuscript receives reference IPA and Chinese commentary remains intact.
-2. Check 48 foundation/A2 courses' vocabulary / examples / reading and listening scripts, and native shadowing target editing for on-the-fly IPA updates.
-3. Validate diacritics/Unicode: Chloé, l'école, sœur, étudiant, français; and English stress/homograph cases.
-4. Force unsupported WASM/network failure and verify **no blank lesson or crash**.
-5. Compare at least 50 EN + 50 FR high-frequency words with authoritative dictionary IPA, document mismatches and pronunciation lexicon correction strategy before claiming full coverage or dictionary-grade reliability. Current unit/integration tests are structural, **not** linguistic accuracy validation.
-6. Run Chrome/Edge browser manual tests on Windows and another computer; only after verification may this be advertised as production-ready.
+## Verification and acceptance
 
-## Licensing and distribution requirements
+1. Open the six-stage main reader, enable IPA, then switch to “查看完整原稿” and verify original content and English/French IPA remain matched.
+2. Use the foundation vocabulary table, English/French examples, reading passage and listening transcript, including diacritics such as *étudiant, sœur, français, l’école*.
+3. Edit a native speech practice target: its text and IPA update together; basic Web Speech and TTS continue working if IPA fails.
+4. Paste a complete unfamiliar article into `/speech-lab#ipa-studio` and confirm incremental annotation; do not upload text to any endpoint.
+5. Re-check at least 50 common English and 50 common French dictionary pronunciations, document wrong predictions and create correction dictionary overrides. CI tests demonstrate structural integration only; real linguistics QA remains necessary.
+6. Verify Chrome, Edge and a second physical computer with real TTS and IPA browser module loading. No actual real-device browser test is claimed until performed.
 
-**Important:** `ephone` and eSpeak NG are **GPL-3.0-or-later**, unlike the original author's code-only MIT packages. The browser bundle includes this runtime when IPA is enabled, so publishing/distributing the compiled frontend triggers copyleft license and source/notice obligations. The existing public project README does not grant permission to relicense separately owned material. **Do not merge or deploy this implementation to the public site before the project owner accepts the consequences and confirms license compatibility.** The feature lives in a review PR until this is resolved.
+## Source, license and dependency status
 
-- Upstream ephone source: https://github.com/sjmik/ephone-js
-- Upstream eSpeak-NG: https://github.com/espeak-ng/espeak-ng
-- Upstream GPL full license: https://www.gnu.org/licenses/gpl-3.0.html
-- Pinned `package-lock.json` must be regenerated from the registry with integrity checks in the final merge.
-- If GPL integration is not acceptable, replace this adapter with a permissively licensed or hosted G2P component and reconfirm word-source alignment and full-text coverage; the React IPA interface need not change.
-
-This feature provides a browser-native G2P **candidate**, not a human-validated multilingual dictionary.
+- [@piper-plus/g2p](https://github.com/ayutaz/piper-plus/tree/dev/src/wasm/g2p), version **0.4.2**, **MIT**.
+- No GPL/eSpeak runtime bundled in this final implementation. Unlike the initial research branch, this does **not** require relicensing the whole frontend under GPL.
+- The separate existing acoustic evaluation project still uses its independent licensed ML resources, unrelated to IPA text conversion.
+- If a more complete pronunciation dictionary becomes necessary, use per-language permissive English lexicons and a verified French dictionary with its specific attribution/license. **Avoid presenting automatic rules as dictionary-certified IPA.**
