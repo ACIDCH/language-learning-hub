@@ -1,4 +1,4 @@
-import { useEffect, useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { createClient, type Session } from '@supabase/supabase-js';
 import './cloud.css';
 import { cloudPublicDefaults } from './cloudPublicDefaults';
@@ -9,6 +9,7 @@ import AITutor from './AITutor';
 import SpeechPractice from './SpeechPractice';
 import CourseAudit from './CourseAudit';
 import LessonReview from './LessonReview';
+import LearningOverview from './LearningOverview';
 
 type Course = { id: string; language: string; level: string; track: string | null;
   title: string; unit: number; text_complete: boolean; audio_verified: boolean; publishable: boolean };
@@ -49,6 +50,17 @@ export default function CloudWorkspace() {
   const [courseQuery,setCourseQuery]=useState('');
   const [status, setStatus] = useState('正在连接…');
   const [busy, setBusy] = useState(false);
+  const [activePanel,setActivePanel] = useState<'learn'|'audio'|'speech'|'review'|'resources'|'ai'>('learn');
+  const [overviewVersion,setOverviewVersion] = useState(0);
+  const [progressReadyKey,setProgressReadyKey] = useState('');
+  const selectedRef=useRef('');
+  const progressKey=session?session.user.id+':'+selected:'';
+  const progressReady=Boolean(selected&&progressReadyKey===progressKey);
+  const currentLesson=lesson?.course_id===selected?lesson:null;
+  function chooseCourse(id:string){
+    selectedRef.current=id;
+    setSelected(id);setState({});setProgressReadyKey('');
+  }
 
   useEffect(() => {
     if (!client) { setStatus('云端尚未配置：请先连接 Workers 与 Supabase。公开课程仍可正常学习。'); return; }
@@ -57,14 +69,16 @@ export default function CloudWorkspace() {
     void auth.auth.getSession().then(({data}) => {if (alive) setSession(data.session);});
     const {data:listener} = auth.auth.onAuthStateChange((_event,next) => setSession(next));
     void worker<{courses:Course[]}>('/v1/courses')
-      .then(({courses}) => {if (alive) {setCatalog(courses); setSelected(courses[0]?.id || ''); setStatus('课程索引已加载。');}})
+      .then(({courses}) => {if (alive) {setCatalog(courses); chooseCourse(courses[0]?.id || ''); setStatus('课程索引已加载。');}})
       .catch(e => {if (alive) setStatus('云端索引暂不可用：' + e.message);});
     return () => {alive = false; listener.subscription.unsubscribe();};
   }, []);
 
   useEffect(() => {
-    if (!session || !selected) {setState({}); return;}
+    if (!session || !selected) {setState({});setProgressReadyKey('');return;}
     let alive = true;
+    setProgressReadyKey('');
+    setState({});
     setStatus('正在读取云端进度…');
     void worker<{progress:Progress|null}>('/v1/progress/' + encodeURIComponent(selected),session.access_token)
       .then(({progress}) => {
@@ -77,6 +91,7 @@ export default function CloudWorkspace() {
         const useDraft = draft?.state && draft.editedAt &&
           (!progress || new Date(draft.editedAt).getTime() > new Date(progress.updated_at).getTime());
         setState(useDraft ? draft!.state : (progress?.state || {}));
+        setProgressReadyKey(session.user.id+':'+selected);
         setStatus(useDraft ? '已恢复本机未同步草稿，点击保存后才会写入云端。' : '云端进度已读取。');
       })
       .catch(e => {
@@ -87,6 +102,7 @@ export default function CloudWorkspace() {
             const draft = JSON.parse(cached) as {state?:State};
             if (draft?.state) {
               setState(draft.state);
+              setProgressReadyKey(session.user.id+':'+selected);
               setStatus('远端读取失败，已保留本机未同步草稿：' + e.message);
               return;
             }
@@ -143,6 +159,7 @@ export default function CloudWorkspace() {
   },[session,selected]);
 
   function editState(patch: Partial<State>) {
+    if(!progressReady)return;
     const next = {...state,...patch};
     setState(next);
     if (session && selected) {
@@ -167,19 +184,32 @@ export default function CloudWorkspace() {
   }
 
   async function save() {
-    if (!session || !selected || busy) return;
+    if (!session || !selected || busy || !progressReady) return;
+    const courseId=selected;
+    const userId=session.user.id;
+    const saveState={...state};
     setBusy(true);
     try {
-      const result = await worker<{progress:Progress}>('/v1/progress/'+encodeURIComponent(selected),
+      const result = await worker<{progress:Progress}>('/v1/progress/'+encodeURIComponent(courseId),
         session.access_token,{
           method:'PUT',
           headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({state})
+          body:JSON.stringify({state:saveState})
         });
-      setState(result.progress.state);
-      try {localStorage.removeItem(draftKey(session.user.id,selected));} catch { /* no local cache */ }
-      setStatus('学习进度已保存：' + new Date(result.progress.updated_at).toLocaleString());
-    } catch(e) {setStatus('保存失败，请保留本页内容：' + (e instanceof Error ? e.message : String(e)));}
+      // A delayed response must not replace another course's notes.
+      if(selectedRef.current===courseId){
+        setState(result.progress.state);
+        try {localStorage.removeItem(draftKey(userId,courseId));} catch { /* no local cache */ }
+        setStatus('学习进度已保存：' + new Date(result.progress.updated_at).toLocaleString());
+      } else {
+        try {localStorage.removeItem(draftKey(userId,courseId));} catch { /* no local cache */ }
+      }
+      setOverviewVersion(n=>n+1);
+     } catch(e) {
+      if(selectedRef.current===courseId){
+        setStatus('保存失败，请保留本页内容：' + (e instanceof Error ? e.message : String(e)));
+      }
+    }
     finally {setBusy(false);}
   }
   return <main className="cloud-workspace">
@@ -205,7 +235,7 @@ export default function CloudWorkspace() {
         </form>
       </section> : <section className="cloud-panel">
         <div className="cloud-flex"><h2>课程进度与笔记</h2>
-          <button type="button" onClick={()=>{void client?.auth.signOut();setState({});}}>退出账户</button></div>
+          <button type="button" onClick={()=>{void client?.auth.signOut();setState({});setProgressReadyKey('');}}>退出账户</button></div>
         <p className="cloud-account">已登录：{session.user.email}</p>
         <label className="cloud-select">按课程名或课程编号搜索
           <input type="search" value={courseQuery} placeholder="例如：A1、Listening、语法"
@@ -215,50 +245,88 @@ export default function CloudWorkspace() {
           {catalog.filter(c=>(c.id+' '+c.title+' '+c.level).toLocaleLowerCase()
             .includes(courseQuery.trim().toLocaleLowerCase())).slice(0,12)
             .map(c=><button type="button" key={c.id} onClick={()=>{
-              setSelected(c.id);setCourseQuery('');
+              chooseCourse(c.id);setCourseQuery('');
             }}>{c.language.toUpperCase()} · {c.level} · {c.title}</button>)}
         </div>}
         <label className="cloud-select">课程
-          <select value={selected} onChange={e=>setSelected(e.target.value)}>
+          <select value={selected} onChange={e=>chooseCourse(e.target.value)}>
             {catalog.map(course=><option key={course.id} value={course.id}>
               {course.language.toUpperCase()} · {course.level} · {course.title}
             </option>)}
           </select>
         </label>
-        <p className="cloud-disclaimer">本模块保存学习进度，不将“已存在目录”误认为“教材已通过质量验收”。</p>
-        <section className="cloud-reader" aria-label="私人课程正文">
-          <h3>我的课程正文</h3>
-          <p role="status" className="cloud-disclaimer">{lessonStatus}</p>
-          {lesson && <>
-            <p className="cloud-disclaimer">来源版本：{lesson.source_version} · 状态：{lesson.qa_status === 'approved' ? '已审核' : '草稿/待核验'}</p>
-            <LessonReader text={lesson.content_body} courseId={lesson.course_id}
-              stage={typeof state.stage==='number'?state.stage:0}
-              onChangeStage={stage=>editState({stage})}/>
-          </>}
-        </section>
-        {lesson&&<LessonReview key={lesson.course_id} client={client!} session={session}
-          courseId={lesson.course_id} qaStatus={lesson.qa_status}
-          onUpdated={()=>setImportNonce(n=>n+1)}/>}
-        <AudioVault client={client!} session={session} courseId={selected}
-          assets={audioAssets} status={audioStatus}/>
-        <CourseAudit client={client!} session={session} onSelect={id=>setSelected(id)}/>
-        <SpeechPractice key={selected} language={catalog.find(c=>c.id===selected)?.language||'fr'}/>
-        <AITutor key={'ai-'+selected} session={session} apiBase={apiBase} courseId={selected}
-          language={catalog.find(c=>c.id===selected)?.language||'fr'}
-          lessonText={lesson?.content_body||''}/>
-        <BackupImporter client={client!} session={session} knownIds={catalog.map(c=>c.id)}
-          onImported={()=>setImportNonce(n=>n+1)}/>
-        <fieldset className="cloud-stages"><legend>当前学习环节</legend>
-          {stages.map((label,i)=><label key={label}><input type="radio" checked={state.stage===i}
-            onChange={()=>editState({stage:i})}/>{label}</label>)}
-        </fieldset>
-        <label className="cloud-notes">学习笔记
-          <textarea rows={7} maxLength={10000} value={typeof state.notes==='string'?state.notes:''}
-            onChange={e=>editState({notes:e.target.value})}/>
-        </label>
-        <label className="cloud-completed"><input type="checkbox" checked={state.completed===true}
-          onChange={e=>editState({completed:e.target.checked})}/>已完成本次学习</label>
-        <button type="button" disabled={busy || !selected} onClick={()=>void save()}>保存到 Supabase</button>
+        <nav className="cloud-panel-tabs" aria-label="学习系统模块">
+          {([
+            ['learn','课程学习'],['audio','课程音频'],['speech','跟读练习'],
+            ['review','质量审校'],['resources','资源管理'],['ai','AI 教师（稍后）']
+          ] as const).map(([id,label])=>
+            <button type="button" key={id} onClick={()=>setActivePanel(id)}
+              aria-current={activePanel===id?'page':undefined}
+              className={activePanel===id?'panel-active':''}>{label}</button>)}
+        </nav>
+        {activePanel==='learn'&&<>
+          <LearningOverview client={client!} session={session} courses={catalog}
+            savedVersion={overviewVersion} onContinue={chooseCourse}/>
+          <section className="cloud-reader" aria-label="本课学习进度与笔记">
+            <h3>本课进度与笔记</h3>
+            {!progressReady&&<p role="status" className="cloud-disclaimer">
+              正在读取此课程的进度，期间编辑和保存暂时锁定，避免混入另一门课程的笔记。
+            </p>}
+            <fieldset className="cloud-stages" disabled={!progressReady||busy}>
+              <legend>当前学习环节</legend>
+              {stages.map((label,i)=><label key={label}><input type="radio"
+                checked={state.stage===i} onChange={()=>editState({stage:i})}/>{label}</label>)}
+            </fieldset>
+            <label className="cloud-notes">学习笔记
+              <textarea rows={5} maxLength={10000} disabled={!progressReady||busy}
+                value={typeof state.notes==='string'?state.notes:''}
+                onChange={e=>editState({notes:e.target.value})}/>
+            </label>
+            <label className="cloud-completed">
+              <input type="checkbox" disabled={!progressReady||busy}
+                checked={state.completed===true}
+                onChange={e=>editState({completed:e.target.checked})}/>已完成本次学习
+            </label>
+            <button type="button" disabled={busy||!progressReady}
+              onClick={()=>void save()}>保存到 Supabase</button>
+          </section>
+          <section className="cloud-reader" aria-label="私人课程正文">
+            <h3>我的课程正文</h3>
+            <p role="status" className="cloud-disclaimer">{lessonStatus}</p>
+            {currentLesson&&<>
+              <p className="cloud-disclaimer">来源版本：{currentLesson.source_version} ·
+                状态：{currentLesson.qa_status==='approved'?'正文已审核':'草稿/待核验'}</p>
+              <LessonReader text={currentLesson.content_body} courseId={currentLesson.course_id}
+                stage={typeof state.stage==='number'?state.stage:0}
+                onChangeStage={stage=>editState({stage})}/>
+            </>}
+          </section>
+        </>}
+        {activePanel==='audio'&&<AudioVault client={client!} session={session}
+          courseId={selected} assets={audioAssets} status={audioStatus}/>}
+        {activePanel==='speech'&&<SpeechPractice key={selected}
+          language={catalog.find(c=>c.id===selected)?.language||'fr'}/>}
+        {activePanel==='review'&&<>
+          <CourseAudit client={client!} session={session}
+            onSelect={id=>chooseCourse(id)}/>
+          {currentLesson&&<LessonReview key={currentLesson.course_id} client={client!}
+            session={session} courseId={currentLesson.course_id}
+            qaStatus={currentLesson.qa_status}
+            onUpdated={()=>setImportNonce(n=>n+1)}/>}
+          <p className="cloud-disclaimer">课程内容结构检查与真正的教学审校是两个不同环节。</p>
+        </>}
+        {activePanel==='resources'&&<BackupImporter client={client!} session={session}
+          knownIds={catalog.map(c=>c.id)} onImported={()=>setImportNonce(n=>n+1)}/>}
+        {activePanel==='ai'&&<section className="cloud-reader">
+          <h3>AI 教师 · 最后阶段</h3>
+          <p className="cloud-disclaimer">按照当前开发计划，暂不进行 AI 模型联调，也不会自动发起付费模型请求。</p>
+          <details>
+            <summary>展开现有 AI 实验模块（手动启用）</summary>
+            <AITutor key={'ai-'+selected} session={session} apiBase={apiBase}
+              courseId={selected} language={catalog.find(c=>c.id===selected)?.language||'fr'}
+              lessonText={currentLesson?.content_body||''}/>
+          </details>
+        </section>}
       </section>}
     </>}
   </main>;

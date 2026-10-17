@@ -28,6 +28,8 @@ jobs:
         run: node --experimental-strip-types --test tests/audioZip.test.mjs
       - name: Validate speech transcript feedback and multilingual normalization
         run: node --experimental-strip-types --test tests/speechCompare.test.mjs
+      - name: Verify learning overview and saved course state handling
+        run: node --experimental-strip-types --test tests/learningProgress.test.mjs
       - name: Check TypeScript and build
         run: npm run build
       - name: Confirm Cloudflare root-path static bundle and verified public lessons
