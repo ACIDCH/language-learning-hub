@@ -120,9 +120,9 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
  return <section className="cloud-reader foundation-studio" aria-label="基础语言课程与练习">
   <h3>基础衔接课程 · 英语与法语</h3>
   <p className="cloud-disclaimer">
-    <strong>新增 24 节原创短课程：</strong>英语 12 节、法语 12 节。
+    <strong>共 48 节原创基础及 A2 衔接短课程：</strong>英语 24 节、法语 24 节（各新增 12 节 A1→A2 衔接课程）。
     从字母与声音，过渡到词汇、短句、段落及表达。它们是独立的补充教材，
-    不会改写原有 108 课，也不冒充完整 CEFR A2 认证课程。
+    不会改写原有 108 课，也不能当作专业审校通过的完整 CEFR A2 教材或语言等级认证。
   </p>
   <div className="foundation-filters" role="group" aria-label="语言选择">
     <button type="button" disabled={busy} aria-pressed={language==='en'}
