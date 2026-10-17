@@ -3,6 +3,7 @@ import {ENGINES,browserResult,lessonPractice,type SpeechEngineId} from './speech
 const LocalPronunciation=lazy(()=>import('./LocalPronunciation'));
 import {analyzeTranscript,practiceHint} from './speechCompare';
 import {appendAttempt,learnerCoaching,type RecentAttempt} from './speechCoach';
+import {practiceChunks,addReviewWords,clearReviewedWord,type ReviewWord} from './speechLearningTools';
 
 type Alternative={transcript:string;confidence?:number};
 type Result={isFinal:boolean;length:number;[index:number]:Alternative};
@@ -44,6 +45,9 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
  const [rate,setRate]=useState(0.85);
  const [attempts,setAttempts]=useState(0);
  const [recent,setRecent]=useState<RecentAttempt[]>([]);
+ const [reviewWords,setReviewWords]=useState<ReviewWord[]>([]);
+ const [blindMode,setBlindMode]=useState(false);
+ const [revealed,setRevealed]=useState(false);
  const [returnSentence,setReturnSentence]=useState('');
  const attemptId=useRef(0);
  const [voiceId,setVoiceId]=useState('');
@@ -54,6 +58,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
  useEffect(()=>{
   setLocale(lang==='fr'?'fr-FR':'en-US');setTarget(initialTarget);setHeard('');setAlternatives([]);setListening(false);
   setRecent([]);setAttempts(0);setReturnSentence('');
+  setReviewWords([]);setBlindMode(false);setRevealed(false);
   const synth=window.speechSynthesis;
   const refresh=()=>setVoices(synth?.getVoices().filter(v=>v.lang.toLowerCase().startsWith(lang))||[]);
   refresh();
@@ -67,6 +72,8 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
  const report=target.trim()&&heard.trim()?analyzeTranscript(target,heard):null;
  const coaching=report?learnerCoaching(report,target):null;
  const examples=lessonText?lessonPractice(lessonText,step):[];
+ const masked=blindMode&&!!target.trim()&&!revealed;
+ const chunks=practiceChunks(target);
  function nextSentence(){
   const choices=examples.length?examples:SAMPLE[lang];
   if(!choices.length)return;
@@ -76,7 +83,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
  function updateTarget(next:string){
   const previous=engine.current;engine.current=null;previous?.abort();clearTimeout(watchdog.current);setListening(false);
   setTarget(next);setHeard('');setInterim('');setAlternatives([]);
-  setAttempts(0);setRecent([]);setReturnSentence('');setNote('已更新练习句子。');
+  setAttempts(0);setRecent([]);setReturnSentence('');setRevealed(false);setNote('已更新练习句子。');
  }
  function focusWord(word:string){
   const original=returnSentence||target;
@@ -124,7 +131,14 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
           if(candidate&&!options.includes(candidate))options.push(candidate);
         }
         setAlternatives(options.slice(1));setAttempts(n=>n+1);
+        setRevealed(true);
         const checked=analyzeTranscript(target,first);
+        if(checked.originalWordCount===1&&checked.matched===1&&checked.extra===0){
+          setReviewWords(previous=>clearReviewedWord(previous,target));
+        }else{
+          const focus=learnerCoaching(checked,target).focusWords;
+          if(focus.length)setReviewWords(previous=>addReviewWords(previous,focus));
+        }
         setRecent(previous=>appendAttempt(previous,{
           id:++attemptId.current,target,heard:first,
           match:checked.missing===0&&checked.substituted===0&&checked.extra===0
@@ -179,16 +193,33 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
      <p className="cloud-disclaimer">本机模式需启动本机模型；云端模式需要学习账号及已部署的云端服务。两者都只提供未校准的练习参考值，默认免费文字跟读不受影响。</p>
     </details>
     <label>练习长度<select aria-label="练习长度" value={step} onChange={e=>setStep(e.target.value as typeof step)}><option value="word">短词</option><option value="sentence">短句</option><option value="paragraph">段落（声学模式每次不超过 12 秒）</option></select></label>
-    {!!examples.length&&<div className="speech-presets" aria-label="当前课程练习片段">{examples.map((s,i)=><button key={i} onClick={()=>updateTarget(s)}>{s}</button>)}</div>}
-    <label>练习短句（{locale}）
+    {!!examples.length&&!masked&&<div className="speech-presets" aria-label="当前课程练习片段">{examples.map((s,i)=><button key={i} onClick={()=>updateTarget(s)}>{s}</button>)}</div>}
+    <label className="speech-blind-toggle">
+      <input type="checkbox" checked={blindMode} disabled={!target.trim()||listening}
+        onChange={e=>{setBlindMode(e.target.checked);setRevealed(false);}}/>
+      听辨挑战：听过示范后隐藏文字，先凭听力复述，再揭晓对照
+    </label>
+    {masked?<div className="speech-blind-panel" aria-label="听辨模式已隐藏目标句子">
+      <p>目标词句已隐藏。点击「① 听示范」，然后尝试跟读；识别完成后会自动显示原文。</p>
+      <button type="button" disabled={listening} onClick={()=>setRevealed(true)}>提前显示原文</button>
+    </div>:<label>练习短句（{locale}）
       <textarea rows={3} maxLength={400} value={target}
         onChange={e=>updateTarget(e.target.value)}
         placeholder={SAMPLE[lang][0]}/>
-    </label>
-    <div className="speech-presets" role="group" aria-label="练习句子示例">
+    </label>}
+    {!masked&&chunks.length>1&&<section className="speech-chunk-practice" aria-label="长句分块跟读">
+      <h4>先分块，再读整句</h4>
+      <p className="cloud-disclaimer">使用现有浏览器朗读。可以单独练习片段，也可以返回原文一次读完整句。</p>
+      {chunks.map((part,i)=><div className="speech-chunk" key={i}>
+        <span>{i+1}. {part}</span>
+        <button type="button" disabled={listening} onClick={()=>speak(part)}>听这一段</button>
+        <button type="button" disabled={listening} onClick={()=>focusWord(part)}>只练这一段</button>
+      </div>)}
+    </section>}
+    {!masked&&<div className="speech-presets" role="group" aria-label="练习句子示例">
       {SAMPLE[lang].map(t=><button type="button" key={t} disabled={listening}
         onClick={()=>updateTarget(t)}>{t}</button>)}
-    </div>
+    </div>}
     <div className="speech-settings">
       <label>语言与口音
         <select value={locale} disabled={listening}
@@ -259,6 +290,16 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
        <p>仅存当前页面内存；更换句子、切换语言或刷新后清空。</p>
       </details>}
     </div>}
+    {!!reviewWords.length&&<section className="speech-coaching" aria-label="跨句重点词复练">
+      <h4>本次学习的重点词（{reviewWords.length}）</h4>
+      <p className="cloud-disclaimer">根据浏览器转写的文字差异整理，并非确定的发音错误；更换句子仍保留，刷新页面后清空。单独跟读并识别一致后移出清单。</p>
+      <div className="speech-focus-words">{reviewWords.map(item=><div className="speech-focus-word" key={item.word}>
+        <strong>{item.word}</strong><small>待复练 {item.count} 次</small>
+        <button type="button" disabled={listening} onClick={()=>speak(item.word)}>听这个词</button>
+        <button type="button" disabled={listening} onClick={()=>focusWord(item.word)}>复练这个词</button>
+      </div>)}</div>
+      <button type="button" disabled={listening} onClick={()=>setReviewWords([])}>清空重点词清单</button>
+    </section>}
   </div>
  </section>;
 }
