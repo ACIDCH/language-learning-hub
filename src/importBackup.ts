@@ -48,7 +48,19 @@ export async function readV4Backup(file:File):Promise<ParsedCourse[]> {
     else if(method===8){
       if(typeof DecompressionStream==='undefined')throw Error('当前浏览器不支持 ZIP 解压，请用新版 Chrome/Edge');
       const stream=new Blob([compressed.slice()]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
-      data=new Uint8Array(await new Response(stream).arrayBuffer());
+      const reader=stream.getReader();
+      const chunks:Uint8Array[]=[];
+      let byteCount=0;
+      for(;;){
+        const {done,value}=await reader.read();
+        if(done)break;
+        byteCount+=value.byteLength;
+        if(byteCount>MAX_COURSES_JSON){await reader.cancel();throw Error('ZIP 解压内容超过安全限制');}
+        chunks.push(value);
+      }
+      data=new Uint8Array(byteCount);
+      let at=0;
+      for(const chunk of chunks){data.set(chunk,at);at+=chunk.length;}
     } else throw Error('此备份使用了不支持的压缩格式');
     if(data.byteLength!==originalSize||data.byteLength>MAX_COURSES_JSON)throw Error('ZIP 大小校验失败');
     break;
