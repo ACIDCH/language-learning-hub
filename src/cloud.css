@@ -334,3 +334,22 @@ border:1px solid var(--foundation-border);padding:10px;overflow-wrap:anywhere}
 .speech-practice-reference small{color:#486779}
 .speech-reference-unavailable{border-left:3px solid #a1b6c7;background:#f6f9fb;
  padding:10px 12px;color:#476070;border-radius:4px}
+
+
+/* Native browser speech pedagogy: no additional speech service or model. */
+.speech-blind-toggle{display:flex!important;flex-direction:row!important;align-items:flex-start;
+ gap:9px;margin:12px 0;font-weight:500!important;line-height:1.5}
+.speech-blind-toggle input{margin-top:.25em;flex-shrink:0}
+.speech-blind-panel{border:1px dashed #86abc0;background:#f3f8fb;
+ border-radius:11px;padding:15px;margin:12px 0}
+.speech-blind-panel p{margin:0 0 12px;line-height:1.6}
+.speech-chunk-practice{border:1px solid #d4e5ed;border-radius:12px;padding:13px;
+ background:#f9fbfd;margin:14px 0}
+.speech-chunk-practice h4{margin:0 0 8px;color:#205d7d}
+.speech-chunk{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:11px 0;
+ border-top:1px solid #e2eaf0}
+.speech-chunk span{flex:1 1 240px;overflow-wrap:anywhere;line-height:1.6}
+.speech-chunk button,.speech-blind-panel button{border:1px solid #b5d4e2;
+ background:#eaf4f9;color:#205976;border-radius:8px;padding:7px 10px;cursor:pointer}
+.speech-focus-word small{color:#4b7286}
+@media(max-width:500px){.speech-chunk span{flex-basis:100%}}
