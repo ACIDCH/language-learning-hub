@@ -30,7 +30,7 @@ describe('browser-native IPA engine and whole-text alignment',()=>{
   expect(sliceIpaText(raw).join('')).toBe(raw);
   expect(sliceIpaText(raw).every(x=>x.length<=240)).toBe(true);
  });
- it('preserves Chinese teaching notes and processes foreign words separately',()=>{
+ it('preserves Chinese teaching notes and processes foreign words separately',async()=>{
   const raw='中文解释 Bonjour，发音';
   expect(splitIpaRuns(raw).map(x=>x.source).join('')).toBe(raw);
   const res=await toIpaLine(raw,'fr');
