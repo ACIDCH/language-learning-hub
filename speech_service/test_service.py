@@ -40,3 +40,46 @@ def test_alignment_preserves_phone_time_and_diacritics():
     assert result[1]['start_s']==.3
     assert align(['y'],[])[0]['kind']=='not_detected'
     assert align([],observed)[0]['kind']=='additional'
+
+
+def test_empty_phoneme_output_is_unscorable_without_false_error_list():
+    from contextlib import nullcontext
+    from types import SimpleNamespace
+    from .core import Evaluator
+
+    class DummyInput:
+        def unsqueeze(self, _): return self
+
+    class DummyTorch:
+        def inference_mode(self): return nullcontext()
+        def from_numpy(self, _): return DummyInput()
+
+    class DummyLogits:
+        def __getitem__(self, _): return self
+        def argmax(self, dim=-1): return self
+        def tolist(self): return [0, 0, 0, 0]
+
+    evaluator = Evaluator.__new__(Evaluator)
+    evaluator.torch = DummyTorch()
+    evaluator.model = lambda _: SimpleNamespace(logits=DummyLogits())
+    evaluator.expected = lambda text, language: (['ɛ̃'], [])
+    result = evaluator.evaluate(np.full(16000, .05, dtype=np.float32), 'un', 'fr')
+    assert result['status'] == 'unscorable'
+    assert result['canScore'] is False
+    assert result['reason'] == 'empty_model_output'
+    assert result['observed'] == []
+    assert result['phones'] == []
+    assert result['reference'] == ['ɛ̃']
+    assert result['elapsed_ms'] >= 0
+
+
+def test_empty_reference_is_unscorable_and_skips_model():
+    from .core import Evaluator
+
+    evaluator = Evaluator.__new__(Evaluator)
+    evaluator.expected = lambda text, language: ([], ['?'])
+    result = evaluator.evaluate(np.full(16000, .05, dtype=np.float32), '?', 'fr')
+    assert result['status'] == 'unscorable'
+    assert result['reason'] == 'empty_reference'
+    assert result['reference_unknown'] == ['?']
+    assert result['phones'] == []

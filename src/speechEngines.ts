@@ -1,7 +1,7 @@
 /** Speech results deliberately keep transcript evidence separate from acoustics. */
 export type SpeechEngineId = 'browser-asr' | 'optional-local-evaluator' | 'optional-remote-evaluator';
 export type PhoneObservation = {expected:string|null;phone:string|null;kind:'match'|'different'|'not_detected'|'additional';start_s?:number;end_s?:number};
-export type SpeechResult = {engine:SpeechEngineId;status:'transcript-only'|'experimental'|'unscorable';canScore:false;transcript?:string;phones?:PhoneObservation[];elapsed_ms?:number;signal?:{duration_s:number;rms:number;low_energy_s:number;rejection:string|null};reference_unknown?:string[]};
+export type SpeechResult = {engine:SpeechEngineId;status:'transcript-only'|'experimental'|'unscorable';canScore:false;transcript?:string;phones?:PhoneObservation[];elapsed_ms?:number;signal?:{duration_s:number;rms:number;low_energy_s:number;rejection:string|null};reference_unknown?:string[];reason?:'empty_model_output'|'empty_reference'};
 export const ENGINES = [
  {id:'browser-asr',name:'免费基础：浏览器文字识别',available:true},
  {id:'optional-local-evaluator',name:'实验性：本机声学音素观察',available:true},
