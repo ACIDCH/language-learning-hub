@@ -14,6 +14,24 @@ export default function AudioVault({client,session,courseId,assets,status}:Props
  const [playUrl,setPlayUrl]=useState('');
  const [playId,setPlayId]=useState('');
  const [playNote,setPlayNote]=useState('');
+ const [uploadedNames,setUploadedNames]=useState<Set<string>|null>(null);
+ const [vaultMessage,setVaultMessage]=useState('正在检查私人音频存储…');
+ const [vaultRefresh,setVaultRefresh]=useState(0);
+ useEffect(()=>{
+  let active=true;
+  setUploadedNames(null);setVaultMessage('正在检查已上传的音频…');
+  void client.storage.from(BUCKET).list(session.user.id,{limit:100})
+    .then(({data,error})=>{
+      if(!active)return;
+      if(error){setVaultMessage('音频存储检查暂不可用：'+error.message);return;}
+      const files=new Set((data||[]).map(f=>f.name).filter(n=>
+        /^fr-a1-u(0[1-9]|1[0-2])-(dialogue|reading)\\.mp3$/.test(n)));
+      setUploadedNames(files);
+      setVaultMessage(files.size===24?'24 首 A1 练习音频已经上传，无需重复导入。':
+        '当前识别到 '+files.size+'/24 首 A1 练习音频；缺失的文件仍可通过 ZIP 补齐。');
+    });
+  return ()=>{active=false;};
+ },[client,session.user.id,vaultRefresh]);
  useEffect(()=>{setPlayUrl('');setPlayId('');setPlayNote('');},[courseId,session.user.id]);
  async function play(asset:Asset){
   setPlayUrl('');setPlayId('');setPlayNote('正在检查私人文件…');
@@ -65,17 +83,20 @@ export default function AudioVault({client,session,courseId,assets,status}:Props
    }
    setImportNote('24 首音频处理完毕：新增 '+added+'，已存在 '+existing+'。请选择一首试听；内容质量验收仍需人工完成。');
    setZip(null);
+   setVaultRefresh(n=>n+1);
   }catch(err){setImportNote('同步中止：'+(err instanceof Error?err.message:String(err))+'。已上传的文件仍被保留，可选择同一个 ZIP 继续。');}
   finally{setWorking(false);}
  }
  return <section className="cloud-reader" aria-label="私人教学音频">
   <h3>法语 A1 教学音频</h3>
   <p className="cloud-disclaimer">{status}</p>
+  <p className="cloud-disclaimer" role="status">{vaultMessage}</p>
   {assets.length>0?
    <ul className="cloud-audio-list">
     {assets.map(asset=><li key={asset.asset_id}>
      <span>{asset.filename} · {Math.round(asset.duration_seconds)} 秒
-       {asset.audio_verified?' · 人工已验收':' · 待人工试听验收'}</span>
+       {asset.audio_verified?' · 人工已验收':' · 待人工试听验收'}
+       {uploadedNames&&(uploadedNames.has(asset.asset_id+'.mp3')?' · 已上传':' · 尚未上传')}</span>
      {asset.source_kind==='synthetic_practice'&&<button type="button"
        onClick={()=>{void play(asset)}}>检查并播放</button>}
     </li>)}
@@ -87,7 +108,7 @@ export default function AudioVault({client,session,courseId,assets,status}:Props
   </div>}
   {playNote&&<p role="status" className="cloud-disclaimer">{playNote}</p>}
   <details className="cloud-audio-import">
-   <summary>首次同步 A1 的 24 首私人音频（只需一次）</summary>
+   <summary>{uploadedNames?.size===24?'音频已经齐全 · 重新核验或恢复备份':'同步或补齐 A1 的 24 首私人音频'}</summary>
    <p className="cloud-disclaimer">选择已核验的 A1 音频 ZIP；先对全部 24 个文件做 SHA-256 检查，再上传到本人账号的私人 Supabase Storage。Drive 原件不变，无需解压文件。</p>
    <form onSubmit={importZip} className="cloud-fields">
     <label>音频 ZIP<input type="file" accept=".zip" disabled={working} onChange={e=>setZip(e.target.files?.[0]||null)}/></label>
