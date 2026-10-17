@@ -80,6 +80,10 @@ class Evaluator:
                 'limitations': ['No human phoneme calibration', 'G2P reference may differ by accent or context', 'CTC emission times are approximate, not forced alignment', 'Stress, liaison correctness and rhythm quality are not scored']}
         if signal['rejection']: return {**base, 'status': 'unscorable', 'phones': [], 'elapsed_ms': 0}
         expected, unknown = self.expected(text, language)
+        if not expected:
+            return {**base, 'status': 'unscorable', 'reason': 'empty_reference',
+                    'reference': [], 'reference_unknown': unknown, 'observed': [],
+                    'phones': [], 'elapsed_ms': round((time.perf_counter()-start)*1000, 1)}
         # Wav2Vec2 feature extractor: zero-mean/unit-variance normalization at 16 kHz.
         x = (audio - audio.mean()) / np.sqrt(audio.var() + 1e-7)
         with self.torch.inference_mode():
@@ -94,5 +98,9 @@ class Evaluator:
             elif token > 3:
                 spans.append({'phone': self.labels[token], 'start_s': round(i*step, 3), 'end_s': round((i+1)*step, 3)})
             previous = token
+        if not spans:
+            return {**base, 'status': 'unscorable', 'reason': 'empty_model_output',
+                    'reference': expected, 'reference_unknown': unknown, 'observed': [],
+                    'phones': [], 'elapsed_ms': round((time.perf_counter()-start)*1000, 1)}
         return {**base, 'reference': expected, 'reference_unknown': unknown, 'observed': spans,
                 'phones': align(expected, spans), 'elapsed_ms': round((time.perf_counter()-start)*1000, 1)}
