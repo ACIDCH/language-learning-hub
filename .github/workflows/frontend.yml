@@ -34,6 +34,18 @@ jobs:
         run: node --experimental-strip-types --test tests/resourceInventory.test.mjs
       - name: Test speech V3 lifecycle, privacy and fallback adapters
         run: npx vitest run --config vitest.speech.config.ts
+      - name: Validate learning route ordering and real completion states
+        run: node --experimental-strip-types --test tests/learningRoadmap.test.mjs
+      - name: Check 353 recorded audio references and licensing display contract
+        run: node --experimental-strip-types --test tests/referenceCatalog.test.mjs
+      - name: Verify multilingual QA markers and independent human approval
+        run: node --test tests/qaMarkers.test.mjs
+      - name: Validate original 24-unit beginner course quality contract
+        run: node --experimental-strip-types --test tests/foundationCurriculum.test.mjs
+      - name: Verify full 108-course learning guidance and prerequisites
+        run: node --experimental-strip-types --test tests/courseGuide.test.mjs
+      - name: Audit real section headings and manual QA separation
+        run: node --experimental-strip-types --test tests/stageAudit.test.mjs
       - name: Check TypeScript and build
         run: npm run build
       - name: Confirm Cloudflare root-path static bundle and verified public lessons

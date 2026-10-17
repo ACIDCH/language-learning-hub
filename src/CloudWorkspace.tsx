@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createClient, type Session } from '@supabase/supabase-js';
 import './cloud.css';
 import { cloudPublicDefaults } from './cloudPublicDefaults';
@@ -10,6 +10,14 @@ import SpeechPractice from './SpeechPractice';
 import CourseAudit from './CourseAudit';
 import LessonReview from './LessonReview';
 import LearningOverview from './LearningOverview';
+import AccountAccess from './AccountAccess';
+import LearningPath from './LearningPath';
+import ReferenceIndex from './ReferenceIndex';
+import {ReferenceAudio} from './ReferenceAudio';
+import FoundationStudio from './FoundationStudio';
+import CourseGuide from './CourseGuide';
+import StageCoverage from './StageCoverage';
+import type {PracticeCheck} from './courseGuide';
 
 type Course = { id: string; language: string; level: string; track: string | null;
   title: string; unit: number; text_complete: boolean; audio_verified: boolean; publishable: boolean };
@@ -37,8 +45,7 @@ async function worker<T>(path: string, token?: string, init: RequestInit = {}): 
 
 export default function CloudWorkspace() {
   const [session, setSession] = useState<Session | null>(null);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [recoveryMode,setRecoveryMode] = useState(false);
   const [catalog, setCatalog] = useState<Course[]>([]);
   const [selected, setSelected] = useState('');
   const [state, setState] = useState<State>({});
@@ -50,7 +57,7 @@ export default function CloudWorkspace() {
   const [courseQuery,setCourseQuery]=useState('');
   const [status, setStatus] = useState('正在连接…');
   const [busy, setBusy] = useState(false);
-  const [activePanel,setActivePanel] = useState<'learn'|'audio'|'speech'|'review'|'resources'|'ai'>('learn');
+  const [activePanel,setActivePanel] = useState<'learn'|'path'|'foundation'|'audio'|'speech'|'review'|'resources'|'ai'>('learn');
   const [overviewVersion,setOverviewVersion] = useState(0);
   const [progressReadyKey,setProgressReadyKey] = useState('');
   const selectedRef=useRef('');
@@ -67,7 +74,10 @@ export default function CloudWorkspace() {
     let alive = true;
     const auth = client;
     void auth.auth.getSession().then(({data}) => {if (alive) setSession(data.session);});
-    const {data:listener} = auth.auth.onAuthStateChange((_event,next) => setSession(next));
+    const {data:listener} = auth.auth.onAuthStateChange((event,next) => {
+      setSession(next);
+      if(event==='PASSWORD_RECOVERY')setRecoveryMode(true);
+    });
     void worker<{courses:Course[]}>('/v1/courses')
       .then(({courses}) => {if (alive) {setCatalog(courses); chooseCourse(courses[0]?.id || ''); setStatus('课程索引已加载。');}})
       .catch(e => {if (alive) setStatus('云端索引暂不可用：' + e.message);});
@@ -170,19 +180,6 @@ export default function CloudWorkspace() {
       } catch { setStatus('浏览器存储不可用，请及时同步并保留当前页面。'); }
     }
   }
-  async function signIn(e: FormEvent) {
-    e.preventDefault();
-    if (!client) return;
-    setBusy(true);
-    try {
-      const {error} = await client.auth.signInWithPassword({email,password});
-      if (error) throw error;
-      setPassword('');
-      setStatus('登录成功。');
-    } catch(e) {setStatus('登录失败：' + (e instanceof Error ? e.message : String(e)));}
-    finally {setBusy(false);}
-  }
-
   async function save() {
     if (!session || !selected || busy || !progressReady) return;
     const courseId=selected;
@@ -215,7 +212,7 @@ export default function CloudWorkspace() {
   return <main className="cloud-workspace">
     <header className="cloud-head">
       <div><p className="cloud-kicker">LANGUAGE HUB / CLOUD</p><h1>云端学习进度</h1>
-        <p>跨设备学习进度与私人课程草稿阅读。Google Drive 保留原件，必要教学音频将分阶段接入。</p></div>
+        <p>108 课云端学习、私人音频与进度记录。Google Drive 保留课程和音频原件。</p></div>
       <a href="/" className="cloud-return">返回公开课程 →</a>
     </header>
     {!configured ? <section className="cloud-panel" role="status">
@@ -224,16 +221,10 @@ export default function CloudWorkspace() {
       <p>无需在浏览器中粘贴任何数据库管理密钥。</p>
     </section> : <>
       <p role="status" className="cloud-status">{status}</p>
-      {!session ? <section className="cloud-panel"><h2>现有学习账号登录</h2>
-        <p>目前仅支持已经创建的 Supabase 学习账号。邮箱验证码注册和找回密码将在独立验收后接入。</p>
-        <form className="cloud-fields" onSubmit={signIn}>
-          <label>邮箱<input required type="email" autoComplete="username" value={email}
-            onChange={e=>setEmail(e.target.value)}/></label>
-          <label>密码<input required type="password" autoComplete="current-password" value={password}
-            onChange={e=>setPassword(e.target.value)}/></label>
-          <button disabled={busy} type="submit">登录</button>
-        </form>
-      </section> : <section className="cloud-panel">
+      {!session || recoveryMode ? <AccountAccess client={client!}
+        recoveryMode={recoveryMode}
+        onRecoveryComplete={()=>setRecoveryMode(false)}
+        onNotify={setStatus}/> : <section className="cloud-panel">
         <div className="cloud-flex"><h2>课程进度与笔记</h2>
           <button type="button" onClick={()=>{void client?.auth.signOut();setState({});setProgressReadyKey('');}}>退出账户</button></div>
         <p className="cloud-account">已登录：{session.user.email}</p>
@@ -257,7 +248,7 @@ export default function CloudWorkspace() {
         </label>
         <nav className="cloud-panel-tabs" aria-label="学习系统模块">
           {([
-            ['learn','课程学习'],['audio','课程音频'],['speech','跟读练习'],
+            ['learn','课程学习'],['path','学习路径'],['foundation','零基础补充'],['audio','课程音频'],['speech','跟读练习'],
             ['review','质量审校'],['resources','资源管理'],['ai','AI 教师（稍后）']
           ] as const).map(([id,label])=>
             <button type="button" key={id} onClick={()=>setActivePanel(id)}
@@ -296,18 +287,30 @@ export default function CloudWorkspace() {
             {currentLesson&&<>
               <p className="cloud-disclaimer">来源版本：{currentLesson.source_version} ·
                 状态：{currentLesson.qa_status==='approved'?'正文已审核':'草稿/待核验'}</p>
+              <CourseGuide courseId={selected} disabled={!progressReady||busy}
+                check={(state.practiceChecklist&&typeof state.practiceChecklist==='object'&&
+                  !Array.isArray(state.practiceChecklist)?state.practiceChecklist:{}) as PracticeCheck}
+                onChange={practiceChecklist=>editState({practiceChecklist})}/>
               <LessonReader text={currentLesson.content_body} courseId={currentLesson.course_id}
                 stage={typeof state.stage==='number'?state.stage:0}
                 onChangeStage={stage=>editState({stage})}/>
             </>}
           </section>
         </>}
-        {activePanel==='audio'&&<AudioVault client={client!} session={session}
-          courseId={selected} assets={audioAssets} status={audioStatus}/>}
+        {activePanel==='path'&&<LearningPath client={client!} session={session}
+          courses={catalog} onChoose={id=>{chooseCourse(id);setActivePanel('learn');}}/>}
+        {activePanel==='foundation'&&<FoundationStudio client={client!} session={session}
+          onOpenCourses={()=>setActivePanel('learn')}/>}
+        {activePanel==='audio'&&<>
+          <AudioVault client={client!} session={session}
+            courseId={selected} assets={audioAssets} status={audioStatus}/>
+          <ReferenceAudio lessonId={selected}/>
+        </>}
         {activePanel==='speech'&&<SpeechPractice key={selected} lessonText={currentLesson?.content_body||''}
           language={catalog.find(c=>c.id===selected)?.language||'fr'}/>}
         {activePanel==='review'&&<>
-          <CourseAudit client={client!} session={session}
+          <StageCoverage client={client!} session={session} onSelect={chooseCourse}/>
+          <CourseAudit client={client!} session={session} refreshVersion={importNonce}
             onSelect={id=>chooseCourse(id)}/>
           {currentLesson&&<LessonReview key={currentLesson.course_id} client={client!}
             session={session} courseId={currentLesson.course_id}
@@ -315,8 +318,11 @@ export default function CloudWorkspace() {
             onUpdated={()=>setImportNonce(n=>n+1)}/>}
           <p className="cloud-disclaimer">课程内容结构检查与真正的教学审校是两个不同环节。</p>
         </>}
-        {activePanel==='resources'&&<BackupImporter client={client!} session={session}
-          knownIds={catalog.map(c=>c.id)} onImported={()=>setImportNonce(n=>n+1)}/>}
+        {activePanel==='resources'&&<>
+          <ReferenceIndex client={client!} session={session}/>
+          <BackupImporter client={client!} session={session}
+            knownIds={catalog.map(c=>c.id)} onImported={()=>setImportNonce(n=>n+1)}/>
+        </>}
         {activePanel==='ai'&&<section className="cloud-reader">
           <h3>AI 教师 · 最后阶段</h3>
           <p className="cloud-disclaimer">按照当前开发计划，暂不进行 AI 模型联调，也不会自动发起付费模型请求。</p>
