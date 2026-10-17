@@ -93,7 +93,7 @@ describe('everyday learning feedback and course practice',()=>{
   expect(recent.map(x=>x.id)).toEqual([4,5,6,7,8]);
  });
  it('starts with a curriculum-owned sample rather than generic content',()=>{
-  render(<SpeechPractice language="fr" initialTarget="Je suis étudiant." lessonText="Je suis étudiant.\nBonjour, Marie."/>);
+  render(<SpeechPractice language="fr" initialTarget="Je suis étudiant." lessonText={'Je suis étudiant.\nBonjour, Marie.'}/>);
   expect((screen.getByRole('textbox') as HTMLTextAreaElement).value).toBe('Je suis étudiant.');
   expect(screen.getByRole('button',{name:/Bonjour, Marie\./})).toBeTruthy();
   fireEvent.click(screen.getByRole('button',{name:'换一句练习 →'}));
