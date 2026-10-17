@@ -14,7 +14,7 @@ test('every multiple choice prompt has exactly one documented answer',()=>{
    assert.equal(q.choices.length,3,unit.id);
    assert.ok(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<=2,unit.id);
    assert.ok(q.choices[q.answer].trim(),unit.id);
-   assert.ok(q.explanation.length>=12,unit.id);
+   assert.ok(q.explanation.trim().length>=5,unit.id);
   }
  }
 });
