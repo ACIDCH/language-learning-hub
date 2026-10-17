@@ -8,8 +8,8 @@ const fullCorrect={};
 for(let i=0;i<unit.questions.length;i++)fullCorrect[String(i)]=unit.questions[i].answer;
 test('unused units remain unstarted and not due',()=>{
  const result=buildFoundationReviewPlan(FOUNDATION_UNITS,{},now);
- assert.equal(result.length,24);
- assert.equal(result.filter(r=>r.status==='unstarted').length,24);
+ assert.equal(result.length,48);
+ assert.equal(result.filter(r=>r.status==='unstarted').length,48);
 });
 test('incomplete attempt is due, not falsely marked reviewed',()=>{
  const rows=buildFoundationReviewPlan([unit],{[unit.id]:{
