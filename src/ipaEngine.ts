@@ -27,6 +27,19 @@ export async function getPhonemizer():Promise<G2PEngine>{
 export function clearIpaCache(){cache.clear();}
 // Numbers and non-Latin scripts remain unchanged. Accent marks and contractions survive.
 const WORD=/[\p{Script=Latin}][\p{Script=Latin}\p{M}\p{N}'’\-]*/gu;
+/** Piper's French rule engine encodes composite IPA phonemes as PUA values.
+ * Decode its documented PUA v2 symbols before any learner-facing display.
+ * Unknown PUA codes remain unavailable rather than showing unreadable glyphs.
+ */
+const PUA_IPA:Record<string,string>={
+ '\uE01E':'y', '\uE056':'ɛ̃', '\uE057':'ɑ̃', '\uE058':'ɔ̃',
+ '\uE063':'œ̃', '\uE062':'ɔɪ'
+};
+export function decodePuaIpa(tokens:string[]):string{
+ return tokens.join('').replace(/[\uE000-\uF8FF]/gu,char=>PUA_IPA[char]||'\uFFFD')
+   .normalize('NFC').trim();
+}
+
 export function splitIpaRuns(text:string):{source:string;convert:boolean}[]{
  if(!text)return [];
  const out:{source:string;convert:boolean}[]=[];
@@ -84,9 +97,9 @@ export async function toIpaLine(text:string,language:string):Promise<IpaLine>{
   let ipa='';
   try {
    const output=model.phonemize(span.source,{language:voice});
-   ipa=(output.tokens||[]).join('').normalize('NFC').trim();
+   ipa=decodePuaIpa(output.tokens||[]);
   }catch{/* unfamiliar words are left unannotated, never fabricated */}
-  if(/[\uE000-\uF8FF]/u.test(ipa))ipa='';
+  if(ipa.includes('\uFFFD'))ipa='';
   const unit:IpaUnit={source:span.source,ipa,kind:ipa?'mapped':'plain'};
   units.push(unit);
   cacheSet(wordKey,{source:span.source,units:[unit],generated:!!ipa});
