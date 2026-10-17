@@ -71,17 +71,16 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
   setDraft(d=>({...d,completed:false,answers:{...d.answers,[String(index)]:choice}}));
   setDirty(true);
  }
- function appendListeningNote(note:string){
-  setDraft(current=>{
-   const appended=[current.notes.trim(),note].filter(Boolean).join('\n\n');
-   if(appended.length>5000){
-    setStatus('听写文本超出了笔记 5000 字符上限，请先删减当前笔记后重新加入。');
-    return current;
-   }
-   setDirty(true);
-   setStatus('听写记录已加入当前课程笔记，点击保存后才会同步至 Supabase。');
-   return {...current,notes:appended};
-  });
+ function appendListeningNote(note:string):boolean{
+  const appended=[draft.notes.trim(),note].filter(Boolean).join('\n\n');
+  if(appended.length>5000){
+   setStatus('听写文本超出了笔记 5000 字符上限，请先删减当前笔记后重新加入。');
+   return false;
+  }
+  setDraft(current=>({...current,notes:appended}));
+  setDirty(true);
+  setStatus('听写记录已加入当前课程笔记，点击保存后才会同步至 Supabase。');
+  return true;
  }
  function pronounce(sentence:string){
   if(!('speechSynthesis' in window)){setStatus('该设备未提供系统语音朗读。');return;}
@@ -169,7 +168,7 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
     {segment===0&&<section>
       <h5>本课学习目标</h5><p>{unit.goal}</p>
       <p>学习顺序：先阅读情境与示例，再学习语法／规则，练习核心词汇，
-        完成听读与跟读，最后做两道自检题并进行开放表达。</p>
+        完成听读与跟读，最后做六道自检题并进行开放表达。</p>
       <p className="cloud-disclaimer">当前教材为项目原创初稿；个别口音、专业语音与语言学审校仍需复核。</p>
     </section>}
     {segment===1&&<section>
