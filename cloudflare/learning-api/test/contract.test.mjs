@@ -145,3 +145,40 @@ test('private lesson endpoint rejects invalid paths and origin',async()=>{
     headers:{Origin:'https://untrusted.example'}}),cfg,noCalls);
   assert.equal(badOrigin.status,403);
 });
+
+
+test('audio index is authenticated and returns metadata only, never fake playback links',async()=>{
+  let calls=0;
+  const fetcher=async(url,opts)=>{
+    calls++;
+    if(url.endsWith('/auth/v1/user'))return respond({id:'the-owner'});
+    assert.ok(url.includes('/rest/v1/course_audio_index?'));
+    assert.ok(url.includes('course_id=eq.fr-a1-u01'));
+    assert.ok(!url.includes('source_drive_file_id'));
+    assert.equal(opts.headers.Authorization,'Bearer valid.jwt.token');
+    return respond([{asset_id:'fr-a1-u01-dialogue',filename:'fr-a1-u01-dialogue.mp3',
+      duration_seconds:17,source_kind:'synthetic_practice',decoded:true,exact_text:true,
+      listened:false,audio_verified:false}]);
+  };
+  const noAuth=await handle(req('/v1/audio-index/fr-a1-u01'),cfg,fetcher);
+  assert.equal(noAuth.status,401);
+  assert.equal(calls,0);
+  const ok=await handle(req('/v1/audio-index/fr-a1-u01',{
+    headers:{Authorization:'Bearer valid.jwt.token',Origin:origin}}),cfg,fetcher);
+  assert.equal(ok.status,200);
+  const body=await ok.json();
+  assert.equal(body.assets.length,1);
+  assert.equal(body.playback_ready,false);
+  assert.equal(body.assets[0].audio_verified,false);
+  assert.ok(!JSON.stringify(body).includes('drive.google.com'));
+  assert.equal(ok.headers.get('cache-control'),'no-store');
+});
+test('unmapped audio returns an empty collection, not a playable asset',async()=>{
+ const fetcher=async(url)=>{
+  if(url.endsWith('/auth/v1/user'))return respond({id:'the-owner'});
+  return respond([]);
+ };
+ const ok=await handle(req('/v1/audio-index/en-ielts-reading-u01',
+   {headers:{Authorization:'Bearer valid.jwt.token'}}),cfg,fetcher);
+ assert.deepEqual((await ok.json()).assets,[]);
+});
