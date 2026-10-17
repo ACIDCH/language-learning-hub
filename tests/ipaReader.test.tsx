@@ -4,7 +4,7 @@ import IpaText from '../src/IpaText';
 import IpaStudio from '../src/IpaStudio';
 import LessonReader from '../src/LessonReader';
 import SpeechPractice from '../src/SpeechPractice';
-import {clearIpaCache,normalizeIpaLocale,sliceIpaText,splitIpaRuns,toIpaLine} from '../src/ipaEngine';
+import {clearIpaCache,decodePuaIpa,normalizeIpaLocale,sliceIpaText,splitIpaRuns,toIpaLine} from '../src/ipaEngine';
 
 const mockPhoneme=vi.fn((text:string,_options:{language:'en'|'fr'})=>({
  tokens:text==='bonjour'?['bɔ̃','ʒ','u','ʁ']:text==='read'?['ɹ','iː']:['ˈ','h','ɛ','l','oʊ']
@@ -15,6 +15,11 @@ vi.mock('@piper-plus/g2p',()=>({
 afterEach(()=>{cleanup();clearIpaCache();mockPhoneme.mockClear();});
 
 describe('browser-native IPA engine and whole-text alignment',()=>{
+ it('decodes French composite nasal IPA instead of showing unreadable PUA glyphs',()=>{
+  expect(decodePuaIpa(['b','\uE058','ʒ','u','ʁ'])).toBe('bɔ̃ʒuʁ');
+  expect(decodePuaIpa(['\uE01E','\uE056','\uE057','\uE063'])).toBe('yɛ̃ɑ̃œ̃');
+  expect(decodePuaIpa(['\uE031'])).toContain('\uFFFD');
+ });
  it('uses English and French locales, including New Zealand/GB support',()=>{
   expect(normalizeIpaLocale('en')).toBe('en-US');
   expect(normalizeIpaLocale('en-NZ')).toBe('en-GB');
