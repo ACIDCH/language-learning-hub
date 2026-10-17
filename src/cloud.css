@@ -126,3 +126,24 @@
  .cloud-panel-tabs{gap:6px}
  .cloud-workspace .cloud-panel-tabs button{padding:8px 10px;font-size:.86rem}
 }
+
+
+/* Learning path and account pages */
+.account-actions{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
+.cloud-workspace .account-actions button{background:#edf5f9;border:1px solid #cee2ec;color:#285c76}
+.cloud-workspace .account-actions button.active{background:#17658b;color:white}
+.account-error{padding:12px;color:#8b2323;background:#fff1f1;border:1px solid #e8abab;border-radius:8px}
+.learning-ladder{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;
+ counter-reset:ladder;list-style:none;padding:0}
+.learning-ladder li{border:1px solid #d5e3ea;padding:12px;border-radius:10px;background:#f9fbfd;display:grid;gap:5px}
+.learning-ladder li strong{color:#164e6b}
+.learning-ladder li span{font-size:.85rem;color:#516776}
+.path-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}
+.path-progress{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin:15px 0}
+.path-progress span{font-size:.85rem;color:#587287}
+.path-units{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:20px}
+.cloud-workspace .path-units button{display:flex;flex-direction:column;align-items:flex-start;gap:5px;
+ text-align:left;background:#f2f7fb;color:#183c53;border:1px solid #d7e6ec;white-space:normal}
+.path-unit-id,.path-units small{font-size:.8rem;color:#58778a}
+@media(max-width:650px){.learning-ladder{grid-template-columns:1fr 1fr}
+.path-units,.path-filters{grid-template-columns:1fr}}
