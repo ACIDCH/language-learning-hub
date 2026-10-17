@@ -1,53 +1,46 @@
-/** Browser-only English/French G2P. Lazy eSpeak-NG WASM via ephone.
- * It generates reference IPA, not a validated dictionary or acoustic score.
+/** Browser-only, MIT-licensed IPA estimates from @piper-plus/g2p.
+ * Never claims dictionary-verified pronunciations or acoustic scores.
+ * Word segmentation guarantees IPA is never placed under the wrong letters.
  */
 export type IpaLocale='en-US'|'en-GB'|'fr-FR';
 export type IpaUnit={source:string;ipa:string;kind:'mapped'|'fallback'|'plain'};
 export type IpaLine={source:string;units:IpaUnit[];generated:boolean};
-
-type EphoneMapped={text:string;ipa:string;asSpans:()=>[string,string][]};
-type Phonemizer={setVoice:(name:string)=>unknown;textToIpaWithSourceMap:(text:string)=>EphoneMapped};
-type LanguagePack=(module:Phonemizer)=>Promise<void>;
-const MAX_CACHE=320;
+type G2PEngine={phonemize:(text:string,options:{language:'en'|'fr'})=>{tokens:string[]}};
+const MAX_CACHE=700;
 const cache=new Map<string,IpaLine>();
-let enginePromise:Promise<Phonemizer>|undefined;
+let enginePromise:Promise<G2PEngine>|undefined;
 
 export function normalizeIpaLocale(language:string):IpaLocale{
- if(language.toLowerCase().startsWith('fr'))return 'fr-FR';
- if(language.toLowerCase()==='en-gb'||language.toLowerCase()==='en-nz'||language.toLowerCase()==='en-au')return 'en-GB';
+ const name=language.toLowerCase();
+ if(name.startsWith('fr'))return 'fr-FR';
+ if(name==='en-gb'||name==='en-nz'||name==='en-au')return 'en-GB';
  return 'en-US';
 }
-export async function getPhonemizer():Promise<Phonemizer>{
- if(!enginePromise)enginePromise=import('ephone').then(async pkg=>{
-  // en_all covers US and GB; roa contains fr. Both are bundled only when IPA is opened.
-  const packs=pkg as unknown as {default:(p:LanguagePack[])=>Promise<Phonemizer>;
-    en_all:LanguagePack;roa:LanguagePack};
-  if(!packs.en_all||!packs.roa)throw new Error('浏览器音标语言包缺失');
-  return packs.default([packs.en_all,packs.roa]);
+export async function getPhonemizer():Promise<G2PEngine>{
+ if(!enginePromise)enginePromise=import('@piper-plus/g2p').then(async pkg=>{
+  // Only EN/FR rule-based modules; no TTS engine, Python service or extra model weights.
+  const created=await pkg.G2P.create({languages:['en','fr']});
+  return created as G2PEngine;
  }).catch(error=>{enginePromise=undefined;throw error;});
  return enginePromise;
 }
 export function clearIpaCache(){cache.clear();}
-
-const LATIN=/[A-Za-zÀ-ÖØ-öø-ÿŒœÆæ]/u;
-const HAN=/[\u3400-\u9fff]/u;
-/** Split foreign-language spans from Chinese instruction text. Preserve every character. */
+// Numbers and non-Latin scripts remain unchanged. Accent marks and contractions survive.
+const WORD=/[\p{Script=Latin}][\p{Script=Latin}\p{M}\p{N}'’\-]*/gu;
 export function splitIpaRuns(text:string):{source:string;convert:boolean}[]{
  if(!text)return [];
  const out:{source:string;convert:boolean}[]=[];
- // Non-Latin scripts are left untouched. Latin words around Chinese remain annotated.
- const tokens=text.match(/[A-Za-zÀ-ÖØ-öø-ÿŒœÆæ][A-Za-zÀ-ÖØ-öø-ÿŒœÆæ\p{M}\p{N}'’\s.,;:!?()\-]*/gu)||[];
- let offset=0;
- for(const token of tokens){
-  const pos=text.indexOf(token,offset);
-  if(pos>offset)out.push({source:text.slice(offset,pos),convert:false});
-  out.push({source:token,convert:true});
-  offset=pos+token.length;
+ let end=0;
+ for(const match of text.matchAll(WORD)){
+  const pos=match.index;
+  if(pos>end)out.push({source:text.slice(end,pos),convert:false});
+  out.push({source:match[0],convert:true});
+  end=pos+match[0].length;
  }
- if(offset<text.length)out.push({source:text.slice(offset),convert:false});
+ if(end<text.length)out.push({source:text.slice(end),convert:false});
  return out;
 }
-/** Prevent long synchronous WASM runs; chunks concatenate exactly to original. */
+/** Prevent long synchronous G2P runs; chunks always reconstitute the original. */
 export function sliceIpaText(text:string,max=240):string[]{
  if(!text)return [];
  const pieces:string[]=[];
@@ -73,38 +66,31 @@ function cacheSet(key:string,value:IpaLine){
 export async function toIpaLine(text:string,language:string):Promise<IpaLine>{
  const locale=normalizeIpaLocale(language),key=locale+'|'+text;
  const found=cache.get(key);if(found)return found;
- if(!LATIN.test(text)||HAN.test(text)){
-  if(!LATIN.test(text)){
-   const plain={source:text,units:[{source:text,ipa:'',kind:'plain' as const}],generated:false};
-   cacheSet(key,plain);return plain;
-  }
-  const runs=splitIpaRuns(text);
-  const units:IpaUnit[]=[];
-  for(const run of runs){
-   if(!run.convert)units.push({source:run.source,ipa:'',kind:'plain'});
-   else units.push(...(await toIpaLine(run.source,locale)).units);
-  }
-  const mixed={source:text,units,generated:units.some(u=>u.ipa.length>0)};
-  cacheSet(key,mixed);return mixed;
+ const spans=splitIpaRuns(text);
+ if(!spans.some(x=>x.convert)){
+  const plain:{source:string;units:IpaUnit[];generated:boolean}={
+   source:text,units:[{source:text,ipa:'',kind:'plain'}],generated:false
+  };
+  cacheSet(key,plain);return plain;
  }
- const engine=await getPhonemizer();
- engine.setVoice(locale==='fr-FR'?'fr':locale==='en-GB'?'en-GB-x-rp':'en-US');
- const output=engine.textToIpaWithSourceMap(text);
- // Mapping may fail for punctuation, unfamiliar scripts or some eSpeak versions:
- // never show phonetics under the WRONG graphemes.
- const candidates=output.asSpans();
- const reconstructed=candidates.map(([source])=>source).join('');
- let units:IpaUnit[];
- if(reconstructed===text&&candidates.some(([,ipa])=>ipa.trim())){
-  units=candidates.map(([source,ipa])=>({
-   source,ipa:ipa.trim(),kind:ipa.trim()?'mapped' as const:'plain' as const
-  }));
- }else if(output.ipa.trim()){
-  units=[{source:text,ipa:output.ipa.trim(),kind:'fallback'}];
- }else{
-  units=[{source:text,ipa:'',kind:'plain'}];
+ const model=await getPhonemizer();
+ const voice=locale==='fr-FR'?'fr':'en';
+ const units:IpaUnit[]=[];
+ for(const span of spans){
+  if(!span.convert){units.push({source:span.source,ipa:'',kind:'plain'});continue;}
+  const wordKey=locale+'|'+span.source.toLocaleLowerCase();
+  const cached=cache.get(wordKey);
+  if(cached){units.push({...cached.units[0],source:span.source});continue;}
+  let ipa='';
+  try {
+   const output=model.phonemize(span.source,{language:voice});
+   ipa=(output.tokens||[]).join('').normalize('NFC').trim();
+  }catch{/* unfamiliar words are left unannotated, never fabricated */}
+  if(/[\uE000-\uF8FF]/u.test(ipa))ipa='';
+  const unit:IpaUnit={source:span.source,ipa,kind:ipa?'mapped':'plain'};
+  units.push(unit);
+  cacheSet(wordKey,{source:span.source,units:[unit],generated:!!ipa});
  }
- const result={source:text,units,generated:units.some(u=>u.ipa.length>0)};
- cacheSet(key,result);
- return result;
+ const out={source:text,units,generated:units.some(u=>u.ipa.length>0)};
+ cacheSet(key,out);return out;
 }
