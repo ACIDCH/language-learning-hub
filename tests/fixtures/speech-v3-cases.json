@@ -1,0 +1,452 @@
+[
+  {
+    "id": "fr-01",
+    "language": "fr",
+    "text": "pain",
+    "focus": "nasal ɛ̃",
+    "stage": "word",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "fr-02",
+    "language": "fr",
+    "text": "bon",
+    "focus": "nasal ɔ̃",
+    "stage": "word",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "fr-03",
+    "language": "fr",
+    "text": "banc",
+    "focus": "nasal ɑ̃",
+    "stage": "word",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "fr-04",
+    "language": "fr",
+    "text": "un",
+    "focus": "nasal œ̃ / ɛ̃ variant",
+    "stage": "word",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "fr-05",
+    "language": "fr",
+    "text": "tu",
+    "focus": "y versus u",
+    "stage": "word",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "fr-06",
+    "language": "fr",
+    "text": "tout",
+    "focus": "u versus y",
+    "stage": "word",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "fr-07",
+    "language": "fr",
+    "text": "Les amis arrivent.",
+    "focus": "obligatory liaison z",
+    "stage": "sentence",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "fr-08",
+    "language": "fr",
+    "text": "Un petit ami.",
+    "focus": "liaison t",
+    "stage": "sentence",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "fr-09",
+    "language": "fr",
+    "text": "Il est en haut.",
+    "focus": "liaison n; h aspiré context",
+    "stage": "sentence",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "fr-10",
+    "language": "fr",
+    "text": "Nous avons deux enfants.",
+    "focus": "liaison z",
+    "stage": "sentence",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "fr-11",
+    "language": "fr",
+    "text": "Je voudrais un café.",
+    "focus": "rhythmic groups / schwa",
+    "stage": "sentence",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "fr-12",
+    "language": "fr",
+    "text": "Elle habite à Paris.",
+    "focus": "enchaînement",
+    "stage": "sentence",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "fr-13",
+    "language": "fr",
+    "text": "Vous êtes ici.",
+    "focus": "liaison z",
+    "stage": "sentence",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "fr-14",
+    "language": "fr",
+    "text": "Je prends le train demain matin.",
+    "focus": "nasal contrasts",
+    "stage": "sentence",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "fr-15",
+    "language": "fr",
+    "text": "Bonjour, je m’appelle Julie. Je suis française et j’habite à Lyon.",
+    "focus": "phrase groups / baseline",
+    "stage": "paragraph",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "en-01",
+    "language": "en",
+    "text": "ship",
+    "focus": "ɪ versus iː",
+    "stage": "word",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "en-02",
+    "language": "en",
+    "text": "sheep",
+    "focus": "iː versus ɪ",
+    "stage": "word",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "en-03",
+    "language": "en",
+    "text": "thin",
+    "focus": "θ versus s",
+    "stage": "word",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "en-04",
+    "language": "en",
+    "text": "then",
+    "focus": "ð versus d",
+    "stage": "word",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "en-05",
+    "language": "en",
+    "text": "cat",
+    "focus": "æ versus ɛ",
+    "stage": "word",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "en-06",
+    "language": "en",
+    "text": "cut",
+    "focus": "ʌ versus ɑ",
+    "stage": "word",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "en-07",
+    "language": "en",
+    "text": "I can see three sheep.",
+    "focus": "vowel and θ contrast",
+    "stage": "sentence",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "en-08",
+    "language": "en",
+    "text": "Please put it in the box.",
+    "focus": "linking consonant-vowel",
+    "stage": "sentence",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "en-09",
+    "language": "en",
+    "text": "She bought a red bag.",
+    "focus": "æ versus ɛ",
+    "stage": "sentence",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "en-10",
+    "language": "en",
+    "text": "Could you repeat that slowly?",
+    "focus": "sentence stress / weak forms",
+    "stage": "sentence",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "en-11",
+    "language": "en",
+    "text": "I want to record a record.",
+    "focus": "lexical stress distinction",
+    "stage": "sentence",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "en-12",
+    "language": "en",
+    "text": "We live in a small village.",
+    "focus": "v versus w",
+    "stage": "sentence",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "en-13",
+    "language": "en",
+    "text": "The ship leaves at six.",
+    "focus": "ɪ / consonant clusters",
+    "stage": "sentence",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "en-14",
+    "language": "en",
+    "text": "I thought they were thirty.",
+    "focus": "θ and ð / rhotic variants",
+    "stage": "sentence",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  },
+  {
+    "id": "en-15",
+    "language": "en",
+    "text": "Today I am going to the library. I would like to practise my English with a friend.",
+    "focus": "phrase rhythm / baseline",
+    "stage": "paragraph",
+    "human_audio": null,
+    "human_phone_labels": null,
+    "conditions": [
+      "clean_synthetic",
+      "noise_10db_synthetic",
+      "slow_synthetic"
+    ],
+    "limitations": "Synthetic text/audio only; not a learner pronunciation ground truth. Accent and non-native human recordings pending."
+  }
+]

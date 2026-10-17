@@ -1,5 +1,6 @@
-import {useEffect,useRef,useState} from 'react';
-import {lessonPractice} from './speechLesson';
+import {lazy,Suspense,useEffect,useRef,useState} from 'react';
+import {ENGINES,browserResult,lessonPractice,type SpeechEngineId} from './speechEngines';
+const LocalPronunciation=lazy(()=>import('./LocalPronunciation'));
 import {analyzeTranscript,practiceHint} from './speechCompare';
 import {appendAttempt,learnerCoaching,type RecentAttempt} from './speechCoach';
 
@@ -30,6 +31,7 @@ const ERRORS:Record<string,string>={
 export {analyzeTranscript as compareTranscript} from './speechCompare';
 export default function SpeechPractice({language,lessonText="",initialTarget=""}:{language:string;lessonText?:string;initialTarget?:string}){
  const [target,setTarget]=useState(initialTarget);
+ const [mode,setMode]=useState<SpeechEngineId>('browser-asr');
  const [step,setStep]=useState<'word'|'sentence'|'paragraph'>('sentence');
  const watchdog=useRef<ReturnType<typeof setTimeout>|undefined>(undefined);
  const [heard,setHeard]=useState('');
@@ -113,7 +115,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget=""}
       if(result.isFinal){
         if(finished)return;
         finished=true;
-        setHeard(first);setInterim('');
+        setHeard(browserResult(first).transcript||'');setInterim('');
         const options:string[]=[];
         for(let j=0;j<Math.min(result.length,3);j++){
           const candidate=result[j]?.transcript?.trim();
@@ -169,6 +171,11 @@ export default function SpeechPractice({language,lessonText="",initialTarget=""}
    <li>选一个短句</li><li>听设备示范</li><li>开始跟读并查看识别文字</li><li>听错词、再练一次</li>
   </ol>
   <div className="cloud-fields">
+    <details className="speech-advanced">
+     <summary>识别方式与高级实验功能（默认使用免费浏览器识别）</summary>
+     <label>练习引擎<select aria-label="练习引擎" value={mode} onChange={e=>{updateTarget(target);setMode(e.target.value as SpeechEngineId);}}>{ENGINES.map(x=><option key={x.id} value={x.id} disabled={!x.available}>{x.name}</option>)}</select></label>
+     <p className="cloud-disclaimer">本机音素观察需要另外启动模型，只做辅助观察；无需为日常跟读安装。</p>
+    </details>
     <label>练习长度<select aria-label="练习长度" value={step} onChange={e=>setStep(e.target.value as typeof step)}><option value="word">短词</option><option value="sentence">短句</option><option value="paragraph">段落（声学模式每次不超过 12 秒）</option></select></label>
     {!!examples.length&&<div className="speech-presets" aria-label="当前课程练习片段">{examples.map((s,i)=><button key={i} onClick={()=>updateTarget(s)}>{s}</button>)}</div>}
     <label>练习短句（{locale}）
@@ -201,7 +208,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget=""}
     </label>
     <div className="speech-actions">
       <button type="button" onClick={()=>speak()} disabled={listening}>① 听示范</button>
-      <button type="button" onClick={listen} disabled={listening}>
+      <button type="button" onClick={listen} disabled={listening||mode!=='browser-asr'}>
         {listening?'正在识别…':attempts?'再跟读一次':'② 开始跟读'}
       </button>
       {listening&&<button type="button" onClick={end}>结束收音</button>}
@@ -213,6 +220,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget=""}
     </div>
     <p className="cloud-disclaimer" role="status" aria-live="polite">{note}</p>
     {interim&&<p className="speech-interim">识别中：{interim}</p>}
+    {mode==='optional-local-evaluator'&&<Suspense fallback={<p>正在加载录音组件…</p>}><LocalPronunciation target={target} language={lang}/></Suspense>}
     {heard&&<div className="cloud-ai-result" aria-label="文字识别练习反馈">
       <p><strong>浏览器转写：</strong>{heard}</p>
       {report&&<>

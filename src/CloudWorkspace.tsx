@@ -15,7 +15,7 @@ import LearningPath from './LearningPath';
 import ReferenceIndex from './ReferenceIndex';
 import {ReferenceAudio} from './ReferenceAudio';
 import FoundationStudio from './FoundationStudio';
-import CourseGuide from './CourseGuide';
+import CourseGuide from './CourseGuide.tsx';
 import StageCoverage from './StageCoverage';
 import type {PracticeCheck} from './courseGuide';
 
@@ -306,7 +306,7 @@ export default function CloudWorkspace() {
             courseId={selected} assets={audioAssets} status={audioStatus}/>
           <ReferenceAudio lessonId={selected}/>
         </>}
-        {activePanel==='speech'&&<SpeechPractice key={selected}
+        {activePanel==='speech'&&<SpeechPractice key={selected} lessonText={currentLesson?.content_body||''}
           language={catalog.find(c=>c.id===selected)?.language||'fr'}/>}
         {activePanel==='review'&&<>
           <StageCoverage client={client!} session={session} onSelect={chooseCourse}/>
