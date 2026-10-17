@@ -307,7 +307,7 @@ export default function CloudWorkspace() {
           <ReferenceAudio lessonId={selected}/>
         </>}
         {activePanel==='speech'&&<SpeechPractice key={selected} lessonText={currentLesson?.content_body||''}
-          language={catalog.find(c=>c.id===selected)?.language||'fr'}/>}
+          language={catalog.find(c=>c.id===selected)?.language||'fr'} accessToken={session.access_token}/>}
         {activePanel==='review'&&<>
           <StageCoverage client={client!} session={session} onSelect={chooseCourse}/>
           <CourseAudit client={client!} session={session} refreshVersion={importNonce}
