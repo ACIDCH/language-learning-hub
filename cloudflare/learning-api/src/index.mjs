@@ -64,7 +64,7 @@ export async function handle(request, env = {}, fetchFn = fetch) {
     return output({service:'language-hub-api',version:1,
       ready:Boolean(backend(env)), modules:{catalog:backend(env)?'configured':'not-connected',
         progress:backend(env)?'configured':'not-connected',
-        fullText:'requires-authorized-Drive-adapter',ai:'not-connected'}},200,cors);
+        fullText:'owner-scoped-snapshot-adapter',ai:'not-connected'}},200,cors);
   }
   const config = backend(env);
   if (!config) return output({error:'backend_not_configured'},503,cors);
@@ -84,6 +84,31 @@ export async function handle(request, env = {}, fetchFn = fetch) {
       if (!result.ok) return output({error:'catalog_unavailable'},502,cors);
       if (!Array.isArray(result.data)) return output({error:'bad_upstream_response'},502,cors);
       return output({courses:result.data},200,cors);
+    }
+    // Owner-only manuscripts are derivative personal snapshots; full-source
+    // Google Drive originals stay private and are never exposed by URL.
+    const lessonMatch = new RegExp('^/v1/private-courses/([^/]+)$').exec(url.pathname);
+    if (lessonMatch && verb === 'GET') {
+      let courseId;
+      try { courseId = decodeURIComponent(lessonMatch[1]); }
+      catch { return output({error:'invalid_course_id'},400,cors); }
+      if (!COURSE_ID.test(courseId)) return output({error:'invalid_course_id'},400,cors);
+      const token = tokenOf(request);
+      if (!token) return output({error:'authentication_required'},401,cors);
+      const uid = await resolveUser(token,config,fetchFn);
+      if (!uid) return output({error:'invalid_session'},401,cors);
+      const params = new URLSearchParams({
+        select:'course_id,content_body,source_version,qa_status,updated_at',
+        user_id:'eq.'+uid,
+        course_id:'eq.'+courseId,
+        limit:'1'
+      });
+      const row = await upstream(fetchFn, config.origin+'/rest/v1/private_lesson_content?'+params, {
+        headers:{apikey:config.key,Authorization:'Bearer '+token,Accept:'application/json'}
+      });
+      if (!row.ok || !Array.isArray(row.data)) return output({error:'lesson_unavailable'},502,cors);
+      if (!row.data.length) return output({error:'lesson_not_synced'},404,cors);
+      return output({lesson:row.data[0]},200,cors);
     }
     const match = /^\/v1\/progress\/([^/]+)$/.exec(url.pathname);
     if (match && (verb === 'GET' || verb === 'PUT')) {

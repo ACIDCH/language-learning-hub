@@ -22,7 +22,7 @@ test('status explicitly reports what is and is not deployed',async()=>{
   const d=await r.json();
   assert.equal(d.ready,true);
   assert.equal(d.modules.ai,'not-connected');
-  assert.equal(d.modules.fullText,'requires-authorized-Drive-adapter');
+  assert.equal(d.modules.fullText,'owner-scoped-snapshot-adapter');
   const notConfigured=await handle(req('/v1/status'));
   assert.equal((await notConfigured.json()).ready,false);
 });
@@ -99,4 +99,49 @@ test('unfinished AI and content endpoints cannot pretend to succeed',async()=>{
   const r=await handle(req('/v1/ai/explain',{method:'POST'}),cfg);
   assert.equal(r.status,501);
   assert.equal((await r.json()).error,'not_implemented');
+});
+
+test('private content requires verified owner session and returns only safe fields',async()=>{
+  let requests=0;
+  const fetcher=async(url,opts)=>{
+    requests++;
+    if(url.endsWith('/auth/v1/user')) return respond({id:'owner-uid'});
+    assert.ok(url.includes('/rest/v1/private_lesson_content?'));
+    assert.ok(url.includes('user_id=eq.owner-uid'));
+    assert.ok(url.includes('course_id=eq.fr-a1-u01'));
+    assert.ok(!url.includes('source_drive_file_id'));
+    assert.ok(!url.includes('content_sha256'));
+    assert.equal(opts.headers.Authorization,'Bearer valid.jwt.token');
+    return respond([{course_id:'fr-a1-u01',content_body:'# Bonjour',source_version:'v4-draft',qa_status:'draft'}]);
+  };
+  const anonymous=await handle(req('/v1/private-courses/fr-a1-u01'),cfg,fetcher);
+  assert.equal(anonymous.status,401);
+  assert.equal(requests,0);
+  const good=await handle(req('/v1/private-courses/fr-a1-u01',{
+    headers:{Authorization:'Bearer valid.jwt.token',Origin:origin}}),cfg,fetcher);
+  assert.equal(good.status,200);
+  const body=await good.json();
+  assert.equal(body.lesson.content_body,'# Bonjour');
+  assert.equal(body.lesson.qa_status,'draft');
+  assert.equal(good.headers.get('cache-control'),'no-store');
+  assert.equal(requests,2);
+});
+test('private content is not available when not imported and never calls Drive',async()=>{
+  const fetcher=async(url)=>{
+    if(url.endsWith('/auth/v1/user')) return respond({id:'owner-uid'});
+    assert.ok(url.includes('/rest/v1/private_lesson_content?'));
+    return respond([]);
+  };
+  const result=await handle(req('/v1/private-courses/fr-a1-u12',{
+    headers:{Authorization:'Bearer valid.jwt.token'}}),cfg,fetcher);
+  assert.equal(result.status,404);
+  assert.equal((await result.json()).error,'lesson_not_synced');
+});
+test('private lesson endpoint rejects invalid paths and origin',async()=>{
+  const noCalls=()=>{throw Error('unexpected fetch')};
+  const path=await handle(req('/v1/private-courses/%2Fbad'),cfg,noCalls);
+  assert.equal(path.status,400);
+  const badOrigin=await handle(req('/v1/private-courses/fr-a1-u01',{
+    headers:{Origin:'https://untrusted.example'}}),cfg,noCalls);
+  assert.equal(badOrigin.status,403);
 });

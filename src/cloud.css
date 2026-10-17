@@ -22,3 +22,7 @@
 .cloud-completed{margin:12px 0 20px}
 @media(max-width:650px){.cloud-head{display:block}.cloud-stages{grid-template-columns:repeat(2,minmax(0,1fr))}.cloud-flex{align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){.cloud-workspace *{scroll-behavior:auto!important;transition:none!important}}
+
+.cloud-reader{border:1px solid #d5e4ea;border-radius:12px;background:#f7fafb;margin:20px 0;padding:clamp(14px,3vw,24px)}
+.cloud-reader h3{margin:0 0 8px}
+.cloud-manuscript{display:block;max-height:60vh;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font-family:inherit;font-size:.95rem;line-height:1.78;background:#fff;color:#233845;border:1px solid #dce5eb;border-radius:10px;padding:16px;tab-size:2}
