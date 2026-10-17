@@ -26,3 +26,25 @@
 .cloud-reader{border:1px solid #d5e4ea;border-radius:12px;background:#f7fafb;margin:20px 0;padding:clamp(14px,3vw,24px)}
 .cloud-reader h3{margin:0 0 8px}
 .cloud-manuscript{display:block;max-height:60vh;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font-family:inherit;font-size:.95rem;line-height:1.78;background:#fff;color:#233845;border:1px solid #dce5eb;border-radius:10px;padding:16px;tab-size:2}
+
+
+/* Six-stage manuscript reader: all original text retained, no HTML injection. */
+.lesson-reader{display:grid;gap:12px;margin-top:16px}
+.lesson-stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.cloud-workspace .lesson-stages button{font-size:.9rem;background:#eff5f8;color:#26485b;border-color:#d2e1e8;min-height:44px}
+.cloud-workspace .lesson-stages button.stage-active{color:white;background:#17658b;border-color:#17658b}
+.lesson-preamble{background:#edf4f8;border-radius:10px;padding:12px 14px}
+.lesson-preamble summary{cursor:pointer;font-weight:600}
+.lesson-paper{min-height:170px;background:white;border:1px solid #dce5eb;border-radius:12px;padding:clamp(16px,3vw,27px)}
+.lesson-stage-head{display:flex;align-items:flex-start;gap:10px;margin:0 0 18px}
+.lesson-stage-head h4{margin:0;line-height:1.5;color:#19475e;font-size:1.15rem;overflow-wrap:anywhere}
+.lesson-index{font-size:1.3rem;font-weight:700;color:#17658b}
+.lesson-paragraphs{font-family:inherit;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.95;color:#233845}
+.lesson-controls{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.cloud-workspace .lesson-controls button{background:#f3f8fb;color:#17658b}
+.cloud-workspace .lesson-controls button:disabled{opacity:.4}
+.cloud-course-results{display:grid;gap:6px;margin-bottom:14px;max-height:230px;overflow:auto}
+.cloud-workspace .cloud-course-results button{text-align:left;background:#f1f7fa;color:#164968;border-color:#d0e2ea}
+.cloud-audio-list{padding-left:18px;line-height:1.6;color:#39556a;max-height:200px;overflow:auto}
+.cloud-audio-list li{margin-bottom:6px}
+@media(max-width:650px){.lesson-stages{grid-template-columns:repeat(2,minmax(0,1fr))}.lesson-controls{justify-content:center}.lesson-paper{padding:14px}.cloud-audio-list{padding-left:20px}}
