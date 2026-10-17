@@ -1,6 +1,7 @@
 import {useEffect,useState,type FormEvent} from 'react';
 import type {SupabaseClient,Session} from '@supabase/supabase-js';
 import {hashAudio,unpackA1Audio} from './audioZip';
+import AudioReview from './AudioReview';
 
 type Asset={asset_id:string;filename:string;duration_seconds:number;source_kind:string;
  decoded:boolean;exact_text:boolean;listened:boolean;audio_verified:boolean};
@@ -82,6 +83,7 @@ export default function AudioVault({client,session,courseId,assets,status}:Props
    <p className="cloud-disclaimer">当前课程没有关联音频文件。外部参考资源尚未完成课程映射。</p>}
   {playUrl&&<div className="audio-player"><p>{playId}</p>
     <audio key={playUrl} controls preload="none" src={playUrl}>浏览器不支持音频播放</audio>
+    <AudioReview key={playId} client={client} session={session} assetId={playId}/>
   </div>}
   {playNote&&<p role="status" className="cloud-disclaimer">{playNote}</p>}
   <details className="cloud-audio-import">
