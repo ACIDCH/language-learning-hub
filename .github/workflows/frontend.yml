@@ -32,6 +32,8 @@ jobs:
         run: node --experimental-strip-types --test tests/learningProgress.test.mjs
       - name: Verify already-synced private inventory helpers
         run: node --experimental-strip-types --test tests/resourceInventory.test.mjs
+      - name: Validate learning route ordering and real completion states
+        run: node --experimental-strip-types --test tests/learningRoadmap.test.mjs
       - name: Check TypeScript and build
         run: npm run build
       - name: Confirm Cloudflare root-path static bundle and verified public lessons
