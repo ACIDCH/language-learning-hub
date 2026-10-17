@@ -124,3 +124,30 @@ describe('everyday learning feedback and course practice',()=>{
   expect(screen.queryByText(/本句跟读记录/)).toBeNull();
  });
 });
+
+
+describe('optional phoneme reference display contract',()=>{
+ it('accepts a finite practice match index while keeping professional scoring disabled',async()=>{
+  vi.stubGlobal('fetch',vi.fn().mockResolvedValue({ok:true,json:async()=>({
+   engine:'optional-local-evaluator',status:'experimental',canScore:false,phones:[],
+   practice_reference:{available:true,percent:80,calibrated:false,reference_phones:5,
+    observed_phones:5,method:'generated_g2p_vs_greedy_ctc_edit_agreement',alignment_edits:1}
+  })}));
+  const out=await evaluateLocal(new Int16Array(16000),'hello','en',new AbortController().signal);
+  expect(out.canScore).toBe(false);
+  expect(out.practice_reference?.percent).toBe(80);
+ });
+ it('rejects NaN, out-of-range or fabricated calibrated values from local evaluator',async()=>{
+  for(const wrong of [{available:true,percent:101,calibrated:false},
+                       {available:true,percent:NaN,calibrated:false},
+                       {available:true,percent:95,calibrated:true},
+                       {available:false,percent:0,calibrated:false}]){
+   vi.stubGlobal('fetch',vi.fn().mockResolvedValue({ok:true,json:async()=>({
+    engine:'optional-local-evaluator',status:'experimental',canScore:false,phones:[],
+    practice_reference:wrong
+   })}));
+   await expect(evaluateLocal(new Int16Array(16000),'hello','en',new AbortController().signal))
+    .rejects.toThrow('不兼容的音素参考值');
+  }
+ });
+});

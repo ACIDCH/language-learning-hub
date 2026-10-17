@@ -35,6 +35,30 @@ def align(expected, observed):
     return out[::-1]
 
 
+def practice_reference(expected, observed, aligned, unknown=None):
+    """Uncalibrated sequence-agreement index for optional learner feedback.
+
+    This compares machine-decoded phones against eSpeak G2P reference phones.
+    It is *not* a human pronunciation accuracy, PER, accent grade or GOP.
+    Suppress short/unsupported/poor-coverage cases instead of fake precision.
+    """
+    n, m = len(expected), len(observed)
+    result = {
+        'available': False, 'percent': None, 'calibrated': False,
+        'reference_phones': n, 'observed_phones': m,
+        'method': 'generated_g2p_vs_greedy_ctc_edit_agreement'
+    }
+    if unknown: return {**result, 'reason': 'unsupported_reference'}
+    if n < 4: return {**result, 'reason': 'short_reference'}
+    if m < 3: return {**result, 'reason': 'insufficient_observation'}
+    if m < n * .5 or m > n * 1.8:
+        return {**result, 'reason': 'unstable_coverage'}
+    edits = sum(phone['kind'] != 'match' for phone in aligned)
+    percent = int(max(0, min(100, round(100 * (1 - edits / max(n, m))))))
+    return {**result, 'available': True, 'percent': percent,
+            'reason': None, 'alignment_edits': edits}
+
+
 def signal_info(audio):
     duration = len(audio) / 16000
     rms = float(np.sqrt(np.mean(audio ** 2))) if len(audio) else 0.
@@ -102,5 +126,7 @@ class Evaluator:
             return {**base, 'status': 'unscorable', 'reason': 'empty_model_output',
                     'reference': expected, 'reference_unknown': unknown, 'observed': [],
                     'phones': [], 'elapsed_ms': round((time.perf_counter()-start)*1000, 1)}
+        aligned = align(expected, spans)
         return {**base, 'reference': expected, 'reference_unknown': unknown, 'observed': spans,
-                'phones': align(expected, spans), 'elapsed_ms': round((time.perf_counter()-start)*1000, 1)}
+                'phones': aligned, 'practice_reference': practice_reference(expected, spans, aligned, unknown),
+                'elapsed_ms': round((time.perf_counter()-start)*1000, 1)}

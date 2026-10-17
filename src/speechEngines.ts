@@ -1,10 +1,11 @@
 /** Speech results deliberately keep transcript evidence separate from acoustics. */
 export type SpeechEngineId = 'browser-asr' | 'optional-local-evaluator' | 'optional-remote-evaluator';
 export type PhoneObservation = {expected:string|null;phone:string|null;kind:'match'|'different'|'not_detected'|'additional';start_s?:number;end_s?:number};
-export type SpeechResult = {engine:SpeechEngineId;status:'transcript-only'|'experimental'|'unscorable';canScore:false;transcript?:string;phones?:PhoneObservation[];elapsed_ms?:number;signal?:{duration_s:number;rms:number;low_energy_s:number;rejection:string|null};reference_unknown?:string[];reason?:'empty_model_output'|'empty_reference'};
+export type PracticeReference = {available:boolean;percent:number|null;calibrated:false;reference_phones:number;observed_phones:number;method:'generated_g2p_vs_greedy_ctc_edit_agreement';reason?:'short_reference'|'insufficient_observation'|'unstable_coverage'|'unsupported_reference'|null;alignment_edits?:number};
+export type SpeechResult = {engine:SpeechEngineId;status:'transcript-only'|'experimental'|'unscorable';canScore:false;transcript?:string;phones?:PhoneObservation[];elapsed_ms?:number;signal?:{duration_s:number;rms:number;low_energy_s:number;rejection:string|null};reference_unknown?:string[];reason?:'empty_model_output'|'empty_reference';practice_reference?:PracticeReference};
 export const ENGINES = [
  {id:'browser-asr',name:'免费基础：浏览器文字识别',available:true},
- {id:'optional-local-evaluator',name:'实验性：本机声学音素观察',available:true},
+ {id:'optional-local-evaluator',name:'实验性：本机音素练习参考值',available:true},
  {id:'optional-remote-evaluator',name:'远程声学服务（未配置，不发送录音）',available:false},
 ] as const;
 export function browserResult(transcript:string):SpeechResult {return {engine:'browser-asr',status:'transcript-only',canScore:false,transcript};}
@@ -19,6 +20,12 @@ export async function evaluateLocal(pcm:Int16Array,target:string,language:string
   const response=await fetch('http://127.0.0.1:8776/evaluate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pcm:btoa(encoded),target,language}),signal,cache:'no-store',credentials:'omit'});
   const value=await response.json(); if(!response.ok)throw new Error(typeof value.detail==='string'?value.detail:'本机声学请求被拒绝');
   if(value.engine!=='optional-local-evaluator'||value.canScore!==false||!Array.isArray(value.phones))throw new Error('声学服务返回了不兼容的结果');
+  const ref=value.practice_reference;
+  if(ref!==undefined&&(
+    typeof ref!=='object'||ref===null||typeof ref.available!=='boolean'||ref.calibrated!==false||
+    (ref.available&&(!Number.isInteger(ref.percent)||ref.percent<0||ref.percent>100))||
+    (!ref.available&&ref.percent!==null)
+  ))throw new Error('声学服务返回了不兼容的音素参考值');
   return value;
  } finally {bytes.fill(0);pcm.fill(0);encoded='';}
 }

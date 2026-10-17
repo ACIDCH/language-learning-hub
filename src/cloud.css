@@ -321,3 +321,16 @@ border:1px solid var(--foundation-border);padding:10px;overflow-wrap:anywhere}
 @media(max-width:780px){.speech-learning-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.speech-learning-steps{grid-template-columns:1fr}
 .speech-focus-word strong{flex-basis:100%}}
+
+
+/* Optional local phoneme-sequence reference: clearly distinct from proficiency scores. */
+.speech-practice-reference{border:1px solid #bfd9e7;background:#f0f8fc;padding:14px 16px;
+ border-radius:11px;margin:14px 0;line-height:1.6}
+.speech-practice-reference>p:first-child{margin:0 0 8px;display:flex;align-items:baseline;
+ flex-wrap:wrap;gap:10px}
+.speech-practice-reference-number{font-size:1.65rem;font-weight:800;color:#145675;
+ font-variant-numeric:tabular-nums}
+.speech-practice-reference p{overflow-wrap:anywhere;margin:6px 0}
+.speech-practice-reference small{color:#486779}
+.speech-reference-unavailable{border-left:3px solid #a1b6c7;background:#f6f9fb;
+ padding:10px 12px;color:#476070;border-radius:4px}

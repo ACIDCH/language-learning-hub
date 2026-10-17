@@ -83,3 +83,61 @@ def test_empty_reference_is_unscorable_and_skips_model():
     assert result['reason'] == 'empty_reference'
     assert result['reference_unknown'] == ['?']
     assert result['phones'] == []
+
+
+def test_practice_reference_is_a_machine_agreement_index_not_an_accuracy_score():
+    from .core import practice_reference
+    expected = ['h', 'ə', 'l', 'oʊ', 'w']
+    observed = [
+        {'phone': p, 'start_s': i * .1, 'end_s': (i + 1) * .1}
+        for i, p in enumerate(expected)
+    ]
+    perfect = practice_reference(expected, observed, align(expected, observed))
+    assert perfect['available'] is True
+    assert perfect['percent'] == 100
+    assert perfect['calibrated'] is False
+    assert perfect['method'] == 'generated_g2p_vs_greedy_ctc_edit_agreement'
+    changed = observed.copy()
+    changed[2] = {'phone': 'm', 'start_s': .2, 'end_s': .3}
+    estimate = practice_reference(expected, changed, align(expected, changed))
+    assert estimate['percent'] == 80
+    assert estimate['alignment_edits'] == 1
+
+
+def test_practice_reference_rejects_short_and_unstable_evidence():
+    from .core import practice_reference
+    make = lambda chars: [{'phone': x} for x in chars]
+    expected = list('abcdef')
+    assert practice_reference(['ɛ̃', 'p'], make('xp'), align(['ɛ̃', 'p'], make('xp')))['reason'] == 'short_reference'
+    assert practice_reference(expected, [], align(expected, []))['reason'] == 'insufficient_observation'
+    assert practice_reference(expected, make('ab'), align(expected, make('ab')))['reason'] == 'insufficient_observation'
+    assert practice_reference(expected, make('abc'), align(expected, make('abc')))['available'] is True
+    assert practice_reference(expected, make('abcdefghijkl'), align(expected, make('abcdefghijkl')))['reason'] == 'unstable_coverage'
+    assert practice_reference(expected, make('abcdef'), align(expected, make('abcdef')), ['?'])['reason'] == 'unsupported_reference'
+
+
+def test_practice_reference_never_converts_v3_into_professional_score():
+    from contextlib import nullcontext
+    from types import SimpleNamespace
+    from .core import Evaluator
+
+    class Dummy:
+        def unsqueeze(self, _): return self
+    class Torch:
+        def inference_mode(self): return nullcontext()
+        def from_numpy(self, _): return Dummy()
+    class Logits:
+        def __getitem__(self, _): return self
+        def argmax(self, dim=-1): return self
+        def tolist(self): return [4, 0, 5, 0, 6, 0, 7, 0, 8]
+    evaluator = Evaluator.__new__(Evaluator)
+    evaluator.torch = Torch()
+    evaluator.labels = {4: 'h', 5: 'ə', 6: 'l', 7: 'oʊ', 8: 'w'}
+    evaluator.model = lambda _: SimpleNamespace(logits=Logits())
+    evaluator.expected = lambda _text, _language: (['h', 'ə', 'l', 'oʊ', 'w'], [])
+    result = evaluator.evaluate(np.full(16000, .05, dtype=np.float32), 'hello', 'en')
+    assert result['status'] == 'experimental'
+    assert result['canScore'] is False
+    assert 'score' not in result
+    assert result['practice_reference']['available'] is True
+    assert result['practice_reference']['percent'] == 100
