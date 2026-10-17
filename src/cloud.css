@@ -204,3 +204,23 @@ border:1px solid var(--foundation-border);padding:10px;overflow-wrap:anywhere}
 .cloud-workspace .foundation-menu button{flex:0 0 190px}
 .foundation-stage-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}
 .foundation-filters>span{width:100%;margin-left:0}}
+
+
+.course-study-guide{border:1px solid #d7e4ec;border-radius:12px;padding:clamp(13px,2.5vw,21px);
+ background:#f8fbfd;margin:18px 0}
+.course-guide-head{display:flex;justify-content:space-between;align-items:start;gap:12px}
+.course-guide-head h3{margin:.1em 0;font-size:1.05rem;color:#214e68}
+.course-guide-head p{color:#587081;font-size:.85rem;margin:3px 0}
+.course-guide-head>span{font-size:.8rem;color:#28627c;white-space:nowrap}
+.course-can-do{border-left:3px solid #3185a9;padding-left:12px}
+.course-guide-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.course-guide-fields>div{background:#fff;border:1px solid #dfebf1;border-radius:10px;padding:10px 14px}
+.course-guide-fields h4{margin:0;font-size:.9rem}
+.course-guide-fields ul{padding-left:18px;margin:9px 0}
+.course-guide-task{background:#eaf5fa;border-radius:9px;padding:11px 14px;margin:12px 0}
+.course-guide-task p{margin:6px 0}
+.course-guide-checks{display:grid;gap:10px;margin:14px 0;padding:12px;border:1px solid #d1e1e9;border-radius:9px}
+.course-guide-checks legend{font-weight:600;font-size:.87rem}
+.course-guide-checks label{display:flex!important;align-items:flex-start;gap:8px;font-weight:400!important}
+.course-guide-checks input{margin-top:.25em}
+@media(max-width:650px){.course-guide-fields{grid-template-columns:1fr}}
