@@ -3,6 +3,7 @@ import type {Session,SupabaseClient} from '@supabase/supabase-js';
 import {FOUNDATION_UNITS,FOUNDATION_PHASES,foundationUnitsFor} from './foundationCurriculum';
 import type {FoundationLanguage,FoundationRecord} from './foundationTypes';
 import FoundationRecall from './FoundationRecall';
+import {makeVocabularyChecks} from './foundationQuiz';
 
 type Draft={answers:Record<string,number>;notes:string;completed:boolean};
 const EMPTY:Draft={answers:{},notes:'',completed:false};
@@ -77,11 +78,13 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
     setStatus('正在使用设备合成语音，不是经过人工审核的标准录音。');}
   catch{setStatus('浏览器无法启动系统语音朗读。');}
  }
- const correct=unit.questions.filter((q,i)=>draft.answers[String(i)]===q.answer).length;
- const answered=unit.questions.filter((_,i)=>Number.isInteger(draft.answers[String(i)])).length;
+ const vocabChecks=makeVocabularyChecks(unit.vocab);
+ const allQuestions=[...unit.questions,...vocabChecks];
+ const correct=allQuestions.filter((q,i)=>draft.answers[String(i)]===q.answer).length;
+ const answered=allQuestions.filter((_,i)=>Number.isInteger(draft.answers[String(i)])).length;
  async function save(complete=false){
   if(!loaded||busy)return;
-  if(complete&&answered!==unit.questions.length){setStatus('先完成本课两道自检题，再选择标记已学完；答错可以继续复习，不会强制评分。');return;}
+  if(complete&&answered!==allQuestions.length){setStatus('先尝试完成本课全部 '+allQuestions.length+' 道自检题再标记学完；答错可以继续复习，不会强制评分。');return;}
   setBusy(true);
   const current=unit.id;
   const next={...draft,completed:complete?true:draft.completed};
@@ -172,8 +175,8 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
         正式音素级评分由独立的 V3 实验模块负责，本课不计算未经验证的发音成绩。</p>
     </section>}
     {segment===5&&<section>
-      <h5>两道自检与解析</h5>
-      {unit.questions.map((q,i)=><fieldset className="foundation-question" key={i} disabled={!loaded||busy}>
+      <h5>本课核心规则与词汇自检（{allQuestions.length} 道）</h5>
+      {allQuestions.map((q,i)=><fieldset className="foundation-question" key={i} disabled={!loaded||busy}>
         <legend>{i+1}. {q.prompt}</legend>
         {q.choices.map((choice,j)=><label key={j}>
           <input type="radio" name={unit.id+'-q'+i} checked={draft.answers[String(i)]===j}
@@ -184,7 +187,7 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
           {draft.answers[String(i)]===q.answer?'理解正确。':'建议复习本课规则。'} {q.explanation}
         </p>}
        </fieldset>)}
-      <p>已回答 {answered}/{unit.questions.length}；选对 {correct} 道。自检用于复习，不作为考试等级认证。</p>
+      <p>已回答 {answered}/{allQuestions.length}；选对 {correct} 道。前两题检查本课概念，后续四题来自本课原始词汇表；自检用于复习，不作为考试等级认证。</p>
       <h5>开放表达</h5><p>{unit.production}</p>
       <label>我的答案与学习笔记<textarea value={draft.notes} maxLength={5000}
         disabled={!loaded||busy} rows={5}
@@ -196,7 +199,7 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
       <button type="button" disabled={!loaded||busy} onClick={()=>void save(false)}>
         {busy?'保存中…':'保存本课笔记与练习'}
       </button>
-      {segment===5&&<button type="button" disabled={!loaded||busy||answered!==2}
+      {segment===5&&<button type="button" disabled={!loaded||busy||answered!==allQuestions.length}
         onClick={()=>void save(true)}>标记学完</button>}
       {segment<5&&<button type="button" onClick={()=>setSegment(x=>Math.min(5,x+1))}>下一步</button>}
     </div>
