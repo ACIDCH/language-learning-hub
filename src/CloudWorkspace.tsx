@@ -14,6 +14,7 @@ import AccountAccess from './AccountAccess';
 import LearningPath from './LearningPath';
 import ReferenceIndex from './ReferenceIndex';
 import {ReferenceAudio} from './ReferenceAudio';
+import FoundationStudio from './FoundationStudio';
 
 type Course = { id: string; language: string; level: string; track: string | null;
   title: string; unit: number; text_complete: boolean; audio_verified: boolean; publishable: boolean };
@@ -53,7 +54,7 @@ export default function CloudWorkspace() {
   const [courseQuery,setCourseQuery]=useState('');
   const [status, setStatus] = useState('正在连接…');
   const [busy, setBusy] = useState(false);
-  const [activePanel,setActivePanel] = useState<'learn'|'path'|'audio'|'speech'|'review'|'resources'|'ai'>('learn');
+  const [activePanel,setActivePanel] = useState<'learn'|'path'|'foundation'|'audio'|'speech'|'review'|'resources'|'ai'>('learn');
   const [overviewVersion,setOverviewVersion] = useState(0);
   const [progressReadyKey,setProgressReadyKey] = useState('');
   const selectedRef=useRef('');
@@ -244,7 +245,7 @@ export default function CloudWorkspace() {
         </label>
         <nav className="cloud-panel-tabs" aria-label="学习系统模块">
           {([
-            ['learn','课程学习'],['path','学习路径'],['audio','课程音频'],['speech','跟读练习'],
+            ['learn','课程学习'],['path','学习路径'],['foundation','零基础补充'],['audio','课程音频'],['speech','跟读练习'],
             ['review','质量审校'],['resources','资源管理'],['ai','AI 教师（稍后）']
           ] as const).map(([id,label])=>
             <button type="button" key={id} onClick={()=>setActivePanel(id)}
@@ -291,6 +292,8 @@ export default function CloudWorkspace() {
         </>}
         {activePanel==='path'&&<LearningPath client={client!} session={session}
           courses={catalog} onChoose={id=>{chooseCourse(id);setActivePanel('learn');}}/>}
+        {activePanel==='foundation'&&<FoundationStudio client={client!} session={session}
+          onOpenCourses={()=>setActivePanel('learn')}/>}
         {activePanel==='audio'&&<>
           <AudioVault client={client!} session={session}
             courseId={selected} assets={audioAssets} status={audioStatus}/>
