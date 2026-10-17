@@ -32,6 +32,8 @@ jobs:
         run: node --experimental-strip-types --test tests/learningProgress.test.mjs
       - name: Verify already-synced private inventory helpers
         run: node --experimental-strip-types --test tests/resourceInventory.test.mjs
+      - name: Smoke-test actual English and French IPA WASM runtime
+        run: node --test tests/ipaRuntime.test.mjs
       - name: Test speech V3 lifecycle, privacy and fallback adapters
         run: npx vitest run --config vitest.speech.config.ts
       - name: Validate learning route ordering and real completion states
