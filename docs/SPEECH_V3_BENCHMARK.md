@@ -79,7 +79,7 @@ Raw evidence: [Whisper 4 threads](../reports/speech-v3-whisper-4threads.json), [
 ## Preserved defects and limitations
 
 - Clean synthetic `pain` was transcribed as `Bye!` by Whisper and as `b a` by the phone model. This is an observed system disagreement, not proof that a human nasal vowel was wrong.
-- Clean `un` produced no phones. The current core still returns `experimental` rather than `unscorable` for that empty decode; this gate requires improvement before promotion.
+- Clean `un` produced no phones in the originally recorded benchmark. The follow-up empty-output gate now returns `unscorable` with no learner-error sequence for such cases. **The committed 90-file benchmark and original summary were produced on the earlier `ef1e3c9` core, before this gate change; the aggregate `unscorable: 0` in that historical summary is not a post-fix measurement.**
 - Clean `ship` became `Cheers.` in Whisper; phone output was `ɕ eː p`. Short isolated words are particularly unreliable in this tiny corpus.
 - Clean `Vous êtes ici.` yielded `v u z e d z iː s iː`; strict sequence alignment can flag valid/synthetic variants and misassign errors.
 - The alignment is edit distance between generated G2P and predicted phone tokens. It is not forced alignment, word-localized evidence, GOP, or independently measured phone boundaries. Missing-phone rows have no reliable acoustic timestamp.
