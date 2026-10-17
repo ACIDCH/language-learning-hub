@@ -4,6 +4,10 @@ import './cloud.css';
 import { cloudPublicDefaults } from './cloudPublicDefaults';
 import BackupImporter from './BackupImporter';
 import LessonReader from './LessonReader';
+import AudioVault from './AudioVault';
+import AITutor from './AITutor';
+import SpeechPractice from './SpeechPractice';
+import CourseAudit from './CourseAudit';
 
 type Course = { id: string; language: string; level: string; track: string | null;
   title: string; unit: number; text_complete: boolean; audio_verified: boolean; publishable: boolean };
@@ -231,17 +235,13 @@ export default function CloudWorkspace() {
               onChangeStage={stage=>editState({stage})}/>
           </>}
         </section>
-        <section className="cloud-reader" aria-label="教学音频索引">
-          <h3>教学音频状态</h3>
-          <p className="cloud-disclaimer" role="status">{audioStatus}</p>
-          {audioAssets.length>0&&<>
-            <p className="cloud-disclaimer">当前课程索引：{audioAssets.length} 条；人工试听通过：{audioAssets.filter(a=>a.listened).length} 条；正式验收：{audioAssets.filter(a=>a.audio_verified).length} 条。</p>
-            <ul className="cloud-audio-list">
-              {audioAssets.map(a=><li key={a.asset_id}>{a.filename} · {Math.round(a.duration_seconds)} 秒 · {a.source_kind==='synthetic_practice'?'合成练习音频':'外部参考音频'} · {a.audio_verified?'已验收':'待试听验收'}</li>)}
-            </ul>
-          </>}
-          <p className="cloud-disclaimer">目前仅提供真实索引信息，不显示未经验证的播放器或下载链接。</p>
-        </section>
+        <AudioVault client={client!} session={session} courseId={selected}
+          assets={audioAssets} status={audioStatus}/>
+        <CourseAudit client={client!} session={session} onSelect={id=>setSelected(id)}/>
+        <SpeechPractice key={selected} language={catalog.find(c=>c.id===selected)?.language||'fr'}/>
+        <AITutor key={'ai-'+selected} session={session} apiBase={apiBase} courseId={selected}
+          language={catalog.find(c=>c.id===selected)?.language||'fr'}
+          lessonText={lesson?.content_body||''}/>
         <BackupImporter client={client!} session={session} knownIds={catalog.map(c=>c.id)}
           onImported={()=>setImportNonce(n=>n+1)}/>
         <fieldset className="cloud-stages"><legend>当前学习环节</legend>

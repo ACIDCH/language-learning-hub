@@ -1,3 +1,4 @@
+import {requestAi} from './ai.mjs';
 /**
  * Cloudflare Workers API adapter for a pre-existing Supabase Auth/Postgres project.
  *
@@ -22,8 +23,8 @@ function allowOrigin(request, env) {
   if (!origin) return {};
   if (!env.FRONTEND_ORIGIN || origin !== env.FRONTEND_ORIGIN) return null;
   return {'Access-Control-Allow-Origin': origin, 'Vary': 'Origin',
-    'Access-Control-Allow-Methods': 'GET, PUT, OPTIONS',
-    'Access-Control-Allow-Headers': 'authorization, content-type',
+    'Access-Control-Allow-Methods': 'GET, PUT, POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'authorization, content-type, x-ai-key',
     'Access-Control-Max-Age': '600'};
 }
 function backend(env) {
@@ -171,6 +172,28 @@ export async function handle(request, env = {}, fetchFn = fetch) {
         return output({error:'progress_write_failed'},502,cors);
       }
       return output({saved:true,progress:result.data[0]},200,cors);
+    }
+    if (url.pathname === '/v1/ai/assist' && verb === 'POST') {
+      const token=tokenOf(request);
+      if(!token)return output({error:'authentication_required'},401,cors);
+      const uid=await resolveUser(token,config,fetchFn);
+      if(!uid)return output({error:'invalid_session'},401,cors);
+      const size=Number(request.headers.get('content-length'))||0;
+      if(size>16000)return output({error:'payload_too_large'},413,cors);
+      const raw=await request.text();
+      if(new TextEncoder().encode(raw).byteLength>16000)return output({error:'payload_too_large'},413,cors);
+      let data;
+      try { data=JSON.parse(raw); }
+      catch { return output({error:'invalid_json'},400,cors); }
+      // Secrets are never part of the JSON body or the response; request-scoped only.
+      const apiKey=request.headers.get('X-AI-Key');
+      const result=await requestAi(data,apiKey,fetchFn);
+      if(result.status!==200){
+        const {status,...error}=result;
+        return output(error,status,cors);
+      }
+      const {status,...answer}=result;
+      return output(answer,200,cors);
     }
     if (url.pathname.startsWith('/v1/')) return output({error:'not_implemented'},501,cors);
     return output({error:'not_found'},404,cors);
