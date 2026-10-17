@@ -201,6 +201,7 @@ export default function App() {
         <nav className="main-nav" aria-label="主导航">
           <button className={view === 'courses' ? 'nav-active' : ''} onClick={() => { setView('courses'); setQuery(''); }}>课程</button>
           <button className={view === 'sources' ? 'nav-active' : ''} onClick={() => { setView('sources'); setQuery(''); }}>资料来源</button>
+          <a href="/cloud/" className="nav-link" title="跨设备进度管理">云端进度</a>
         </nav>
         <div className="status" aria-label="环境状态">教学原型 · 未连接账户</div>
       </div>
