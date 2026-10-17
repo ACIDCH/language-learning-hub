@@ -15,6 +15,8 @@ import LearningPath from './LearningPath';
 import ReferenceIndex from './ReferenceIndex';
 import {ReferenceAudio} from './ReferenceAudio';
 import FoundationStudio from './FoundationStudio';
+import CourseGuide from './CourseGuide';
+import type {PracticeCheck} from './courseGuide';
 
 type Course = { id: string; language: string; level: string; track: string | null;
   title: string; unit: number; text_complete: boolean; audio_verified: boolean; publishable: boolean };
@@ -284,6 +286,10 @@ export default function CloudWorkspace() {
             {currentLesson&&<>
               <p className="cloud-disclaimer">来源版本：{currentLesson.source_version} ·
                 状态：{currentLesson.qa_status==='approved'?'正文已审核':'草稿/待核验'}</p>
+              <CourseGuide courseId={selected} disabled={!progressReady||busy}
+                check={(state.practiceChecklist&&typeof state.practiceChecklist==='object'&&
+                  !Array.isArray(state.practiceChecklist)?state.practiceChecklist:{}) as PracticeCheck}
+                onChange={practiceChecklist=>editState({practiceChecklist})}/>
               <LessonReader text={currentLesson.content_body} courseId={currentLesson.course_id}
                 stage={typeof state.stage==='number'?state.stage:0}
                 onChangeStage={stage=>editState({stage})}/>
