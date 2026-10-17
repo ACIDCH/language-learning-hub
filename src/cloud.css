@@ -71,3 +71,15 @@
  gap:10px;background:#f6f9fb;border-color:#d7e6ed;color:#244e65;text-align:left;font-size:.85rem}
 .qa-rows span{color:#536e7e}
 @media(max-width:650px){.cloud-workspace .qa-rows button{flex-direction:column}}
+
+
+.review-checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
+.review-checklist label{display:flex!important;align-items:flex-start;gap:9px!important;
+ padding:10px;border:1px solid #d4e2ed;border-radius:9px;background:#f8fbfd;
+ font-weight:400!important;line-height:1.5}
+.review-checklist input{flex-shrink:0;margin-top:.25em}
+.review-actions{margin:14px 0;display:grid;gap:10px}
+.review-actions .cloud-toggle{font-weight:600!important}
+.audio-review{border-top:1px solid #d3e3eb;margin-top:18px;padding-top:14px}
+.audio-review h4{margin:0}
+@media(max-width:650px){.review-checklist{grid-template-columns:1fr}}
