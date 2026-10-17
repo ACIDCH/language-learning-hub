@@ -58,6 +58,8 @@ jobs:
         run: node --experimental-strip-types --test tests/foundationAlphabet.test.mjs
       - name: Test 0-30 English and French number-spelling and oral-drill references
         run: node --experimental-strip-types --test tests/foundationNumbers.test.mjs
+      - name: Test everyday speech feedback and course extraction
+        run: node --experimental-strip-types --test tests/speechCoach.test.mjs
       - name: Check TypeScript and build
         run: npm run build
       - name: Confirm Cloudflare root-path static bundle and verified public lessons
