@@ -6,19 +6,13 @@ import LessonReader from '../src/LessonReader';
 import SpeechPractice from '../src/SpeechPractice';
 import {clearIpaCache,normalizeIpaLocale,sliceIpaText,splitIpaRuns,toIpaLine} from '../src/ipaEngine';
 
-const mockSetVoice=vi.fn();
-const mockPhoneme=vi.fn((text:string)=>({
- text,ipa:text==='bonjour'?'bɔ̃ʒuʁ':text==='read'?'ɹiːd':'ˈhɛloʊ',
- asSpans:()=>[[text,text==='bonjour'?'bɔ̃ʒuʁ':text==='read'?'ɹiːd':'ˈhɛloʊ']] as [string,string][]
+const mockPhoneme=vi.fn((text:string,_options:{language:'en'|'fr'})=>({
+ tokens:text==='bonjour'?['bɔ̃','ʒ','u','ʁ']:text==='read'?['ɹ','iː']:['ˈ','h','ɛ','l','oʊ']
 }));
-vi.mock('ephone',()=>({
- default:vi.fn(async()=>({
-  setVoice:mockSetVoice,
-  textToIpaWithSourceMap:mockPhoneme
- })),
- en_all:vi.fn(),roa:vi.fn()
+vi.mock('@piper-plus/g2p',()=>({
+ G2P:{create:vi.fn(async()=>({phonemize:mockPhoneme}))}
 }));
-afterEach(()=>{cleanup();clearIpaCache();mockPhoneme.mockClear();mockSetVoice.mockClear();});
+afterEach(()=>{cleanup();clearIpaCache();mockPhoneme.mockClear();});
 
 describe('browser-native IPA engine and whole-text alignment',()=>{
  it('uses English and French locales, including New Zealand/GB support',()=>{
@@ -37,22 +31,22 @@ describe('browser-native IPA engine and whole-text alignment',()=>{
   const res=await toIpaLine(raw,'fr');
   expect(res.units.map(u=>u.source).join('')).toBe(raw);
   expect(res.units.some(u=>u.kind==='plain'&&u.source.includes('中文'))).toBe(true);
-  expect(mockSetVoice).toHaveBeenCalledWith('fr');
+  expect(mockPhoneme).toHaveBeenCalledWith('Bonjour',{language:'fr'});
  });
- it('never assigns IPA to the wrong visible word if source map is inconsistent',async()=>{
+ it('always binds generated IPA to the correct original token and falls back to plain on errors',async()=>{
   const first=await toIpaLine('bonjour','fr');
   expect(first.units).toEqual([{source:'bonjour',ipa:'bɔ̃ʒuʁ',kind:'mapped'}]);
-  mockPhoneme.mockImplementationOnce((text:string)=>({
-   text,ipa:'tɛst',asSpans:()=>[['WRONG','tɛst'] as [string,string]]
-  }));
+  mockPhoneme.mockImplementationOnce((_text:string,_opts:{language:'en'|'fr'})=>{
+   throw new Error('unknown word');
+  });
   const bad=await toIpaLine('unknown','en');
-  expect(bad.units).toEqual([{source:'unknown',ipa:'tɛst',kind:'fallback'}]);
+  expect(bad.units).toEqual([{source:'unknown',ipa:'',kind:'plain'}]);
  });
  it('preserves accented French names and uses requested English regional voice',async()=>{
   await toIpaLine('Chloé','fr-FR');
-  expect(mockSetVoice).toHaveBeenCalledWith('fr');
+  expect(mockPhoneme).toHaveBeenCalledWith('Chloé',{language:'fr'});
   await toIpaLine('read','en-GB');
-  expect(mockSetVoice).toHaveBeenCalledWith('en-GB-x-rp');
+  expect(mockPhoneme).toHaveBeenCalledWith('read',{language:'en'});
  });
 });
 
