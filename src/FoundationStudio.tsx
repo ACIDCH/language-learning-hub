@@ -6,6 +6,7 @@ import FoundationRecall from './FoundationRecall';
 import {makeVocabularyChecks} from './foundationQuiz';
 import FoundationDictation from './FoundationDictation';
 import FoundationAlphabet from './FoundationAlphabet';
+import FoundationNumberDrill from './FoundationNumberDrill';
 import {buildFoundationReviewPlan} from './foundationReview';
 
 type Draft={answers:Record<string,number>;notes:string;completed:boolean};
@@ -182,6 +183,9 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
       </div>)}
       {(unit.id==='en-fnd-01'||unit.id==='fr-fnd-01')&&
         <FoundationAlphabet language={unit.language} onSpeak={pronounce}/>}
+      {(unit.id==='en-fnd-05'||unit.id==='fr-fnd-06')&&
+        <FoundationNumberDrill language={unit.language} onSpeak={pronounce}
+          onAddNote={appendListeningNote}/>}
     </section>}
     {segment===2&&<section>
       <h5>词汇与用法</h5>
