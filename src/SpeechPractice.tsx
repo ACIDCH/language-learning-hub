@@ -42,6 +42,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget=""}
  const [rate,setRate]=useState(0.85);
  const [attempts,setAttempts]=useState(0);
  const [recent,setRecent]=useState<RecentAttempt[]>([]);
+ const [returnSentence,setReturnSentence]=useState('');
  const attemptId=useRef(0);
  const [voiceId,setVoiceId]=useState('');
  const [voices,setVoices]=useState<SpeechSynthesisVoice[]>([]);
@@ -50,7 +51,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget=""}
  const lang=language==='fr'?'fr':'en';
  useEffect(()=>{
   setLocale(lang==='fr'?'fr-FR':'en-US');setTarget(initialTarget);setHeard('');setAlternatives([]);setListening(false);
-  setRecent([]);setAttempts(0);
+  setRecent([]);setAttempts(0);setReturnSentence('');
   const synth=window.speechSynthesis;
   const refresh=()=>setVoices(synth?.getVoices().filter(v=>v.lang.toLowerCase().startsWith(lang))||[]);
   refresh();
@@ -73,7 +74,12 @@ export default function SpeechPractice({language,lessonText="",initialTarget=""}
  function updateTarget(next:string){
   const previous=engine.current;engine.current=null;previous?.abort();clearTimeout(watchdog.current);setListening(false);
   setTarget(next);setHeard('');setInterim('');setAlternatives([]);
-  setAttempts(0);setRecent([]);setNote('已更新练习句子。');
+  setAttempts(0);setRecent([]);setReturnSentence('');setNote('已更新练习句子。');
+ }
+ function focusWord(word:string){
+  const original=returnSentence||target;
+  updateTarget(word);
+  setReturnSentence(original);
  }
  function speak(sentence=target){
   if(!('speechSynthesis' in window)){setNote('此浏览器不支持系统语音朗读。');return;}
@@ -199,6 +205,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget=""}
         {listening?'正在识别…':attempts?'再跟读一次':'② 开始跟读'}
       </button>
       {listening&&<button type="button" onClick={end}>结束收音</button>}
+      {returnSentence&&<button type="button" disabled={listening} onClick={()=>updateTarget(returnSentence)}>返回完整句</button>}
       <button type="button" disabled={listening} onClick={nextSentence}>换一句练习 →</button>
       {(heard||interim)&&!listening&&<button type="button" onClick={()=>{
         setHeard('');setInterim('');setAlternatives([]);setNote('识别结果已清空。');
@@ -223,7 +230,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget=""}
           <h4>{coaching.headline}</h4><p>{coaching.instruction}</p>
           {!!coaching.focusWords.length&&<div className="speech-focus-words">{coaching.focusWords.map(word=><div key={word} className="speech-focus-word">
             <strong>{word}</strong><button type="button" onClick={()=>speak(word)}>听这个词</button>
-            <button type="button" onClick={()=>updateTarget(word)}>只练这个词</button>
+            <button type="button" onClick={()=>focusWord(word)}>只练这个词</button>
            </div>)}</div>}
           {coaching.readyForNext&&<button type="button" onClick={nextSentence}>进入下一句 →</button>}
         </section>}
