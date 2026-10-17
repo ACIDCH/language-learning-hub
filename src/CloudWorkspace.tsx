@@ -8,6 +8,7 @@ import AudioVault from './AudioVault';
 import AITutor from './AITutor';
 import SpeechPractice from './SpeechPractice';
 import CourseAudit from './CourseAudit';
+import LessonReview from './LessonReview';
 
 type Course = { id: string; language: string; level: string; track: string | null;
   title: string; unit: number; text_complete: boolean; audio_verified: boolean; publishable: boolean };
@@ -235,6 +236,9 @@ export default function CloudWorkspace() {
               onChangeStage={stage=>editState({stage})}/>
           </>}
         </section>
+        {lesson&&<LessonReview key={lesson.course_id} client={client!} session={session}
+          courseId={lesson.course_id} qaStatus={lesson.qa_status}
+          onUpdated={()=>setImportNonce(n=>n+1)}/>}
         <AudioVault client={client!} session={session} courseId={selected}
           assets={audioAssets} status={audioStatus}/>
         <CourseAudit client={client!} session={session} onSelect={id=>setSelected(id)}/>
