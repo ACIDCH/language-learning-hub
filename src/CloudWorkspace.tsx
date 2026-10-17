@@ -12,6 +12,7 @@ const apiBase = (import.meta.env.VITE_WORKER_API_URL?.trim() || '').replace(/\/$
 const configured = Boolean(supabaseUrl && publicKey && /^https:\/\//.test(apiBase));
 const client = configured ? createClient(supabaseUrl, publicKey) : null;
 const stages = ['情境', '语法', '词汇', '听读', '发音', '表达'];
+const draftKey = (uid: string,courseId: string) => 'llh-cloud-draft-v1:' + uid + ':' + courseId;
 
 async function worker<T>(path: string, token?: string, init: RequestInit = {}): Promise<T> {
   const response = await fetch(apiBase + path, {
@@ -50,11 +51,33 @@ export default function CloudWorkspace() {
     let alive = true;
     setStatus('正在读取云端进度…');
     void worker<{progress:Progress|null}>('/v1/progress/' + encodeURIComponent(selected),session.access_token)
-      .then(({progress}) => {if (alive) {setState(progress?.state || {}); setStatus('云端进度已读取。');}})
+      .then(({progress}) => {
+        if (!alive) return;
+        let draft: {state:State; editedAt:string} | null = null;
+        try {
+          const cached = localStorage.getItem(draftKey(session.user.id,selected));
+          if (cached) draft = JSON.parse(cached);
+        } catch { /* Storage may be disabled or unavailable. */ }
+        const useDraft = draft?.state && draft.editedAt &&
+          (!progress || new Date(draft.editedAt).getTime() > new Date(progress.updated_at).getTime());
+        setState(useDraft ? draft!.state : (progress?.state || {}));
+        setStatus(useDraft ? '已恢复本机未同步草稿，点击保存后才会写入云端。' : '云端进度已读取。');
+      })
       .catch(e => {if (alive) setStatus('读取失败：' + e.message);});
     return () => {alive=false;};
   },[session,selected]);
 
+  function editState(patch: Partial<State>) {
+    const next = {...state,...patch};
+    setState(next);
+    if (session && selected) {
+      try {
+        localStorage.setItem(draftKey(session.user.id, selected),
+          JSON.stringify({state:next,editedAt:new Date().toISOString()}));
+        setStatus('已保存在此浏览器的待同步草稿中。');
+      } catch { setStatus('浏览器存储不可用，请及时同步并保留当前页面。'); }
+    }
+  }
   async function signIn(e: FormEvent) {
     e.preventDefault();
     if (!client) return;
@@ -79,6 +102,7 @@ export default function CloudWorkspace() {
           body:JSON.stringify({state})
         });
       setState(result.progress.state);
+      try {localStorage.removeItem(draftKey(session.user.id,selected));} catch { /* no local cache */ }
       setStatus('学习进度已保存：' + new Date(result.progress.updated_at).toLocaleString());
     } catch(e) {setStatus('保存失败，请保留本页内容：' + (e instanceof Error ? e.message : String(e)));}
     finally {setBusy(false);}
@@ -118,14 +142,14 @@ export default function CloudWorkspace() {
         <p className="cloud-disclaimer">本模块保存学习进度，不将“已存在目录”误认为“教材已通过质量验收”。</p>
         <fieldset className="cloud-stages"><legend>当前学习环节</legend>
           {stages.map((label,i)=><label key={label}><input type="radio" checked={state.stage===i}
-            onChange={()=>setState(s=>({...s,stage:i}))}/>{label}</label>)}
+            onChange={()=>editState({stage:i})}/>{label}</label>)}
         </fieldset>
         <label className="cloud-notes">学习笔记
           <textarea rows={7} maxLength={10000} value={typeof state.notes==='string'?state.notes:''}
-            onChange={e=>setState(s=>({...s,notes:e.target.value}))}/>
+            onChange={e=>editState({notes:e.target.value})}/>
         </label>
         <label className="cloud-completed"><input type="checkbox" checked={state.completed===true}
-          onChange={e=>setState(s=>({...s,completed:e.target.checked}))}/>已完成本次学习</label>
+          onChange={e=>editState({completed:e.target.checked})}/>已完成本次学习</label>
         <button type="button" disabled={busy || !selected} onClick={()=>void save()}>保存到 Supabase</button>
       </section>}
     </>}
