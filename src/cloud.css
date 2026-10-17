@@ -246,3 +246,21 @@ border:1px solid var(--foundation-border);padding:10px;overflow-wrap:anywhere}
 .foundation-recall-ratings{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
 .foundation-recall-complete{display:grid;justify-items:start;gap:9px;padding:12px;background:#f3f9f6;border-radius:10px}
 @media(max-width:650px){.foundation-recall-ratings button{flex:1}}
+
+
+/* Listening dictation and cross-lesson review: text practice only, no audio upload. */
+.foundation-review-agenda{border:1px solid #d2e3eb;border-radius:12px;background:#f7fafc;
+ padding:12px 14px;margin:15px 0}
+.foundation-review-agenda summary{cursor:pointer;color:#1d5069;font-weight:700}
+.foundation-review-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.cloud-workspace .foundation-review-rows button{display:grid;gap:5px;text-align:left;white-space:normal;
+ background:#fff;color:#214d65;border:1px solid #d5e3ec}
+.foundation-review-rows small{color:#577486}
+.foundation-dictation{margin:18px 0;padding:14px;border:1px solid #ccdfeb;border-radius:12px;background:#f7fafc}
+.foundation-dictation label{display:block;margin-top:12px;font-weight:600}
+.foundation-dictation textarea{display:block;resize:vertical;width:100%;box-sizing:border-box;
+ min-height:80px;border:1px solid #aabfce;border-radius:9px;padding:10px;margin-top:6px;font:inherit}
+.foundation-dictation-result{padding:12px;background:#eef7f1;border-left:3px solid #54886c;margin:12px 0}
+.foundation-dictation-reference{white-space:pre-wrap;overflow-wrap:anywhere;padding:12px;background:#fff;
+ border:1px solid #d2e3eb;border-radius:9px}
+@media(max-width:650px){.foundation-review-rows{grid-template-columns:1fr}}
