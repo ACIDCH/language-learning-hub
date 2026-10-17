@@ -1,5 +1,7 @@
 import {useEffect,useRef,useState} from 'react';
+import {lessonPractice} from './speechLesson';
 import {analyzeTranscript,practiceHint} from './speechCompare';
+import {appendAttempt,learnerCoaching,type RecentAttempt} from './speechCoach';
 
 type Alternative={transcript:string;confidence?:number};
 type Result={isFinal:boolean;length:number;[index:number]:Alternative};
@@ -26,8 +28,10 @@ const ERRORS:Record<string,string>={
  'aborted':'本次识别已停止。'
 };
 export {analyzeTranscript as compareTranscript} from './speechCompare';
-export default function SpeechPractice({language}:{language:string}){
- const [target,setTarget]=useState('');
+export default function SpeechPractice({language,lessonText="",initialTarget=""}:{language:string;lessonText?:string;initialTarget?:string}){
+ const [target,setTarget]=useState(initialTarget);
+ const [step,setStep]=useState<'word'|'sentence'|'paragraph'>('sentence');
+ const watchdog=useRef<ReturnType<typeof setTimeout>|undefined>(undefined);
  const [heard,setHeard]=useState('');
  const [interim,setInterim]=useState('');
  const [alternatives,setAlternatives]=useState<string[]>([]);
@@ -35,33 +39,51 @@ export default function SpeechPractice({language}:{language:string}){
  const [listening,setListening]=useState(false);
  const [rate,setRate]=useState(0.85);
  const [attempts,setAttempts]=useState(0);
+ const [recent,setRecent]=useState<RecentAttempt[]>([]);
+ const [returnSentence,setReturnSentence]=useState('');
+ const attemptId=useRef(0);
  const [voiceId,setVoiceId]=useState('');
  const [voices,setVoices]=useState<SpeechSynthesisVoice[]>([]);
  const [locale,setLocale]=useState(language==='fr'?'fr-FR':'en-US');
  const engine=useRef<Engine|null>(null);
  const lang=language==='fr'?'fr':'en';
  useEffect(()=>{
+  setLocale(lang==='fr'?'fr-FR':'en-US');setTarget(initialTarget);setHeard('');setAlternatives([]);setListening(false);
+  setRecent([]);setAttempts(0);setReturnSentence('');
   const synth=window.speechSynthesis;
   const refresh=()=>setVoices(synth?.getVoices().filter(v=>v.lang.toLowerCase().startsWith(lang))||[]);
   refresh();
   synth?.addEventListener?.('voiceschanged',refresh);
   return ()=>{
     synth?.removeEventListener?.('voiceschanged',refresh);
-    engine.current?.abort();engine.current=null;
+    const previous=engine.current;engine.current=null;previous?.abort();clearTimeout(watchdog.current);
     synth?.cancel();
   };
  },[lang]);
  const report=target.trim()&&heard.trim()?analyzeTranscript(target,heard):null;
- function updateTarget(next:string){
-  if(listening){engine.current?.abort();engine.current=null;setListening(false);}
-  setTarget(next);setHeard('');setInterim('');setAlternatives([]);
-  setAttempts(0);setNote('已更新练习句子。');
+ const coaching=report?learnerCoaching(report,target):null;
+ const examples=lessonText?lessonPractice(lessonText,step):[];
+ function nextSentence(){
+  const choices=examples.length?examples:SAMPLE[lang];
+  if(!choices.length)return;
+  const current=choices.indexOf(target);
+  updateTarget(choices[(current+1)%choices.length]);
  }
- function speak(){
+ function updateTarget(next:string){
+  const previous=engine.current;engine.current=null;previous?.abort();clearTimeout(watchdog.current);setListening(false);
+  setTarget(next);setHeard('');setInterim('');setAlternatives([]);
+  setAttempts(0);setRecent([]);setReturnSentence('');setNote('已更新练习句子。');
+ }
+ function focusWord(word:string){
+  const original=returnSentence||target;
+  updateTarget(word);
+  setReturnSentence(original);
+ }
+ function speak(sentence=target){
   if(!('speechSynthesis' in window)){setNote('此浏览器不支持系统语音朗读。');return;}
-  if(!target.trim()){setNote('先输入一个词或练习短句。');return;}
+  if(!sentence.trim()){setNote('先输入一个词或练习短句。');return;}
   window.speechSynthesis.cancel();
-  const utterance=new SpeechSynthesisUtterance(target.trim().slice(0,400));
+  const utterance=new SpeechSynthesisUtterance(sentence.trim().slice(0,400));
   utterance.lang=locale;utterance.rate=rate;
   const preferred=voices.find(v=>v.voiceURI===voiceId)||
     voices.find(v=>v.lang.toLowerCase()===locale.toLowerCase())||voices[0];
@@ -76,7 +98,8 @@ export default function SpeechPractice({language}:{language:string}){
   const w=window as SpeechWindow,Constructor=w.SpeechRecognition||w.webkitSpeechRecognition;
   if(!Constructor){setNote('浏览器没有提供 Web Speech 识别，请改用支持该功能的浏览器。');return;}
   if(!target.trim()){setNote('先输入练习短句。');return;}
-  if(engine.current)engine.current.abort();
+  window.speechSynthesis?.cancel();
+  const previous=engine.current;engine.current=null;previous?.abort();clearTimeout(watchdog.current);
   const rec=new Constructor();
   rec.lang=locale;rec.continuous=false;rec.interimResults=true;rec.maxAlternatives=3;
   let finished=false,failed=false;
@@ -88,6 +111,7 @@ export default function SpeechPractice({language}:{language:string}){
       const first=result[0]?.transcript?.trim()||'';
       if(!first)continue;
       if(result.isFinal){
+        if(finished)return;
         finished=true;
         setHeard(first);setInterim('');
         const options:string[]=[];
@@ -96,25 +120,38 @@ export default function SpeechPractice({language}:{language:string}){
           if(candidate&&!options.includes(candidate))options.push(candidate);
         }
         setAlternatives(options.slice(1));setAttempts(n=>n+1);
-        setNote('识别完成。下方比较的是文字，不等于音素或口音准确率。');
+        const checked=analyzeTranscript(target,first);
+        setRecent(previous=>appendAttempt(previous,{
+          id:++attemptId.current,target,heard:first,
+          match:checked.missing===0&&checked.substituted===0&&checked.extra===0
+        }));
+        setNote('识别完成。请查看文字核对与下一步复练建议；这不是发音打分。');
+        // A final ASR result is usable immediately. Close the microphone now,
+        // rather than waiting for vendor onend (which may be delayed).
+        clearTimeout(watchdog.current);
+        engine.current=null;
+        setListening(false);
+        try{rec.stop();}catch{rec.abort();}
+        return;
       }else setInterim(first);
     }
   };
   rec.onerror=event=>{
     if(engine.current!==rec)return;
-    failed=true;
+    failed=true;clearTimeout(watchdog.current);
     setNote(ERRORS[event.error]||'语音识别出现问题：'+event.error);
     setInterim('');
     setListening(false);
   };
   rec.onend=()=>{
     if(engine.current!==rec)return;
-    engine.current=null;setListening(false);setInterim('');
+    clearTimeout(watchdog.current);engine.current=null;setListening(false);setInterim('');
     if(!finished&&!failed)setNote('没有取得最终识别文字；可以放慢语速再试。');
   };
   engine.current=rec;setHeard('');setAlternatives([]);setInterim('');
   try{
     rec.start();setListening(true);
+    watchdog.current=setTimeout(()=>{if(engine.current===rec){engine.current=null;rec.abort();setListening(false);setInterim('');setNote('识别服务等待超时，请重试或选择本机声学模式。');}},20000);
     setNote('正在监听。部分浏览器将语音发送至其服务商识别；本学习系统不保留音频。');
   }catch{
     engine.current=null;setListening(false);
@@ -126,9 +163,14 @@ export default function SpeechPractice({language}:{language:string}){
    catch{setListening(false);}
  }
  return <section className="cloud-reader" aria-label="跟读与识别文字练习">
-  <h3>跟读练习 · 文字对照</h3>
-  <p className="cloud-disclaimer">使用浏览器语音识别和系统发声进行练习。识别文字受口音、语速、噪声与识别服务影响，不能直接用于给发音打分。当前练习记录仅留在本页面，不保存录音或同步转写文本。</p>
+  <h3>听一句、跟读一句、再复练</h3>
+  <p className="cloud-disclaimer">面向日常语言学习：免费浏览器文字识别 + 设备语音示范，无需购买专业发音评分服务。文字差异可供复练，但不代表口音或音素诊断；浏览器识别可能调用厂商服务。本页面不保存录音，也不把转写同步到学习记录。</p>
+  <ol className="speech-learning-steps" aria-label="跟读四步">
+   <li>选一个短句</li><li>听设备示范</li><li>开始跟读并查看识别文字</li><li>听错词、再练一次</li>
+  </ol>
   <div className="cloud-fields">
+    <label>练习长度<select aria-label="练习长度" value={step} onChange={e=>setStep(e.target.value as typeof step)}><option value="word">短词</option><option value="sentence">短句</option><option value="paragraph">段落（声学模式每次不超过 12 秒）</option></select></label>
+    {!!examples.length&&<div className="speech-presets" aria-label="当前课程练习片段">{examples.map((s,i)=><button key={i} onClick={()=>updateTarget(s)}>{s}</button>)}</div>}
     <label>练习短句（{locale}）
       <textarea rows={3} maxLength={400} value={target}
         onChange={e=>updateTarget(e.target.value)}
@@ -141,7 +183,7 @@ export default function SpeechPractice({language}:{language:string}){
     <div className="speech-settings">
       <label>语言与口音
         <select value={locale} disabled={listening}
-          onChange={e=>{setLocale(e.target.value);setVoiceId('');setHeard('');}}>
+          onChange={e=>{updateTarget(target);setLocale(e.target.value);setVoiceId('');}}>
           {(lang==='fr'?['fr-FR','fr-CA']:['en-US','en-GB','en-AU']).map(l=>
             <option key={l} value={l}>{l}</option>)}
         </select>
@@ -158,11 +200,13 @@ export default function SpeechPractice({language}:{language:string}){
         value={rate} onChange={e=>setRate(Number(e.target.value))}/>
     </label>
     <div className="speech-actions">
-      <button type="button" onClick={speak}>听标准示范</button>
+      <button type="button" onClick={()=>speak()} disabled={listening}>① 听示范</button>
       <button type="button" onClick={listen} disabled={listening}>
-        {listening?'正在识别…':attempts?'再次练习':'开始跟读'}
+        {listening?'正在识别…':attempts?'再跟读一次':'② 开始跟读'}
       </button>
       {listening&&<button type="button" onClick={end}>结束收音</button>}
+      {returnSentence&&<button type="button" disabled={listening} onClick={()=>updateTarget(returnSentence)}>返回完整句</button>}
+      <button type="button" disabled={listening} onClick={nextSentence}>换一句练习 →</button>
       {(heard||interim)&&!listening&&<button type="button" onClick={()=>{
         setHeard('');setInterim('');setAlternatives([]);setNote('识别结果已清空。');
       }}>清空结果</button>}
@@ -172,7 +216,7 @@ export default function SpeechPractice({language}:{language:string}){
     {heard&&<div className="cloud-ai-result" aria-label="文字识别练习反馈">
       <p><strong>浏览器转写：</strong>{heard}</p>
       {report&&<>
-        <p><strong>转写文字相似度：</strong>{report.similarity}% （{report.matched} 词匹配，{report.substituted} 词不同，{report.missing} 词未出现，{report.extra} 词多出）</p>
+        <p><strong>文字核对（不是发音得分）：</strong>{report.similarity}% 文本匹配度（{report.matched} 词匹配，{report.substituted} 词不同，{report.missing} 词未出现，{report.extra} 词多出）</p>
         <div className="speech-compare" aria-label="目标词语识别情况">
           {report.expected.map((t,i)=><span key={i}
             className={'speech-token speech-'+t.status}
@@ -181,6 +225,14 @@ export default function SpeechPractice({language}:{language:string}){
           </span>)}
         </div>
         {report.extras.length>0&&<p className="cloud-disclaimer">额外识别文字：{report.extras.join('、')}</p>}
+        {coaching&&<section className="speech-coaching" aria-label="针对性复练建议">
+          <h4>{coaching.headline}</h4><p>{coaching.instruction}</p>
+          {!!coaching.focusWords.length&&<div className="speech-focus-words">{coaching.focusWords.map(word=><div key={word} className="speech-focus-word">
+            <strong>{word}</strong><button type="button" onClick={()=>speak(word)}>听这个词</button>
+            <button type="button" onClick={()=>focusWord(word)}>只练这个词</button>
+           </div>)}</div>}
+          {coaching.readyForNext&&<button type="button" onClick={nextSentence}>进入下一句 →</button>}
+        </section>}
         <p className="cloud-disclaimer">{practiceHint(report)}</p>
       </>}
       {alternatives.length>0&&<details>
@@ -188,6 +240,11 @@ export default function SpeechPractice({language}:{language:string}){
         <ul>{alternatives.map((t,i)=><li key={i}>{t}</li>)}</ul>
       </details>}
       <p className="cloud-disclaimer">这不是口音、韵律、重音或音素评测；转写相似度较高也不意味着发音一定正确。</p>
+      {recent.length>0&&<details className="speech-recent">
+       <summary>本句跟读记录（{attempts} 次，最多显示最近 5 次）</summary>
+       <ol>{recent.map(item=><li key={item.id}><strong>{item.match?'文字一致':'有文字差异'}</strong> · {item.heard}</li>)}</ol>
+       <p>仅存当前页面内存；更换句子、切换语言或刷新后清空。</p>
+      </details>}
     </div>}
   </div>
  </section>;

@@ -8,6 +8,7 @@ import FoundationDictation from './FoundationDictation';
 import FoundationAlphabet from './FoundationAlphabet';
 import FoundationNumberDrill from './FoundationNumberDrill';
 import {buildFoundationReviewPlan} from './foundationReview';
+import SpeechPractice from './SpeechPractice';
 
 type Draft={answers:Record<string,number>;notes:string;completed:boolean};
 const EMPTY:Draft={answers:{},notes:'',completed:false};
@@ -95,6 +96,12 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
     setStatus('正在使用设备合成语音，不是经过人工审核的标准录音。');}
   catch{setStatus('浏览器无法启动系统语音朗读。');}
  }
+ // Pronunciation exercises are selected from this exact lesson, not a generic demo.
+ // The speech component keeps attempts only in memory, independently of saved notes.
+ const speechLessonText=[
+   ...unit.vocab.map(([word])=>word),...unit.examples,unit.listening,unit.reading
+ ].join('\n');
+ const starter=unit.examples.find(x=>x.length<=150&&!/[\u3400-\u9fff]/.test(x))||'';
  const vocabChecks=makeVocabularyChecks(unit.vocab);
  const allQuestions=[...unit.questions,...vocabChecks];
  const correct=allQuestions.filter((q,i)=>draft.answers[String(i)]===q.answer).length;
@@ -208,9 +215,9 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
     </section>}
     {segment===4&&<section>
       <h5>发音与跟读</h5><p>{unit.pronunciation}</p>
-      <button type="button" onClick={()=>pronounce(unit.listening)}>再听本课短句</button>
-      <p>听三遍，先模仿关键音，再连成完整短句；重点记录听不清的位置。
-        正式音素级评分由独立的 V3 实验模块负责，本课不计算未经验证的发音成绩。</p>
+      <p>建议先听一遍，再从本课单词或例句开始跟读。下面可以直接用浏览器识别并得到文字对照与复练建议，不要求安装 1.26GB 的本机声学模型。</p>
+      <SpeechPractice key={unit.id} language={unit.language} lessonText={speechLessonText} initialTarget={starter}/>
+      <p className="cloud-disclaimer">这里的反馈适合日常自练，不是专业音素／口音打分。本课原始进度及笔记继续单独保存。</p>
     </section>}
     {segment===5&&<section>
       <h5>本课核心规则与词汇自检（{allQuestions.length} 道）</h5>
