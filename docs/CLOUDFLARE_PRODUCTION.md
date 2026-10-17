@@ -45,6 +45,17 @@ Worker Git integration may grant Cloudflare's own deployment token automatically
 
 After successful deployment, inspect `https://<actual-worker-url>/health` and `/v1/status`. They must return truthful readiness. `/v1/courses` returns only catalog metadata. The Worker verifies an Authorization bearer token against Supabase before progress reads/writes; user_id is taken from the verified session; PostgreSQL RLS remains the final enforcement boundary. Unauthorized requests return 401.
 
+## GitHub-managed public Worker runtime settings
+
+The Worker `cloudflare/learning-api/wrangler.jsonc` now includes the same three
+**public-only** values: `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`,
+and `FRONTEND_ORIGIN`. This is intentional: Wrangler deployment treats
+the repository config as its source of truth, so future automatic Worker
+builds should not erase dashboard-only plaintext values. Do not add
+privileged service-role keys, API secrets or OAuth credentials in `vars`.
+If any of the public values change, update the matching Pages defaults in
+`src/cloudPublicDefaults.ts` in the same PR, with automated checks.
+
 ## Zero-touch Pages connection (October 2026)
 
 For this personal project, `src/cloudPublicDefaults.ts` contains only the
