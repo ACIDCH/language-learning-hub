@@ -63,7 +63,21 @@ export default function CloudWorkspace() {
         setState(useDraft ? draft!.state : (progress?.state || {}));
         setStatus(useDraft ? '已恢复本机未同步草稿，点击保存后才会写入云端。' : '云端进度已读取。');
       })
-      .catch(e => {if (alive) setStatus('读取失败：' + e.message);});
+      .catch(e => {
+        if (!alive) return;
+        try {
+          const cached = localStorage.getItem(draftKey(session.user.id,selected));
+          if (cached) {
+            const draft = JSON.parse(cached) as {state?:State};
+            if (draft?.state) {
+              setState(draft.state);
+              setStatus('远端读取失败，已保留本机未同步草稿：' + e.message);
+              return;
+            }
+          }
+        } catch { /* Local cache unavailable. */ }
+        setStatus('读取失败：' + e.message);
+      });
     return () => {alive=false;};
   },[session,selected]);
 
