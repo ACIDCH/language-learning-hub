@@ -6,6 +6,7 @@ import {resolve} from 'node:path';
 const cfg=readFileSync(resolve('src/cloudPublicDefaults.ts'),'utf8');
 const cloud=readFileSync(resolve('src/CloudWorkspace.tsx'),'utf8');
 const workerConfig=readFileSync(resolve('cloudflare/learning-api/wrangler.jsonc'),'utf8');
+const account=readFileSync(resolve('src/AccountAccess.tsx'),'utf8');
 
 test('public client configuration is explicit and uses public-only credentials',()=>{
   assert.match(cfg,/https:\/\/szukmwvyyvjajdjoltzy\.supabase\.co/);
@@ -21,7 +22,7 @@ test('Cloudflare environment overrides continue to work',()=>{
 });
 test('cloud progress still routes to authenticated Worker endpoints',()=>{
   assert.match(cloud,/Authorization: 'Bearer ' \+ token/);
-  assert.match(cloud,/auth\.signInWithPassword/);
+  assert.match(account,/auth\.signInWithPassword/);
   assert.match(cloud,/\/v1\/progress\//);
 });
 
