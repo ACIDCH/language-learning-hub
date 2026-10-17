@@ -1,0 +1,163 @@
+FR-A1-U01｜Saluer et se présenter：问候与自我介绍（原创完整样课 v0.1）
+状态：教学内容草稿已完整编写；等待原始音频逐条核对与授权绑定。不包含《Inspire 1》受版权保护的原文。
+
+① 情境与学习目标
+你在法语课程开学日遇到一位新的同学或老师，希望礼貌地打招呼，介绍名字、国籍和学生身份，并询问对方的情况。
+原创对话：
+A : Bonjour ! Je m'appelle Camille. Et vous, comment vous appelez-vous ?
+B : Bonjour. Je m'appelle Alex. Enchanté !
+A : Enchantée ! Vous êtes étudiant ?
+B : Oui, je suis étudiant en informatique. Et vous ?
+A : Je suis étudiante en français.
+中文理解：Bonjour 是日间常用问候；Je m'appelle 表示“我叫”；Et vous? 表示“您呢”；en informatique 描述学科。
+
+② 语法：主语代词 + être + 自我介绍表达
+主语代词：je 我；tu 你（熟悉的单数）；il/elle 他/她；nous 我们；vous 您/你们；ils/elles 他们/她们。
+être 直陈式现在时：
+je suis；tu es；il/elle/on est；nous sommes；vous êtes；ils/elles sont。
+原创建模例句：
+1. Je suis étudiant. 我是一名男学生。
+2. Je suis étudiante. 我是一名女学生。
+3. Tu es français ? 你是法国人吗？
+4. Vous êtes française ? 您是法国人吗？（对女性的形容词形式）
+5. Nous sommes étudiants. 我们是学生。
+6. Il est canadien. 他是加拿大人。
+7. Elle est canadienne. 她是加拿大人。
+8. Ils sont dans la même classe. 他们在同一个班。
+9. C'est un étudiant. 这是一名男学生。
+10. Je m'appelle Samira. 我叫 Samira。
+性数配合：français / française，étudiant / étudiante。某些性数变化不一定改变发音，但要准确拼写。
+tu / vous：正式场景一般优先 vous；熟人可用 tu，具体取决于地区、年龄和社交情境。法语口语常用升调提问，你无需最初就掌握完整倒装规则。
+易错纠正：Je est -> Je suis；Vous es -> Vous êtes；Je appelle -> Je m'appelle。
+说明：Je suis un étudiant 并非在所有语境下都是错误；普通身份介绍通常直接说 Je suis étudiant。先理解常用表达，再学习细节。
+
+③ 词汇与搭配（18 项）
+bonjour 你好／您好；
+salut 嗨／再见，非正式；
+bonsoir 晚上好；
+au revoir 再见；
+je m'appelle 我叫；
+enchanté / enchantée 很高兴认识您；
+merci 谢谢；
+s'il vous plaît 请，正式/复数；
+s'il te plaît 请，非正式；
+comment 怎样；
+prénom 名；
+nom 姓名／姓；
+étudiant(e) 学生；
+professeur 老师；
+français(e) 法国人／法国的；
+canadien(ne) 加拿大人／加拿大的；
+bienvenue 欢迎；
+à bientôt 回头见。
+搭配：Je m'appelle... / Je suis étudiant(e). / Comment vous appelez-vous ? / Et vous ?。
+建议把每个表达置于场景中反复跟读，而不是只背孤立中文译文。
+
+④ 听力与阅读
+原创微型阅读：
+"Bonjour ! Je m'appelle Léa. Je suis française, et mon ami Thomas est canadien. Nous sommes étudiants à l'université. Aujourd'hui, nous avons un cours de français. Notre professeur s'appelle Madame Martin. À bientôt !"
+理解任务：找出两位学生的国籍、职业；哪个代词与 sommes 对应？试着用 nous 造一个句子。
+配套听力：法国出版社《Inspire 1 A1》的合法官方试听导航，以及 COERLL 的 Français interactif Bonjour! 课程。实际音频资源在核对媒体对应关系之后才能标为已绑定。
+https://inspire.hachettefle.fr/inspire-1_livre-de-l-eleve_fr.html
+https://laits.utexas.edu/fi/toc/01/
+
+⑤ 发音与跟读
+第一重点：u /y/ 和 ou /u/：tu 与 tout；法语的 u 不能简单用英语 "you" 的音替代。
+第二重点：vous êtes 中可能出现的联诵现象；以真实参考音频核对发音，不能只凭拼写想象声音。
+第三重点：语流重音通常以节奏组组织；练习 Bonjour, je m'appelle Camille.
+录音反馈目标：按单词绿（清晰）、黄（轻微偏差）、橙（明显偏差）、红（严重偏差），模型不可靠时灰色；不显示发音总分。
+
+⑥ 自主练习与实际应用
+1. Je ___ française. 答案：suis。
+2. Vous ___ étudiant ? 答案：êtes。
+3. Elle ___ canadienne. 答案：est。
+4. 将 "他是学生" 改成 "他们是学生"：Ils sont étudiants.
+5. 初次见面时通常优先 tu 还是 vous？通常优先 vous，但必须考虑场合。
+口语：30秒正式地介绍自己，然后用 tu 或 vous 向一位同学提问。
+写作：写 6–8 句法语介绍你自己、所学语言和一位朋友。AI 可以逐句纠正性数、冠词和动词变位。
+不设考试、不自动生成总分，允许随时返回语法知识点。
+
+课程权利与来源：
+上述对话、阅读、例句和讲解均为本项目原创示范，后续需要人工语言审校。
+https://coerll.utexas.edu/coerll/oer/francais-interactif/
+https://coerll.utexas.edu/coerll/oer/texs-french-grammar/
+https://apprendre.tv5monde.com/fr/exercices/a1-debutant
+https://inspire.hachettefle.fr/inspire-1_livre-de-l-eleve_fr.html
+所有原始教材内容仍保留出处与版权分类，不在公开 GitHub 中直接搬运受限音频或 PDF。
+
+===== V0.2 ADDENDUM — U01: Saluer et se présenter 全面扩展 =====
+本补充包只追加在原课件后面，原版全部内容、示例和参考来源均保留。
+
+A. 更完整的情景比较
+在大学行政办公室：
+A : Bonjour, Madame. Je m'appelle Lina Chen. Je suis étudiante.
+B : Bonjour, Lina. Vous êtes nouvelle ici ?
+A : Oui, je suis nouvelle. Je commence aujourd'hui.
+B : Très bien. Bienvenue !
+同龄同学初次见面：
+A : Salut ! Moi, c'est Hugo. Et toi ?
+B : Salut ! Je m'appelle Sara. Enchantée !
+A : Enchanté ! Tu étudies le français ?
+B : Oui, et toi ?
+比较：Bonjour/Madame/Vouvoiement（vous）偏正式；Salut/tu 偏非正式。初次见面的默认礼貌选择常为 vous，但具体使用因语域而异。Moi, c'est... 是日常口语表达，不必翻译成“我是”的固定结构。
+
+B. être / s'appeler 基础语法
+Être 的完整直陈式现在时：je suis; tu es; il/elle/on est; nous sommes; vous êtes; ils/elles sont。
+自我介绍中 s'appeler 的高频形式：
+je m'appelle；tu t'appelles；il/elle s'appelle；nous nous appelons；vous vous appelez；ils/elles s'appellent。
+请区分拼写中的双 l 和实际语流音值，避免仅凭单词末尾字母推断发音。
+Être 表达身份、国籍、特征和处所，但不是所有汉语“是”都要用 être。
+职业与身份：Je suis professeur、Je suis étudiant(e) 通常不加不定冠词；C'est un professeur、C'est une étudiante 使用不同结构，判断取决于上下文，不能把任何一种简单标为全局错误。
+
+C. 易混结构详解
+Je suis français.（男性说话者）
+Je suis française.（女性说话者）
+Vous êtes français ? 对一人说话时“您”；对多个人说话则可能需要复数形式，注意理解所指对象。
+C'est Madame Martin.（这是 Martin 女士）
+Elle est professeur.（她是一位老师／职业身份）
+Comment vous appelez-vous ?（较正式倒装问法）
+Vous vous appelez comment ?（日常口语）
+Comment tu t'appelles ?（非正式）
+问候与离别：Bonjour/Bonsoir 表示见面；Au revoir/À bientôt 表示分别；Salut 在某些非正式场景可用于两者。
+
+D. 重点词语示例（保留原版词汇列表，新增语境）
+une étudiante étrangère（外国女学生）；un nouvel étudiant（一名新来的男学生）；une nouvelle étudiante（一名新来的女学生）；votre prénom（您的名字）；ton nom（你的姓/名字，须结合上下文）；bienvenue à l'université（欢迎来到大学）；dans la même classe（在同一个班）；faire connaissance（结识）。
+注意词形：nouveau → nouvel（男性单数、元音或哑音 h 开头名词前）→ nouvelle（女性）；这是拓展预览，不要求 A1 U01 立即背完整规则。
+
+E. 阅读一：原创
+"Je m'appelle Nora. Je suis étudiante à Auckland. Mon professeur s'appelle Monsieur Laurent. Il est français. Dans ma classe, nous sommes dix étudiants. Mon amie Mia est néo-zélandaise. Elle parle anglais et apprend le français."
+问题：1 谁是老师？Monsieur Laurent。2 Nora 的朋友国籍？néo-zélandaise。3 nous 对应 être 哪个形式？sommes。4 哪句可表示他们在班里？Dans ma classe, nous sommes dix étudiants。
+
+F. 听力朗读脚本（原创，无配音）
+"Bonjour, je suis Madame Claire Dupont. Et vous ? — Bonjour Madame, je m'appelle Ming. Je suis étudiant. — Enchantée, Ming. Vous êtes français ? — Non, je suis chinois. J'habite à Auckland."
+脚本可用于你自行朗读或合法 TTS 配音。没有音频文件时不能把文本假装成实际录音。
+听辨重点：vous / tu 的社交差别；bonjour 中鼻化元音；vous êtes 句间的常见联诵形式。
+
+G. 练习与完整答案
+1. Je ___ étudiante. Réponse: suis。
+2. Vous ___ professeur ? Réponse: êtes。
+3. Ils ___ français. Réponse: sont。
+4. Comment tu t'___ ? Réponse: appelles。
+5. Transformez: Tu es étudiant → Vous êtes étudiant (单数尊称)。
+6. Écrivez en français：“她是一名女学生”。Réponse: Elle est étudiante. / C'est une étudiante.（情境不同）
+7. 将 Bonjour（问候）与 Au revoir（道别）配对到合适的场景。
+8. Étudiez le contraste：C'est un professeur / Il est professeur（解释冠词出现与否）。
+9. 选择 tu/vous：首次向老师问姓名，通常优先 vous。
+10. 自由表达：用 5–7 句介绍姓名、所学语言及学习地点，参考答案因真实情况而异。
+答案仅用于自我核对，不设定期测试和总分。
+
+H. 发音练习清单
+/y/ 和 /u/：tu 与 tout。比较辅音 t 相同，元音不同，tout 的末尾 t 通常不发音。
+鼻化元音：bon /bɔ̃/、bien /bjɛ̃/；学习初期先听辨，不凭汉字谐音模仿。
+节奏组：Bonjour, Madame / Je m'appelle Lina / Je suis étudiante。法语重音通常按语音节奏组呈现。
+连音：vous êtes 中 s 常发 /z/ 的联诵声；需要听实际规范音频，并对比其它词组的合法差异。
+改进原则：需要发音评估模型实测才显示词级绿黄橙红反馈。无法确认时显示灰色。
+
+I. 课程衔接
+下一课 U02 学习国籍、城市和语言以及 habiter / parler；U03 学习家庭、avoir 和物主限定词。可自由跳过或回顾，前置关系是推荐而非强制门槛。
+课程资源：
+https://laits.utexas.edu/fi/
+https://coerll.utexas.edu/coerll/oer/texs-french-grammar/
+https://inspire.hachettefle.fr/inspire-1_livre-de-l-eleve_fr.html
+===== END FR-A1-U01-V02 =====
+

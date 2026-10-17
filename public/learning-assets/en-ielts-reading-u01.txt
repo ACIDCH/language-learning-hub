@@ -1,0 +1,90 @@
+EN-IELTS-READING-U01｜理解学术文章结构与证据（原创教学样课 v0.1）
+状态：原创阅读材料已起草；后续需绑定独立授权的听力录音以完成六段链。本课不教数字、基础问候或基础英文单词。
+学习目标：通过文章主旨、段落功能、事实与作者态度建立快速阅读能力。结构上参考 IELTS Academic Reading，但题目为原创。
+
+① Context 情境：你正在阅读一篇关于远程学习对大学生影响的短学术评论。首遍阅读要发现作者论点和段落逻辑，而不是逐句翻译每个词。
+② Grammar 语法与语篇：
+A. 主旨句通常包含有限定的论点，并非每段首句都一定是主旨句。
+B. Hedging 谨慎限定：may / appears to / in some contexts / is likely to：表达证据限制，不应机械理解为缺乏立场。
+C. Contrast 让步对比：however、nevertheless、although、whereas；注意 however 需要合适句间标点，不能仅靠大写代替句号。
+D. 定语从句：Students who work part-time may prefer asynchronous lessons；who work part-time 是限定对象。
+E. Evidence vs inference：文本说「部分」不等于「所有」；不允许凭常识补充原文没有的信息。
+原创对比例句：
+(1) Flexible classes can improve access for working students.
+(2) Although recorded lectures are convenient, they may reduce live discussion.
+(3) Institutions that provide feedback can support engagement.
+(4) Evidence suggests a possible association, not necessarily a causal link.
+(5) The outcome depends partly on course design.
+(6) However, access does not guarantee participation.
+(7) Some students prefer classroom discussion, whereas others value flexibility.
+(8) In this context, a blended approach may be reasonable.
+
+③ Vocabulary 主题词汇与搭配：
+asynchronous delivery 异步授课、peer interaction 同伴互动、learning engagement 学习参与、institutional support 学校支持、barrier to access 获取障碍、self-directed learning 自主学习、retain attention 保持注意、provide feedback 提供反馈、digital infrastructure 数字基础设施、evidence suggests 证据显示、a key implication 重要含义、be associated with 与…相关、cognitive load 认知负荷、draw a conclusion 得出结论、context-dependent 因情境而异、mixed evidence 混合证据。
+重要提示：assert / suggest / demonstrate 的证据强度不同；不要全部翻译为“证明”。
+
+④ Reading 阅读（原创短文）
+"Universities increasingly combine in-person seminars with digital learning materials. Supporters argue that recorded lectures give students greater control over when and how often they revisit complex information. Such flexibility may be useful for learners who balance paid work with study. Critics, however, note that access to recordings does not automatically produce meaningful participation. Students may watch videos without asking questions or discussing competing explanations. Research on learning environments therefore needs to distinguish availability of content from opportunities for feedback and collaboration. Rather than treating online and classroom teaching as opposing choices, institutions could examine which activities are most effective in each format."
+阅读引导：第一遍只写一句主旨；第二遍标记转折词与证据；第三遍回答：
+A. 作者是否认为线上资源必然提高参与？答：否，文中区分 access 和 meaningful participation。
+B. 作者提出的实际建议是什么？答：按活动选择线上与线下适合的形式。
+C. Which phrase expresses caution? 例：may be useful / could examine。
+D. “all students benefit from recordings” 是否为原文陈述？否，原文仅在特定条件下讨论。
+听力衔接：未来绑定一条明确匹配该主题且合法使用的高阶教育主题音频；当前官方资源入口 https://learnenglish.britishcouncil.org/free-resources/listening/b2 。无实际媒体时不显示虚假播放按钮。
+
+⑤ Pronunciation 语音与跟读：读出 "opportunities for feedback and collaboration" 和 "meaningful participation"；对比弱读词 for / and 与信息重音 feedback / collaboration。逐词纠音功能待技术验证，不输出发音总分。
+
+⑥ Production 输出：
+口头任务：用 60 秒解释文章核心观点，补充一个你同意或反对的理由。
+写作任务：120–180 词论述「学生能看到更多材料」与「学生真正参与学习」之间的区别。
+AI 反馈目标：检查论证是否完全来自文本、因果推断是否过度、改写是否改变原意、表达是否清晰自然；不给考试分数。
+来源：全文为本项目原创，不是 IELTS 官方阅读真题；题型原则参考 https://www.ielts.org/take-a-test/preparation-resources/sample-test-questions/academic-test
+
+===== V0.2 ADDENDUM — Academic Reading: evidence and argument mapping =====
+保留原有段落与阅读题目，本补充增加深入方法、第二篇原创阅读和完整解释答案。
+
+A. 学术阅读方法
+Skimming：先看第一句、反义和转折、段尾结论，形成文章结构假设，而不是快速略过全部证据。
+Scanning：寻找语义目标和定位词，而不是机械寻找题目原词。例如 "limited funding" 在正文可能表示为 "budgetary constraints"。
+Close reading：对包含否定、数量、条件和限定范围的陈述仔细检查；all、some、only、may、typically 影响论点真值。
+Author stance：作者可能支持一个有限立场，区分叙述他人观点与表达作者本人判断。
+
+B. 原创进阶短文（教育数据与课堂反馈）
+"Digital platforms can help universities monitor whether students open learning materials, but access logs have important limitations. A student who repeatedly downloads lecture notes may be highly engaged, or may be struggling to understand the material. Likewise, a student who spends little time on a platform might still participate actively in classroom discussions. These observations suggest that digital traces should not be treated as direct measures of learning quality.
+
+Feedback is another important factor. When learners receive specific comments on their reasoning, they can identify errors and improve future work. Yet the value of feedback depends on timing, clarity and the student's opportunity to respond. Universities therefore need to examine how digital resources interact with teaching practices rather than assume that a larger quantity of platform data will automatically improve academic outcomes.
+
+A sensible evaluation framework would combine multiple sources of information: student explanations, instructor observations and selected activity data. Such an approach may provide a fuller picture, although it still requires attention to privacy and fairness."
+
+C. 段落结构图谱
+Paragraph 1: digital usage logs ≠ 学习质量直接测量，提供正反解释并指出数据歧义。
+Paragraph 2: feedback 的作用和效果取决于 timing、clarity、response opportunity。
+Paragraph 3: 多来源分析更合理，同时存在 privacy 和 fairness 的限制。
+Main claim: Do not infer achievement from a single convenient proxy indicator.
+
+D. 自主精读问题（含答案、依据）
+Q1. 作者认为多次下载笔记证明学习投入高吗？答：否。原文明确给出可能高参与或困难两种解释。
+Q2. True / False / Not Given: "Every digital platform collects classroom discussion data."
+答：Not Given；文章没有说明每个平台是否收集线下课堂数据。
+Q3. True / False / Not Given: "Feedback quality depends partly on its timing."
+答：True；第二段指出 timing 是效果条件之一。
+Q4. True / False / Not Given: "Collecting more data always improves academic outcomes."
+答：False；第二段直接反对该自动推断。
+Q5. 哪个表达显示谨慎结论？答：may provide、might still participate、suggest that 等。
+Q6. 指出数字指标替代真正目标的风险。参考：用平台访问日志代替学习效果，会因不同解释而误判。
+Q7. 将 "students open learning materials" 改写为简练学术表达。参考："learners access course resources"。
+Q8. 写出原文没有出现但你觉得合理的进一步研究问题，并明确标注它是推论而非作者直接观点。
+示例："Would feedback timing matter equally across all subject areas?"（不能误写为文章已证明的事实）
+
+E. 词汇迁移与同义辨析
+proxy indicator 替代指标；digital trace 数字行为痕迹；access log 访问日志；instructor observation 教师观察；be associated with 与…相关；causal explanation 因果解释；privacy concern 隐私顾虑；evaluate critically 批判性评价；draw unwarranted conclusions 得出未经支持结论；opportunity to respond 回应机会；mixed evidence 混合证据；learning quality 学习质量。
+辨析：evidence that X is correlated with Y ≠ evidence that X causes Y。
+
+F. 语言表达与语音任务
+阅读复述使用 "The author argues that..."、"The first paragraph cautions against..."、"In contrast..."。
+口语录音：准确读出 "a direct measure of learning quality"；信息焦点在 measure / learning quality，具体韵律须依据所表达的对比调整。
+写作：180 词比较两种衡量课堂学习的方法，区分观察到的数据与推断。
+听力：尚未合法绑定媒体；阅读内容完整可用，听力栏不得假装可播放。
+来源：https://learnenglish.britishcouncil.org/free-resources/reading/b2
+===== END EN-READING-V02 =====
+
