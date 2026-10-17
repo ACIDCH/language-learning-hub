@@ -48,6 +48,10 @@ jobs:
         run: node --experimental-strip-types --test tests/foundationRecall.test.mjs
       - name: Validate 96 meaning checks against original teaching vocabulary
         run: node --experimental-strip-types --test tests/foundationQuiz.test.mjs
+      - name: Check all 24 course listening dictation text contracts
+        run: node --experimental-strip-types --test tests/foundationDictation.test.mjs
+      - name: Check saved-answer review scheduling and progress safety
+        run: node --experimental-strip-types --test tests/foundationReview.test.mjs
       - name: Check TypeScript and build
         run: npm run build
       - name: Confirm Cloudflare root-path static bundle and verified public lessons

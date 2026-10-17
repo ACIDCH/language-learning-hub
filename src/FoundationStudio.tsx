@@ -4,6 +4,8 @@ import {FOUNDATION_UNITS,FOUNDATION_PHASES,foundationUnitsFor} from './foundatio
 import type {FoundationLanguage,FoundationRecord} from './foundationTypes';
 import FoundationRecall from './FoundationRecall';
 import {makeVocabularyChecks} from './foundationQuiz';
+import FoundationDictation from './FoundationDictation';
+import {buildFoundationReviewPlan} from './foundationReview';
 
 type Draft={answers:Record<string,number>;notes:string;completed:boolean};
 const EMPTY:Draft={answers:{},notes:'',completed:false};
@@ -22,6 +24,8 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
  const units=useMemo(()=>foundationUnitsFor(language),[language]);
  const unit=FOUNDATION_UNITS.find(u=>u.id===selected)||units[0];
  const finished=units.filter(u=>records[u.id]?.completed).length;
+ const reviewPlan=useMemo(()=>buildFoundationReviewPlan(FOUNDATION_UNITS,records),[records]);
+ const dueReviews=reviewPlan.filter(row=>row.status==='due');
  useEffect(()=>{
   let alive=true;
   setLoaded(false);
@@ -66,6 +70,17 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
  function answer(index:number,choice:number){
   setDraft(d=>({...d,completed:false,answers:{...d.answers,[String(index)]:choice}}));
   setDirty(true);
+ }
+ function appendListeningNote(note:string):boolean{
+  const appended=[draft.notes.trim(),note].filter(Boolean).join('\n\n');
+  if(appended.length>5000){
+   setStatus('听写文本超出了笔记 5000 字符上限，请先删减当前笔记后重新加入。');
+   return false;
+  }
+  setDraft(current=>({...current,notes:appended}));
+  setDirty(true);
+  setStatus('听写记录已加入当前课程笔记，点击保存后才会同步至 Supabase。');
+  return true;
  }
  function pronounce(sentence:string){
   if(!('speechSynthesis' in window)){setStatus('该设备未提供系统语音朗读。');return;}
@@ -115,6 +130,20 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
       className={language==='fr'?'foundation-current':''} onClick={()=>changeLanguage('fr')}>法语基础</button>
     <span>已标记学完 {finished} / {units.length}</span>
   </div>
+  <details className="foundation-review-agenda">
+   <summary>跨课程复习建议 · {loaded?dueReviews.length:'…'} 节待回顾</summary>
+   <p className="cloud-disclaimer">根据 24 节基础课现有云端进度、答题结果及上次保存时间生成。
+     答错题优先复习；未完成的题目提醒续学；已学完课程约 3 天后建议回顾。
+     这只是复习提示，不是经过校准的遗忘曲线模型。</p>
+   {!loaded?<p>正在读取个人复习记录…</p>:
+    dueReviews.length===0?<p>当前没有超期或未完成的复习项，可以继续新课。</p>:
+    <div className="foundation-review-rows">{dueReviews.map(item=>
+     <button key={item.lessonId} type="button" disabled={busy||dirty} onClick={()=>openUnit(item.lessonId)}>
+      <strong>{item.language.toUpperCase()} · {item.title}</strong>
+      <small>{item.reason}</small>
+     </button>)}</div>}
+   {dirty&&<p role="status">先保存本课尚未同步的练习或笔记，才能跳转复习。</p>}
+  </details>
   <div className="foundation-layout">
    <aside className="foundation-menu" aria-label="基础课目录">
      {units.map(item=><button type="button" key={item.id} disabled={busy||!loaded}
@@ -139,7 +168,7 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
     {segment===0&&<section>
       <h5>本课学习目标</h5><p>{unit.goal}</p>
       <p>学习顺序：先阅读情境与示例，再学习语法／规则，练习核心词汇，
-        完成听读与跟读，最后做两道自检题并进行开放表达。</p>
+        完成听读与跟读，最后做六道自检题并进行开放表达。</p>
       <p className="cloud-disclaimer">当前教材为项目原创初稿；个别口音、专业语音与语言学审校仍需复核。</p>
     </section>}
     {segment===1&&<section>
@@ -164,6 +193,8 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
       <h5>听力练习</h5><p>先不看文字听一遍，再展示原文核对。</p>
       <button type="button" onClick={()=>pronounce(unit.listening)}>播放本课合成听力</button>
       <details><summary>展开本课听力文本</summary><p>{unit.listening}</p></details>
+      <FoundationDictation key={unit.id} text={unit.listening} language={unit.language}
+        onPlay={()=>pronounce(unit.listening)} onAddNote={appendListeningNote}/>
       <h5>阅读短文</h5><p>{unit.reading}</p>
       <button type="button" onClick={()=>pronounce(unit.reading)}>朗读全文</button>
       <p className="cloud-disclaimer">声音来自当前设备 TTS，不是带时轴的真人教学录音。</p>
