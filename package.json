@@ -13,7 +13,7 @@
     "@supabase/supabase-js": "2.110.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "ephone": "1.0.2"
+    "@piper-plus/g2p": "0.4.2"
   },
   "devDependencies": {
     "@testing-library/react": "16.3.3",
