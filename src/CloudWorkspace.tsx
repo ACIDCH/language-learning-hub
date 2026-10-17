@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 import { createClient, type Session } from '@supabase/supabase-js';
 import './cloud.css';
 
@@ -55,7 +55,7 @@ export default function CloudWorkspace() {
     return () => {alive=false;};
   },[session,selected]);
 
-  async function signIn(e: React.FormEvent) {
+  async function signIn(e: FormEvent) {
     e.preventDefault();
     if (!client) return;
     setBusy(true);
