@@ -1,0 +1,62 @@
+[
+  {
+    "validator": "docs/editorial/a1-qa-v13/validate.mjs",
+    "exit_code": 0,
+    "output": "A1 V1.3 checked: 12 stage+answer sources, 7 editorial issues, 31 candidate archives, zero falsely verified matching audio.",
+    "error": ""
+  },
+  {
+    "validator": "docs/editorial/a1-qa-v14/validate.mjs",
+    "exit_code": 0,
+    "output": "A1 real ZIP sample: 12 decodable MP3s, 6 AppleDouble pseudo-media excluded, zero falsely matched course audio.",
+    "error": ""
+  },
+  {
+    "validator": "docs/editorial/coverage/validate.mjs",
+    "exit_code": 0,
+    "output": "108 audited: 96 deep draft units, 12 existing French A1 original draft units, 0 English baseline-only; no false completion or private IDs.",
+    "error": ""
+  },
+  {
+    "validator": "docs/editorial/v06/validate.mjs",
+    "exit_code": 0,
+    "output": "Editorial V0.6: 18 valid separate unit IDs, course-match and privacy/status checks passed.",
+    "error": ""
+  },
+  {
+    "validator": "docs/editorial/v07/validate.mjs",
+    "exit_code": 0,
+    "output": "V0.7 metadata validated: 10 French B1 and 6 English IELTS unit IDs, truthful QA/audio status, no private Drive locators.",
+    "error": ""
+  },
+  {
+    "validator": "docs/editorial/v08/validate.mjs",
+    "exit_code": 0,
+    "output": "French B2 V0.8: 10 accurate IDs, 60-question manuscript register, no false QA/media flags or private IDs.",
+    "error": ""
+  },
+  {
+    "validator": "docs/editorial/v09/validate.mjs",
+    "exit_code": 0,
+    "output": "V0.9 manifest validated: 8 French C1 + 6 IELTS U05, 14 unique IDs, strict QA flags and no Drive IDs.",
+    "error": ""
+  },
+  {
+    "validator": "docs/editorial/v10/validate.mjs",
+    "exit_code": 0,
+    "output": "Editorial V1.0: 14 valid unique unit IDs; all QA/media flags honest, no private Drive identifiers.",
+    "error": ""
+  },
+  {
+    "validator": "docs/editorial/v11/validate.mjs",
+    "exit_code": 0,
+    "output": "V1.1: 12 new IDs, 84 unique across V0.6–V1.1, safe privacy + honest quality flags",
+    "error": ""
+  },
+  {
+    "validator": "docs/editorial/v12/validate.mjs",
+    "exit_code": 0,
+    "output": "V1.2 passed: 12 new stable IELTS IDs, 96 unique total deep manuscripts, QA/media/publication flags false.",
+    "error": ""
+  }
+]

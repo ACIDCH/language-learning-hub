@@ -1,0 +1,91 @@
+EN-IELTS-TASK1-U01｜数据概述与准确比较（原创教学样课 v0.1）
+目标：处理 IELTS Academic Task1 风格的图表，但不使用官方真题。用户已掌握基础数字，因此这里直接训练趋势、比例、单位、比较及概述；不是英语数字入门课。
+六段学习链：
+① Context 学术情境。你需要描述学校图书馆的数字借阅与纸质借阅变化，读者关心总体趋势与重要差异。
+原创数据集（教学虚构，不代表真实统计）：
+Year | Digital loans (thousands) | Printed loans (thousands)
+2021 | 48 | 82
+2022 | 63 | 78
+2023 | 76 | 70
+2024 | 91 | 62
+② Grammar 精确的数据语言：
+- rose from 48,000 to 91,000 / fell from 82,000 to 62,000；
+- by vs to: rose by 43,000（增加幅度）和 rose to 91,000（最终水平）；
+- approximately/nearly/just over 表示估值时应与数值一致，不为提升表达复杂度而加入错误修饰；
+- while/whereas 用于并列比较；overall 概括显著趋势。
+自然句型：
+1. Digital loans rose steadily over the four-year period.
+2. Printed loans declined each year.
+3. In 2024, digital loans exceeded printed loans.
+4. The gap narrowed in 2022.
+5. Overall, the two categories followed opposite trends.
+6. Digital borrowing increased by 43 thousand loans.
+7. Printed borrowing fell to 62 thousand loans.
+8. The largest year-on-year rise in digital loans occurred between 2023 and 2024.
+注意：是否“largest”必须算出 2023→2024 +15（2021→2022 +15; 2022→2023 +13）；因此第 8 句不能唯一判定，应改成 "One of the joint-largest annual increases occurred between 2023 and 2024."。本课专门演示数据核验对语言准确的重要性。
+③ Vocabulary：overall trend, steady increase, downward pattern, peak at, exceed, overtake, difference, converge, diverge, respectively, year-on-year, comparatively, proportion, account for, remain stable, noticeable change。
+④ Reading/Listening：阅读虚构数据表；提取 overview（数字借阅上升、印刷借阅下降，2023 年数字借阅已超过纸质借阅——76 对 70）；注意交叉点在 2023 而不是 2024。之后用原创口头脚本朗读你的 Overview；录音素材等待授权或自主 TTS 生成。
+⑤ Pronunciation：比较 increase (verb /ɪnˈkriːs/ vs noun /ˈɪŋkriːs/)；practice “a steady increase” and “increased steadily”；句重音落在方向和关键数值。
+⑥ Writing：先写 2 句 overview，然后写 150–190 词的自拟 Academic Task1 风格描述。自查数据、分组、排序、语法与词义。AI 可以提供逐句反馈，不展示 band 预测。
+示范 Overview（原创）：“Overall, digital borrowing rose consistently while printed borrowing declined. Digital loans overtook printed loans in 2023 and the difference widened the following year.”
+学习来源与题型：https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-writing
+这是一份项目原创的教学数据与说明，不是 IELTS 官方练习。
+
+===== V0.2 ADDENDUM — Writing Task 1: complete data analysis and sample report =====
+保留原有的虚构统计表、语言说明及自纠正标注，本补充加入准确性校核、第二组数据和两篇完整示范。
+
+A. 数据分析第一原则
+概述（overview）必须是数据真实支持的全局特征，而不是随便选择一个最大数字。正文支持句可分组按类别、阶段或交叉趋势组织。
+原始数字如下（单位：thousands，虚构教学数据）：
+2021 digital 48, printed 82；
+2022 digital 63, printed 78；
+2023 digital 76, printed 70；
+2024 digital 91, printed 62。
+数字借阅上涨 43（千）；纸质借阅下降 20（千）。
+2023 年数字借阅首次超过纸质借阅：76 vs 70；2024 差距 29（千）。
+增长幅度数字借阅 2021→2022 +15；2022→2023 +13；2023→2024 +15。因此 2023→2024 并非唯一最大年度涨幅，与 2021→2022 并列最大。旧版教材中的错误表达必须以这条数据校核为准。
+
+B. Task 1 原创完整范例（约 160 词）
+"The table compares digital and printed library loans at a university from 2021 to 2024, measured in thousands.
+
+Overall, digital borrowing increased consistently, whereas printed borrowing declined throughout the period. Digital loans overtook printed loans in 2023, and the gap between the two categories widened considerably in 2024.
+
+In 2021, there were 48 thousand digital loans, compared with 82 thousand printed loans. The digital figure increased to 63 thousand in 2022, while printed borrowing fell slightly to 78 thousand. By 2023, digital loans had reached 76 thousand, exceeding the 70 thousand recorded for printed loans.
+
+The contrast became more pronounced in 2024. Digital borrowing climbed to 91 thousand loans, almost twice its 2021 level, whereas printed loans decreased to 62 thousand. Over the four years, the digital category rose by 43 thousand loans in total, while the printed category fell by 20 thousand."
+
+这里 "almost twice its 2021 level" = 91 / 48 ≈ 1.90，基本准确；不能误写为 exactly twice。
+
+C. 第二组原创数据：校园出行方式（虚构）
+Year 2020 / 2025; public transport 42% / 49%; driving 31% / 24%; walking 19% / 18%; cycling 8% / 9%.
+所有类别每年加总为 100%。应当描述公共交通比例增长 7 个百分点（percentage points），不是增长 7%。
+范例 overview：
+"Overall, public transport remained the most common commuting method and became more popular, while driving declined. Walking and cycling changed relatively little."
+正文组织：重点对比公共交通与驾车，再补充步行与骑行变化，避免依次重复八个数字。
+
+D. 精确写作的语法/词汇
+increase by vs increase to：涨幅/最终数值；
+percentage vs percentage points：相对百分比 vs 百分点；
+respectively：若使用，其名词列举顺序必须与数字顺序完全相同；
+approximately、just under、just over：只有接近该表达含义时才可以用；
+account for、make up：描述整体中的份额；
+by contrast、whereas：强调差异，不可机械每句都插转折；
+present simple 介绍当前图表内容：The chart illustrates...；
+past simple 描述已结束的时间段：Digital borrowing rose between 2021 and 2024.
+
+E. 实用练习与答案
+1. 2023 年数字比纸质多多少？6（千）。
+2. 2024 年两者差距？29（千）。
+3. 2021–2024 数字借阅总体增加多少？43（千）。
+4. “增长 7 个百分点”英文：increased by seven percentage points。
+5. 改错："Digital loans overtook printed loans in 2024." 正确：in 2023。
+6. 改错："The number doubled from 48 to 91." 更准确：rose to nearly twice its original level。
+7. 写一个不含数值的总览，并指出两条核心趋势。
+8. 口头复述：40 秒解释两类借阅差异；仍不涉及英语基础数字教学。
+
+F. 音频与发音
+朗读示范段落和对照，注意 "increase" 名词与动词的重音变化；语流中的对比 stress 一般强调 digital / printed 和 rose / fell。
+如无合法参考音频，本阶段不渲染播放按钮。IELTS 官方样题仅用于题型了解，不能以“公开网页”为由复制官方试题。
+来源：https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-writing
+===== END EN-TASK1-V02 =====
+

@@ -1,0 +1,107 @@
+FR-A1-U02｜Pays, langues et nationalités（原创教学样课 v0.1）
+目标：能说明出生国、居住城市、所用语言和国籍；继续巩固 être 并掌握 habiter 和国籍形容词的性数变化。
+① Context 情景：新同学分享自己来自哪里、居住在哪里、正在学习哪些语言。
+原创对话：
+A : Bonjour ! Tu habites où ?
+B : J'habite à Auckland. Et toi ?
+A : J'habite à Lyon. Tu es néo-zélandais ?
+B : Oui, je suis néo-zélandais. Je parle anglais et j'apprends le français.
+A : Super ! Moi, je suis française et je parle un peu anglais.
+中文解释：habiter à + 城市；parler + 语言；apprendre + 语言。un peu 表示一点。
+② Grammar 语法：
+A. être 国籍搭配：Je suis français/française. Il est canadien. Elle est canadienne.
+B. habiter（现在时常用形式）：j'habite, tu habites, il/elle habite, nous habitons, vous habitez, ils/elles habitent。
+C. à + 城市：à Paris, à Auckland。
+D. en/au/aux + 国家的一般分布：en France, en Chine, au Canada, aux États-Unis。国家介词存在例外，需要结合实际词条核对。
+E. 动词 parler 与 apprendre 的高频固定词组：Je parle français. J'apprends le français. 两个动词对语言名词的冠词使用不同。
+原创建模例句：
+1. J'habite à Auckland.
+2. Tu habites en France ?
+3. Elle habite au Canada.
+4. Nous habitons à Lyon.
+5. Je parle anglais et chinois.
+6. Il apprend le français.
+7. Vous êtes canadienne ?
+8. Ils habitent aux États-Unis.
+易错对照：Je habite → J'habite；Je suis Canada → Je suis canadien(ne) / Je viens du Canada；Je parle le français 不属于此处最基本、无修饰的典型表达，先掌握 Je parle français。
+③ Vocabulary (15+): pays, ville, langue, nationalité, habiter, parler, apprendre, venir de, français(e), canadien(ne), chinois(e), anglais(e), néo-zélandais(e), en, au, aux, où, un peu。
+④ Reading 原创文本：
+"Je m'appelle Nora. Je suis étudiante en Nouvelle-Zélande. J'habite à Auckland et je parle anglais et chinois. En ce moment, j'apprends le français. Mon ami Paul habite en France, à Toulouse. Il parle français et anglais."
+阅读：谁住在 Toulouse？Nora 学的是什么语言？识别 en France / à Toulouse。
+听力：待绑定一条 UT Austin / 官方 Inspire 相关主题的许可音频，暂只给官方入口：
+https://laits.utexas.edu/fi/
+https://inspire.hachettefle.fr/inspire-1_livre-de-l-eleve_fr.html
+⑤ Pronunciation：u /y/ vs ou /u/：tu / tout，plus 注意 /plys/ 等按语义有不同读法；国家名中的鼻化元音入门；短句以语义节奏组为单位跟读。只能依据可信语音评估显示逐词色阶。
+⑥ Application：口头介绍国家、城市和学会语言；写 7–9 句原创短文；AI 可补充个性化例句与纠正性数和介词，不显示考试分数。
+版权与来源：本文项目原创；参考开放语法：https://coerll.utexas.edu/coerll/oer/texs-french-grammar/
+
+===== V0.2 ADDENDUM — U02: Pays, langues, nationalités — cours détaillé =====
+追加扩展，保留所有原课件内容及资源引用。
+
+A. 原创真实情境
+Étudiant A : Tu viens d'où ?
+Étudiante B : Je viens de Nouvelle-Zélande. J'habite maintenant à Paris.
+A : Tu parles français ?
+B : Un peu. Je parle surtout anglais et j'apprends le français.
+A : Moi, j'habite à Lyon. Je suis français.
+B : Enchantée !
+注意 tu viens d'où 是自然口语的提问形式，写作较正式时可用 D'où viens-tu ?；现在先掌握高频表达，不强制掌握所有动词时态。
+
+B. 核心动词：habiter / parler / apprendre
+habiter：j'habite, tu habites, il/elle habite, nous habitons, vous habitez, ils/elles habitent。
+parler：je parle, tu parles, il/elle parle, nous parlons, vous parlez, ils/elles parlent。
+apprendre：j'apprends, tu apprends, il/elle apprend, nous apprenons, vous apprenez, ils/elles apprennent。
+规则：前两者属于常规第一组 -er 动词；apprendre 属第三组不规则动词，初学阶段可先整体记住 j'apprends，之后再扩展完整变位。
+
+C. 城市和国家地点介词
+à Paris / à Auckland / à Montréal。
+en France / en Chine / en Nouvelle-Zélande；
+au Canada / au Japon / au Portugal；
+aux États-Unis / aux Pays-Bas。
+常见构成：阴性国家名多用 en、阳性辅音开头国家名多用 au、复数多用 aux；但也有以元音开头的阳性国家名通常用 en（如 en Iran），不能过度简化为“en 仅限阴性”。
+动词搭配：J'habite en France；Je viens de France；Je viens du Canada；Je viens des États-Unis。表示来自的介词与表示居住地的介词不同。
+
+D. 国籍形容词的性数与大小写
+Il est français. / Elle est française.
+Ils sont canadiens. / Elles sont canadiennes.
+英语、中文与法语中语言名与国籍形容词大小写规则不同：
+Il est français.（形容词，小写）
+C'est un Français.（指法国人的名词，通常大写）
+Je parle français.（语言名称，小写）
+注意加拿大人法语：
+une Canadienne；un Canadien；des Canadiens。
+
+E. 词汇与搭配扩充
+venir de（来自），être originaire de（原籍），habiter à（住在城市），habiter en/au/aux（住在国家），parler une langue（会说某种语言），apprendre le français（学习法语），étudier à l'université（在大学学习），un pays francophone（法语国家/地区），la nationalité（国籍），la langue maternelle（母语），couramment（流利地），un peu（一点）。
+“说法语”优先使用 Je parle français；“学习法语”优先 Je prends des cours de français / J'apprends le français。
+
+F. 原创阅读：trois personnes
+"Lucie est française. Elle habite à Bordeaux et elle parle français et espagnol. Son ami Liam est néo-zélandais. Il vient de Wellington, mais il habite maintenant à Lyon. Il apprend le français dans une école de langues. Leur amie Inès est canadienne. Elle habite au Québec et parle français et anglais."
+理解任务及答案：
+1. Qui vient de Wellington ? Liam.
+2. Qui habite au Québec ? Inès.
+3. Qui apprend le français ? Liam.
+4. Français 在 Elle est française 与 Elle parle français 中为什么词尾不同？第一句是形容词，第二句是语言名。
+5. Relevez les prépositions : à Bordeaux, de Wellington, à Lyon, au Québec。
+
+G. 听辨与发音
+元音 /y/ 与 /u/：tu / tout，学习先观察嘴唇圆唇和舌位；避免把 /y/ 读成英语 /uː/。
+“français” /fʁɑ̃sɛ/ 的鼻化元音与末尾音；“langue” /lɑ̃ɡ/ 的鼻化元音；城市名尊重原来的法语约定发音。
+原创朗读句："Je viens de Nouvelle-Zélande, mais j'habite en France et j'apprends le français."
+未实际生成/绑定音频，页面只显示朗读脚本与外部官方来源，不显示无法播放的按钮。
+
+H. 练习、答案与开放任务
+1. Je ___ à Paris. habite。
+2. Tu ___ français ? parles。
+3. Nous ___ le français. apprenons。
+4. Ils habitent ___ Canada. au。
+5. Elle habite ___ États-Unis. aux。
+6. Je viens ___ France. de。
+7. Je viens ___ Japon. du。
+8. Marie est ___ (français). française。
+9. Nous parlons ___ (français, 语言名). français。
+10. Écrivez：法国一个国家，日本一个国家；用 J'habite à..., Je viens de..., Je parle... 自由介绍两个人，合理形式不限。
+口语：模拟移居法国的新同学介绍；书面：写 80–100 字双人介绍，不要求真实个人敏感资料。
+来源：https://coerll.utexas.edu/coerll/oer/francais-interactif/
+===== END FR-A1-U02-V02 =====
+

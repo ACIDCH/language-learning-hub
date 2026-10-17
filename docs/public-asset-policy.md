@@ -8,7 +8,7 @@ This repository is **public**. Small, **individually verified, legally redistrib
 
 | Classification | Canonical location | Examples |
 | --- | --- | --- |
-| `github_public` | `public/learning-assets/` | Project-authored public exercises; specifically cleared CC0 / CC BY / compatible CC BY-SA / verified public-domain texts and compressed audio |
+| `github_public` | `public/learning-assets/` | Project-original public educational material with explicit project display terms; individually cleared CC0 / CC BY / compatible CC BY-SA / verified public-domain texts and compressed audio |
 | `google_drive_private` | Dedicated YUNPAN / `Language-Learning-Hub` | Personally owned PDFs, commercial textbooks (including Hachette Inspire), private audio, personal notes, recordings if explicitly saved, generated private lessons |
 | `external_link` | Official provider URL, indexed in Supabase | Copyrighted material that can lawfully be linked but **not** republished; large licensed media where provider terms permit linking |
 
@@ -17,6 +17,10 @@ An item's `storage_kind` controls how it is retrieved. Supabase stores asset met
 ## Boundary between curriculum drafts and deployable teaching assets
 
 Project-authored **review-only sample lessons and course frameworks** may live in `docs/curriculum/` or `config/curriculum/` as source specifications. They are already public GitHub text, so must not contain private learning data or third-party restricted passages. Once a lesson's text/audio becomes a **deployable public site asset**, it must be placed in `public/learning-assets/` and added to the manifest with a per-item provenance and file hash. GitHub documentation drafts are not equivalent to published lessons.
+
+## Public project-original educational texts
+
+The course author/owner approved publishing non-personal original sample lessons for website review. They are registered as `Project-Owned-Public-Display`, meaning **publicly visible on the independent learning site** but this code does not claim the owner has granted a broad CC BY or public-domain license. Do not relicense these texts automatically. Any future private/individual AI-generated content is excluded until the owner explicitly authorizes that content's publication. Always keep private Drive as the master source; these static text copies are reviewed publication snapshots with SHA-256 integrity metadata. Updates require keeping the Drive master and website publication snapshot aligned (manual QA currently; no background sync is configured).
 
 ## Mandatory verification before adding a public file
 

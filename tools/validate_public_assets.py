@@ -19,7 +19,7 @@ MAX_TOTAL_BYTES = 200 * 1024 * 1024
 ALLOWED_SUFFIXES = {".mp3", ".m4a", ".ogg", ".pdf", ".txt", ".md", ".vtt", ".json"}
 ALLOWED_LICENSES = {
     "CC0-1.0", "CC-BY-3.0", "CC-BY-4.0",
-    "CC-BY-SA-3.0", "CC-BY-SA-4.0", "Public-Domain",
+    "CC-BY-SA-3.0", "CC-BY-SA-4.0", "Public-Domain", "Project-Owned-Public-Display",
 }
 REQUIRED_FIELDS = {
     "id", "path", "title", "language", "author", "source_url",
