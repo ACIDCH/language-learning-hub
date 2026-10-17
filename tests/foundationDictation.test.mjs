@@ -2,8 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {dictationTokens,compareDictation} from '../src/foundationDictation.ts';
 import {FOUNDATION_UNITS} from '../src/foundationCurriculum.ts';
-test('all 24 units provide a writable original listening reference',()=>{
- assert.equal(FOUNDATION_UNITS.length,24);
+test('all 48 units provide a writable original listening reference',()=>{
+ assert.equal(FOUNDATION_UNITS.length,48);
  for(const u of FOUNDATION_UNITS){
   assert.ok(dictationTokens(u.listening,u.language).length>=4,u.id);
   const r=compareDictation(u.listening,u.listening,u.language);
