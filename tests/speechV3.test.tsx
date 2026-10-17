@@ -6,6 +6,7 @@ import {browserResult,ENGINES,evaluateLocal,evaluateRemote,cloudSpeechEndpoint,l
 import {captureSpeech} from '../src/speechCapture';
 import {appendAttempt,learnerCoaching} from '../src/speechCoach';
 import {analyzeTranscript} from '../src/speechCompare';
+import {practiceChunks,addReviewWords,clearReviewedWord} from '../src/speechLearningTools';
 
 class Recognition {
  static latest:Recognition;
@@ -205,5 +206,60 @@ describe('authenticated cross-device cloud speech adapter',()=>{
   render(<SpeechPractice language="fr"/>);
   expect((screen.getByRole('option',{name:'云端音素练习（登录后使用）'}) as HTMLOptionElement).disabled).toBe(true);
   expect(screen.getByRole('button',{name:'② 开始跟读'})).toBeTruthy();
+ });
+});
+
+
+describe('enhanced native-browser listening pedagogy',()=>{
+ it('splits long English/French text into manageable chunks without new speech services',()=>{
+  expect(practiceChunks('Je voudrais un café. Nous allons à la bibliothèque !'))
+   .toEqual(['Je voudrais un café.','Nous allons à la bibliothèque !']);
+  expect(practiceChunks('')).toEqual([]);
+  const long='Bonjour, '+Array.from({length:26},()=> 'je voudrais pratiquer').join(' ')+'.';
+  const chunks=practiceChunks(long,80);
+  expect(chunks.length).toBeGreaterThan(1);
+  expect(chunks.every(chunk=>chunk.length<=80)).toBe(true);
+  expect(chunks.join(' ').includes('pratiquer')).toBe(true);
+ });
+ it('shows segment playback and allows returning to the original long phrase',()=>{
+  render(<SpeechPractice language="fr" initialTarget="Bonjour, Marie. Nous allons à la bibliothèque !"/>);
+  const controls=screen.getAllByRole('button',{name:'只练这一段'});
+  expect(controls).toHaveLength(2);
+  fireEvent.click(controls[1]);
+  expect((screen.getByRole('textbox') as HTMLTextAreaElement).value).toBe('Nous allons à la bibliothèque !');
+  fireEvent.click(screen.getByRole('button',{name:'返回完整句'}));
+  expect((screen.getByRole('textbox') as HTMLTextAreaElement).value)
+   .toBe('Bonjour, Marie. Nous allons à la bibliothèque !');
+ });
+ it('supports audio-first recall and reveals original text after native recognition',()=>{
+  render(<SpeechPractice language="fr" initialTarget="Bonjour, Chloé."/>);
+  fireEvent.click(screen.getByRole('checkbox',{name:/听辨挑战/}));
+  expect(screen.queryByRole('textbox')).toBeNull();
+  expect(screen.getByText(/目标词句已隐藏/)).toBeTruthy();
+  fireEvent.click(screen.getByRole('button',{name:'② 开始跟读'}));
+  const rec=Recognition.latest;
+  act(()=>rec.onresult?.({results:[{isFinal:true,length:1,0:{transcript:'bonjour Chloe'}}]}));
+  expect((screen.getByRole('textbox') as HTMLTextAreaElement).value).toBe('Bonjour, Chloé.');
+  expect(screen.getByText(/本次识别文字与原句一致/)).toBeTruthy();
+ });
+ it('retains mismatched target words across different sentences and clears one on isolated match',()=>{
+  render(<SpeechPractice language="fr" initialTarget="Je voudrais un café."/>);
+  fireEvent.click(screen.getByRole('button',{name:'② 开始跟读'}));
+  act(()=>Recognition.latest.onresult?.({results:[{isFinal:true,length:1,
+   0:{transcript:'Je voudrais un thé'}}]}));
+  expect(screen.getByRole('region',{name:'跨句重点词复练'}).textContent).toContain('café');
+  fireEvent.click(screen.getByRole('button',{name:'换一句练习 →'}));
+  expect(screen.getByRole('region',{name:'跨句重点词复练'}).textContent).toContain('café');
+  fireEvent.click(screen.getByRole('button',{name:'复练这个词'}));
+  expect((screen.getByRole('textbox') as HTMLTextAreaElement).value).toBe('café');
+  fireEvent.click(screen.getByRole('button',{name:'② 开始跟读'}));
+  act(()=>Recognition.latest.onresult?.({results:[{isFinal:true,length:1,0:{transcript:'café'}}]}));
+  expect(screen.queryByRole('region',{name:'跨句重点词复练'})).toBeNull();
+ });
+ it('counts repeated text mismatches but does not call them acoustic pronunciation errors',()=>{
+  const first=addReviewWords([],['café','bonjour']);
+  const second=addReviewWords(first,['Café']);
+  expect(second).toEqual([{word:'café',count:2},{word:'bonjour',count:1}]);
+  expect(clearReviewedWord(second,'CAFÉ')).toEqual([{word:'bonjour',count:1}]);
  });
 });
