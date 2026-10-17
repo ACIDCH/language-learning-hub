@@ -1,17 +1,19 @@
 import {useEffect,useMemo,useState} from 'react';
 import {normalizeIpaLocale,sliceIpaText,toIpaLine,type IpaLine,type IpaUnit} from './ipaEngine';
 
+let ttsGeneration=0;
 export function speakIpaText(text:string,language:string,rate=.85){
  if(!text.trim()||!('speechSynthesis' in window))return false;
  try {
   const synth=window.speechSynthesis;
+  const generation=++ttsGeneration;
   synth.cancel();
   const chunks=sliceIpaText(text,220).filter(part=>part.trim());
   if(!chunks.length)return false;
   // Speak bounded chunks sequentially, so full paragraphs are not silently cut at 400 chars.
   let index=0;
   function next(){
-   if(index>=chunks.length)return;
+   if(index>=chunks.length||generation!==ttsGeneration)return;
    const utterance=new SpeechSynthesisUtterance(chunks[index++]);
    utterance.lang=normalizeIpaLocale(language);
    utterance.rate=rate;
