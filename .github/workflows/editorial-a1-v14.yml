@@ -1,0 +1,24 @@
+name: French A1 V1.4 actual archive sample audit
+on:
+  pull_request:
+    paths:
+      - 'docs/editorial/a1-qa-v14/**'
+      - '.github/workflows/editorial-a1-v14.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'docs/editorial/a1-qa-v14/**'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate verified metadata without publishing source audio
+        run: node docs/editorial/a1-qa-v14/validate.mjs
+      - name: Reject AppleDouble pseudo audio and preserve ZIP CRC
+        run: python3 docs/editorial/a1-qa-v14/inspect_audio_zip.py --self-test

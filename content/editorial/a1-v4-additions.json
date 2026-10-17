@@ -1,0 +1,74 @@
+{
+  "fr-a1-u01": {
+    "grammar": "零基础操作：先确定说话人，再选择 être。je → suis，vous → êtes；不要从中文‘是’猜词尾。vous 可以指一位受尊称的人，也可以指多人，身份形容词按实际对象配合。自我介绍的职业通常不加冠词：Je suis étudiant；识别人时使用 C'est un étudiant。",
+    "phonetics": "标准连续语流中，主语代词 vous 与元音开头的 êtes 之间需要 /z/ 联诵：/vu.zɛt/。这不是任意可省的装饰音。不要把 vous 的词尾 s 在所有环境都读出：vous parlez 中没有这个 /z/。",
+    "model": "Bonjour, je m'appelle Lina. Je suis étudiante. Je suis chinoise. J'étudie le français à Auckland. Voici mon ami Paul. Il est français. Nous sommes dans la même classe. Et vous, comment vous appelez-vous ?",
+    "practice": [["Complétez : Vous ___ étudiante ?", "êtes", "主语 vous 对应 êtes；étudiante 的阴性由被称呼者决定。"], ["Présentez Paul : C'est ___ étudiant.", "un", "C'est 后的身份名词通常需要限定词；与 Il est étudiant 的结构不同。"]]
+  },
+  "fr-a1-u02": {
+    "grammar": "parler 的普通语言表达可用 parler français；parler le français 也存在，不能统一判错。本课先练习 Je parle français / J'apprends le français。地点按词条学习：à Lyon、en France、au Japon、aux Pays-Bas；表示来源则是 de Lyon、de France、du Japon、des Pays-Bas。",
+    "phonetics": "j'habite 中 h 不发音，je 必须写成 j'；不是先把 je 完整读完再停顿。français 的 /ɑ̃/ 是鼻化元音，最后的 s 不读；française 则以 /z/ 收尾。",
+    "model": "Je m'appelle Mei. Je viens de Chine. J'habite maintenant à Auckland. Je parle chinois et anglais. J'apprends le français. Mon amie Inès habite au Canada. Elle parle français. Nous aimons apprendre des langues.",
+    "practice": [["Complétez : Il habite ___ Japon.", "au", "Japon 为阳性、辅音开头的国家名；本句表示居住地，用 au Japon。"], ["Complétez : Elle vient ___ France.", "de", "venir de 表示来源；France 在这个搭配中用 de France，而非 en France。"], ["Qui habite à Toulouse dans la lecture de Nora ?", "Paul.", "原文明确写 Mon ami Paul habite en France, à Toulouse；Nora 住 Auckland。"]]
+  },
+  "fr-a1-u03": {
+    "grammar": "mon amie 中 amie 仍是阴性；元音开头时换用 mon，目的是法语规定的衔接形式，不能据此判断朋友是男性。son père 可指‘他的父亲’或‘她的父亲’，son 由 père 的阳性单数决定。Chloé 的阅读中 nous sommes quatre personnes 包括她本人；其余家庭成员是三人。",
+    "phonetics": "mon amie 的连接读法中有 /n/ 音；不要把音节分割等同于每个拼写词都停顿。avoir 的 ils ont 与 être 的 ils sont 不同：前者连接处为 /z/，后者动词 sont 以 /s/ 开头。",
+    "model": "Je m'appelle Hugo. J'ai vingt ans. Dans ma famille, nous sommes quatre. Ma sœur s'appelle Julie. Elle a dix-huit ans. Nos parents habitent à Lyon. Mon père aime la musique. Ma mère parle français et italien.",
+    "practice": [["Complétez : Julie parle à ___ père. (son / sa)", "son", "père 为阳性单数；物主 Julie 是女性并不要求使用 sa。"], ["Combien de personnes compte la famille de Chloé, Chloé comprise ?", "Quatre personnes.", "nous sommes quatre personnes 包含说话人 Chloé；排除她本人则是三位家人。"]]
+  },
+  "fr-a1-u04": {
+    "grammar": "名词要连同冠词记忆：une table、un livre。首次引入用 un/une/des，已经确认的对象常用 le/la/les。元音或哑音 h 前的单数定冠词为 l'：l'ordinateur。Il n'y a pas de livre 表示没有书；不要把所有否定句的冠词都改成 de，例如 Ce n'est pas un livre 仍保留 un。",
+    "phonetics": "c'est 常读 /sɛ/，se 单独的弱元音形式为 /sə/，不是一对固定同音词。des amis 有 /z/ 联诵，des livres 没有；先看后一个词是否以可联诵的元音开头，再核对具体规则。",
+    "model": "Voici ma salle de classe. Il y a six tables. Les chaises sont devant les tables. Mon sac est sous une chaise. Mon cahier est dans le sac. Le dictionnaire est sur la table. Il y a une fenêtre près de la porte. Il n'y a pas de télévision.",
+    "practice": [["Mettez au pluriel : C'est un cahier.", "Ce sont des cahiers.", "c'est 变为 ce sont；un 变为 des；cahier 加复数 s。"], ["Rendez négatif : Il y a un stylo ici.", "Il n'y a pas de stylo ici.", "普通存在句的否定使用 il n'y a pas de；de 在 stylo 前不省音。"], ["Complétez : ___ ordinateur est sur la table. (objet déjà identifié)", "L'ordinateur est sur la table.", "已确认的物品用定冠词；ordinateur 元音开头，le 省音为 l'。"]]
+  },
+  "fr-a1-u05": {
+    "grammar": "以 parler 的词干 parl- 加词尾：-e、-es、-e、-ons、-ez、-ent。表面规则不适用于所有 -er 拼写动词，aller 是不规则动词。比较 Nous parlons 与 Vous parlez。时间安排可以用现在时加明确的未来时间：Ils travaillent demain；因此这句不必强制改成 futur proche。",
+    "phonetics": "parle、parles、parlent 的动词部分通常同音 /paʁl/；je parle、tu parles、ils parlent 整个词组并不同音，因为主语不同。第三人称复数词尾 -ent 不读成鼻化元音。",
+    "model": "Le matin, je commence les cours à neuf heures. À midi, je déjeune avec une amie. L'après-midi, nous étudions à la bibliothèque. Je travaille souvent le français. Le soir, je prépare mes devoirs. Je ne travaille pas le dimanche. Le dimanche, je marche dans le parc. Parfois, je regarde un film.",
+    "practice": [["Conjuguez : Vous (travailler) à la bibliothèque.", "Vous travaillez à la bibliothèque.", "vous 对应规则 -er 动词词尾 -ez。"], ["Rendez négatif : Je travaille le dimanche.", "Je ne travaille pas le dimanche.", "ne 和 pas 环绕变位动词 travaille；保留表示习惯的 le dimanche。"], ["Est-ce que « Ils travaillent demain » peut exprimer un programme futur ?", "Oui.", "demain 提供未来时间，安排语境中现在时可以指未来；不能仅因时间是明天就判为时态错误。"]]
+  },
+  "fr-a1-u06": {
+    "grammar": "把 Tu habites ici 改成 est-ce que 问句时，后面保持 tu habites ici 的语序。元音前 que 写成 qu'：Est-ce qu'il habite ici ?。最初先掌握语调疑问和 est-ce que，不要求同时熟练掌握所有倒装形式。",
+    "phonetics": "n'habite 是书写上必须的省音，因为 habiter 的 h 是哑音；ne travaille 的 ne 在规范书写中不能改成 n'。口语中弱元音可能省略，这与书写省音是两件事。带疑问词的问句不一定都用结尾升调。",
+    "model": "Bonjour, excusez-moi. Où est la bibliothèque ? Est-ce qu'elle est ouverte aujourd'hui ? À quelle heure ferme-t-elle ? Je n'habite pas ici. Je cherche aussi la gare. Est-ce que je peux y aller à pied ? Merci beaucoup pour votre aide.",
+    "practice": [["Transformez : Il habite à Lyon. (est-ce que)", "Est-ce qu'il habite à Lyon ?", "que 在 il 前省音为 qu'；il habite 的陈述语序保持不变。"], ["Corrigez : Il ne habite pas ici.", "Il n'habite pas ici.", "habiter 的哑音 h 不阻止省音，因此 ne 写作 n'。"]]
+  },
+  "fr-a1-u07": {
+    "grammar": "aimer + 一类事物通常用定冠词：J'aime le sport。aimer 后也可以直接接动词原形：J'aime nager。faire de 与活动搭配：faire du vélo、faire de la natation；具体地点用 aller à：aller au cinéma。先区分‘做什么活动’和‘去什么地方’。",
+    "phonetics": "fais 和 fait 常同音 /fɛ/，不能设计仅靠这两个孤立音判断拼写的题。借助 je/tu/il 的主语区别词形。nous faisons 中 fai- 的常见读音为 /fə/；vous faites 读 /vufɛt/。",
+    "model": "J'aime la musique et le sport. Le mercredi, je fais du vélo. Ma sœur préfère la natation. Elle va à la piscine le samedi. Parfois, nous allons au cinéma ensemble. Je n'aime pas les films très longs. Le dimanche, nous restons à la maison. Nous écoutons de la musique.",
+    "practice": [["Complétez : J'aime ___ natation.", "la", "谈论某一类活动的喜好，aimer 后用定冠词 la。"], ["Complétez : Nous faisons ___ vélo.", "du", "faire de + le vélo 缩合为 faire du vélo；不是地点介词 au。"], ["Conjuguez : Vous (faire) du sport.", "Vous faites du sport.", "faire 是不规则动词，vous 形式是 faites，而不是 faisez。"]]
+  },
+  "fr-a1-u08": {
+    "grammar": "比较 Je prends du café（不定量）和 Je prends un café（通常是一杯咖啡）。数量表达后用 de：deux kilos de pommes、un verre d'eau。Je n'aime pas le café 中 le 不变，因为仍表示对这一类饮品的喜好；Je ne bois pas de café 才是普通数量否定。",
+    "phonetics": "du /dy/ 与 doux /du/ 的区别在元音舌位；二者都圆唇。voudrais 的末尾 s 不读。将 Je voudrais un café 划成自然请求语组，避免每个词之间都停顿。",
+    "model": "Bonjour, je voudrais un café, s'il vous plaît. Je prends aussi un verre d'eau. Pour le déjeuner, je voudrais une soupe et du pain. Je ne prends pas de fromage. Mon amie préfère une salade. Nous voudrions payer, s'il vous plaît. Est-ce que je peux payer par carte ? Merci, bonne journée !",
+    "practice": [["Complétez : un kilo ___ pommes", "de", "明确数量 un kilo 后接 de，不能继续使用部分冠词 du。"], ["Rendez négatif : J'aime le café.", "Je n'aime pas le café.", "aimer 的一般喜好对象保留定冠词 le；不要套用 boire du café 的数量否定规则。"], ["Dites poliment : un verre d'eau.", "Je voudrais un verre d'eau, s'il vous plaît.", "voudrais 是礼貌请求形式；eau 元音开头，de 省音为 d'。"]]
+  },
+  "fr-a1-u09": {
+    "grammar": "祈使句一般省略主语代词：Tournez à droite，不说 Vous tournez à droite 来表达同样的祈使结构。tu 的规则 -er 祈使形式通常去 s：Tourne。初级只需知道少数衔接例外，例如 Vas-y，不能据此写成 Tournes à droite。",
+    "phonetics": "aller 与 allez 常同音 /ale/，要依句法判断拼写。tout droit 是直行；à droite 是向右。两个短语的音形接近而意思不同，读指路句时保留完整短语。",
+    "model": "Pour aller à la médiathèque, sortez de la gare. Tournez à droite. Continuez tout droit. Prenez la deuxième rue à gauche. Le musée est devant vous. La médiathèque est à côté du musée. Elle est en face d'un petit parc. Le trajet dure dix minutes à pied.",
+    "practice": [["Corrigez l'ordre donné à un ami : Tu tourne à droite !", "Tourne à droite !", "祈使句不用 tu；规则 -er 动词的 tu 祈使形式不加词尾 s。"], ["Traduisez : continue straight ahead.", "Continuez tout droit.", "tout droit 表示直行；à droite 表示向右，不能互换。"]]
+  },
+  "fr-a1-u10": {
+    "grammar": "petit appartement 中 appartement 是阳性，使用 un；grande maison 中 maison 是阴性，形容词加 e。形容词位置要随词学习，不能概括成全部在名词后。习惯用时间状语组织：Le matin, je travaille dans le salon；Le soir, je lis dans ma chambre。",
+    "phonetics": "petit 的最后 t 通常不读，petite 的 t 读出；grand 与 grande 也存在相应的末尾辅音区别。名词阴阳性不能只凭声音可靠地猜出，继续连同冠词记忆。",
+    "model": "J'habite dans un petit appartement. Il y a deux chambres et un salon. La cuisine est lumineuse. Ma chambre est calme. Le matin, je prends mon petit-déjeuner dans la cuisine. L'après-midi, je travaille à mon bureau. Le soir, nous lisons dans le salon. Le week-end, je range ma chambre.",
+    "practice": [["Accordez : une cuisine (lumineux)", "une cuisine lumineuse", "lumineux 的阴性形式为 lumineuse，不是简单加 e。"], ["Corrigez : une petit appartement", "un petit appartement", "appartement 为阳性单数，冠词用 un，petit 保持阳性单数。"]]
+  },
+  "fr-a1-u11": {
+    "grammar": "futur proche 的第二个动词必须是原形：Nous allons préparer，不写 Nous allons préparons。否定包围变位的 aller：Nous n'allons pas sortir。即使时间是下个月，只要符合计划或预期语境，也可以使用 futur proche；‘proche’并非精确的小时数限制。",
+    "phonetics": "nous allons 中 /z/ 连接主语代词和动词；allons 后的动词原形不能因为接在复数形式后就加复数词尾。听辨 vais、va、vont 时保留主语帮助识别。",
+    "model": "Ce week-end, je vais rendre visite à ma grand-mère. Je vais prendre le train samedi matin. D'abord, nous allons déjeuner ensemble. Ensuite, nous allons préparer un gâteau. L'après-midi, je vais me promener dans le village. Je ne vais pas sortir le soir. Dimanche, je vais rentrer chez moi. Je vais préparer mes cours pour lundi.",
+    "practice": [["Transformez au futur proche : Je visite le musée.", "Je vais visiter le musée.", "je 对应 vais，visiter 保持动词原形；futur proche 是题目要求，不是答案。"], ["Rendez négatif : Nous allons sortir.", "Nous n'allons pas sortir.", "ne 在 allons 前省音为 n'；pas 放在变位的 allons 后，而不是 sortir 后。"]]
+  },
+  "fr-a1-u12": {
+    "grammar": "不要将‘表示移动’当作选 être 的充分条件：J'ai marché、J'ai couru 使用 avoir。初学先记常见固定模式 je suis allé(e)、elle est venue、nous sommes arrivés。être 助动词的这些例句中，过去分词与主语配合；avoir 的配合规则留待后续学习，不能概括为所有情况永远不配合。",
+    "phonetics": "regarder 的 -er 与 regardé 的 -é 常同音 /e/；时间和助动词决定形式。练习 Je vais regarder 与 J'ai regardé，先听整个语组，再判断未来计划或过去事件。",
+    "model": "Hier, je suis allée au musée avec une amie. Nous avons pris le bus. Nous sommes arrivées à dix heures. Nous avons regardé une exposition. À midi, nous avons mangé dans un petit café. Ensuite, nous avons marché dans le centre-ville. Je suis rentrée chez moi à cinq heures. J'ai passé une bonne journée.",
+    "practice": [["Complétez : Hier, Paul ___ marché pendant une heure.", "a", "marcher 在复合过去时使用 avoir；不能仅因有移动意义就选择 être。"], ["Accordez : Julie et Marie sont (arriver) à dix heures.", "Julie et Marie sont arrivées à dix heures.", "两位女性构成阴性复数主语，être 助动词搭配的 arrivé 加 -es。"], ["Rendez négatif : J'ai regardé le film.", "Je n'ai pas regardé le film.", "否定环绕助动词 ai，过去分词 regardé 留在 pas 后。"]]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "checked_at": "2026-10-17",
+  "implementation_commit": "0de11dd",
+  "pr": 8,
+  "reported_checks": 17,
+  "all_success": true,
+  "checks": [
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000824679/job/117303183679",
+      "name": "audit",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000824681/job/117303183213",
+      "name": "validate",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000824723/job/117303183448",
+      "name": "validate-source-registry",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000824682/job/117303183196",
+      "name": "verify",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000824673/job/117303183267",
+      "name": "validate",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000824678/job/117303183327",
+      "name": "validate",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000824659/job/117303183198",
+      "name": "verify-all",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000824690/job/117303183405",
+      "name": "check-v11",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000824734/job/117303183486",
+      "name": "validate",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000824730/job/117303183654",
+      "name": "validate",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000824684/job/117303183329",
+      "name": "verify",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000824670/job/117303183227",
+      "name": "build",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000824718/job/117303183459",
+      "name": "validate",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000824689/job/117303183425",
+      "name": "service",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000824716/job/117303183360",
+      "name": "validate-curriculum",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000824668/job/117303183201",
+      "name": "validate-public-assets",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/ACIDCH/language-learning-hub/actions/runs/39000821904/job/117303173883",
+      "name": "service",
+      "state": "SUCCESS"
+    }
+  ]
+}

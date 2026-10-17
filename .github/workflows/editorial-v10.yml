@@ -1,0 +1,24 @@
+name: Editorial V1.0 cross-version integrity
+on:
+  pull_request:
+    paths:
+      - 'docs/editorial/**'
+      - '.github/workflows/editorial-v10.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'docs/editorial/**'
+permissions:
+  contents: read
+jobs:
+  verify-all:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate 14 new unit IDs, honest status and privacy
+        run: node docs/editorial/v10/validate.mjs
+      - name: Verify 72 distinct IDs across V0.6–V1.0
+        run: node docs/editorial/validate-all.mjs

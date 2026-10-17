@@ -1,0 +1,23 @@
+name: Editorial V1.2 IELTS gap completion
+on:
+  pull_request:
+    paths:
+      - 'docs/editorial/v12/**'
+      - '.github/workflows/editorial-v12.yml'
+      - 'docs/editorial/coverage/**'
+  push:
+    branches: [main]
+    paths:
+      - 'docs/editorial/v12/**'
+      - '.github/workflows/editorial-v12.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node docs/editorial/v12/validate.mjs

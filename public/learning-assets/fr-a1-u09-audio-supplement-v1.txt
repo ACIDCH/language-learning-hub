@@ -1,0 +1,24 @@
+# 法语 A1 · 12 单元参考音频练习与语法补充 V1
+
+状态：新增教学补充稿，保留所有旧正文。每节的录音是 Français interactif 原版词汇参考音频，不是对本项目原创对话的配音。标准音轨、实际时长、哈希及完整原站词表见 `config/assets/lesson-audio.json`。语法提示和练习答案为本项目原创，仍待专业语言审校。录音均已下载校验；人工听辨验收未完成，不标为正式有声课。
+
+使用方式：先完成原课的六段正文，再听本节指定音轨。第一次不看词表抓类别；第二次对照完整词表辨认；第三次选短片段跟读。下列练习不需要计分，不作为课程解锁条件。时间点由学习者用 A/B 标记，尚无经过核验的逐词时间轴。
+
+## fr-a1-u09 · Se déplacer
+
+参考音轨：`fi-voc-051`，[原站 s'orienter](https://laits.utexas.edu/fi/voc/06/#051)。听前画十字路口，听到 à droite 时画右转，听到 tout droit 时画直行；两个表达不能因都含 droit 就当同义词。
+
+补充讲解：à droite 是方向；sur votre droite 指在你的右手边。en face de la gare 为车站对面，près du musée 为博物馆附近。à + le 缩合 au，de + le 缩合 du；à la / de la 不作同样缩合。命令式 vous 形式常用于礼貌问路回应：Prenez la première rue à droite. “礼貌”也依赖语气及请托语，不是单靠一个代词。
+
+练习：①把 en face de le musée 改正。②解释 tout droit 与 à droite。③翻译“邮局在车站附近”。④用三步说明从学校到一个虚构公园的路线。
+
+答案：①en face du musée。②一直向前；向右。③La poste est près de la gare。④Allez tout droit. Prenez la deuxième rue à gauche. Le parc est sur votre droite。自查：路线图与口头指令一致；真实导航请核对地图，不用虚构路线作真实出行依据。
+
+
+## 版本与验收记录
+
+- 新增材料：十二组定位明确的听前/听后任务、语法边界、改错题、答案及原创表达示范。
+- 保留：此前每个单元的独立正文、U04–U12 分册及扩充稿；本文件不替换任何旧段落。
+- 资料关系：2019 第四版教材与 legacy 网站词汇音频分开登记，不默认与新版 Pressbooks 音轨相同。
+- 待补：每课情境对话/长阅读的匹配录音、人工试听、专业逐课语言审校，以及高级别课程。完成本练习不意味着 12 节有声课已发布。
+- 许可：原站录音/词表按 [FI 采用页](https://laits.utexas.edu/fi/page/adopt/) CC BY 3.0 署名 COERLL / UT Austin；本项目原创讲解没有因此自动转为 CC 授权。
