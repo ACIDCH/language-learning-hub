@@ -1,0 +1,216 @@
+{
+  "date": "2026-10-18",
+  "dataset": {
+    "unique_sentences": 30,
+    "synthetic_audio_files": 90,
+    "languages": {
+      "fr": 15,
+      "en": 15
+    },
+    "human_recordings": 0,
+    "human_phone_annotations": 0,
+    "browser_e2e": "pending_safety_tool_block",
+    "accuracy_claim": "Synthetic prompt agreement only; no learner pronunciation accuracy measured."
+  },
+  "runs": [
+    {
+      "engine": "phoneme",
+      "threads": 1,
+      "device": "Windows-11-10.0.26300-SP0",
+      "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+      "physical_memory_bytes": 12662538240,
+      "load_s": 6.270691799989436,
+      "sampled_peak_rss_bytes": 1878380544,
+      "weights_bytes": 1263541832,
+      "cases": 90,
+      "execution_failures": 0,
+      "median_ms": 829.5997000241186,
+      "p95_ms": 2211.1511999974027,
+      "max_ms": 2831.305200001225,
+      "source_report": "speech-v3-phoneme-1threads.json",
+      "empty_phone_sequences": 1,
+      "unscorable": 0,
+      "wer": null,
+      "cer": null,
+      "reason": "Phoneme recognizer has no word decoder. G2P edit proxy is not human phone ground truth."
+    },
+    {
+      "engine": "phoneme",
+      "threads": 4,
+      "device": "Windows-11-10.0.26300-SP0",
+      "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+      "physical_memory_bytes": 12662538240,
+      "load_s": 6.4272686000331305,
+      "sampled_peak_rss_bytes": 1712586752,
+      "weights_bytes": 1263541832,
+      "cases": 90,
+      "execution_failures": 0,
+      "median_ms": 432.1325499913655,
+      "p95_ms": 1149.9631000333466,
+      "max_ms": 1379.812800034415,
+      "source_report": "speech-v3-phoneme-4threads.json",
+      "empty_phone_sequences": 1,
+      "unscorable": 0,
+      "wer": null,
+      "cer": null,
+      "reason": "Phoneme recognizer has no word decoder. G2P edit proxy is not human phone ground truth."
+    },
+    {
+      "engine": "whisper",
+      "threads": 4,
+      "device": "Windows-11-10.0.26300-SP0",
+      "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+      "physical_memory_bytes": 12662538240,
+      "load_s": 2.9260050999582745,
+      "sampled_peak_rss_bytes": 300449792,
+      "weights_bytes": 78203619,
+      "cases": 90,
+      "execution_failures": 0,
+      "median_ms": 283.347299991874,
+      "p95_ms": 802.0225000218488,
+      "max_ms": 910.2322999970056,
+      "source_report": "speech-v3-whisper-4threads.json",
+      "synthetic_metrics": [
+        {
+          "language": "fr",
+          "condition": "all",
+          "n": 45,
+          "wer": 0.48,
+          "cer": 0.24492753623188407
+        },
+        {
+          "language": "fr",
+          "condition": "clean_synthetic",
+          "n": 15,
+          "wer": 0.34,
+          "cer": 0.14347826086956522
+        },
+        {
+          "language": "fr",
+          "condition": "noise_10db_synthetic",
+          "n": 15,
+          "wer": 0.64,
+          "cer": 0.3521739130434783
+        },
+        {
+          "language": "fr",
+          "condition": "slow_synthetic",
+          "n": 15,
+          "wer": 0.46,
+          "cer": 0.2391304347826087
+        },
+        {
+          "language": "en",
+          "condition": "all",
+          "n": 45,
+          "wer": 0.1414141414141414,
+          "cer": 0.0945945945945946
+        },
+        {
+          "language": "en",
+          "condition": "clean_synthetic",
+          "n": 15,
+          "wer": 0.10606060606060606,
+          "cer": 0.07432432432432433
+        },
+        {
+          "language": "en",
+          "condition": "noise_10db_synthetic",
+          "n": 15,
+          "wer": 0.19696969696969696,
+          "cer": 0.125
+        },
+        {
+          "language": "en",
+          "condition": "slow_synthetic",
+          "n": 15,
+          "wer": 0.12121212121212122,
+          "cer": 0.08445945945945946
+        }
+      ]
+    }
+  ],
+  "tested_packages": {
+    "torch": "2.8.0+cpu",
+    "transformers": "4.57.1",
+    "faster-whisper": "1.2.1",
+    "ctranslate2": "4.8.3",
+    "piper-tts": "1.8.0",
+    "numpy": "2.5.4",
+    "scipy": "1.16.2",
+    "soundfile": "0.13.1",
+    "psutil": "7.1.0",
+    "fastapi": "0.119.0",
+    "uvicorn": "0.37.0",
+    "httpx": "0.28.1",
+    "huggingface-hub": "0.36.2"
+  },
+  "model_artifacts": [
+    {
+      "repo": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+      "revision": "2c733782da5604684829819a5eb744c193fe9398",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "file": "config.json",
+          "bytes": 1856,
+          "sha256": "4609fb49b7e1d28aecb2840da1926c40bd915bc6f1120a940afacf7159bbfb13"
+        },
+        {
+          "file": "preprocessor_config.json",
+          "bytes": 212,
+          "sha256": "a2254a5b58f72cd4de3632f8eee64f3f098b7c1402128d2f419e7d00ae13e335"
+        },
+        {
+          "file": "pytorch_model.bin",
+          "bytes": 1263535127,
+          "sha256": "04366b6c8d24099ef313cf02f0e58d26f5dddfda16edbfc8eb2c713d94a9f551"
+        },
+        {
+          "file": "vocab.json",
+          "bytes": 4637,
+          "sha256": "d732ab2456c0c017930001dc9af0b41b3b93d25b2eb9740bf9d925508d7d87d0"
+        }
+      ]
+    },
+    {
+      "repo": "Systran/faster-whisper-tiny",
+      "revision": "d90ca5fe260221311c53c58e660288d3deb8d356",
+      "license": "MIT",
+      "files": [
+        {
+          "file": "config.json",
+          "bytes": 2249,
+          "sha256": "a73a28cdfe1c43ccc7202fa333d1f89c202477271407ae9a7f19afa52039cac8"
+        },
+        {
+          "file": "model.bin",
+          "bytes": 75538270,
+          "sha256": "dcb76c6586fc06cbdac6dd21f14cfd129cc4cdd9dce19bf4ffa62e59cbe6e6d1"
+        },
+        {
+          "file": "tokenizer.json",
+          "bytes": 2203239,
+          "sha256": "fb7b63191e9bb045082c79fd742a3106a12c99513ab30df4a0d47fa6cb6fd0ab"
+        },
+        {
+          "file": "vocabulary.txt",
+          "bytes": 459861,
+          "sha256": "34ce3fe1c5041027b3f8d42912270993f986dbc4bb34cf27f951e34a1e453913"
+        }
+      ]
+    }
+  ],
+  "synthetic_voice_artifacts": [
+    {
+      "name": "fr_FR-siwis-medium",
+      "bytes": 63201294,
+      "sha256": "641d1ab097da2b81128c076810edb052b385decc8be3381814802a64a73baf99"
+    },
+    {
+      "name": "en_US-lessac-medium",
+      "bytes": 63201294,
+      "sha256": "5efe09e69902187827af646e1a6e9d269dee769f9877d17b16b1b46eeaaf019f"
+    }
+  ]
+}

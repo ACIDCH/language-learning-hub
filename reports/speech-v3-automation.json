@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-18",
+  "implementation_commit": "eaa7ee9",
+  "base_commit": "f8d862a",
+  "environment": "Windows, local checkout after rebasing onto main",
+  "checks": [
+    {"command": "npm ci --no-fund", "status": "passed", "audit_vulnerabilities": 0},
+    {"command": "npm run build", "status": "passed", "includes_typecheck": true},
+    {"command": "npx vitest run --config vitest.speech.config.ts", "status": "passed", "tests": 14, "microphone_events": "simulated"},
+    {"command": "node --experimental-strip-types --test tests/speechCompare.test.mjs tests/lessonStages.test.mjs tests/audioZip.test.mjs tests/cloud-config.test.mjs tests/learningProgress.test.mjs tests/resourceInventory.test.mjs", "status": "passed", "tests": 24},
+    {"command": "../speech-runtime/Scripts/python.exe -m pytest speech_service -q", "status": "passed", "tests": 4, "warnings": ["Dependency deprecation warning: AnyIO BlockingPortal"], "endpoint_model": "injected fake evaluator; real model evidence is in separate benchmark reports"},
+    {"command": "git diff --check", "status": "passed"}
+  ],
+  "total_automated_tests_passed": 42,
+  "real_model_benchmark": "speech-v3-summary.json",
+  "real_browser_acceptance": {
+    "chrome": "pending",
+    "edge": "pending",
+    "reason": "Windows browser safety check blocked computer operation; no bypass attempted",
+    "manual_steps": "../docs/SPEECH_V3_BENCHMARK.md#reproduce-locally-and-perform-manual-browser-acceptance"
+  },
+  "human_recordings_tested": 0,
+  "live_microphone_tested": false,
+  "ci_status": "See the pull request Checks for the authoritative remote run; this report records local validation only."
+}
