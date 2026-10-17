@@ -306,8 +306,11 @@ export default function CloudWorkspace() {
             courseId={selected} assets={audioAssets} status={audioStatus}/>
           <ReferenceAudio lessonId={selected}/>
         </>}
-        {activePanel==='speech'&&<SpeechPractice key={selected} lessonText={currentLesson?.content_body||''}
-          language={catalog.find(c=>c.id===selected)?.language||'fr'} accessToken={session.access_token}/>}
+        {activePanel==='speech'&&<>
+          <SpeechPractice key={selected} lessonText={currentLesson?.content_body||''}
+            language={catalog.find(c=>c.id===selected)?.language||'fr'} accessToken={session.access_token}/>
+          <p className="cloud-disclaimer"><a href="/speech-lab#ipa-studio">打开 IPA 全文音标阅读室：粘贴任意英语或法语文章，实时查看音标</a></p>
+        </>}
         {activePanel==='review'&&<>
           <StageCoverage client={client!} session={session} onSelect={chooseCourse}/>
           <CourseAudit client={client!} session={session} refreshVersion={importNonce}
