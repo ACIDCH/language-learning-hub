@@ -32,6 +32,8 @@ jobs:
         run: node --experimental-strip-types --test tests/learningProgress.test.mjs
       - name: Verify already-synced private inventory helpers
         run: node --experimental-strip-types --test tests/resourceInventory.test.mjs
+      - name: Test speech V3 lifecycle, privacy and fallback adapters
+        run: npx vitest run --config vitest.speech.config.ts
       - name: Validate learning route ordering and real completion states
         run: node --experimental-strip-types --test tests/learningRoadmap.test.mjs
       - name: Check 353 recorded audio references and licensing display contract
@@ -56,7 +58,7 @@ jobs:
         run: node --experimental-strip-types --test tests/foundationAlphabet.test.mjs
       - name: Test 0-30 English and French number-spelling and oral-drill references
         run: node --experimental-strip-types --test tests/foundationNumbers.test.mjs
-      - name: Test everyday speech feedback and course phrase extraction
+      - name: Test everyday speech feedback and course extraction
         run: node --experimental-strip-types --test tests/speechCoach.test.mjs
       - name: Check TypeScript and build
         run: npm run build
@@ -71,3 +73,15 @@ jobs:
             echo 'Private credential markers detected in public build' >&2
             exit 1
           fi
+
+  speech-service:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r speech_service/requirements-test.txt
+      - name: Test memory-only acoustic service without downloading weights
+        run: python -m pytest speech_service -q
