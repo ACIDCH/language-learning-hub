@@ -45,6 +45,22 @@ Worker Git integration may grant Cloudflare's own deployment token automatically
 
 After successful deployment, inspect `https://<actual-worker-url>/health` and `/v1/status`. They must return truthful readiness. `/v1/courses` returns only catalog metadata. The Worker verifies an Authorization bearer token against Supabase before progress reads/writes; user_id is taken from the verified session; PostgreSQL RLS remains the final enforcement boundary. Unauthorized requests return 401.
 
+## Zero-touch Pages connection (October 2026)
+
+For this personal project, `src/cloudPublicDefaults.ts` contains only the
+existing **public** Supabase project URL, its **publishable** browser key, and
+the deployed Worker URL. These are designed for exposure to browsers; user
+access is enforced by Supabase Auth and RLS. GitHub/Cloudflare Pages deploy
+on `main` can now connect to the Worker without entering three extra
+environment variables by hand.
+
+This choice is specific to this privately used learning site, and the code
+repository is public. Never commit a `sb_secret_` key, service-role key, user
+password, AI provider key, or Google Drive OAuth credential. If a public
+endpoint or publishable key rotates, update this file in a reviewed PR and
+redeploy. Cloudflare Pages `VITE_*` build variables still take precedence
+when explicitly supplied.
+
 ## Connect Pages to Worker
 
 Once the actual Worker URL is known, configure the following build-time Pages variables and redeploy:
