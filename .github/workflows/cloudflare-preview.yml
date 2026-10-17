@@ -1,10 +1,11 @@
-name: Cloudflare Pages prototype preview (optional)
+name: Cloudflare Git integration readiness checks
 
 on:
   pull_request:
     paths:
       - 'design-prototypes/academic-clean/**'
       - 'tools/build_pages_preview.mjs'
+      - 'cloudflare/learning-api/**'
       - '.github/workflows/cloudflare-preview.yml'
   workflow_dispatch:
 
@@ -23,6 +24,10 @@ jobs:
         run: |
           node --check design-prototypes/academic-clean/app.js
           node design-prototypes/academic-clean/check-prototype.mjs
+      - name: Check backend Worker contract
+        run: |
+          node --check cloudflare/learning-api/src/index.mjs
+          node --test cloudflare/learning-api/test/*.test.mjs
       - name: Prepare public-only preview bundle
         run: node tools/build_pages_preview.mjs
       - name: Confirm preview package contains only allowlisted files
@@ -35,22 +40,3 @@ jobs:
           path: dist-preview
           retention-days: 3
 
-  deploy-preview:
-    if: github.event_name == 'workflow_dispatch'
-    needs: validate-preview
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-    steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version: '22'
-      - run: node tools/build_pages_preview.mjs
-      - name: Upload to manually provisioned Cloudflare Pages preview
-        uses: cloudflare/wrangler-action@v4
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist-preview --project-name=language-learning-hub-preview --branch=review
