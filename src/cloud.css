@@ -281,3 +281,15 @@ border:1px solid var(--foundation-border);padding:10px;overflow-wrap:anywhere}
 .foundation-alphabet-accents li button{margin-left:8px}
 @media(max-width:840px){.foundation-alphabet-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:550px){.foundation-alphabet-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+
+/* Individual 0-30 number-listening cards with independent read-only reference table. */
+.foundation-number-drill{background:#f8fafc;border:1px solid #d3e3eb;border-radius:12px;padding:16px;margin:16px 0}
+.foundation-number-task{padding:14px;border:1px solid #d0e0e9;border-radius:10px;background:#fff}
+.foundation-number-counter{font-weight:700;color:#235671;margin-bottom:10px}
+.foundation-number-task label{display:block;font-weight:600;margin-top:14px}
+.foundation-number-task input{width:100%;box-sizing:border-box;padding:10px 12px;font:inherit;
+ border:1px solid #9bb8c7;border-radius:9px;margin:6px 0}
+.foundation-number-feedback{padding:12px;background:#edf7f0;border-radius:8px;overflow-wrap:anywhere}
+.foundation-number-feedback button{margin-left:8px}
+.foundation-number-reference{max-height:350px;overflow:auto;border:1px solid #d5e3eb;border-radius:8px;margin-top:12px}
