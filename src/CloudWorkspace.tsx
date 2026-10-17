@@ -304,7 +304,7 @@ export default function CloudWorkspace() {
         </>}
         {activePanel==='audio'&&<AudioVault client={client!} session={session}
           courseId={selected} assets={audioAssets} status={audioStatus}/>}
-        {activePanel==='speech'&&<SpeechPractice key={selected}
+        {activePanel==='speech'&&<SpeechPractice key={selected} lessonText={currentLesson?.content_body||''}
           language={catalog.find(c=>c.id===selected)?.language||'fr'}/>}
         {activePanel==='review'&&<>
           <CourseAudit client={client!} session={session}

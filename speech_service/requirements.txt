@@ -1,0 +1,12 @@
+# Install torch==2.8.0 separately from https://download.pytorch.org/whl/cpu.
+# No changes to the existing course or AI service environments.
+-r requirements-test.txt
+transformers==4.57.1
+faster-whisper==1.2.1
+ctranslate2==4.8.3
+huggingface-hub==0.36.2
+piper-tts==1.8.0
+soundfile==0.13.1
+scipy==1.16.2
+psutil==7.1.0
+uvicorn==0.37.0

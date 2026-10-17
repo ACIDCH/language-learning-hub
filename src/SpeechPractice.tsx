@@ -1,4 +1,6 @@
-import {useEffect,useRef,useState} from 'react';
+import {lazy,Suspense,useEffect,useRef,useState} from 'react';
+import {ENGINES,browserResult,lessonPractice,type SpeechEngineId} from './speechEngines';
+const LocalPronunciation=lazy(()=>import('./LocalPronunciation'));
 import {analyzeTranscript,practiceHint} from './speechCompare';
 
 type Alternative={transcript:string;confidence?:number};
@@ -26,8 +28,11 @@ const ERRORS:Record<string,string>={
  'aborted':'本次识别已停止。'
 };
 export {analyzeTranscript as compareTranscript} from './speechCompare';
-export default function SpeechPractice({language}:{language:string}){
+export default function SpeechPractice({language,lessonText=""}:{language:string;lessonText?:string}){
  const [target,setTarget]=useState('');
+ const [mode,setMode]=useState<SpeechEngineId>('browser-asr');
+ const [step,setStep]=useState<'word'|'sentence'|'paragraph'>('sentence');
+ const watchdog=useRef<ReturnType<typeof setTimeout>|undefined>(undefined);
  const [heard,setHeard]=useState('');
  const [interim,setInterim]=useState('');
  const [alternatives,setAlternatives]=useState<string[]>([]);
@@ -41,19 +46,20 @@ export default function SpeechPractice({language}:{language:string}){
  const engine=useRef<Engine|null>(null);
  const lang=language==='fr'?'fr':'en';
  useEffect(()=>{
+  setLocale(lang==='fr'?'fr-FR':'en-US');setTarget('');setHeard('');setAlternatives([]);setListening(false);
   const synth=window.speechSynthesis;
   const refresh=()=>setVoices(synth?.getVoices().filter(v=>v.lang.toLowerCase().startsWith(lang))||[]);
   refresh();
   synth?.addEventListener?.('voiceschanged',refresh);
   return ()=>{
     synth?.removeEventListener?.('voiceschanged',refresh);
-    engine.current?.abort();engine.current=null;
+    const previous=engine.current;engine.current=null;previous?.abort();clearTimeout(watchdog.current);
     synth?.cancel();
   };
  },[lang]);
  const report=target.trim()&&heard.trim()?analyzeTranscript(target,heard):null;
  function updateTarget(next:string){
-  if(listening){engine.current?.abort();engine.current=null;setListening(false);}
+  const previous=engine.current;engine.current=null;previous?.abort();clearTimeout(watchdog.current);setListening(false);
   setTarget(next);setHeard('');setInterim('');setAlternatives([]);
   setAttempts(0);setNote('已更新练习句子。');
  }
@@ -76,7 +82,8 @@ export default function SpeechPractice({language}:{language:string}){
   const w=window as SpeechWindow,Constructor=w.SpeechRecognition||w.webkitSpeechRecognition;
   if(!Constructor){setNote('浏览器没有提供 Web Speech 识别，请改用支持该功能的浏览器。');return;}
   if(!target.trim()){setNote('先输入练习短句。');return;}
-  if(engine.current)engine.current.abort();
+  window.speechSynthesis?.cancel();
+  const previous=engine.current;engine.current=null;previous?.abort();clearTimeout(watchdog.current);
   const rec=new Constructor();
   rec.lang=locale;rec.continuous=false;rec.interimResults=true;rec.maxAlternatives=3;
   let finished=false,failed=false;
@@ -89,7 +96,7 @@ export default function SpeechPractice({language}:{language:string}){
       if(!first)continue;
       if(result.isFinal){
         finished=true;
-        setHeard(first);setInterim('');
+        setHeard(browserResult(first).transcript||'');setInterim('');
         const options:string[]=[];
         for(let j=0;j<Math.min(result.length,3);j++){
           const candidate=result[j]?.transcript?.trim();
@@ -102,19 +109,20 @@ export default function SpeechPractice({language}:{language:string}){
   };
   rec.onerror=event=>{
     if(engine.current!==rec)return;
-    failed=true;
+    failed=true;clearTimeout(watchdog.current);
     setNote(ERRORS[event.error]||'语音识别出现问题：'+event.error);
     setInterim('');
     setListening(false);
   };
   rec.onend=()=>{
     if(engine.current!==rec)return;
-    engine.current=null;setListening(false);setInterim('');
+    clearTimeout(watchdog.current);engine.current=null;setListening(false);setInterim('');
     if(!finished&&!failed)setNote('没有取得最终识别文字；可以放慢语速再试。');
   };
   engine.current=rec;setHeard('');setAlternatives([]);setInterim('');
   try{
     rec.start();setListening(true);
+    watchdog.current=setTimeout(()=>{if(engine.current===rec){engine.current=null;rec.abort();setListening(false);setInterim('');setNote('识别服务等待超时，请重试或选择本机声学模式。');}},20000);
     setNote('正在监听。部分浏览器将语音发送至其服务商识别；本学习系统不保留音频。');
   }catch{
     engine.current=null;setListening(false);
@@ -126,9 +134,12 @@ export default function SpeechPractice({language}:{language:string}){
    catch{setListening(false);}
  }
  return <section className="cloud-reader" aria-label="跟读与识别文字练习">
-  <h3>跟读练习 · 文字对照</h3>
+  <h3>发音练习 V3 · 听—跟—对比—复练</h3>
   <p className="cloud-disclaimer">使用浏览器语音识别和系统发声进行练习。识别文字受口音、语速、噪声与识别服务影响，不能直接用于给发音打分。当前练习记录仅留在本页面，不保存录音或同步转写文本。</p>
   <div className="cloud-fields">
+    <label>练习引擎<select aria-label="练习引擎" value={mode} onChange={e=>{updateTarget(target);setMode(e.target.value as SpeechEngineId);}}>{ENGINES.map(x=><option key={x.id} value={x.id} disabled={!x.available}>{x.name}</option>)}</select></label>
+    <label>练习长度<select aria-label="练习长度" value={step} onChange={e=>setStep(e.target.value as typeof step)}><option value="word">短词</option><option value="sentence">短句</option><option value="paragraph">段落（声学模式每次不超过 12 秒）</option></select></label>
+    {lessonText&&<div className="speech-presets" aria-label="当前课程练习片段">{lessonPractice(lessonText,step).map((s,i)=><button key={i} onClick={()=>updateTarget(s)}>{s}</button>)}</div>}
     <label>练习短句（{locale}）
       <textarea rows={3} maxLength={400} value={target}
         onChange={e=>updateTarget(e.target.value)}
@@ -158,8 +169,8 @@ export default function SpeechPractice({language}:{language:string}){
         value={rate} onChange={e=>setRate(Number(e.target.value))}/>
     </label>
     <div className="speech-actions">
-      <button type="button" onClick={speak}>听标准示范</button>
-      <button type="button" onClick={listen} disabled={listening}>
+      <button type="button" onClick={speak} disabled={listening}>听设备示范</button>
+      <button type="button" onClick={listen} disabled={listening||mode!=='browser-asr'}>
         {listening?'正在识别…':attempts?'再次练习':'开始跟读'}
       </button>
       {listening&&<button type="button" onClick={end}>结束收音</button>}
@@ -169,6 +180,7 @@ export default function SpeechPractice({language}:{language:string}){
     </div>
     <p className="cloud-disclaimer" role="status" aria-live="polite">{note}</p>
     {interim&&<p className="speech-interim">识别中：{interim}</p>}
+    {mode==='optional-local-evaluator'&&<Suspense fallback={<p>正在加载录音组件…</p>}><LocalPronunciation target={target} language={lang}/></Suspense>}
     {heard&&<div className="cloud-ai-result" aria-label="文字识别练习反馈">
       <p><strong>浏览器转写：</strong>{heard}</p>
       {report&&<>
