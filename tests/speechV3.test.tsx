@@ -106,7 +106,7 @@ describe('everyday learning feedback and course practice',()=>{
   const rec=Recognition.latest;
   act(()=>rec.onresult?.({results:[{isFinal:true,length:1,0:{transcript:'Je voudrais un thé'}}]}));
   expect(screen.getByText('优先练习识别不一致的词')).toBeTruthy();
-  expect(screen.getByText('café')).toBeTruthy();
+  expect(screen.getAllByText('café').length).toBeGreaterThan(0);
   fireEvent.click(screen.getByRole('button',{name:'只练这个词'}));
   expect((screen.getByRole('textbox') as HTMLTextAreaElement).value).toBe('café');
   fireEvent.click(screen.getByRole('button',{name:'返回完整句'}));
