@@ -134,28 +134,6 @@ export async function handle(request, env = {}, fetchFn = fetch) {
       if(!result.ok||!Array.isArray(result.data))return output({error:'audio_index_unavailable'},502,cors);
       return output({assets:result.data,playback_ready:false},200,cors);
     }
-).exec(url.pathname);
-    if (audioMatch && verb === 'GET') {
-      let courseId;
-      try {courseId=decodeURIComponent(audioMatch[1]);}
-      catch {return output({error:'invalid_course_id'},400,cors);}
-      if (!COURSE_ID.test(courseId)) return output({error:'invalid_course_id'},400,cors);
-      const token=tokenOf(request);
-      if(!token)return output({error:'authentication_required'},401,cors);
-      const uid=await resolveUser(token,config,fetchFn);
-      if(!uid)return output({error:'invalid_session'},401,cors);
-      const params=new URLSearchParams({
-        select:'asset_id,filename,duration_seconds,source_kind,decoded,exact_text,listened,audio_verified',
-        course_id:'eq.'+courseId,
-        order:'asset_id.asc',
-        limit:'100'
-      });
-      const result=await upstream(fetchFn,config.origin+'/rest/v1/course_audio_index?'+params,{
-        headers:{apikey:config.key,Authorization:'Bearer '+token,Accept:'application/json'}
-      });
-      if(!result.ok||!Array.isArray(result.data))return output({error:'audio_index_unavailable'},502,cors);
-      return output({assets:result.data,playback_ready:false},200,cors);
-    }
     const match = /^\/v1\/progress\/([^/]+)$/.exec(url.pathname);
     if (match && (verb === 'GET' || verb === 'PUT')) {
       const courseId = decodeURIComponent(match[1]);
