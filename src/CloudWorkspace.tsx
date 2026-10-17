@@ -16,6 +16,7 @@ import ReferenceIndex from './ReferenceIndex';
 import {ReferenceAudio} from './ReferenceAudio';
 import FoundationStudio from './FoundationStudio';
 import CourseGuide from './CourseGuide';
+import StageCoverage from './StageCoverage';
 import type {PracticeCheck} from './courseGuide';
 
 type Course = { id: string; language: string; level: string; track: string | null;
@@ -308,6 +309,7 @@ export default function CloudWorkspace() {
         {activePanel==='speech'&&<SpeechPractice key={selected}
           language={catalog.find(c=>c.id===selected)?.language||'fr'}/>}
         {activePanel==='review'&&<>
+          <StageCoverage client={client!} session={session} onSelect={chooseCourse}/>
           <CourseAudit client={client!} session={session} refreshVersion={importNonce}
             onSelect={id=>chooseCourse(id)}/>
           {currentLesson&&<LessonReview key={currentLesson.course_id} client={client!}
