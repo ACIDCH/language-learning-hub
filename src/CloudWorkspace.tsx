@@ -299,7 +299,7 @@ export default function CloudWorkspace() {
         {activePanel==='speech'&&<SpeechPractice key={selected}
           language={catalog.find(c=>c.id===selected)?.language||'fr'}/>}
         {activePanel==='review'&&<>
-          <CourseAudit client={client!} session={session}
+          <CourseAudit client={client!} session={session} refreshVersion={importNonce}
             onSelect={id=>chooseCourse(id)}/>
           {currentLesson&&<LessonReview key={currentLesson.course_id} client={client!}
             session={session} courseId={currentLesson.course_id}
