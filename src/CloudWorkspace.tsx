@@ -157,7 +157,7 @@ export default function CloudWorkspace() {
   return <main className="cloud-workspace">
     <header className="cloud-head">
       <div><p className="cloud-kicker">LANGUAGE HUB / CLOUD</p><h1>云端学习进度</h1>
-        <p>与本机私人教材服务分离的跨设备进度模块。课程全文和个人音频暂不经此接口开放。</p></div>
+        <p>跨设备学习进度与私人课程草稿阅读。Google Drive 保留原件，必要教学音频将分阶段接入。</p></div>
       <a href="/" className="cloud-return">返回公开课程 →</a>
     </header>
     {!configured ? <section className="cloud-panel" role="status">
