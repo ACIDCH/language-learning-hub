@@ -2,8 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {cardsForLesson,recallSummary,moveToNext} from '../src/foundationRecall.ts';
 import {FOUNDATION_UNITS} from '../src/foundationCurriculum.ts';
-test('all 24 short foundation lessons have concrete reviewable vocabulary',()=>{
- assert.equal(FOUNDATION_UNITS.length,24);
+test('all 48 foundational and bridge lessons have concrete reviewable vocabulary',()=>{
+ assert.equal(FOUNDATION_UNITS.length,48);
  for(const u of FOUNDATION_UNITS){
   const cards=cardsForLesson(u.id,u.vocab);
   assert.ok(cards.length>=4);
