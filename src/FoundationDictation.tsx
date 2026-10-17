@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {compareDictation} from './foundationDictation';
 
 export default function FoundationDictation({text,language,onPlay,onAddNote}:{
- text:string;language:'en'|'fr';onPlay:()=>void;onAddNote:(note:string)=>void;
+ text:string;language:'en'|'fr';onPlay:()=>void;onAddNote:(note:string)=>boolean;
 }){
  const [written,setWritten]=useState('');
  const [checked,setChecked]=useState(false);
@@ -16,7 +16,7 @@ export default function FoundationDictation({text,language,onPlay,onAddNote}:{
     '我的听写：'+written.trim()+'\n'+
     '参考原文：'+text+'\n'+
     '逐词文本差异（仅用于复习）：'+comparison.wordEdits+' 处。';
-  onAddNote(note);setAdded(true);
+  setAdded(onAddNote(note));
  }
  return <section className="foundation-dictation" aria-label="听写与文本核对">
   <h5>听写训练 · 听懂再写下</h5>
