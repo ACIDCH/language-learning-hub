@@ -2,6 +2,7 @@ import { useEffect, useState, type FormEvent } from 'react';
 import { createClient, type Session } from '@supabase/supabase-js';
 import './cloud.css';
 import { cloudPublicDefaults } from './cloudPublicDefaults';
+import BackupImporter from './BackupImporter';
 
 type Course = { id: string; language: string; level: string; track: string | null;
   title: string; unit: number; text_complete: boolean; audio_verified: boolean; publishable: boolean };
@@ -34,6 +35,7 @@ export default function CloudWorkspace() {
   const [selected, setSelected] = useState('');
   const [state, setState] = useState<State>({});
   const [lesson, setLesson] = useState<PrivateLesson | null>(null);
+  const [importNonce,setImportNonce] = useState(0);
   const [lessonStatus, setLessonStatus] = useState('登录后可读取私人课程正文。');
   const [status, setStatus] = useState('正在连接…');
   const [busy, setBusy] = useState(false);
@@ -110,7 +112,7 @@ export default function CloudWorkspace() {
           : '正文读取暂不可用：'+e.message);
       });
     return () => {alive=false;};
-  }, [session, selected]);
+  }, [session, selected, importNonce]);
 
   function editState(patch: Partial<State>) {
     const next = {...state,...patch};
@@ -193,6 +195,8 @@ export default function CloudWorkspace() {
             <pre className="cloud-manuscript">{lesson.content_body}</pre>
           </>}
         </section>
+        <BackupImporter client={client!} session={session} knownIds={catalog.map(c=>c.id)}
+          onImported={()=>setImportNonce(n=>n+1)}/>
         <fieldset className="cloud-stages"><legend>当前学习环节</legend>
           {stages.map((label,i)=><label key={label}><input type="radio" checked={state.stage===i}
             onChange={()=>editState({stage:i})}/>{label}</label>)}
