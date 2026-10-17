@@ -1,14 +1,16 @@
 import {useEffect,useRef,useState} from 'react';
 import {captureSpeech,decodePCM} from './speechCapture';
-import {evaluateLocal,localAllowed,phoneHint,type SpeechResult} from './speechEngines';
+import {evaluateLocal,evaluateRemote,cloudSpeechEndpoint,localAllowed,phoneHint,type SpeechResult} from './speechEngines';
 
-export default function LocalPronunciation({target,language}:{target:string;language:string}) {
+export default function LocalPronunciation({target,language,remote=false,accessToken}:{
+ target:string;language:string;remote?:boolean;accessToken?:string
+}) {
  const [state,setState]=useState('idle'),[note,setNote]=useState('本机模型须单独启动；约 1.26 GB 权重，不在浏览器或 Worker 下载。'),[result,setResult]=useState<SpeechResult|null>(null);
  const current=useRef<AbortController|null>(null),stop=useRef<(()=>void)|null>(null);
  const [metrics,setMetrics]=useState<{total_ms:number;max_frame_gap_ms:number;js_heap_bytes:number|null}|null>(null);
- const allowed=localAllowed(location.hostname);
- useEffect(()=>()=>{current.current?.abort();stop.current=null;},[target,language]);
- useEffect(()=>{setResult(null);setState('idle');},[target,language]);
+ const allowed=remote?!!cloudSpeechEndpoint()&&!!accessToken:localAllowed(location.hostname);
+ useEffect(()=>()=>{current.current?.abort();stop.current=null;},[target,language,remote]);
+ useEffect(()=>{setResult(null);setState('idle');},[target,language,remote]);
  async function run(file?:File) {
   if(!target.trim()||/[\u3400-\u9fff]/.test(target)){setNote('请先选择不含中文说明的英语或法语短句。');return;}
   current.current?.abort();const controller=new AbortController();current.current=controller;
@@ -23,8 +25,12 @@ export default function LocalPronunciation({target,language}:{target:string;lang
    if(file)pcm=await decodePCM(file);
    else {const recording=await captureSpeech(controller.signal);stop.current=recording.stop;setState('recording');setNote('正在录音，仅暂存在内存；请说完后停止。');pcm=await recording.done;}
    if(controller.signal.aborted){pcm.fill(0);return;}
-   setState('processing');setNote('本机声学分析中，可取消；录音不上传云端。');
-   const response=await evaluateLocal(pcm,target,language,controller.signal);
+   setState('processing');setNote(remote
+     ? '云端正在分析短录音；结果仅返回当前页面，不写入课程成绩。'
+     : '本机声学分析中，可取消；录音不上传云端。');
+   const response=remote
+     ? await evaluateRemote(pcm,target,language,controller.signal,accessToken)
+     : await evaluateLocal(pcm,target,language,controller.signal);
    if(current.current!==controller||controller.signal.aborted)return;
    setMetrics({total_ms:Math.round(performance.now()-started),max_frame_gap_ms:Math.round(maxGap),js_heap_bytes:(performance as Performance & {memory?:{usedJSHeapSize:number}}).memory?.usedJSHeapSize??null});
    setResult(response);
@@ -39,10 +45,14 @@ export default function LocalPronunciation({target,language}:{target:string;lang
   finally{clearTimeout(deadline);cancelAnimationFrame(frame);if(current.current===controller){setState('idle');stop.current=null;}}
  }
  return <section aria-label="实验性声学反馈">
-  <h4>音素练习参考值 · 本机实验功能</h4>
-  <p>可显示模型音素与参考读音的练习匹配度（0–100），帮助定位值得再读的词音；这是未经真人发音校准的参考数值，不是口音或专业发音成绩。短词、模型空输出或信号不稳时不显示数值。录音只送往本机 127.0.0.1:8776，不存入云盘或学习记录。</p>
-  {!allowed&&<p>当前云端页面不启用本机连接，请切回免费浏览器模式。在本机预览端口 5174 可试用声学原型。</p>}
-  <button disabled={!allowed||state!=='idle'} onClick={()=>void run()}>录音并观察音素</button>
+  <h4>音素练习参考值 · {remote?'云端识别':'本机实验'}</h4>
+  <p>模型音素与参考读音的匹配度（0–100）是实验性练习参考，并非专业发音准确率。短词或信号不稳时不会强行给分。{remote
+  ? '录音将在你点击开始后，通过 HTTPS 发送到云端模型进行一次分析；服务不会保存录音或将分数写入课程进度。'
+  : '录音只送往本机 127.0.0.1:8776，不存入云盘或学习记录。'}</p>
+  {!allowed&&<p>{remote
+    ? '当前未配置云端计算地址或账号会话。先登录课程系统并完成服务器部署；普通浏览器跟读仍可用。'
+    : '当前页面不连接本机声学服务；请在本机 5174 预览或选择已配置的云端模式。'}</p>}
+  <button disabled={!allowed||state!=='idle'} onClick={()=>void run()}>{remote?'发送短录音到云端分析':'录音并观察音素'}</button>
   {state==='recording'&&<button onClick={()=>stop.current?.()}>停止并分析</button>}
   {state!=='idle'&&<button onClick={()=>{current.current?.abort();setState('idle');setNote('已取消并释放录音。');}}>取消声学分析</button>}
   <label>或选择本机短音频（仅内存读取）<input type="file" accept="audio/*" disabled={!allowed||state!=='idle'} onChange={e=>{const file=e.target.files?.[0];e.target.value='';if(file)void run(file);}}/></label>

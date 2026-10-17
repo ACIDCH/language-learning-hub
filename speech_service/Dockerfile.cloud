@@ -1,0 +1,21 @@
+# Build: docker build -f speech_service/Dockerfile.cloud -t llh-phoneme-cloud .
+# Runtime environment: SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY,
+# LLH_SPEECH_ORIGINS (comma-separated exact HTTPS origins). No secret role key.
+FROM python:3.11-slim-bookworm
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 \
+    HF_HUB_DISABLE_TELEMETRY=1 TRANSFORMERS_OFFLINE=1 \
+    LLH_SPEECH_MODEL=/opt/phoneme-model LLH_SPEECH_THREADS=2 PORT=7860
+WORKDIR /app
+RUN apt-get update && apt-get install -y --no-install-recommends espeak-ng libsndfile1 \
+    && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+COPY speech_service/requirements-test.txt speech_service/requirements-cloud.txt /app/speech_service/
+RUN pip install --no-cache-dir -r speech_service/requirements-cloud.txt
+# Pin the precise revision used in V3's synthetic benchmark; bundle weights
+# ONCE in the cloud image so no student's browser or laptop downloads them.
+RUN python -c "from huggingface_hub import snapshot_download; snapshot_download(repo_id='facebook/wav2vec2-xlsr-53-espeak-cv-ft',revision='2c733782da5604684829819a5eb744c193fe9398',local_dir='/opt/phoneme-model',allow_patterns=['config.json','preprocessor_config.json','pytorch_model.bin','vocab.json','tokenizer_config.json','special_tokens_map.json'])"
+COPY speech_service /app/speech_service
+RUN useradd -m -u 10001 learner && chown -R learner:learner /app /opt/phoneme-model
+USER learner
+EXPOSE 7860
+CMD ["python", "-m", "speech_service.cloud_app"]

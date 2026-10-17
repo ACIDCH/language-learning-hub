@@ -1,0 +1,6 @@
+# Cloud-only CPU service; do not install Whisper or local training tools.
+-r requirements-test.txt
+transformers==4.57.1
+huggingface-hub==0.36.2
+piper-tts==1.8.0
+uvicorn==0.37.0

@@ -2,7 +2,7 @@ import {afterEach,beforeEach,describe,expect,it,vi} from 'vitest';
 import {act,cleanup,fireEvent,render,screen} from '@testing-library/react';
 import SpeechPractice from '../src/SpeechPractice';
 import LocalPronunciation from '../src/LocalPronunciation';
-import {browserResult,ENGINES,evaluateLocal,lessonPractice,localAllowed,phoneHint} from '../src/speechEngines';
+import {browserResult,ENGINES,evaluateLocal,evaluateRemote,cloudSpeechEndpoint,lessonPractice,localAllowed,phoneHint} from '../src/speechEngines';
 import {captureSpeech} from '../src/speechCapture';
 import {appendAttempt,learnerCoaching} from '../src/speechCoach';
 import {analyzeTranscript} from '../src/speechCompare';
@@ -14,7 +14,7 @@ class Recognition {
  constructor(){Recognition.latest=this;}
 }
 beforeEach(()=>{vi.stubGlobal('SpeechRecognition',Recognition);vi.stubGlobal('speechSynthesis',{getVoices:()=>[],cancel:vi.fn(),addEventListener:vi.fn(),removeEventListener:vi.fn()});});
-afterEach(()=>{cleanup();vi.useRealTimers();vi.unstubAllGlobals();});
+afterEach(()=>{cleanup();vi.useRealTimers();vi.unstubAllGlobals();vi.unstubAllEnvs();});
 function start(){render(<SpeechPractice language="fr"/>);fireEvent.click(screen.getByRole('button',{name:'Bonjour, comment allez-vous ?'}));fireEvent.click(screen.getByRole('button',{name:'② 开始跟读'}));return Recognition.latest;}
 
 describe('browser lifecycle',()=>{
@@ -149,5 +149,61 @@ describe('optional phoneme reference display contract',()=>{
    await expect(evaluateLocal(new Int16Array(16000),'hello','en',new AbortController().signal))
     .rejects.toThrow('不兼容的音素参考值');
   }
+ });
+});
+
+
+describe('authenticated cross-device cloud speech adapter',()=>{
+ it('never enables insecure or path-altered remote endpoint URLs',()=>{
+  for(const bad of ['http://speech.example','https://speech.example/admin',
+                    'https://user:password@speech.example','https://speech.example/?token=x']){
+   vi.stubEnv('VITE_SPEECH_API_URL',bad);
+   expect(cloudSpeechEndpoint()).toBeNull();
+  }
+  vi.stubEnv('VITE_SPEECH_API_URL','https://speech.example/');
+  expect(cloudSpeechEndpoint()).toBe('https://speech.example');
+ });
+ it('sends audio to cloud only after selecting remote mode with a signed-in session',async()=>{
+  vi.stubEnv('VITE_SPEECH_API_URL','https://speech.example/');
+  const send=vi.fn().mockResolvedValue({ok:true,json:async()=>({
+   engine:'optional-remote-evaluator',status:'experimental',canScore:false,phones:[],
+   practice_reference:{available:true,percent:78,calibrated:false,
+    method:'generated_g2p_vs_greedy_ctc_edit_agreement',
+    reference_phones:6,observed_phones:5}
+  })});
+  vi.stubGlobal('fetch',send);
+  const pcm=new Int16Array(16000).fill(123);
+  const result=await evaluateRemote(pcm,'Je voudrais un café','fr',
+   new AbortController().signal,'user-session-jwt');
+  expect(result.practice_reference?.percent).toBe(78);
+  expect(send).toHaveBeenCalledOnce();
+  expect(send.mock.calls[0][0]).toBe('https://speech.example/evaluate');
+  expect(send.mock.calls[0][1].headers.Authorization).toBe('Bearer user-session-jwt');
+  expect(send.mock.calls[0][1].credentials).toBe('omit');
+  expect(pcm.every(x=>x===0)).toBe(true);
+ });
+ it('refuses to upload any audio when user is logged out or backend is missing',async()=>{
+  const send=vi.fn();vi.stubGlobal('fetch',send);
+  vi.stubEnv('VITE_SPEECH_API_URL','https://speech.example/');
+  await expect(evaluateRemote(new Int16Array(16000),'hello','en',
+   new AbortController().signal)).rejects.toThrow('登录');
+  vi.stubEnv('VITE_SPEECH_API_URL','');
+  await expect(evaluateRemote(new Int16Array(16000),'hello','en',
+   new AbortController().signal,'user-session-jwt')).rejects.toThrow('尚未部署');
+  expect(send).not.toHaveBeenCalled();
+ });
+ it('rejects cloud response if fake provider tries to claim professional scoring',async()=>{
+  vi.stubEnv('VITE_SPEECH_API_URL','https://speech.example/');
+  vi.stubGlobal('fetch',vi.fn().mockResolvedValue({ok:true,json:async()=>({
+   engine:'optional-remote-evaluator',status:'experimental',canScore:true,phones:[]
+  })}));
+  await expect(evaluateRemote(new Int16Array(16000),'hello','en',
+   new AbortController().signal,'user-session-jwt')).rejects.toThrow('不兼容');
+ });
+ it('keeps signed-out public speech lab free and without cloud-only account access',()=>{
+  vi.stubEnv('VITE_SPEECH_API_URL','https://speech.example/');
+  render(<SpeechPractice language="fr"/>);
+  expect((screen.getByRole('option',{name:'云端音素练习（登录后使用）'}) as HTMLOptionElement).disabled).toBe(true);
+  expect(screen.getByRole('button',{name:'② 开始跟读'})).toBeTruthy();
  });
 });

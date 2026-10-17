@@ -3,23 +3,40 @@ export type SpeechEngineId = 'browser-asr' | 'optional-local-evaluator' | 'optio
 export type PhoneObservation = {expected:string|null;phone:string|null;kind:'match'|'different'|'not_detected'|'additional';start_s?:number;end_s?:number};
 export type PracticeReference = {available:boolean;percent:number|null;calibrated:false;reference_phones:number;observed_phones:number;method:'generated_g2p_vs_greedy_ctc_edit_agreement';reason?:'short_reference'|'insufficient_observation'|'unstable_coverage'|'unsupported_reference'|null;alignment_edits?:number};
 export type SpeechResult = {engine:SpeechEngineId;status:'transcript-only'|'experimental'|'unscorable';canScore:false;transcript?:string;phones?:PhoneObservation[];elapsed_ms?:number;signal?:{duration_s:number;rms:number;low_energy_s:number;rejection:string|null};reference_unknown?:string[];reason?:'empty_model_output'|'empty_reference';practice_reference?:PracticeReference};
+/** Published cloud endpoint address contains no credential. Only an HTTPS origin is accepted. */
+export function cloudSpeechEndpoint():string|null {
+ const configured=import.meta.env.VITE_SPEECH_API_URL?.trim();
+ if(!configured)return null;
+ try{
+  const url=new URL(configured);
+  return url.protocol==='https:'&&!url.username&&!url.password&&url.pathname==='/'&&
+    !url.search&&!url.hash?url.origin:null;
+ }catch{return null;}
+}
 export const ENGINES = [
  {id:'browser-asr',name:'免费基础：浏览器文字识别',available:true},
  {id:'optional-local-evaluator',name:'实验性：本机音素练习参考值',available:true},
- {id:'optional-remote-evaluator',name:'远程声学服务（未配置，不发送录音）',available:false},
+ {id:'optional-remote-evaluator',name:'云端音素练习（登录后使用）',available:!!cloudSpeechEndpoint()},
 ] as const;
 export function browserResult(transcript:string):SpeechResult {return {engine:'browser-asr',status:'transcript-only',canScore:false,transcript};}
 export function localAllowed(host:string) {return host==='localhost'||host==='127.0.0.1';}
-export async function evaluateLocal(pcm:Int16Array,target:string,language:string,signal:AbortSignal):Promise<SpeechResult> {
- if(!localAllowed(location.hostname))throw new Error('声学原型仅在本机预览运行；云端页面请使用免费浏览器模式。');
+/** The only two authorised inference transports. Browser ASR is unchanged. */
+async function evaluateAcoustics(pcm:Int16Array,target:string,language:string,
+  signal:AbortSignal,endpoint:string,engine:SpeechEngineId,accessToken?:string):Promise<SpeechResult> {
  if(pcm.length<5600||pcm.length>192000)throw new Error('请使用 0.35–12 秒短句。');
  const bytes=new Uint8Array(pcm.length*2),view=new DataView(bytes.buffer);
  pcm.forEach((x,i)=>view.setInt16(i*2,x,true));
  let encoded=''; for(let i=0;i<bytes.length;i+=8192)encoded+=String.fromCharCode(...bytes.subarray(i,i+8192));
- try {
-  const response=await fetch('http://127.0.0.1:8776/evaluate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pcm:btoa(encoded),target,language}),signal,cache:'no-store',credentials:'omit'});
-  const value=await response.json(); if(!response.ok)throw new Error(typeof value.detail==='string'?value.detail:'本机声学请求被拒绝');
-  if(value.engine!=='optional-local-evaluator'||value.canScore!==false||!Array.isArray(value.phones))throw new Error('声学服务返回了不兼容的结果');
+ try{
+  const response=await fetch(endpoint+'/evaluate',{
+   method:'POST',headers:{'Content-Type':'application/json',
+    ...(accessToken?{'Authorization':'Bearer '+accessToken}:{})},
+   body:JSON.stringify({pcm:btoa(encoded),target,language}),signal,cache:'no-store',credentials:'omit'
+  });
+  const value=await response.json();
+  if(!response.ok)throw new Error(typeof value.detail==='string'?value.detail:
+    (response.status===401?'云端会话已过期，请重新登录':response.status===429?'云端推理正在处理其他录音，请稍后再试':'音素服务请求失败 '+response.status));
+  if(value.engine!==engine||value.canScore!==false||!Array.isArray(value.phones))throw new Error('声学服务返回了不兼容的结果');
   const ref=value.practice_reference;
   if(ref!==undefined&&(
     typeof ref!=='object'||ref===null||typeof ref.available!=='boolean'||ref.calibrated!==false||
@@ -27,7 +44,18 @@ export async function evaluateLocal(pcm:Int16Array,target:string,language:string
     (!ref.available&&ref.percent!==null)
   ))throw new Error('声学服务返回了不兼容的音素参考值');
   return value;
- } finally {bytes.fill(0);pcm.fill(0);encoded='';}
+ }finally{bytes.fill(0);pcm.fill(0);encoded='';}
+}
+export async function evaluateLocal(pcm:Int16Array,target:string,language:string,signal:AbortSignal):Promise<SpeechResult> {
+ if(!localAllowed(location.hostname))throw new Error('本机原型只能在 localhost/127.0.0.1 页面使用。');
+ return evaluateAcoustics(pcm,target,language,signal,'http://127.0.0.1:8776','optional-local-evaluator');
+}
+export async function evaluateRemote(pcm:Int16Array,target:string,language:string,
+ signal:AbortSignal,accessToken?:string):Promise<SpeechResult> {
+ const endpoint=cloudSpeechEndpoint();
+ if(!endpoint)throw new Error('云端声学服务尚未部署或未配置 HTTPS 地址。');
+ if(!accessToken)throw new Error('请先登录学习账号，再使用云端音素练习。');
+ return evaluateAcoustics(pcm,target,language,signal,endpoint,'optional-remote-evaluator',accessToken);
 }
 
 /** Derived from the currently loaded manuscript, never a duplicate course catalogue. */

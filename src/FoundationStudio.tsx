@@ -216,7 +216,7 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
     {segment===4&&<section>
       <h5>发音与跟读</h5><p>{unit.pronunciation}</p>
       <p>建议先听一遍，再从本课单词或例句开始跟读。下面可以直接用浏览器识别并得到文字对照与复练建议，不要求安装 1.26GB 的本机声学模型。</p>
-      <SpeechPractice key={unit.id} language={unit.language} lessonText={speechLessonText} initialTarget={starter}/>
+      <SpeechPractice key={unit.id} language={unit.language} lessonText={speechLessonText} initialTarget={starter} accessToken={session.access_token}/>
       <p className="cloud-disclaimer">这里的反馈适合日常自练，不是专业音素／口音打分。本课原始进度及笔记继续单独保存。</p>
     </section>}
     {segment===5&&<section>

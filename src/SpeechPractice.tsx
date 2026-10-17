@@ -29,7 +29,9 @@ const ERRORS:Record<string,string>={
  'aborted':'本次识别已停止。'
 };
 export {analyzeTranscript as compareTranscript} from './speechCompare';
-export default function SpeechPractice({language,lessonText="",initialTarget=""}:{language:string;lessonText?:string;initialTarget?:string}){
+export default function SpeechPractice({language,lessonText="",initialTarget="",accessToken}:{
+ language:string;lessonText?:string;initialTarget?:string;accessToken?:string
+}){
  const [target,setTarget]=useState(initialTarget);
  const [mode,setMode]=useState<SpeechEngineId>('browser-asr');
  const [step,setStep]=useState<'word'|'sentence'|'paragraph'>('sentence');
@@ -153,7 +155,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget=""}
   engine.current=rec;setHeard('');setAlternatives([]);setInterim('');
   try{
     rec.start();setListening(true);
-    watchdog.current=setTimeout(()=>{if(engine.current===rec){engine.current=null;rec.abort();setListening(false);setInterim('');setNote('识别服务等待超时，请重试或选择本机声学模式。');}},20000);
+    watchdog.current=setTimeout(()=>{if(engine.current===rec){engine.current=null;rec.abort();setListening(false);setInterim('');setNote('识别服务等待超时，请重试；如已部署云端声学服务，也可选择云端模式。');}},20000);
     setNote('正在监听。部分浏览器将语音发送至其服务商识别；本学习系统不保留音频。');
   }catch{
     engine.current=null;setListening(false);
@@ -173,8 +175,8 @@ export default function SpeechPractice({language,lessonText="",initialTarget=""}
   <div className="cloud-fields">
     <details className="speech-advanced">
      <summary>识别方式与高级实验功能（默认使用免费浏览器识别）</summary>
-     <label>练习引擎<select aria-label="练习引擎" value={mode} onChange={e=>{updateTarget(target);setMode(e.target.value as SpeechEngineId);}}>{ENGINES.map(x=><option key={x.id} value={x.id} disabled={!x.available}>{x.name}</option>)}</select></label>
-     <p className="cloud-disclaimer">本机音素观察需要另外启动模型，只做辅助观察；无需为日常跟读安装。</p>
+     <label>练习引擎<select aria-label="练习引擎" value={mode} onChange={e=>{updateTarget(target);setMode(e.target.value as SpeechEngineId);}}>{ENGINES.map(x=><option key={x.id} value={x.id} disabled={!x.available||(x.id==='optional-remote-evaluator'&&!accessToken)}>{x.name}</option>)}</select></label>
+     <p className="cloud-disclaimer">本机模式需启动本机模型；云端模式需要学习账号及已部署的云端服务。两者都只提供未校准的练习参考值，默认免费文字跟读不受影响。</p>
     </details>
     <label>练习长度<select aria-label="练习长度" value={step} onChange={e=>setStep(e.target.value as typeof step)}><option value="word">短词</option><option value="sentence">短句</option><option value="paragraph">段落（声学模式每次不超过 12 秒）</option></select></label>
     {!!examples.length&&<div className="speech-presets" aria-label="当前课程练习片段">{examples.map((s,i)=><button key={i} onClick={()=>updateTarget(s)}>{s}</button>)}</div>}
@@ -220,7 +222,10 @@ export default function SpeechPractice({language,lessonText="",initialTarget=""}
     </div>
     <p className="cloud-disclaimer" role="status" aria-live="polite">{note}</p>
     {interim&&<p className="speech-interim">识别中：{interim}</p>}
-    {mode==='optional-local-evaluator'&&<Suspense fallback={<p>正在加载录音组件…</p>}><LocalPronunciation target={target} language={lang}/></Suspense>}
+    {mode!=='browser-asr'&&<Suspense fallback={<p>正在加载录音组件…</p>}>
+      <LocalPronunciation target={target} language={lang}
+        remote={mode==='optional-remote-evaluator'} accessToken={accessToken}/>
+    </Suspense>}
     {heard&&<div className="cloud-ai-result" aria-label="文字识别练习反馈">
       <p><strong>浏览器转写：</strong>{heard}</p>
       {report&&<>
