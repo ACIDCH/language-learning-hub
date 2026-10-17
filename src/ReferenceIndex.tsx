@@ -1,6 +1,6 @@
 import {useEffect,useMemo,useState} from 'react';
 import type {Session,SupabaseClient} from '@supabase/supabase-js';
-import {identifyReference,referenceCounts,REFERENCES,type ReferenceRecord,type ReferenceSource} from './referenceCatalog';
+import {identifyReference,referenceCounts,uniqueMediaHashes,REFERENCES,type ReferenceRecord,type ReferenceSource} from './referenceCatalog';
 type Filter='all'|ReferenceSource;
 export default function ReferenceIndex({client,session}:{client:SupabaseClient;session:Session}){
  const [items,setItems]=useState<ReferenceRecord[]>([]);
@@ -9,7 +9,7 @@ export default function ReferenceIndex({client,session}:{client:SupabaseClient;s
  useEffect(()=>{
   let active=true;
   void client.from('course_audio_index')
-   .select('asset_id,filename,source_kind,course_id,duration_seconds,decoded,audio_verified')
+   .select('asset_id,filename,source_kind,course_id,duration_seconds,decoded,audio_verified,sha256')
    .eq('source_kind','open_reference').order('asset_id').limit(500)
    .then(({data,error})=>{
     if(!active)return;
@@ -37,6 +37,7 @@ export default function ReferenceIndex({client,session}:{client:SupabaseClient;s
     <strong>{counts[key]}</strong><span>{title}</span>
    </button>)}
   </div>
+  <p className="cloud-disclaimer">数据库共 {items.length} 条音频索引，基于 SHA-256 有 {uniqueMediaHashes(items)} 个不重复文件；其中一个 FI 词汇音频同时存在于两个来源归档，不必重复审核。</p>
   <p className="cloud-disclaimer">FI 开放资源须按具体音轨核对许可与署名；Inspire A1 为商业出版社配套，仅保留私人参考索引。原始 MP3 的技术解码成功不等于人工试听或音文对齐成功。</p>
   <div className="ref-filters">
    <label>资源类别<select value={filter} onChange={e=>selectFilter(e.target.value as Filter)}>
