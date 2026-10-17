@@ -1,0 +1,80 @@
+[
+  {
+    "name": "private-courses-v4-backup.zip",
+    "bytes": 715090,
+    "sha256": "cdb33fc29286ea668b28dc0ef7e34301cad3dd72c5d48cc78adbd8a5a187deac",
+    "raw_readback_match": true
+  },
+  {
+    "name": "fr-a1-u01-integrated-v4.md",
+    "bytes": 12333,
+    "sha256": "cf32fbfdc998d1f114ec36a9a6f54345376baf543c1f18ca76e7cba41f11e3eb",
+    "raw_readback_match": true
+  },
+  {
+    "name": "fr-a1-u02-integrated-v4.md",
+    "bytes": 9242,
+    "sha256": "06f006c1bdd1d54a11be662bb79ee5b763a2fc9a0a3cdaeaaf15da5c5a963ea5",
+    "raw_readback_match": true
+  },
+  {
+    "name": "fr-a1-u03-integrated-v4.md",
+    "bytes": 9077,
+    "sha256": "00b04a7aeecb143aaec9ba892d0aa1a5b997e302c7be715558697679d316a4fa",
+    "raw_readback_match": true
+  },
+  {
+    "name": "fr-a1-u04-integrated-v4.md",
+    "bytes": 5986,
+    "sha256": "9a823b357ba865ef12b818309fb0096a2fe5788520291a6ae1b2a425ec3326a0",
+    "raw_readback_match": true
+  },
+  {
+    "name": "fr-a1-u05-integrated-v4.md",
+    "bytes": 6294,
+    "sha256": "b9eb3b80c278834cdd1c41d967dea566420e665602c93317a6f3d71b04c46e50",
+    "raw_readback_match": true
+  },
+  {
+    "name": "fr-a1-u06-integrated-v4.md",
+    "bytes": 5973,
+    "sha256": "41a1bbc9802b83b23298685c4b638deb47718a3d358e89fd5ad96207ca4b92e1",
+    "raw_readback_match": true
+  },
+  {
+    "name": "fr-a1-u07-integrated-v4.md",
+    "bytes": 6092,
+    "sha256": "1af5e1f26310420f7fbaf4b88bacf2c2b24ad37e3e72ef8449df73c8cc0e7994",
+    "raw_readback_match": true
+  },
+  {
+    "name": "fr-a1-u08-integrated-v4.md",
+    "bytes": 6438,
+    "sha256": "434476b980c10d4556c5bf20a2a14948a50c7a5b530f56d7a80fb9bcde3679c1",
+    "raw_readback_match": true
+  },
+  {
+    "name": "fr-a1-u09-integrated-v4.md",
+    "bytes": 5841,
+    "sha256": "167771bb8f6fc0e703c40c661e44a6d97736464b6528d345acb139469f57ffd6",
+    "raw_readback_match": true
+  },
+  {
+    "name": "fr-a1-u10-integrated-v4.md",
+    "bytes": 6449,
+    "sha256": "5ee38a17de071f70da9bcff07e2c78af9b42d7629d2715c3d6a92d9a427f41ea",
+    "raw_readback_match": true
+  },
+  {
+    "name": "fr-a1-u11-integrated-v4.md",
+    "bytes": 6058,
+    "sha256": "fa19019a2618654da54e90c9f7449fb84f614d2e94e091315c9a951a10c0b2cb",
+    "raw_readback_match": true
+  },
+  {
+    "name": "fr-a1-u12-integrated-v4.md",
+    "bytes": 6231,
+    "sha256": "d27158cc7c71415a3b4f566f50058d45616a54e5481a221feaf19ce61ef2cf4f",
+    "raw_readback_match": true
+  }
+]

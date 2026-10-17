@@ -1,0 +1,11 @@
+{
+  "course_http_reads": 108,
+  "six_stages_per_response": true,
+  "audio_full_http_sha256": 24,
+  "audio_byte_range_206": 24,
+  "authenticated_cloud_login": "passed_real_personal_account",
+  "reference_catalog_unique": 352,
+  "reference_categories_full_http_sha256": 3,
+  "closed_gap_correction": "passed",
+  "authenticated_cloud_details": "authenticated-sync-regression.json"
+}

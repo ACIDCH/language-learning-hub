@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "edition": "v1.0-addendum-20261016",
+  "purpose": "Additional verified Google Docs manuscript versions; this is not a replacement for existing v10 manifest",
+  "units": [
+    "fr-c2-u01",
+    "fr-c2-u02",
+    "fr-c2-u03",
+    "fr-c2-u04",
+    "fr-c2-u05",
+    "fr-c2-u06",
+    "fr-c2-u07",
+    "fr-c2-u08",
+    "en-ielts-listening-u06",
+    "en-ielts-reading-u06",
+    "en-ielts-writing-task1-u06",
+    "en-ielts-writing-task2-u06",
+    "en-ielts-speaking-u06",
+    "en-ielts-language-upgrade-u06"
+  ],
+  "count": 14,
+  "owner_private_folders": [
+    "02-French/03-Expanded-Lesson-Manuscripts/Assistant-C2-Original-Manuscripts-V1.0-2026-10-16",
+    "01-English/IELTS-Academic/Assistant-IELTS-U06-Original-Manuscripts-V1.0-2026-10-16"
+  ],
+  "new_docs": 4,
+  "verified_answers": {
+    "french": 33,
+    "english": 30
+  },
+  "note": "Second private editorial variant is kept alongside existing v10. Source IDs and question totals must be reconciled before unifying; do not sum these 14 with existing v10 IDs.",
+  "text_complete": false,
+  "audio_verified": false,
+  "QA_approved": false,
+  "publishable": false
+}

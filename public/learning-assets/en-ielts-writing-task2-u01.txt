@@ -1,0 +1,150 @@
+EN-IELTS-WT2-01｜Argument writing: online university courses (原创完整样课 v0.1)
+状态：供教学审核，正文原创，音频尚未绑定，不能标记为“六段全部已发布”。不提供 IELTS 官方真题或预测分数。
+适合：已能完成基本英文交流的人，目标提升学术英语观点组织、写作论证和词汇准确度。
+
+① 情境与学习目标
+背景：大学正增加在线课程比例，一部分学生享受灵活性，另一部分担忧互动效果。
+课程目标：阅读两种观点，用英语提出清晰、有限定的立场，写一个完整的论证段落，并以 60 秒口语说明理由。
+原创练习题（非 IELTS 官方试题）：
+"Some universities offer more courses online rather than in traditional classrooms. Discuss one important benefit and one potential drawback, and explain which matters more in your view."
+
+② 核心语法与论证方法
+A. 清晰立场 + 有限范围：不要绝对化地写 "Online education is always better." 可改为 "For students who live far from campus, well-designed online courses can substantially improve access to education."
+解析：for students who... 是范围限定；can 表示可能性；substantially 表示程度。这样的表达可避免没有证据的绝对论断。
+
+B. 原因与结果的精确表达
+because / since + 完整原因从句；
+therefore / consequently 连接可推导结论，不等于简单换词；
+may lead to / is associated with 用于不能证明因果关系的表达。
+错误示例：Online courses are convenient; therefore, all students learn better.
+建议：Online delivery removes commuting time, but whether students learn more depends on course design and access to support.
+
+C. 让步与权衡
+Although / While + 从句，主句说明主张：
+"Although online delivery can widen access, students may struggle to obtain immediate feedback."
+注意：although 句内通常不与 but 直接重复连接同一对比关系。
+语义框架：acknowledge → qualify → justify → conclude。
+不要机械背诵模板，必须围绕题目展开真实论据。
+
+③ 核心学术词汇与搭配（本课 18 组）
+1. access to education — 教育机会：improve access to education
+2. face-to-face interaction — 面对面互动：reduce face-to-face interaction
+3. student engagement — 学生参与度：maintain student engagement
+4. flexible scheduling — 弹性安排：benefit from flexible scheduling
+5. academic support — 学术支持：seek academic support
+6. learning outcomes — 学习成果：compare learning outcomes
+7. digital divide — 数字鸿沟：widen the digital divide
+8. reliable internet access — 稳定网络：have reliable internet access
+9. course delivery — 课程实施形式：online course delivery
+10. assessment design — 评价设计：improve assessment design
+11. peer collaboration — 同伴协作：facilitate peer collaboration
+12. self-discipline — 自律：require self-discipline
+13. evidence-based — 基于证据的：an evidence-based argument
+14. a potential drawback — 潜在缺点：consider a potential drawback
+15. to a certain extent — 在一定程度上：true to a certain extent
+16. outweigh — 超过／更重要：benefits outweigh the drawbacks
+17. undermine — 削弱：undermine student participation
+18. facilitate — 促进：facilitate meaningful discussion
+词汇提示：与其堆砌高级形容词，不如正确掌握搭配的语法和语义；例如 "facilitate" 往往需要具体宾语。
+
+④ 原创阅读与信息分析
+Passage:
+"Distance learning has made university education more accessible to people who cannot relocate or attend lectures at fixed times. Recorded classes can be revisited, while discussion forums allow students to ask questions outside scheduled sessions. However, flexibility alone does not guarantee effective learning. Some students struggle to remain engaged when feedback is delayed or group activities are poorly designed. A more useful question may be which subjects and learners benefit from online delivery, rather than whether it should replace classrooms entirely."
+理解问题（非定时考试）：(1) 列出一个优势和一个风险；(2) 作者是否支持全面取代教室？引用原文的理由解释；(3) 用自己的词改写 "does not guarantee effective learning"。
+本单元听力：可以合法链接英国文化协会 B2 级听力入口，但必须进一步核实一条准确主题匹配的具体音频。此处不捏造文件，不把网页索引当成已绑定音频。
+官方来源：https://learnenglish.britishcouncil.org/free-resources/listening/b2
+
+⑤ 发音与表达清晰度
+重点练习：academic support / student engagement / face-to-face interaction / reliable internet access。
+表达句："Although online courses offer flexibility, universities still need to provide effective academic support."
+观察句重音：flexibility、universities、effective support 可能承载信息焦点；语境决定实际重音。
+录音分析未来应逐词显示绿/黄/橙/红/灰，不出现总分。无法确定某个音素被误发时不输出虚构的音素描述。
+
+⑥ 口头与书面输出
+口语：用60–90秒解释 "Who benefits from online education, and why?" 至少提出一个实际限制条件。
+写作任务：完成200–280词的独立论证短文，包含引言、两个论点段和结尾。这里的字数是教学建议，不是强制计时考试。
+原创示范段落（非官方范文）：
+"One significant advantage of online university courses is that they can reduce barriers to participation. Students with employment or family responsibilities may find it difficult to attend lessons at fixed times, whereas recorded classes allow them to organise study around other commitments. This flexibility is particularly valuable when institutions also provide clear instructions and accessible academic support. Nevertheless, online provision should not be treated as a universal replacement for face-to-face learning, because practical subjects and collaborative activities may require regular in-person engagement."
+自查提示：有没有直接回应问题？例子是否支持论点？用词与论据之间有无逻辑跳跃？AI 可逐段提供语法、论证和表达反馈，不显示学习考试分数。
+
+课程权利与来源：
+本课对话题目、短文、示范段落及解释由本项目原创编写，可存储在私人云盘，并可用于未来经审核的公开学习页面。
+IELTS Academic 官方题型与评分维度参考：
+https://www.ielts.org/take-a-test/preparation-resources/sample-test-questions/academic-test
+https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-writing
+https://takeielts.britishcouncil.org/teach-ielts/test-information/assessment
+这些仅作为依据/外部链接，不表示允许复制官方试题或考生范文。
+
+===== V0.2 ADDENDUM — 完整学习补充包：Academic Argumentation =====
+本补充包直接追加到现有课件之后；原有教学内容、例句、练习和来源全部保留。
+
+A. 内容深度：理解 Writing Task 2 的任务本质
+IELTS Academic Writing Task 2 通常要求围绕社会、教育、科技等议题展开有组织的论证。学习时应优先检查题意理解、观点发展、逻辑连贯、词汇准确和句法自然，而不是盲目堆积连接词。项目中的练习题均为原创，不使用未经许可的官方真题原文。
+解析题意的四步：标记主题（university courses）、分析要求（benefit / drawback / which matters more）、划定适用范围（some learners / some subjects）、选择可辩护立场。立场不是武断结论，而是带前提的判断。
+
+B. 语法与结构深入
+1. Topic sentence = 可验证的中心判断，不是话题的同义重复：
+Weak: There are many advantages of studying online.
+Stronger: Online courses can reduce barriers to participation for students with inflexible work schedules.
+2. Cause vs correlation：
+"Online education improves grades." 如果无证据，属不当因果化。
+"Online courses may make attendance easier for some learners." 则有范围和谨慎态度。
+3. Concession：
+"Although flexible delivery widens access, universities still need to ensure timely feedback."
+此句让步分句与主句属于同一个句子，无需再加 but。
+4. Cohesion without repetition：
+"Digital access" → "such access" → "this flexibility" 等照应必须有明确先行词，不能用含糊的 "this" 指代整段。
+5. Counterargument 的应用：
+Claim: In-person seminars encourage spontaneous questions.
+Concession: However, carefully moderated digital discussions can also support interaction.
+Synthesis: The effectiveness of either method depends on task design and student support.
+
+C. 学术搭配扩充（自然搭配而非单纯同义词）
+address a concern（回应问题）；pose a challenge（带来挑战）；create an opportunity（创造机会）；remove a barrier（消除障碍）；support participation（支持参与）；maintain engagement（维持参与度）；deliver feedback（提供反馈）；draw a distinction（做出区分）；rely on evidence（依靠证据）；acknowledge limitations（承认局限）；reach a qualified conclusion（得出有限度结论）；adopt a blended approach（采取混合方式）。
+辨析：significant 在统计语境可能有专门含义；普通议论文的 significant 通常表示“重要、显著”，不要错误暗示统计显著性。
+
+D. 完整写作过程（原创演示）
+分析任务 → 列支持和反对各两点 → 确定限定立场 → 选有解释力的事例 → 写结构清晰的段落 → 检查所有句子是否服务中心问题。
+Outline：
+Introduction: introduce the tension between access and engagement; state the conditional position.
+Body 1: flexible schedules, transport constraints, accessibility; explain mechanisms.
+Body 2: laboratory practice, feedback and collaboration may suffer online; specify conditions.
+Conclusion: blended course design is often preferable to an absolute replacement.
+原创示范短文：
+"Universities are increasingly able to deliver lectures and learning materials online. This shift can make higher education more accessible, particularly for students who combine study with employment or family responsibilities. However, greater access does not necessarily mean that every aspect of learning is more effective. I believe online provision offers substantial benefits when it is designed alongside appropriate academic support.
+
+One advantage of online learning is its flexibility. Recorded lectures enable students to revisit difficult explanations and manage their study around other commitments. For example, a student who works irregular shifts may find it easier to follow a recorded lesson than attend a lecture at a fixed hour. When course materials are well organised, this flexibility can reduce practical barriers to participation.
+
+Nevertheless, some forms of learning depend heavily on immediate feedback and interaction. Laboratory demonstrations, supervised practical work and lively seminar discussions may be harder to reproduce entirely online. The solution is not necessarily to abandon digital resources, but to match teaching methods to the activities students need to complete. Universities should also make support easy to access.
+
+Overall, online delivery can broaden educational opportunities, but institutions should avoid assuming that convenience guarantees learning. A thoughtfully blended approach is likely to serve a wider range of students."
+此短文为本项目原创，只用于分析教学，不声称具有官方 IELTS band 成绩。
+
+E. 自主练习（答案与反馈标准一并保留）
+1. 改写绝对陈述：Online classes are always more effective.
+参考：Online classes may be more effective for certain learners and activities.
+2. 修复连接方式：Although lectures are recorded, but some learners prefer seminars.
+参考：Although lectures are recorded, some learners prefer seminars.
+3. 指出逻辑缺口：Students can replay lectures; therefore, every student will achieve higher grades.
+参考：重复播放的能力不必然导致所有学生成绩提高，需要限定或证据。
+4. 将 "good for students" 改为有具体主语的学术表达。
+参考：Flexible scheduling can benefit students with employment responsibilities.
+5. 比较 claim 与 explanation：
+Claim：Digital courses are useful.
+Explanation：Learners can revisit complex demonstrations at their own pace.
+说明：解释必须展示原因、机制或例证。
+6. 补写让步后的立场："Although digital classes improve access, ..."
+参考："...direct interaction remains important in practical and discussion-based courses."
+7. 精简累赘表达：It is important to note the fact that ... → Note that ... / 直接陈述证据。
+8. 自我修订：检查每段至少一个准确的段落主张和相关解释，无空洞的总结句。
+9. 口头表达：60–90 秒阐述自己的立场，并给出一个真实但不涉及隐私的例子。
+10. 听读转化：把上面第二段缩写为 50 词，再口头复述。参考答案允许多种合理表达，不按公式唯一评分。
+
+F. AI 辅导与反馈规范
+只反馈：题意回应、推理质量、例证关联、词义准确、搭配、句子结构、自然度；如用户选择才参考 IELTS 官方公开维度，但不强制考试、不输出伪造的官方 band score。
+音频状态：没有绑定具体合法媒体。界面只显示当前材料可读和参考资源链接，不显示无法播放的“播放”按钮。
+资源：
+https://www.ielts.org/take-a-test/preparation-resources
+https://www.cambridgeenglish.org/exams-and-tests/ielts/preparation/
+===== END EN-TASK2-V02 =====
+

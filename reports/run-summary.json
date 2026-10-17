@@ -1,0 +1,18 @@
+{
+  "unit_total": 108,
+  "baseline_six_section_drafts": 18,
+  "units_with_six_authored_sections": 19,
+  "text_complete": 0,
+  "audio_verified": 0,
+  "QA_approved": 0,
+  "publishable": 0,
+  "units_with_verified_vocabulary_reference": 12,
+  "existing_documents_backed_up": 37,
+  "textbooks_downloaded_verified": 1,
+  "chapter_pdfs_downloaded_verified": 14,
+  "audio_files_downloaded_verified": 353,
+  "audio_decode_failures": 0,
+  "drive_uploads_verified": 54,
+  "bytes_uploaded": 301726722,
+  "inspire_original_zip_upload": "too_large; 166 unchanged MP3s in three verified ZIPs"
+}

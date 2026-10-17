@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-10-17",
+  "workspace": "integration/personal-learning-v4",
+  "personal_service_start_and_restart": "passed",
+  "course_navigation": "108 courses; language and level/track filters",
+  "local_progress_autosave_and_refresh": "passed",
+  "closed_gap_answer_and_correction": "passed",
+  "favorites_and_review": "passed",
+  "audio": {
+    "sample": "fr-a1-u01 dialogue",
+    "play_pause": "passed",
+    "speed": 1.5,
+    "played_to_end": true,
+    "duration_seconds": 16.9817,
+    "ab_loop": "passed",
+    "transcript_cue_seek": "passed",
+    "linguistic_listening_approval": false
+  },
+  "document_import": {
+    "type": "MD",
+    "actual_file_upload": "passed",
+    "pagination_pages": 3,
+    "page_2_navigation": "passed"
+  },
+  "responsive": {
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "document_scroll_width": 375
+    },
+    "tablet": {
+      "width": 768,
+      "height": 1024,
+      "document_scroll_width": 753
+    },
+    "desktop": {
+      "width": 1280,
+      "height": 900
+    },
+    "other_device_network_access_tested": false
+  },
+  "auth_evidence": "authenticated-sync-regression.json",
+  "ai_provider_execution": "not_configured_not_tested"
+}

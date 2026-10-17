@@ -1,0 +1,258 @@
+[
+  {
+    "lesson_id": "en-ielts-listening-u06",
+    "from_sha256": "4e75fa2c99b8b7c4da967cfd851088bab8cbe55533ddaa94978628da54bab45b",
+    "to_sha256": "f1404b492bdf8a24edfdac159750e32e47c5e29bd46e00c39f4ee2d15eda2faa",
+    "added_lines": 45,
+    "removed_lines": 31,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "en-ielts-reading-u01",
+    "from_sha256": "1dc7b0cfe6f73cad5df6438500d0c5d833ce9e7dccf1e87ca2c80612d325db38",
+    "to_sha256": "ba5b93d128693117a4919a3d7a88b3e708e789bce7c66c6e475dfa31850ee216",
+    "added_lines": 44,
+    "removed_lines": 88,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "en-ielts-reading-u02",
+    "from_sha256": "d46916bbd3ba1a58ef30c7efc0eb161bcfdb7addc2fced5fb951d6089cbe336b",
+    "to_sha256": "22e21e86a7ae20a8977c87bda14e7ce5caff0f8606c28cc5c94a5c793693d272",
+    "added_lines": 43,
+    "removed_lines": 146,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "en-ielts-reading-u06",
+    "from_sha256": "78da47b3199f14d61b4c36134eece4ad500420ac51bfef690b6ca533c975d97c",
+    "to_sha256": "d56527577c134907a2eaa15b3c14ea8a9083dc2dc07a35cf36af5b9f48be8395",
+    "added_lines": 44,
+    "removed_lines": 31,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "en-ielts-writing-task1-u01",
+    "from_sha256": "35fbe78017aecd9431de87e2244d4e06979ebab1c97294121192e50a990bae82",
+    "to_sha256": "dd145ca266c1461c0d0adde9f2ddfe62f4cd5046b05b0141065a5b829e5bc221",
+    "added_lines": 53,
+    "removed_lines": 87,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "en-ielts-writing-task1-u06",
+    "from_sha256": "8796ced7d9b3581004da384039c4bd6dbf079b8c6bf574f346928f5cbf163336",
+    "to_sha256": "008b00c7bfa4968135fd62f63a9fe2b242db6d7dee9f8be6b1e85b3196c53265",
+    "added_lines": 46,
+    "removed_lines": 30,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "en-ielts-writing-task2-u01",
+    "from_sha256": "955245038345b63824275a82c61da24b319274173707b7894b4f4e3aac7608b4",
+    "to_sha256": "af3fc0a736e526593cedadc7672d9c9cf1985e3c8dc86ae1c66a95a06f62aab1",
+    "added_lines": 34,
+    "removed_lines": 135,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "en-ielts-writing-task2-u06",
+    "from_sha256": "49de3301da28f917583e2a90bbf51b8e19b0b984b8aba4ceaa212724c0d11a28",
+    "to_sha256": "ddaf54ab555cb7e7883b9d4e430124dc7c95c00a65db1539b054787a2c015090",
+    "added_lines": 47,
+    "removed_lines": 31,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "en-ielts-speaking-u06",
+    "from_sha256": "9bb5529c0d47ac0d9508ea95225230f9152d7f98fa16ec530c53e720c9a0aeda",
+    "to_sha256": "14026e366d9a80f40fb28002ffe32c4ae0dd3fef883a124736544e45227b39d9",
+    "added_lines": 45,
+    "removed_lines": 31,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "en-ielts-language-upgrade-u06",
+    "from_sha256": "f8d7a182ee5d16d0b3f39e0909b73c8a91c85c9557f37fbff27e9d58f6de1095",
+    "to_sha256": "f11582bcb30d04371a9a3c54d4985ca5aa1229ac7facc7cd07fbda0478f90614",
+    "added_lines": 46,
+    "removed_lines": 30,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-a1-u01",
+    "from_sha256": "7cc719ba782d1f70918cb4bedc4be484bfbe402e740fb261a9ac2105c7057d8d",
+    "to_sha256": "8726da24bfd85cfb62afb9e17f4afd06fe6843d3483f043d357fa205e6abb06f",
+    "added_lines": 2,
+    "removed_lines": 18,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-a1-u01",
+    "from_sha256": "d7352d3ea6e54a9d0518c0e07e57e87fcd4293e8923e4718bf4eb3eeaefe4c5c",
+    "to_sha256": "8726da24bfd85cfb62afb9e17f4afd06fe6843d3483f043d357fa205e6abb06f",
+    "added_lines": 1,
+    "removed_lines": 1,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-a1-u02",
+    "from_sha256": "0b81741713138f4c0398d1e96385ddb11c994f4c3dc38dac78e37c17440e5587",
+    "to_sha256": "8924db62ec9f66f6a822a69b99e37062643ee5869eba84976b00c957bb4b9e86",
+    "added_lines": 9,
+    "removed_lines": 1,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-a1-u03",
+    "from_sha256": "4a4c85f664cb1db272db12e97d02129da36e95f4685d818e242eb007922e4211",
+    "to_sha256": "b97d1ff61ca4c7be17231d0219ca8d876b145a97d652c938d646e0f5bc929f4b",
+    "added_lines": 4,
+    "removed_lines": 13,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-a1-u03",
+    "from_sha256": "095799336fe947fb9be76053a06e1b2471c2b8c860ef4a45ccb9322d3ee7243a",
+    "to_sha256": "b97d1ff61ca4c7be17231d0219ca8d876b145a97d652c938d646e0f5bc929f4b",
+    "added_lines": 3,
+    "removed_lines": 3,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-a1-u04",
+    "from_sha256": "153361160fdb7538128df3075f964c68ee8f2ef530b8023bf1436ca4e3f30b44",
+    "to_sha256": "311c1f56705cb1fc446f5a6f1ea79d36ec1bc626dc7cdea8b201efe56c2a02be",
+    "added_lines": 41,
+    "removed_lines": 69,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-a1-u05",
+    "from_sha256": "e887e875947284ea89c7aa168461dffd0d911abadf91fb527460fa3eca723d07",
+    "to_sha256": "76a38f8963a63ab43591c431aa0c4bfdbe1bbcb8a9072273a32931fcb52db285",
+    "added_lines": 41,
+    "removed_lines": 68,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-a1-u06",
+    "from_sha256": "a756b41772577359f1b32539613988dd101079d3aaa2906858ee6ab3b1de78e5",
+    "to_sha256": "1e58f4cae8231622750e5aee57bf0f836d5261b5a459e5956612cfc70f39ca82",
+    "added_lines": 42,
+    "removed_lines": 71,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-a1-u07",
+    "from_sha256": "52ed0d8525780137ed2af8afdb407abb708d2df66ac9a267bb02eb326d592c18",
+    "to_sha256": "60a07ab88a9f1e3cbf05cd47fd6ad86f68705dca1a43b70a959b0fa289fe2d20",
+    "added_lines": 51,
+    "removed_lines": 63,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-a1-u08",
+    "from_sha256": "4b18ad5c33904b5e82b003a40e3745afc2bb18e5383342dff19beb05fa58543d",
+    "to_sha256": "f07b99d5f71379fa8f4ea7e26cb1697c3a2bb2b1b0afd69a9c4377f3dbf6985a",
+    "added_lines": 51,
+    "removed_lines": 65,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-a1-u09",
+    "from_sha256": "068db2bde16fdc139401b904003e9d64128ecf65a516945bbce4fda7ee861c77",
+    "to_sha256": "dacc8ae84eea824b0331fa8476d31e4b522692c0856dc0aa2900ca2310d49397",
+    "added_lines": 49,
+    "removed_lines": 62,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-a1-u10",
+    "from_sha256": "aef1e77845cdf8509c7d74446303434983db10cc0e20be395b98d36133b56487",
+    "to_sha256": "77758d85d8169d96a24ffc5779af8f868e45f2838f51c1ae70eb120b897377e7",
+    "added_lines": 53,
+    "removed_lines": 61,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-a1-u11",
+    "from_sha256": "afce2523980ea3a1c0574aaa123d5596f9ddef48c9fb6dec7fd60c073ff3e306",
+    "to_sha256": "b87f73f0fd4c9eee8bcd6d914eda79fdd6a1f59cfb45f9d694e0e9ac3fcc7254",
+    "added_lines": 51,
+    "removed_lines": 61,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-a1-u12",
+    "from_sha256": "e0660a68a15350be03bcbc60cd3a8ffd485e6d01e1f9694099dfc7926faa8bc5",
+    "to_sha256": "67da7285bf54a1c95d4bfdadb444e32ae289c9575024b15d877bca6f94dac6dd",
+    "added_lines": 50,
+    "removed_lines": 60,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-c2-u01",
+    "from_sha256": "b00e9d84aad7383de70a6c6b2aa6fa6cafe469977c4011a8d345649833421d61",
+    "to_sha256": "2f38d82be97d84607d19f1a143c214235c827d47372501ece8db83b74abd328c",
+    "added_lines": 49,
+    "removed_lines": 26,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-c2-u02",
+    "from_sha256": "c310c388d22c03faf7934972783142ca19f4de3dd4e7e142f0046098563f2bae",
+    "to_sha256": "95b8d9ad6cbc28228a4dc83628d1a9bb6b64402b9853db3766f863662695d3ee",
+    "added_lines": 49,
+    "removed_lines": 24,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-c2-u03",
+    "from_sha256": "bc6a8823e7c2400c11151d3d1cf0cf4093bd9ff471fdb60dd95fee10772f7d93",
+    "to_sha256": "cde0e8ebaf47731116fc0725ee20cb04246daad13617b613396039442a76ee1d",
+    "added_lines": 52,
+    "removed_lines": 24,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-c2-u04",
+    "from_sha256": "9f941a268106169fe49de5cd9c3e6751724450fe37f30a29babd57577656a9e4",
+    "to_sha256": "117fa5090e2d5e95621af4d97246eb05c56a08034721c046f8d552fae03162e5",
+    "added_lines": 48,
+    "removed_lines": 24,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-c2-u05",
+    "from_sha256": "f16e8a3fe3f5c8974c1a24815d0bb1e27551b1822a0b2877ef5354e79c649ed4",
+    "to_sha256": "d9a5c626447f2e6f4f7ddca706276bd522e25083b09e97299a058d9aa4179aad",
+    "added_lines": 50,
+    "removed_lines": 25,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-c2-u06",
+    "from_sha256": "3d604846c2d4c4a672052aca9318a4ba03d26080f91ec40940b026f87867e54c",
+    "to_sha256": "159541e4618dfc773c7f7fe059f583167872154d9d263ab28e92449dc79ac1b1",
+    "added_lines": 49,
+    "removed_lines": 25,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-c2-u07",
+    "from_sha256": "e3ac2ff144ba3b55d8495f6e7043b45f1639d76c197ebab88eea183bf682d907",
+    "to_sha256": "c9204cc20e12d56834bba8c988a021f5a21ffb55ca9ec95f4d2bcbd00be44581",
+    "added_lines": 51,
+    "removed_lines": 25,
+    "original_retained": true
+  },
+  {
+    "lesson_id": "fr-c2-u08",
+    "from_sha256": "028397462d61d6dd994f77a3b75da8442efc187ebb3dc040fee317f98244c355",
+    "to_sha256": "2e97e320bdcb118bd33caa1d93e84310c1ed7d062f464e00220af775ff2d8c48",
+    "added_lines": 51,
+    "removed_lines": 25,
+    "original_retained": true
+  }
+]

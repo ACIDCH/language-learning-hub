@@ -1,0 +1,50 @@
+[
+  {
+    "file": "public/learning-assets/en-ielts-writing-task2-u01.txt",
+    "sha256": "955245038345b63824275a82c61da24b319274173707b7894b4f4e3aac7608b4",
+    "same_normalized_text_as_drive": false,
+    "matches_original_git_sha256": true,
+    "action": "preserved_unchanged",
+    "note": "Drive masters and earlier public snapshots are separate versions; no replacement or reconciliation performed."
+  },
+  {
+    "file": "public/learning-assets/en-ielts-reading-u01.txt",
+    "sha256": "1dc7b0cfe6f73cad5df6438500d0c5d833ce9e7dccf1e87ca2c80612d325db38",
+    "same_normalized_text_as_drive": false,
+    "matches_original_git_sha256": true,
+    "action": "preserved_unchanged",
+    "note": "Drive masters and earlier public snapshots are separate versions; no replacement or reconciliation performed."
+  },
+  {
+    "file": "public/learning-assets/en-ielts-writing-task1-u01.txt",
+    "sha256": "35fbe78017aecd9431de87e2244d4e06979ebab1c97294121192e50a990bae82",
+    "same_normalized_text_as_drive": false,
+    "matches_original_git_sha256": true,
+    "action": "preserved_unchanged",
+    "note": "Drive masters and earlier public snapshots are separate versions; no replacement or reconciliation performed."
+  },
+  {
+    "file": "public/learning-assets/fr-a1-u01.txt",
+    "sha256": "d7352d3ea6e54a9d0518c0e07e57e87fcd4293e8923e4718bf4eb3eeaefe4c5c",
+    "same_normalized_text_as_drive": false,
+    "matches_original_git_sha256": true,
+    "action": "preserved_unchanged",
+    "note": "Drive masters and earlier public snapshots are separate versions; no replacement or reconciliation performed."
+  },
+  {
+    "file": "public/learning-assets/fr-a1-u02.txt",
+    "sha256": "0b81741713138f4c0398d1e96385ddb11c994f4c3dc38dac78e37c17440e5587",
+    "same_normalized_text_as_drive": false,
+    "matches_original_git_sha256": true,
+    "action": "preserved_unchanged",
+    "note": "Drive masters and earlier public snapshots are separate versions; no replacement or reconciliation performed."
+  },
+  {
+    "file": "public/learning-assets/fr-a1-u03.txt",
+    "sha256": "095799336fe947fb9be76053a06e1b2471c2b8c860ef4a45ccb9322d3ee7243a",
+    "same_normalized_text_as_drive": false,
+    "matches_original_git_sha256": true,
+    "action": "preserved_unchanged",
+    "note": "Drive masters and earlier public snapshots are separate versions; no replacement or reconciliation performed."
+  }
+]

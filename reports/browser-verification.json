@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-16",
+  "original_public_snapshots_sha256_unchanged": 6,
+  "english_reading_u02_rendered_lines": 149,
+  "english_reading_u02_rendered_full_text_equal": true,
+  "french_audio_browser_duration_seconds": 119.196756,
+  "browser_audio_ready_state": 4,
+  "browser_audio_time_advanced": true,
+  "speed_075_verified": true,
+  "ab_repeat_verified": true,
+  "vocabulary_table_expanded": true,
+  "mobile_viewport_width": 390,
+  "mobile_document_scroll_width": 375,
+  "browser_console_errors": 0,
+  "manual_linguistic_listening_review": "pending"
+}

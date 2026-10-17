@@ -1,0 +1,24 @@
+# 法语 A1 · 12 单元参考音频练习与语法补充 V1
+
+状态：新增教学补充稿，保留所有旧正文。每节的录音是 Français interactif 原版词汇参考音频，不是对本项目原创对话的配音。标准音轨、实际时长、哈希及完整原站词表见 `config/assets/lesson-audio.json`。语法提示和练习答案为本项目原创，仍待专业语言审校。录音均已下载校验；人工听辨验收未完成，不标为正式有声课。
+
+使用方式：先完成原课的六段正文，再听本节指定音轨。第一次不看词表抓类别；第二次对照完整词表辨认；第三次选短片段跟读。下列练习不需要计分，不作为课程解锁条件。时间点由学习者用 A/B 标记，尚无经过核验的逐词时间轴。
+
+## fr-a1-u12 · Premiers récits
+
+参考音轨：`fi-voc-055`，[原站不规则过去分词](https://laits.utexas.edu/fi/voc/06/#055)。这一词表两栏都是法语例子，右栏不是英文翻译。先听并配对 avoir→eu、faire→fait、prendre→pris、boire→bu、voir→vu。
+
+补充讲解：passé composé 常由助动词现在时加过去分词组成。J'ai travaillé；Nous avons mangé。部分动词使用 être，如 Elle est arrivée；Ils sont partis。être 作助动词的这些基本不及物结构中，过去分词与主语配合。不能教成“所有移动动词都用 être”：J'ai marché / J'ai voyagé 使用 avoir。avoir 作助动词时，后置直接宾语通常不引起配合：Elle a acheté des fleurs。前置直接宾语配合属于后续课程，不能把基本规则概括为永不配合。代词式动词的配合也不能完全照搬所有 être 结构。
+
+练习：①J'ai ___ un café（boire）。②Elle est ___ à huit heures（arriver）。③Nous avons ___ un film（voir）。④把 J'ai allé au marché 改正。⑤用四句写昨天发生的事，至少含一个 avoir 结构和一个 être 结构。
+
+答案：①bu。②arrivée。③vu。④Je suis allé au marché（男性说话人）/ Je suis allée au marché（女性说话人）。⑤Hier, je suis allée au marché. J'ai acheté des pommes. Ensuite, j'ai pris un café. Je suis rentrée à midi。示例采用女性说话人，allée / rentrée 与该设定一致。原站缩略标记 elle est mort(e) 在完整女性书面例句中应写 Elle est morte；保留原词表，补充完整表达。
+
+
+## 版本与验收记录
+
+- 新增材料：十二组定位明确的听前/听后任务、语法边界、改错题、答案及原创表达示范。
+- 保留：此前每个单元的独立正文、U04–U12 分册及扩充稿；本文件不替换任何旧段落。
+- 资料关系：2019 第四版教材与 legacy 网站词汇音频分开登记，不默认与新版 Pressbooks 音轨相同。
+- 待补：每课情境对话/长阅读的匹配录音、人工试听、专业逐课语言审校，以及高级别课程。完成本练习不意味着 12 节有声课已发布。
+- 许可：原站录音/词表按 [FI 采用页](https://laits.utexas.edu/fi/page/adopt/) CC BY 3.0 署名 COERLL / UT Austin；本项目原创讲解没有因此自动转为 CC 授权。

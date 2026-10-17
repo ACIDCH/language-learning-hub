@@ -1,0 +1,25 @@
+name: Editorial V0.6 unit integrity
+
+on:
+  pull_request:
+    paths:
+      - 'docs/editorial/v06/**'
+      - '.github/workflows/editorial-v06.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'docs/editorial/v06/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check schema, course IDs, QA status and privacy
+        run: node docs/editorial/v06/validate.mjs
