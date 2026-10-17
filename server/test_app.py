@@ -40,6 +40,22 @@ def test_revisions_are_append_only(client):
     assert value['text']=='Original preserved'
     assert len(value['personal_revisions'])==2
 
+def test_cloud_restore_keeps_edit_time_and_rejects_older_copy(client):
+    url = '/api/state/fr-a1-u01/restore'
+    cloud = {'state': {'stage': 3, 'notes': 'Cloud épreuve', 'answers': {'q1': {'text': 'êtes', 'result': 'correct'}}}, 'updated_at': '2026-01-02T03:04:05+13:00'}
+    result = client.post(url, json=cloud)
+    assert result.status_code == 200
+    restored = client.get('/api/state').json()['fr-a1-u01']
+    assert restored['updated_at'] == '2026-01-01T14:04:05+00:00'
+    assert restored['answers']['q1']['result'] == 'correct'
+    assert client.post(url, json=cloud).json() == restored
+    older = {'state': {'notes': 'Stale cloud copy'}, 'updated_at': '2026-01-01T00:00:00Z'}
+    assert client.post(url, json=older).json() == restored
+    client.put('/api/state/fr-a1-u01', json={'notes': 'New local edit'})
+    assert client.post(url, json=cloud).json()['notes'] == 'New local edit'
+    assert client.post(url, json={'state': {}, 'updated_at': '2026-01-01T00:00:00'}).status_code == 422
+    assert client.post('/api/state/missing/restore', json=cloud).status_code == 404
+
 def test_import_and_dedupe(client):
     raw='# Chapitre 1\nBonjour à tous.\n## Chapitre 2\nFin.'.encode()
     first=client.post('/api/library',files={'file':('../../sample.md',raw,'text/markdown')}).json()

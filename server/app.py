@@ -18,7 +18,7 @@ from bs4 import BeautifulSoup
 from docx import Document
 from fastapi import FastAPI, File, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse, JSONResponse
-from pydantic import BaseModel, Field
+from pydantic import AwareDatetime, BaseModel, Field
 from pypdf import PdfReader
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
@@ -69,6 +69,10 @@ class State(BaseModel):
 
 class Revision(BaseModel):
     text: str = Field(min_length=1, max_length=200000)
+
+class CloudState(BaseModel):
+    state: State
+    updated_at: AwareDatetime
 
 class ExerciseAttempt(BaseModel):
     exercise_id: str
@@ -147,6 +151,19 @@ def create_app(data_dir: Path | None = None):
         course(id); stamp = now()
         with db() as conn: conn.execute('INSERT INTO state VALUES (?,?,?) ON CONFLICT(id) DO UPDATE SET payload=excluded.payload, updated_at=excluded.updated_at', (id, state.model_dump_json(), stamp))
         return {'saved': True, 'updated_at': stamp}
+    @app.post('/api/state/{id}/restore')
+    def restore_state(id: str, incoming: CloudState):
+        course(id)
+        stamp = incoming.updated_at.astimezone(timezone.utc).isoformat()
+        with db() as conn:
+            conn.execute('BEGIN IMMEDIATE')
+            local = conn.execute('SELECT * FROM state WHERE id=?', (id,)).fetchone()
+            # A cloud download is not a new edit. Keep its original timestamp,
+            # and do not overwrite a newer save from another local tab.
+            if local and datetime.fromisoformat(local['updated_at']) >= incoming.updated_at:
+                return json.loads(local['payload']) | {'updated_at': local['updated_at']}
+            conn.execute('INSERT INTO state VALUES (?,?,?) ON CONFLICT(id) DO UPDATE SET payload=excluded.payload, updated_at=excluded.updated_at', (id, incoming.state.model_dump_json(), stamp))
+        return incoming.state.model_dump() | {'updated_at': stamp}
     @app.get('/api/audio/{filename}')
     def audio(filename: str):
         # Names must be present in the generated manifest; arbitrary filesystem paths are never served.
