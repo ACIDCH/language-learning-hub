@@ -29,7 +29,7 @@ test('each unit has at least four original lexical examples, listening, reading,
   assert.ok(unit.commonMistake.length>=15,unit.id);
  }
 });
-test('beginner lessons preserve learner's requested progression without inventing certification',()=>{
+test("beginner lessons preserve learner's requested progression without inventing certification",()=>{
  const en=foundationUnitsFor('en');
  const fr=foundationUnitsFor('fr');
  assert.equal(en[0].id,'en-fnd-01');assert.equal(fr[0].id,'fr-fnd-01');
