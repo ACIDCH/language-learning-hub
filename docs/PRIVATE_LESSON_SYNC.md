@@ -34,3 +34,31 @@ Goal: personal access to full authored lesson drafts from a **signed-in** Cloudf
 4. Live known-user login and content check; test second account cannot read the owner's manuscripts.
 5. Confirm cloud progress still persists, the original Drive files remain unchanged, API does not reveal Drive IDs, and a course without a draft shows an honest missing state.
 6. Only after these gates, expand import coverage beyond initial A1 drafts and add normal-quality instructional audio by a separate authorized delivery mechanism.
+
+## First private-source import (completed before PR merge)
+
+YUNPAN's 12 `fr-a1-u01` through `fr-a1-u12` integrated V4 Markdown drafts
+were read and inserted into the existing owner's private table using the
+authorized Supabase management connection. Post-import SQL verification:
+12 distinct rows, 53,040 characters, 12 nonempty SHA-256 hashes, all
+`qa_status='draft'`. Current public `course_catalog` still contains
+108 rows, with zero flagged publishable/QA-approved. The existing progress
+records remain in place.
+
+## Fill the remaining courses without a new OAuth/Cloud account
+
+The original YUNPAN V4 ZIP is **not** hosted as a public asset. When the
+signed-in owner selects this archive on `/cloud/`, the client:
+1. Loads only its `courses.json` entry and caps ZIP input/decompression.
+2. Checks exactly 108 unique valid course IDs against the logged-in catalog.
+3. Computes SHA-256 for each text draft.
+4. Uses the user's own Supabase Auth session and table RLS to insert only
+   missing rows in batches of eight. Existing 12 Drive-derived A1 rows
+   are never overwritten.
+5. Keeps `qa_status='draft'`, does not alter `course_catalog` flags, and
+   does not upload ZIP/audio/PDF blobs to Supabase.
+
+This single file-selection action replaces uploading 96 manuscripts manually.
+The backup ZIP is around 715 KB; total manuscript text is approximately
+580 KB inside courses.json. Import success and cross-device reading must be
+verified in a real browser before claiming all 108 are available.
