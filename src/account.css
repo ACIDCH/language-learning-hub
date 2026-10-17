@@ -1,0 +1,16 @@
+.account-panel { max-width: 760px; }
+.account-panel h2 { margin-top: 0; }
+.account-tabs { display: flex; gap: .5rem; margin: 1rem 0; }
+.account-tabs button { flex: 1; padding: .75rem 1rem; border-radius: .6rem; }
+.account-tabs button[aria-pressed="true"] { border: 2px solid currentColor; font-weight: 700; }
+.account-form { display: flex; flex-direction: column; align-items: stretch; gap: .85rem; max-width: 430px; }
+.account-form label { display: flex; flex-direction: column; align-items: stretch; gap: .35rem; }
+.account-form input { width: 100%; min-height: 44px; padding: .65rem .75rem; box-sizing: border-box; border-radius: .5rem; font-size: 1rem; }
+.account-form button[type="submit"] { min-height: 44px; font-weight: 650; }
+.account-form button:disabled { cursor: not-allowed; opacity: .58; }
+.account-form .account-link { align-self: flex-start; background: transparent; border: 0; text-decoration: underline; text-underline-offset: 3px; padding: .5rem 0; }
+.account-form p { line-height: 1.6; overflow-wrap: anywhere; }
+.account-signed-in { overflow-wrap: anywhere; }
+.account-error { color: #a32424; padding: .65rem .8rem; border: 1px solid currentColor; border-radius: .5rem; overflow-wrap: anywhere; }
+.account-message { border-inline-start: 3px solid currentColor; padding: .55rem .8rem; overflow-wrap: anywhere; }
+@media (max-width: 600px) { .account-panel { padding: 1rem; } .account-form { width: 100%; } }
