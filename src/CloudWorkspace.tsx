@@ -15,7 +15,7 @@ import LearningPath from './LearningPath';
 import ReferenceIndex from './ReferenceIndex';
 import {ReferenceAudio} from './ReferenceAudio';
 import FoundationStudio from './FoundationStudio';
-import CourseGuide from './CourseGuide';
+import CourseGuide from './CourseGuide.tsx';
 import StageCoverage from './StageCoverage';
 import type {PracticeCheck} from './courseGuide';
 
