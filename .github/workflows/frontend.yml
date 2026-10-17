@@ -1,4 +1,4 @@
-name: Frontend build and typecheck
+name: React frontend build and safety gates
 
 on:
   pull_request:
@@ -11,19 +11,25 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: '22'
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
+          cache: npm
+      - name: Install pinned dependencies
+        run: npm ci --no-fund
       - name: Check TypeScript and build
         run: npm run build
-      - name: Ensure built GitHub Pages base path and content
+      - name: Confirm Cloudflare root-path static bundle and verified public lessons
         run: |
           test -f dist/index.html
           test -f dist/learning-assets/manifest.json
           test -f dist/learning-assets/fr-a1-u01.txt
           test -f dist/learning-assets/en-ielts-reading-u01.txt
-          grep -q 'assets/' dist/index.html
+          grep -q '/assets/' dist/index.html
+          if grep -R -E 'sb_secret_|service_role|BEGIN PRIVATE KEY' dist; then
+            echo 'Private credential markers detected in public build' >&2
+            exit 1
+          fi
