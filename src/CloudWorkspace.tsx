@@ -1,14 +1,15 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { createClient, type Session } from '@supabase/supabase-js';
 import './cloud.css';
+import { cloudPublicDefaults } from './cloudPublicDefaults';
 
 type Course = { id: string; language: string; level: string; track: string | null;
   title: string; unit: number; text_complete: boolean; audio_verified: boolean; publishable: boolean };
 type State = { stage?: number; notes?: string; completed?: boolean; [key: string]: unknown };
 type Progress = { course_id: string; state: State; updated_at: string };
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL?.trim() || '';
-const publicKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY?.trim() || '';
-const apiBase = (import.meta.env.VITE_WORKER_API_URL?.trim() || '').replace(/\/$/, '');
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL?.trim() || cloudPublicDefaults.supabaseUrl;
+const publicKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY?.trim() || cloudPublicDefaults.supabasePublishableKey;
+const apiBase = (import.meta.env.VITE_WORKER_API_URL?.trim() || cloudPublicDefaults.workerApiUrl).replace(/\/$/, '');
 const configured = Boolean(supabaseUrl && publicKey && /^https:\/\//.test(apiBase));
 const client = configured ? createClient(supabaseUrl, publicKey) : null;
 const stages = ['情境', '语法', '词汇', '听读', '发音', '表达'];

@@ -20,6 +20,8 @@ jobs:
           cache: npm
       - name: Install pinned dependencies
         run: npm ci --no-fund
+      - name: Verify public-only cloud connection contract
+        run: node --test tests/cloud-config.test.mjs
       - name: Check TypeScript and build
         run: npm run build
       - name: Confirm Cloudflare root-path static bundle and verified public lessons

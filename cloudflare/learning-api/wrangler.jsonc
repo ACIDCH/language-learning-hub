@@ -3,5 +3,16 @@
   "name": "language-hub-api",
   "main": "src/index.mjs",
   "compatibility_date": "2026-10-17",
-  "workers_dev": true
+  "workers_dev": true,
+  // Browser-public Supabase project settings, not privileged credentials.
+  // Wrangler is the source of truth so GitHub automatic deploys cannot erase
+  // dashboard-only plaintext vars. Never add service_role or AI secrets here.
+  "vars": {
+    "SUPABASE_URL": "https://szukmwvyyvjajdjoltzy.supabase.co",
+    "SUPABASE_PUBLISHABLE_KEY": "sb_publishable_nsnR4ZifNlop7tKo8URCxg_0SGMDtXu",
+    "FRONTEND_ORIGIN": "https://language-learning-hub.pages.dev"
+  },
+  // Worker Previews (non-production branches) require an explicit block.
+  // They remain separate from the live production deployment.
+  "previews": {}
 }
