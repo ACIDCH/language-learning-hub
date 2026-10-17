@@ -1,0 +1,42 @@
+name: Cloudflare Git integration readiness checks
+
+on:
+  pull_request:
+    paths:
+      - 'design-prototypes/academic-clean/**'
+      - 'tools/build_pages_preview.mjs'
+      - 'cloudflare/learning-api/**'
+      - '.github/workflows/cloudflare-preview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Validate UI prototype
+        run: |
+          node --check design-prototypes/academic-clean/app.js
+          node design-prototypes/academic-clean/check-prototype.mjs
+      - name: Check backend Worker contract
+        run: |
+          node --check cloudflare/learning-api/src/index.mjs
+          node --test cloudflare/learning-api/test/*.test.mjs
+      - name: Prepare public-only preview bundle
+        run: node tools/build_pages_preview.mjs
+      - name: Confirm preview package contains only allowlisted files
+        run: |
+          test "$(find dist-preview -type f | wc -l)" -eq 4
+          test -f dist-preview/_headers
+      - uses: actions/upload-artifact@v4
+        with:
+          name: language-hub-static-preview
+          path: dist-preview
+          retention-days: 3
+

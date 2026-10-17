@@ -1,0 +1,7 @@
+{
+  // Keep this name equal to the Worker name selected in the Cloudflare UI.
+  "name": "language-hub-api",
+  "main": "src/index.mjs",
+  "compatibility_date": "2026-10-17",
+  "workers_dev": true
+}

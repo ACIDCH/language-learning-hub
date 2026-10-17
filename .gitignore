@@ -39,3 +39,6 @@ temp/
 private-content/
 personal-data/
 model-weights/
+
+# Static Cloudflare review build
+dist-preview/
