@@ -3,12 +3,14 @@ import { createClient, type Session } from '@supabase/supabase-js';
 import './cloud.css';
 import { cloudPublicDefaults } from './cloudPublicDefaults';
 import BackupImporter from './BackupImporter';
+import LessonReader from './LessonReader';
 
 type Course = { id: string; language: string; level: string; track: string | null;
   title: string; unit: number; text_complete: boolean; audio_verified: boolean; publishable: boolean };
 type State = { stage?: number; notes?: string; completed?: boolean; [key: string]: unknown };
 type Progress = { course_id: string; state: State; updated_at: string };
 type PrivateLesson = { course_id: string; content_body: string; source_version: string; qa_status: string; updated_at: string };
+type AudioAsset = { asset_id:string;filename:string;duration_seconds:number;source_kind:string;decoded:boolean;exact_text:boolean;listened:boolean;audio_verified:boolean };
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL?.trim() || cloudPublicDefaults.supabaseUrl;
 const publicKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY?.trim() || cloudPublicDefaults.supabasePublishableKey;
 const apiBase = (import.meta.env.VITE_WORKER_API_URL?.trim() || cloudPublicDefaults.workerApiUrl).replace(/\/$/, '');
@@ -37,6 +39,9 @@ export default function CloudWorkspace() {
   const [lesson, setLesson] = useState<PrivateLesson | null>(null);
   const [importNonce,setImportNonce] = useState(0);
   const [lessonStatus, setLessonStatus] = useState('登录后可读取私人课程正文。');
+  const [audioAssets,setAudioAssets]=useState<AudioAsset[]>([]);
+  const [audioStatus,setAudioStatus]=useState('等待课程选择。');
+  const [courseQuery,setCourseQuery]=useState('');
   const [status, setStatus] = useState('正在连接…');
   const [busy, setBusy] = useState(false);
 
@@ -114,6 +119,24 @@ export default function CloudWorkspace() {
     return () => {alive=false;};
   }, [session, selected, importNonce]);
 
+  useEffect(() => {
+    if (!session || !selected) {setAudioAssets([]);setAudioStatus('登录后可查看索引');return;}
+    let alive=true;
+    setAudioAssets([]);
+    setAudioStatus('正在读取音频索引…');
+    void worker<{assets:AudioAsset[];playback_ready:boolean}>(
+      '/v1/audio-index/'+encodeURIComponent(selected),session.access_token)
+      .then(({assets})=>{
+        if(!alive)return;
+        setAudioAssets(assets);
+        setAudioStatus(assets.length
+          ? '这是元数据索引；还未验收实际音频文件与在线播放地址。'
+          : '该课程尚未匹配可用音频文件。');
+      })
+      .catch(e=>{if(alive)setAudioStatus('音频索引暂不可用：'+e.message);});
+    return ()=>{alive=false;};
+  },[session,selected]);
+
   function editState(patch: Partial<State>) {
     const next = {...state,...patch};
     setState(next);
@@ -179,6 +202,17 @@ export default function CloudWorkspace() {
         <div className="cloud-flex"><h2>课程进度与笔记</h2>
           <button type="button" onClick={()=>{void client?.auth.signOut();setState({});}}>退出账户</button></div>
         <p className="cloud-account">已登录：{session.user.email}</p>
+        <label className="cloud-select">按课程名或课程编号搜索
+          <input type="search" value={courseQuery} placeholder="例如：A1、Listening、语法"
+            onChange={e=>setCourseQuery(e.target.value)}/>
+        </label>
+        {courseQuery.trim() && <div className="cloud-course-results" role="group" aria-label="课程搜索结果">
+          {catalog.filter(c=>(c.id+' '+c.title+' '+c.level).toLocaleLowerCase()
+            .includes(courseQuery.trim().toLocaleLowerCase())).slice(0,12)
+            .map(c=><button type="button" key={c.id} onClick={()=>{
+              setSelected(c.id);setCourseQuery('');
+            }}>{c.language.toUpperCase()} · {c.level} · {c.title}</button>)}
+        </div>}
         <label className="cloud-select">课程
           <select value={selected} onChange={e=>setSelected(e.target.value)}>
             {catalog.map(course=><option key={course.id} value={course.id}>
@@ -192,8 +226,21 @@ export default function CloudWorkspace() {
           <p role="status" className="cloud-disclaimer">{lessonStatus}</p>
           {lesson && <>
             <p className="cloud-disclaimer">来源版本：{lesson.source_version} · 状态：{lesson.qa_status === 'approved' ? '已审核' : '草稿/待核验'}</p>
-            <pre className="cloud-manuscript">{lesson.content_body}</pre>
+            <LessonReader text={lesson.content_body} courseId={lesson.course_id}
+              stage={typeof state.stage==='number'?state.stage:0}
+              onChangeStage={stage=>editState({stage})}/>
           </>}
+        </section>
+        <section className="cloud-reader" aria-label="教学音频索引">
+          <h3>教学音频状态</h3>
+          <p className="cloud-disclaimer" role="status">{audioStatus}</p>
+          {audioAssets.length>0&&<>
+            <p className="cloud-disclaimer">当前课程索引：{audioAssets.length} 条；人工试听通过：{audioAssets.filter(a=>a.listened).length} 条；正式验收：{audioAssets.filter(a=>a.audio_verified).length} 条。</p>
+            <ul className="cloud-audio-list">
+              {audioAssets.map(a=><li key={a.asset_id}>{a.filename} · {Math.round(a.duration_seconds)} 秒 · {a.source_kind==='synthetic_practice'?'合成练习音频':'外部参考音频'} · {a.audio_verified?'已验收':'待试听验收'}</li>)}
+            </ul>
+          </>}
+          <p className="cloud-disclaimer">目前仅提供真实索引信息，不显示未经验证的播放器或下载链接。</p>
         </section>
         <BackupImporter client={client!} session={session} knownIds={catalog.map(c=>c.id)}
           onImported={()=>setImportNonce(n=>n+1)}/>
