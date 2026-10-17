@@ -12,6 +12,8 @@ import LessonReview from './LessonReview';
 import LearningOverview from './LearningOverview';
 import AccountAccess from './AccountAccess';
 import LearningPath from './LearningPath';
+import ReferenceIndex from './ReferenceIndex';
+import {ReferenceAudio} from './ReferenceAudio';
 
 type Course = { id: string; language: string; level: string; track: string | null;
   title: string; unit: number; text_complete: boolean; audio_verified: boolean; publishable: boolean };
@@ -289,8 +291,11 @@ export default function CloudWorkspace() {
         </>}
         {activePanel==='path'&&<LearningPath client={client!} session={session}
           courses={catalog} onChoose={id=>{chooseCourse(id);setActivePanel('learn');}}/>}
-        {activePanel==='audio'&&<AudioVault client={client!} session={session}
-          courseId={selected} assets={audioAssets} status={audioStatus}/>}
+        {activePanel==='audio'&&<>
+          <AudioVault client={client!} session={session}
+            courseId={selected} assets={audioAssets} status={audioStatus}/>
+          <ReferenceAudio lessonId={selected}/>
+        </>}
         {activePanel==='speech'&&<SpeechPractice key={selected}
           language={catalog.find(c=>c.id===selected)?.language||'fr'}/>}
         {activePanel==='review'&&<>
@@ -302,8 +307,11 @@ export default function CloudWorkspace() {
             onUpdated={()=>setImportNonce(n=>n+1)}/>}
           <p className="cloud-disclaimer">课程内容结构检查与真正的教学审校是两个不同环节。</p>
         </>}
-        {activePanel==='resources'&&<BackupImporter client={client!} session={session}
-          knownIds={catalog.map(c=>c.id)} onImported={()=>setImportNonce(n=>n+1)}/>}
+        {activePanel==='resources'&&<>
+          <ReferenceIndex client={client!} session={session}/>
+          <BackupImporter client={client!} session={session}
+            knownIds={catalog.map(c=>c.id)} onImported={()=>setImportNonce(n=>n+1)}/>
+        </>}
         {activePanel==='ai'&&<section className="cloud-reader">
           <h3>AI 教师 · 最后阶段</h3>
           <p className="cloud-disclaimer">按照当前开发计划，暂不进行 AI 模型联调，也不会自动发起付费模型请求。</p>
