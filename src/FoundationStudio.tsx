@@ -5,6 +5,7 @@ import type {FoundationLanguage,FoundationRecord} from './foundationTypes';
 import FoundationRecall from './FoundationRecall';
 import {makeVocabularyChecks} from './foundationQuiz';
 import FoundationDictation from './FoundationDictation';
+import FoundationAlphabet from './FoundationAlphabet';
 import {buildFoundationReviewPlan} from './foundationReview';
 
 type Draft={answers:Record<string,number>;notes:string;completed:boolean};
@@ -179,6 +180,8 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
       {unit.examples.map((s,i)=><div className="foundation-example" key={i}>
         <span>{s}</span><button type="button" onClick={()=>pronounce(s)}>听例句</button>
       </div>)}
+      {(unit.id==='en-fnd-01'||unit.id==='fr-fnd-01')&&
+        <FoundationAlphabet language={unit.language} onSpeak={pronounce}/>}
     </section>}
     {segment===2&&<section>
       <h5>词汇与用法</h5>
