@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "version": "v1.3",
+  "as_of": "2026-10-16",
+  "scope": "Existing original French A1 12-unit draft, owner-private source; high-confidence factual issues and teaching refinement proposals",
+  "metrics": {
+    "unique_units_audited": 12,
+    "source_six_stage_present": 12,
+    "existing_answer_key_present": 12,
+    "independently_qualified_language_QA_approved": 0,
+    "exact_audio_matches_verified_in_this_audit": 0,
+    "publication_approved": 0
+  },
+  "source_asset_inventory": {
+    "francais_interactif_phonetics_archives": 14,
+    "francais_interactif_vocabulary_archives": 14,
+    "inspire_a1_archives": 3,
+    "zip_archives_metadata_observed": 31,
+    "individual_track_sha256_verified": false,
+    "per_unit_transcript_aligned": false,
+    "per_unit_licence_review_approved": false,
+    "playback_verified": false
+  },
+  "units": [
+    {
+      "unit_id": "fr-a1-u01",
+      "six_stage_structure_found": true,
+      "answer_key_present": true,
+      "editorial_issues_found": true,
+      "issue_ids": [
+        "A1-U01-TU-VOUS"
+      ],
+      "original_source_preserved": true,
+      "exact_audio_asset_id": null,
+      "exact_audio_verified": false,
+      "proposed_corrections_merged": false,
+      "qualified_QA_approved": false,
+      "text_complete": false,
+      "publishable": false
+    },
+    {
+      "unit_id": "fr-a1-u02",
+      "six_stage_structure_found": true,
+      "answer_key_present": true,
+      "editorial_issues_found": false,
+      "issue_ids": [],
+      "original_source_preserved": true,
+      "exact_audio_asset_id": null,
+      "exact_audio_verified": false,
+      "proposed_corrections_merged": false,
+      "qualified_QA_approved": false,
+      "text_complete": false,
+      "publishable": false
+    },
+    {
+      "unit_id": "fr-a1-u03",
+      "six_stage_structure_found": true,
+      "answer_key_present": true,
+      "editorial_issues_found": true,
+      "issue_ids": [
+        "A1-U03-IPA-OLD",
+        "A1-U03-IPA-PARENTS",
+        "A1-U03-NEG-BLANK"
+      ],
+      "original_source_preserved": true,
+      "exact_audio_asset_id": null,
+      "exact_audio_verified": false,
+      "proposed_corrections_merged": false,
+      "qualified_QA_approved": false,
+      "text_complete": false,
+      "publishable": false
+    },
+    {
+      "unit_id": "fr-a1-u04",
+      "six_stage_structure_found": true,
+      "answer_key_present": true,
+      "editorial_issues_found": false,
+      "issue_ids": [],
+      "original_source_preserved": true,
+      "exact_audio_asset_id": null,
+      "exact_audio_verified": false,
+      "proposed_corrections_merged": false,
+      "qualified_QA_approved": false,
+      "text_complete": false,
+      "publishable": false
+    },
+    {
+      "unit_id": "fr-a1-u05",
+      "six_stage_structure_found": true,
+      "answer_key_present": true,
+      "editorial_issues_found": false,
+      "issue_ids": [],
+      "original_source_preserved": true,
+      "exact_audio_asset_id": null,
+      "exact_audio_verified": false,
+      "proposed_corrections_merged": false,
+      "qualified_QA_approved": false,
+      "text_complete": false,
+      "publishable": false
+    },
+    {
+      "unit_id": "fr-a1-u06",
+      "six_stage_structure_found": true,
+      "answer_key_present": true,
+      "editorial_issues_found": false,
+      "issue_ids": [],
+      "original_source_preserved": true,
+      "exact_audio_asset_id": null,
+      "exact_audio_verified": false,
+      "proposed_corrections_merged": false,
+      "qualified_QA_approved": false,
+      "text_complete": false,
+      "publishable": false
+    },
+    {
+      "unit_id": "fr-a1-u07",
+      "six_stage_structure_found": true,
+      "answer_key_present": true,
+      "editorial_issues_found": true,
+      "issue_ids": [
+        "A1-U07-HOMOPHONES"
+      ],
+      "original_source_preserved": true,
+      "exact_audio_asset_id": null,
+      "exact_audio_verified": false,
+      "proposed_corrections_merged": false,
+      "qualified_QA_approved": false,
+      "text_complete": false,
+      "publishable": false
+    },
+    {
+      "unit_id": "fr-a1-u08",
+      "six_stage_structure_found": true,
+      "answer_key_present": true,
+      "editorial_issues_found": true,
+      "issue_ids": [
+        "A1-U08-DES-PARTITIVE"
+      ],
+      "original_source_preserved": true,
+      "exact_audio_asset_id": null,
+      "exact_audio_verified": false,
+      "proposed_corrections_merged": false,
+      "qualified_QA_approved": false,
+      "text_complete": false,
+      "publishable": false
+    },
+    {
+      "unit_id": "fr-a1-u09",
+      "six_stage_structure_found": true,
+      "answer_key_present": true,
+      "editorial_issues_found": false,
+      "issue_ids": [],
+      "original_source_preserved": true,
+      "exact_audio_asset_id": null,
+      "exact_audio_verified": false,
+      "proposed_corrections_merged": false,
+      "qualified_QA_approved": false,
+      "text_complete": false,
+      "publishable": false
+    },
+    {
+      "unit_id": "fr-a1-u10",
+      "six_stage_structure_found": true,
+      "answer_key_present": true,
+      "editorial_issues_found": true,
+      "issue_ids": [
+        "A1-U10-TITLE-SCOPE"
+      ],
+      "original_source_preserved": true,
+      "exact_audio_asset_id": null,
+      "exact_audio_verified": false,
+      "proposed_corrections_merged": false,
+      "qualified_QA_approved": false,
+      "text_complete": false,
+      "publishable": false
+    },
+    {
+      "unit_id": "fr-a1-u11",
+      "six_stage_structure_found": true,
+      "answer_key_present": true,
+      "editorial_issues_found": false,
+      "issue_ids": [],
+      "original_source_preserved": true,
+      "exact_audio_asset_id": null,
+      "exact_audio_verified": false,
+      "proposed_corrections_merged": false,
+      "qualified_QA_approved": false,
+      "text_complete": false,
+      "publishable": false
+    },
+    {
+      "unit_id": "fr-a1-u12",
+      "six_stage_structure_found": true,
+      "answer_key_present": true,
+      "editorial_issues_found": false,
+      "issue_ids": [],
+      "original_source_preserved": true,
+      "exact_audio_asset_id": null,
+      "exact_audio_verified": false,
+      "proposed_corrections_merged": false,
+      "qualified_QA_approved": false,
+      "text_complete": false,
+      "publishable": false
+    }
+  ],
+  "issues": [
+    {
+      "issue_id": "A1-U03-IPA-OLD",
+      "unit_id": "fr-a1-u03",
+      "severity": "high",
+      "kind": "pronunciation_fact",
+      "old_text": "/ɛ̃/ dans",
+      "preferred_text": "dans /dɑ̃/ ; pain /pɛ̃/ ; mon /mɔ̃/",
+      "reason": "Earlier U03 already noted the correction in v0.2, but obsolete wording remains visible in prior material.",
+      "reference_url": "https://fr.wiktionary.org/wiki/parents",
+      "status": "proposed_pending_owner_editorial_merge"
+    },
+    {
+      "issue_id": "A1-U03-IPA-PARENTS",
+      "unit_id": "fr-a1-u03",
+      "severity": "high",
+      "kind": "pronunciation_fact",
+      "old_text": "parents 的第一个元音",
+      "preferred_text": "parents /pa.ʁɑ̃/ 中带 /ɑ̃/ 的是第二个元音，第一元音为 /a/",
+      "reason": "The first syllable pa has /a/; the second syllable has nasal /ɑ̃/.",
+      "reference_url": "https://fr.wiktionary.org/wiki/parents",
+      "status": "proposed_pending_owner_editorial_merge"
+    },
+    {
+      "issue_id": "A1-U03-NEG-BLANK",
+      "unit_id": "fr-a1-u03",
+      "severity": "high",
+      "kind": "exercise_answer_mismatch",
+      "old_text": "Je ne ___ pas de frère. → n'ai",
+      "preferred_text": "Je n'___ pas de frère. → ai (Je n'ai pas de frère.)",
+      "reason": "Current answer duplicates ne rather than filling the actual blank.",
+      "reference_url": "https://coerll.utexas.edu/coerll/oer/texs-french-grammar/",
+      "status": "proposed_pending_owner_editorial_merge"
+    },
+    {
+      "issue_id": "A1-U07-HOMOPHONES",
+      "unit_id": "fr-a1-u07",
+      "severity": "medium",
+      "kind": "pronunciation_clarity",
+      "old_text": "fais / fait / font 的不同实际语音",
+      "preferred_text": "fais /fɛ/ 和 fait /fɛ/ 常同音；font /fɔ̃/ 不同",
+      "reason": "Do not imply all three conjugations differ phonetically.",
+      "reference_url": "https://fr.wiktionary.org/wiki/fais",
+      "status": "proposed_pending_owner_editorial_merge"
+    },
+    {
+      "issue_id": "A1-U08-DES-PARTITIVE",
+      "unit_id": "fr-a1-u08",
+      "severity": "medium",
+      "kind": "grammatical_nuance",
+      "old_text": "du / de la / de l' / des 表示未明确计量的数量",
+      "preferred_text": "du/de la/de l' 常用于物质名词的不定量；des 在 des pommes 等常见可数名词语境中是复数不定冠词，部分语法体系也使用复数部分冠词分类",
+      "reason": "Prefer semantically clear countability examples and acknowledge grammar-framework variation.",
+      "reference_url": "https://multigram.ulb.ac.be/fra/Article_partitif",
+      "status": "proposed_pending_owner_editorial_merge"
+    },
+    {
+      "issue_id": "A1-U01-TU-VOUS",
+      "unit_id": "fr-a1-u01",
+      "severity": "low",
+      "kind": "pragmatic_register",
+      "old_text": "初次见面的默认礼貌选择常为 vous",
+      "preferred_text": "正式场合一般用 vous；同龄同学首次见面可自然使用 tu，依地区、关系与情境选择",
+      "reason": "Avoid an absolute first-meeting rule when the lesson uses peer introductions.",
+      "reference_url": null,
+      "status": "proposed_pending_owner_editorial_merge"
+    },
+    {
+      "issue_id": "A1-U10-TITLE-SCOPE",
+      "unit_id": "fr-a1-u10",
+      "severity": "medium",
+      "kind": "lesson_scope",
+      "old_text": "La maison et les habitudes",
+      "preferred_text": "保留房屋内容并加 D'habitude, je lis dans le salon / Le matin, je prends mon petit-déjeuner dans la cuisine 等习惯句，或经审核后调整标题",
+      "reason": "Currently the unit chiefly teaches housing and location, despite a title that explicitly includes habits.",
+      "reference_url": null,
+      "status": "proposed_pending_owner_editorial_merge"
+    }
+  ]
+}
