@@ -11,7 +11,7 @@ Date: 2026-10-18 (Pacific/Auckland). Related: [Issue #20](https://github.com/ACI
 - Articulation hints cover French nasal vowels, /y/–/u/, English /ɪ/–/iː/, /θ/–/ð/ and other contrasts. These are practice guidance, not confirmed learner diagnoses.
 - Word → sentence → paragraph selections derive from the current manuscript. Chinese instructions and obvious metadata are excluded. `/speech-lab` is a no-account practice entry.
 - Recording is limited to short utterances, with cancellation, bounded requests, signal rejection and a disabled remote adapter. Local mode is currently limited to loopback preview port 5174; public Cloudflare pages retain browser ASR.
-- The current main branch's navigation/resource fixes are preserved. `CloudWorkspace` changes only pass the current lesson text into `SpeechPractice`. AI teacher/provider configuration, curriculum, stored A1 MP3s, Supabase progress, Workers and other projects are unchanged.
+- The current main branch's navigation/resource fixes are preserved. `CloudWorkspace` passes the current lesson text into `SpeechPractice` and explicitly imports `CourseGuide.tsx` to avoid the latest main branch's Windows extension-resolution ambiguity; no guide behavior changes. AI teacher/provider configuration, curriculum, stored A1 MP3s, Supabase progress, Workers and other projects are unchanged.
 
 ## Models, versions and licenses
 
@@ -91,7 +91,7 @@ Raw evidence: [Whisper 4 threads](../reports/speech-v3-whisper-4threads.json), [
 
 ## Automated validation
 
-`npm ci --no-fund`, production build/typecheck, 14 Vitest lifecycle/privacy/fallback tests, 4 Python endpoint/alignment tests and 24 existing Node regression tests passed after rebasing onto main `f8d862a` (implementation `eaa7ee9`). The Node tests cover transcript comparison, course parsing, audio ZIP, cloud configuration, learning progress and resource inventory. See the [local automation report](../reports/speech-v3-automation.json) and PR Checks; local success does not imply a remote CI pass.
+`npm ci --no-fund`, production build/typecheck, 14 Vitest lifecycle/privacy/fallback tests, 4 Python endpoint/alignment tests and 45 existing Node regression tests passed after integrating main `44f3022` (implementation `5c8a2e4`). The Node tests cover transcript comparison, course parsing, audio ZIP, cloud configuration, learning progress, resource inventory, learning roadmap, reference catalog, QA markers, foundation curriculum, course guidance and stage audit. See the [local automation report](../reports/speech-v3-automation.json) and PR Checks; local success does not imply a remote CI pass.
 
 The local service tests inject a fake evaluator for API behavior; they do not replace the separate real-model benchmark. Microphone events in Vitest are simulated, not real-browser microphone testing. No UI screenshot from the blocked run is evidence of a successful V3 session.
 
