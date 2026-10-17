@@ -3,8 +3,8 @@ import type {Session} from '@supabase/supabase-js';
 
 type Props={session:Session;apiBase:string;courseId:string;language:string;lessonText:string};
 type Provider='deepseek'|'gemini'|'openrouter'|'openai'|'custom';
-type Mode='explain'|'essay'|'dialogue';
-const MODE_OPTIONS=[{value:'explain',label:'课程讲解'},{value:'essay',label:'作文批改'},{value:'dialogue',label:'AI 对话'}] as const;
+type Mode='explain'|'essay'|'dialogue'|'audit';
+const MODE_OPTIONS=[{value:'explain',label:'课程讲解'},{value:'essay',label:'作文批改'},{value:'dialogue',label:'AI 对话'},{value:'audit',label:'课程逐课审校（草稿建议）'}] as const;
 const DEFAULT_MODELS:Record<Provider,string>={
  deepseek:'deepseek-chat',gemini:'gemini-2.0-flash',
  openrouter:'openrouter/free',openai:'gpt-4.1-mini',custom:''
@@ -33,7 +33,7 @@ export default function AITutor({session,apiBase,courseId,language,lessonText}:P
        headers:{'Content-Type':'application/json','Authorization':'Bearer '+session.access_token,
         'X-AI-Key':apiKey},
        body:JSON.stringify({provider,endpoint,model,mode,
-         context:'Course: '+courseId+'; Language: '+language+'\n'+lessonText.slice(0,4200),
+         context:'Course: '+courseId+'; Language: '+language+'\n'+lessonText.slice(0,8500),
          prompt})
      });
      const data=await response.json() as {answer?:string;error?:string};
@@ -80,7 +80,7 @@ export default function AITutor({session,apiBase,courseId,language,lessonText}:P
   </form>}
   <p role="status" className="cloud-disclaimer">{status}</p>
   {result&&<div className="cloud-ai-result" aria-label="AI 模型生成的教学反馈">
-    <div className="cloud-disclaimer">AI 生成内容 · 非官方考试评分</div>
+    <div className="cloud-disclaimer">AI 生成内容 · 非官方考试评分 · 不自动批准课程</div>
     <div className="lesson-paragraphs">{result}</div>
   </div>}
  </section>;
