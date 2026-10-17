@@ -1,5 +1,5 @@
-import {englishFoundation} from './foundationEnglish';
-import {frenchFoundation} from './foundationFrench';
+import {englishFoundation} from './foundationEnglish.ts';
+import {frenchFoundation} from './foundationFrench.ts';
 import type {FoundationUnit,FoundationLanguage} from './foundationTypes';
 export const FOUNDATION_UNITS:FoundationUnit[]=[...englishFoundation,...frenchFoundation];
 export const FOUNDATION_PHASES=[
