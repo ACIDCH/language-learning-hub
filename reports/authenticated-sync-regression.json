@@ -1,0 +1,43 @@
+{
+  "checked_at": "2026-10-17",
+  "environment": "User Windows computer; browser UI + local FastAPI + real Supabase project",
+  "implementation_commit": "0de11dd",
+  "credentials_entered_by_user": true,
+  "service_role_used": false,
+  "correct_project_url_verified": true,
+  "publishable_key_connection_verified": true,
+  "real_personal_login": "passed",
+  "authenticated_cloud_write": "passed",
+  "server_side_row_checked": "passed",
+  "test_course": "fr-a1-u12",
+  "saved_fields_verified": [
+    "stage",
+    "notes",
+    "exercise answer",
+    "correction result"
+  ],
+  "page_refresh_restores_progress": "passed",
+  "page_refresh_preserves_session": "passed",
+  "cloud_to_local_restore": {
+    "result": "passed",
+    "procedure": "Backed up and removed only the temporary test row from local SQLite, reloaded to confirm empty state, clicked cloud sync in the authenticated browser, compared all fields and timestamp with the backup.",
+    "all_fields_match": true,
+    "edit_timestamp_preserved": true
+  },
+  "sign_out": "passed",
+  "relogin": "passed_user_entered_credentials",
+  "restore_after_relogin": "passed_real_cloud_download_all_fields_and_timestamp_match",
+  "test_record_cleanup": "passed_local_and_cloud_temporary_row_removed",
+  "original_user_records_preserved": true,
+  "automated_tests": {
+    "pytest_passed": 26,
+    "production_build": "passed",
+    "timestamp_restore_regression": "passed"
+  },
+  "limits": [
+    "Manual cloud synchronization; local edits save automatically.",
+    "Most recent timestamp wins per course; no field-level concurrent merge.",
+    "Second physical device has not been tested.",
+    "Private materials are served only on this computer."
+  ]
+}
