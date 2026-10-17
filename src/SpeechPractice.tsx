@@ -128,6 +128,13 @@ export default function SpeechPractice({language,lessonText="",initialTarget=""}
           match:checked.missing===0&&checked.substituted===0&&checked.extra===0
         }));
         setNote('识别完成。请查看文字核对与下一步复练建议；这不是发音打分。');
+        // A final ASR result is usable immediately. Close the microphone now,
+        // rather than waiting for vendor onend (which may be delayed).
+        clearTimeout(watchdog.current);
+        engine.current=null;
+        setListening(false);
+        try{rec.stop();}catch{rec.abort();}
+        return;
       }else setInterim(first);
     }
   };
