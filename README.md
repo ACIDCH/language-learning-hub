@@ -3,7 +3,7 @@
 An independent English–French learning platform. **Public code and individually approved open assets; private personal learning data.**
 
 ## Status
-**Phase 00 — infrastructure and architecture (in progress).** The project is not deployed and does not yet have learning features.
+**React/Cloudflare integration candidate — not yet deployed.** Public original lesson samples are browsable in the React frontend. The advanced personal workspace remains available with a private local service; the new Cloudflare Worker supports tested Supabase metadata/progress interfaces. Live Pages/Workers integration is still pending.
 
 ## Architecture boundaries
 - **This public GitHub repository:** source code, tests, technical specifications, CI/CD and small **license-verified, redistributable** learning assets in `public/learning-assets/` only.
@@ -23,9 +23,9 @@ An independent English–French learning platform. **Public code and individuall
 ## Curriculum and storage status (October 2026)
 - `config/curriculum/units.v2.json`: 108 planned unit outlines (English IELTS 48, French CEFR 60), **not completed lessons**.
 - `config/resources/sources.json`: 32 curated source-entry candidates. Third-party content is normally linked, not reproduced.
-- Private YUNPAN Google Drive stores the two curriculum documents and two **original draft learning lessons**. There are no production-integrated audio lessons yet.
+- Private YUNPAN contains successive course manuscripts, archived source versions and modest compressed instructional audio. The local V4 branch indexes 108 lessons; the reports distinguish source ingestion from finished pedagogical approval. Audio decode success is not pronunciation-quality acceptance.
 - The public repository contains no personal learning data, API keys, proprietary textbooks, or copied IELTS practice tests.
-- Frontend design remains review-first: examples, then user approval, then a separate PR and deployment.
+- React 19 / TypeScript / Vite frontend, private local FastAPI workspace and Supabase course/progress metadata are integrated in the current development candidate. Online private full-text service, live AI and pronunciation evaluation remain pending.
 
 ## Delivery sequence
 00. Platform isolation, permissions, architecture and interface contracts
@@ -38,7 +38,7 @@ An independent English–French learning platform. **Public code and individuall
 07. End-to-end testing, security, backup and optimization
 
 ## Deployment notice
-Repository visibility is **PUBLIC** as approved by the owner. Future deployment may use GitHub Pages at a dedicated project path. This repo does **not** replace `ACIDCH.github.io`. No Pages site or learning app has been deployed yet. Approved public assets are capped at a conservative initial 200 MB (5 MiB each by default). Private data belongs in Drive; only non-secret identifiers and metadata belong in Supabase.
+Repository visibility is **PUBLIC** as approved by the owner. The planned production frontend is Cloudflare Pages (React/Vite) with an independent Cloudflare Worker API. This repo does **not** replace `ACIDCH.github.io`. A live deployment has not been verified. See [Cloudflare deployment](docs/CLOUDFLARE_PRODUCTION.md). Approved public assets are capped at a conservative initial 200 MB (5 MiB each by default). Private data belongs in Drive; only non-secret identifiers and metadata belong in Supabase.
 
 ## Isolation
 Do **not** write project files into `ACIDCH/ACIDCH.github.io` or `ACIDCH/ACIDCH`. No operational dependency on either existing repository is permitted.
