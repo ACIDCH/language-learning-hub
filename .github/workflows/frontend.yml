@@ -46,6 +46,8 @@ jobs:
         run: node --experimental-strip-types --test tests/stageAudit.test.mjs
       - name: Test all foundation active-recall cards
         run: node --experimental-strip-types --test tests/foundationRecall.test.mjs
+      - name: Validate 96 meaning checks against original teaching vocabulary
+        run: node --experimental-strip-types --test tests/foundationQuiz.test.mjs
       - name: Check TypeScript and build
         run: npm run build
       - name: Confirm Cloudflare root-path static bundle and verified public lessons
