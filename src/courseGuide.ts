@@ -1,4 +1,4 @@
-import manifest from '../config/curriculum/units.v2.json';
+import manifest from '../config/curriculum/units.v2.json' with {type:'json'};
 type UnitMetadata={
  id:string;language:string;level:string;unit:number;title:string;can_do:string;
  grammar:string[];vocabulary_domains:string[];pronunciation_focus:string;
