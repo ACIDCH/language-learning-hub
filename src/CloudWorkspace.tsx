@@ -291,7 +291,7 @@ export default function CloudWorkspace() {
                 check={(state.practiceChecklist&&typeof state.practiceChecklist==='object'&&
                   !Array.isArray(state.practiceChecklist)?state.practiceChecklist:{}) as PracticeCheck}
                 onChange={practiceChecklist=>editState({practiceChecklist})}/>
-              <LessonReader text={currentLesson.content_body} courseId={currentLesson.course_id}
+              <LessonReader text={currentLesson.content_body} language={catalog.find(c=>c.id===selected)?.language||"fr"} courseId={currentLesson.course_id}
                 stage={typeof state.stage==='number'?state.stage:0}
                 onChangeStage={stage=>editState({stage})}/>
             </>}
