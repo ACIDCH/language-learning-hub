@@ -161,3 +161,46 @@
 .ref-rows article a{font-size:.85rem}
 .ref-pagination{display:flex;justify-content:space-between;align-items:center;gap:8px}
 @media(max-width:650px){.ref-counts{grid-template-columns:repeat(2,minmax(0,1fr))}.ref-filters{grid-template-columns:1fr}}
+
+
+/* 24-unit original foundation study studio: independent from 108 V4 manuscripts. */
+.foundation-studio{--foundation-border:#d3e3eb}
+.foundation-filters{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:15px 0}
+.foundation-filters>span{margin-left:auto;color:#546d80;font-size:.88rem}
+.cloud-workspace .foundation-filters button{background:#edf6fa;color:#235b78;border:1px solid var(--foundation-border)}
+.cloud-workspace .foundation-filters button.foundation-current,
+.cloud-workspace .foundation-menu button.foundation-current{background:#17658b;color:#fff;border-color:#17658b}
+.foundation-layout{display:grid;grid-template-columns:minmax(195px,28%) minmax(0,1fr);gap:18px;margin:15px 0}
+.foundation-menu{max-height:620px;overflow:auto;display:grid;align-content:start;gap:8px}
+.cloud-workspace .foundation-menu button{display:grid;gap:4px;text-align:left;background:#f2f7fa;color:#264c61;
+border:1px solid var(--foundation-border);padding:10px;overflow-wrap:anywhere}
+.foundation-menu button strong{font-size:.91rem}
+.foundation-menu button small,.foundation-menu button span{font-size:.74rem;opacity:.87}
+.foundation-lesson{border:1px solid var(--foundation-border);border-radius:13px;padding:clamp(13px,3vw,23px);min-width:0;background:#fff}
+.foundation-lesson header h4{margin:.2em 0;font-size:1.4rem;color:#194a63}
+.foundation-lesson header p{margin:.3em 0 16px;color:#587081}
+.foundation-lesson h5{font-size:1.04rem;margin:18px 0 9px}
+.foundation-lesson section{line-height:1.85;overflow-wrap:anywhere}
+.foundation-stage-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:18px 0}
+.cloud-workspace .foundation-stage-tabs button{padding:8px 5px;font-size:.82rem;background:#eff6fa;color:#24536b;border:1px solid #cfdfe7}
+.cloud-workspace .foundation-stage-tabs button[aria-current=step]{background:#17658b;color:#fff}
+.foundation-lesson ol{padding-left:22px}
+.foundation-lesson li{margin:9px 0}
+.foundation-example{display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid #e4ecf2;padding:8px 0}
+.cloud-workspace .foundation-example button,.cloud-workspace .foundation-words button{padding:5px 8px;font-size:.8rem;white-space:nowrap;background:#eef5f8;color:#165777}
+.foundation-words{width:100%;border-collapse:collapse;font-size:.9rem}
+.foundation-words th,.foundation-words td{text-align:left;padding:10px 7px;border-bottom:1px solid #dfeaf0;overflow-wrap:anywhere}
+.foundation-lesson details{border:1px solid #d7e4ed;border-radius:8px;padding:9px 11px;margin:12px 0}
+.foundation-lesson details summary{cursor:pointer;font-weight:600}
+.foundation-question{border:1px solid #d6e4eb;border-radius:11px;margin:16px 0;padding:14px}
+.foundation-question legend{font-weight:700;padding:0 4px}
+.foundation-question label{display:flex!important;align-items:flex-start;gap:9px!important;font-weight:400!important;margin:9px 0}
+.foundation-question label input{flex-shrink:0;margin-top:.3em}
+.foundation-answer-ok{border-left:3px solid #46886b;background:#edf6f0;padding:8px 10px}
+.foundation-answer-review{border-left:3px solid #b48035;background:#fff7ea;padding:8px 10px}
+.foundation-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+@media(max-width:710px){.foundation-layout{grid-template-columns:1fr}
+.foundation-menu{display:flex;overflow-x:auto;max-height:none}
+.cloud-workspace .foundation-menu button{flex:0 0 190px}
+.foundation-stage-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}
+.foundation-filters>span{width:100%;margin-left:0}}
