@@ -1,49 +1,60 @@
-# Cloudflare Pages / Neon evaluation — Phase 00 implementation
+# Cloudflare Git integration readiness — Phase 00
 
-This repository now has an **optional, review-only static preview** for Cloudflare Pages.
-It does not activate billing, deploy to production, or migrate Supabase data.
+Status: GitHub PR only; no Cloudflare project has been created by this change. Production Supabase and Google Drive are untouched.
 
-## Runnable preview
+## 1. Pages (learning system front-end prototype)
 
-- Execute `node design-prototypes/academic-clean/check-prototype.mjs`.
-- Execute `node tools/build_pages_preview.mjs`: only index.html, app.js, styles.css and a noindex `_headers` are published.
-- PR workflow builds and uploads the review bundle without cloud credentials.
-- After *manually* creating a Cloudflare Pages Direct Upload project called
-  `language-learning-hub-preview` and setting GitHub Actions secrets
-  `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN`, run the optional
-  `Cloudflare Pages prototype preview` workflow manually. This deploys to
-  the non-production `review` branch. No custom domain is required.
-- Direct Upload and Git integration are different project types; choose
-  deliberately. No eu.cc DNS records are configured by this change.
+Use **Cloudflare Pages → Connect to Git**, NOT Direct Upload, to avoid manual API tokens and Secrets. Authorize GitHub access to `ACIDCH/language-learning-hub` only.
 
-## Backend interface boundary
+After this PR is reviewed and merged into `main`, provision a Git-connected Pages project using:
 
-Keep the current Supabase project and private Google Drive YUNPAN records
-unchanged. The future backend should implement `docs/api-contracts.md`
-without binding the UI to Supabase- or Neon-specific SDK calls. Compare
-Supabase Postgres/Auth versus Neon Postgres/Managed Better Auth on a *separate*
-test environment before migrating real learning data.
+| Setting | Value |
+| --- | --- |
+| Project name | `language-hub-preview` (subject to availability) |
+| Repository | `ACIDCH/language-learning-hub` |
+| Production branch | `main` |
+| Framework preset | None |
+| Root directory | repository root (leave blank) |
+| Build command | `node tools/build_pages_preview.mjs` |
+| Build output directory | `dist-preview` |
+| Variables | None |
+| Custom domain | None |
 
-Validation gate: (1) private Drive asset lookup is authorized; (2) progress
-belongs to the signed-in user; (3) pronunciation audio is transient and not
-persisted; (4) lesson import remains lawful; (5) database export/restore
-works; (6) real-region latency and free quotas are measured.
+The build script publishes only `index.html`, `app.js`, `styles.css`, and an `_headers` noindex rule. This URL will be a **design prototype**, not the finished learner app.
 
-Neon free project count is not the same as unlimited free resource usage.
-Cloudflare Workers' free tier is well suited for small API requests, **not**
-in-process speech recognition or audio model inference.
+Cloudflare automatically builds subsequent Git commits/PR previews. GitHub Actions performs validation only; there is no GitHub-hosted deployment token and no manual Pages upload.
 
-## Storage policy
+## 2. Workers (lightweight API scaffold)
 
-- Public prototype: **zero** video or audio files.
-- Private Google Drive: source PDFs and only necessary compressed instructional
-  audio (Opus or MP3/AAC); no persistent user practice recordings or video archive.
-- Postgres: lesson metadata and progress; do not store media blobs.
-- Large media distribution/R2 and private Cloudflare Worker API are deferred
-  until there is a demonstrated need.
+The independent Git-connected Worker lives in `cloudflare/learning-api/`. Configure **Workers & Pages → Create application → GitHub**, repository `ACIDCH/language-learning-hub`, root directory `cloudflare/learning-api`, Worker name `language-hub-api` (must match `wrangler.jsonc`), production branch `main`, deploy command `npx wrangler deploy` if requested.
 
-## Acceptance
+The current Worker exposes only:
+- `GET /health`: explicit scaffold health result;
+- `GET /v1/status`: reports downstream modules as not connected;
+- all other `/v1/*`: HTTP 501; no AI invocation or database mutation.
 
-This work proves that a small static preview bundle can be built and checked.
-It does **not** prove that Neon/Better Auth have been provisioned, that the
-course engine is production-ready, or that a live Cloudflare deployment exists.
+This Worker is safe to test but must **not** be advertised as a working learning API. Connect authentication, course read/write, quota controls and provider adapters after testing.
+
+## 3. Preservation and future architecture
+
+- Keep the existing Supabase `language-learning-hub` project and all Drive `YUNPAN` resources unchanged.
+- Compare a dedicated Neon staging project to Supabase before considering any migration, with export/restore and authenticated test paths.
+- Implement `docs/api-contracts.md` through a replaceable backend interface. Pages/static frontends must never contain API secrets or service-role keys.
+- Learning system: text/PDF and necessary **ordinary-quality compressed audio** only. No stored videos or retained practice recordings.
+- A free account or `workers.dev` URL is not a promise of unmetered usage. Large ASR/pronunciation model inference runs elsewhere and may have usage costs.
+- Do not configure eu.cc or other custom domains yet.
+
+## 4. Local / CI checks
+
+```sh
+node --check cloudflare/learning-api/src/index.mjs
+node --test cloudflare/learning-api/test/*.test.mjs
+node design-prototypes/academic-clean/check-prototype.mjs
+node tools/build_pages_preview.mjs
+```
+
+The pull request CI checks all of the above and publishes a review artifact. Do not provision Pages with the `main` build command before the required files reach `main` via the reviewed PR.
+
+## 5. Future acceptance
+
+The following remain unverified until live deployment and tests: actual Cloudflare Git permissions, Pages deployment, Worker health request over HTTPS, authorized Supabase queries, user progress persistence, legitimate Drive asset loading, measured free quotas and network latency.
