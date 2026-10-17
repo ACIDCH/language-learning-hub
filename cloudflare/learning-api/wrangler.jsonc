@@ -3,5 +3,8 @@
   "name": "language-hub-api",
   "main": "src/index.mjs",
   "compatibility_date": "2026-10-17",
-  "workers_dev": true
+  "workers_dev": true,
+  // Dashboard runtime variables are managed by this project owner. Keep them
+  // when GitHub builds execute Wrangler deploy; do not commit API keys.
+  "keep_vars": true
 }
