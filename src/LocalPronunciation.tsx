@@ -39,15 +39,30 @@ export default function LocalPronunciation({target,language}:{target:string;lang
   finally{clearTimeout(deadline);cancelAnimationFrame(frame);if(current.current===controller){setState('idle');stop.current=null;}}
  }
  return <section aria-label="实验性声学反馈">
-  <h4>音素观察 · 实验性 / 未校准</h4>
-  <p>只将短录音发送到本机 127.0.0.1:8776，在内存中处理后释放；不写入云盘、Supabase 或学习记录。没有专业发音分数，重音与连诵正确性尚不可评。</p>
+  <h4>音素练习参考值 · 本机实验功能</h4>
+  <p>可显示模型音素与参考读音的练习匹配度（0–100），帮助定位值得再读的词音；这是未经真人发音校准的参考数值，不是口音或专业发音成绩。短词、模型空输出或信号不稳时不显示数值。录音只送往本机 127.0.0.1:8776，不存入云盘或学习记录。</p>
   {!allowed&&<p>当前云端页面不启用本机连接，请切回免费浏览器模式。在本机预览端口 5174 可试用声学原型。</p>}
   <button disabled={!allowed||state!=='idle'} onClick={()=>void run()}>录音并观察音素</button>
   {state==='recording'&&<button onClick={()=>stop.current?.()}>停止并分析</button>}
   {state!=='idle'&&<button onClick={()=>{current.current?.abort();setState('idle');setNote('已取消并释放录音。');}}>取消声学分析</button>}
   <label>或选择本机短音频（仅内存读取）<input type="file" accept="audio/*" disabled={!allowed||state!=='idle'} onChange={e=>{const file=e.target.files?.[0];e.target.value='';if(file)void run(file);}}/></label>
   <p role="status">{note}</p>
-  {result&&<div aria-label="声学观察结果"><p>模型处理：{result.elapsed_ms} ms；录音：{result.signal?.duration_s} s；低能量片段：{result.signal?.low_energy_s} s（不等于停顿错误）。</p>
+  {result&&<div aria-label="声学观察结果">
+   {result.status!=='unscorable'&&result.practice_reference?.available&&
+     <section className="speech-practice-reference" aria-label="音素练习参考值">
+      <p><strong>音素练习参考值：</strong><span className="speech-practice-reference-number">{result.practice_reference.percent} / 100</span></p>
+      <p>这是识别模型候选音素与自动生成的 IPA 参考音素之间的序列匹配度；不是你真实发音准确率，不能用于考试、口音或专业水平评判。</p>
+      <small>比较 {result.practice_reference.reference_phones} 个参考音素和 {result.practice_reference.observed_phones} 个模型候选音素；不同口音、词尾连诵、噪声均会影响结果。</small>
+     </section>}
+   {result.status!=='unscorable'&&result.practice_reference&&!result.practice_reference.available&&
+     <p className="speech-reference-unavailable">这次不显示音素匹配百分比：{
+       result.practice_reference.reason==='short_reference'?'词语太短，模型的音素判断容易失真':
+       result.practice_reference.reason==='insufficient_observation'?'识别到的音素不足':
+       result.practice_reference.reason==='unstable_coverage'?'音素数量与参考句差距过大':
+       result.practice_reference.reason==='unsupported_reference'?'参考音素含模型暂不支持的符号':
+       '可用音素证据不足'
+     }。可以改读完整短句，或使用上方免费文字跟读。</p>}
+   <p>模型处理：{result.elapsed_ms} ms；录音：{result.signal?.duration_s} s；低能量片段：{result.signal?.low_energy_s} s（不等于停顿错误）。</p>
    {metrics&&<details><summary>本次运行信息</summary><p>总耗时（含录音/解码）：{metrics.total_ms} ms；最大绘制帧间隔：{metrics.max_frame_gap_ms} ms；JS 堆占用：{metrics.js_heap_bytes??'浏览器未提供'} bytes（不包含本机模型进程）。</p></details>}
    {result.signal?.rejection&&<p>信号限制：{result.signal.rejection}</p>}
    {!!result.reference_unknown?.length&&<p>参考读音含模型词表外字符，相关差异不能解读：{result.reference_unknown.join(' ')}</p>}
