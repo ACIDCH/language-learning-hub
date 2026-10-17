@@ -34,7 +34,7 @@ questions:[{prompt:'Which word typically begins with /θ/?',choices:['this','thi
 production:'用 this 和 think 各写一句话；先慢速读，再连成自然语速。',pronunciation:'对比 this/think 和 cap/cab；建议听辨加复读，不输出未经校准的发音百分制。',commonMistake:'把 think 读成 sink，或在词尾 /p/ 后额外加一个元音。'
 },
 {
-id:'en-fnd-04',language:'A0',level:'A1',phase:0,title:'音节、单词重音与基础节奏',
+id:'en-fnd-04',language:'en',level:'A1',phase:0,title:'音节、单词重音与基础节奏',
 goal:'能划分常见音节，找出简单单词的重读位置。',
 concepts:['音节围绕元音核心组织；英语单词不一定按拼写字母个数分音节。','TA-ble 常重读第一音节，be-GIN 常重读第二音节；重音位置会影响理解。','自然语流里的弱读和连读可在词汇熟悉后循序练习。'],
 examples:['TAble: a table.','beGIN: Let us begin.','I want a CUP of TEA.'],
