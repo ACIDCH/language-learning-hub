@@ -2,7 +2,7 @@
 export type ReferenceSource='fi-phonetics'|'fi-vocabulary'|'inspire-a1'|'unclassified';
 export type ReferenceRecord={
  asset_id:string;filename:string;source_kind:string;course_id:string|null;
- duration_seconds:number;decoded:boolean;audio_verified:boolean;
+ duration_seconds:number;decoded:boolean;audio_verified:boolean;sha256:string;
 };
 export function identifyReference(item:Pick<ReferenceRecord,'asset_id'|'source_kind'>):ReferenceSource{
  if(item.source_kind!=='open_reference')return 'unclassified';
@@ -21,4 +21,8 @@ export function referenceCounts(items:ReferenceRecord[]){
  const counts:Record<ReferenceSource,number>={'fi-phonetics':0,'fi-vocabulary':0,'inspire-a1':0,'unclassified':0};
  for(const item of items)counts[identifyReference(item)]++;
  return counts;
+}
+
+export function uniqueMediaHashes(items:ReferenceRecord[]):number {
+ return new Set(items.map(item=>item.sha256).filter(Boolean)).size;
 }
