@@ -16,9 +16,9 @@ export default function IpaStudio(){
  return <section className="cloud-reader ipa-studio" aria-label="完整文本 IPA 音标阅读工具">
   <h3>IPA 全文音标阅读</h3>
   <p className="cloud-disclaimer">把未见过的英语或法语文字粘贴到这里，点击开启 IPA 即可将参考音标逐段标注在原文上方。
-   由浏览器内的轻量音素引擎生成，不上传全文、不购买 AI API，也无需安装本机 Python。</p>
+   由浏览器内的轻量音素引擎生成，不上传全文、不购买 AI API，也无需安装本机 Python。英语音标当前不区分英美发音，口音选项只控制设备朗读。</p>
   <div className="ipa-studio-controls">
-   <label>朗读与音标口音
+   <label>浏览器朗读口音
     <select value={locale} onChange={e=>{
       const next=e.target.value as keyof typeof SAMPLES;
       setLocale(next);setText(SAMPLES[next]);setActive(false);
