@@ -62,3 +62,12 @@
 .cloud-workspace .cloud-audio-list button{background:#f4f8fc;color:#175b7d;padding:5px 10px;font-size:.85rem}
 .speech-actions{display:flex;gap:8px;flex-wrap:wrap}
 @media(max-width:650px){.speech-actions button{flex:1}.cloud-audio-list li{align-items:flex-start}}
+
+
+.qa-stats{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.qa-stats span{display:inline-flex;padding:8px 10px;border-radius:8px;background:#f1f6fa;font-size:.83rem;gap:4px}
+.qa-rows{margin-top:12px;max-height:330px;overflow:auto;display:grid;gap:7px}
+.cloud-workspace .qa-rows button{display:flex;align-items:flex-start;justify-content:space-between;
+ gap:10px;background:#f6f9fb;border-color:#d7e6ed;color:#244e65;text-align:left;font-size:.85rem}
+.qa-rows span{color:#536e7e}
+@media(max-width:650px){.cloud-workspace .qa-rows button{flex-direction:column}}
