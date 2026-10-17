@@ -293,3 +293,31 @@ border:1px solid var(--foundation-border);padding:10px;overflow-wrap:anywhere}
 .foundation-number-feedback{padding:12px;background:#edf7f0;border-radius:8px;overflow-wrap:anywhere}
 .foundation-number-feedback button{margin-left:8px}
 .foundation-number-reference{max-height:350px;overflow:auto;border:1px solid #d5e3eb;border-radius:8px;margin-top:12px}
+
+
+/* Everyday learner pronunciation: concise guided flow, in-page ephemeral feedback. */
+.speech-learning-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;
+ counter-reset:speech-step;gap:8px;padding:0;margin:14px 0 18px}
+.speech-learning-steps li{counter-increment:speech-step;border:1px solid #d3e3eb;background:#f6fafc;
+ border-radius:10px;padding:12px 10px;font-size:.85rem;line-height:1.5;color:#28526a}
+.speech-learning-steps li:before{content:counter(speech-step);display:inline-grid;place-items:center;
+ border-radius:50%;background:#ddecf4;color:#175476;font-weight:800;margin-right:8px;width:24px;height:24px}
+.speech-advanced{background:#f9fbfc;border:1px solid #dce7ed;border-radius:10px;padding:9px 12px}
+.speech-advanced summary{cursor:pointer;color:#356078;font-weight:650}
+.speech-advanced label{margin:10px 0}
+.speech-coaching{border:1px solid #cbdfe8;background:#f4f9fc;border-radius:10px;margin:13px 0;padding:12px}
+.speech-coaching h4{margin:0 0 7px;color:#194c6b}
+.speech-coaching p{margin:5px 0 11px;line-height:1.6}
+.speech-focus-words{display:grid;gap:8px;margin:12px 0}
+.speech-focus-word{display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+ padding:10px;background:#fff;border:1px solid #d2e0e8;border-radius:8px}
+.speech-focus-word strong{min-width:85px;margin-right:auto;font-size:1.02rem;overflow-wrap:anywhere}
+.speech-focus-word button,.speech-coaching>button{border:1px solid #b9d7e6;border-radius:8px;
+ background:#eaf5fa;color:#1d526e;padding:7px 10px;cursor:pointer}
+.speech-recent{border-top:1px solid #d5e3e8;padding-top:10px}
+.speech-recent summary{cursor:pointer}
+.speech-recent li{margin:6px 0;overflow-wrap:anywhere}
+.speech-recent p{font-size:.8rem;color:#577284}
+@media(max-width:780px){.speech-learning-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.speech-learning-steps{grid-template-columns:1fr}
+.speech-focus-word strong{flex-basis:100%}}
