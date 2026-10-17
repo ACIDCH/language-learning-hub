@@ -205,7 +205,11 @@ export default function CloudWorkspace() {
         try {localStorage.removeItem(draftKey(userId,courseId));} catch { /* no local cache */ }
       }
       setOverviewVersion(n=>n+1);
-    } catch(e) {setStatus('保存失败，请保留本页内容：' + (e instanceof Error ? e.message : String(e)));}
+     } catch(e) {
+      if(selectedRef.current===courseId){
+        setStatus('保存失败，请保留本页内容：' + (e instanceof Error ? e.message : String(e)));
+      }
+    }
     finally {setBusy(false);}
   }
   return <main className="cloud-workspace">
@@ -268,18 +272,18 @@ export default function CloudWorkspace() {
             {!progressReady&&<p role="status" className="cloud-disclaimer">
               正在读取此课程的进度，期间编辑和保存暂时锁定，避免混入另一门课程的笔记。
             </p>}
-            <fieldset className="cloud-stages" disabled={!progressReady}>
+            <fieldset className="cloud-stages" disabled={!progressReady||busy}>
               <legend>当前学习环节</legend>
               {stages.map((label,i)=><label key={label}><input type="radio"
                 checked={state.stage===i} onChange={()=>editState({stage:i})}/>{label}</label>)}
             </fieldset>
             <label className="cloud-notes">学习笔记
-              <textarea rows={5} maxLength={10000} disabled={!progressReady}
+              <textarea rows={5} maxLength={10000} disabled={!progressReady||busy}
                 value={typeof state.notes==='string'?state.notes:''}
                 onChange={e=>editState({notes:e.target.value})}/>
             </label>
             <label className="cloud-completed">
-              <input type="checkbox" disabled={!progressReady}
+              <input type="checkbox" disabled={!progressReady||busy}
                 checked={state.completed===true}
                 onChange={e=>editState({completed:e.target.checked})}/>已完成本次学习
             </label>
@@ -304,7 +308,7 @@ export default function CloudWorkspace() {
           language={catalog.find(c=>c.id===selected)?.language||'fr'}/>}
         {activePanel==='review'&&<>
           <CourseAudit client={client!} session={session}
-            onSelect={id=>{chooseCourse(id);setActivePanel('learn');}}/>
+            onSelect={id=>chooseCourse(id)}/>
           {currentLesson&&<LessonReview key={currentLesson.course_id} client={client!}
             session={session} courseId={currentLesson.course_id}
             qaStatus={currentLesson.qa_status}
