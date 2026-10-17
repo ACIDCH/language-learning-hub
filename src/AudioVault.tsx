@@ -1,7 +1,8 @@
-import {useEffect,useState,type FormEvent} from 'react';
+import {useEffect,useRef,useState,type FormEvent} from 'react';
 import type {SupabaseClient,Session} from '@supabase/supabase-js';
 import {hashAudio,unpackA1Audio} from './audioZip';
 import AudioReview from './AudioReview';
+import {audioNames} from './resourceInventory';
 
 type Asset={asset_id:string;filename:string;duration_seconds:number;source_kind:string;
  decoded:boolean;exact_text:boolean;listened:boolean;audio_verified:boolean};
@@ -17,6 +18,7 @@ export default function AudioVault({client,session,courseId,assets,status}:Props
  const [uploadedNames,setUploadedNames]=useState<Set<string>|null>(null);
  const [vaultMessage,setVaultMessage]=useState('正在检查私人音频存储…');
  const [vaultRefresh,setVaultRefresh]=useState(0);
+ const playRequest=useRef(0);
  useEffect(()=>{
   let active=true;
   setUploadedNames(null);setVaultMessage('正在检查已上传的音频…');
@@ -24,19 +26,24 @@ export default function AudioVault({client,session,courseId,assets,status}:Props
     .then(({data,error})=>{
       if(!active)return;
       if(error){setVaultMessage('音频存储检查暂不可用：'+error.message);return;}
-      const files=new Set((data||[]).map(f=>f.name).filter(n=>
-        /^fr-a1-u(0[1-9]|1[0-2])-(dialogue|reading)\\.mp3$/.test(n)));
+      const files=audioNames((data||[]).map(f=>f.name));
       setUploadedNames(files);
       setVaultMessage(files.size===24?'24 首 A1 练习音频已经上传，无需重复导入。':
         '当前识别到 '+files.size+'/24 首 A1 练习音频；缺失的文件仍可通过 ZIP 补齐。');
     });
   return ()=>{active=false;};
  },[client,session.user.id,vaultRefresh]);
- useEffect(()=>{setPlayUrl('');setPlayId('');setPlayNote('');},[courseId,session.user.id]);
+ useEffect(()=>{
+   playRequest.current++;
+   setPlayUrl('');setPlayId('');setPlayNote('');
+   return ()=>{playRequest.current++;};
+ },[courseId,session.user.id]);
  async function play(asset:Asset){
+  const ticket=++playRequest.current;
   setPlayUrl('');setPlayId('');setPlayNote('正在检查私人文件…');
   const path=session.user.id+'/'+asset.asset_id+'.mp3';
   const {data,error}=await client.storage.from(BUCKET).createSignedUrl(path,15*60);
+  if(ticket!==playRequest.current)return;
   if(error||!data?.signedUrl){
    setPlayNote('此音频尚未上传或不可读取；请先完成一次 ZIP 同步。');
    return;
