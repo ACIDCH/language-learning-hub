@@ -224,3 +224,14 @@ border:1px solid var(--foundation-border);padding:10px;overflow-wrap:anywhere}
 .course-guide-checks label{display:flex!important;align-items:flex-start;gap:8px;font-weight:400!important}
 .course-guide-checks input{margin-top:.25em}
 @media(max-width:650px){.course-guide-fields{grid-template-columns:1fr}}
+
+
+.stage-qa-summary{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}
+.stage-qa-summary>span{background:#f2f7fa;border:1px solid #d7e5ed;padding:7px 10px;border-radius:8px;font-size:.82rem}
+.stage-audit-toggle{display:flex!important;align-items:center;gap:8px!important;font-weight:400!important;margin:14px 0}
+.stage-audit-rows{max-height:440px;overflow:auto;display:grid;gap:10px}
+.stage-audit-rows article{padding:12px;border:1px solid #d4e3ec;border-radius:9px;background:#fafcfe}
+.stage-audit-rows article>div{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.stage-audit-rows article span{color:#6b8390;font-size:.82rem}
+.stage-audit-rows article p{font-size:.86rem;color:#496778}
+.cloud-workspace .stage-audit-rows button{padding:6px 9px;font-size:.82rem}
