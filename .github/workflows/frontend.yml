@@ -38,6 +38,8 @@ jobs:
         run: node --experimental-strip-types --test tests/referenceCatalog.test.mjs
       - name: Verify multilingual QA markers and independent human approval
         run: node --test tests/qaMarkers.test.mjs
+      - name: Validate original 24-unit beginner course quality contract
+        run: node --experimental-strip-types --test tests/foundationCurriculum.test.mjs
       - name: Check TypeScript and build
         run: npm run build
       - name: Confirm Cloudflare root-path static bundle and verified public lessons
