@@ -6,10 +6,19 @@ export function speakIpaText(text:string,language:string,rate=.85){
  try {
   const synth=window.speechSynthesis;
   synth.cancel();
-  const utterance=new SpeechSynthesisUtterance(text.slice(0,400));
-  utterance.lang=normalizeIpaLocale(language);
-  utterance.rate=rate;
-  synth.speak(utterance);
+  const chunks=sliceIpaText(text,220).filter(part=>part.trim());
+  if(!chunks.length)return false;
+  // Speak bounded chunks sequentially, so full paragraphs are not silently cut at 400 chars.
+  let index=0;
+  function next(){
+   if(index>=chunks.length)return;
+   const utterance=new SpeechSynthesisUtterance(chunks[index++]);
+   utterance.lang=normalizeIpaLocale(language);
+   utterance.rate=rate;
+   utterance.onend=next;
+   synth.speak(utterance);
+  }
+  next();
   return true;
  }catch{return false;}
 }
