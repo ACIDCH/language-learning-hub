@@ -2,6 +2,7 @@ import {useEffect,useMemo,useState} from 'react';
 import type {Session,SupabaseClient} from '@supabase/supabase-js';
 import {FOUNDATION_UNITS,FOUNDATION_PHASES,foundationUnitsFor} from './foundationCurriculum';
 import type {FoundationLanguage,FoundationRecord} from './foundationTypes';
+import FoundationRecall from './FoundationRecall';
 
 type Draft={answers:Record<string,number>;notes:string;completed:boolean};
 const EMPTY:Draft={answers:{},notes:'',completed:false};
@@ -154,6 +155,7 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
         <td>{word}</td><td>{meaning}</td><td><button type="button" onClick={()=>pronounce(word)}>播放</button></td>
       </tr>)}</tbody></table>
       <p className="cloud-disclaimer">注意词性、固定搭配以及在本课情境中的准确含义。</p>
+      <FoundationRecall key={unit.id} id={unit.id} words={unit.vocab} language={unit.language}/>
     </section>}
     {segment===3&&<section>
       <h5>听力练习</h5><p>先不看文字听一遍，再展示原文核对。</p>
