@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {identifyReference,referenceCounts,REFERENCES} from '../src/referenceCatalog.ts';
+import {identifyReference,referenceCounts,uniqueMediaHashes,REFERENCES} from '../src/referenceCatalog.ts';
 import {readFileSync} from 'node:fs';
 test('known FI and publisher assets are attributed rather than mis-labeled as original',()=>{
  assert.equal(identifyReference({asset_id:'pho_01.zip/pho_01/002.mp3',source_kind:'open_reference'}),'fi-phonetics');
@@ -25,4 +25,11 @@ test('linked FI vocabulary samples are exactly 12, are metadata rather than priv
  assert.equal(mapped.mappings.length,12);
  assert.ok(mapped.mappings.every(a=>a.lesson_id.startsWith('fr-a1-u')&&a.source_url.startsWith('https://media.la.utexas.edu')));
  assert.ok(mapped.mappings.every(a=>a.license==='CC-BY-3.0'));
+});
+
+test('duplicate FI vocabulary archive entry is counted as 2 records but 1 sound',()=>{
+ const a={asset_id:'voc_08.zip/voc_08/073.mp3',source_kind:'open_reference',sha256:'same-hash'};
+ const b={asset_id:'voc_09.zip/voc_09/073.mp3',source_kind:'open_reference',sha256:'same-hash'};
+ assert.equal(referenceCounts([a,b])['fi-vocabulary'],2);
+ assert.equal(uniqueMediaHashes([a,b]),1);
 });
