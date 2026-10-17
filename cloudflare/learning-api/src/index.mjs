@@ -87,7 +87,7 @@ export async function handle(request, env = {}, fetchFn = fetch) {
     }
     // Owner-only manuscripts are derivative personal snapshots; full-source
     // Google Drive originals stay private and are never exposed by URL.
-    const lessonMatch = /^\\/v1\\/private-courses\\/([^/]+)$/.exec(url.pathname);
+    const lessonMatch = new RegExp('^/v1/private-courses/([^/]+)$').exec(url.pathname);
     if (lessonMatch && verb === 'GET') {
       let courseId;
       try { courseId = decodeURIComponent(lessonMatch[1]); }
