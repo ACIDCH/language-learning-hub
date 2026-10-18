@@ -13,7 +13,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-listening-u01",
     "draft_path": "content/lesson-drafts/en-ielts-listening-u01.json",
-    "sha256": "0723f68603cbec6ae2f3ced00f6f8f8dca30750253146f5b32bc24733c4bf4ca"
+    "sha256": "8d2fa7c5e5dddcda81d457dff75d935e9089774ae345b3e49db1c85e932ae52c"
   },
   {
     "id": "en-ielts-listening-u02",
@@ -29,7 +29,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-listening-u02",
     "draft_path": "content/lesson-drafts/en-ielts-listening-u02.json",
-    "sha256": "5bf77bbdf98dbb014c9c44ad87638f7283c340e5951c032375383d7bcbb33beb"
+    "sha256": "7de152d57fa9795cccdc55a683114c637a32532e0a8ab40b47764611d435e1a3"
   },
   {
     "id": "en-ielts-listening-u03",
@@ -45,7 +45,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-listening-u03",
     "draft_path": "content/lesson-drafts/en-ielts-listening-u03.json",
-    "sha256": "22d982cfd27e02f89c1dc24eb5970032d7feff7fd15d06ee93af4b1a6047257d"
+    "sha256": "0eeb06fe732fe987fb46c8377c311ef5c630aec23a6527d2a52de6655a93185a"
   },
   {
     "id": "en-ielts-listening-u04",
@@ -61,7 +61,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-listening-u04",
     "draft_path": "content/lesson-drafts/en-ielts-listening-u04.json",
-    "sha256": "d89cd48a4f184acc823393b976e1f655163f226529d691599e3c30a93b8bc1d5"
+    "sha256": "388d969e3c55e8e52d497fd8d3edb979df7f9b0b4f2871bcaa6e96363f4438cc"
   },
   {
     "id": "en-ielts-listening-u05",
@@ -77,7 +77,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-listening-u05",
     "draft_path": "content/lesson-drafts/en-ielts-listening-u05.json",
-    "sha256": "0c5bc5f9f49d34ce3de2dba266fc6792f0e8ae1d6871589b2014569ee0a31ec4"
+    "sha256": "d3a66603573081ff6ea23ef6cb1760a468fa9e6fc9ff25f56b73fc3ae09392ea"
   },
   {
     "id": "en-ielts-listening-u06",
@@ -93,7 +93,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-listening-u06",
     "draft_path": "content/lesson-drafts/en-ielts-listening-u06.json",
-    "sha256": "88b5729cd69026e88f11709e79b8840c4fad5f22811f46a29c584f5bd3c0c4bf"
+    "sha256": "24eb05dccdb94180e6c38586cf03b907b86597d871bc20e6ac3ec77491469080"
   },
   {
     "id": "en-ielts-listening-u07",
@@ -109,7 +109,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-listening-u07",
     "draft_path": "content/lesson-drafts/en-ielts-listening-u07.json",
-    "sha256": "ceeb387eeb5f414488cc3e3ffdbc4d2a826ddfcff9be7e9ac19d0f0565895c28"
+    "sha256": "84ba5eab5154f449183649aaae6ccce0c02495e04d6aa611d140aa5a38e099ce"
   },
   {
     "id": "en-ielts-listening-u08",
@@ -125,7 +125,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-listening-u08",
     "draft_path": "content/lesson-drafts/en-ielts-listening-u08.json",
-    "sha256": "9170112ff48b77d078eca7e86c1a07edea5394a2abd8b1090e24c0c4a64412d0"
+    "sha256": "dde89b9641feb04d5f467665c5feeaa736473e210f7116d5884a89ac1440b3c5"
   },
   {
     "id": "en-ielts-reading-u01",
@@ -179,7 +179,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-reading-u03",
     "draft_path": "content/lesson-drafts/en-ielts-reading-u03.json",
-    "sha256": "2bce9e392a54b03f4db9e834d47d04965b66c37320285dea72b8142180548915"
+    "sha256": "77ea6560b68ba902736abaf205e807f190a841fbc7d30533c05d01ce276956e8"
   },
   {
     "id": "en-ielts-reading-u04",
@@ -195,7 +195,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-reading-u04",
     "draft_path": "content/lesson-drafts/en-ielts-reading-u04.json",
-    "sha256": "a40b03479381bc54de4a7b39397a55b3317881b2ecb0e28bf6e9a29b1c39ece4"
+    "sha256": "f1caba7d62b977966ad3b30beaccbd4a02ce584c311833370edb55d585057fac"
   },
   {
     "id": "en-ielts-reading-u05",
@@ -211,7 +211,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-reading-u05",
     "draft_path": "content/lesson-drafts/en-ielts-reading-u05.json",
-    "sha256": "ee8df30f0dae2929dcb066740f8e4db4ebf7bfcee213e9a91763d1bdbce9684e"
+    "sha256": "3a28a948f02c5f0f6efe7db90a412143bd3a92bb507e0743e74aaaa5d12bad6c"
   },
   {
     "id": "en-ielts-reading-u06",
@@ -227,7 +227,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-reading-u06",
     "draft_path": "content/lesson-drafts/en-ielts-reading-u06.json",
-    "sha256": "e5ecf30937e2115cd96f5a7668f1bf9ff65023598e0ed58481d5e14a2ed79a45"
+    "sha256": "317dbf3f407ae944bbc3d41db02b55c57c2a3069c8507d0f5ef3e261a12140c6"
   },
   {
     "id": "en-ielts-reading-u07",
@@ -243,7 +243,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-reading-u07",
     "draft_path": "content/lesson-drafts/en-ielts-reading-u07.json",
-    "sha256": "4e4eacda48f2bfc9c6e5ce4745c9b670d785faa8fb3cebdd78fdbade623ac128"
+    "sha256": "e2d9a802e8be4e49352fbe2032cad4a610f8732dd737df67985895eac035608b"
   },
   {
     "id": "en-ielts-reading-u08",
@@ -259,7 +259,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-reading-u08",
     "draft_path": "content/lesson-drafts/en-ielts-reading-u08.json",
-    "sha256": "2b0e84956d45944aaacfcf4a8efcf06c1de77b4da5b332a9879857097314ae13"
+    "sha256": "5e5802c17ada321625b9d9d6e6562f2c557670ee28587d07245930762286ebac"
   },
   {
     "id": "en-ielts-writing-task1-u01",
@@ -294,7 +294,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-writing-task1-u02",
     "draft_path": "content/lesson-drafts/en-ielts-writing-task1-u02.json",
-    "sha256": "e602dc088ebf13a784c607109a8d88fcee0b232645e1ab8cda26238adc991a59"
+    "sha256": "02806578c0182d020f9c80e2b98a3085eae0f49681e6ddb69fc665da9581878f"
   },
   {
     "id": "en-ielts-writing-task1-u03",
@@ -310,7 +310,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-writing-task1-u03",
     "draft_path": "content/lesson-drafts/en-ielts-writing-task1-u03.json",
-    "sha256": "2fdc924b7be6a474ec4c2f1115cf0630d833ad8c42abe66b866689d3c01d3276"
+    "sha256": "bd13c079347884098185b594239cb5353e26d6ce304d23cf7ed9c32d6060f9b4"
   },
   {
     "id": "en-ielts-writing-task1-u04",
@@ -326,7 +326,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-writing-task1-u04",
     "draft_path": "content/lesson-drafts/en-ielts-writing-task1-u04.json",
-    "sha256": "5264d1d01851c721c576fe8c607c7b612662af0eca88ca3fb204894500315b97"
+    "sha256": "a8e24c2374a19b59643a93f9447bc42da867f9a1e386a9093e291e9a1436cafa"
   },
   {
     "id": "en-ielts-writing-task1-u05",
@@ -342,7 +342,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-writing-task1-u05",
     "draft_path": "content/lesson-drafts/en-ielts-writing-task1-u05.json",
-    "sha256": "3164172ab99be339fdf0de10ce78815140aac8ac05f33e8bbe1883e2cc44bb3e"
+    "sha256": "5f10bf807eb2735b26b8d401f76cd6446232e60df5438a3b419fb9b9c23c09b5"
   },
   {
     "id": "en-ielts-writing-task1-u06",
@@ -358,7 +358,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-writing-task1-u06",
     "draft_path": "content/lesson-drafts/en-ielts-writing-task1-u06.json",
-    "sha256": "38f79b82d4854eee760a662b5dc1c79e3a00d5484aa889aecb86a1e0c1b81208"
+    "sha256": "cf377faa7ec3f266c11cd30195a84a0defa18cccf40e196715c7f8863e81b148"
   },
   {
     "id": "en-ielts-writing-task1-u07",
@@ -374,7 +374,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-writing-task1-u07",
     "draft_path": "content/lesson-drafts/en-ielts-writing-task1-u07.json",
-    "sha256": "bc510ca93f906c51dbabf669fa4967bebd0bd643df922531361f9c9f01b0652d"
+    "sha256": "f7a4a306f8ad82013bf14eaea1f9ada9e5f8f6231fcc0df8334d2ebea1f0ec3a"
   },
   {
     "id": "en-ielts-writing-task1-u08",
@@ -390,7 +390,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-writing-task1-u08",
     "draft_path": "content/lesson-drafts/en-ielts-writing-task1-u08.json",
-    "sha256": "d0b40a12c428edc27751b51656ed13f60d3687c8b271155dec34f6256120cd9d"
+    "sha256": "2c2e035157c4e122cbc8509d858c22f78a53d29b949d67cb926000ad3084a69c"
   },
   {
     "id": "en-ielts-writing-task2-u01",
@@ -425,7 +425,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-writing-task2-u02",
     "draft_path": "content/lesson-drafts/en-ielts-writing-task2-u02.json",
-    "sha256": "0efff2ee5cd81cc843f17b542e7db4eff1ade2a1d5ecadd9effaa0796cac4c12"
+    "sha256": "3500302293874a4221c7c3f5697dd6252cab5ea944e61f3d7b5f131f8820f366"
   },
   {
     "id": "en-ielts-writing-task2-u03",
@@ -441,7 +441,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-writing-task2-u03",
     "draft_path": "content/lesson-drafts/en-ielts-writing-task2-u03.json",
-    "sha256": "d7ee34b1d95aa697555fa67bcd2299c9d68dd3564b48ae893b8f989beaa19336"
+    "sha256": "118ac2bc7d26006917c6d29f1340481a0303fb5ef37f7752eda0868bb39425ae"
   },
   {
     "id": "en-ielts-writing-task2-u04",
@@ -457,7 +457,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-writing-task2-u04",
     "draft_path": "content/lesson-drafts/en-ielts-writing-task2-u04.json",
-    "sha256": "e27d6d44521a6532c9343f98e13b85e3fffc3d9eff96ed694fd55c493df5ebaa"
+    "sha256": "efecf5573c0a02cc87a47e4fc472a7224cb6a63612c0c4b832f4fa4e0985b478"
   },
   {
     "id": "en-ielts-writing-task2-u05",
@@ -473,7 +473,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-writing-task2-u05",
     "draft_path": "content/lesson-drafts/en-ielts-writing-task2-u05.json",
-    "sha256": "58c996a955d665e73d9f2d87133d59b4c86b87d48baf546302165609e5d72aa1"
+    "sha256": "b6f9cfb5285effa811b5c7986bb303448fcc86a4084c89ac277fdcb16e606da8"
   },
   {
     "id": "en-ielts-writing-task2-u06",
@@ -489,7 +489,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-writing-task2-u06",
     "draft_path": "content/lesson-drafts/en-ielts-writing-task2-u06.json",
-    "sha256": "2060d8fd4bab666d84c7b955168764dcb382200dede63dcd2d96830c0d82c34d"
+    "sha256": "bbce2a1e7f9656dec2ea97764a5388358529fc403598b9ff1d2415ae7243015e"
   },
   {
     "id": "en-ielts-writing-task2-u07",
@@ -505,7 +505,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-writing-task2-u07",
     "draft_path": "content/lesson-drafts/en-ielts-writing-task2-u07.json",
-    "sha256": "33a199ba7e890ee3309f26e2f3d3d075eac81c92cf9b7eee87469afd99752289"
+    "sha256": "66f07c4c243d83ff8b0221b23ed9072fff33645074657a9be4a2ce5002f94ff6"
   },
   {
     "id": "en-ielts-writing-task2-u08",
@@ -521,7 +521,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-writing-task2-u08",
     "draft_path": "content/lesson-drafts/en-ielts-writing-task2-u08.json",
-    "sha256": "4c65e792c0d262770c782e29f3222533d06d1e80a02c3dd629153f675db241b6"
+    "sha256": "6717e6c56e6961eadfb629bb1830c9295d2cbc3573f8e75b4603e8f66291edf1"
   },
   {
     "id": "en-ielts-speaking-u01",
@@ -537,7 +537,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-speaking-u01",
     "draft_path": "content/lesson-drafts/en-ielts-speaking-u01.json",
-    "sha256": "915cec5ff122c508a0b54da04e94231e562344a70e2f881878ff378c1b54418f"
+    "sha256": "934e8ef34f24a82826a36ccfc7e2e244b5c50b9d3e9cc6a78c9c019b11976c6d"
   },
   {
     "id": "en-ielts-speaking-u02",
@@ -553,7 +553,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-speaking-u02",
     "draft_path": "content/lesson-drafts/en-ielts-speaking-u02.json",
-    "sha256": "50703651be2e7be2f93dfa6f98d95132b818b56b72247b39fa5b72171eac51e5"
+    "sha256": "d8446e462c479242890931e05323d0480eb3e6223a4bbb332b0cc8994d6ad1cd"
   },
   {
     "id": "en-ielts-speaking-u03",
@@ -569,7 +569,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-speaking-u03",
     "draft_path": "content/lesson-drafts/en-ielts-speaking-u03.json",
-    "sha256": "39c53bbecdc63fe3d56a16dfbb228f6b76143400a3de7976aa9c0c3f7c0d2cee"
+    "sha256": "11769065755a8760e5596f128b6811e5bb3d191366bbf4d49a801215ca3a1709"
   },
   {
     "id": "en-ielts-speaking-u04",
@@ -585,7 +585,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-speaking-u04",
     "draft_path": "content/lesson-drafts/en-ielts-speaking-u04.json",
-    "sha256": "5e416c5aca7d78525edbd8c1a749d50304e3299b81c631859a5b8ceed7970789"
+    "sha256": "2a4c32af07247c6cd45acba4855f028258178d18baac487e96276af5111d9e9e"
   },
   {
     "id": "en-ielts-speaking-u05",
@@ -601,7 +601,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-speaking-u05",
     "draft_path": "content/lesson-drafts/en-ielts-speaking-u05.json",
-    "sha256": "1ce257a7f1a273f1daf3781dc2e0d2982f5c0b83e47ab8cd5af05ec361a70068"
+    "sha256": "9b62795c444cfa7698bfef6e6dd732fa8114b37be47c6b6f5c34c39b8124b46d"
   },
   {
     "id": "en-ielts-speaking-u06",
@@ -617,7 +617,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-speaking-u06",
     "draft_path": "content/lesson-drafts/en-ielts-speaking-u06.json",
-    "sha256": "505b0315376c67a489e588c6fbd1d010ebc1bb0f6485fa9bf571a35fa0387ccf"
+    "sha256": "1157243faf442fdab372a1949222af9faa68d28d9afe1d20da6eafb92ff926f7"
   },
   {
     "id": "en-ielts-speaking-u07",
@@ -633,7 +633,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-speaking-u07",
     "draft_path": "content/lesson-drafts/en-ielts-speaking-u07.json",
-    "sha256": "825f85f6056a148b4fe0ff4ad5773e09c5277bf24baa8817f29915a3ee92c05e"
+    "sha256": "d6cdb78cd72175ce5e22a03b337a0eb4d105f5b8663880d8155a216ceceaefa8"
   },
   {
     "id": "en-ielts-speaking-u08",
@@ -649,7 +649,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-speaking-u08",
     "draft_path": "content/lesson-drafts/en-ielts-speaking-u08.json",
-    "sha256": "4408511bd946bebe47535c918b3cb3ae705870a54b9ad8aafb1b83fa2c96015f"
+    "sha256": "f5d4d0601a6cf0ea7ccb359b831add60a9873d71ffb1511c91ee1f1df6e4cc56"
   },
   {
     "id": "en-ielts-language-upgrade-u01",
@@ -665,7 +665,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-language-upgrade-u01",
     "draft_path": "content/lesson-drafts/en-ielts-language-upgrade-u01.json",
-    "sha256": "ace46551f64207300b3af6291b061cb790f1bfded9aade444f0d6a0b1a7721a0"
+    "sha256": "609efc3400b0d08046f01c1071588cf0a731dc818f6a0342d27d4877dea9b3d7"
   },
   {
     "id": "en-ielts-language-upgrade-u02",
@@ -681,7 +681,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-language-upgrade-u02",
     "draft_path": "content/lesson-drafts/en-ielts-language-upgrade-u02.json",
-    "sha256": "6fd56c851bb6d5155ba555d3d2be31bbecf274d9c87f6022e2c13001ba8a4965"
+    "sha256": "9e68a1a70483e2f26e9edbac5b0fa5a3090d07ce27fa406612bfe8ce7692a255"
   },
   {
     "id": "en-ielts-language-upgrade-u03",
@@ -697,7 +697,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-language-upgrade-u03",
     "draft_path": "content/lesson-drafts/en-ielts-language-upgrade-u03.json",
-    "sha256": "a465765a3494369d1ab0a35e789516c2e7314de78bc71f4da574524eab720fc9"
+    "sha256": "4da181eca0d26f037f161f5c0bdedb75f0c5ba938cb76c81439d2d130f64da8f"
   },
   {
     "id": "en-ielts-language-upgrade-u04",
@@ -713,7 +713,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-language-upgrade-u04",
     "draft_path": "content/lesson-drafts/en-ielts-language-upgrade-u04.json",
-    "sha256": "1f28912d5cb29b84c709ca2123b7788d8c653f77f9deb58a3df62d9f8a75b1c2"
+    "sha256": "00aef25901cb2db6acb18babcfea068c3a73061982f5a3e62da2e04d173f8986"
   },
   {
     "id": "en-ielts-language-upgrade-u05",
@@ -729,7 +729,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-language-upgrade-u05",
     "draft_path": "content/lesson-drafts/en-ielts-language-upgrade-u05.json",
-    "sha256": "e5ba479f3c95f3d2ac0b92be009f17835482fda440b933722cb4f7948c726c06"
+    "sha256": "c317ca7dfcfeeb21c163660b309c7705c16868a9d26f902575d04dfe449dc472"
   },
   {
     "id": "en-ielts-language-upgrade-u06",
@@ -745,7 +745,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-language-upgrade-u06",
     "draft_path": "content/lesson-drafts/en-ielts-language-upgrade-u06.json",
-    "sha256": "f8cc4e55f4c7c14d010ff04b6a850a274b8c7f0c69b0884026dc8ca5c109c99e"
+    "sha256": "af6e09bcedf80c9a13a7981e8488508a2c41a1b8b458830cd0b19cacc66e3078"
   },
   {
     "id": "en-ielts-language-upgrade-u07",
@@ -761,7 +761,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-language-upgrade-u07",
     "draft_path": "content/lesson-drafts/en-ielts-language-upgrade-u07.json",
-    "sha256": "ba871b84b16f25886d9cc025f11102d69c3acc50ae81f790087485e99c5c95bd"
+    "sha256": "0b6a99a5fcdf30b3ddd463ad45a87f1af45e36722594eae39b58c7a7e1e514b0"
   },
   {
     "id": "en-ielts-language-upgrade-u08",
@@ -777,7 +777,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/en-ielts-language-upgrade-u08",
     "draft_path": "content/lesson-drafts/en-ielts-language-upgrade-u08.json",
-    "sha256": "0d17033cc4a51d5efa5cac8f0e752b91e03e2ecb6a95c279ec4a8f459d1e1595"
+    "sha256": "2c143c08ae43d45ffb3d355e0c8c7685a3e88e8497efe9e534a9f89f8d26ca91"
   },
   {
     "id": "fr-a1-u01",
@@ -858,7 +858,7 @@
     ],
     "private_source": "authenticated /v1/private-courses/fr-a1-u04",
     "draft_path": "content/lesson-drafts/fr-a1-u04.json",
-    "sha256": "212e3a5e6ac43f6874a5852993fbeab5dd662c6b2ce12436475c13b6086be2d5"
+    "sha256": "a195a4b89c062283e6a07c3bcf4a6a15f056589ee0e2ac7031b1abeccb7462ec"
   },
   {
     "id": "fr-a1-u05",
@@ -876,7 +876,7 @@
     ],
     "private_source": "authenticated /v1/private-courses/fr-a1-u05",
     "draft_path": "content/lesson-drafts/fr-a1-u05.json",
-    "sha256": "ae958c27aebb618b3216e66bf714f8c5cb7a96b0786c5aec3a6d49f08660e777"
+    "sha256": "91fe21d65c9df0f393de41f379b1c1123763be3ed5bfcc656e30520a7484fccc"
   },
   {
     "id": "fr-a1-u06",
@@ -894,7 +894,7 @@
     ],
     "private_source": "authenticated /v1/private-courses/fr-a1-u06",
     "draft_path": "content/lesson-drafts/fr-a1-u06.json",
-    "sha256": "f20019774d79af057b1b09f5cb7ab639e5329a9acef6c7a794d0c62f92a92134"
+    "sha256": "91860aabed57a7ebcb5f74b0a6ae38c415f2b366e33f2a740e063003b7f4196a"
   },
   {
     "id": "fr-a1-u07",
@@ -912,7 +912,7 @@
     ],
     "private_source": "authenticated /v1/private-courses/fr-a1-u07",
     "draft_path": "content/lesson-drafts/fr-a1-u07.json",
-    "sha256": "2709f16609d9cc7a620a8a99795d99fa30edf7b6aa1bd2e653282209b6d98177"
+    "sha256": "6993974bfa166dbec9fce24712178e048a2a28b37efe7aedf5ad103ba8fe490f"
   },
   {
     "id": "fr-a1-u08",
@@ -930,7 +930,7 @@
     ],
     "private_source": "authenticated /v1/private-courses/fr-a1-u08",
     "draft_path": "content/lesson-drafts/fr-a1-u08.json",
-    "sha256": "2c2242b8a12b7798e4fec8875bb8c21076a973b6ab69a42f199c979522aa3cb6"
+    "sha256": "ad5574fc7c6e3cbbba3cef63c146c982c5df5741e30c00b65c7792d6638f223b"
   },
   {
     "id": "fr-a1-u09",
@@ -948,7 +948,7 @@
     ],
     "private_source": "authenticated /v1/private-courses/fr-a1-u09",
     "draft_path": "content/lesson-drafts/fr-a1-u09.json",
-    "sha256": "047eec59c4d53a9d4eca28fbb638592ecb7f5ed553048b37107ae40ad675d480"
+    "sha256": "ae5e2b09dc6670001624bbf3f10eae9e2e706f9613aa66517d140f06ecbce2d4"
   },
   {
     "id": "fr-a1-u10",
@@ -966,7 +966,7 @@
     ],
     "private_source": "authenticated /v1/private-courses/fr-a1-u10",
     "draft_path": "content/lesson-drafts/fr-a1-u10.json",
-    "sha256": "bba1a2c6bae02401278ee6e059bb263b09f7c1d75cfcf44a6dac74841c726b7b"
+    "sha256": "0af816f3d77be4c185dcec43ff6e5e767477f643c1d654009623e5165622a08f"
   },
   {
     "id": "fr-a1-u11",
@@ -984,7 +984,7 @@
     ],
     "private_source": "authenticated /v1/private-courses/fr-a1-u11",
     "draft_path": "content/lesson-drafts/fr-a1-u11.json",
-    "sha256": "37709680658f3b44f71362be19d38c0d16fcc542eeb684949a3992b5ac9ace33"
+    "sha256": "99af21e8b1a4a8c1acd310a8d926ab72275544a5c06c07075dd3f2987e57db07"
   },
   {
     "id": "fr-a1-u12",
@@ -1002,7 +1002,7 @@
     ],
     "private_source": "authenticated /v1/private-courses/fr-a1-u12",
     "draft_path": "content/lesson-drafts/fr-a1-u12.json",
-    "sha256": "8c7c7b90e9ba89cfe0d78e29cd3dbd571484f0079de1d19118f9789b3832d126"
+    "sha256": "8e8afbaf4e1eab000aaf9983c20f0b7d7c27393f8d3b101d20ec4a5d936eed49"
   },
   {
     "id": "fr-a2-u01",
@@ -1018,7 +1018,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-a2-u01",
     "draft_path": "content/lesson-drafts/fr-a2-u01.json",
-    "sha256": "d29d8dfa11381d711ee9ce325e5892b5ea7bdd16347ea7aef19bb79266f4c9dc"
+    "sha256": "ed281b21c00f5a9e00099a333ed68280e7e3903ef9b482a544218fd02452b5aa"
   },
   {
     "id": "fr-a2-u02",
@@ -1034,7 +1034,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-a2-u02",
     "draft_path": "content/lesson-drafts/fr-a2-u02.json",
-    "sha256": "5d58f6d9eeed4561242cadf15cb97bbad68049ca50d1a02612f65c14669a06ce"
+    "sha256": "9f0bbb4a78ca205b77e5bc38f941906d09e53bc5c2f2b39688ac6f9e5bff985d"
   },
   {
     "id": "fr-a2-u03",
@@ -1050,7 +1050,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-a2-u03",
     "draft_path": "content/lesson-drafts/fr-a2-u03.json",
-    "sha256": "9bfc32bf6c234b68c51b3e281cd6dc23328ece86f2c0f3047e1ea60ebff0b02d"
+    "sha256": "b2be0a8daea415718cd123e10668e24da76c42c243b977cdd7970c773b691d37"
   },
   {
     "id": "fr-a2-u04",
@@ -1066,7 +1066,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-a2-u04",
     "draft_path": "content/lesson-drafts/fr-a2-u04.json",
-    "sha256": "7693b8cc388af3282bcd8c1e125b33658cd4dc8de99de3b68554275eb161f624"
+    "sha256": "2468807e83b23ee7a659ddb4748903e857355721ac411450aa1bd90855d1a5de"
   },
   {
     "id": "fr-a2-u05",
@@ -1082,7 +1082,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-a2-u05",
     "draft_path": "content/lesson-drafts/fr-a2-u05.json",
-    "sha256": "d29d7cbfde9406ce419525cd8afe6f9cc910ebfe1d21cda78b5ea3b8bc4ed522"
+    "sha256": "ae18d8f22b32dd09a50abdfb48de9b36f96aeee0de74ad9b75212bee819fee39"
   },
   {
     "id": "fr-a2-u06",
@@ -1098,7 +1098,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-a2-u06",
     "draft_path": "content/lesson-drafts/fr-a2-u06.json",
-    "sha256": "28c36af9a094117d6a69cadd05eb43cf12532026b7adc3bf369425d93c32035d"
+    "sha256": "453ad0a7fe373c25696285157a712996ff667c7bcbb08a2e91ad9d7a797ecb9d"
   },
   {
     "id": "fr-a2-u07",
@@ -1114,7 +1114,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-a2-u07",
     "draft_path": "content/lesson-drafts/fr-a2-u07.json",
-    "sha256": "78d160f5dc537bf8a61ef8d94be7d9ff59bfddc8f26a2e0ac36089858f84c3fb"
+    "sha256": "98610f49585c27f8f5e3ee022919ca105a2b9eec549f719f2301bdd9e3c3f1dd"
   },
   {
     "id": "fr-a2-u08",
@@ -1130,7 +1130,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-a2-u08",
     "draft_path": "content/lesson-drafts/fr-a2-u08.json",
-    "sha256": "ec48128dbf92c57289d77b4cfb837a438c4aad85c591491bfb2f311574ae3266"
+    "sha256": "b44a02632cc556e140b6d21a9f3b55b83e69f200aa6f6ee4a4f82810695ff79f"
   },
   {
     "id": "fr-a2-u09",
@@ -1146,7 +1146,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-a2-u09",
     "draft_path": "content/lesson-drafts/fr-a2-u09.json",
-    "sha256": "6218753b297f04272358003213730bf32899aad81a6c2439f9a7b89ddde554f2"
+    "sha256": "db207d59fffba2ca4978794c05f9d4865e171fc7352964a5703417bd0dcb2f29"
   },
   {
     "id": "fr-a2-u10",
@@ -1162,7 +1162,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-a2-u10",
     "draft_path": "content/lesson-drafts/fr-a2-u10.json",
-    "sha256": "af5928be7872d5916f38f9aba15570a811a288f59ef970cb0926a63808cdcc57"
+    "sha256": "b326a0912b650b1811693992c315135b1d7dc47cefa91db9b2c43a6a6ae4b9f3"
   },
   {
     "id": "fr-a2-u11",
@@ -1178,7 +1178,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-a2-u11",
     "draft_path": "content/lesson-drafts/fr-a2-u11.json",
-    "sha256": "605d2a572eab445baf5d0f89a95afd595a1860d51f19c750510133fcf8903820"
+    "sha256": "f9df555b91b639575bc39f3ef504b18dd660882b7b48c15d38a1b353f66c640e"
   },
   {
     "id": "fr-a2-u12",
@@ -1194,7 +1194,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-a2-u12",
     "draft_path": "content/lesson-drafts/fr-a2-u12.json",
-    "sha256": "6b8ca8f84905364dc80aaa57d4e8c42dab2002268f442d880c0acdfe2a6fced3"
+    "sha256": "6094b9fe061227a9a3d896d20fceee65841e503b5c6c652a7abb4cba683e4bce"
   },
   {
     "id": "fr-b1-u01",
@@ -1210,7 +1210,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b1-u01",
     "draft_path": "content/lesson-drafts/fr-b1-u01.json",
-    "sha256": "cb7fcd1b1f5e2abfa392de0d51812ee0b6e074002c15dec2c6cf621aab02d4f7"
+    "sha256": "f5b9d362f5cf9f80a363ee701542ce414b521e28cd6a446be3df5e31c7ced807"
   },
   {
     "id": "fr-b1-u02",
@@ -1226,7 +1226,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b1-u02",
     "draft_path": "content/lesson-drafts/fr-b1-u02.json",
-    "sha256": "8c92927dd5d6971c89e510b3e09874ac96c06626433dff24a5d932b3d6799737"
+    "sha256": "3b02e89caab30fafb8e275d52f028ef7ae2b7e83f46cfc672709182badde5e5e"
   },
   {
     "id": "fr-b1-u03",
@@ -1242,7 +1242,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b1-u03",
     "draft_path": "content/lesson-drafts/fr-b1-u03.json",
-    "sha256": "656ce79371e3153fe9fa88cb82723bc3d71bc8ebac9b08f6eeb533584427c6e4"
+    "sha256": "c3ce3ea33ca65f28bd6d13dce0e35f68ec97684bc00eed96b07b173e3bf83fd6"
   },
   {
     "id": "fr-b1-u04",
@@ -1258,7 +1258,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b1-u04",
     "draft_path": "content/lesson-drafts/fr-b1-u04.json",
-    "sha256": "860513eff747659a36ff409de7f6644ec481f5ce5857ba3c118dbf461bd9a070"
+    "sha256": "b9a7ba433f31b723a1312553925844893641a0303a8a747ed51d439512340bd0"
   },
   {
     "id": "fr-b1-u05",
@@ -1274,7 +1274,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b1-u05",
     "draft_path": "content/lesson-drafts/fr-b1-u05.json",
-    "sha256": "ffca4e8b8181ccc2fe44b73e96239979bfbf8786913849b721c133fbf9cca2fb"
+    "sha256": "64deadc8c126050078f9ba170abc4774dc9fa1efd660942c1e9df3c834d03820"
   },
   {
     "id": "fr-b1-u06",
@@ -1290,7 +1290,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b1-u06",
     "draft_path": "content/lesson-drafts/fr-b1-u06.json",
-    "sha256": "ec612f40ba24ee0c405c4ed9008b5a4d3f6747deeadf76716a2eb0b10fab1336"
+    "sha256": "baef253dff1dc7ed3254457e06f1acdc0d1fc7d4ceb85cb8c0a611a848b6a4f9"
   },
   {
     "id": "fr-b1-u07",
@@ -1306,7 +1306,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b1-u07",
     "draft_path": "content/lesson-drafts/fr-b1-u07.json",
-    "sha256": "386ee576d741c3b0409eb3ef82d75cd5aba0d807664c1adddcfc48590bd9e652"
+    "sha256": "11367a5489aa7cf988e3977ccf1bf785e45b764a7c366a344e0e28294b229f2e"
   },
   {
     "id": "fr-b1-u08",
@@ -1322,7 +1322,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b1-u08",
     "draft_path": "content/lesson-drafts/fr-b1-u08.json",
-    "sha256": "033cff8c8a309ae82ac67ed136cbeaef33336c9659e86e40a701f3440248624c"
+    "sha256": "473f516f6590c693e46b7a60749f55dd41cae9c3c42f22522370ddafa0261213"
   },
   {
     "id": "fr-b1-u09",
@@ -1338,7 +1338,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b1-u09",
     "draft_path": "content/lesson-drafts/fr-b1-u09.json",
-    "sha256": "e5caf822d57a3f315d7067bca3da66a045c46e6d66a11c04cf9d0527f591c452"
+    "sha256": "30b75a63d71b3fdaa5867e8ff438af5465bd8e2ae24dd5b05b792d36f7bace53"
   },
   {
     "id": "fr-b1-u10",
@@ -1354,7 +1354,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b1-u10",
     "draft_path": "content/lesson-drafts/fr-b1-u10.json",
-    "sha256": "78ea1181e71045b3bd7c6f93e03faacc1ba7f11d4e2bb9591dc08fdc6309fbcc"
+    "sha256": "80ff68dfd19adf9185da6a8f4211cce932b16e8c38ce9122bae2ba225fa3f4b6"
   },
   {
     "id": "fr-b2-u01",
@@ -1370,7 +1370,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b2-u01",
     "draft_path": "content/lesson-drafts/fr-b2-u01.json",
-    "sha256": "c734bd3033391c308f4739f61e13705d6cfe3bc35319f1e2aaf33c2676ccb442"
+    "sha256": "9fb249954ef4e291c53cae004d7937defa96d9d33423ddf6894feeabce35f664"
   },
   {
     "id": "fr-b2-u02",
@@ -1386,7 +1386,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b2-u02",
     "draft_path": "content/lesson-drafts/fr-b2-u02.json",
-    "sha256": "3fef41146e3813067edfb95457bbb37b2a846aa4a76df84a8025692bdf227d97"
+    "sha256": "ac53bf8a97d065fee193fc5a3a5127dc19f32dbe6e5f9dd0c8915a2fb90bca8c"
   },
   {
     "id": "fr-b2-u03",
@@ -1402,7 +1402,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b2-u03",
     "draft_path": "content/lesson-drafts/fr-b2-u03.json",
-    "sha256": "5cce3ed5024d55bc736229c95cee1b368cd4c695befe26b17999ac62b52c252d"
+    "sha256": "f78c43b7f84a3378bfb7338557900ef48d3483e7e99668f37974b016cb2a7062"
   },
   {
     "id": "fr-b2-u04",
@@ -1418,7 +1418,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b2-u04",
     "draft_path": "content/lesson-drafts/fr-b2-u04.json",
-    "sha256": "228e9efba1e87374c07b6089bf2c80a3edbb9a443be1d709ae35c7b9fbecb40f"
+    "sha256": "a7d7c245319540a2b620b38ced7946ba9e19a05dddb800a56572616e2bb559b0"
   },
   {
     "id": "fr-b2-u05",
@@ -1434,7 +1434,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b2-u05",
     "draft_path": "content/lesson-drafts/fr-b2-u05.json",
-    "sha256": "b8949b2e62cade02b7c5c804ff72fcbef88d622dee53c059bff560a8b586dd70"
+    "sha256": "b69d66537915cb75087346d0d7622241f8e0e16d8fd2144f115f20fba260bef8"
   },
   {
     "id": "fr-b2-u06",
@@ -1450,7 +1450,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b2-u06",
     "draft_path": "content/lesson-drafts/fr-b2-u06.json",
-    "sha256": "3ced779afa55638cf4ca6496b7a7e56c1ed116120975e17f15d66f15b7f8e795"
+    "sha256": "9a85c2bef4849cd9a522dc53b53011c3f8fad0a99e99769c7a4be0b82fdc1ef3"
   },
   {
     "id": "fr-b2-u07",
@@ -1466,7 +1466,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b2-u07",
     "draft_path": "content/lesson-drafts/fr-b2-u07.json",
-    "sha256": "35b6f42237a5d19bf7669f7910df6ce7148b85695eee12f34ea17eba998209a2"
+    "sha256": "36ef2fd670dbd3cfda88aac2acdf9810f1dab42d23c2ecfb476f0956b21127c4"
   },
   {
     "id": "fr-b2-u08",
@@ -1482,7 +1482,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b2-u08",
     "draft_path": "content/lesson-drafts/fr-b2-u08.json",
-    "sha256": "676f82119b06cb048859feadf89a6aba0a4cfb9f2031b96c2d14c18277af9e64"
+    "sha256": "345d11bb3e8d1fd24b076f3a0568de95e45ab9075881abdf1d6908c8743672d9"
   },
   {
     "id": "fr-b2-u09",
@@ -1498,7 +1498,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b2-u09",
     "draft_path": "content/lesson-drafts/fr-b2-u09.json",
-    "sha256": "1986ba10b6aa4e0fc102544b724694314804a2ba1e4f7bd1607909dac0a21f6c"
+    "sha256": "16f3012c47c6891b749cec54f6138d8b8b6bb48be5535a1097034f2a86138aa1"
   },
   {
     "id": "fr-b2-u10",
@@ -1514,7 +1514,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-b2-u10",
     "draft_path": "content/lesson-drafts/fr-b2-u10.json",
-    "sha256": "eaeb927b2be7ea00afeb6bbf70ffb326d1f69d735da8e3077b082a13171df7b3"
+    "sha256": "e109c662b8aaa175fd1ed8e65c00ad44313991d5cb959bb1e12453a1851d6c25"
   },
   {
     "id": "fr-c1-u01",
@@ -1530,7 +1530,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-c1-u01",
     "draft_path": "content/lesson-drafts/fr-c1-u01.json",
-    "sha256": "1e4a369d03b2f4e201817cd8ce2e9ae10cdf53dde8e134d41ecd4cc6f6f121cd"
+    "sha256": "8042a68a090d8b770891ae90c04e4908e583652f9c6563ffa4b9bd7c4b200c98"
   },
   {
     "id": "fr-c1-u02",
@@ -1546,7 +1546,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-c1-u02",
     "draft_path": "content/lesson-drafts/fr-c1-u02.json",
-    "sha256": "6d7dd1471a4581561b4348b23de89f5e36a06f608ca932a60ee705547452138a"
+    "sha256": "94b817a0a4bb1bda61713831a15066d5dbed50c780a70432b0e7862df7615469"
   },
   {
     "id": "fr-c1-u03",
@@ -1562,7 +1562,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-c1-u03",
     "draft_path": "content/lesson-drafts/fr-c1-u03.json",
-    "sha256": "c039ea0e2beb4bb388499e907c3fa60f1748c99b240ee9f30984919cffcdaa44"
+    "sha256": "997f849db786536fc4aeea03259ba3341cc56a895a1ef10b9eb5ce2096a9d6df"
   },
   {
     "id": "fr-c1-u04",
@@ -1578,7 +1578,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-c1-u04",
     "draft_path": "content/lesson-drafts/fr-c1-u04.json",
-    "sha256": "75a09af7b67b6bdfd2e5e9752cbeb23f2ee71349c5e45898117f5305af609c8c"
+    "sha256": "6e72efbbaba4638abe3a62c309b846fad3d6b8c4992e9e1c336051d1c8edddc8"
   },
   {
     "id": "fr-c1-u05",
@@ -1594,7 +1594,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-c1-u05",
     "draft_path": "content/lesson-drafts/fr-c1-u05.json",
-    "sha256": "58c6c5d63a2a8e1440edf1a45f2436249fb7768dbaa3a419586097a64c07c789"
+    "sha256": "d692e97d80b35845b8f74be68cf015d55fbd25aaca76d596ae1d3f649b2da1d2"
   },
   {
     "id": "fr-c1-u06",
@@ -1610,7 +1610,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-c1-u06",
     "draft_path": "content/lesson-drafts/fr-c1-u06.json",
-    "sha256": "ba37c399db9ab8e91717d68b7e4d521f60853fe625e14f7eec994864f64c8cac"
+    "sha256": "3790a00f872e11d7482264a9753b0ee55fd15f24fb0b137a6a446f4f10c4972f"
   },
   {
     "id": "fr-c1-u07",
@@ -1626,7 +1626,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-c1-u07",
     "draft_path": "content/lesson-drafts/fr-c1-u07.json",
-    "sha256": "fbfb3151bb318d1146595142fe69df30e8c9be7c447c554488f6ec964e79da10"
+    "sha256": "bf65fe8249934f13c9dcdfde67bc60ad4158294e1e48a8c1f95f7064806ea749"
   },
   {
     "id": "fr-c1-u08",
@@ -1642,7 +1642,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-c1-u08",
     "draft_path": "content/lesson-drafts/fr-c1-u08.json",
-    "sha256": "5f54b0aa3d94864c78335ac05b6a09ca0fe89cd824b3645459dc9f37a8541cf1"
+    "sha256": "0d2a703ba5e385c62653a07928595522fbb79d6c1520ecba22dfda1fc226f09f"
   },
   {
     "id": "fr-c2-u01",
@@ -1658,7 +1658,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-c2-u01",
     "draft_path": "content/lesson-drafts/fr-c2-u01.json",
-    "sha256": "23a96fce455222ec7f4b319d6534783ed3e6c341fd33b25631f50be0843faae3"
+    "sha256": "9d728ba192784294db6d6101ca7f6794d412afcf1224f1a361fed6fa6bdca969"
   },
   {
     "id": "fr-c2-u02",
@@ -1674,7 +1674,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-c2-u02",
     "draft_path": "content/lesson-drafts/fr-c2-u02.json",
-    "sha256": "02c44ec59518351bf5a6f2e0447bc3b75afd51b34430887834f8d8c7d07d8830"
+    "sha256": "60de34b71828ee98bb508e53547dbd8f8b61dbf36a6edb7601f3788a68731c1b"
   },
   {
     "id": "fr-c2-u03",
@@ -1690,7 +1690,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-c2-u03",
     "draft_path": "content/lesson-drafts/fr-c2-u03.json",
-    "sha256": "a5429dca33f508d9902ba1b8f86f244a61eb0b2c6cca643c061886b4e6dc1664"
+    "sha256": "464b4ffc546ed2dc8034ec5f99812476124e476bab527b626355a1019f92abab"
   },
   {
     "id": "fr-c2-u04",
@@ -1706,7 +1706,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-c2-u04",
     "draft_path": "content/lesson-drafts/fr-c2-u04.json",
-    "sha256": "deb34d54e51da8dc6cea926f7a8f7bc3a90fe30bb4c352d5d544942df5bfb1bc"
+    "sha256": "25aebbd44fbaaf71d96eff6fb8b85b98870265529e4eeed33d8a32d56fe2f788"
   },
   {
     "id": "fr-c2-u05",
@@ -1722,7 +1722,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-c2-u05",
     "draft_path": "content/lesson-drafts/fr-c2-u05.json",
-    "sha256": "6c77a71b661c74b585f976357e6189382baa10f52df925c76b698950278b24c2"
+    "sha256": "102963ae613626f46ec06ac581301c674978f2190fff169b09bdf624f1aad64c"
   },
   {
     "id": "fr-c2-u06",
@@ -1738,7 +1738,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-c2-u06",
     "draft_path": "content/lesson-drafts/fr-c2-u06.json",
-    "sha256": "f608410e495d5b73c3e835811c761b58155dacd5645f0c7fefdd092f590f6c41"
+    "sha256": "2076f16f8abf6aef0521538b4b648d85267f4d056efd9c9078f028b1a8c9f13a"
   },
   {
     "id": "fr-c2-u07",
@@ -1754,7 +1754,7 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-c2-u07",
     "draft_path": "content/lesson-drafts/fr-c2-u07.json",
-    "sha256": "f3c1132778cbc8e2bfa900bdb1ffb882200647dd535fbf729f990b5899e9769e"
+    "sha256": "3bcbe04dfc3cc4716f280f3e8689b7b9b5b79916420091603c6ce6010fc15089"
   },
   {
     "id": "fr-c2-u08",
@@ -1770,6 +1770,6 @@
     "supplements": [],
     "private_source": "authenticated /v1/private-courses/fr-c2-u08",
     "draft_path": "content/lesson-drafts/fr-c2-u08.json",
-    "sha256": "9a28d32e9d9eb092148837750f9e486a2970f450d62b441d5d27131f1e41cb1d"
+    "sha256": "afb7b9c21962ecefe04ee77e4ed732019bf92ad549dcc55b65659e06eedfca2b"
   }
 ]

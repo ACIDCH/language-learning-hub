@@ -43,12 +43,12 @@ def build():
               'self_review':'核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。'
             }
             assert len(draft['questions'])>=2 and all(all(q.values()) for q in draft['questions']),uid
-            p=target/(uid+'.json');p.write_text(json.dumps(draft,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+            p=target/(uid+'.json');p.write_text(json.dumps(draft,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n')
             row['draft_path']='content/lesson-drafts/'+p.name
             row['sha256']=hashlib.sha256(p.read_bytes()).hexdigest()
         else:
             row['source_hashes']={a['path']:a['sha256'] for a in original}
         index.append(row)
-    (ROOT/'content/v44-main-index.json').write_text(json.dumps(index,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    (ROOT/'content/v44-main-index.json').write_text(json.dumps(index,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n')
     print(json.dumps({'main':len(index),'existing_original':sum(bool(x['public_sources']) for x in index),'original_draft':sum(not x['public_sources'] for x in index),'human_reviewed':0}))
 if __name__=='__main__':build()
