@@ -1,6 +1,6 @@
 # V4.4 一次性交付验收
 
-基线：`3399974`；分支：`feat/v44-full-ui-curriculum-one-shot`。PR 地址在本分支交付后补入。2026-10-19。
+基线：`3399974`；分支：`feat/v44-full-ui-curriculum-one-shot`。PR：[#50](https://github.com/ACIDCH/language-learning-hub/pull/50)。2026-10-19。
 
 ## 已实现
 
