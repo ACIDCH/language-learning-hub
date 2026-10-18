@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-writing-task1-u05",
+  "title": "Processes and passive constructions",
+  "language": "en",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply processes and passive constructions in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-writing-task1-u04",
+  "context": "描述自编纸张回收流程，突出顺序、转化和被动结构。",
+  "grammar": "一般流程常用现在时被动式 is collected/is washed。after + -ing 或 after + 从句需保持主语清楚；before/once 标出阶段依赖。流程概述说清起点、终点和循环可能性。",
+  "common_mistake": "不要把机械步骤拟人化为纸‘决定’进入设备；施事不重要时用被动式。",
+  "vocabulary": [
+    [
+      "collect",
+      "收集"
+    ],
+    [
+      "sort",
+      "分类"
+    ],
+    [
+      "pulp",
+      "纸浆"
+    ],
+    [
+      "remove",
+      "去除"
+    ],
+    [
+      "press",
+      "压制"
+    ],
+    [
+      "dry",
+      "干燥"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "The simplified process begins when used paper is collected from designated bins.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "It is sorted to remove materials unsuitable for the intended product.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The selected paper is mixed with water to form pulp.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "After unwanted particles are removed, the mixture is spread into a thin layer.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "The simplified process begins when used paper is collected from designated bins. It is sorted to remove materials unsuitable for the intended product. The selected paper is mixed with water to form pulp. After unwanted particles are removed, the mixture is spread into a thin layer. Water is pressed out and the sheet is dried. Finally, the material is cut for reuse. This is an original schematic description for writing practice, not a complete industrial specification.",
+  "listening_script": "The simplified process begins when used paper is collected from designated bins. It is sorted to remove materials unsuitable for the intended product. The selected paper is mixed with water to form pulp. After unwanted particles are removed, the mixture is spread into a thin layer. Water is pressed out and the sheet is dried. Finally, the material is cut for reuse. This is an original schematic description for writing practice, not a complete industrial specification.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What happens after the mixture is spread ?",
+      "answer": "Water is pressed out and the sheet is dried.",
+      "explanation": "顺序由 after 和连续步骤确定。"
+    },
+    {
+      "prompt": "Rewrite Workers sort the paper in the passive.",
+      "answer": "The paper is sorted by workers.",
+      "explanation": "对象提升为主语，保持一般现在时。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating processes and passive constructions",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

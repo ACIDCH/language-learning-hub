@@ -1,0 +1,78 @@
+{
+  "id": "fr-a1-u04",
+  "title": "Objets et espaces",
+  "language": "fr",
+  "level": "A1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Name objects and describe the classroom",
+  "prerequisite": "fr-a1-u03",
+  "context": "搬进学生宿舍后，描述桌面和房间中可见的物品。",
+  "grammar": "un/une 用于第一次提到可数物品，le/la 用于已确定的物品；复数为 des/les。il y a 表示存在，sur、sous、dans 表示相对位置。C'est un bureau 识别物品，Le livre est sur le bureau 描述位置。",
+  "common_mistake": "不要按中文词序说 le bureau sur le livre 来表示‘书在桌上’；确认哪个物品是主语。",
+  "vocabulary": [
+    [
+      "un bureau",
+      "书桌"
+    ],
+    [
+      "une chaise",
+      "椅子"
+    ],
+    [
+      "une étagère",
+      "书架"
+    ],
+    [
+      "un cahier",
+      "练习本"
+    ],
+    [
+      "sur",
+      "在上面"
+    ],
+    [
+      "sous",
+      "在下面"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Voici ma chambre.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Il y a un bureau près de la fenêtre.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Un livre est sur le bureau.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Mon sac est sous la chaise.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Voici ma chambre. Il y a un bureau près de la fenêtre. Un livre est sur le bureau. Mon sac est sous la chaise. Sur l'étagère, il y a trois cahiers et une petite lampe. La chambre est petite, mais elle est claire. Le soir, je lis près de la fenêtre.",
+  "listening_script": "Voici ma chambre. Il y a un bureau près de la fenêtre. Un livre est sur le bureau. Mon sac est sous la chaise. Sur l'étagère, il y a trois cahiers et une petite lampe. La chambre est petite, mais elle est claire. Le soir, je lis près de la fenêtre.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Où est le sac ?",
+      "answer": "Sous la chaise.",
+      "explanation": "原文第四句明确给出位置，不能把桌上的书与包混淆。"
+    },
+    {
+      "prompt": "补全：Il y a ___ chaise et ___ cahiers.",
+      "answer": "une ; des",
+      "explanation": "chaise 是阴性单数，cahiers 是复数；两者都是首次介绍。"
+    }
+  ],
+  "pronunciation": "liaison très fréquente。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Décrivez votre espace de travail",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

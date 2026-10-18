@@ -1,0 +1,78 @@
+{
+  "id": "fr-b2-u08",
+  "title": "Méthodes et décisions",
+  "language": "fr",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Explain evidence and recommend actions",
+  "prerequisite": "fr-b2-u07",
+  "context": "比较两种公共服务方案，用透明的标准而非单一数字决策。",
+  "grammar": "à supposer que + subjonctif 引入假设；plus…plus 表示协变，但不证明因果。条件、权重和不确定性应显式呈现，避免把主观权重包装为自然事实。",
+  "common_mistake": "总分高不意味着每一项都优于另一方案。",
+  "vocabulary": [
+    [
+      "un critère",
+      "标准"
+    ],
+    [
+      "pondérer",
+      "加权"
+    ],
+    [
+      "un coût",
+      "成本"
+    ],
+    [
+      "la fiabilité",
+      "可靠性"
+    ],
+    [
+      "un arbitrage",
+      "权衡"
+    ],
+    [
+      "réversible",
+      "可逆的"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Deux solutions sont proposées pour gérer les inscriptions municipales.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "La première coûte moins cher au départ, tandis que la seconde offre une assistance plus régulière.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le groupe de travail attribue donc des poids au coût, à l'accessibilité et à la fiabilité.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Ces poids traduisent des priorités discutables, non des vérités techniques.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Deux solutions sont proposées pour gérer les inscriptions municipales. La première coûte moins cher au départ, tandis que la seconde offre une assistance plus régulière. Le groupe de travail attribue donc des poids au coût, à l'accessibilité et à la fiabilité. Ces poids traduisent des priorités discutables, non des vérités techniques. Si l'assistance reçoit un poids plus élevé, le classement peut changer. Avant de signer, la commune teste les deux interfaces avec plusieurs usagers. Elle privilégie aussi un contrat réversible, car une décision fondée sur des informations limitées doit pouvoir être corrigée.",
+  "listening_script": "Deux solutions sont proposées pour gérer les inscriptions municipales. La première coûte moins cher au départ, tandis que la seconde offre une assistance plus régulière. Le groupe de travail attribue donc des poids au coût, à l'accessibilité et à la fiabilité. Ces poids traduisent des priorités discutables, non des vérités techniques. Si l'assistance reçoit un poids plus élevé, le classement peut changer. Avant de signer, la commune teste les deux interfaces avec plusieurs usagers. Elle privilégie aussi un contrat réversible, car une décision fondée sur des informations limitées doit pouvoir être corrigée.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Pourquoi tester plusieurs pondérations ?",
+      "answer": "Pour voir si le classement dépend fortement des priorités choisies.",
+      "explanation": "敏感性说明可帮助分清稳定结论与偏好驱动结论。"
+    },
+    {
+      "prompt": "La solution moins chère est-elle forcément la meilleure ?",
+      "answer": "Non, d'autres critères interviennent.",
+      "explanation": "不同维度不能用单一价格替代。"
+    }
+  ],
+  "pronunciation": "accentuation de l'information。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Faites une recommandation argumentée",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

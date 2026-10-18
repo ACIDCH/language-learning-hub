@@ -1,0 +1,78 @@
+{
+  "id": "fr-a2-u02",
+  "title": "Habitudes d'autrefois",
+  "language": "fr",
+  "level": "A2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Describe repeated past states",
+  "prerequisite": "fr-a2-u01",
+  "context": "比较童年习惯与现在的生活，给回忆提供背景。",
+  "grammar": "未完成过去时通常由 nous 现在时词干去 -ons，加 -ais/-ais/-ait/-ions/-iez/-aient。être 用 ét-。重复活动、描述背景常用 imparfait；某次完成动作可用 passé composé。",
+  "common_mistake": "不要把‘过去’一律等同于复合过去时；chaque été 的习惯叙述常用 imparfait。",
+  "vocabulary": [
+    [
+      "autrefois",
+      "从前"
+    ],
+    [
+      "une habitude",
+      "习惯"
+    ],
+    [
+      "le village",
+      "村庄"
+    ],
+    [
+      "passer du temps",
+      "花时间"
+    ],
+    [
+      "chaque été",
+      "每个夏天"
+    ],
+    [
+      "se souvenir",
+      "记得"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Quand j'étais enfant, je passais chaque été chez ma grand-mère.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Elle habitait dans un village au bord d'une rivière.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Nous prenions le petit-déjeuner dans le jardin.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "L'après-midi, je jouais avec les enfants du voisinage.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Quand j'étais enfant, je passais chaque été chez ma grand-mère. Elle habitait dans un village au bord d'une rivière. Nous prenions le petit-déjeuner dans le jardin. L'après-midi, je jouais avec les enfants du voisinage. Un jour, nous avons trouvé une vieille barque derrière la maison. Ma grand-mère nous a expliqué son histoire. Aujourd'hui, je vis en ville, mais je me souviens encore du bruit de l'eau.",
+  "listening_script": "Quand j'étais enfant, je passais chaque été chez ma grand-mère. Elle habitait dans un village au bord d'une rivière. Nous prenions le petit-déjeuner dans le jardin. L'après-midi, je jouais avec les enfants du voisinage. Un jour, nous avons trouvé une vieille barque derrière la maison. Ma grand-mère nous a expliqué son histoire. Aujourd'hui, je vis en ville, mais je me souviens encore du bruit de l'eau.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quelle action est un événement unique ?",
+      "answer": "Nous avons trouvé une vieille barque.",
+      "explanation": "Un jour 引出特定事件，其他句子多在描述习惯或背景。"
+    },
+    {
+      "prompt": "写出 nous prenons 对应的 je 未完成过去时。",
+      "answer": "je prenais",
+      "explanation": "pren- 加 -ais，不从 prendre 直接拼接词尾。"
+    }
+  ],
+  "pronunciation": "imparfait /e/ versus /ɛ/。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Décrivez vos habitudes enfant",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "fr-b1-u01",
+  "title": "Raconter avec précision",
+  "language": "fr",
+  "level": "B1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Narrate events with background and consequence",
+  "prerequisite": null,
+  "context": "为保险说明一次行程中断的经过，区分背景、先前原因和事件。",
+  "grammar": "imparfait 给出背景，passé composé 推进事件；plus-que-parfait 表示在过去参照点之前已完成的动作。先确定叙述参照时刻，再决定是否需要 avait + participe。",
+  "common_mistake": "不要仅因句子在段落前面就用愈过去时；时态依据事件关系。",
+  "vocabulary": [
+    [
+      "une panne",
+      "故障"
+    ],
+    [
+      "prévenir",
+      "通知"
+    ],
+    [
+      "un détour",
+      "绕路"
+    ],
+    [
+      "auparavant",
+      "此前"
+    ],
+    [
+      "une conséquence",
+      "后果"
+    ],
+    [
+      "reprendre",
+      "恢复"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Nous roulions vers la côte lorsque le moteur s'est arrêté.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le garagiste avait pourtant vérifié la voiture la veille.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Pendant que mon frère appelait l'assistance, j'ai prévenu les amis qui nous attendaient.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le dépanneur est arrivé une heure plus tard et nous a conduits dans un village voisin.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Nous roulions vers la côte lorsque le moteur s'est arrêté. Le garagiste avait pourtant vérifié la voiture la veille. Pendant que mon frère appelait l'assistance, j'ai prévenu les amis qui nous attendaient. Le dépanneur est arrivé une heure plus tard et nous a conduits dans un village voisin. Comme le garage était fermé, nous avons passé la nuit sur place. Le lendemain, nous avons repris la route en train. Ce changement nous a coûté du temps, mais il nous a permis de rejoindre nos amis sans attendre la réparation.",
+  "listening_script": "Nous roulions vers la côte lorsque le moteur s'est arrêté. Le garagiste avait pourtant vérifié la voiture la veille. Pendant que mon frère appelait l'assistance, j'ai prévenu les amis qui nous attendaient. Le dépanneur est arrivé une heure plus tard et nous a conduits dans un village voisin. Comme le garage était fermé, nous avons passé la nuit sur place. Le lendemain, nous avons repris la route en train. Ce changement nous a coûté du temps, mais il nous a permis de rejoindre nos amis sans attendre la réparation.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quel événement précède la panne ?",
+      "answer": "Le garagiste avait vérifié la voiture.",
+      "explanation": "avait vérifié 表示故障前已经完成的检查。"
+    },
+    {
+      "prompt": "Pourquoi roulions est-il à l'imparfait ?",
+      "answer": "Il présente l'action en cours quand la panne survient.",
+      "explanation": "行驶是背景，停车故障是打断它的事件。"
+    }
+  ],
+  "pronunciation": "rythme des récits。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Racontez une histoire",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

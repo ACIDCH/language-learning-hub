@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-reading-u08",
+  "title": "Critical synthesis of two academic passages",
+  "language": "en",
+  "level": "B1-B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply critical synthesis of two academic passages in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-reading-u07",
+  "context": "比较两篇原创学术短文，不把不同尺度的结论错误看作直接冲突。",
+  "grammar": "synthesis 应保存来源归属。whereas 比较差异；both 可以总结共同点，但只限双方确实支持的内容。先对齐研究对象、时间和指标。",
+  "common_mistake": "一篇报告总体增加、另一篇描述少数下降，二者可以同时为真。",
+  "vocabulary": [
+    [
+      "aggregate",
+      "汇总"
+    ],
+    [
+      "disparity",
+      "差异"
+    ],
+    [
+      "indicator",
+      "指标"
+    ],
+    [
+      "qualitative",
+      "定性的"
+    ],
+    [
+      "representative",
+      "有代表性的"
+    ],
+    [
+      "reconcile",
+      "协调解释"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Passage A reports that average library visits rose in a fictional district after weekend opening was introduced.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The increase is an aggregate result and does not describe every neighbourhood.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Passage B presents interviews with residents whose bus service ends early on Saturdays.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Several say that the new hours offer little practical benefit to them.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Passage A reports that average library visits rose in a fictional district after weekend opening was introduced. The increase is an aggregate result and does not describe every neighbourhood. Passage B presents interviews with residents whose bus service ends early on Saturdays. Several say that the new hours offer little practical benefit to them. The passages therefore examine different aspects of access rather than directly contradicting each other. A useful synthesis would acknowledge the average gain while identifying transport as a possible source of unequal benefit. Further data would be needed to estimate how common that barrier is.",
+  "listening_script": "Passage A reports that average library visits rose in a fictional district after weekend opening was introduced. The increase is an aggregate result and does not describe every neighbourhood. Passage B presents interviews with residents whose bus service ends early on Saturdays. Several say that the new hours offer little practical benefit to them. The passages therefore examine different aspects of access rather than directly contradicting each other. A useful synthesis would acknowledge the average gain while identifying transport as a possible source of unequal benefit. Further data would be needed to estimate how common that barrier is.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Why are the passages not necessarily contradictory ?",
+      "answer": "An average gain can coexist with limited benefits for one group.",
+      "explanation": "先区分总体与子群体，不能仅比较正负词。"
+    },
+    {
+      "prompt": "Can the interviews establish the district-wide frequency of the barrier ?",
+      "answer": "No, the passage says further data are needed.",
+      "explanation": "定性例子揭示机制，不自动给出总体比例。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating critical synthesis of two academic passages",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

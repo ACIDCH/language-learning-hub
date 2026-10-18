@@ -1,0 +1,78 @@
+{
+  "id": "fr-a1-u12",
+  "title": "Premiers récits",
+  "language": "fr",
+  "level": "A1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Talk briefly about a completed action",
+  "prerequisite": "fr-a1-u11",
+  "context": "用简单句讲述昨天的出行，先学习最常用的过去动作。",
+  "grammar": "复合过去时由 avoir/être 现在时 + 过去分词构成。本课先掌握 j'ai visité 与 je suis allé/allée；使用 être 时过去分词与主语性数配合。hier 与 aujourd'hui 可帮助区分叙述时间。",
+  "common_mistake": "je suis visité 不能表示‘我参观了’；visiter 使用 avoir。",
+  "vocabulary": [
+    [
+      "hier",
+      "昨天"
+    ],
+    [
+      "visiter",
+      "参观"
+    ],
+    [
+      "rencontrer",
+      "遇见"
+    ],
+    [
+      "déjeuner",
+      "吃午饭"
+    ],
+    [
+      "une photo",
+      "照片"
+    ],
+    [
+      "rentrer",
+      "回家"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Hier, je suis allée au centre-ville avec mon frère.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Nous avons visité un petit musée.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "J'ai pris des photos dans le jardin.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "À midi, nous avons déjeuné dans un café.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Hier, je suis allée au centre-ville avec mon frère. Nous avons visité un petit musée. J'ai pris des photos dans le jardin. À midi, nous avons déjeuné dans un café. Mon frère a rencontré un ancien ami. Nous sommes rentrés à cinq heures. Aujourd'hui, je regarde les photos et je raconte notre sortie à une amie.",
+  "listening_script": "Hier, je suis allée au centre-ville avec mon frère. Nous avons visité un petit musée. J'ai pris des photos dans le jardin. À midi, nous avons déjeuné dans un café. Mon frère a rencontré un ancien ami. Nous sommes rentrés à cinq heures. Aujourd'hui, je regarde les photos et je raconte notre sortie à une amie.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "À quelle heure sont-ils rentrés ?",
+      "answer": "À cinq heures.",
+      "explanation": "中午发生的是午餐，回家在五点。"
+    },
+    {
+      "prompt": "女性说话者补全：Je suis ___ au musée. (aller)",
+      "answer": "allée",
+      "explanation": "aller 用 être，女性单数主语使过去分词加 e。"
+    }
+  ],
+  "pronunciation": "participe passé fréquent;rythme。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Racontez une sortie en cinq phrases",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

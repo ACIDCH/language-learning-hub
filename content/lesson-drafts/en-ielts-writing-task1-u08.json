@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-writing-task1-u08",
+  "title": "Editing accuracy, overview and precision",
+  "language": "en",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply editing accuracy, overview and precision in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-writing-task1-u07",
+  "context": "编辑一份有范围与单位错误的图表报告，而非只替换高级词。",
+  "grammar": "校订顺序：核实数据与单位→概述→比较方向→时态→语言准确。about/approximately 只能用于允许近似的值，不能掩盖计算错误。数据本身不解释原因。",
+  "common_mistake": "‘翻倍’严格对应两倍，不应写给从 20 到 30 的变化。",
+  "vocabulary": [
+    [
+      "precision",
+      "精确性"
+    ],
+    [
+      "overview",
+      "概述"
+    ],
+    [
+      "unit",
+      "单位"
+    ],
+    [
+      "double",
+      "翻倍"
+    ],
+    [
+      "estimate",
+      "估计"
+    ],
+    [
+      "verify",
+      "核验"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "The practice table lists weekly visits of 20, 30 and 40 in three successive years.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "An initial draft incorrectly claims that visits doubled in the second year.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "In fact, they rose by half between the first and second years and doubled only across the full period.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Another sentence attributes the rise to advertising, although the table provides no causal information.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "The practice table lists weekly visits of 20, 30 and 40 in three successive years. An initial draft incorrectly claims that visits doubled in the second year. In fact, they rose by half between the first and second years and doubled only across the full period. Another sentence attributes the rise to advertising, although the table provides no causal information. The revised overview states simply that attendance increased throughout the period. It then selects the starting and final figures to show the overall scale. Editing strengthens accuracy here without adding elaborate vocabulary.",
+  "listening_script": "The practice table lists weekly visits of 20, 30 and 40 in three successive years. An initial draft incorrectly claims that visits doubled in the second year. In fact, they rose by half between the first and second years and doubled only across the full period. Another sentence attributes the rise to advertising, although the table provides no causal information. The revised overview states simply that attendance increased throughout the period. It then selects the starting and final figures to show the overall scale. Editing strengthens accuracy here without adding elaborate vocabulary.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "When did visits double relative to the first year ?",
+      "answer": "In the third year, when they reached 40.",
+      "explanation": "40/20=2；30/20=1.5。"
+    },
+    {
+      "prompt": "Why remove the advertising explanation ?",
+      "answer": "The table gives no evidence of a cause.",
+      "explanation": "Task 1 图表报告不应编造原因。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating editing accuracy, overview and precision",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

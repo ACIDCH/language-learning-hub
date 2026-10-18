@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-speaking-u03",
+  "title": "Narrative for sustained speech",
+  "language": "en",
+  "level": "B1-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply narrative for sustained speech in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-speaking-u02",
+  "context": "用连贯叙事完成持续口语，选择有转折且可解释的事件。",
+  "grammar": "past continuous 建背景，past simple 推动事件，past perfect 表示更早原因。叙事顺序应服务听者理解，不必逐分钟复述。结尾说明事件意义。",
+  "common_mistake": "全部句子都以 then 开始不能替代清楚的事件关系。",
+  "vocabulary": [
+    [
+      "unexpected",
+      "出乎意料的"
+    ],
+    [
+      "arrange",
+      "安排"
+    ],
+    [
+      "realise",
+      "意识到"
+    ],
+    [
+      "manage",
+      "设法"
+    ],
+    [
+      "eventually",
+      "最终"
+    ],
+    [
+      "memorable",
+      "难忘的"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "I was travelling to a friend's exhibition when the bus broke down.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "I had left early, so at first I was not worried.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "After twenty minutes, however, it became clear that I needed another route.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "A passenger showed me a footpath leading to a nearby station.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "I was travelling to a friend's exhibition when the bus broke down. I had left early, so at first I was not worried. After twenty minutes, however, it became clear that I needed another route. A passenger showed me a footpath leading to a nearby station. We walked there together and caught the next train. I arrived just before my friend began speaking. What made the day memorable was not the exhibition alone, but the unexpected help from someone I had never met.",
+  "listening_script": "I was travelling to a friend's exhibition when the bus broke down. I had left early, so at first I was not worried. After twenty minutes, however, it became clear that I needed another route. A passenger showed me a footpath leading to a nearby station. We walked there together and caught the next train. I arrived just before my friend began speaking. What made the day memorable was not the exhibition alone, but the unexpected help from someone I had never met.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Which action occurred before the breakdown ?",
+      "answer": "The speaker had left early.",
+      "explanation": "past perfect 标出参照事件之前的动作。"
+    },
+    {
+      "prompt": "What gives the story a concluding point ?",
+      "answer": "The reflection on unexpected help.",
+      "explanation": "结尾说明意义，而非仅报告到达。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating narrative for sustained speech",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "fr-b2-u10",
+  "title": "Synthèse et prise de parole",
+  "language": "fr",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Integrate several texts into coherent speech",
+  "prerequisite": "fr-b2-u09",
+  "context": "把两段立场不同的材料综合成面向公众的短讲。",
+  "grammar": "综合需按主题组织而不是依次缩写来源。alors que 表示差异，tous deux/sur ce point 表示一致。引述与自己的解释应分开，避免添加来源未表达的共识。",
+  "common_mistake": "两份材料讨论同一对象，并不意味着它们提出相同政策。",
+  "vocabulary": [
+    [
+      "une synthèse",
+      "综合"
+    ],
+    [
+      "converger",
+      "趋同"
+    ],
+    [
+      "diverger",
+      "分歧"
+    ],
+    [
+      "une réserve",
+      "保留意见"
+    ],
+    [
+      "mettre en perspective",
+      "结合背景看待"
+    ],
+    [
+      "une conclusion",
+      "结论"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Le premier document défend l'ouverture nocturne des bibliothèques pour répondre aux horaires des étudiants.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Il insiste sur l'accès aux espaces calmes et aux équipements.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le second rappelle les contraintes de personnel et propose d'abord un essai limité.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Les deux textes reconnaissent un besoin, mais ils divergent sur le rythme du changement.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Le premier document défend l'ouverture nocturne des bibliothèques pour répondre aux horaires des étudiants. Il insiste sur l'accès aux espaces calmes et aux équipements. Le second rappelle les contraintes de personnel et propose d'abord un essai limité. Les deux textes reconnaissent un besoin, mais ils divergent sur le rythme du changement. Une synthèse peut donc partir de cette tension entre accès et moyens. Elle présentera ensuite l'essai comme une proposition du second document, non comme une décision commune. La conclusion distinguera les points établis des questions qui nécessitent encore des données.",
+  "listening_script": "Le premier document défend l'ouverture nocturne des bibliothèques pour répondre aux horaires des étudiants. Il insiste sur l'accès aux espaces calmes et aux équipements. Le second rappelle les contraintes de personnel et propose d'abord un essai limité. Les deux textes reconnaissent un besoin, mais ils divergent sur le rythme du changement. Une synthèse peut donc partir de cette tension entre accès et moyens. Elle présentera ensuite l'essai comme une proposition du second document, non comme une décision commune. La conclusion distinguera les points établis des questions qui nécessitent encore des données.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quel point commun est explicitement établi ?",
+      "answer": "Les deux textes reconnaissent un besoin.",
+      "explanation": "共同点不能扩展为同时支持全面夜间开放。"
+    },
+    {
+      "prompt": "À qui attribuer l'essai limité ?",
+      "answer": "Au second document.",
+      "explanation": "综合仍需保存建议的来源。"
+    }
+  ],
+  "pronunciation": "intonation de présentation。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Faites une synthèse de cinq minutes",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

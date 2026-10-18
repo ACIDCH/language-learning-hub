@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-writing-task2-u07",
+  "title": "Coherence and referencing",
+  "language": "en",
+  "level": "B2-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply coherence and referencing in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-writing-task2-u06",
+  "context": "修正指代不清和跳跃论证，使读者知道每句如何推进观点。",
+  "grammar": "this + summary noun 如 this restriction 比孤立 this 更明确。因果连接词 therefore 只有在前文足以支持结果时才使用；additionally 不能修复逻辑断裂。",
+  "common_mistake": "‘学校有预算，therefore学生喜欢音乐’缺少必要推理。",
+  "vocabulary": [
+    [
+      "reference",
+      "指代"
+    ],
+    [
+      "progression",
+      "推进"
+    ],
+    [
+      "restriction",
+      "限制"
+    ],
+    [
+      "coherence",
+      "连贯"
+    ],
+    [
+      "antecedent",
+      "先行内容"
+    ],
+    [
+      "transition",
+      "过渡"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "A school may offer music classes but charge a fee for instrument hire.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "This charge can prevent some pupils from participating, even when tuition itself is free.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Removing the hire fee would address that specific restriction.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "It would not automatically resolve a shortage of teachers or rehearsal space.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "A school may offer music classes but charge a fee for instrument hire. This charge can prevent some pupils from participating, even when tuition itself is free. Removing the hire fee would address that specific restriction. It would not automatically resolve a shortage of teachers or rehearsal space. The phrase that specific restriction keeps the proposed response tied to the problem already identified. A following paragraph could then examine the separate resource constraints. Clear progression depends on these relationships, not on inserting a different linking expression at the start of every sentence.",
+  "listening_script": "A school may offer music classes but charge a fee for instrument hire. This charge can prevent some pupils from participating, even when tuition itself is free. Removing the hire fee would address that specific restriction. It would not automatically resolve a shortage of teachers or rehearsal space. The phrase that specific restriction keeps the proposed response tied to the problem already identified. A following paragraph could then examine the separate resource constraints. Clear progression depends on these relationships, not on inserting a different linking expression at the start of every sentence.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What does this charge refer to ?",
+      "answer": "The instrument hire fee.",
+      "explanation": "不是全部学费，原文明确 tuition free。"
+    },
+    {
+      "prompt": "Would removing it solve every access problem ?",
+      "answer": "No, teachers and rehearsal space may remain constraints.",
+      "explanation": "代词指代明确有助于限制解决方案的范围。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating coherence and referencing",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

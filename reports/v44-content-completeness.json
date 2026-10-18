@@ -1,0 +1,20 @@
+{
+  "baseline": "3399974",
+  "units": 156,
+  "main": 108,
+  "foundation": 48,
+  "existing_main_originals": 7,
+  "new_main_drafts": 101,
+  "existing_foundation": 48,
+  "nonempty_learning_pages": 156,
+  "text_complete": 156,
+  "QA_approved": 0,
+  "audio_verified": 0,
+  "publishable": 0,
+  "meaning": "These counts describe V4.4 bundled content only. Text completeness is structural, not human approval. Existing cloud/audio verification flags are neither overwritten nor invalidated.",
+  "public_assets_unchanged": 19,
+  "foundation_source_files_unchanged": 4,
+  "unique_draft_readings": 101,
+  "draft_reading_words": 8847,
+  "private_manuscripts": "preferred at runtime after authentication; not copied or claimed to be tested here"
+}

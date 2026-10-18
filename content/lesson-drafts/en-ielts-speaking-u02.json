@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-speaking-u02",
+  "title": "Extending answers without fillers",
+  "language": "en",
+  "level": "B1-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply extending answers without fillers in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-speaking-u01",
+  "context": "把简短回答扩展为理由与具体例子，避免嗯啊填充。",
+  "grammar": "扩展链可用 answer→reason→example→reflection；并非越长越好。for instance 后给具体情形，which 引出与前述内容相关的补充而非离题。",
+  "common_mistake": "反复说 very interesting 不增加信息，也不能代替理由。",
+  "vocabulary": [
+    [
+      "extend",
+      "展开"
+    ],
+    [
+      "specific",
+      "具体的"
+    ],
+    [
+      "routine",
+      "惯例"
+    ],
+    [
+      "rewarding",
+      "有收获的"
+    ],
+    [
+      "confidence",
+      "信心"
+    ],
+    [
+      "reflection",
+      "反思"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "I enjoy cooking simple meals at weekends.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "It gives me a practical task after a week spent mostly in front of a screen.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "For instance, I recently learned to make a vegetable soup without following every step of a recipe.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "I had to taste it and adjust the seasoning, which made the process more engaging.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "I enjoy cooking simple meals at weekends. It gives me a practical task after a week spent mostly in front of a screen. For instance, I recently learned to make a vegetable soup without following every step of a recipe. I had to taste it and adjust the seasoning, which made the process more engaging. The meal was not perfect, but I understood why it needed more salt. That small experience made me more confident about trying another dish.",
+  "listening_script": "I enjoy cooking simple meals at weekends. It gives me a practical task after a week spent mostly in front of a screen. For instance, I recently learned to make a vegetable soup without following every step of a recipe. I had to taste it and adjust the seasoning, which made the process more engaging. The meal was not perfect, but I understood why it needed more salt. That small experience made me more confident about trying another dish.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Which detail makes the example specific ?",
+      "answer": "Making vegetable soup and adjusting its seasoning.",
+      "explanation": "菜名与调整动作比泛称 cooking interesting 更有信息。"
+    },
+    {
+      "prompt": "How does the final sentence extend rather than repeat ?",
+      "answer": "It describes a change in confidence after the experience.",
+      "explanation": "从事件推进到反思与后续影响。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating extending answers without fillers",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

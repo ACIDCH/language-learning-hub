@@ -1,0 +1,78 @@
+{
+  "id": "fr-b1-u05",
+  "title": "Communication et société",
+  "language": "fr",
+  "level": "B1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Discuss media and social issues",
+  "prerequisite": "fr-b1-u04",
+  "context": "讨论群聊对信息流通的帮助，以及错误消息传播的风险。",
+  "grammar": "原因可用 puisque 表示已知前提，结果可用 si…que。间接转述使用 selon、d'après，保留消息来源与不确定性。不要让转述语气比来源更确定。",
+  "common_mistake": "群聊转发次数多不代表消息已经核实。",
+  "vocabulary": [
+    [
+      "une rumeur",
+      "传言"
+    ],
+    [
+      "diffuser",
+      "传播"
+    ],
+    [
+      "vérifier",
+      "核实"
+    ],
+    [
+      "une source",
+      "来源"
+    ],
+    [
+      "un échange",
+      "交流"
+    ],
+    [
+      "fiable",
+      "可靠的"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Le groupe de quartier facilite l'échange de services entre voisins.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Une personne y propose parfois de prêter une perceuse ou de garder un colis.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Hier, un message annonçait pourtant la fermeture définitive du marché.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Plusieurs membres l'ont partagé sans vérifier sa date.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Le groupe de quartier facilite l'échange de services entre voisins. Une personne y propose parfois de prêter une perceuse ou de garder un colis. Hier, un message annonçait pourtant la fermeture définitive du marché. Plusieurs membres l'ont partagé sans vérifier sa date. Une commerçante a précisé qu'il s'agissait seulement de travaux prévus pour lundi. Depuis cet incident, les administrateurs demandent un lien ou une source pour les annonces importantes. Le groupe reste utile, à condition de distinguer un témoignage personnel d'une information confirmée.",
+  "listening_script": "Le groupe de quartier facilite l'échange de services entre voisins. Une personne y propose parfois de prêter une perceuse ou de garder un colis. Hier, un message annonçait pourtant la fermeture définitive du marché. Plusieurs membres l'ont partagé sans vérifier sa date. Une commerçante a précisé qu'il s'agissait seulement de travaux prévus pour lundi. Depuis cet incident, les administrateurs demandent un lien ou une source pour les annonces importantes. Le groupe reste utile, à condition de distinguer un témoignage personnel d'une information confirmée.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quelle information a été corrigée ?",
+      "answer": "La fermeture définitive ; il s'agissait de travaux pour lundi.",
+      "explanation": "范围和期限同时被误传。"
+    },
+    {
+      "prompt": "Pourquoi demander une source ?",
+      "answer": "Pour permettre la vérification des annonces.",
+      "explanation": "来源提供核验路径，并不自动保证真实性。"
+    }
+  ],
+  "pronunciation": "prosodie de citation。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Résumez une émission",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-writing-task1-u02",
+  "title": "Reporting trends accurately",
+  "language": "en",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply reporting trends accurately in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-writing-task1-u01",
+  "context": "用自编数据练习趋势描述：某虚构图书馆月访问量在 2020/2021/2022/2023 年分别为 1200/900/1500/1800。不是外部真实统计。",
+  "grammar": "rose from A to B 区分起终点，rose by C 表示差值。时点明确在过去时用过去式；steadily 需要中间变化支持，不能用于先降后升的整段。",
+  "common_mistake": "从 1200 到 1800 增加 600，不是增加 1800；by 与 to 不可互换。",
+  "vocabulary": [
+    [
+      "fluctuate",
+      "波动"
+    ],
+    [
+      "recover",
+      "回升"
+    ],
+    [
+      "peak",
+      "达到峰值"
+    ],
+    [
+      "decline",
+      "下降"
+    ],
+    [
+      "overall",
+      "总体上"
+    ],
+    [
+      "respectively",
+      "分别"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "The fictional series shows a fall followed by a sustained recovery.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Monthly visits declined from 1,200 in 2020 to 900 in 2021.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "They then increased to 1,500 in 2022 and reached 1,800 in 2023.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Overall, the final figure was 600 higher than the initial one.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "The fictional series shows a fall followed by a sustained recovery. Monthly visits declined from 1,200 in 2020 to 900 in 2021. They then increased to 1,500 in 2022 and reached 1,800 in 2023. Overall, the final figure was 600 higher than the initial one. The data do not show a steady rise throughout the entire period. Nor do they identify why attendance changed. A concise report should describe the direction and scale before adding selected figures.",
+  "listening_script": "The fictional series shows a fall followed by a sustained recovery. Monthly visits declined from 1,200 in 2020 to 900 in 2021. They then increased to 1,500 in 2022 and reached 1,800 in 2023. Overall, the final figure was 600 higher than the initial one. The data do not show a steady rise throughout the entire period. Nor do they identify why attendance changed. A concise report should describe the direction and scale before adding selected figures.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What is the overall increase ?",
+      "answer": "600 visits, or 50% of the initial figure.",
+      "explanation": "1800−1200=600；600/1200=0.5。"
+    },
+    {
+      "prompt": "Correct Visits rose by 1,800 in 2023 using the preceding year's value.",
+      "answer": "Visits rose by 300 to 1,800 in 2023.",
+      "explanation": "1500 到 1800 的差值为 300，终值为 1800。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "依据自编四年数据写 150 词报告。给出总体先降后升、最终高于起点的概述，不编造变化原因。",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

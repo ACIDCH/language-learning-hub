@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-writing-task2-u04",
+  "title": "Discussion of two views",
+  "language": "en",
+  "level": "B2-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply discussion of two views in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-writing-task2-u03",
+  "context": "讨论两种教育投资意见并给出自己的有条件判断。",
+  "grammar": "discuss both views 需要解释双方理由，而非一边只列标签。my view 应以明确标准评价，不必平均分配赞同程度。段落之间通过标准衔接，结尾回应题目而非新开主题。",
+  "common_mistake": "‘双方都有道理’不构成清晰的个人判断。",
+  "vocabulary": [
+    [
+      "allocation",
+      "分配"
+    ],
+    [
+      "vocational",
+      "职业性的"
+    ],
+    [
+      "adaptability",
+      "适应性"
+    ],
+    [
+      "priority",
+      "优先项"
+    ],
+    [
+      "short-term",
+      "短期的"
+    ],
+    [
+      "trade-off",
+      "权衡"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "One view holds that universities should prioritise vocational preparation because students need usable routes into employment.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Another emphasises broad education, arguing that specific skills can become obsolete.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The positions share a concern for students' futures but interpret preparation differently.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "A balanced judgement need not treat all programmes alike.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "One view holds that universities should prioritise vocational preparation because students need usable routes into employment. Another emphasises broad education, arguing that specific skills can become obsolete. The positions share a concern for students' futures but interpret preparation differently. A balanced judgement need not treat all programmes alike. Courses with direct professional responsibilities may require substantial practical training, while every student can benefit from learning to evaluate unfamiliar evidence. I would therefore support a curriculum that connects specialised practice with transferable reasoning. The appropriate balance should depend on the programme rather than a universal percentage.",
+  "listening_script": "One view holds that universities should prioritise vocational preparation because students need usable routes into employment. Another emphasises broad education, arguing that specific skills can become obsolete. The positions share a concern for students' futures but interpret preparation differently. A balanced judgement need not treat all programmes alike. Courses with direct professional responsibilities may require substantial practical training, while every student can benefit from learning to evaluate unfamiliar evidence. I would therefore support a curriculum that connects specialised practice with transferable reasoning. The appropriate balance should depend on the programme rather than a universal percentage.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What shared concern links the two views ?",
+      "answer": "Preparing students for their futures.",
+      "explanation": "共同目标不意味着相同课程方案。"
+    },
+    {
+      "prompt": "What is the writer's position ?",
+      "answer": "Combine specialised practice with transferable reasoning, with balance varying by programme.",
+      "explanation": "结论明确且有条件，不是泛泛折中。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating discussion of two views",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

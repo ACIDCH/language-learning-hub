@@ -1,0 +1,78 @@
+{
+  "id": "fr-a1-u05",
+  "title": "Routines au présent",
+  "language": "fr",
+  "level": "A1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Describe daily habits",
+  "prerequisite": "fr-a1-u04",
+  "context": "向新同学介绍一周的学习作息，区分规律活动与此刻行动。",
+  "grammar": "第一组 -er 动词去掉 -er 后加 -e、-es、-e、-ons、-ez、-ent。书面词尾不同不意味着都需读出；je travaille 与 ils travaillent 的动词读音相同。le lundi 常表示每周一，à huit heures 表示时刻。",
+  "common_mistake": "je 主语不能配 travaillons；nous 的词尾要写 -ons。",
+  "vocabulary": [
+    [
+      "se lever",
+      "起床"
+    ],
+    [
+      "travailler",
+      "工作"
+    ],
+    [
+      "étudier",
+      "学习"
+    ],
+    [
+      "une pause",
+      "休息"
+    ],
+    [
+      "le matin",
+      "早晨"
+    ],
+    [
+      "chaque jour",
+      "每天"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Je travaille dans une bibliothèque.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le matin, je commence à neuf heures.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "À midi, je mange avec une collègue.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Nous parlons de nos livres préférés.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Je travaille dans une bibliothèque. Le matin, je commence à neuf heures. À midi, je mange avec une collègue. Nous parlons de nos livres préférés. L'après-midi, nous préparons les tables pour les étudiants. Le soir, j'étudie le français chez moi. Le vendredi, je termine plus tôt et je marche au parc.",
+  "listening_script": "Je travaille dans une bibliothèque. Le matin, je commence à neuf heures. À midi, je mange avec une collègue. Nous parlons de nos livres préférés. L'après-midi, nous préparons les tables pour les étudiants. Le soir, j'étudie le français chez moi. Le vendredi, je termine plus tôt et je marche au parc.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "À quelle heure commence le travail ?",
+      "answer": "À neuf heures.",
+      "explanation": "九点是上班时间，中午是吃饭时间。"
+    },
+    {
+      "prompt": "将 Je prépare les tables 改为 nous 主语。",
+      "answer": "Nous préparons les tables.",
+      "explanation": "préparer 去掉 -er，加 nous 对应的 -ons。"
+    }
+  ],
+  "pronunciation": "e muet;rythme syllabique。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Présentez une journée type",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

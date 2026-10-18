@@ -1,0 +1,78 @@
+{
+  "id": "fr-a2-u12",
+  "title": "Vie sociale et culture",
+  "language": "fr",
+  "level": "A2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Describe experiences and comparisons",
+  "prerequisite": "fr-a2-u11",
+  "context": "参加社区文化活动，讲述参与方式并礼貌表达不熟悉之处。",
+  "grammar": "关系代词 qui 作从句主语，que 作直接宾语：la personne qui organise / le film que nous regardons。区分由谁执行动作与谁承受动作，不能只看先行词是人还是物。",
+  "common_mistake": "qui 不是所有‘人’的固定代词；la personne que je connais 中需要 que。",
+  "vocabulary": [
+    [
+      "une fête",
+      "节庆"
+    ],
+    [
+      "une association",
+      "协会"
+    ],
+    [
+      "accueillir",
+      "接待"
+    ],
+    [
+      "une coutume",
+      "习俗"
+    ],
+    [
+      "participer",
+      "参与"
+    ],
+    [
+      "un atelier",
+      "工作坊"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Notre quartier organise une fête samedi.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "L'association qui prépare la journée cherche des bénévoles.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Je participe à l'atelier de cuisine que ma voisine anime.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Elle explique une recette de sa région et invite chacun à poser des questions.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Notre quartier organise une fête samedi. L'association qui prépare la journée cherche des bénévoles. Je participe à l'atelier de cuisine que ma voisine anime. Elle explique une recette de sa région et invite chacun à poser des questions. Je ne connais pas tous les ingrédients, alors je les note. Après l'atelier, nous partageons le repas dans la cour. Cette rencontre me permet de découvrir des habitudes différentes sans supposer que tous les habitants les partagent.",
+  "listening_script": "Notre quartier organise une fête samedi. L'association qui prépare la journée cherche des bénévoles. Je participe à l'atelier de cuisine que ma voisine anime. Elle explique une recette de sa région et invite chacun à poser des questions. Je ne connais pas tous les ingrédients, alors je les note. Après l'atelier, nous partageons le repas dans la cour. Cette rencontre me permet de découvrir des habitudes différentes sans supposer que tous les habitants les partagent.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Que fait la narratrice quand elle ne connaît pas un ingrédient ?",
+      "answer": "Elle le note.",
+      "explanation": "文本强调询问和记录，不能假设已经理解所有内容。"
+    },
+    {
+      "prompt": "补全：L'association ___ organise la fête.",
+      "answer": "qui",
+      "explanation": "关系代词在从句里是 organise 的主语。"
+    }
+  ],
+  "pronunciation": "prononciation de groupes rythmiques。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Présentez une expérience culturelle",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

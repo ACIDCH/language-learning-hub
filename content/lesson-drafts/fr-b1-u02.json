@@ -1,0 +1,78 @@
+{
+  "id": "fr-b1-u02",
+  "title": "Exprimer son point de vue",
+  "language": "fr",
+  "level": "B1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Build and support opinions",
+  "prerequisite": "fr-b1-u01",
+  "context": "在居民会议上表达对步行街的看法，同时承认他人需求。",
+  "grammar": "Je trouve que 后用陈述式；bien que 常接虚拟式。论点必须限定对象与条件，可以用 dans certains cas、à condition de。表达个人意见不等于给出普遍事实。",
+  "common_mistake": "不同意见不能只写 Je ne suis pas d'accord；要指出不同意哪项理由。",
+  "vocabulary": [
+    [
+      "piéton",
+      "行人"
+    ],
+    [
+      "un commerce",
+      "商店"
+    ],
+    [
+      "l'accès",
+      "通行"
+    ],
+    [
+      "une mesure",
+      "措施"
+    ],
+    [
+      "tenir compte de",
+      "考虑"
+    ],
+    [
+      "en revanche",
+      "相反"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Je trouve que la nouvelle zone piétonne rend le centre plus agréable.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Les familles peuvent s'y promener sans le bruit permanent des voitures.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "En revanche, certains commerçants craignent de perdre les clients qui viennent de loin.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Leur inquiétude mérite d'être prise en compte, même si elle ne prouve pas encore une baisse des ventes.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Je trouve que la nouvelle zone piétonne rend le centre plus agréable. Les familles peuvent s'y promener sans le bruit permanent des voitures. En revanche, certains commerçants craignent de perdre les clients qui viennent de loin. Leur inquiétude mérite d'être prise en compte, même si elle ne prouve pas encore une baisse des ventes. La ville pourrait maintenir un accès matinal pour les livraisons. Elle devrait aussi améliorer les bus du soir. Une période d'essai permettrait de comparer la fréquentation avant et après le changement.",
+  "listening_script": "Je trouve que la nouvelle zone piétonne rend le centre plus agréable. Les familles peuvent s'y promener sans le bruit permanent des voitures. En revanche, certains commerçants craignent de perdre les clients qui viennent de loin. Leur inquiétude mérite d'être prise en compte, même si elle ne prouve pas encore une baisse des ventes. La ville pourrait maintenir un accès matinal pour les livraisons. Elle devrait aussi améliorer les bus du soir. Une période d'essai permettrait de comparer la fréquentation avant et après le changement.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quelle concession l'auteur fait-il aux commerçants ?",
+      "answer": "Leur inquiétude mérite d'être prise en compte.",
+      "explanation": "承认忧虑合理不等于已经证实销售下降。"
+    },
+    {
+      "prompt": "La baisse des ventes est-elle établie ?",
+      "answer": "Non, le texte précise qu'elle n'est pas prouvée.",
+      "explanation": "区分担忧与证据。"
+    }
+  ],
+  "pronunciation": "intonation du point de vue。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Défendez une opinion",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

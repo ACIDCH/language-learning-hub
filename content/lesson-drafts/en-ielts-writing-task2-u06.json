@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-writing-task2-u06",
+  "title": "Causes, problems and solutions",
+  "language": "en",
+  "level": "B2-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply causes, problems and solutions in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-writing-task2-u05",
+  "context": "把城市拥堵的原因与对应措施逐一连接，避免万能建议。",
+  "grammar": "cause、symptom 和 consequence 不同。solution 应针对已论证机制；could help 不等于 would eliminate。可用 if…then 检查建议是否依赖未满足的前提。",
+  "common_mistake": "‘提高意识’如果没有解释如何改变通勤选择，就是空洞建议。",
+  "vocabulary": [
+    [
+      "congestion",
+      "拥堵"
+    ],
+    [
+      "capacity",
+      "容量"
+    ],
+    [
+      "incentive",
+      "激励"
+    ],
+    [
+      "commuter",
+      "通勤者"
+    ],
+    [
+      "coordinate",
+      "协调"
+    ],
+    [
+      "implementation",
+      "实施"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Peak-hour congestion may reflect the concentration of work and school schedules as well as limited alternatives to driving.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Adding road capacity alone does not address either source completely.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "More frequent public transport could make another mode feasible for some commuters.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Staggered start times could reduce the number travelling simultaneously, provided that employers and schools can coordinate them.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Peak-hour congestion may reflect the concentration of work and school schedules as well as limited alternatives to driving. Adding road capacity alone does not address either source completely. More frequent public transport could make another mode feasible for some commuters. Staggered start times could reduce the number travelling simultaneously, provided that employers and schools can coordinate them. Neither measure is costless or suitable everywhere. A credible proposal should specify which cause it targets, who must act and how its effects would be checked. Otherwise, a list of solutions may sound energetic while leaving the mechanism of the problem untouched.",
+  "listening_script": "Peak-hour congestion may reflect the concentration of work and school schedules as well as limited alternatives to driving. Adding road capacity alone does not address either source completely. More frequent public transport could make another mode feasible for some commuters. Staggered start times could reduce the number travelling simultaneously, provided that employers and schools can coordinate them. Neither measure is costless or suitable everywhere. A credible proposal should specify which cause it targets, who must act and how its effects would be checked. Otherwise, a list of solutions may sound energetic while leaving the mechanism of the problem untouched.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Which cause do staggered start times target ?",
+      "answer": "Many people travelling at the same time.",
+      "explanation": "时间错峰针对峰值集中，不直接解决所有出行距离问题。"
+    },
+    {
+      "prompt": "What should accompany a proposed solution ?",
+      "answer": "Its target mechanism, responsible actors and an evaluation method.",
+      "explanation": "措施需要可执行与可核验。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating causes, problems and solutions",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

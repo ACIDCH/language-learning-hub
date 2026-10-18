@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-listening-u07",
+  "title": "Multiple speakers and argument development",
+  "language": "en",
+  "level": "B1-B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply multiple speakers and argument development in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-listening-u06",
+  "context": "跟踪两位研究生在讨论中如何修正和整合对方的建议。",
+  "grammar": "对话中代词 that、this approach 需要追溯上一轮话语。I agree, but 只对部分内容表示同意。做笔记可用说话者栏与‘建议—限制—修改’三列。",
+  "common_mistake": "讨论结尾形成的方案未必等于任一说话者的最初提议。",
+  "vocabulary": [
+    [
+      "proposal",
+      "建议"
+    ],
+    [
+      "feasible",
+      "可行的"
+    ],
+    [
+      "recruit",
+      "招募"
+    ],
+    [
+      "scope",
+      "范围"
+    ],
+    [
+      "revise",
+      "修订"
+    ],
+    [
+      "constraint",
+      "限制"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Maya proposes interviewing fifty residents about their travel habits.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Leon agrees that interviews would provide detail, but he doubts they can complete fifty before the deadline.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "He suggests a shorter questionnaire instead.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Maya points out that fixed answers might miss unexpected reasons for travelling.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Maya proposes interviewing fifty residents about their travel habits. Leon agrees that interviews would provide detail, but he doubts they can complete fifty before the deadline. He suggests a shorter questionnaire instead. Maya points out that fixed answers might miss unexpected reasons for travelling. They eventually agree to survey a larger group and interview six volunteers afterwards. The interviews will explore issues raised by the survey rather than repeat every question. Their final design combines breadth with a limited opportunity for explanation.",
+  "listening_script": "Maya proposes interviewing fifty residents about their travel habits. Leon agrees that interviews would provide detail, but he doubts they can complete fifty before the deadline. He suggests a shorter questionnaire instead. Maya points out that fixed answers might miss unexpected reasons for travelling. They eventually agree to survey a larger group and interview six volunteers afterwards. The interviews will explore issues raised by the survey rather than repeat every question. Their final design combines breadth with a limited opportunity for explanation.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What is Leon's initial concern ?",
+      "answer": "The feasibility of fifty interviews before the deadline.",
+      "explanation": "他不否认访谈提供细节的价值。"
+    },
+    {
+      "prompt": "How does the final design differ from Maya's first proposal ?",
+      "answer": "It uses a survey plus six follow-up interviews rather than fifty interviews.",
+      "explanation": "答案需要覆盖方法与数量变化。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating multiple speakers and argument development",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

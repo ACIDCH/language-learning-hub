@@ -1,0 +1,78 @@
+{
+  "id": "fr-b1-u07",
+  "title": "Parler des changements",
+  "language": "fr",
+  "level": "B1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Compare past and present situations",
+  "prerequisite": "fr-b1-u06",
+  "context": "比较街区十年来的变化，区分趋势、原因推测与个人感受。",
+  "grammar": "de plus en plus / de moins en moins 表示渐变，ne…plus 表示不再。depuis 与过去起点配合，alors que 可对照两种情况。量化变化需要明确起止点。",
+  "common_mistake": "‘越来越多’不等于‘所有’，不要扩大趋势范围。",
+  "vocabulary": [
+    [
+      "un quartier",
+      "街区"
+    ],
+    [
+      "évoluer",
+      "演变"
+    ],
+    [
+      "un loyer",
+      "租金"
+    ],
+    [
+      "remplacer",
+      "替代"
+    ],
+    [
+      "accessible",
+      "可负担的"
+    ],
+    [
+      "un changement",
+      "变化"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Depuis dix ans, notre quartier attire de nouveaux habitants.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Les anciens ateliers ont été remplacés par des logements.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Il y a de plus en plus de cafés, alors que plusieurs petits commerces ont fermé.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Certains voisins apprécient les rues mieux éclairées.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Depuis dix ans, notre quartier attire de nouveaux habitants. Les anciens ateliers ont été remplacés par des logements. Il y a de plus en plus de cafés, alors que plusieurs petits commerces ont fermé. Certains voisins apprécient les rues mieux éclairées. D'autres regrettent la hausse des loyers, qui rend le quartier moins accessible. Je ne connais pas toutes les causes de cette évolution. Pour en discuter sérieusement, il faudrait comparer les prix, les revenus et les décisions d'aménagement sur la même période.",
+  "listening_script": "Depuis dix ans, notre quartier attire de nouveaux habitants. Les anciens ateliers ont été remplacés par des logements. Il y a de plus en plus de cafés, alors que plusieurs petits commerces ont fermé. Certains voisins apprécient les rues mieux éclairées. D'autres regrettent la hausse des loyers, qui rend le quartier moins accessible. Je ne connais pas toutes les causes de cette évolution. Pour en discuter sérieusement, il faudrait comparer les prix, les revenus et les décisions d'aménagement sur la même période.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "L'auteur affirme-t-il connaître toutes les causes ?",
+      "answer": "Non, il reconnaît une limite.",
+      "explanation": "末两句要求更多可比较数据。"
+    },
+    {
+      "prompt": "Exprimez que les commerces ne restent plus ouverts.",
+      "answer": "Plusieurs commerces ne sont plus ouverts.",
+      "explanation": "ne…plus 表示状态终止，不是数量减少的 de moins en moins。"
+    }
+  ],
+  "pronunciation": "contraste temporel。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Décrivez un changement de vie",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

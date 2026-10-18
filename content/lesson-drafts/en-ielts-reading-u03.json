@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-reading-u03",
+  "title": "Matching headings by paragraph function",
+  "language": "en",
+  "level": "B1-B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply matching headings by paragraph function in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-reading-u02",
+  "context": "为学术段落选标题，关注段落功能而非重复出现的词。",
+  "grammar": "topic 与 function 不同：一段谈种子可以是在解释方法、质疑结果或提出替代方案。however/often overlooked 等线索帮助识别功能，标题应覆盖整段而非一条例子。",
+  "common_mistake": "标题含原文关键词并不代表它准确概括主要作用。",
+  "vocabulary": [
+    [
+      "heading",
+      "标题"
+    ],
+    [
+      "function",
+      "功能"
+    ],
+    [
+      "germinate",
+      "发芽"
+    ],
+    [
+      "assumption",
+      "假设"
+    ],
+    [
+      "constraint",
+      "限制"
+    ],
+    [
+      "alternative",
+      "替代方案"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Seed banks are often described as secure archives of future crops.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Yet storing seeds is not equivalent to preserving a crop indefinitely.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Some species tolerate drying poorly, and even suitable seeds require periodic testing.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Staff must sometimes grow new plants to replenish a collection, which creates further demands for land and labour.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Seed banks are often described as secure archives of future crops. Yet storing seeds is not equivalent to preserving a crop indefinitely. Some species tolerate drying poorly, and even suitable seeds require periodic testing. Staff must sometimes grow new plants to replenish a collection, which creates further demands for land and labour. These practical limits do not make seed banks useless. They show why conservation strategies also include living collections and cooperation with growers. The paragraph therefore examines the limits of a single method rather than narrating the history of agriculture.",
+  "listening_script": "Seed banks are often described as secure archives of future crops. Yet storing seeds is not equivalent to preserving a crop indefinitely. Some species tolerate drying poorly, and even suitable seeds require periodic testing. Staff must sometimes grow new plants to replenish a collection, which creates further demands for land and labour. These practical limits do not make seed banks useless. They show why conservation strategies also include living collections and cooperation with growers. The paragraph therefore examines the limits of a single method rather than narrating the history of agriculture.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Choose the better heading: A secure solution for every crop / Why one conservation method is insufficient.",
+      "answer": "Why one conservation method is insufficient.",
+      "explanation": "整段列出保存方式的条件和补充方式。"
+    },
+    {
+      "prompt": "Which sentence prevents an overly negative interpretation ?",
+      "answer": "These practical limits do not make seed banks useless.",
+      "explanation": "限定批评范围，不否定全部价值。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating matching headings by paragraph function",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

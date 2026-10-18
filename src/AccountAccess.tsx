@@ -1,4 +1,5 @@
 import {useEffect,useState,type FormEvent} from 'react';
+import PasswordInput from './PasswordInput';
 import type {SupabaseClient} from '@supabase/supabase-js';
 
 type Screen='login'|'signup'|'verify'|'forgot'|'reset';
@@ -84,17 +85,17 @@ export default function AccountAccess({client,recoveryMode,onRecoveryComplete,on
   </div>}
   {screen==='reset'?<form className="cloud-fields" onSubmit={reset}>
     <h3>设置新的账号密码</h3>
-    <label>新密码<input type="password" autoComplete="new-password" minLength={8} required value={password} onChange={e=>setPassword(e.target.value)}/></label>
-    <label>重复新密码<input type="password" autoComplete="new-password" minLength={8} required value={again} onChange={e=>setAgain(e.target.value)}/></label>
+    <label>新密码<PasswordInput type="password" autoComplete="new-password" minLength={8} required value={password} onChange={e=>setPassword(e.target.value)}/></label>
+    <label>重复新密码<PasswordInput type="password" autoComplete="new-password" minLength={8} required value={again} onChange={e=>setAgain(e.target.value)}/></label>
     <button type="submit" disabled={busy}>{busy?'处理中…':'保存新密码'}</button>
   </form>:screen==='login'?<form className="cloud-fields" onSubmit={login}>
     <label>邮箱<input required type="email" autoComplete="username" value={email} onChange={e=>setEmail(e.target.value)}/></label>
-    <label>密码<input required type="password" autoComplete="current-password" value={password} onChange={e=>setPassword(e.target.value)}/></label>
+    <label>密码<PasswordInput required type="password" autoComplete="current-password" value={password} onChange={e=>setPassword(e.target.value)}/></label>
     <button type="submit" disabled={busy}>{busy?'正在登录…':'登录'}</button>
   </form>:screen==='signup'?<form className="cloud-fields" onSubmit={signup}>
     <label>注册邮箱<input required type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)}/></label>
-    <label>密码（至少八位）<input required minLength={8} type="password" autoComplete="new-password" value={password} onChange={e=>setPassword(e.target.value)}/></label>
-    <label>确认密码<input required minLength={8} type="password" autoComplete="new-password" value={again} onChange={e=>setAgain(e.target.value)}/></label>
+    <label>密码（至少八位）<PasswordInput required minLength={8} type="password" autoComplete="new-password" value={password} onChange={e=>setPassword(e.target.value)}/></label>
+    <label>确认密码<PasswordInput required minLength={8} type="password" autoComplete="new-password" value={again} onChange={e=>setAgain(e.target.value)}/></label>
     <button type="submit" disabled={busy}>{busy?'正在提交…':'申请注册'}</button>
     <p className="cloud-disclaimer">邮箱确认取决于 Supabase 的 Confirm email 与邮件模板设置。若模板只含链接，可直接点击链接完成验证。</p>
   </form>:screen==='verify'?<form className="cloud-fields" onSubmit={verify}>

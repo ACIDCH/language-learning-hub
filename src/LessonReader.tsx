@@ -1,20 +1,22 @@
 import {useMemo, useState, useEffect} from 'react';
 import {splitLessonStages,STAGE_NAMES} from './lessonStages';
-import IpaText from './IpaText';
+import IpaText,{speakIpaText} from './IpaText';
 import IpaReference from './IpaReference';
 
 type Props={
   text:string;
+  defaultIpa?:boolean;
+  ttsRate?:number;
   language?:string;
   courseId:string;
   stage:number;
   onChangeStage:(next:number)=>void;
 };
-export default function LessonReader({text,language='fr',courseId,stage,onChangeStage}:Props){
+export default function LessonReader({text,language='fr',courseId,stage,onChangeStage,defaultIpa=false,ttsRate=.85}:Props){
   const lesson=useMemo(()=>splitLessonStages(text),[text]);
   const [showAll,setShowAll]=useState(false);
-  const [showIpa,setShowIpa]=useState(false);
-  useEffect(()=>{setShowAll(false);setShowIpa(false);},[courseId]);
+  const [showIpa,setShowIpa]=useState(defaultIpa);
+  useEffect(()=>{setShowAll(false);setShowIpa(defaultIpa);},[courseId,defaultIpa]);
   const safeStage=Math.max(0,Math.min(5,Number.isInteger(stage)?stage:0));
   return <div className="lesson-reader">
     <section className="ipa-reader-controls" aria-label="课程原文音标控制">
@@ -39,14 +41,14 @@ export default function LessonReader({text,language='fr',courseId,stage,onChange
       {lesson.preamble&&<details className="lesson-preamble">
         <summary>查看课程前言及原始状态说明</summary>
         <div className="lesson-paragraphs">{showIpa
-          ? <IpaText text={lesson.preamble} language={language}/>
+          ? <IpaText onSpeak={value=>speakIpaText(value,language,ttsRate)} text={lesson.preamble} language={language}/>
           : lesson.preamble}</div>
       </details>}
     </>}
     {showAll||!lesson.structured?
       <article className="lesson-paper" aria-label="完整课程原文">
         <div className="lesson-paragraphs">{showIpa
-          ? <IpaText text={text} language={language}/>
+          ? <IpaText onSpeak={value=>speakIpaText(value,language,ttsRate)} text={text} language={language}/>
           : text}</div>
       </article>:
       <article className="lesson-paper" aria-label={'阶段：'+STAGE_NAMES[safeStage]}>
@@ -55,7 +57,7 @@ export default function LessonReader({text,language='fr',courseId,stage,onChange
           <h4>{lesson.stages[safeStage].heading||STAGE_NAMES[safeStage]}</h4>
         </header>
         <div className="lesson-paragraphs">{showIpa
-          ? <IpaText text={lesson.stages[safeStage].body} language={language}/>
+          ? <IpaText onSpeak={value=>speakIpaText(value,language,ttsRate)} text={lesson.stages[safeStage].body} language={language}/>
           : lesson.stages[safeStage].body}</div>
       </article>}
     {lesson.structured&&<div className="lesson-controls">

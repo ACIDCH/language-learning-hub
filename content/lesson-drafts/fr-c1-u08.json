@@ -1,0 +1,78 @@
+{
+  "id": "fr-c1-u08",
+  "title": "Écriture sophistiquée",
+  "language": "fr",
+  "level": "C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Produce a coherent formal essay",
+  "prerequisite": "fr-c1-u07",
+  "context": "修订论说文，使复杂句具有清晰的逻辑与指代。",
+  "grammar": "长句需要明确主干。分词结构的逻辑主语应与主句相容；ce dernier 只有在指向无歧义时才使用。名词化与被动式适度使用，避免将责任人隐藏在抽象名词链中。",
+  "common_mistake": "‘Ayant consulté les usagers, la décision…’会让 décision 像执行咨询动作的主体。",
+  "vocabulary": [
+    [
+      "la concision",
+      "简洁"
+    ],
+    [
+      "une reprise",
+      "回指"
+    ],
+    [
+      "une articulation",
+      "衔接"
+    ],
+    [
+      "un référent",
+      "所指"
+    ],
+    [
+      "alléger",
+      "精简"
+    ],
+    [
+      "une concession",
+      "让步"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Une version initiale du rapport accumulait les nominalisations et les reprises vagues.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "On pouvait y lire que la réalisation de la consultation avait permis l'amélioration de la compréhension.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "La phrase ne précisait ni qui avait consulté ni ce qui avait été mieux compris.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Une révision plus nette indique que l'équipe a interrogé les usagers pour comprendre leurs difficultés d'accès.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Une version initiale du rapport accumulait les nominalisations et les reprises vagues. On pouvait y lire que la réalisation de la consultation avait permis l'amélioration de la compréhension. La phrase ne précisait ni qui avait consulté ni ce qui avait été mieux compris. Une révision plus nette indique que l'équipe a interrogé les usagers pour comprendre leurs difficultés d'accès. Cette formulation n'interdit pas la nuance : une proposition concessive peut ensuite rappeler que certaines catégories restaient peu représentées. La sophistication ne réside donc pas dans la longueur visible des phrases. Elle tient à la capacité de coordonner information, hiérarchie et rythme sans rendre le lecteur responsable de reconstruire les liens manquants. Une dernière relecture vérifiera chaque pronom et chaque sujet implicite, puis supprimera les répétitions qui n'apportent aucun changement de perspective.",
+  "listening_script": "Une version initiale du rapport accumulait les nominalisations et les reprises vagues. On pouvait y lire que la réalisation de la consultation avait permis l'amélioration de la compréhension. La phrase ne précisait ni qui avait consulté ni ce qui avait été mieux compris. Une révision plus nette indique que l'équipe a interrogé les usagers pour comprendre leurs difficultés d'accès. Cette formulation n'interdit pas la nuance : une proposition concessive peut ensuite rappeler que certaines catégories restaient peu représentées. La sophistication ne réside donc pas dans la longueur visible des phrases. Elle tient à la capacité de coordonner information, hiérarchie et rythme sans rendre le lecteur responsable de reconstruire les liens manquants. Une dernière relecture vérifiera chaque pronom et chaque sujet implicite, puis supprimera les répétitions qui n'apportent aucun changement de perspective.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Qu'apporte la révision avec l'équipe ?",
+      "answer": "Elle explicite l'acteur, l'action et l'objet de compréhension.",
+      "explanation": "主语和目的清楚后，复杂性才可控。"
+    },
+    {
+      "prompt": "Corrigez Ayant consulté les usagers, la décision est prise.",
+      "answer": "Ayant consulté les usagers, l'équipe prend sa décision.",
+      "explanation": "分词的行动者与主句主语一致。"
+    }
+  ],
+  "pronunciation": "défense orale。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Rédigez un essai avancé",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

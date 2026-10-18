@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-listening-u01",
+  "title": "Academic lecture structure and signposting",
+  "language": "en",
+  "level": "B1-B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply academic lecture structure and signposting in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": null,
+  "context": "听一段关于城市树木的自编微型讲座，先识别结构再记细节。",
+  "grammar": "signposting 表示话语功能：to begin with 开题，however 转折，finally 收束。笔记记录‘主题—机制—限制’，不抄每个词。may 表示可能，must 表示更强必要或推断，不能在摘要中互换。",
+  "common_mistake": "听到 finally 不代表随后信息一定最重要；它首先说明顺序。",
+  "vocabulary": [
+    [
+      "canopy",
+      "树冠"
+    ],
+    [
+      "shade",
+      "阴影"
+    ],
+    [
+      "retain",
+      "保留"
+    ],
+    [
+      "maintenance",
+      "维护"
+    ],
+    [
+      "however",
+      "然而"
+    ],
+    [
+      "to begin with",
+      "首先"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "To begin with, we need to distinguish planting a tree from maintaining it.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "A new tree provides little shade during its first few years.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "As its canopy grows, it may help reduce heat on the pavement beneath it.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "However, this benefit depends partly on water, space and the choice of species.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "To begin with, we need to distinguish planting a tree from maintaining it. A new tree provides little shade during its first few years. As its canopy grows, it may help reduce heat on the pavement beneath it. However, this benefit depends partly on water, space and the choice of species. Our discussion will therefore move from planting targets to maintenance budgets. Finally, we will ask how a council can report survival rates instead of simply counting newly planted trees. These figures would describe different aspects of the same programme.",
+  "listening_script": "To begin with, we need to distinguish planting a tree from maintaining it. A new tree provides little shade during its first few years. As its canopy grows, it may help reduce heat on the pavement beneath it. However, this benefit depends partly on water, space and the choice of species. Our discussion will therefore move from planting targets to maintenance budgets. Finally, we will ask how a council can report survival rates instead of simply counting newly planted trees. These figures would describe different aspects of the same programme.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What change of emphasis follows however ?",
+      "answer": "From potential shade benefits to conditions needed for them.",
+      "explanation": "转折引入条件，不是撤回所有潜在好处。"
+    },
+    {
+      "prompt": "Which measure is proposed at the end ?",
+      "answer": "Tree survival rates.",
+      "explanation": "新种数量与存活率是不同指标。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating academic lecture structure and signposting",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

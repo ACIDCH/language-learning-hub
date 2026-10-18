@@ -1,0 +1,78 @@
+{
+  "id": "fr-a2-u03",
+  "title": "Déplacements détaillés",
+  "language": "fr",
+  "level": "A2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Plan travel and explain directions",
+  "prerequisite": "fr-a2-u02",
+  "context": "列车取消后，询问换乘与票务，确认具体限制。",
+  "grammar": "需要区分 devoir + 不定式（必须）与 pouvoir + 不定式（可以）。pour aller à 引出目的地；si 后现在时可表示现实条件。先确认路线，再确认时间和票是否有效。",
+  "common_mistake": "不要把 quai（站台）与 gare（车站）当成相同地点层级。",
+  "vocabulary": [
+    [
+      "une correspondance",
+      "换乘"
+    ],
+    [
+      "un quai",
+      "站台"
+    ],
+    [
+      "annuler",
+      "取消"
+    ],
+    [
+      "un retard",
+      "延误"
+    ],
+    [
+      "valable",
+      "有效的"
+    ],
+    [
+      "rembourser",
+      "退款"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Le train direct pour Tours est annulé ce matin.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Au guichet, une employée propose un trajet avec une correspondance à Orléans.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Nous devons partir à onze heures et changer de quai à Orléans.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Notre billet reste valable pour ce nouveau trajet.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Le train direct pour Tours est annulé ce matin. Au guichet, une employée propose un trajet avec une correspondance à Orléans. Nous devons partir à onze heures et changer de quai à Orléans. Notre billet reste valable pour ce nouveau trajet. Si nous préférons partir demain, nous pouvons demander un remboursement. Nous choisissons de voyager aujourd'hui, car notre hôtel est déjà réservé. Avant de partir, nous vérifions le numéro du quai sur l'écran.",
+  "listening_script": "Le train direct pour Tours est annulé ce matin. Au guichet, une employée propose un trajet avec une correspondance à Orléans. Nous devons partir à onze heures et changer de quai à Orléans. Notre billet reste valable pour ce nouveau trajet. Si nous préférons partir demain, nous pouvons demander un remboursement. Nous choisissons de voyager aujourd'hui, car notre hôtel est déjà réservé. Avant de partir, nous vérifions le numéro du quai sur l'écran.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Faut-il acheter un nouveau billet pour le trajet proposé ?",
+      "answer": "Non, le billet reste valable.",
+      "explanation": "不要从换乘推断一定要重新购票。"
+    },
+    {
+      "prompt": "补全：Nous devons ___ de quai. (changer)",
+      "answer": "changer",
+      "explanation": "devoir 后用不定式。"
+    }
+  ],
+  "pronunciation": "semi-voyelles introduction。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Organisez une excursion",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-language-upgrade-u07",
+  "title": "Reference and cohesive progression",
+  "language": "en",
+  "level": "B2-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply reference and cohesive progression in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-language-upgrade-u06",
+  "context": "修正模糊代词，使段落从旧信息自然过渡到新信息。",
+  "grammar": "this + specific noun 可以概括前文；it/they 必须有唯一或清晰所指。主题推进可从已知方案到新影响；不能靠代词把两个不相干主张强行连在一起。",
+  "common_mistake": "The council spoke to residents after they changed the plan 中 they 可能指两组人。",
+  "vocabulary": [
+    [
+      "antecedent",
+      "先行词"
+    ],
+    [
+      "reference",
+      "指代"
+    ],
+    [
+      "ambiguity",
+      "歧义"
+    ],
+    [
+      "proposal",
+      "提案"
+    ],
+    [
+      "consultation",
+      "咨询"
+    ],
+    [
+      "progression",
+      "推进"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "The council consulted residents after the planning team revised the proposal.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The revised proposal included a quieter access road.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "This change addressed one concern raised during the earlier consultation.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "It did not resolve the separate question of maintenance funding.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "The council consulted residents after the planning team revised the proposal. The revised proposal included a quieter access road. This change addressed one concern raised during the earlier consultation. It did not resolve the separate question of maintenance funding. Naming the change makes its referent clearer than using this alone after a long paragraph. The next sentence can then develop the funding issue without suggesting that the road revision solved it. Coherent progression depends on the relation between ideas as well as on grammatical agreement.",
+  "listening_script": "The council consulted residents after the planning team revised the proposal. The revised proposal included a quieter access road. This change addressed one concern raised during the earlier consultation. It did not resolve the separate question of maintenance funding. Naming the change makes its referent clearer than using this alone after a long paragraph. The next sentence can then develop the funding issue without suggesting that the road revision solved it. Coherent progression depends on the relation between ideas as well as on grammatical agreement.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What does this change refer to ?",
+      "answer": "The inclusion of a quieter access road.",
+      "explanation": "指代具体改动，而不是咨询本身。"
+    },
+    {
+      "prompt": "How can the ambiguous they sentence be repaired ?",
+      "answer": "Name the actor: after the planning team changed the plan.",
+      "explanation": "使用名词而非代词可消除多重先行词。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating reference and cohesive progression",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

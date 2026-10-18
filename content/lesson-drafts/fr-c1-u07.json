@@ -1,0 +1,78 @@
+{
+  "id": "fr-c1-u07",
+  "title": "Critique des médias",
+  "language": "fr",
+  "level": "C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Assess media framing and credibility",
+  "prerequisite": "fr-c1-u06",
+  "context": "对比媒体标题、引用与正文，识别隐含前提和框架。",
+  "grammar": "présupposition 是话语默认成立的背景；interrogation orientée 可以把争议前提藏入问题。d'après、prétendre、reconnaître 的选择也塑造立场。分析要用具体词句作证，不猜测作者心理。",
+  "common_mistake": "质疑报道框架不等于没有证据地指控记者故意欺骗。",
+  "vocabulary": [
+    [
+      "un cadrage",
+      "框架"
+    ],
+    [
+      "un présupposé",
+      "预设"
+    ],
+    [
+      "une citation",
+      "引语"
+    ],
+    [
+      "hiérarchiser",
+      "排序"
+    ],
+    [
+      "une omission",
+      "省略"
+    ],
+    [
+      "attribuer",
+      "归属"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Le titre demande pourquoi les habitants refusent enfin le changement.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "L'adverbe enfin suppose une attente antérieure, tandis que le verbe refusent homogénéise des positions peut-être diverses.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Dans le corps de l'article, deux personnes contestent surtout le calendrier, non le principe du projet.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "La citation d'une opposante est exacte, mais son emplacement après une description alarmiste lui donne une portée particulière.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Le titre demande pourquoi les habitants refusent enfin le changement. L'adverbe enfin suppose une attente antérieure, tandis que le verbe refusent homogénéise des positions peut-être diverses. Dans le corps de l'article, deux personnes contestent surtout le calendrier, non le principe du projet. La citation d'une opposante est exacte, mais son emplacement après une description alarmiste lui donne une portée particulière. Une critique précise doit distinguer cette construction éditoriale de l'invention de propos. Elle examinera aussi les voix absentes et les données permettant d'estimer leur importance. Il serait abusif de déduire d'un seul choix lexical une intention certaine du journaliste. On peut néanmoins montrer comment la combinaison du titre, de l'ordre des citations et des omissions oriente l'interprétation disponible au lecteur.",
+  "listening_script": "Le titre demande pourquoi les habitants refusent enfin le changement. L'adverbe enfin suppose une attente antérieure, tandis que le verbe refusent homogénéise des positions peut-être diverses. Dans le corps de l'article, deux personnes contestent surtout le calendrier, non le principe du projet. La citation d'une opposante est exacte, mais son emplacement après une description alarmiste lui donne une portée particulière. Une critique précise doit distinguer cette construction éditoriale de l'invention de propos. Elle examinera aussi les voix absentes et les données permettant d'estimer leur importance. Il serait abusif de déduire d'un seul choix lexical une intention certaine du journaliste. On peut néanmoins montrer comment la combinaison du titre, de l'ordre des citations et des omissions oriente l'interprétation disponible au lecteur.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quel présupposé introduit enfin ?",
+      "answer": "L'idée que le refus était attendu auparavant.",
+      "explanation": "这个词携带时间与评价背景，而非中性描述。"
+    },
+    {
+      "prompt": "Une citation exacte garantit-elle un cadrage neutre ?",
+      "answer": "Non, l'emplacement et le contexte influencent sa portée.",
+      "explanation": "引语准确性与编辑框架中立性必须分别分析。"
+    }
+  ],
+  "pronunciation": "nuance orale。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Critiquez deux récits médiatiques",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

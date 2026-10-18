@@ -1,35 +1,39 @@
-import {useState,type FormEvent} from 'react';
+import {useEffect,useRef,useState,type FormEvent} from 'react';
 import type {Session} from '@supabase/supabase-js';
 
-type Props={session:Session;apiBase:string;courseId:string;language:string;lessonText:string};
-type Provider='deepseek'|'gemini'|'openrouter'|'openai'|'custom';
+import {useAISettings,DEFAULT_MODELS,type Provider} from './AISettings';
+import PasswordInput from './PasswordInput';
+type Props={session:Session|null;apiBase:string;courseId:string;language:string;lessonText:string;compact?:boolean;initialPrompt?:string};
+
 type Mode='explain'|'essay'|'dialogue'|'audit';
 const MODE_OPTIONS=[{value:'explain',label:'课程讲解'},{value:'essay',label:'作文批改'},{value:'dialogue',label:'AI 对话'},{value:'audit',label:'课程逐课审校（草稿建议）'}] as const;
-const DEFAULT_MODELS:Record<Provider,string>={
- deepseek:'deepseek-chat',gemini:'gemini-2.0-flash',
- openrouter:'openrouter/free',openai:'gpt-4.1-mini',custom:''
-};
-export default function AITutor({session,apiBase,courseId,language,lessonText}:Props){
- const [enabled,setEnabled]=useState(false);
- const [provider,setProvider]=useState<Provider>('deepseek');
- const [endpoint,setEndpoint]=useState('');
- const [model,setModel]=useState(DEFAULT_MODELS.deepseek);
- const [apiKey,setApiKey]=useState('');
+export default function AITutor({session,apiBase,courseId,language,lessonText,compact=false,initialPrompt=''}:Props){
+ const {config,update}=useAISettings();
+ const {enabled,provider,endpoint,model,apiKey}=config;
+ const setEnabled=(enabled:boolean)=>update({enabled});
+ const setEndpoint=(endpoint:string)=>update({endpoint});
+ const setModel=(model:string)=>update({model});
+ const setApiKey=(apiKey:string)=>update({apiKey});
+ const request=useRef<AbortController|null>(null);
  const [mode,setMode]=useState<Mode>('explain');
- const [prompt,setPrompt]=useState('');
+ const [prompt,setPrompt]=useState(initialPrompt);
  const [result,setResult]=useState('');
  const [status,setStatus]=useState('AI 默认关闭。只有你主动点击发送才会请求所选服务。');
  const [busy,setBusy]=useState(false);
  function changeProvider(next:Provider){
-   setProvider(next);setModel(DEFAULT_MODELS[next]);setResult('');setStatus('已切换服务，未发出任何 AI 请求。');
+   update({provider:next,model:DEFAULT_MODELS[next]});setResult('');setStatus('已切换服务，未发出任何 AI 请求。');
  }
+ useEffect(()=>{setResult('');request.current?.abort();return ()=>request.current?.abort();},[enabled,provider,model,session?.user.id]);
  async function submit(e:FormEvent){
    e.preventDefault();
    if(!enabled||busy)return;
+   if(!session){setStatus('请先登录现有账户后调用 AI。');return;}
+   if(!apiKey.trim()||!model.trim()){setStatus('AI 未配置：请在总设置中填写模型和当前会话密钥。');return;}
+   const controller=new AbortController();request.current=controller;
    setBusy(true);setResult('');setStatus('正在调用所选模型…');
    try{
      const response=await fetch(apiBase+'/v1/ai/assist',{
-       method:'POST',
+       method:'POST',signal:controller.signal,
        headers:{'Content-Type':'application/json','Authorization':'Bearer '+session.access_token,
         'X-AI-Key':apiKey},
        body:JSON.stringify({provider,endpoint,model,mode,
@@ -38,18 +42,22 @@ export default function AITutor({session,apiBase,courseId,language,lessonText}:P
      });
      const data=await response.json() as {answer?:string;error?:string};
      if(!response.ok||!data.answer)throw Error(data.error||'服务未返回回答');
+     if(controller.signal.aborted)return;
      setResult(data.answer);
      setStatus('已取得模型回复。请自行核验课程解释、例句和评分建议。');
    }catch(err){setStatus('AI 请求失败：'+(err instanceof Error?err.message:String(err)));}
    finally{setBusy(false);}
  }
  return <section className="cloud-reader" aria-label="可选 AI 学习助手">
-  <h3>AI 教师 · 自选模型</h3>
+  <h3>{compact?'选词 AI 助学':'AI 教师 · 自选模型'}</h3>
   <label className="cloud-toggle"><input type="checkbox" checked={enabled}
     onChange={e=>{setEnabled(e.target.checked);setResult('');}}/>
     手动启用 AI（可能消耗你所选服务商的额度）</label>
   <p className="cloud-disclaimer">默认不调用 AI；密钥仅保留在当前页面内存并随请求临时发送至 Worker，不会写入 GitHub、Supabase 或浏览器本地存储。自定义模型使用兼容 OpenAI Chat Completions 的 HTTPS 接口。服务商可能依据自己的政策处理请求内容。</p>
+  {enabled&&!apiKey&&<p role="status">AI 未配置：请到总设置输入当前会话密钥。未发送请求。</p>}
+  {enabled&&!session&&<p>登录后才可使用现有 AI 接口。</p>}
   {enabled&&<form onSubmit={submit} className="cloud-fields">
+    {!compact&&<>
     <label>模型服务商
       <select value={provider} onChange={e=>changeProvider(e.target.value as Provider)}>
        <option value="deepseek">DeepSeek</option><option value="gemini">Google Gemini</option>
@@ -63,9 +71,10 @@ export default function AITutor({session,apiBase,courseId,language,lessonText}:P
     </label>}
     <label>模型 ID<input required value={model} onChange={e=>setModel(e.target.value)}
        placeholder="输入该服务商真实提供的模型 ID"/></label>
-    <label>API Key（不保存）<input type="password" autoComplete="off" required
+    <label>API Key（不保存）<PasswordInput autoComplete="off" required
        value={apiKey} onChange={e=>setApiKey(e.target.value)}
        placeholder="只在本页粘贴，不要发到聊天"/></label>
+    </>}
     <label>教学模式<select value={mode} onChange={e=>setMode(e.target.value as Mode)}>
       {MODE_OPTIONS.map(x=><option key={x.value} value={x.value}>{x.label}</option>)}
     </select></label>
@@ -74,7 +83,7 @@ export default function AITutor({session,apiBase,courseId,language,lessonText}:P
         value={prompt} onChange={e=>setPrompt(e.target.value)}
         placeholder="例如：解释这节法语课程的主语代词；或粘贴一篇作文进行反馈"/>
     </label>
-    <button disabled={busy||!apiKey||!prompt.trim()} type="submit">
+    <button disabled={busy||!session||!apiKey||!prompt.trim()} type="submit">
       {busy?'正在生成反馈…':'主动调用一次 AI'}
     </button>
   </form>}

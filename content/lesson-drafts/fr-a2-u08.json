@@ -1,0 +1,78 @@
+{
+  "id": "fr-a2-u08",
+  "title": "Opinions et raisons",
+  "language": "fr",
+  "level": "A2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Explain preferences with reasons",
+  "prerequisite": "fr-a2-u07",
+  "context": "讨论图书馆是否延长开放时间，表达意见并给出理由。",
+  "grammar": "je pense que 后通常用陈述式。parce que 引出原因，donc 引出结果，mais 引出转折。表达不同意见可用 Je comprends, mais…；先复述对方理由再提出自己的条件。",
+  "common_mistake": "不要同时机械叠加 parce que donc；明确一句话是在解释原因还是说明结果。",
+  "vocabulary": [
+    [
+      "un avis",
+      "意见"
+    ],
+    [
+      "un horaire",
+      "时段"
+    ],
+    [
+      "un étudiant",
+      "学生"
+    ],
+    [
+      "pratique",
+      "方便的"
+    ],
+    [
+      "le personnel",
+      "工作人员"
+    ],
+    [
+      "une raison",
+      "理由"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "À mon avis, la bibliothèque devrait fermer plus tard le jeudi.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Beaucoup d'étudiants travaillent pendant la journée.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Ils ne peuvent donc pas venir avant dix-huit heures.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Ma collègue comprend ce besoin, mais elle rappelle que le personnel a aussi des contraintes.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "À mon avis, la bibliothèque devrait fermer plus tard le jeudi. Beaucoup d'étudiants travaillent pendant la journée. Ils ne peuvent donc pas venir avant dix-huit heures. Ma collègue comprend ce besoin, mais elle rappelle que le personnel a aussi des contraintes. Nous proposons d'essayer un seul soir par semaine pendant un mois. Ensuite, nous regarderons combien de personnes sont venues. Cette solution permet de discuter à partir d'une expérience concrète.",
+  "listening_script": "À mon avis, la bibliothèque devrait fermer plus tard le jeudi. Beaucoup d'étudiants travaillent pendant la journée. Ils ne peuvent donc pas venir avant dix-huit heures. Ma collègue comprend ce besoin, mais elle rappelle que le personnel a aussi des contraintes. Nous proposons d'essayer un seul soir par semaine pendant un mois. Ensuite, nous regarderons combien de personnes sont venues. Cette solution permet de discuter à partir d'une expérience concrète.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Pourquoi proposer un essai d'un mois ?",
+      "answer": "Pour observer la fréquentation avant une décision durable.",
+      "explanation": "最后两句说明试行与用实际经验讨论的关系。"
+    },
+    {
+      "prompt": "连接两句：Les étudiants travaillent le jour. Ils viennent le soir.",
+      "answer": "Les étudiants travaillent le jour, donc ils viennent le soir.",
+      "explanation": "这里第二句是前面情况的结果，donc 合适。"
+    }
+  ],
+  "pronunciation": "enchaînement de propositions。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Expliquez un choix",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

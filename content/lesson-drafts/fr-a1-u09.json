@@ -1,0 +1,78 @@
+{
+  "id": "fr-a1-u09",
+  "title": "Se déplacer",
+  "language": "fr",
+  "level": "A1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Ask and give simple directions",
+  "prerequisite": "fr-a1-u08",
+  "context": "从车站步行去图书馆，按方向说明找到入口。",
+  "grammar": "指路常用 vous 命令式：allez、tournez、prenez，不保留主语 vous。à gauche/à droite 是方向，tout droit 表示直走。à + le 合为 au：allez au musée。",
+  "common_mistake": "tout droit 不是‘向右’，向右是 à droite。",
+  "vocabulary": [
+    [
+      "la gare",
+      "车站"
+    ],
+    [
+      "un carrefour",
+      "十字路口"
+    ],
+    [
+      "tout droit",
+      "直走"
+    ],
+    [
+      "à gauche",
+      "向左"
+    ],
+    [
+      "un feu",
+      "交通灯"
+    ],
+    [
+      "traverser",
+      "穿过"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "La bibliothèque est près de la gare.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Sortez de la gare et allez tout droit.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Au premier feu, tournez à gauche.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Traversez la petite place.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "La bibliothèque est près de la gare. Sortez de la gare et allez tout droit. Au premier feu, tournez à gauche. Traversez la petite place. La bibliothèque est en face du musée. Son entrée est entre une pharmacie et un café. À pied, le trajet prend environ dix minutes.",
+  "listening_script": "La bibliothèque est près de la gare. Sortez de la gare et allez tout droit. Au premier feu, tournez à gauche. Traversez la petite place. La bibliothèque est en face du musée. Son entrée est entre une pharmacie et un café. À pied, le trajet prend environ dix minutes.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Où faut-il tourner à gauche ?",
+      "answer": "Au premier feu.",
+      "explanation": "不是出站立刻左转，而是在第一个交通灯处。"
+    },
+    {
+      "prompt": "改为指令：Vous traversez la place.",
+      "answer": "Traversez la place.",
+      "explanation": "命令式保留动词形式，去掉主语。"
+    }
+  ],
+  "pronunciation": "enchaînement;intonation polie。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Expliquez un itinéraire court",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-language-upgrade-u08",
+  "title": "Personalised error correction through authentic drafts",
+  "language": "en",
+  "level": "B2-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply personalised error correction through authentic drafts in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-language-upgrade-u07",
+  "context": "把自己的作文错误整理成可检验的修订规则，而非只收藏正确答案。",
+  "grammar": "修订循环：原句→问题类别→最小修改→解释→新语境迁移。把语法错误、事实错误和可选风格建议分开；参考范文不能自动替代作者原意。",
+  "common_mistake": "自动反馈提出替换不代表原句必错，应核对意思和语境。",
+  "vocabulary": [
+    [
+      "draft",
+      "草稿"
+    ],
+    [
+      "revision",
+      "修订"
+    ],
+    [
+      "pattern",
+      "规律"
+    ],
+    [
+      "transfer",
+      "迁移"
+    ],
+    [
+      "rationale",
+      "理由"
+    ],
+    [
+      "verify",
+      "核验"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "A learner wrote that the number of visitors have increased since last year.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The grammatical head is number, so the verb should be has.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "After making this correction, the learner writes a new sentence about the number of applications to check transfer.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "A different comment suggests replacing a simple word with a more formal synonym.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "A learner wrote that the number of visitors have increased since last year. The grammatical head is number, so the verb should be has. After making this correction, the learner writes a new sentence about the number of applications to check transfer. A different comment suggests replacing a simple word with a more formal synonym. That suggestion is stylistic and should be assessed against the intended meaning. The revision log therefore separates required corrections from optional choices. Its purpose is to help the learner explain recurring decisions rather than accept every proposed edit automatically.",
+  "listening_script": "A learner wrote that the number of visitors have increased since last year. The grammatical head is number, so the verb should be has. After making this correction, the learner writes a new sentence about the number of applications to check transfer. A different comment suggests replacing a simple word with a more formal synonym. That suggestion is stylistic and should be assessed against the intended meaning. The revision log therefore separates required corrections from optional choices. Its purpose is to help the learner explain recurring decisions rather than accept every proposed edit automatically.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Correct The number of visitors have increased.",
+      "answer": "The number of visitors has increased.",
+      "explanation": "主语中心词 number 为单数。"
+    },
+    {
+      "prompt": "Must every more formal synonym be accepted ?",
+      "answer": "No, it must preserve the intended meaning and suit the context.",
+      "explanation": "风格选择与明确语法错误分别处理。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "从自己的真实初稿中选三句，记录原句、最小修订、理由和一条新语境例句。不要把同义词替换一律标成错误，也不要将浏览器转写差异写成音素诊断。",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

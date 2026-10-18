@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { createClient, type Session } from '@supabase/supabase-js';
+import { type Session } from '@supabase/supabase-js';
 import './cloud.css';
+import {cloudClient} from './v44Connection';
 import { cloudPublicDefaults } from './cloudPublicDefaults';
 import BackupImporter from './BackupImporter';
 import LessonReader from './LessonReader';
@@ -29,7 +30,7 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL?.trim() || cloudPublicDefa
 const publicKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY?.trim() || cloudPublicDefaults.supabasePublishableKey;
 const apiBase = (import.meta.env.VITE_WORKER_API_URL?.trim() || cloudPublicDefaults.workerApiUrl).replace(/\/$/, '');
 const configured = Boolean(supabaseUrl && publicKey && /^https:\/\//.test(apiBase));
-const client = configured ? createClient(supabaseUrl, publicKey) : null;
+const client = configured ? cloudClient : null;
 const stages = ['情境', '语法', '词汇', '听读', '发音', '表达'];
 const draftKey = (uid: string,courseId: string) => 'llh-cloud-draft-v1:' + uid + ':' + courseId;
 
@@ -43,7 +44,7 @@ async function worker<T>(path: string, token?: string, init: RequestInit = {}): 
   return value as T;
 }
 
-export default function CloudWorkspace() {
+export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{initialPanel?:'learn'|'path'|'foundation'|'audio'|'speech'|'review'|'resources'|'ai';initialCourse?:string}) {
   const [session, setSession] = useState<Session | null>(null);
   const [recoveryMode,setRecoveryMode] = useState(false);
   const [catalog, setCatalog] = useState<Course[]>([]);
@@ -57,7 +58,7 @@ export default function CloudWorkspace() {
   const [courseQuery,setCourseQuery]=useState('');
   const [status, setStatus] = useState('正在连接…');
   const [busy, setBusy] = useState(false);
-  const [activePanel,setActivePanel] = useState<'learn'|'path'|'foundation'|'audio'|'speech'|'review'|'resources'|'ai'>('learn');
+  const [activePanel,setActivePanel] = useState<'learn'|'path'|'foundation'|'audio'|'speech'|'review'|'resources'|'ai'>(initialPanel);
   const [overviewVersion,setOverviewVersion] = useState(0);
   const [progressReadyKey,setProgressReadyKey] = useState('');
   const selectedRef=useRef('');
@@ -79,7 +80,7 @@ export default function CloudWorkspace() {
       if(event==='PASSWORD_RECOVERY')setRecoveryMode(true);
     });
     void worker<{courses:Course[]}>('/v1/courses')
-      .then(({courses}) => {if (alive) {setCatalog(courses); chooseCourse(courses[0]?.id || ''); setStatus('课程索引已加载。');}})
+      .then(({courses}) => {if (alive) {setCatalog(courses); chooseCourse(courses.some(c=>c.id===initialCourse)?initialCourse:courses[0]?.id || ''); setStatus('课程索引已加载。');}})
       .catch(e => {if (alive) setStatus('云端索引暂不可用：' + e.message);});
     return () => {alive = false; listener.subscription.unsubscribe();};
   }, []);

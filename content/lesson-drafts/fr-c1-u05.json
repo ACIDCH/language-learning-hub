@@ -1,0 +1,78 @@
+{
+  "id": "fr-c1-u05",
+  "title": "Analyse culturelle",
+  "language": "fr",
+  "level": "C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Interpret cultural discourse and implication",
+  "prerequisite": "fr-c1-u04",
+  "context": "分析一座工业遗产建筑的改造，讨论记忆如何被选择呈现。",
+  "grammar": "名词化可凝聚复杂过程，但需保留行动者：la sélection des récits par la mairie。非人称表达 on considère 可能隐藏评价主体；分析应追问‘谁这样认为、基于什么’。",
+  "common_mistake": "把改造称作复兴，并不自然证明所有记忆都被保存。",
+  "vocabulary": [
+    [
+      "un patrimoine",
+      "遗产"
+    ],
+    [
+      "la reconversion",
+      "用途改造"
+    ],
+    [
+      "une mémoire",
+      "记忆"
+    ],
+    [
+      "un récit",
+      "叙述"
+    ],
+    [
+      "occulter",
+      "遮蔽"
+    ],
+    [
+      "une appropriation",
+      "认领与使用"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "La transformation d'une ancienne usine en centre culturel est souvent racontée comme une renaissance.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Ce récit met en valeur l'ouverture du lieu, mais peut reléguer au second plan les conflits qui ont marqué sa fermeture.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "La conservation d'une cheminée ne garantit pas, à elle seule, la transmission de l'expérience ouvrière.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Il faut encore se demander qui choisit les témoignages, quels objets sont exposés et quelles paroles restent absentes.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "La transformation d'une ancienne usine en centre culturel est souvent racontée comme une renaissance. Ce récit met en valeur l'ouverture du lieu, mais peut reléguer au second plan les conflits qui ont marqué sa fermeture. La conservation d'une cheminée ne garantit pas, à elle seule, la transmission de l'expérience ouvrière. Il faut encore se demander qui choisit les témoignages, quels objets sont exposés et quelles paroles restent absentes. Inversement, réduire toute reconversion à une opération d'effacement empêcherait de voir les usages nouveaux inventés par les habitants. L'analyse gagne à suivre ces appropriations concrètes. Un atelier animé par d'anciens salariés peut, par exemple, mettre en dialogue mémoire du travail et pratiques artistiques. La valeur culturelle du projet se construit alors dans une négociation continue, plutôt qu'elle ne réside automatiquement dans le bâtiment restauré.",
+  "listening_script": "La transformation d'une ancienne usine en centre culturel est souvent racontée comme une renaissance. Ce récit met en valeur l'ouverture du lieu, mais peut reléguer au second plan les conflits qui ont marqué sa fermeture. La conservation d'une cheminée ne garantit pas, à elle seule, la transmission de l'expérience ouvrière. Il faut encore se demander qui choisit les témoignages, quels objets sont exposés et quelles paroles restent absentes. Inversement, réduire toute reconversion à une opération d'effacement empêcherait de voir les usages nouveaux inventés par les habitants. L'analyse gagne à suivre ces appropriations concrètes. Un atelier animé par d'anciens salariés peut, par exemple, mettre en dialogue mémoire du travail et pratiques artistiques. La valeur culturelle du projet se construit alors dans une négociation continue, plutôt qu'elle ne réside automatiquement dans le bâtiment restauré.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Pourquoi la cheminée ne suffit-elle pas ?",
+      "answer": "Un objet conservé ne transmet pas automatiquement les expériences et les conflits.",
+      "explanation": "物质保存与叙事选择是不同层面。"
+    },
+    {
+      "prompt": "Quelle lecture inverse le texte refuse-t-il aussi ?",
+      "answer": "Toute reconversion serait un effacement.",
+      "explanation": "作者同时避免简单赞颂和一概否定。"
+    }
+  ],
+  "pronunciation": "intonation expressive。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Analysez une chronique",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

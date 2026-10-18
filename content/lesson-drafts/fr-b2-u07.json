@@ -1,0 +1,78 @@
+{
+  "id": "fr-b2-u07",
+  "title": "Culture et société",
+  "language": "fr",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Interpret perspectives and rhetorical devices",
+  "prerequisite": "fr-b2-u06",
+  "context": "讨论文化设施免费开放，考虑经济与实际使用障碍。",
+  "grammar": "ne…pas seulement…mais aussi 扩展论证范围；en dépit de 接名词，bien que 接从句。抽象名词应配具体例子，避免只靠‘文化很重要’的空泛判断。",
+  "common_mistake": "免费不自动等于所有人都能到达或理解展览。",
+  "vocabulary": [
+    [
+      "la gratuité",
+      "免费"
+    ],
+    [
+      "la médiation",
+      "文化导览与沟通"
+    ],
+    [
+      "un obstacle",
+      "障碍"
+    ],
+    [
+      "un public",
+      "观众群体"
+    ],
+    [
+      "fréquenter",
+      "经常到访"
+    ],
+    [
+      "une démarche",
+      "做法"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "La gratuité d'un musée supprime un obstacle financier, mais elle ne suffit pas toujours à diversifier son public.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Les horaires peuvent rester incompatibles avec certaines activités professionnelles.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Une famille peut aussi hésiter à entrer dans un lieu dont elle ignore les codes.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "La médiation culturelle répond à une partie de ces difficultés en proposant des formes d'accueil et d'explication adaptées.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "La gratuité d'un musée supprime un obstacle financier, mais elle ne suffit pas toujours à diversifier son public. Les horaires peuvent rester incompatibles avec certaines activités professionnelles. Une famille peut aussi hésiter à entrer dans un lieu dont elle ignore les codes. La médiation culturelle répond à une partie de ces difficultés en proposant des formes d'accueil et d'explication adaptées. Il ne s'agit pas de simplifier toute œuvre jusqu'à lui retirer sa complexité. Il s'agit de multiplier les possibilités d'y accéder. Une évaluation utile devrait donc examiner les expériences des visiteurs, et pas seulement compter les entrées.",
+  "listening_script": "La gratuité d'un musée supprime un obstacle financier, mais elle ne suffit pas toujours à diversifier son public. Les horaires peuvent rester incompatibles avec certaines activités professionnelles. Une famille peut aussi hésiter à entrer dans un lieu dont elle ignore les codes. La médiation culturelle répond à une partie de ces difficultés en proposant des formes d'accueil et d'explication adaptées. Il ne s'agit pas de simplifier toute œuvre jusqu'à lui retirer sa complexité. Il s'agit de multiplier les possibilités d'y accéder. Une évaluation utile devrait donc examiner les expériences des visiteurs, et pas seulement compter les entrées.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quel indicateur ne suffit pas selon le texte ?",
+      "answer": "Le nombre d'entrées.",
+      "explanation": "数量不能完整反映访问体验或人群多样性。"
+    },
+    {
+      "prompt": "Reformulez malgré les horaires difficiles avec bien que.",
+      "answer": "Bien que les horaires soient difficiles, certains visiteurs viennent.",
+      "explanation": "bien que 后用虚拟式；改写需补出完整主句。"
+    }
+  ],
+  "pronunciation": "prosodie argumentative。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Commentez un essai",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

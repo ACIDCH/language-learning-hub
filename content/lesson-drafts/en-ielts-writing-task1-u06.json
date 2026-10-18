@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-writing-task1-u06",
+  "title": "Map and spatial change reports",
+  "language": "en",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply map and spatial change reports in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-writing-task1-u05",
+  "context": "根据文字版自编前后地图写报告：北侧停车场改花园，东侧图书馆保留，南侧新增步道，西侧咖啡馆扩大。",
+  "grammar": "改造可用 was replaced by、was extended；保留用 remained unchanged。方位词需要一致参照，in the north 与 north of the library 不同。无图像时必须明示这是文字示意。",
+  "common_mistake": "不得从改造结果推断‘为了提高旅游收入’等未给出的原因。",
+  "vocabulary": [
+    [
+      "replace",
+      "替换"
+    ],
+    [
+      "extend",
+      "扩建"
+    ],
+    [
+      "retain",
+      "保留"
+    ],
+    [
+      "footpath",
+      "步道"
+    ],
+    [
+      "northern",
+      "北部的"
+    ],
+    [
+      "layout",
+      "布局"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "The invented layout compares a small public square before and after redevelopment.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The car park in the north was replaced by a garden.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "On the western side, the café was extended into an adjacent vacant area.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The library to the east remained unchanged.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "The invented layout compares a small public square before and after redevelopment. The car park in the north was replaced by a garden. On the western side, the café was extended into an adjacent vacant area. The library to the east remained unchanged. A new footpath was added along the southern boundary. Overall, the site gained green space and pedestrian access while retaining its library. No change to the library's size or function is specified in the description.",
+  "listening_script": "The invented layout compares a small public square before and after redevelopment. The car park in the north was replaced by a garden. On the western side, the café was extended into an adjacent vacant area. The library to the east remained unchanged. A new footpath was added along the southern boundary. Overall, the site gained green space and pedestrian access while retaining its library. No change to the library's size or function is specified in the description.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Which building remained unchanged ?",
+      "answer": "The library.",
+      "explanation": "不能因整体重建就描述图书馆也扩建。"
+    },
+    {
+      "prompt": "Rewrite The garden replaced the car park with the old feature as subject.",
+      "answer": "The car park was replaced by the garden.",
+      "explanation": "保持替换方向，避免新旧颠倒。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating map and spatial change reports",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

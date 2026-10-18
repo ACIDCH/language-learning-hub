@@ -1,0 +1,78 @@
+{
+  "id": "fr-b1-u09",
+  "title": "Comprendre les arguments",
+  "language": "fr",
+  "level": "B1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Read and report arguments",
+  "prerequisite": "fr-b1-u08",
+  "context": "阅读支持校园自行车项目的文章，识别论点、例子和限制。",
+  "grammar": "论证可用 d'une part/d'autre part 区分理由，用 toutefois 限定结论。例子只说明一种情形，不能独自证明普遍规律。读每段时标注‘主张—理由—证据—限制’。",
+  "common_mistake": "不能因为文章给出一个成功学校，就说所有学校都会成功。",
+  "vocabulary": [
+    [
+      "un argument",
+      "论据"
+    ],
+    [
+      "une preuve",
+      "证据"
+    ],
+    [
+      "un exemple",
+      "例子"
+    ],
+    [
+      "toutefois",
+      "然而"
+    ],
+    [
+      "réduire",
+      "减少"
+    ],
+    [
+      "une limite",
+      "局限"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Un collège propose de développer les trajets à vélo.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "D'une part, cette mesure pourrait réduire les embouteillages devant l'entrée.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "D'autre part, elle offrirait aux élèves une activité physique quotidienne.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Dans une commune voisine, un groupe accompagné par des parents fonctionne déjà.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Un collège propose de développer les trajets à vélo. D'une part, cette mesure pourrait réduire les embouteillages devant l'entrée. D'autre part, elle offrirait aux élèves une activité physique quotidienne. Dans une commune voisine, un groupe accompagné par des parents fonctionne déjà. Toutefois, cet exemple ne répond pas à toutes les difficultés locales. Certains élèves habitent loin et une route reste dangereuse. Avant de généraliser le projet, le collège souhaite identifier un itinéraire sûr et consulter les familles concernées.",
+  "listening_script": "Un collège propose de développer les trajets à vélo. D'une part, cette mesure pourrait réduire les embouteillages devant l'entrée. D'autre part, elle offrirait aux élèves une activité physique quotidienne. Dans une commune voisine, un groupe accompagné par des parents fonctionne déjà. Toutefois, cet exemple ne répond pas à toutes les difficultés locales. Certains élèves habitent loin et une route reste dangereuse. Avant de généraliser le projet, le collège souhaite identifier un itinéraire sûr et consulter les familles concernées.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Pourquoi l'exemple voisin ne suffit-il pas ?",
+      "answer": "Les distances et la sécurité locale peuvent être différentes.",
+      "explanation": "作者随后列出本地条件，限定例子的可推广性。"
+    },
+    {
+      "prompt": "Quel connecteur introduit la limite ?",
+      "answer": "Toutefois.",
+      "explanation": "从支持理由转入保留条件。"
+    }
+  ],
+  "pronunciation": "intonation de concession。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Résumez deux arguments",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

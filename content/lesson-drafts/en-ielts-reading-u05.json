@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-reading-u05",
+  "title": "Paraphrase and lexical cohesion",
+  "language": "en",
+  "level": "B1-B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply paraphrase and lexical cohesion in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-reading-u04",
+  "context": "追踪不同词组如何指向同一概念，同时保留概念之间的差别。",
+  "grammar": "cohesion 包括指代、同义改写、上义词与重复关键词。this intervention 可以回指前句措施；不是所有同主题词都指同一对象。先标注名词链，再解释连贯关系。",
+  "common_mistake": "shelter 与 housing 可能相关，但在具体文本中不一定可以无损互换。",
+  "vocabulary": [
+    [
+      "intervention",
+      "干预措施"
+    ],
+    [
+      "insulation",
+      "隔热材料"
+    ],
+    [
+      "dwelling",
+      "住宅"
+    ],
+    [
+      "retrofit",
+      "改造"
+    ],
+    [
+      "energy demand",
+      "能源需求"
+    ],
+    [
+      "referent",
+      "所指"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "The council offered grants for insulation in older homes.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "This intervention was intended to reduce winter heating demand.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Owners of eligible dwellings could apply for help with roof and wall improvements.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The retrofit programme did not cover every type of building work.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "The council offered grants for insulation in older homes. This intervention was intended to reduce winter heating demand. Owners of eligible dwellings could apply for help with roof and wall improvements. The retrofit programme did not cover every type of building work. In particular, decorative repairs remained the owner's responsibility. These limits matter when comparing the scheme with broader housing subsidies. Both support households, but they fund different activities and should not be treated as identical policies.",
+  "listening_script": "The council offered grants for insulation in older homes. This intervention was intended to reduce winter heating demand. Owners of eligible dwellings could apply for help with roof and wall improvements. The retrofit programme did not cover every type of building work. In particular, decorative repairs remained the owner's responsibility. These limits matter when comparing the scheme with broader housing subsidies. Both support households, but they fund different activities and should not be treated as identical policies.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What does this intervention refer to ?",
+      "answer": "Grants for insulation in older homes.",
+      "explanation": "回指具体措施，不是笼统的所有住房政策。"
+    },
+    {
+      "prompt": "Are decorative repairs covered ?",
+      "answer": "No, they remain the owner's responsibility.",
+      "explanation": "not every 的范围由后文具体说明。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating paraphrase and lexical cohesion",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}
