@@ -77,8 +77,9 @@ export default function ConnectionStatus({session}:{session:Session|null}){
     checks.push(...authenticated);
    }
    checks.push(good('OpenRouter AI','用户已实测浏览器直连 HTTP 200、Key 验证与一次免费模型生成成功；本页不会再次调用 AI'));
-   if(session&&cloudClient){checks.push(await probe('账户设置云端同步',async()=>{
-    const {error}=await cloudClient.from('user_settings').select('user_id',{head:true,count:'exact'}).eq('user_id',session.user.id);
+   const settingsClient=cloudClient;
+   if(session&&settingsClient){checks.push(await probe('账户设置云端同步',async()=>{
+    const {error}=await settingsClient.from('user_settings').select('user_id',{head:true,count:'exact'}).eq('user_id',session.user.id);
     if(error)throw Error(error.message);
     return '个人设置表可读；跨设备保存与密钥恢复仍需本账号实测';
    }));}

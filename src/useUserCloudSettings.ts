@@ -68,9 +68,10 @@ export function useUserCloudSettings(session:Session|null,preferences:Preference
 
  useEffect(()=>{
   if(!uid||loadedFor!==uid||!cloudClient)return;
+  const settingsClient=cloudClient;
   let active=true;
   const timer=setTimeout(()=>{
-   void cloudClient.from('user_settings').upsert({
+   void settingsClient.from('user_settings').upsert({
     user_id:uid,preferences:cleanPreferences(preferences),
     ai_preferences:publicAiPreferences(config),updated_at:new Date().toISOString()
    },{onConflict:'user_id'}).then(({error})=>{
