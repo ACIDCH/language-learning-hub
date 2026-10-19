@@ -22,6 +22,7 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
  const [selected,setSelected]=useState<DriveFile|null>(null);
  const [text,setText]=useState('');
  const [audioUrl,setAudioUrl]=useState('');
+ const [pdfUrl,setPdfUrl]=useState('');
  const [status,setStatus]=useState('正在读取账户关联的云盘设置…');
  const [playing,setPlaying]=useState('');
  const [busy,setBusy]=useState(false);
@@ -57,7 +58,8 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
   return()=>{alive=false;};
  },[client,uid]);
  useEffect(()=>()=>{if(audioUrl)URL.revokeObjectURL(audioUrl);},[audioUrl]);
- useEffect(()=>{setSelected(null);setText('');setPlaying('');setAudioUrl('');},[subject,courseId]);
+ useEffect(()=>()=>{if(pdfUrl)URL.revokeObjectURL(pdfUrl);},[pdfUrl]);
+ useEffect(()=>{setSelected(null);setText('');setPlaying('');setAudioUrl('');setPdfUrl('');},[subject,courseId]);
  async function persistSettings(nextId=clientId,nextSubject=subject){
   const {error}=await client.from('user_drive_settings').upsert({
    user_id:uid,oauth_client_id:nextId.trim(),active_subject:nextSubject,
@@ -153,11 +155,12 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
  }
  async function openFile(file:DriveFile){
   if(!token){setStatus('请先重新授权该 Google Drive 账号');return;}
-  setSelected(file);setText('');setAudioUrl('');setPlaying('');setBusy(true);
+  setSelected(file);setText('');setAudioUrl('');setPdfUrl('');setPlaying('');setBusy(true);
   try{
    const result=await readDriveFile(token,file);
    if(result.text!==undefined){setText(result.text);setStatus('已从 Drive 实时读取文本（只读），未替换 Supabase 现有教材。');}
    else if(result.audio){setAudioUrl(URL.createObjectURL(result.audio));setStatus('已下载音频到浏览器内存，请点击播放；尚未确认可解码或已发声。');}
+   else if(result.pdf){setPdfUrl(URL.createObjectURL(result.pdf));setStatus('已从 Drive 只读获取完整 PDF 文件，在浏览器原生 PDF 阅读器中预览；不裁剪前几页。');}
   }catch(e){setStatus('素材读取失败：'+(e instanceof Error?e.message:String(e)));}
   finally{setBusy(false);}
  }
@@ -230,6 +233,11 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
   {text&&<details open><summary>在线 Google Drive 全文（仅浏览器临时读取）</summary>
    <pre className="lesson-paragraphs" style={{whiteSpace:'pre-wrap',overflowWrap:'anywhere'}}>{text}</pre>
   </details>}
+  {selected&&pdfUrl&&<section aria-label="Drive PDF 原版阅读">
+   <h4>{selected.name} · PDF 原版</h4>
+   <iframe title="Google Drive PDF 原版在线阅读" src={pdfUrl} style={{width:'100%',minHeight:'70vh',border:'1px solid #ddd'}}/>
+   <p className="cloud-disclaimer">浏览器原生 PDF，保持原始排版。此处没有自动 OCR、教材审校或内容改写。</p>
+  </section>}
   {selected&&audioUrl&&<div className="audio-player">
    <strong>{selected.name}</strong>
    <audio controls preload="metadata" src={audioUrl}

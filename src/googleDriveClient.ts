@@ -11,7 +11,7 @@ export function validDriveFolderId(raw:string){return raw==='root'||/^[\w-]{10,2
 export function driveFileKind(file:DriveFile):'folder'|'lesson'|'audio'|'unsupported' {
  const n=file.name.toLowerCase();
  if(file.mimeType==='application/vnd.google-apps.folder')return 'folder';
- if(file.mimeType==='application/vnd.google-apps.document'||/\.(md|txt|text|srt|vtt)$/i.test(n)||file.mimeType.startsWith('text/'))return 'lesson';
+ if(file.mimeType==='application/pdf'||/\.pdf$/i.test(n)||file.mimeType==='application/vnd.google-apps.document'||/\.(md|txt|text|srt|vtt)$/i.test(n)||file.mimeType.startsWith('text/'))return 'lesson';
  if(/\.(mp3|wav|m4a|ogg|webm)$/i.test(n)||file.mimeType.startsWith('audio/'))return 'audio';
  return 'unsupported';
 }
@@ -76,19 +76,21 @@ export async function listDriveFiles(token:string,folder:string,pageToken=''):Pr
  const data=await response.json() as {files?:DriveFile[];nextPageToken?:string};
  return {files:data.files||[],nextPageToken:data.nextPageToken};
 }
-export async function readDriveFile(token:string,file:DriveFile):Promise<{text?:string;audio?:Blob}>{
+export async function readDriveFile(token:string,file:DriveFile):Promise<{text?:string;audio?:Blob;pdf?:Blob}>{
  if(file.capabilities?.canDownload===false)throw Error('该文件的所有者禁止下载');
  const kind=driveFileKind(file);
- if(kind==='unsupported'||kind==='folder')throw Error('支持 Google Docs、TXT/Markdown、MP3 等文件；PDF 请从 Google Drive 官方查看');
+ if(kind==='unsupported'||kind==='folder')throw Error('支持 Google Docs、TXT/Markdown、PDF 以及常见音频；其他格式可从 Drive 官方查看');
  const id=encodeURIComponent(file.id);
  const url=file.mimeType==='application/vnd.google-apps.document'
   ?'https://www.googleapis.com/drive/v3/files/'+id+'/export?mimeType=text%2Fplain'
   :'https://www.googleapis.com/drive/v3/files/'+id+'?alt=media';
- if(file.size && Number(file.size)>25_000_000)throw Error('文件超过 25MB 单次浏览上限；请分课或选短音频');
+ const limit=file.mimeType==='application/pdf'||/\.pdf$/i.test(file.name)?75_000_000:25_000_000;
+ if(file.size && Number(file.size)>limit)throw Error('文件超过本次浏览大小上限（PDF 75MB，其他 25MB）');
  const res=await googleFetch(token,url);
  const blob=await res.blob();
- if(blob.size>25_000_000)throw Error('文件超过 25MB 单次浏览上限');
+ if(blob.size>limit)throw Error('文件超过当前浏览大小上限');
  if(kind==='audio')return {audio:blob};
+ if(file.mimeType==='application/pdf'||/\.pdf$/i.test(file.name))return {pdf:blob};
  return {text:await blob.text()};
 }
 

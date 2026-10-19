@@ -54,7 +54,7 @@ describe('V4.4 integration contracts',()=>{
   expect(validDriveFolderId('bad/path')).toBe(false);
   expect(driveFileKind({id:'file',name:'course.md',mimeType:'text/markdown'})).toBe('lesson');
   expect(driveFileKind({id:'file',name:'lesson.mp3',mimeType:'audio/mpeg'})).toBe('audio');
-  expect(driveFileKind({id:'file',name:'file.pdf',mimeType:'application/pdf'})).toBe('unsupported');
+  expect(driveFileKind({id:'file',name:'file.pdf',mimeType:'application/pdf'})).toBe('lesson');
  });
  it('merges existing local favorites with cloud favorites and keeps remote identifiers',()=>{
   const local=safeFavorites([{courseId:'fr-a1-u01',text:'Bonjour'},{courseId:'fr-a1-u01',text:'Bonjour'},{courseId:'fr-a1-u02',text:'Merci'}, {courseId:'invalid',text:''}]);
