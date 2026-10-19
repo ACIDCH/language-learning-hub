@@ -29,3 +29,16 @@ This is an opt-in integration into the existing **Cloudflare Worker /v1/ai/assis
 Currently the Worker accepts text prompts/context through a compatibility endpoint. **A Gemini model's native audio/video/PDF capabilities are not automatically available through this text-only implementation.** Real API calls, billing entitlement and lesson correctness require owner-side credentials and real acceptance tests.
 
 Official references: [Gemini API keys](https://ai.google.dev/gemini-api/docs/api-key), [Gemini OpenAI compatibility](https://ai.google.dev/gemini-api/docs/openai), [Gemini pricing](https://ai.google.dev/gemini-api/docs/pricing), [DeepSeek API](https://api-docs.deepseek.com/), [Hermes setup](https://api-docs.deepseek.com/quick_start/agent_integrations/hermes/).
+
+
+## Third provider: OpenRouter
+
+The learning platform already uses the official OpenRouter Chat Completions endpoint through its Worker. This branch additionally supports a **manual three-provider comparison** (DeepSeek + Gemini + OpenRouter), where all three providers require separate developer API keys and three explicit calls. The ordinary model selection continues to support OpenRouter alone; no service is automatically invoked as a fallback.
+
+1. Create and manage a key at [OpenRouter Keys](https://openrouter.ai/settings/keys). A screenshot showing a full key inside a code sample must be treated as exposure: **revoke that specific key and generate a new key**.
+2. Choose the **OpenRouter** provider in AI Teacher; enter the new key into the browser input and the model ID `openrouter/free` (or an exact ID selected from [OpenRouter models](https://openrouter.ai/models)).
+3. For three-model comparison, configure all three keys individually during the same page session, then choose the explicit comparison button. It makes one call per provider and returns separate outputs. Refreshing the page clears these in-memory credentials.
+4. OpenRouter's **key spending limit is a spending ceiling**, not prepaid/promotional credit. The `openrouter/free` route selects an available free model dynamically and may vary in JSON support, reliability, latency, quotas and output quality.
+5. OpenRouter can route to Gemini or DeepSeek family models through its own API, **but that is not the same as using either provider's direct API key, quota or pricing**. Always inspect which model is selected and its usage.
+
+Provider costs, model availability and human curriculum QA remain independently verified conditions; mock CI tests do not establish live quota or provider success.
