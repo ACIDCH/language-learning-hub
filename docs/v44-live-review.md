@@ -23,7 +23,7 @@ PR：https://github.com/ACIDCH/language-learning-hub/pull/50
 - Supabase 项目健康，主课目录108条、私有正文108条、音频索引377条，学习进度及 RLS 配置存在。
 - Cloudflare Pages 和 Worker 预览由 GitHub 机器人确认部署成功。
 - 本次修复固定预览站来源白名单、预览前端→Worker 路由，并提供无凭证只读连通性检查。
-- 当前工具环境无法从本机直接请求 Cloudflare 域名或代替用户登录/使用话筒，因此真实登录、跨设备保存、本人 AI 密钥调用及真人语音等仍需你亲测，不虚报通过。
+- 当前工具环境无法从本机直接请求 Cloudflare 域名或代替用户使用话筒。用户已实际确认 Supabase 登录、主课进度云端保存与恢复，以及 OpenRouter 浏览器直连、Key 检查和一次模型生成成功；跨设备及其他功能的真实验收状态仍需分别记录，不以 CI 冒充。
 - 101节新增原创课仍是**已授权公开预览的待审初稿**；没有正式教材发布批准。
 - `production_deployment=pending_final_acceptance`，**未合并 main，未部署正式站点**。
 
@@ -43,7 +43,7 @@ PR：https://github.com/ACIDCH/language-learning-hub/pull/50
 - 「总设置 → 账户与同步」的逐项状态检查是只读的，不修改个人记录。
 - 「总设置 → AI 助学」默认 OpenRouter／`openrouter/free`，AI 仍默认关闭。用户自行在 [OpenRouter 创建密钥](https://openrouter.ai/settings/keys)，仅在浏览器的密码框填写，不发给助手。
 - 「验证 OpenRouter API Key」仅调用 OpenRouter `GET /api/v1/key` 获取密钥有效性及非敏感元数据，不请求任何聊天生成，不消耗模型推理 Token。验证成功不代表实际模型请求必然成功或没有其他额度限制。
-- 用户主动开启 AI 并点击生成后，才向 `/api/v1/ai/assist` 请求答案；具体服务费/免费限额以 OpenRouter 当时的账户实际情况为准。
+- 用户主动开启 AI 并点击生成后，默认浏览器直连 OpenRouter 官方 `/api/v1/chat/completions`；关闭直连选项时才使用同源 `/api/v1/ai/assist`。具体服务费/免费限额以 OpenRouter 当时的账户情况为准。
 
 ## OpenRouter 密钥验证交互改进（2026-10-19）
 - AI 默认关闭时，仍可输入和验证 OpenRouter Key；不会执行模型推理。
@@ -54,13 +54,23 @@ PR：https://github.com/ACIDCH/language-learning-hub/pull/50
 ## OpenRouter 网络诊断（2026-10-19）
 
 - 账户的 `Key limit $100` 为单个 Key 的最高消费上限，不是默认赠送的余额。
-- 新增「检测 OpenRouter 网络（不需要 Key）」，只检查 Cloudflare 后端能否访问 OpenRouter 模型目录，不调用推理、不消耗 Token。
+- 旧版「检测 OpenRouter 网络（不需要 Key）」曾检查 Cloudflare 后端，用户实际遇到 `transport`。当前版本改为浏览器直接 GET OpenRouter `/api/v1/models`，不调用推理、不消耗 Token。
 - Key 验证响应区分 OpenRouter 401（Key 不可用）、403（被拒绝访问，未必是 Key 错误）、429（限流）和后端网络异常（timeout/dns/connection/transport），不泄露 Key 或原始上游异常。
 
 ## OpenRouter 浏览器直连预览（2026-10-19）
 
 - 用户实测 Cloudflare → OpenRouter 的无 Key 和 Key 检测均为 `transport`，因此问题在服务端出站请求，不是凭此证明 Key 有误。
-- 现有 AI 设置页改为从浏览器直接探测官方 `GET /models`、验证 `GET /key`，且原服务端 API 仍保留作为 Key 校验的备用路径。浏览器能否直连须由用户自己的 Chrome/Edge 测试，不能仅凭 CI 宣称通过。
+- 现有 AI 设置页从浏览器直接探测官方 `GET /models`、验证 `GET /key`，且原服务端 API 仍保留作为 Key 校验的备用路径。**2026-10-19 用户已在真实浏览器确认直连 HTTP 200、Key 验证成功，并报告一次 AI 生成成功**；此前 CI mock 不是这一结论的证据。
 - **仅当用户主动启用 AI、填写提示词并点击生成**，才使用官方 `POST /chat/completions`；默认 OpenRouter 浏览器直连可手动取消，取消后恢复原服务端调用。不会因配置、检查 Key、切换页面而自动产生模型推理。
 - API Key 只驻留当前页面内存，请勿分享密钥；用户本机浏览器的 Network 记录可看到发往官方 OpenRouter 的授权请求，适合个人自用，不宜在共享设备使用。
 - 如出现浏览器 CORS/网络错误，应报告界面错误文案；不要重复新建密钥。
+
+## OpenRouter P0 用户真实验收记录（2026-10-19）
+
+证据类型：**用户提供的浏览器截图与本人操作反馈**，不是本工具环境独立完成的浏览器端到端测试。
+
+1. 在 V4.4 AI 设置页，浏览器直接检测 OpenRouter 网络：**HTTP 200，成功**。
+2. 通过浏览器直连 OpenRouter `GET /api/v1/key`：**Key 验证成功，显示免费方案**；界面显示 Key 剩余消费限额 **0.00 美元**。这是 Key 消费限额信息，不能当作账户余额；不能据此推断收费模型可用。
+3. 用户明确反馈已主动尝试一次 `openrouter/free` AI 生成，**调用成功**。没有在聊天中披露 API Key 或粘贴模型原始回复。此项记录为「用户亲测成功」；不声称独立重放了该请求或验证所有模型。
+4. **P0 浏览器直连路径验收通过**。此前 Cloudflare 服务端 `transport` 不代表原服务端出站故障已恢复；直连路径正常已足够解锁当前 AI 使用。
+5. 后续按模块继续检查私有教材、基础课进度、单条私人音频实际可播性等未验收项。不得修改课程原稿或现有个人学习记录。PR #50 仍为 Open，禁止合并 main 或正式部署。
