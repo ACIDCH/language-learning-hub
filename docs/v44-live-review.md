@@ -2,7 +2,7 @@
 
 **在线预览（Cloudflare Pages 分支）**：https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev
 
-**预览 Worker**：https://feat-v44-full-ui-curriculum-one-shot-language-hub-api.xilu329.workers.dev
+**预览 API（本站同源）**：https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev/api/v1/status
 
 PR：https://github.com/ACIDCH/language-learning-hub/pull/50
 
@@ -28,3 +28,9 @@ PR：https://github.com/ACIDCH/language-learning-hub/pull/50
 - `production_deployment=pending_final_acceptance`，**未合并 main，未部署正式站点**。
 
 反馈请按“链接、操作、期待结果、实际结果”记录，可附不含凭证的截图。
+
+## Worker 访问错误修复（2026-10-19）
+
+此前使用独立 `workers.dev` 域名导致用户登录后出现 `Failed to fetch`。GitHub Actions 从自动化环境访问时 Cloudflare 返回 403/1010（这不等于已证实普通浏览器的同一原因）。本轮将**预览网站**的 API 请求改为本站 `/api/v1/*`，由 Cloudflare Pages Functions 复用既有 Worker 的请求处理、Supabase JWT 校验和 RLS；不再从浏览器跨域访问 workers.dev。
+
+如仍出现错误，请直接访问 [本站 API 状态](https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev/api/v1/status)，将显示的状态码和无敏感信息的错误文字提供给开发者。使用分支别名访问，不使用一次性哈希域名。

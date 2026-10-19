@@ -22,6 +22,8 @@ jobs:
         run: npm ci --no-fund
       - name: Verify public-only cloud connection contract
         run: node --test tests/cloud-config.test.mjs
+      - name: Test same-origin Pages review API route
+        run: node --experimental-strip-types --test tests/pages-preview-api.test.mjs
       - name: Test six-stage manuscript renderer parser
         run: node --experimental-strip-types --test tests/lessonStages.test.mjs
       - name: Validate 24-track private ZIP import contract
