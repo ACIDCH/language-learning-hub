@@ -52,20 +52,19 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
 
  // This is a deliberate user-triggered comparison, never an automatic paid fallback.
  // Both provider keys remain separate; the same lesson excerpt is sent to each provider.
- async function compareBoth(){
+ async function compareProviders(providers:Provider[]){
    if(!enabled||busy)return;
    if(!session){setStatus('请先登录现有账户后使用双模型对照。');return;}
    if(prompt.trim().length<3){setStatus('请先填写至少三个字符的问题或待批改文本。');return;}
-   const providers:Provider[]=['deepseek','gemini'];
    const profiles=providers.map(p=>getForProvider(p));
    const missing=profiles.filter(p=>!p.apiKey.trim()||!p.model.trim());
    if(missing.length){
-     setStatus('双模型对照需要分别配置 DeepSeek 与 Gemini 的 API Key 和模型。请切换服务逐一填写（两套配置只保留在本页内存中）。');
+     setStatus('多模型对照需要分别配置所选服务的 API Key 和模型。请逐一填写，密钥只保留在本页内存中。');
      return;
    }
    const controller=new AbortController();request.current=controller;
    setBusy(true);setResult('');setComparison([]);
-   setStatus('正在分别调用 DeepSeek 与 Gemini（两次 API 请求，可能各自计费）…');
+   setStatus('正在分别调用 '+providers.join(' / ')+'（共 '+providers.length+' 次 API 请求，可能分别计费）…');
    try{
      const results=await Promise.allSettled(profiles.map(async profile=>{
        const response=await fetch(apiBase+'/v1/ai/assist',{
@@ -85,9 +84,9 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
      const completed=results.flatMap((res,i)=>res.status==='fulfilled'
        ?[{provider:providers[i],answer:res.value}]:[]);
      setComparison(completed);
-     setStatus(completed.length===2
-       ?'两家模型均已回复。下面是独立意见，未自动合并、未人工审校。'
-       :'仅 '+completed.length+'/2 家模型返回成功；请检查另一家模型的 Key、配额或可用性。');
+     setStatus(completed.length===providers.length
+       ?'全部模型均已回复。下面是独立意见，未自动合并、未人工审校。'
+       :'仅 '+completed.length+'/'+providers.length+' 家模型返回成功；请检查其他模型的 Key、配额或可用性。');
    }catch{
      if(!controller.signal.aborted)setStatus('双模型请求失败，请检查网络和 API 配置。');
    }finally{setBusy(false);}
@@ -131,15 +130,19 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
       {busy?'正在生成反馈…':'主动调用一次 AI'}
     </button>
     {!compact&&<button type="button" disabled={busy||!session||!prompt.trim()}
-      onClick={()=>void compareBoth()}>
+      onClick={()=>void compareProviders(['deepseek','gemini'])}>
       双模型对照（主动调用两次 API）
+    </button>}
+    {!compact&&<button type="button" disabled={busy||!session||!prompt.trim()}
+      onClick={()=>void compareProviders(['deepseek','gemini','openrouter'])}>
+      三模型对照（主动调用三次 API）
     </button>}
   </form>}
   <p role="status" className="cloud-disclaimer">{status}</p>
   {comparison.length>0&&<div className="cloud-ai-result" aria-label="双模型独立教学意见">
-    <p className="cloud-disclaimer">两套独立生成的建议 · 可能各自计费 · 不代表课程审校通过</p>
+    <p className="cloud-disclaimer">不同模型独立生成的建议 · 可能各自计费 · 不代表课程审校通过</p>
     {comparison.map(item=><section key={item.provider} className="cloud-reader">
-      <h4>{item.provider==='gemini'?'Google Gemini':'DeepSeek'}</h4>
+      <h4>{item.provider==='gemini'?'Google Gemini':item.provider==='openrouter'?'OpenRouter':'DeepSeek'}</h4>
       <div className="lesson-paragraphs" style={{whiteSpace:'pre-wrap'}}>{item.answer}</div>
     </section>)}
   </div>}
