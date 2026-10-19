@@ -62,7 +62,7 @@ PR：https://github.com/ACIDCH/language-learning-hub/pull/50
 - 用户实测 Cloudflare → OpenRouter 的无 Key 和 Key 检测均为 `transport`，因此问题在服务端出站请求，不是凭此证明 Key 有误。
 - 现有 AI 设置页从浏览器直接探测官方 `GET /models`、验证 `GET /key`，且原服务端 API 仍保留作为 Key 校验的备用路径。**2026-10-19 用户已在真实浏览器确认直连 HTTP 200、Key 验证成功，并报告一次 AI 生成成功**；此前 CI mock 不是这一结论的证据。
 - **仅当用户主动启用 AI、填写提示词并点击生成**，才使用官方 `POST /chat/completions`；默认 OpenRouter 浏览器直连可手动取消，取消后恢复原服务端调用。不会因配置、检查 Key、切换页面而自动产生模型推理。
-- API Key 只驻留当前页面内存，请勿分享密钥；用户本机浏览器的 Network 记录可看到发往官方 OpenRouter 的授权请求，适合个人自用，不宜在共享设备使用。
+- AI Key 在浏览器内存用于模型调用，并可由用户选择加密保存到 Supabase Vault；用户本机 Network 记录可看到发往官方 OpenRouter 的授权请求，不宜在共享设备使用。
 - 如出现浏览器 CORS/网络错误，应报告界面错误文案；不要重复新建密钥。
 
 ## OpenRouter P0 用户真实验收记录（2026-10-19）
@@ -74,3 +74,14 @@ PR：https://github.com/ACIDCH/language-learning-hub/pull/50
 3. 用户明确反馈已主动尝试一次 `openrouter/free` AI 生成，**调用成功**。没有在聊天中披露 API Key 或粘贴模型原始回复。此项记录为「用户亲测成功」；不声称独立重放了该请求或验证所有模型。
 4. **P0 浏览器直连路径验收通过**。此前 Cloudflare 服务端 `transport` 不代表原服务端出站故障已恢复；直连路径正常已足够解锁当前 AI 使用。
 5. 后续按模块继续检查私有教材、基础课进度、单条私人音频实际可播性等未验收项。不得修改课程原稿或现有个人学习记录。PR #50 仍为 Open，禁止合并 main 或正式部署。
+
+## P1 账户设置同步与 AI Key 加密保存（2026-10-19）
+
+- PR 分支新增 `public.user_settings`：仅保存白名单内的外观、布局、阅读、语言及非敏感 AI 选项；独立于主课与基础课进度，不覆盖课文、笔记或音频索引。
+- 新增 `public.user_ai_credentials`：仅保存用户/服务商和 Vault UUID，不保存 Key 明文；前端没有直接读取该表的权限。Key 由 Supabase Vault 加密，使用 `set_my_ai_key`、`get_my_ai_key`、`delete_my_ai_key` 三个经过 `auth.uid()` 校验的函数操作。
+- 账户登录：先读取本人云端设置、恢复常规偏好，再按所选 AI 服务商获取 Key；避免将本地默认值覆盖既存云端设置。账户退出会清空前端 AI Key 内存，但不删除本人已保存的云端 Key。自动同步有延时合并，以减少频繁输入导致的写入。
+- OpenRouter Key **通过验证成功后自动尝试加密保存**；其他服务商可点「保存当前服务商 API Key 到云端」，也可独立删除。历史上只存在当前页面内存的 Key **不能自动迁移**，需要本人首次再输入/保存一次。请勿把 Key 发到聊天或提交到 GitHub。
+- UI 与数据表迁移、定向测试已提交原 PR #50。Supabase 新增迁移 `user_cloud_settings_vault` 已应用到当前项目；新表初始均为 0 行，还需用户真实账户登录做首次写入及退出/重新登录回读测试。
+- 已通过 7/7 GitHub CI；Cloudflare Pages 和 Worker Preview 构建成功（提交 `704a6e6`）。**这些并不等于本人跨设备同步和 Vault 恢复已经真实验收。**
+- 只读数据库复核：主课目录 108 条、私人正文 108 条、进度记录 5 条、基础课进度 0 条、私人音频 Storage 对象 24 条。Storage 对象存在不等于 24 条全部可播放。课程与既有学习记录均未覆盖。
+- PR 不合并，不部署正式版；待用户真实登录后验证新同步逻辑与私人音频试听。

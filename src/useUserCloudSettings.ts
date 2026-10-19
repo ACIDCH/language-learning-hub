@@ -28,7 +28,7 @@ export function publicAiPreferences(config:AIConfig):Omit<AIConfig,'apiKey'>{
 /** Load before writing; never overwrite existing cloud settings with local defaults on login. */
 export function useUserCloudSettings(session:Session|null,preferences:Preferences,
  setPreferences:Dispatch<SetStateAction<Preferences>>) {
- const {config,update,clear}=useAISettings();
+ const {config,update,clear,restoreKey}=useAISettings();
  const [sync,setSync]=useState<SyncState>('guest');
  const [loadedFor,setLoadedFor]=useState<string|null>(null);
  const [errorDetail,setErrorDetail]=useState('');
@@ -91,8 +91,8 @@ export function useUserCloudSettings(session:Session|null,preferences:Preference
   void cloudClient.rpc('get_my_ai_key',{p_provider:provider}).then(({data,error})=>{
    if(!active)return;
    if(error){setSync('error');setErrorDetail('密钥云端恢复不可用：'+error.message);return;}
-   // Do not replace a key typed while the restoration request was in flight.
-   update({apiKey:typeof data==='string'?data:''});
+   // Ignore stale provider changes and never overwrite newly typed credentials.
+   restoreKey(provider,typeof data==='string'?data:'');
   });
   return()=>{active=false;};
  },[uid,loadedFor,config.provider]);
