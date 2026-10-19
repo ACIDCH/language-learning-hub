@@ -11,6 +11,7 @@ import {AISettingsProvider} from '../src/AISettings';
 import {cleanAiPreferences,publicAiPreferences} from '../src/useUserCloudSettings';
 import {safeFavorites,mergeFavorites} from '../src/favoritesCloud';
 import {validGoogleClientId,validDriveFolderId,driveFileKind} from '../src/googleDriveClient';
+import {audioCoverage} from '../src/AudioCoverage';
 import {setRuntimeSpeechEndpoint,cloudSpeechEndpoint} from '../src/speechEngines';
 import AITutor from '../src/AITutor';
 import AudioVault from '../src/AudioVault';
@@ -31,6 +32,14 @@ const session={user:{id:'test-owner'},access_token:'test-token'} as Session;
 beforeEach(()=>{localStorage.clear();history.replaceState({},'','/');vi.stubGlobal('scrollTo',vi.fn());request.mockReset();vi.stubGlobal('fetch',vi.fn(async(url:string)=>new Response(readFileSync('public'+url,'utf8'))));});
 afterEach(()=>{cleanup();vi.unstubAllGlobals();vi.unstubAllEnvs();});
 describe('V4.4 integration contracts',()=>{
+ it('separates 377 audio references from real uploaded and verified files',()=>{
+  const rows=[
+   {asset_id:'fr-a1-u01-dialogue',course_id:'fr-a1-u01',source_kind:'synthetic_practice',audio_verified:false,decoded:true},
+   {asset_id:'FI-Piste-01',course_id:null,source_kind:'open_reference',audio_verified:false,decoded:true}
+  ];
+  expect(audioCoverage(rows,['fr-a1-u01-dialogue.mp3'],'fr-a1-u01'))
+   .toMatchObject({total:2,privateUploads:1,referenced:1,verified:0,unmapped:1,selectedUploads:1});
+ });
  it('accepts only configured HTTPS speech inference origins and never fabricates a score',()=>{
   setRuntimeSpeechEndpoint('https://speech.example.org');
   expect(cloudSpeechEndpoint()).toBe('https://speech.example.org');

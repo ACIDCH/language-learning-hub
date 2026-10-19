@@ -91,3 +91,18 @@ export async function readDriveFile(token:string,file:DriveFile):Promise<{text?:
  if(kind==='audio')return {audio:blob};
  return {text:await blob.text()};
 }
+
+/** Search the chosen, authorized Google account by filename, including nested folders. */
+export async function searchDriveFiles(token:string,query:string):Promise<DriveFile[]>{
+ const name=query.trim();
+ if(name.length<2||name.length>100)throw Error('请输入 2–100 字符的文件名关键词');
+ const safe=name.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+ const url=new URL('https://www.googleapis.com/drive/v3/files');
+ url.searchParams.set('q',"name contains '"+safe+"' and trashed = false");
+ url.searchParams.set('fields','nextPageToken,files(id,name,mimeType,size,webViewLink,capabilities(canDownload))');
+ url.searchParams.set('pageSize','100');url.searchParams.set('supportsAllDrives','true');
+ url.searchParams.set('includeItemsFromAllDrives','true');
+ const response=await googleFetch(token,url.toString());
+ const data=await response.json() as {files?:DriveFile[]};
+ return data.files||[];
+}

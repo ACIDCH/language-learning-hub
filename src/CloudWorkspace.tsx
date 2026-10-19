@@ -7,6 +7,7 @@ import BackupImporter from './BackupImporter';
 import DriveLibrary from './DriveLibrary';
 import LessonReader from './LessonReader';
 import AudioVault from './AudioVault';
+import AudioCoverage from './AudioCoverage';
 import AITutor from './AITutor';
 import SpeechPractice from './SpeechPractice';
 import CourseAudit from './CourseAudit';
@@ -308,6 +309,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
         {activePanel==='foundation'&&<FoundationStudio client={client!} session={session}
           onOpenCourses={()=>setActivePanel('learn')}/>}
         {activePanel==='audio'&&<>
+          <AudioCoverage client={client!} session={session} courseId={selected}/>
           <AudioVault client={client!} session={session}
             courseId={selected} assets={audioAssets} status={audioStatus}/>
           <DriveLibrary key={'drive-audio-'+selected} client={client!} session={session} courseId={selected} mode="audio"/>

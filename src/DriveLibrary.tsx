@@ -2,7 +2,7 @@ import {useEffect,useState} from 'react';
 import type {Session,SupabaseClient} from '@supabase/supabase-js';
 import {
  clearDriveToken,driveFileKind,getDriveToken,googleIdentity,listDriveFiles,loadGIS,
- readDriveFile,requestDriveToken,storeDriveToken,validDriveFolderId,
+ readDriveFile,requestDriveToken,searchDriveFiles,storeDriveToken,validDriveFolderId,
  validGoogleClientId,type DriveBinding,type DriveFile,type DriveProfile
 } from './googleDriveClient';
 
@@ -16,6 +16,7 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
  const [folder,setFolder]=useState('root');
  const [browse,setBrowse]=useState('root');
  const [files,setFiles]=useState<DriveFile[]>([]);
+ const [search,setSearch]=useState(courseId);
  const [nextPage,setNextPage]=useState('');
  const [bindings,setBindings]=useState<DriveBinding[]>([]);
  const [selected,setSelected]=useState<DriveFile|null>(null);
@@ -106,6 +107,15 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
   }catch(e){setStatus('无法读取 Google Drive 文件夹：'+(e instanceof Error?e.message:String(e)));}
   finally{setBusy(false);}
  }
+ async function searchFiles(){
+  if(!token){setStatus('请先授权所选 Google 账号。');return;}
+  setBusy(true);
+  try{
+   const rows=await searchDriveFiles(token,search);
+   setFiles(rows);setNextPage('');setStatus('Google Drive 跨文件夹搜索返回 '+rows.length+' 个结果；请打开或关联所需文件。');
+  }catch(e){setStatus('搜索 Google Drive 失败：'+(e instanceof Error?e.message:String(e)));}
+  finally{setBusy(false);}
+ }
  async function setRoot(){
   if(!profile||!validDriveFolderId(folder)){setStatus('请输入有效文件夹 ID');return;}
   setBusy(true);
@@ -194,6 +204,10 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
    <p role="status">{status}</p>
   </div>
   {profile&&token&&<div className="cloud-fields">
+   <label>在该 Google 账号内搜索课程文件（包括子文件夹）
+    <input value={search} onChange={e=>setSearch(e.target.value)} placeholder={courseId||'课程 ID 或文件名'}/>
+   </label>
+   <button type="button" disabled={busy||search.trim().length<2} onClick={()=>void searchFiles()}>跨文件夹搜索</button>
    <p>当前浏览目录：{browse} <button type="button" disabled={busy} onClick={()=>void loadFolder(profile.folder_id)}>回到教材根目录</button></p>
    {files.map(file=>{
     const kind=driveFileKind(file);
