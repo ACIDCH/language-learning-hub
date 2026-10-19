@@ -3,24 +3,38 @@ import type {Session} from '@supabase/supabase-js';
 
 import {useAISettings,DEFAULT_MODELS,type Provider} from './AISettings';
 import PasswordInput from './PasswordInput';
+import {cloudClient} from './v44Connection';
 type Props={session:Session|null;apiBase:string;courseId:string;language:string;lessonText:string;compact?:boolean;initialPrompt?:string};
 
 type Mode='explain'|'essay'|'dialogue'|'audit';
 const MODE_OPTIONS=[{value:'explain',label:'课程讲解'},{value:'essay',label:'作文批改'},{value:'dialogue',label:'AI 对话'},{value:'audit',label:'课程逐课审校（草稿建议）'}] as const;
 export default function AITutor({session,apiBase,courseId,language,lessonText,compact=false,initialPrompt=''}:Props){
  const {config,update}=useAISettings();
- const {enabled,provider,endpoint,model,apiKey}=config;
+ const {enabled,provider,endpoint,model,apiKey,directOpenRouter}=config;
  const setEnabled=(enabled:boolean)=>update({enabled});
  const setEndpoint=(endpoint:string)=>update({endpoint});
  const setModel=(model:string)=>update({model});
- const setApiKey=(apiKey:string)=>{update({apiKey});setKeyStatus('');};
+ const setApiKey=(apiKey:string)=>{update({apiKey});setKeyStatus('');setKeyCloudStatus('');};
+ const [keyCloudStatus,setKeyCloudStatus]=useState('');
+ async function saveKeyToCloud(key=apiKey){
+  if(!session||!cloudClient||!key.trim()){setKeyCloudStatus('请先登录并填写 API Key。');return false;}
+  const {error}=await cloudClient.rpc('set_my_ai_key',{p_provider:provider,p_api_key:key.trim()});
+  setKeyCloudStatus(error?'云端保存失败：'+error.message:'API Key 已加密保存到 Supabase Vault；以后登录自动恢复。');
+  return !error;
+ }
+ async function deleteCloudKey(){
+  if(!session||!cloudClient)return;
+  const {error}=await cloudClient.rpc('delete_my_ai_key',{p_provider:provider});
+  if(error){setKeyCloudStatus('删除失败：'+error.message);return;}
+  update({apiKey:''});setKeyCloudStatus('已删除此服务商云端密钥。');setKeyStatus('');
+ }
  const request=useRef<AbortController|null>(null);
  const [mode,setMode]=useState<Mode>('explain');
  const [prompt,setPrompt]=useState(initialPrompt);
  const [result,setResult]=useState('');
  const [status,setStatus]=useState('AI 默认关闭。只有你主动点击发送才会请求所选服务。');
  const [busy,setBusy]=useState(false);
- const [directOpenRouter,setDirectOpenRouter]=useState(true);
+ 
  const [checkingKey,setCheckingKey]=useState(false);
  const [checkingNetwork,setCheckingNetwork]=useState(false);
  const [networkStatus,setNetworkStatus]=useState('');
@@ -71,6 +85,7 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
    }};
    if(!result?.data){setKeyStatus('OpenRouter 返回的数据格式异常，未能判断 Key。');return;}
    if(result.data.is_management_key){setKeyStatus('当前是管理 Key，不能用于模型推理。');return;}
+   void saveKeyToCloud(apiKey);
    setKeyStatus('浏览器直连 OpenRouter 验证成功'+
     (result.data.is_free_tier?' · 免费方案':'')+
     (typeof result.data.limit_remaining==='number'?' · Key 剩余消费限额 '+result.data.limit_remaining.toFixed(2)+' 美元':'')+
@@ -88,6 +103,7 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
      setKeyStatus('浏览器直连受阻；原服务端：'+(errors[data.error||'']||'HTTP '+response.status)+
       (data.reason?' · '+data.reason:'')+'。两条通道均未能判定 Key。');
     }else{
+     void saveKeyToCloud(apiKey);
      setKeyStatus('服务端验证成功'+(data.is_free_tier?' · 免费方案':'')+
       '。未发起模型推理。');
     }
@@ -97,7 +113,7 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
   }finally{setCheckingKey(false);}
  }
  function changeProvider(next:Provider){
-   update({provider:next,model:DEFAULT_MODELS[next],apiKey:''});setResult('');setKeyStatus('');setStatus('已切换服务，未发出任何 AI 请求。');
+   update({provider:next,model:DEFAULT_MODELS[next],apiKey:''});setResult('');setKeyStatus('');setKeyCloudStatus('');setStatus('已切换服务，未发出任何 AI 请求。');
  }
  useEffect(()=>{setResult('');setKeyStatus('');request.current?.abort();return ()=>request.current?.abort();},[enabled,provider,model,session?.user.id]);
  async function submit(e:FormEvent){
@@ -161,7 +177,7 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
   <label className="cloud-toggle"><input type="checkbox" checked={enabled}
     onChange={e=>{setEnabled(e.target.checked);setResult('');}}/>
     手动启用 AI（可能消耗你所选服务商的额度）</label>
-  <p className="cloud-disclaimer">默认不调用 AI；密钥仅保留在当前页面内存并随请求临时发送至 Worker，不会写入 GitHub、Supabase 或浏览器本地存储。自定义模型使用兼容 OpenAI Chat Completions 的 HTTPS 接口。服务商可能依据自己的政策处理请求内容。</p>
+  <p className="cloud-disclaimer">默认不调用 AI；密钥在当前页面内存中使用；登录后可通过 Supabase Vault 加密保存与恢复，不写入明文设置、GitHub 或浏览器本地存储。自定义模型使用兼容 OpenAI Chat Completions 的 HTTPS 接口。服务商可能依据自己的政策处理请求内容。</p>
   {enabled&&!apiKey&&<p role="status">AI 未配置：请到总设置输入当前会话密钥。未发送请求。</p>}
   {!session&&<p>请先登录本站账户，才能验证 Key 或调用 AI。</p>}
   {(enabled||!compact)&&<form onSubmit={submit} className="cloud-fields">
@@ -186,11 +202,11 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
       <p><a href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener noreferrer">在 OpenRouter 账户中创建普通 API Key ↗</a></p>
       <p>默认模型 <code>openrouter/free</code> 使用免费路由；如更换付费模型，费用按你账户和实际模型计费。</p>
       <label className="cloud-toggle"><input type="checkbox" checked={directOpenRouter}
-        onChange={e=>setDirectOpenRouter(e.target.checked)}/>
+        onChange={e=>update({directOpenRouter:e.target.checked})}/>
         浏览器直接调用 OpenRouter（推荐；绕过 Cloudflare 后端网络故障）
       </label>
       <p className="cloud-disclaimer">仅在你主动点击生成后发送请求；会将 Key 与所选教学内容直接发送到 OpenRouter 官方 API。
-        不写入浏览器存储或本站数据库。若取消勾选，改用原有服务端通道。</p>
+        Key 不写入浏览器存储；仅经本人同意加密存放 Supabase Vault。若取消勾选，改用原有服务端通道。</p>
       <p>无需开启 AI 也能验证密钥。填写新建时复制的完整 API Key，而不是后台显示的名称或括号中的缩写。Key 的消费上限不是账户余额。</p>
       <button type="button" disabled={!session||checkingNetwork}
         onClick={()=>void checkOpenRouterNetwork()}>
@@ -200,6 +216,12 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
       <button type="button" disabled={!session||!apiKey.trim()||checkingKey}
         onClick={()=>void checkOpenRouterKey()}>{checkingKey?'正在检查…':'验证 OpenRouter API Key（不调用模型）'}</button>
       <p role="status" className="cloud-disclaimer">{keyStatus}</p>
+    </div>}
+    {session&&<div className="cloud-panel" aria-label="云端 AI 密钥管理">
+      <p>此服务商的密钥可单独保存在 Vault，登录后自动恢复；首次使用请保存一次。</p>
+      <button type="button" disabled={!apiKey.trim()} onClick={()=>void saveKeyToCloud()}>保存当前服务商 API Key 到云端</button>
+      <button type="button" onClick={()=>void deleteCloudKey()}>删除当前服务商云端密钥</button>
+      <p role="status" className="cloud-disclaimer">{keyCloudStatus}</p>
     </div>}
     </>}
     <label>教学模式<select value={mode} onChange={e=>setMode(e.target.value as Mode)}>

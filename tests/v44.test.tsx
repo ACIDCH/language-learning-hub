@@ -8,6 +8,7 @@ import {COURSES,loadCourse,catalogRoute,courseRoute,foundationText} from '../src
 import {mergeLearningState,useCourseProgress} from '../src/useCourseProgress';
 import {selectedOriginal} from '../src/CourseReader';
 import {AISettingsProvider} from '../src/AISettings';
+import {cleanAiPreferences,publicAiPreferences} from '../src/useUserCloudSettings';
 import AITutor from '../src/AITutor';
 import AppShell from '../src/AppShell';
 import AccountAccess from '../src/AccountAccess';
@@ -26,6 +27,12 @@ const session={user:{id:'test-owner'},access_token:'test-token'} as Session;
 beforeEach(()=>{localStorage.clear();history.replaceState({},'','/');vi.stubGlobal('scrollTo',vi.fn());request.mockReset();vi.stubGlobal('fetch',vi.fn(async(url:string)=>new Response(readFileSync('public'+url,'utf8'))));});
 afterEach(()=>{cleanup();vi.unstubAllGlobals();vi.unstubAllEnvs();});
 describe('V4.4 integration contracts',()=>{
+ it('never copies AI credentials into account settings JSON',()=>{
+  const prefs=publicAiPreferences({enabled:true,provider:'openrouter',model:'openrouter/free',endpoint:'',directOpenRouter:false,apiKey:'sk-or-not-for-storage'});
+  expect(prefs.directOpenRouter).toBe(false);
+  expect(JSON.stringify(prefs)).not.toContain('sk-or-not-for-storage');
+  expect(cleanAiPreferences({provider:'invalid',model:99,enabled:'yes',apiKey:'raw'})).toEqual({enabled:false,provider:'openrouter',model:'openrouter/free',endpoint:'',directOpenRouter:true});
+ });
  it('selects the same-origin Pages API only for the exact PR preview origin',()=>{
   expect(pickWorkerOrigin(PREVIEW_PAGES_ORIGIN+'/?course=fr-a1-u01', 'https://production.example/api')).toBe(PREVIEW_API_BASE);
   expect(pickWorkerOrigin(PREVIEW_PAGES_ORIGIN+'.attacker.test', 'https://production.example/api/')).toBe('https://production.example/api');

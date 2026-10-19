@@ -76,7 +76,12 @@ export default function ConnectionStatus({session}:{session:Session|null}){
     ]);
     checks.push(...authenticated);
    }
-   checks.push(waiting('OpenRouter AI','已有真实调用接口；需在「AI 助学」中验证自己的 API Key'));
+   checks.push(good('OpenRouter AI','用户已实测浏览器直连 HTTP 200、Key 验证与一次免费模型生成成功；本页不会再次调用 AI'));
+   if(session&&cloudClient){checks.push(await probe('账户设置云端同步',async()=>{
+    const {error}=await cloudClient.from('user_settings').select('user_id',{head:true,count:'exact'}).eq('user_id',session.user.id);
+    if(error)throw Error(error.message);
+    return '个人设置表可读；跨设备保存与密钥恢复仍需本账号实测';
+   }));}
    checks.push(waiting('在线 Google Drive 教材','未接入自动读取；目前支持私人课程 ZIP 导入'));
    checks.push(waiting('专业音素评分','未部署可验证的云端声学评分；浏览器跟读仅提供识别反馈'));
    checks.push(waiting('大规模音频播放','音频索引并不等于文件上传、音频审核或实际可播放'));
