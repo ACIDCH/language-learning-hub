@@ -68,3 +68,38 @@ it('only a manual dual-compare click sends exactly one request to each service',
  expect(await screen.findByText('gemini lesson feedback')).toBeTruthy();
  expect(screen.getByText('deepseek lesson feedback')).toBeTruthy();
 });
+
+
+it('three-provider comparison explicitly adds OpenRouter and does not auto-call without a click',async()=>{
+ const requests:{provider:string;model:string;key:string}[]=[];
+ vi.stubGlobal('fetch',vi.fn(async(_url:string,options:RequestInit)=>{
+   const payload=JSON.parse(String(options.body));
+   const headers=options.headers as Record<string,string>;
+   requests.push({provider:payload.provider,model:payload.model,key:headers['X-AI-Key']});
+   return new Response(JSON.stringify({answer:payload.provider+' advice'}),{status:200});
+ }));
+ const session={user:{id:'learner'},access_token:'test-token'} as Session;
+ function ConfigureAll(){
+   const {update}=useAISettings();
+   return <button onClick={()=>{
+     update({provider:'deepseek',apiKey:'ds-key',model:'deepseek-flash'});
+     // Multiple updates are functional, preserving distinct provider profiles.
+     update({provider:'gemini',apiKey:'gm-key',model:'gemini-3.5-flash-lite'});
+     update({provider:'openrouter',apiKey:'or-key',model:'openrouter/free'});
+     update({enabled:true});
+   }}>Configure three</button>;
+ }
+ render(<AISettingsProvider><ConfigureAll/><AITutor session={session} apiBase="https://worker.example"
+   courseId="fr-a1-u01" language="fr" lessonText="Salut"/></AISettingsProvider>);
+ fireEvent.click(screen.getByText('Configure three'));
+ fireEvent.change(screen.getByLabelText('提问或待批改文本'),{target:{value:'Explain French articles'}});
+ expect(requests).toHaveLength(0);
+ fireEvent.click(screen.getByRole('button',{name:/三模型对照/}));
+ await waitFor(()=>expect(requests).toHaveLength(3));
+ expect(requests.map(x=>[x.provider,x.model,x.key]).sort()).toEqual([
+  ['deepseek','deepseek-flash','ds-key'],
+  ['gemini','gemini-3.5-flash-lite','gm-key'],
+  ['openrouter','openrouter/free','or-key']
+ ]);
+ expect(await screen.findByText('openrouter advice')).toBeTruthy();
+});
