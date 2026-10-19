@@ -1,0 +1,54 @@
+name: Diagnose Cloudflare V4.4 preview API connectivity
+
+on:
+  push:
+    branches: [feat/v44-full-ui-curriculum-one-shot]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check public HTTPS DNS, CORS GET and OPTIONS (no credentials)
+        shell: bash
+        env:
+          PAGE_ORIGIN: https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev
+          PREVIEW_API: https://feat-v44-full-ui-curriculum-one-shot-language-hub-api.xilu329.workers.dev
+          PRODUCTION_API: https://language-hub-api.xilu329.workers.dev
+        run: |
+          set -u
+          python3 - <<'PY'
+          import os, socket, urllib.request, urllib.error, time
+          origin=os.environ['PAGE_ORIGIN']; preview=os.environ['PREVIEW_API']; production=os.environ['PRODUCTION_API']
+          def probe(label,base,method):
+              host=urllib.request.urlparse(base).hostname
+              try:
+                  a=socket.getaddrinfo(host,443,type=socket.SOCK_STREAM)
+                  print(f'{label} DNS: {sorted(set(x[4][0] for x in a))[:3]}',flush=True)
+              except Exception as exc:
+                  print(f'{label} DNS ERROR: {type(exc).__name__}: {exc}',flush=True)
+              headers={'Origin':origin}
+              if method=='OPTIONS':headers.update({'Access-Control-Request-Method':'PUT','Access-Control-Request-Headers':'authorization,content-type'})
+              request=urllib.request.Request(base+'/v1/status',headers=headers,method=method)
+              try:
+                  with urllib.request.urlopen(request,timeout=12) as resp:
+                      body=resp.read(350).decode('utf-8','replace')
+                      status=resp.status; actual=resp.headers.get('Access-Control-Allow-Origin')
+                      print(f'{label} {method}: HTTP={status}, ACAO={actual}, BODY={body}',flush=True)
+                      return status==(204 if method=='OPTIONS' else 200) and actual==origin
+              except urllib.error.HTTPError as exc:
+                  print(f'{label} {method}: HTTP ERROR={exc.code}, ACAO={exc.headers.get("Access-Control-Allow-Origin")}, BODY={exc.read(250)!r}',flush=True)
+              except Exception as exc:
+                  print(f'{label} {method}: NETWORK ERROR={type(exc).__name__}: {exc}',flush=True)
+              return False
+          preview_get=probe('preview Worker',preview,'GET')
+          preview_preflight=probe('preview Worker',preview,'OPTIONS')
+          prod_get=probe('production Worker',production,'GET')
+          page_get=probe('Pages preview',origin,'GET')
+          print(f'CHECK SUMMARY: preview_GET={preview_get}, preview_OPTIONS={preview_preflight}, prod_GET={prod_get}, pages_GET={page_get}')
+          if not (preview_get and preview_preflight and page_get):raise SystemExit(1)
+          PY
