@@ -36,6 +36,9 @@ export function getDriveToken(uid:string,subject:string):string|null {
  return v.token;
 }
 export function clearDriveToken(uid:string,subject:string){memory.delete(uid+':'+subject);}
+export function clearDriveTokensForUser(uid:string){
+ for(const key of memory.keys())if(key.startsWith(uid+':'))memory.delete(key);
+}
 export async function requestDriveToken(clientId:string):Promise<{token:string;expiresIn:number}>{
  if(!validGoogleClientId(clientId))throw Error('请填写有效的 Google OAuth 网页客户端 ID');
  const gis=getGIS();if(!gis)throw Error('Google 登录组件仍未加载');

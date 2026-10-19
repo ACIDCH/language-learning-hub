@@ -1,5 +1,5 @@
 import {describe,it,expect,vi,afterEach} from 'vitest';
-import {readDriveFile,listDriveFiles,searchDriveFiles,getDriveToken,storeDriveToken,clearDriveToken} from '../src/googleDriveClient';
+import {readDriveFile,listDriveFiles,searchDriveFiles,getDriveToken,storeDriveToken,clearDriveToken,clearDriveTokensForUser} from '../src/googleDriveClient';
 afterEach(()=>vi.unstubAllGlobals());
 describe('Google Drive real API adapter contracts (mock network, no private Google credential)',()=>{
  it('paginates Google Drive folder lists with Bearer token and no token in the URL',async()=>{
@@ -36,5 +36,8 @@ describe('Google Drive real API adapter contracts (mock network, no private Goog
   expect(getDriveToken('person','google-account')).toBe('fake-token');
   clearDriveToken('person','google-account');
   expect(getDriveToken('person','google-account')).toBeNull();
+  storeDriveToken('person','another-google-account','fake-second-token',3600);
+  clearDriveTokensForUser('person');
+  expect(getDriveToken('person','another-google-account')).toBeNull();
  });
 });

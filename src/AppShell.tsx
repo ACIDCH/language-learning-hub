@@ -10,6 +10,7 @@ import {cloudClient} from './v44Connection';
 import {readLocalFavorites,saveLocalFavorites,mergeFavorites,type FavoriteSelection} from './favoritesCloud';
 import {useAISettings} from './AISettings';
 import {setRuntimeSpeechEndpoint} from './speechEngines';
+import {clearDriveTokensForUser} from './googleDriveClient';
 import {useUserCloudSettings} from './useUserCloudSettings';
 import './cloud.css';
 import './v44.css';
@@ -35,7 +36,13 @@ export default function AppShell(){
   if(!cloudClient)return;let alive=true;
   void cloudClient.auth.getSession().then(({data,error})=>{if(alive){setSession(data.session);setAuthReady(true);if(error)setAuthError(error.message);}}).catch(()=>{if(alive){setAuthReady(true);setAuthError('账户连接暂不可用。');}});
   const {data}=cloudClient.auth.onAuthStateChange((event,next)=>{
-   setSession(previous=>{if(previous?.user.id!==next?.user.id)clear();return next;});setAuthReady(true);if(event==='SIGNED_OUT')clear();
+   setSession(previous=>{
+      if(previous?.user.id!==next?.user.id){
+       clear();
+       if(previous?.user.id)clearDriveTokensForUser(previous.user.id);
+      }
+      return next;
+    });setAuthReady(true);if(event==='SIGNED_OUT')clear();
    if(event==='PASSWORD_RECOVERY'){setRecovery(true);navigate('/?page=settings&section=account');}
   });return ()=>{alive=false;data.subscription.unsubscribe();};
  },[]);
