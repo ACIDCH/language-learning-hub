@@ -156,6 +156,28 @@ describe('V4.4 integration contracts',()=>{
   expect(init.body).toBeUndefined();
   expect((init.headers as Record<string,string>).Authorization).toBe('Bearer sk-or-fixture-only');
  });
+ it('only sends a browser-direct OpenRouter completion after the learner explicitly submits',async()=>{
+  const fetcher=vi.fn().mockResolvedValue(new Response(JSON.stringify({choices:[{message:{content:'Bonjour !'}}]}),{status:200,headers:{'Content-Type':'application/json'}}));
+  vi.stubGlobal('fetch',fetcher);
+  render(<AISettingsProvider><AITutor session={session} apiBase="https://example.test" courseId="fr-a1-u01" language="fr" lessonText="Bonjour"/></AISettingsProvider>);
+  fireEvent.change(screen.getByLabelText('API Key（不保存）'),{target:{value:'key-fixture-for-test'}});
+  fireEvent.change(screen.getByLabelText('提问或待批改文本'),{target:{value:'Explain Bonjour'}});
+  expect(fetcher).not.toHaveBeenCalled();
+  fireEvent.click(screen.getByRole('checkbox',{name:/手动启用 AI/}));
+  expect(fetcher).not.toHaveBeenCalled();
+  fireEvent.click(screen.getByRole('button',{name:'主动调用一次 AI'}));
+  await waitFor(()=>expect(screen.getByText('Bonjour !')).toBeTruthy());
+  expect(fetcher).toHaveBeenCalledTimes(1);
+  const [url,init]=fetcher.mock.calls[0] as [string,RequestInit];
+  expect(url).toBe('https://openrouter.ai/api/v1/chat/completions');
+  expect(init.method).toBe('POST');
+  expect((init.headers as Record<string,string>).Authorization).toBe('Bearer key-fixture-for-test');
+  const payload=JSON.parse(init.body as string);
+  expect(payload.model).toBe('openrouter/free');
+  expect(payload.stream).toBe(false);
+  expect(JSON.stringify(payload)).not.toContain('key-fixture-for-test');
+  expect(localStorage.length).toBe(0);
+ });
  it('shares AI enable state while refusing unconfigured requests and never inventing an answer',()=>{
   render(<AISettingsProvider><AITutor session={null} apiBase="https://example.test" courseId="fr-a1-u01" language="fr" lessonText="Bonjour"/><AITutor compact session={null} apiBase="https://example.test" courseId="fr-a1-u01" language="fr" lessonText="Bonjour"/></AISettingsProvider>);
   fireEvent.click(screen.getAllByRole('checkbox')[0]);expect((screen.getAllByRole('checkbox')[1] as HTMLInputElement).checked).toBe(true);expect(screen.getAllByText(/AI 未配置/)).toHaveLength(2);expect(fetch).not.toHaveBeenCalled();expect(screen.queryByLabelText('AI 模型生成的教学反馈')).toBeNull();

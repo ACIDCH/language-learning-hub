@@ -56,3 +56,11 @@ PR：https://github.com/ACIDCH/language-learning-hub/pull/50
 - 账户的 `Key limit $100` 为单个 Key 的最高消费上限，不是默认赠送的余额。
 - 新增「检测 OpenRouter 网络（不需要 Key）」，只检查 Cloudflare 后端能否访问 OpenRouter 模型目录，不调用推理、不消耗 Token。
 - Key 验证响应区分 OpenRouter 401（Key 不可用）、403（被拒绝访问，未必是 Key 错误）、429（限流）和后端网络异常（timeout/dns/connection/transport），不泄露 Key 或原始上游异常。
+
+## OpenRouter 浏览器直连预览（2026-10-19）
+
+- 用户实测 Cloudflare → OpenRouter 的无 Key 和 Key 检测均为 `transport`，因此问题在服务端出站请求，不是凭此证明 Key 有误。
+- 现有 AI 设置页改为从浏览器直接探测官方 `GET /models`、验证 `GET /key`，且原服务端 API 仍保留作为 Key 校验的备用路径。浏览器能否直连须由用户自己的 Chrome/Edge 测试，不能仅凭 CI 宣称通过。
+- **仅当用户主动启用 AI、填写提示词并点击生成**，才使用官方 `POST /chat/completions`；默认 OpenRouter 浏览器直连可手动取消，取消后恢复原服务端调用。不会因配置、检查 Key、切换页面而自动产生模型推理。
+- API Key 只驻留当前页面内存，请勿分享密钥；用户本机浏览器的 Network 记录可看到发往官方 OpenRouter 的授权请求，适合个人自用，不宜在共享设备使用。
+- 如出现浏览器 CORS/网络错误，应报告界面错误文案；不要重复新建密钥。
