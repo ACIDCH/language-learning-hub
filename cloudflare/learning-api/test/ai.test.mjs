@@ -23,6 +23,7 @@ test('AI key is never echoed, upstream uses only a bounded request body',async()
   assert.ok(!options.body.includes('test-ai-key'));
   assert.ok(body.messages[0].content.includes('tutor'));
   assert.equal(body.max_tokens,850);
+  assert.equal(body.thinking.type,'disabled');
   assert.equal(options.redirect,'error');
   return respond({choices:[{message:{content:'Use je suis.'}}]});
  };
