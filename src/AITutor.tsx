@@ -135,12 +135,12 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
     </button>}
     {!compact&&<button type="button" disabled={busy||!session||!prompt.trim()}
       onClick={()=>void compareProviders(['deepseek','gemini','openrouter'])}>
-      三模型对照（主动调用三次 API）
+      三服务对照（主动调用三次 API）
     </button>}
   </form>}
   <p role="status" className="cloud-disclaimer">{status}</p>
   {comparison.length>0&&<div className="cloud-ai-result" aria-label="双模型独立教学意见">
-    <p className="cloud-disclaimer">不同模型独立生成的建议 · 可能各自计费 · 不代表课程审校通过</p>
+    <p className="cloud-disclaimer">不同 AI 服务独立返回的建议 · 可能各自计费 · 不代表课程审校通过</p>
     {comparison.map(item=><section key={item.provider} className="cloud-reader">
       <h4>{item.provider==='gemini'?'Google Gemini':item.provider==='openrouter'?'OpenRouter':'DeepSeek'}</h4>
       <div className="lesson-paragraphs" style={{whiteSpace:'pre-wrap'}}>{item.answer}</div>
