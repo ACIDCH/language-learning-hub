@@ -60,6 +60,8 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
   const [activePanel,setActivePanel] = useState<'learn'|'path'|'foundation'|'audio'|'speech'|'review'|'resources'|'ai'>(initialPanel);
   const [overviewVersion,setOverviewVersion] = useState(0);
   const [progressReadyKey,setProgressReadyKey] = useState('');
+  const [progressReadError,setProgressReadError] = useState(false);
+  const [progressRetry,setProgressRetry] = useState(0);
   const selectedRef=useRef('');
   const progressKey=session?session.user.id+':'+selected:'';
   const progressReady=Boolean(selected&&progressReadyKey===progressKey);
@@ -88,6 +90,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
     if (!session || !selected) {setState({});setProgressReadyKey('');return;}
     let alive = true;
     setProgressReadyKey('');
+    setProgressReadError(false);
     setState({});
     setStatus('正在读取云端进度…');
     void worker<{progress:Progress|null}>('/v1/progress/' + encodeURIComponent(selected),session.access_token)
@@ -106,22 +109,24 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
       })
       .catch(e => {
         if (!alive) return;
+        setProgressReadError(true);
         try {
           const cached = localStorage.getItem(draftKey(session.user.id,selected));
           if (cached) {
             const draft = JSON.parse(cached) as {state?:State};
             if (draft?.state) {
               setState(draft.state);
-              setProgressReadyKey(session.user.id+':'+selected);
-              setStatus('远端读取失败，已保留本机未同步草稿：' + e.message);
+              // A local draft is NOT proof that the remote state was loaded.
+              // Block writes until the current remote version can be read.
+              setStatus('云端读取失败，已保留本机草稿（只读）；为防止覆盖已有进度，暂不允许保存：' + e.message);
               return;
             }
           }
         } catch { /* Local cache unavailable. */ }
-        setStatus('读取失败：' + e.message);
+        setStatus('读取失败，已禁止覆盖保存：' + e.message);
       });
     return () => {alive=false;};
-  },[session,selected]);
+  },[session,selected,progressRetry]);
 
   useEffect(() => {
     if (!session || !selected) {
@@ -261,8 +266,9 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
           <section className="cloud-reader" aria-label="本课学习进度与笔记">
             <h3>本课进度与笔记</h3>
             {!progressReady&&<p role="status" className="cloud-disclaimer">
-              正在读取此课程的进度，期间编辑和保存暂时锁定，避免混入另一门课程的笔记。
+              {progressReadError?'云端进度读取失败，当前保留的本机草稿为只读；为避免覆盖已有数据，编辑与保存已锁定。':'正在读取此课程的进度，期间编辑和保存暂时锁定。'}
             </p>}
+            {progressReadError&&<button type="button" onClick={()=>setProgressRetry(x=>x+1)}>重新读取本课云端进度</button>}
             <fieldset className="cloud-stages" disabled={!progressReady||busy}>
               <legend>当前学习环节</legend>
               {stages.map((label,i)=><label key={label}><input type="radio"

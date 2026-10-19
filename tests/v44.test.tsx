@@ -10,6 +10,7 @@ import {selectedOriginal} from '../src/CourseReader';
 import {AISettingsProvider} from '../src/AISettings';
 import {cleanAiPreferences,publicAiPreferences} from '../src/useUserCloudSettings';
 import AITutor from '../src/AITutor';
+import AudioVault from '../src/AudioVault';
 import AppShell from '../src/AppShell';
 import AccountAccess from '../src/AccountAccess';
 import SelectionInspector from '../src/SelectionInspector';
@@ -27,6 +28,28 @@ const session={user:{id:'test-owner'},access_token:'test-token'} as Session;
 beforeEach(()=>{localStorage.clear();history.replaceState({},'','/');vi.stubGlobal('scrollTo',vi.fn());request.mockReset();vi.stubGlobal('fetch',vi.fn(async(url:string)=>new Response(readFileSync('public'+url,'utf8'))));});
 afterEach(()=>{cleanup();vi.unstubAllGlobals();vi.unstubAllEnvs();});
 describe('V4.4 integration contracts',()=>{
+ it('distinguishes a private audio signed URL from browser decode and actual playback',async()=>{
+  const list=vi.fn().mockResolvedValue({data:[{name:'fr-a1-u01-dialogue.mp3'}],error:null});
+  const createSignedUrl=vi.fn().mockResolvedValue({data:{signedUrl:'https://example.test/private-audio.mp3'},error:null});
+  const maybeSingle=vi.fn().mockResolvedValue({data:null,error:null});
+  const storage=vi.fn(()=>({list,createSignedUrl}));
+  const from=vi.fn(()=>({select:()=>({eq:()=>({eq:()=>({maybeSingle})})})}));
+  const client={storage:{from:storage},from} as unknown as SupabaseClient;
+  render(<AudioVault client={client} session={session} courseId="fr-a1-u01"
+   assets={[{asset_id:'fr-a1-u01-dialogue',filename:'fr-a1-u01-dialogue.mp3',duration_seconds:5,source_kind:'synthetic_practice',decoded:true,exact_text:false,listened:false,audio_verified:false}]}
+   status="index metadata loaded"/>);
+  fireEvent.click(screen.getByRole('button',{name:'检查并播放'}));
+  await waitFor(()=>expect(screen.getByText(/尚未确认音频可解码或已经发声/)).toBeTruthy());
+  const audio=document.querySelector('audio')!;
+  expect(audio).toBeTruthy();
+  fireEvent.canPlay(audio);
+  expect(screen.getByText(/浏览器已加载并可解码/)).toBeTruthy();
+  fireEvent.playing(audio);
+  expect(screen.getByText(/浏览器已开始实际播放/)).toBeTruthy();
+  fireEvent.error(audio);
+  expect(screen.getByText(/真实播放失败/)).toBeTruthy();
+  expect(createSignedUrl).toHaveBeenCalledWith('test-owner/fr-a1-u01-dialogue.mp3',900);
+ });
  it('never copies AI credentials into account settings JSON',()=>{
   const prefs=publicAiPreferences({enabled:true,provider:'openrouter',model:'openrouter/free',endpoint:'',directOpenRouter:false,apiKey:'sk-or-not-for-storage'});
   expect(prefs.directOpenRouter).toBe(false);
