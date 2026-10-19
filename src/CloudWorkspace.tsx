@@ -4,6 +4,7 @@ import './cloud.css';
 import {cloudClient,apiBase} from './v44Connection';
 import {isCloudWorkspaceConfigured} from './previewWorker';
 import BackupImporter from './BackupImporter';
+import DriveLibrary from './DriveLibrary';
 import LessonReader from './LessonReader';
 import AudioVault from './AudioVault';
 import AITutor from './AITutor';
@@ -309,6 +310,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
         {activePanel==='audio'&&<>
           <AudioVault client={client!} session={session}
             courseId={selected} assets={audioAssets} status={audioStatus}/>
+          <DriveLibrary key={'drive-audio-'+selected} client={client!} session={session} courseId={selected} mode="audio"/>
           <ReferenceAudio lessonId={selected}/>
         </>}
         {activePanel==='speech'&&<>
@@ -327,6 +329,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
           <p className="cloud-disclaimer">课程内容结构检查与真正的教学审校是两个不同环节。</p>
         </>}
         {activePanel==='resources'&&<>
+          <DriveLibrary key={'drive-resources-'+selected} client={client!} session={session} courseId={selected} mode="resources"/>
           <ReferenceIndex client={client!} session={session}/>
           <BackupImporter client={client!} session={session}
             knownIds={catalog.map(c=>c.id)} onImported={()=>setImportNonce(n=>n+1)}/>
