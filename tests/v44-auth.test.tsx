@@ -36,6 +36,20 @@ describe('Supabase Auth real email delivery and callback contracts',()=>{
   await waitFor(()=>expect(signUp).toHaveBeenCalled());
   expect(screen.getByRole('status').textContent).toMatch(/不代表邮件已送达/);
  });
+ it('marks recovery as verified before password update so the session does not hide the reset UI',async()=>{
+  const verified=vi.fn(),resetPasswordForEmail=vi.fn().mockResolvedValue({error:null});
+  const verifyOtp=vi.fn().mockResolvedValue({error:null,data:{session:{access_token:'token'}}});
+  render(<AccountAccess client={{auth:{resetPasswordForEmail,verifyOtp}} as unknown as SupabaseClient}
+    recoveryMode={false} onRecoveryVerified={verified} onRecoveryComplete={vi.fn()} onNotify={vi.fn()}/>);
+  fireEvent.click(screen.getByRole('button',{name:'找回密码'}));
+  fireEvent.change(screen.getByLabelText('账号邮箱'),{target:{value:'test@example.test'}});
+  fireEvent.click(screen.getByRole('button',{name:'发送重置密码邮件'}));
+  await waitFor(()=>expect(resetPasswordForEmail).toHaveBeenCalled());
+  fireEvent.change(screen.getByLabelText(/六位恢复验证码/),{target:{value:'123456'}});
+  fireEvent.click(screen.getByRole('button',{name:'验证身份并设置新密码'}));
+  await waitFor(()=>expect(verified).toHaveBeenCalledOnce());
+  expect(screen.getByRole('heading',{name:'设置新的账号密码'})).toBeTruthy();
+ });
  it('supports password recovery OTP and only unlocks password editor with valid session',async()=>{
   const resetPasswordForEmail=vi.fn().mockResolvedValue({error:null});
   const verifyOtp=vi.fn().mockResolvedValue({error:null,data:{session:{access_token:'token'}}});

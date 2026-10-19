@@ -4,8 +4,8 @@ import type {SupabaseClient} from '@supabase/supabase-js';
 import {accountRedirect,authMailError} from './authMailFlow';
 
 type Screen='login'|'signup'|'verify'|'forgot'|'recover-verify'|'reset';
-export default function AccountAccess({client,recoveryMode,onRecoveryComplete,onNotify}:{
- client:SupabaseClient;recoveryMode:boolean;onRecoveryComplete:()=>void;
+export default function AccountAccess({client,recoveryMode,onRecoveryVerified,onRecoveryComplete,onNotify}:{
+ client:SupabaseClient;recoveryMode:boolean;onRecoveryVerified?:()=>void;onRecoveryComplete:()=>void;
  onNotify:(message:string)=>void;
 }){
  const [screen,setScreen]=useState<Screen>('login');
@@ -73,7 +73,7 @@ export default function AccountAccess({client,recoveryMode,onRecoveryComplete,on
    const {error,data}=await client.auth.verifyOtp({email:email.trim(),token,type:'recovery'});
    if(error)throw error;
    if(!data.session)throw Error('找回验证码已验证，但没有获得重置会话。请使用新的邮件链接重新验证。');
-   setToken('');setScreen('reset');setMessage('身份验证通过，请设置新密码。');
+   setToken('');onRecoveryVerified?.();setScreen('reset');setMessage('身份验证通过，请设置新密码。');
  });}
  async function reset(e:FormEvent){e.preventDefault();await run(async()=>{
    if(password.length<8||password!==again)throw Error('请填写两次相同且不少于八位的新密码。');
