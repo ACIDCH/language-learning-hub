@@ -27,3 +27,4 @@ export default function ConnectionStatus(){
   <button type="button" onClick={()=>setRevision(n=>n+1)} disabled={check.phase==='checking'}>重新检查连接</button>
   <p className="cloud-disclaimer">仅执行无凭证连通性检查，不代表登录、进度保存、真人发音或 AI 调用已经通过验收。</p>
  </section>;
+}
