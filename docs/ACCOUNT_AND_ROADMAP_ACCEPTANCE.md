@@ -9,3 +9,11 @@
 - The new learning path groups *existing* 60 French units A1–C2 and 48 IELTS English skill units. It does not invent English A0–A2 foundation lessons. Six stepping stones (sounds, words, sentences, paragraphs, complex sentences, tasks) are navigation suggestions rather than proof of authored or QA-approved independent modules.
 - Existing Supabase course progress drives completion. No new database tables and no personal-record changes are needed.
 - The separate Codex Issue #20 pronunciation V3 and AI teacher code are untouched.
+
+
+## Registration / recovery reliability update (2026-10-20)
+- Existing Supabase Auth default mail service is **not a public transactional SMTP**. Supabase official rule: send only to authorized organization/team member addresses; as of October 2026 built-in mail quota is 2/hour across project. A 200 from `/signup` is **not delivery confirmation**. Auth logs show one `/signup` 200 within the inspected 24h; do not disclose recipient address or infer inbox delivery.
+- Fix account pages to avoid claiming successful delivery; display errors for `email_address_not_authorized`, rate-limit, OTP expiry, non-allowlisted redirect, and unconfirmed emails. Signup offers link/6-digit verification and resend; password recovery offers link, 6-digit recovery OTP, resend, and authenticated password change.
+- Support confirmed `token_hash` callbacks on reviewed account route as well as standard Supabase Auth implicit flow. Consume token hash from address bar without sending it to logs. Supabase URL Configuration must allow exactly `https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev/**`; production origin separate and untouched.
+- **SMTP external prerequisite:** account owner configures verified sender/domain and provider SMTP (e.g. Brevo Free: 300/day; Resend Free: 3,000/month and 100/day) in Supabase Dashboard > Authentication > SMTP Settings. Authenticate sender via DNS DKIM/SPF and adjust rate limits. NO credentials in GitHub, browser or chats.
+- End-to-end completion requires two **real inboxes** and a recovery test of an authorized spare account. Check provider delivery logs, arrival, redirect, expiration, login and signout. CI cannot validate SMTP delivery, and no email is sent by building code. Do not bypass email verification by auto-confirming users.

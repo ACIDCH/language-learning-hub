@@ -11,6 +11,7 @@ import {readLocalFavorites,saveLocalFavorites,mergeFavorites,type FavoriteSelect
 import {useAISettings} from './AISettings';
 import {setRuntimeSpeechEndpoint} from './speechEngines';
 import {clearDriveTokensForUser} from './googleDriveClient';
+import {authMailError,clearAuthCallbackUrl,readAuthCallback} from './authMailFlow';
 import {useUserCloudSettings} from './useUserCloudSettings';
 import './cloud.css';
 import './v44.css';
@@ -34,7 +35,27 @@ export default function AppShell(){
  useEffect(()=>{const pop=()=>setRoute(readRoute(location.href));window.addEventListener('popstate',pop);window.addEventListener('hashchange',pop);return ()=>{window.removeEventListener('popstate',pop);window.removeEventListener('hashchange',pop);};},[]);
  useEffect(()=>{
   if(!cloudClient)return;let alive=true;
-  void cloudClient.auth.getSession().then(({data,error})=>{if(alive){setSession(data.session);setAuthReady(true);if(error)setAuthError(error.message);}}).catch(()=>{if(alive){setAuthReady(true);setAuthError('账户连接暂不可用。');}});
+  // PKCE/custom token_hash email template callback; default Supabase ConfirmationURL
+  // is handled by the SDK. Never log recovery token or expose it in status messages.
+  const callback=readAuthCallback(location.href);
+  if(callback){
+   if(callback.error){
+    setAuthError(callback.error);history.replaceState({},'',clearAuthCallbackUrl(location.href));
+    navigate('/?page=settings&section=account');
+   }else if(callback.tokenHash&&callback.type){
+    const type=callback.type;
+    history.replaceState({},'',clearAuthCallbackUrl(location.href));
+    void cloudClient.auth.verifyOtp({token_hash:callback.tokenHash,type})
+     .then(({error,data})=>{
+       if(!alive)return;
+       if(error){setAuthError(authMailError(error));navigate('/?page=settings&section=account');}
+       else if(type==='recovery'&&data.session){setRecovery(true);navigate('/?page=settings&section=account');}
+       else{setNotice('邮箱确认成功，请继续登录或使用当前会话。');navigate('/?page=settings&section=account');}
+     })
+     .catch(()=>{if(alive)setAuthError('确认链接验证失败，请重新申请最新邮件。');});
+   }
+  }
+  void cloudClient.auth.getSession().then(({data,error})=>{if(alive){setSession(data.session);setAuthReady(true);if(error)setAuthError(authMailError(error));}}).catch(()=>{if(alive){setAuthReady(true);setAuthError('账户连接暂不可用。');}});
   const {data}=cloudClient.auth.onAuthStateChange((event,next)=>{
    setSession(previous=>{
       if(previous?.user.id!==next?.user.id){
