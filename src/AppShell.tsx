@@ -9,6 +9,7 @@ import {readPreferences,cleanPreferences,persistPreferences,type Preferences} fr
 import {cloudClient} from './v44Connection';
 import {readLocalFavorites,saveLocalFavorites,mergeFavorites,type FavoriteSelection} from './favoritesCloud';
 import {useAISettings} from './AISettings';
+import {setRuntimeSpeechEndpoint} from './speechEngines';
 import {useUserCloudSettings} from './useUserCloudSettings';
 import './cloud.css';
 import './v44.css';
@@ -40,6 +41,7 @@ export default function AppShell(){
  },[]);
  useEffect(()=>{
   document.body.dataset.theme=preferences.theme;document.body.dataset.viewMode=preferences.layout;
+   setRuntimeSpeechEndpoint(preferences.speechApiUrl);
   if(!persistPreferences(preferences))setNotice('浏览器不允许保存外观偏好；当前会话仍可使用。');
  },[preferences]);
  function update(p:Partial<Preferences>){setPreferences(old=>cleanPreferences({...old,...p}));}

@@ -1,5 +1,5 @@
 import {lazy,Suspense,useEffect,useRef,useState} from 'react';
-import {ENGINES,browserResult,lessonPractice,type SpeechEngineId} from './speechEngines';
+import {ENGINES,browserResult,lessonPractice,cloudSpeechEndpoint,type SpeechEngineId} from './speechEngines';
 const LocalPronunciation=lazy(()=>import('./LocalPronunciation'));
 import {analyzeTranscript,practiceHint} from './speechCompare';
 import {appendAttempt,learnerCoaching,type RecentAttempt} from './speechCoach';
@@ -193,7 +193,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
   <div className="cloud-fields">
     <details className="speech-advanced">
      <summary>识别方式与高级实验功能（默认使用免费浏览器识别）</summary>
-     <label>练习引擎<select aria-label="练习引擎" value={mode} onChange={e=>{updateTarget(target);setMode(e.target.value as SpeechEngineId);}}>{ENGINES.map(x=><option key={x.id} value={x.id} disabled={!x.available||(x.id==='optional-remote-evaluator'&&!accessToken)}>{x.name}</option>)}</select></label>
+     <label>练习引擎<select aria-label="练习引擎" value={mode} onChange={e=>{updateTarget(target);setMode(e.target.value as SpeechEngineId);}}>{ENGINES.map(x=><option key={x.id} value={x.id} disabled={!x.available||(x.id==='optional-remote-evaluator'&&(!accessToken||!cloudSpeechEndpoint()))}>{x.name}</option>)}</select></label>
      <p className="cloud-disclaimer">本机模式需启动本机模型；云端模式需要学习账号及已部署的云端服务。两者都只提供未校准的练习参考值，默认免费文字跟读不受影响。</p>
     </details>
     <label>练习长度<select aria-label="练习长度" value={step} onChange={e=>setStep(e.target.value as typeof step)}><option value="word">短词</option><option value="sentence">短句</option><option value="paragraph">段落（声学模式每次不超过 12 秒）</option></select></label>

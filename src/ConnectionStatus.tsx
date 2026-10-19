@@ -1,6 +1,7 @@
 import {useEffect,useState} from 'react';
 import type {Session} from '@supabase/supabase-js';
 import {apiBase,cloudClient} from './v44Connection';
+import {cloudSpeechEndpoint} from './speechEngines';
 
 type Item={label:string;state:'ready'|'pending'|'unavailable';detail:string};
 type WorkerInfo={ready?:boolean;modules?:Record<string,string>};
@@ -83,9 +84,22 @@ export default function ConnectionStatus({session}:{session:Session|null}){
     if(error)throw Error(error.message);
     return '个人设置表可读；跨设备保存与密钥恢复仍需本账号实测';
    }));}
-   checks.push(waiting('在线 Google Drive 教材','未接入自动读取；目前支持私人课程 ZIP 导入'));
-   checks.push(waiting('专业音素评分','未部署可验证的云端声学评分；浏览器跟读仅提供识别反馈'));
-   checks.push(waiting('大规模音频播放','音频索引并不等于文件上传、音频审核或实际可播放'));
+   if(session&&cloudClient){const c=cloudClient;checks.push(await probe('在线 Google Drive 教材',async()=>{
+     const {data,error}=await c.from('user_drive_settings').select('oauth_client_id,active_subject').eq('user_id',session.user.id).maybeSingle();
+     if(error)throw Error(error.message);
+     if(!data?.oauth_client_id)return '已部署多账户 Drive 浏览与课程绑定模块；尚缺 Google OAuth 网页客户端 ID。请前往「资源管理」。';
+     if(!data.active_subject)return 'OAuth 客户端 ID 已保存，尚未完成此站点的 Google 账户授权。';
+     return '已选 Google 云盘来源；需当前浏览器 Google OAuth 授权后才可读取私人文件。';
+   }));}else checks.push(waiting('在线 Google Drive 教材','登录后可配置多个 Google Drive 来源；Google OAuth 需本人授权。'));
+   const speech=cloudSpeechEndpoint();
+   if(speech)checks.push(await probe('云端声学模型（非认证评分）',async()=>{
+    const response=await fetch(speech+'/health',{signal:controller.signal,cache:'no-store'});
+    if(!response.ok)throw Error('HTTP '+response.status);
+    const result=await response.json() as {ready?:boolean};
+    if(!result.ready)throw Error('服务器在线但声学模型尚未加载');
+    return '模型服务 /health 返回 ready:true；实际真人录音与专业校准仍需独立验收';
+   }));else checks.push(waiting('云端声学模型（非认证评分）','独立计算服务未配置 HTTPS 地址；现有免费跟读正常，尚不能提供专业准确率评分。'));
+   checks.push(waiting('大规模音频播放','Supabase 已有 24 条私人 MP3；Drive 按课读取和官方参考索引已接线。实际可播放数量以浏览器媒体事件为准，其他索引仍需逐条匹配与试听。'));
    if(active)setCheck({busy:false,summary:basic.state==='ready'?'已完成接口状态检查；各服务独立显示结果。':'公开 API 检查失败；请查看下方具体错误。',items:checks});
   }
   setCheck({busy:true,summary:'正在检查云端服务…',items:[]});

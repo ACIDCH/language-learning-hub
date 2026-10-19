@@ -11,6 +11,7 @@ import {AISettingsProvider} from '../src/AISettings';
 import {cleanAiPreferences,publicAiPreferences} from '../src/useUserCloudSettings';
 import {safeFavorites,mergeFavorites} from '../src/favoritesCloud';
 import {validGoogleClientId,validDriveFolderId,driveFileKind} from '../src/googleDriveClient';
+import {setRuntimeSpeechEndpoint,cloudSpeechEndpoint} from '../src/speechEngines';
 import AITutor from '../src/AITutor';
 import AudioVault from '../src/AudioVault';
 import AppShell from '../src/AppShell';
@@ -30,6 +31,13 @@ const session={user:{id:'test-owner'},access_token:'test-token'} as Session;
 beforeEach(()=>{localStorage.clear();history.replaceState({},'','/');vi.stubGlobal('scrollTo',vi.fn());request.mockReset();vi.stubGlobal('fetch',vi.fn(async(url:string)=>new Response(readFileSync('public'+url,'utf8'))));});
 afterEach(()=>{cleanup();vi.unstubAllGlobals();vi.unstubAllEnvs();});
 describe('V4.4 integration contracts',()=>{
+ it('accepts only configured HTTPS speech inference origins and never fabricates a score',()=>{
+  setRuntimeSpeechEndpoint('https://speech.example.org');
+  expect(cloudSpeechEndpoint()).toBe('https://speech.example.org');
+  setRuntimeSpeechEndpoint('http://local.example.org');
+  expect(cloudSpeechEndpoint()).toBeNull();
+  setRuntimeSpeechEndpoint('');
+ });
  it('handles interchangeable Google Drive accounts/files without persisting OAuth tokens',()=>{
   expect(validGoogleClientId('123456-example.apps.googleusercontent.com')).toBe(true);
   expect(validGoogleClientId('')).toBe(false);
