@@ -100,3 +100,9 @@ PR：https://github.com/ACIDCH/language-learning-hub/pull/50
 - 实际根因：`src/CloudWorkspace.tsx` 用 `/^https:\/\//` 判断 API 地址为启用条件；已部署的 Cloudflare Pages 同源 API 实际是 `/api`，因此即使 Supabase 客户端存在，也被前端错误禁用。本次修复直接使用已经建立的 Supabase 客户端和 `src/previewWorker.ts` 的受限接口类型判断，并新增分支预览 `/cloud` 的定向回归断言。
 - 这是前端判定错误而非 Supabase 数据库 / Worker 缺失；不应要求重新配置 API 密钥、改 Cloudflare 或再次上传已经保存的私人教材、音频。
 - 更新只通过原 PR #50 预览分支；仍需实际 Chrome/Edge 浏览器再次确认 `/cloud` 内课程、基础课、音频三个模块正常出现。没有更改现有用户学习进度、教学内容、音频对象、Supabase 表或生产部署门禁。
+
+## P1 我的收藏跨设备同步（2026-10-20）
+
+- 新增 Supabase `user_favorites` 账号独立 RLS 表。初次登录进入「我的收藏」时读取本人云端记录，旧 `llh-v44-favorites:<uid>` 本地条目只做**去重补齐**，不覆盖其他设备已经同步的收藏；未能上传时仍保留原本地条目。
+- 课程中点击收藏时先保存本地副本，再尝试写入本人 Supabase；界面分别显示已同步与待同步。删除有独立的云端错误提示，云端未成功删除时不先清除本地。
+- 此功能不修改私人正文或学习进度，也不会把未人工审校的课程当成正式出版教材。自动化测试只验证本地与云端结果合并规则；真实跨设备往返仍需用户账号验收。

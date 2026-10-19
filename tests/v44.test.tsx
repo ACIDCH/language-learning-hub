@@ -9,6 +9,7 @@ import {mergeLearningState,useCourseProgress} from '../src/useCourseProgress';
 import {selectedOriginal} from '../src/CourseReader';
 import {AISettingsProvider} from '../src/AISettings';
 import {cleanAiPreferences,publicAiPreferences} from '../src/useUserCloudSettings';
+import {safeFavorites,mergeFavorites} from '../src/favoritesCloud';
 import AITutor from '../src/AITutor';
 import AudioVault from '../src/AudioVault';
 import AppShell from '../src/AppShell';
@@ -28,6 +29,11 @@ const session={user:{id:'test-owner'},access_token:'test-token'} as Session;
 beforeEach(()=>{localStorage.clear();history.replaceState({},'','/');vi.stubGlobal('scrollTo',vi.fn());request.mockReset();vi.stubGlobal('fetch',vi.fn(async(url:string)=>new Response(readFileSync('public'+url,'utf8'))));});
 afterEach(()=>{cleanup();vi.unstubAllGlobals();vi.unstubAllEnvs();});
 describe('V4.4 integration contracts',()=>{
+ it('merges existing local favorites with cloud favorites and keeps remote identifiers',()=>{
+  const local=safeFavorites([{courseId:'fr-a1-u01',text:'Bonjour'},{courseId:'fr-a1-u01',text:'Bonjour'},{courseId:'fr-a1-u02',text:'Merci'}, {courseId:'invalid',text:''}]);
+  const cloud=[{id:'00000000-0000-4000-8000-000000000001',courseId:'fr-a1-u01',text:'Bonjour'}];
+  expect(mergeFavorites(local,cloud)).toEqual([cloud[0],{courseId:'fr-a1-u02',text:'Merci'}]);
+ });
  it('distinguishes a private audio signed URL from browser decode and actual playback',async()=>{
   const list=vi.fn().mockResolvedValue({data:[{name:'fr-a1-u01-dialogue.mp3'}],error:null});
   const createSignedUrl=vi.fn().mockResolvedValue({data:{signedUrl:'https://example.test/private-audio.mp3'},error:null});

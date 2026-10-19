@@ -3,7 +3,8 @@ import {useEffect,useRef,useState} from 'react';
 import type {Session} from '@supabase/supabase-js';
 import {loadCourse,courseRoute,type Course,type LessonContent} from './v44Courses';
 import type {Preferences} from './v44Preferences';
-import {cloudRequest} from './v44Connection';
+import {cloudClient,cloudRequest} from './v44Connection';
+import {readLocalFavorites,saveLocalFavorites} from './favoritesCloud';
 import LessonReader from './LessonReader';
 import IpaText,{speakIpaText} from './IpaText';
 import SpeechPractice from './SpeechPractice';
@@ -45,11 +46,18 @@ export default function CourseReader({course,session,preferences,tab,navigate}:{
   if(!progress.ready){setToolStatus('学习记录尚未就绪，未修改笔记。');return;}
   progress.change({notes:next});setToolStatus('已加入本课笔记；登录后可点击保存同步。');
  }
- function favorite(value:string){
-  try{const key='llh-v44-favorites:'+(session?.user.id||'guest');const rows=JSON.parse(localStorage.getItem(key)||'[]') as {courseId:string;text:string}[];
-   if(!rows.some(r=>r.courseId===course.id&&r.text===value))rows.push({courseId:course.id,text:value});
-   localStorage.setItem(key,JSON.stringify(rows));setToolStatus('已收藏到本机，未声称跨设备同步。');
-  }catch{setToolStatus('本机收藏存储不可用。');}
+ async function favorite(value:string){
+  const uid=session?.user.id||'guest';
+  const rows=readLocalFavorites(uid);
+  if(!rows.some(r=>r.courseId===course.id&&r.text===value))rows.push({courseId:course.id,text:value});
+  saveLocalFavorites(uid,rows);
+  if(!session||!cloudClient){setToolStatus('已收藏到本机；登录后可同步至个人账户。');return;}
+  const {error}=await cloudClient.from('user_favorites').insert({
+    user_id:session.user.id,course_id:course.id,selection_text:value
+  });
+  setToolStatus(!error||error.code==='23505'
+    ?'选词已收藏并同步至 Supabase 账户。'
+    :'已保留本机收藏；云端同步失败，请稍后进入「我的收藏」重试：'+error.message);
  }
  if(error&&!content&&!privateBody)return <section role="alert">{error}<button onClick={()=>location.reload()}>重新加载</button></section>;
  if(!text)return <p role="status">正在读取课程全文…</p>;
