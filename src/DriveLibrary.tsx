@@ -19,6 +19,7 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
  const [search,setSearch]=useState(courseId);
  const [nextPage,setNextPage]=useState('');
  const [bindings,setBindings]=useState<DriveBinding[]>([]);
+ const [media,setMedia]=useState<{google_subject:string;course_id:string;file_id:string;file_name:string;mime_type:string}[]>([]);
  const [selected,setSelected]=useState<DriveFile|null>(null);
  const [text,setText]=useState('');
  const [audioUrl,setAudioUrl]=useState('');
@@ -32,6 +33,7 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
  const current=bindings.filter(x=>x.google_subject===subject&&x.course_id===courseId);
  const boundText=current.find(x=>x.kind==='lesson');
  const boundAudio=current.find(x=>x.kind==='audio');
+ const playlist=media.filter(x=>x.google_subject===subject&&x.course_id===courseId);
  useEffect(()=>{
   let alive=true;
   void loadGIS().then(()=>{if(alive)setGisReady(true);})
@@ -41,15 +43,16 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
  useEffect(()=>{
   let alive=true;
   void (async()=>{
-   const [settings,accounts,maps]=await Promise.all([
+   const [settings,accounts,maps,tracks]=await Promise.all([
     client.from('user_drive_settings').select('oauth_client_id,active_subject').eq('user_id',uid).maybeSingle(),
     client.from('user_drive_profiles').select('google_subject,email,folder_id,label').eq('user_id',uid),
-    client.from('user_drive_bindings').select('google_subject,course_id,kind,file_id,file_name,mime_type').eq('user_id',uid)
+    client.from('user_drive_bindings').select('google_subject,course_id,kind,file_id,file_name,mime_type').eq('user_id',uid),
+    client.from('user_drive_media').select('google_subject,course_id,file_id,file_name,mime_type').eq('user_id',uid)
    ]);
-   if(settings.error||accounts.error||maps.error)throw Error(settings.error?.message||accounts.error?.message||maps.error?.message);
+   if(settings.error||accounts.error||maps.error||tracks.error)throw Error(settings.error?.message||accounts.error?.message||maps.error?.message||tracks.error?.message);
    if(!alive)return;
    const ps=(accounts.data||[]) as DriveProfile[];
-   setProfiles(ps);setBindings((maps.data||[]) as DriveBinding[]);
+   setProfiles(ps);setBindings((maps.data||[]) as DriveBinding[]);setMedia(tracks.data||[]);
    setClientId(settings.data?.oauth_client_id||configuredClientId);
    const active=ps.find(x=>x.google_subject===settings.data?.active_subject)||ps[0];
    if(active){setSubject(active.google_subject);setFolder(active.folder_id);setBrowse(active.folder_id);}
@@ -153,6 +156,38 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
   setBindings(old=>[...old.filter(x=>!(x.google_subject===subject&&x.course_id===courseId&&x.kind===kind)),next]);
   setStatus('已将 '+file.name+' 关联至 '+courseId+'；只保存文件 ID，不复制或覆盖教材正文。');
  }
+ async function addMedia(file:DriveFile){
+  if(!subject||driveFileKind(file)!=='audio')return;
+  const {error}=await client.from('user_drive_media').upsert({
+   user_id:uid,google_subject:subject,course_id:courseId,
+   file_id:file.id,file_name:file.name,mime_type:file.mimeType
+  },{onConflict:'user_id,google_subject,course_id,file_id'});
+  if(error){setStatus('增加音轨失败：'+error.message);return;}
+  setMedia(old=>[...old.filter(x=>!(x.google_subject===subject&&x.course_id===courseId&&x.file_id===file.id)),
+   {google_subject:subject,course_id:courseId,file_id:file.id,file_name:file.name,mime_type:file.mimeType}]);
+  setStatus('已将音轨加入本课云端播放列表（仅保存文件关联，不复制 Google Drive 音频）。');
+ }
+ async function addMatchingAudio(){
+  const matches=files.filter(f=>driveFileKind(f)==='audio'&&f.name.toLowerCase().startsWith(courseId.toLowerCase()+'-'));
+  if(!matches.length){setStatus('当前结果里没有以本课 ID 开头的 MP3 音轨，不自动猜测归属。');return;}
+  setBusy(true);
+  const rows=matches.map(file=>({user_id:uid,google_subject:subject,course_id:courseId,
+   file_id:file.id,file_name:file.name,mime_type:file.mimeType}));
+  const {error}=await client.from('user_drive_media').upsert(rows,{onConflict:'user_id,google_subject,course_id,file_id'});
+  if(error)setStatus('批量关联失败：'+error.message);
+  else{
+   setMedia(old=>[...old.filter(x=>!(x.google_subject===subject&&x.course_id===courseId&&rows.some(r=>r.file_id===x.file_id))),...rows]);
+   setStatus('已批量关联 '+rows.length+' 个具有明确课程 ID 的音轨；没有替换旧音轨或未授权下载。');
+  }
+  setBusy(false);
+ }
+ async function removeMedia(fileId:string){
+  const {error}=await client.from('user_drive_media').delete().eq('user_id',uid)
+   .eq('google_subject',subject).eq('course_id',courseId).eq('file_id',fileId);
+  if(error){setStatus('移除播放列表音轨失败：'+error.message);return;}
+  setMedia(old=>old.filter(x=>!(x.google_subject===subject&&x.course_id===courseId&&x.file_id===fileId)));
+  setStatus('仅解除音轨与课程的关联，Google Drive 文件未删除。');
+ }
  async function openFile(file:DriveFile){
   if(!token){setStatus('请先重新授权该 Google Drive 账号');return;}
   setSelected(file);setText('');setAudioUrl('');setPdfUrl('');setPlaying('');setBusy(true);
@@ -178,6 +213,7 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
   clearDriveToken(uid,subject);
   const next=profiles.filter(x=>x.google_subject!==subject);
   setProfiles(next);setBindings(b=>b.filter(x=>x.google_subject!==subject));
+  setMedia(m=>m.filter(x=>x.google_subject!==subject));
   const nextSubject=next[0]?.google_subject||'';
   setSubject(nextSubject);setFiles([]);setFolder(next[0]?.folder_id||'root');
   await persistSettings(clientId,nextSubject).catch(()=>setStatus('已移除账户关联；更新首选项失败'));
@@ -212,6 +248,7 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
    </label>
    <button type="button" disabled={busy||search.trim().length<2} onClick={()=>void searchFiles()}>跨文件夹搜索</button>
    <p>当前浏览目录：{browse} <button type="button" disabled={busy} onClick={()=>void loadFolder(profile.folder_id)}>回到教材根目录</button></p>
+   <button type="button" disabled={busy||!courseId} onClick={()=>void addMatchingAudio()}>批量关联当前结果中以本课 ID 开头的音轨</button>
    {files.map(file=>{
     const kind=driveFileKind(file);
     return <div key={file.id} className="cloud-flex">
@@ -219,7 +256,8 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
      {kind==='folder'?<button type="button" onClick={()=>void loadFolder(file.id)}>打开文件夹</button>:
       kind!=='unsupported'?<>
        <button type="button" disabled={busy} onClick={()=>void openFile(file)}>在线读取／播放</button>
-       <button type="button" disabled={busy||!courseId} onClick={()=>void bind(file,kind)}>关联本课</button>
+       <button type="button" disabled={busy||!courseId} onClick={()=>void bind(file,kind)}>替换本课默认素材</button>
+       {kind==='audio'&&<button type="button" disabled={busy||!courseId} onClick={()=>void addMedia(file)}>加入本课音轨列表</button>}
       </>:<small>此格式保留官方查看，不伪称可解析</small>}
     </div>;
    })}
@@ -230,6 +268,14 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
    {boundText&&<button type="button" disabled={busy||!token} onClick={()=>void openBound('lesson')}>读取本课已绑定 Drive 教材</button>}
    {boundAudio&&<button type="button" disabled={busy||!token} onClick={()=>void openBound('audio')}>播放本课已绑定 Drive 音频</button>}
   </div>
+  {playlist.length>0&&<section className="cloud-fields" aria-label="Google Drive 多音轨播放列表">
+   <h4>本课 Google Drive 音轨列表 · {playlist.length} 条</h4>
+   {playlist.map(item=><div className="cloud-flex" key={item.file_id}>
+    <span>{item.file_name}</span>
+    <button type="button" disabled={!token||busy} onClick={()=>void openFile({id:item.file_id,name:item.file_name,mimeType:item.mime_type})}>按需载入播放</button>
+    <button type="button" disabled={busy} onClick={()=>void removeMedia(item.file_id)}>解除关联</button>
+   </div>)}
+  </section>}
   {text&&<details open><summary>在线 Google Drive 全文（仅浏览器临时读取）</summary>
    <pre className="lesson-paragraphs" style={{whiteSpace:'pre-wrap',overflowWrap:'anywhere'}}>{text}</pre>
   </details>}
