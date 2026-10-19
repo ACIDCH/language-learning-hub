@@ -65,3 +65,49 @@ test('provider error suppresses body and secret details',async()=>{
  assert.equal(result.status,502);
  assert.ok(!JSON.stringify(result).includes('model-secret'));
 });
+
+test('OpenRouter key check validates metadata without running or charging a model request',async()=>{
+ let calls=0;
+ const fetcher=async(url,options)=>{
+   calls++;
+   if(url.endsWith('/auth/v1/user'))return respond({id:'owner-user'});
+   assert.equal(url,'https://openrouter.ai/api/v1/key');
+   assert.equal(options.method,'GET');
+   assert.equal(options.headers.Authorization,'Bearer sk-or-fixture-only');
+   assert.equal(options.redirect,'error');
+   assert.equal(options.body,undefined);
+   return respond({data:{is_free_tier:true,is_management_key:false,limit_remaining:0}});
+ };
+ const req=new Request('https://worker.test/v1/ai/openrouter-key-check',{
+   method:'POST',headers:{Origin:cfg.FRONTEND_ORIGIN,
+     Authorization:'Bearer valid.jwt.token','X-AI-Key':'sk-or-fixture-only'}
+ });
+ const response=await handle(req,cfg,fetcher);
+ const body=await response.json();
+ assert.equal(response.status,200);
+ assert.deepEqual(body,{ok:true,provider:'openrouter',is_free_tier:true,limit_remaining:0});
+ assert.equal(calls,2);
+ assert.ok(!JSON.stringify(body).includes('sk-or-fixture-only'));
+});
+test('OpenRouter key check rejects missing, invalid and management keys with no inference',async()=>{
+ const noNetwork=()=>{throw Error('not expected')};
+ const anon=await handle(new Request('https://worker.test/v1/ai/openrouter-key-check',{method:'POST'}),cfg,noNetwork);
+ assert.equal(anon.status,401);
+ const mockAuth=async(url)=>{
+   if(url.endsWith('/auth/v1/user'))return respond({id:'user'});
+   return respond({error:'invalid_key'},401);
+ };
+ const invalid=await handle(new Request('https://worker.test/v1/ai/openrouter-key-check',{method:'POST',
+   headers:{Authorization:'Bearer valid.jwt.token','X-AI-Key':'bad-key'}
+ }),cfg,mockAuth);
+ assert.equal(invalid.status,422);
+ assert.equal((await invalid.json()).error,'openrouter_key_invalid');
+ const management=await handle(new Request('https://worker.test/v1/ai/openrouter-key-check',{method:'POST',
+   headers:{Authorization:'Bearer valid.jwt.token','X-AI-Key':'management-key'}
+ }),cfg,async(url)=>{
+   if(url.endsWith('/auth/v1/user'))return respond({id:'user'});
+   return respond({data:{is_management_key:true,is_free_tier:false}});
+ });
+ assert.equal(management.status,422);
+ assert.equal((await management.json()).error,'openrouter_management_key_not_for_inference');
+});

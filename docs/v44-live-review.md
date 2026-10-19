@@ -34,3 +34,13 @@ PR：https://github.com/ACIDCH/language-learning-hub/pull/50
 此前使用独立 `workers.dev` 域名导致用户登录后出现 `Failed to fetch`。GitHub Actions 从自动化环境访问时 Cloudflare 返回 403/1010（这不等于已证实普通浏览器的同一原因）。本轮将**预览网站**的 API 请求改为本站 `/api/v1/*`，由 Cloudflare Pages Functions 复用既有 Worker 的请求处理、Supabase JWT 校验和 RLS；不再从浏览器跨域访问 workers.dev。
 
 如仍出现错误，请直接访问 [本站 API 状态](https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev/api/v1/status)，将显示的状态码和无敏感信息的错误文字提供给开发者。使用分支别名访问，不使用一次性哈希域名。
+
+## 云端接口实况与 OpenRouter（2026-10-19）
+
+- 公开课程目录、Supabase 认证、主课程进度、基础课程进度、私有课文读取：已有相应后端和表；后四者需登录才能用。
+- 私人音频索引接口存在，但文件是否已上传、是否有可听的签名链接须逐项核实。不可把 377 个索引等同于 377 个可播放文件。
+- Google Drive 在线按课拉取、云端音素模型评分尚未部署；私人 ZIP 恢复和浏览器 Web Speech 是目前可用的替代路径。
+- 「总设置 → 账户与同步」的逐项状态检查是只读的，不修改个人记录。
+- 「总设置 → AI 助学」默认 OpenRouter／`openrouter/free`，AI 仍默认关闭。用户自行在 [OpenRouter 创建密钥](https://openrouter.ai/settings/keys)，仅在浏览器的密码框填写，不发给助手。
+- 「验证 OpenRouter API Key」仅调用 OpenRouter `GET /api/v1/key` 获取密钥有效性及非敏感元数据，不请求任何聊天生成，不消耗模型推理 Token。验证成功不代表实际模型请求必然成功或没有其他额度限制。
+- 用户主动开启 AI 并点击生成后，才向 `/api/v1/ai/assist` 请求答案；具体服务费/免费限额以 OpenRouter 当时的账户实际情况为准。

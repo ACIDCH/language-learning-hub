@@ -1,35 +1,105 @@
 import {useEffect,useState} from 'react';
+import type {Session} from '@supabase/supabase-js';
 import {apiBase,cloudClient} from './v44Connection';
-type WorkerStatus={ready?:boolean;modules?:Record<string,string>};
-type Check={phase:'checking'|'ok'|'error';message:string;data?:WorkerStatus};
-export default function ConnectionStatus(){
+
+type Item={label:string;state:'ready'|'pending'|'unavailable';detail:string};
+type WorkerInfo={ready?:boolean;modules?:Record<string,string>};
+type Check={busy:boolean;summary:string;items:Item[]};
+const good=(label:string,detail:string):Item=>({label,state:'ready',detail});
+const waiting=(label:string,detail:string):Item=>({label,state:'pending',detail});
+const failed=(label:string,detail:string):Item=>({label,state:'unavailable',detail});
+const text=(e:unknown)=>e instanceof Error?e.message:String(e);
+
+export default function ConnectionStatus({session}:{session:Session|null}){
  const [revision,setRevision]=useState(0);
- const [check,setCheck]=useState<Check>({phase:'checking',message:'正在检查学习服务…'});
+ const [check,setCheck]=useState<Check>({busy:true,summary:'正在检查云端服务…',items:[]});
  useEffect(()=>{
+  let active=true;
   const controller=new AbortController();
-  setCheck({phase:'checking',message:'正在检查学习服务…'});
-  void (async()=>{
-   const response=await fetch(apiBase+'/v1/status',{signal:controller.signal,cache:'no-store'});
-   if(!response.ok)throw Error('服务状态 HTTP '+response.status);
-   const data=await response.json() as WorkerStatus;
-   if(!data||typeof data.ready!=='boolean')throw Error('状态响应格式不正确');
-   if(!data.ready){setCheck({phase:'error',message:'API 可访问，但数据库公开配置尚未就绪。',data});return;}
-   const catalog=await fetch(apiBase+'/v1/courses',{signal:controller.signal,cache:'no-store'});
-   if(!catalog.ok)throw Error('课程目录 API HTTP '+catalog.status);
-   const payload=await catalog.json() as {courses?:unknown};
-   if(!Array.isArray(payload.courses))throw Error('目录数据响应格式不正确');
-   setCheck({phase:'ok',message:'API 和 Supabase 课程目录可访问：'+payload.courses.length+' 条主课记录（尚未测试登录保存）。',data});
-  })().catch(error=>{
-    if(!controller.signal.aborted)setCheck({phase:'error',message:'API 连接失败：'+(error instanceof Error?error.message:String(error))+'。请检查当前预览地址或稍后重试。'});
-  });
-  return ()=>controller.abort();
- },[revision]);
- return <section className="cloud-panel" aria-label="实时服务连接检查">
-  <h3>实时服务连接检查</h3>
-  <p role="status">{check.message}</p>
-  <p>Supabase 公开客户端：{cloudClient?'已配置':'未配置'}；当前 API：{apiBase==='/api'?'本站同源 /api（无跨域请求）':'站点配置 Worker'}。</p>
-  {check.data?.modules&&<p>目录：{check.data.modules.catalog||'未知'}；进度：{check.data.modules.progress||'未知'}；AI：{check.data.modules.ai||'未知'}。</p>}
-  <button type="button" onClick={()=>setRevision(n=>n+1)} disabled={check.phase==='checking'}>重新检查连接</button>
-  <p className="cloud-disclaimer">仅执行无凭证连通性检查，不代表登录、进度保存、真人发音或 AI 调用已经通过验收。</p>
+  const checks:Item[]=[];
+  async function get<T>(path:string):Promise<T>{
+   const response=await fetch(apiBase+path,{signal:controller.signal,cache:'no-store',
+     headers:session?{Authorization:'Bearer '+session.access_token}:{}});
+   const value=await response.json().catch(()=>({})) as T&{error?:string};
+   if(!response.ok)throw Error(value.error||'HTTP '+response.status);
+   return value;
+  }
+  async function probe(label:string,fn:()=>Promise<string>):Promise<Item>{
+   try{return good(label,await fn());}
+   catch(e){return failed(label,text(e));}
+  }
+  async function inspect(){
+   const basic=await probe('公开课程目录',async()=>{
+    const status=await get<WorkerInfo>('/v1/status');
+    if(!status.ready)throw Error('服务有响应，但数据库配置未就绪');
+    const catalog=await get<{courses:unknown[]}>('/v1/courses');
+    if(!Array.isArray(catalog.courses))throw Error('返回数据格式不正确');
+    return 'API 与数据库连通，读取 '+catalog.courses.length+' 条主课目录';
+   });
+   checks.push(basic);
+   if(!session){
+    checks.push(waiting('登录账户与进度','登录后才能读取自己的进度、私有课文和私人音频'));
+    checks.push(waiting('基础课与同步','登录后才能检查本人基础课程学习记录'));
+   }else{
+    const authenticated=await Promise.all([
+     probe('云端课程进度',async()=>{
+      await get<{progress:unknown}>('/v1/progress/fr-a1-u01');
+      return '读取接口可用；实际写入与恢复需以你的测试为准';
+     }),
+     probe('私人课程正文',async()=>{
+      try{
+       const result=await get<{lesson?:{course_id?:string}}>('/v1/private-courses/fr-a1-u01');
+       return result.lesson?'私人正文读取成功':'接口可访问；未返回正文';
+      }catch(e){
+       if(text(e)==='lesson_not_synced')return '接口正常，此账户尚未同步该课程';
+       throw e;
+      }
+     }),
+     probe('课程音频索引',async()=>{
+      const result=await get<{assets?:unknown[];playback_ready?:boolean}>('/v1/audio-index/fr-a1-u01');
+      return '读取 '+(result.assets?.length||0)+' 条元数据；不代表音频文件已上传或可播放';
+     }),
+     probe('基础课程进度',async()=>{
+      if(!cloudClient)throw Error('Supabase 客户端未配置');
+      const {error}=await cloudClient.from('foundation_progress')
+       .select('lesson_id',{head:true,count:'exact'}).eq('user_id',session.user.id);
+      if(error)throw Error(error.message);
+      return '个人学习记录表可访问；未执行写入';
+     }),
+     probe('私人音频存储',async()=>{
+      if(!cloudClient)throw Error('Supabase 客户端未配置');
+      const {data,error}=await cloudClient.storage.from('lesson-audio-private')
+       .list(session.user.id,{limit:1});
+      if(error)throw Error(error.message);
+      return (data?.length?'已发现私人文件':'存储桶可访问，当前列表为空')+'；音频实际试听仍需检查';
+     })
+    ]);
+    checks.push(...authenticated);
+   }
+   checks.push(waiting('OpenRouter AI','已有真实调用接口；需在「AI 助学」中验证自己的 API Key'));
+   checks.push(waiting('在线 Google Drive 教材','未接入自动读取；目前支持私人课程 ZIP 导入'));
+   checks.push(waiting('专业音素评分','未部署可验证的云端声学评分；浏览器跟读仅提供识别反馈'));
+   checks.push(waiting('大规模音频播放','音频索引并不等于文件上传、音频审核或实际可播放'));
+   if(active)setCheck({busy:false,summary:basic.state==='ready'?'已完成接口状态检查；各服务独立显示结果。':'公开 API 检查失败；请查看下方具体错误。',items:checks});
+  }
+  setCheck({busy:true,summary:'正在检查云端服务…',items:[]});
+  void inspect().catch(e=>{if(active)setCheck({busy:false,summary:'检查中断：'+text(e),items:checks});});
+  return ()=>{active=false;controller.abort();};
+ },[revision,session?.user.id,session?.access_token]);
+ return <section className="cloud-panel" aria-label="云端接口逐项检查">
+  <h3>云端接口逐项检查</h3>
+  <p role="status">{check.summary}</p>
+  <p>当前 API：{apiBase==='/api'?'本站同源 /api':'独立 Worker'}；状态来自只读请求或实际代码能力，不代表全部完成验收。</p>
+  <ul>
+   {check.items.map(item=><li key={item.label}>
+     <strong>{item.label}：</strong>
+     {item.state==='ready'?'已连接':item.state==='unavailable'?'未通过':'待接线／待验收'}
+     {' · '+item.detail}
+   </li>)}
+  </ul>
+  <button type="button" disabled={check.busy} onClick={()=>setRevision(n=>n+1)}>
+   {check.busy?'正在检查…':'重新检查云端接口'}
+  </button>
+  <p className="cloud-disclaimer">不会执行写入、上传、模型调用或麦克风录音；密钥和个人正文不会显示在检查结果中。</p>
  </section>;
 }

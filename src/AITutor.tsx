@@ -13,17 +13,45 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
  const setEnabled=(enabled:boolean)=>update({enabled});
  const setEndpoint=(endpoint:string)=>update({endpoint});
  const setModel=(model:string)=>update({model});
- const setApiKey=(apiKey:string)=>update({apiKey});
+ const setApiKey=(apiKey:string)=>{update({apiKey});setKeyStatus('');};
  const request=useRef<AbortController|null>(null);
  const [mode,setMode]=useState<Mode>('explain');
  const [prompt,setPrompt]=useState(initialPrompt);
  const [result,setResult]=useState('');
  const [status,setStatus]=useState('AI 默认关闭。只有你主动点击发送才会请求所选服务。');
  const [busy,setBusy]=useState(false);
- function changeProvider(next:Provider){
-   update({provider:next,model:DEFAULT_MODELS[next]});setResult('');setStatus('已切换服务，未发出任何 AI 请求。');
+ const [checkingKey,setCheckingKey]=useState(false);
+ const [keyStatus,setKeyStatus]=useState('');
+ const errors:Record<string,string>={
+  authentication_required:'请先登录本站账户。',
+  invalid_session:'登录会话已过期，请重新登录。',
+  openrouter_key_required:'请先填写 OpenRouter API Key。',
+  openrouter_key_invalid:'OpenRouter 拒绝了此密钥，请检查或重新生成。',
+  openrouter_management_key_not_for_inference:'这是管理密钥，不能用于模型推理；请创建普通 API Key。',
+  openrouter_rate_limited:'OpenRouter 暂时限流，请稍后再试。',
+  openrouter_unreachable:'暂时无法联系 OpenRouter，请检查网络或稍后重试。',
+  openrouter_key_check_failed:'OpenRouter 密钥检查暂不可用。',
+  openrouter_invalid_response:'OpenRouter 返回了无法识别的结果。'
+ };
+ async function checkOpenRouterKey(){
+  if(provider!=='openrouter'||!session||!apiKey.trim()||checkingKey)return;
+  setCheckingKey(true);setKeyStatus('正在验证密钥；不会调用模型或消耗推理 Token…');
+  try{
+   const response=await fetch(apiBase+'/v1/ai/openrouter-key-check',{
+    method:'POST',headers:{Authorization:'Bearer '+session.access_token,'X-AI-Key':apiKey}
+   });
+   const data=await response.json() as {ok?:boolean;error?:string;is_free_tier?:boolean;limit_remaining?:number|null};
+   if(!response.ok||!data.ok)throw Error(errors[data.error||'']||'验证失败（HTTP '+response.status+'）');
+   setKeyStatus('OpenRouter API Key 验证成功'+(data.is_free_tier?' · 免费方案':'')+
+    (typeof data.limit_remaining==='number'?' · 密钥剩余额度 '+data.limit_remaining:'')+
+    '。这是无推理调用的验证，模型实际生成还需另行测试。');
+  }catch(error){setKeyStatus('密钥验证未通过：'+(error instanceof Error?error.message:String(error)));}
+  finally{setCheckingKey(false);}
  }
- useEffect(()=>{setResult('');request.current?.abort();return ()=>request.current?.abort();},[enabled,provider,model,session?.user.id]);
+ function changeProvider(next:Provider){
+   update({provider:next,model:DEFAULT_MODELS[next],apiKey:''});setResult('');setKeyStatus('');setStatus('已切换服务，未发出任何 AI 请求。');
+ }
+ useEffect(()=>{setResult('');setKeyStatus('');request.current?.abort();return ()=>request.current?.abort();},[enabled,provider,model,session?.user.id]);
  async function submit(e:FormEvent){
    e.preventDefault();
    if(!enabled||busy)return;
@@ -74,6 +102,13 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
     <label>API Key（不保存）<PasswordInput autoComplete="off" required
        value={apiKey} onChange={e=>setApiKey(e.target.value)}
        placeholder="只在本页粘贴，不要发到聊天"/></label>
+    {provider==='openrouter'&&<div className="cloud-panel" aria-label="OpenRouter 连接设置">
+      <p><a href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener noreferrer">在 OpenRouter 账户中创建普通 API Key ↗</a></p>
+      <p>默认模型 <code>openrouter/free</code> 使用免费路由；如更换付费模型，费用按你账户和实际模型计费。</p>
+      <button type="button" disabled={!session||!apiKey.trim()||checkingKey}
+        onClick={()=>void checkOpenRouterKey()}>{checkingKey?'正在检查…':'验证 OpenRouter API Key（不调用模型）'}</button>
+      <p role="status" className="cloud-disclaimer">{keyStatus}</p>
+    </div>}
     </>}
     <label>教学模式<select value={mode} onChange={e=>setMode(e.target.value as Mode)}>
       {MODE_OPTIONS.map(x=><option key={x.value} value={x.value}>{x.label}</option>)}

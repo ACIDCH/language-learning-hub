@@ -139,6 +139,22 @@ describe('V4.4 integration contracts',()=>{
   const r=document.createRange();r.selectNodeContents(scope);const selection=window.getSelection()!;selection.removeAllRanges();selection.addRange(r);
   expect(selectedOriginal(scope,selection)?.text).toBe('J’aime l’école.');expect(selectedOriginal(document.createElement('div'),selection)).toBeNull();scope.remove();selection.removeAllRanges();
  });
+ it('validates an OpenRouter key on demand without performing model inference',async()=>{
+  const fetcher=vi.fn().mockResolvedValue(new Response(JSON.stringify({ok:true,provider:'openrouter',is_free_tier:true,limit_remaining:0}),{status:200,headers:{'Content-Type':'application/json'}}));
+  vi.stubGlobal('fetch',fetcher);
+  render(<AISettingsProvider><AITutor session={session} apiBase="https://example.test" courseId="fr-a1-u01" language="fr" lessonText="Bonjour"/></AISettingsProvider>);
+  fireEvent.click(screen.getByRole('checkbox',{name:/手动启用 AI/}));
+  const input=screen.getByLabelText('API Key（不保存）') as HTMLInputElement;
+  fireEvent.change(input,{target:{value:'sk-or-fixture-only'}});
+  fireEvent.click(screen.getByRole('button',{name:'验证 OpenRouter API Key（不调用模型）'}));
+  await waitFor(()=>expect(screen.getByText(/OpenRouter API Key 验证成功/)).toBeTruthy());
+  expect(fetcher).toHaveBeenCalledTimes(1);
+  const [url,init]=fetcher.mock.calls[0] as [string,RequestInit];
+  expect(url).toContain('/v1/ai/openrouter-key-check');
+  expect(init.method).toBe('POST');
+  expect(init.body).toBeUndefined();
+  expect((init.headers as Record<string,string>)['X-AI-Key']).toBe('sk-or-fixture-only');
+ });
  it('shares AI enable state while refusing unconfigured requests and never inventing an answer',()=>{
   render(<AISettingsProvider><AITutor session={null} apiBase="https://example.test" courseId="fr-a1-u01" language="fr" lessonText="Bonjour"/><AITutor compact session={null} apiBase="https://example.test" courseId="fr-a1-u01" language="fr" lessonText="Bonjour"/></AISettingsProvider>);
   fireEvent.click(screen.getAllByRole('checkbox')[0]);expect((screen.getAllByRole('checkbox')[1] as HTMLInputElement).checked).toBe(true);expect(screen.getAllByText(/AI 未配置/)).toHaveLength(2);expect(fetch).not.toHaveBeenCalled();expect(screen.queryByLabelText('AI 模型生成的教学反馈')).toBeNull();
