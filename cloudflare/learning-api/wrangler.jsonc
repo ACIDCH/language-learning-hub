@@ -10,7 +10,8 @@
   "vars": {
     "SUPABASE_URL": "https://szukmwvyyvjajdjoltzy.supabase.co",
     "SUPABASE_PUBLISHABLE_KEY": "sb_publishable_nsnR4ZifNlop7tKo8URCxg_0SGMDtXu",
-    "FRONTEND_ORIGIN": "https://language-learning-hub.pages.dev"
+    "FRONTEND_ORIGIN": "https://language-learning-hub.pages.dev",
+    "PREVIEW_FRONTEND_ORIGIN": "https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev"
   },
   // Worker Previews (non-production branches) require an explicit block.
   // They remain separate from the live production deployment.

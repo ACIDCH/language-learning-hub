@@ -21,7 +21,8 @@ function allowOrigin(request, env) {
   const origin = request.headers.get('Origin');
   // Calls without an Origin (e.g. CLI health checks) need no CORS headers.
   if (!origin) return {};
-  if (!env.FRONTEND_ORIGIN || origin !== env.FRONTEND_ORIGIN) return null;
+  // Exact PR Pages alias only: do not allow a wildcard *.pages.dev Origin.
+  if (origin !== env.FRONTEND_ORIGIN && origin !== env.PREVIEW_FRONTEND_ORIGIN) return null;
   return {'Access-Control-Allow-Origin': origin, 'Vary': 'Origin',
     'Access-Control-Allow-Methods': 'GET, PUT, POST, OPTIONS',
     'Access-Control-Allow-Headers': 'authorization, content-type, x-ai-key',
@@ -65,7 +66,7 @@ export async function handle(request, env = {}, fetchFn = fetch) {
     return output({service:'language-hub-api',version:1,
       ready:Boolean(backend(env)), modules:{catalog:backend(env)?'configured':'not-connected',
         progress:backend(env)?'configured':'not-connected',
-        fullText:'owner-scoped-snapshot-adapter',ai:'not-connected'}},200,cors);
+        fullText:'owner-scoped-snapshot-adapter',ai:'manual-opt-in-with-learner-key'}},200,cors);
   }
   const config = backend(env);
   if (!config) return output({error:'backend_not_configured'},503,cors);

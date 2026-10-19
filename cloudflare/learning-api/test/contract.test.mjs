@@ -3,8 +3,9 @@ import assert from 'node:assert/strict';
 import {handle} from '../src/index.mjs';
 
 const origin = 'https://language-learning-hub.pages.dev';
+const previewOrigin = 'https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev';
 const cfg = {SUPABASE_URL:'https://db.example.supabase.co',
-  SUPABASE_PUBLISHABLE_KEY:'public-key', FRONTEND_ORIGIN:origin};
+  SUPABASE_PUBLISHABLE_KEY:'public-key', FRONTEND_ORIGIN:origin,PREVIEW_FRONTEND_ORIGIN:previewOrigin};
 const req = (path, options={}) => new Request('https://api.example.workers.dev'+path,options);
 const respond = (value,status=200) => new Response(JSON.stringify(value),
   {status,headers:{'content-type':'application/json'}});
@@ -16,12 +17,20 @@ test('GET /health returns honest integration status and CORS is restricted',asyn
   assert.equal(other.status,403);
   const allowed=await handle(req('/health',{headers:{Origin:origin}}),cfg);
   assert.equal(allowed.headers.get('access-control-allow-origin'),origin);
+  const preview=await handle(req('/v1/status',{headers:{Origin:previewOrigin}}),cfg);
+  assert.equal(preview.status,200);
+  assert.equal(preview.headers.get('access-control-allow-origin'),previewOrigin);
+  const preflight=await handle(req('/v1/progress/fr-a1-u01',{method:'OPTIONS',headers:{Origin:previewOrigin,'Access-Control-Request-Method':'PUT'}}),cfg);
+  assert.equal(preflight.status,204);
+  assert.equal(preflight.headers.get('access-control-allow-origin'),previewOrigin);
+  const spoof=await handle(req('/health',{headers:{Origin:previewOrigin+'.attacker.test'}}),cfg);
+  assert.equal(spoof.status,403);
 });
 test('status explicitly reports what is and is not deployed',async()=>{
   const r=await handle(req('/v1/status'),cfg);
   const d=await r.json();
   assert.equal(d.ready,true);
-  assert.equal(d.modules.ai,'not-connected');
+  assert.equal(d.modules.ai,'manual-opt-in-with-learner-key');
   assert.equal(d.modules.fullText,'owner-scoped-snapshot-adapter');
   const notConfigured=await handle(req('/v1/status'));
   assert.equal((await notConfigured.json()).ready,false);
