@@ -258,7 +258,8 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
        <button type="button" disabled={busy} onClick={()=>void openFile(file)}>在线读取／播放</button>
        <button type="button" disabled={busy||!courseId} onClick={()=>void bind(file,kind)}>替换本课默认素材</button>
        {kind==='audio'&&<button type="button" disabled={busy||!courseId} onClick={()=>void addMedia(file)}>加入本课音轨列表</button>}
-      </>:<small>此格式保留官方查看，不伪称可解析</small>}
+      </>:<span><small>此格式仅支持官方查看</small>{file.webViewLink?.startsWith('https://')&&
+       <a href={file.webViewLink} target="_blank" rel="noopener noreferrer">打开 Drive 官方预览 ↗</a>}</span>}
     </div>;
    })}
    {nextPage&&<button type="button" disabled={busy} onClick={()=>void loadFolder(browse,token,nextPage)}>加载下一页</button>}
