@@ -21,6 +21,8 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
  const [status,setStatus]=useState('AI 默认关闭。只有你主动点击发送才会请求所选服务。');
  const [busy,setBusy]=useState(false);
  const [checkingKey,setCheckingKey]=useState(false);
+ const [checkingNetwork,setCheckingNetwork]=useState(false);
+ const [networkStatus,setNetworkStatus]=useState('');
  const [keyStatus,setKeyStatus]=useState('');
  const errors:Record<string,string>={
   authentication_required:'请先登录本站账户。',
@@ -29,10 +31,35 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
   openrouter_key_invalid:'OpenRouter 拒绝了此密钥，请检查或重新生成。',
   openrouter_management_key_not_for_inference:'这是管理密钥，不能用于模型推理；请创建普通 API Key。',
   openrouter_rate_limited:'OpenRouter 暂时限流，请稍后再试。',
-  openrouter_unreachable:'暂时无法联系 OpenRouter，请检查网络或稍后重试。',
+  openrouter_unreachable:'网站后端到 OpenRouter 的连接失败；不能据此判断 Key 无效。',
+  openrouter_transport_failed:'网站后端访问 OpenRouter 失败（不是密钥验证失败）。',
+  openrouter_access_denied:'OpenRouter 返回拒绝访问（HTTP 403），可能是服务端或网络限制；不能直接判定 Key 无效。',
   openrouter_key_check_failed:'OpenRouter 密钥检查暂不可用。',
   openrouter_invalid_response:'OpenRouter 返回了无法识别的结果。'
  };
+ async function checkOpenRouterNetwork(){
+  if(!session||checkingNetwork)return;
+  setCheckingNetwork(true);setNetworkStatus('正在检测 OpenRouter 网络；不会使用 Key 或调用模型…');
+  try{
+   const response=await fetch(apiBase+'/v1/ai/openrouter-connectivity',{
+    method:'POST',headers:{Authorization:'Bearer '+session.access_token}
+   });
+   const info=await response.json().catch(()=>({})) as {
+    reachable?:boolean;provider_ok?:boolean;provider_status?:number;reason?:string;error?:string;content_type?:string
+   };
+   if(!response.ok||!info.reachable){
+    setNetworkStatus('服务器到 OpenRouter 连接失败（'+(info.reason||info.error||'HTTP '+response.status)+
+     '）；与密钥是否有效无关。');
+   }else{
+    setNetworkStatus(info.provider_ok
+     ?'OpenRouter 服务已响应，HTTP '+info.provider_status+'；请继续验证 Key。'
+     :'OpenRouter 返回 HTTP '+info.provider_status+'（'+(info.content_type||'unknown')+
+      '）；网络可达，但 OpenRouter 可能拒绝了请求。');
+   }
+  }catch(error){
+   setNetworkStatus('网站网络检测接口连接失败：'+(error instanceof Error?error.name:String(error)));
+  }finally{setCheckingNetwork(false);}
+ }
  async function checkOpenRouterKey(){
   if(provider!=='openrouter'||!session||!apiKey.trim()||checkingKey)return;
   setCheckingKey(true);setKeyStatus('正在验证密钥；不会调用模型或消耗推理 Token…');
@@ -40,8 +67,12 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
    const response=await fetch(apiBase+'/v1/ai/openrouter-key-check',{
     method:'POST',headers:{Authorization:'Bearer '+session.access_token,'X-AI-Key':apiKey}
    });
-   const data=await response.json().catch(()=>({})) as {ok?:boolean;error?:string;is_free_tier?:boolean;limit_remaining?:number|null};
-   if(!response.ok||!data.ok)throw Error(errors[data.error||'']||'验证失败（HTTP '+response.status+'）');
+   const data=await response.json().catch(()=>({})) as {ok?:boolean;error?:string;is_free_tier?:boolean;limit_remaining?:number|null;reason?:string;provider_status?:number};
+   if(!response.ok||!data.ok){
+    const reason=data.reason?' · 原因：'+data.reason:
+      typeof data.provider_status==='number'?' · 上游 HTTP '+data.provider_status:'';
+    throw Error((errors[data.error||'']||'验证失败（HTTP '+response.status+'）')+reason);
+   }
    setKeyStatus('OpenRouter API Key 验证成功'+(data.is_free_tier?' · 免费账户':'')+
     (typeof data.limit_remaining==='number'?' · Key 剩余消费上限 '+data.limit_remaining.toFixed(2)+' 美元':'')+
     '。Key 限额不是赠送余额，本次没有模型推理请求。');
@@ -106,6 +137,11 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
       <p><a href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener noreferrer">在 OpenRouter 账户中创建普通 API Key ↗</a></p>
       <p>默认模型 <code>openrouter/free</code> 使用免费路由；如更换付费模型，费用按你账户和实际模型计费。</p>
       <p>无需开启 AI 也能验证密钥。填写新建时复制的完整 API Key，而不是后台显示的名称或括号中的缩写。Key 的消费上限不是账户余额。</p>
+      <button type="button" disabled={!session||checkingNetwork}
+        onClick={()=>void checkOpenRouterNetwork()}>
+        {checkingNetwork?'正在检测网络…':'检测 OpenRouter 网络（不需要 Key）'}
+      </button>
+      <p role="status" className="cloud-disclaimer">{networkStatus}</p>
       <button type="button" disabled={!session||!apiKey.trim()||checkingKey}
         onClick={()=>void checkOpenRouterKey()}>{checkingKey?'正在检查…':'验证 OpenRouter API Key（不调用模型）'}</button>
       <p role="status" className="cloud-disclaimer">{keyStatus}</p>

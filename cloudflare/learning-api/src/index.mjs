@@ -41,6 +41,14 @@ async function upstream(fetchFn, url, init = {}) {
   const data = await response.json();
   return {ok:true, data};
 }
+function openRouterFailureClass(error) {
+  const name=error?.name;
+  if(name==='AbortError'||name==='TimeoutError')return 'timeout';
+  const code=error?.cause?.code;
+  if(code==='ENOTFOUND'||code==='EAI_AGAIN')return 'dns';
+  if(code==='ECONNRESET'||code==='ETIMEDOUT'||code==='ECONNREFUSED')return 'connection';
+  return 'transport';
+}
 function tokenOf(request) {
   const value = request.headers.get('Authorization') || '';
   const match = /^Bearer ([A-Za-z0-9_.~-]+)$/.exec(value);
@@ -177,6 +185,25 @@ export async function handle(request, env = {}, fetchFn = fetch) {
       }
       return output({saved:true,progress:result.data[0]},200,cors);
     }
+    // Optional no-Key check: test Cloudflare -> OpenRouter transport separately.
+    // It never triggers model inference or uses the learner's OpenRouter Key.
+    if (url.pathname === '/v1/ai/openrouter-connectivity' && verb === 'POST') {
+      const token=tokenOf(request);
+      if(!token)return output({error:'authentication_required'},401,cors);
+      if(!await resolveUser(token,config,fetchFn))
+        return output({error:'invalid_session'},401,cors);
+      try{
+        const upstream=await fetchFn('https://openrouter.ai/api/v1/models',{
+          method:'GET',redirect:'error',signal:AbortSignal.timeout(12000),
+          headers:{Accept:'application/json'}
+        });
+        return output({reachable:true,provider_status:upstream.status,provider_ok:upstream.ok,
+          content_type:upstream.headers.get('content-type')?.includes('json')?'json':'other'},200,cors);
+      }catch(error){
+        return output({reachable:false,error:'openrouter_transport_failed',
+          reason:openRouterFailureClass(error)},503,cors);
+      }
+    }
     // Check the user's OpenRouter inference key WITHOUT an inference request.
     // Authentication and model keys must never enter logs, storage or response.
     if (url.pathname === '/v1/ai/openrouter-key-check' && verb === 'POST') {
@@ -193,12 +220,18 @@ export async function handle(request, env = {}, fetchFn = fetch) {
           method:'GET',redirect:'error',signal:AbortSignal.timeout(12000),
           headers:{Authorization:'Bearer '+key}
         });
-      }catch{return output({error:'openrouter_unreachable'},503,cors);}
-      if(response.status===401||response.status===403)
+      }catch(error){
+        return output({error:'openrouter_transport_failed',
+          reason:openRouterFailureClass(error)},503,cors);
+      }
+      if(response.status===401)
         return output({error:'openrouter_key_invalid'},422,cors);
+      // 403 may be network/CDN access protection, not a bad Key.
+      if(response.status===403)
+        return output({error:'openrouter_access_denied',provider_status:403},502,cors);
       if(response.status===429)
         return output({error:'openrouter_rate_limited'},429,cors);
-      if(!response.ok)return output({error:'openrouter_key_check_failed'},502,cors);
+      if(!response.ok)return output({error:'openrouter_key_check_failed',provider_status:response.status},502,cors);
       let result;
       try{result=await response.json();}
       catch{return output({error:'openrouter_invalid_response'},502,cors);}

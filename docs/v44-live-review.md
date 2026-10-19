@@ -50,3 +50,9 @@ PR：https://github.com/ACIDCH/language-learning-hub/pull/50
 - 验证需要的是创建时复制的完整 API Key，不是后台列表的 Key 名称或括号内的简短标识。
 - Key limit 为密钥的消费上限，不代表赠送余额；$0 的限额不等于密钥本身失效，收费请求会受到限制。
 - 只有主动启用全局 AI，并点击生成按钮后才会请求模型。
+
+## OpenRouter 网络诊断（2026-10-19）
+
+- 账户的 `Key limit $100` 为单个 Key 的最高消费上限，不是默认赠送的余额。
+- 新增「检测 OpenRouter 网络（不需要 Key）」，只检查 Cloudflare 后端能否访问 OpenRouter 模型目录，不调用推理、不消耗 Token。
+- Key 验证响应区分 OpenRouter 401（Key 不可用）、403（被拒绝访问，未必是 Key 错误）、429（限流）和后端网络异常（timeout/dns/connection/transport），不泄露 Key 或原始上游异常。
