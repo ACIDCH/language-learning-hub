@@ -37,7 +37,7 @@ export default function AccountAccess({client,recoveryMode,onRecoveryComplete,on
  async function signup(e:FormEvent){e.preventDefault();await run(async()=>{
    if(password.length<8)throw Error('密码长度必须至少八位。');
    if(password!==again)throw Error('两次密码不一致。');
-   const result=await client.auth.signUp({email:email.trim(),password});
+   const result=await client.auth.signUp({email:email.trim(),password,options:{emailRedirectTo:new URL('/?page=settings&section=account',window.location.origin).toString()}});
    if(result.error)throw result.error;
    setPassword('');setAgain('');
    if(result.data.session){
@@ -61,7 +61,7 @@ export default function AccountAccess({client,recoveryMode,onRecoveryComplete,on
    setCooldown(60);setMessage('重新发送请求已提交，请查看邮箱和垃圾邮件。');
  });}
  async function forgot(e:FormEvent){e.preventDefault();await run(async()=>{
-   const redirectTo=new URL('/cloud/',window.location.origin).toString();
+   const redirectTo=new URL('/?page=settings&section=account',window.location.origin).toString();
    const {error}=await client.auth.resetPasswordForEmail(email.trim(),{redirectTo});
    if(error)throw error;
    setMessage('重置请求已提交。如该邮箱已注册且邮件服务允许发送，请查看收件箱及垃圾邮件。');

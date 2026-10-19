@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { type Session } from '@supabase/supabase-js';
 import './cloud.css';
-import {cloudClient} from './v44Connection';
+import {cloudClient,apiBase} from './v44Connection';
 import { cloudPublicDefaults } from './cloudPublicDefaults';
 import BackupImporter from './BackupImporter';
 import LessonReader from './LessonReader';
@@ -28,7 +28,6 @@ type PrivateLesson = { course_id: string; content_body: string; source_version: 
 type AudioAsset = { asset_id:string;filename:string;duration_seconds:number;source_kind:string;decoded:boolean;exact_text:boolean;listened:boolean;audio_verified:boolean };
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL?.trim() || cloudPublicDefaults.supabaseUrl;
 const publicKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY?.trim() || cloudPublicDefaults.supabasePublishableKey;
-const apiBase = (import.meta.env.VITE_WORKER_API_URL?.trim() || cloudPublicDefaults.workerApiUrl).replace(/\/$/, '');
 const configured = Boolean(supabaseUrl && publicKey && /^https:\/\//.test(apiBase));
 const client = configured ? cloudClient : null;
 const stages = ['情境', '语法', '词汇', '听读', '发音', '表达'];
