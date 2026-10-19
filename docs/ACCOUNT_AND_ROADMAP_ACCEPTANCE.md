@@ -17,3 +17,9 @@
 - Support confirmed `token_hash` callbacks on reviewed account route as well as standard Supabase Auth implicit flow. Consume token hash from address bar without sending it to logs. Supabase URL Configuration must allow exactly `https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev/**`; production origin separate and untouched.
 - **SMTP external prerequisite:** account owner configures verified sender/domain and provider SMTP (e.g. Brevo Free: 300/day; Resend Free: 3,000/month and 100/day) in Supabase Dashboard > Authentication > SMTP Settings. Authenticate sender via DNS DKIM/SPF and adjust rate limits. NO credentials in GitHub, browser or chats.
 - End-to-end completion requires two **real inboxes** and a recovery test of an authorized spare account. Check provider delivery logs, arrival, redirect, expiration, login and signout. CI cannot validate SMTP delivery, and no email is sent by building code. Do not bypass email verification by auto-confirming users.
+
+### Ready-to-paste email templates (2026-10-20)
+- `docs/auth_templates/confirmation.html` → Dashboard Authentication → Email Templates → Confirm signup.
+- `docs/auth_templates/recovery.html` → Dashboard Authentication → Email Templates → Reset password.
+- Both retain the official Supabase `{{ .ConfirmationURL }}` button and `{{ .Token }}` six-digit OTP for optional recovery/verification via UI. The link redirects to the **allowlisted** Pages account origin set in `emailRedirectTo` / `redirectTo`; it does not hardcode production or test tokens.
+- These are source templates and must be pasted/applied by the project owner in Supabase Dashboard; GitHub merge or CI alone does not mutate Auth email templates. Do not configure a custom `{{ .TokenHash }}` redirect unless its verification route is explicitly reviewed.
