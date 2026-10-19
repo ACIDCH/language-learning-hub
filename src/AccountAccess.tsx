@@ -69,7 +69,7 @@ export default function AccountAccess({client,recoveryMode,onRecoveryComplete,on
  async function forgot(e:FormEvent){e.preventDefault();await run(requestRecovery);}
  async function resendRecovery(){if(cooldown>0)return;await run(requestRecovery);}
  async function verifyRecovery(e:FormEvent){e.preventDefault();await run(async()=>{
-   if(!/^\\d{6}$/.test(token))throw Error('请输入邮件中的六位数字恢复验证码。');
+   if(!/^[0-9]{6}$/.test(token))throw Error('请输入邮件中的六位数字恢复验证码。');
    const {error,data}=await client.auth.verifyOtp({email:email.trim(),token,type:'recovery'});
    if(error)throw error;
    if(!data.session)throw Error('找回验证码已验证，但没有获得重置会话。请使用新的邮件链接重新验证。');
@@ -119,7 +119,7 @@ export default function AccountAccess({client,recoveryMode,onRecoveryComplete,on
     <p>已请求向 {email} 发送恢复邮件。邮箱不存在时服务商可能不会揭示账户状态；请检查真正的收件箱。</p>
     <label>六位恢复验证码（仅适用于包含验证码的邮件模板）
      <input inputMode="numeric" autoComplete="one-time-code" pattern="[0-9]{6}" maxLength={6} required
-      value={token} onChange={e=>setToken(e.target.value.replace(/\\D/g,'').slice(0,6))}/></label>
+      value={token} onChange={e=>setToken(e.target.value.replace(/[^0-9]/g,'').slice(0,6))}/></label>
     <button type="submit" disabled={busy||token.length!==6}>验证身份并设置新密码</button>
     <button type="button" disabled={busy||cooldown>0} onClick={()=>void resendRecovery()}>
      {cooldown?'重新发送（'+cooldown+'秒）':'重新请求恢复邮件'}</button>
