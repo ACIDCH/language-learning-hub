@@ -46,7 +46,6 @@ async function worker<T>(path: string, token?: string, init: RequestInit = {}): 
 
 export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{initialPanel?:'learn'|'path'|'foundation'|'audio'|'speech'|'review'|'resources'|'ai';initialCourse?:string}) {
   const [session, setSession] = useState<Session | null>(null);
-  const [recoveryMode,setRecoveryMode] = useState(false);
   const [catalog, setCatalog] = useState<Course[]>([]);
   const [selected, setSelected] = useState('');
   const [state, setState] = useState<State>({});
@@ -77,10 +76,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
     let alive = true;
     const auth = client;
     void auth.auth.getSession().then(({data}) => {if (alive) setSession(data.session);});
-    const {data:listener} = auth.auth.onAuthStateChange((event,next) => {
-      setSession(next);
-      if(event==='PASSWORD_RECOVERY')setRecoveryMode(true);
-    });
+    const {data:listener} = auth.auth.onAuthStateChange((_event,next) => {setSession(next);});
     void worker<{courses:Course[]}>('/v1/courses')
       .then(({courses}) => {if (alive) {setCatalog(courses); chooseCourse(courses.some(c=>c.id===initialCourse)?initialCourse:courses[0]?.id || ''); setStatus('课程索引已加载。');}})
       .catch(e => {if (alive) setStatus('云端索引暂不可用：' + e.message);});
@@ -227,10 +223,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
       <p>无需在浏览器中粘贴任何数据库管理密钥。</p>
     </section> : <>
       <p role="status" className="cloud-status">{status}</p>
-      {!session || recoveryMode ? <AccountAccess client={client!}
-        recoveryMode={recoveryMode}
-        onRecoveryComplete={()=>setRecoveryMode(false)}
-        onNotify={setStatus}/> : <section className="cloud-panel">
+      {!session ? <AccountAccess client={client!} onNotify={setStatus}/> : <section className="cloud-panel">
         <div className="cloud-flex"><h2>课程进度与笔记</h2>
           <button type="button" onClick={()=>{void client?.auth.signOut();setState({});setProgressReadyKey('');}}>退出账户</button></div>
         <p className="cloud-account">已登录：{session.user.email}</p>

@@ -185,7 +185,7 @@ describe('V4.4 integration contracts',()=>{
   fireEvent.click(screen.getByRole('button',{name:'隐藏密码'}));expect(input.type).toBe('password');expect(submit).not.toHaveBeenCalled();
  });
  it('keeps real Supabase login invocation with the accessible password control',async()=>{
-  const signInWithPassword=vi.fn().mockResolvedValue({error:null});const notify=vi.fn();render(<AccountAccess client={{auth:{signInWithPassword}} as unknown as SupabaseClient} recoveryMode={false} onRecoveryComplete={()=>{}} onNotify={notify}/>);
+  const signInWithPassword=vi.fn().mockResolvedValue({error:null});const notify=vi.fn();render(<AccountAccess client={{auth:{signInWithPassword}} as unknown as SupabaseClient} onNotify={notify}/>);
   fireEvent.change(screen.getByLabelText('邮箱'),{target:{value:'reader@example.test'}});fireEvent.change(screen.getByLabelText('密码'),{target:{value:'example-pass'}});
   fireEvent.click(screen.getByRole('button',{name:'显示密码'}));fireEvent.submit(screen.getByLabelText('邮箱').closest('form')!);
   await waitFor(()=>expect(signInWithPassword).toHaveBeenCalledWith({email:'reader@example.test',password:'example-pass'}));expect(notify).toHaveBeenCalled();
