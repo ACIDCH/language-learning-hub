@@ -32,7 +32,7 @@ do $$ declare t text; begin
   execute format('alter table public.%I enable row level security',t);
   execute format('revoke all on public.%I from public, anon',t);
   execute format('grant select,insert,update,delete on public.%I to authenticated',t);
-  execute format('create policy %I on public.%I for all to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()))','owner_'+t,t);
+  execute format('create policy %I on public.%I for all to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()))','owner_'||t,t);
  end loop;
 end $$;
 comment on table public.user_drive_settings is 'Google OAuth public client ID and selected account only; never store authorization tokens.';
