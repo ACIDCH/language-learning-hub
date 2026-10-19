@@ -6,6 +6,12 @@ const read=p=>JSON.parse(readFileSync(p,'utf8'));
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const units=read('config/curriculum/units.v2.json').units,main=read('content/v44-main-index.json');
 const assets=read('public/learning-assets/manifest.json').assets;
+const publication=read('content/v44-draft-publication.json');
+assert.equal(publication.count,main.filter(u=>u.content_status==='original_draft').length);
+assert.equal(publication.provenance_index,'content/v44-main-index.json');
+assert.equal(publication.public_preview.status,'pending_owner_confirmation');
+assert.equal(publication.public_preview.owner_approval_reference,null);
+assert.equal(publication.teaching_review,'pending');assert.equal(publication.formal_release,'not_approved');
 assert.equal(units.length,108);assert.equal(main.length,108);assert.equal(FOUNDATION_UNITS.length,48);
 assert.deepEqual(validateFoundationUnits(FOUNDATION_UNITS),[]);
 const ids=new Set(),readings=new Set();let original=0,drafts=0,words=0;
@@ -44,6 +50,7 @@ for(const [path,expected] of Object.entries(baselineRecord.normalized_lf_sha256)
 const full=[...main,...foundation];
 writeFileSync('content/v44-content-index.json',JSON.stringify(full,null,2)+'\n');
 const report={baseline,units:156,main:108,foundation:48,existing_main_originals:original,new_main_drafts:drafts,existing_foundation:48,nonempty_learning_pages:156,text_complete:156,QA_approved:0,audio_verified:0,publishable:0,
+ draft_publication:{policy:'content/v44-draft-publication.json',count:publication.count,public_preview:publication.public_preview.status,teaching_review:publication.teaching_review,formal_release:publication.formal_release},
  meaning:'These counts describe V4.4 bundled content only. Text completeness is structural, not human approval. Existing cloud/audio verification flags are neither overwritten nor invalidated.',
  public_assets_unchanged:assets.length,foundation_source_files_unchanged:4,unique_draft_readings:readings.size,draft_reading_words:words,private_manuscripts:'preferred at runtime after authentication; not copied or claimed to be tested here'};
 writeFileSync('reports/v44-content-completeness.json',JSON.stringify(report,null,2)+'\n');

@@ -11,6 +11,13 @@
   "QA_approved": 0,
   "audio_verified": 0,
   "publishable": 0,
+  "draft_publication": {
+    "policy": "content/v44-draft-publication.json",
+    "count": 101,
+    "public_preview": "pending_owner_confirmation",
+    "teaching_review": "pending",
+    "formal_release": "not_approved"
+  },
   "meaning": "These counts describe V4.4 bundled content only. Text completeness is structural, not human approval. Existing cloud/audio verification flags are neither overwritten nor invalidated.",
   "public_assets_unchanged": 19,
   "foundation_source_files_unchanged": 4,

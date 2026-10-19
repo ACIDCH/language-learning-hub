@@ -1,0 +1,16 @@
+{
+  "scope": "original_draft entries in content/v44-main-index.json",
+  "count": 101,
+  "source_kind": "project_original_teaching_drafts",
+  "source_version": "v44-original-1",
+  "provenance_index": "content/v44-main-index.json",
+  "provenance_fields": ["id", "draft_path", "sha256"],
+  "public_preview": {
+    "status": "pending_owner_confirmation",
+    "owner_approval_reference": null
+  },
+  "teaching_review": "pending",
+  "formal_release": "not_approved",
+  "notice": "原创预览 · 公开预览待所有者确认 · 教材待人工审校 · 未正式发布",
+  "visibility": "JSON sources and PR branch preview are already publicly accessible; this status is not confidentiality or access control."
+}

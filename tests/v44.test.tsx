@@ -1,6 +1,6 @@
 import React from 'react';
 import {afterEach,beforeEach,describe,it,expect,vi} from 'vitest';
-import {act,cleanup,fireEvent,render,screen,waitFor} from '@testing-library/react';
+import {act,cleanup,fireEvent,render,screen,waitFor,within} from '@testing-library/react';
 import {readFileSync} from 'node:fs';
 import PasswordInput from '../src/PasswordInput';
 import {cleanPreferences,DEFAULT_PREFERENCES,exportPreferences} from '../src/v44Preferences';
@@ -12,14 +12,76 @@ import AITutor from '../src/AITutor';
 import AppShell from '../src/AppShell';
 import AccountAccess from '../src/AccountAccess';
 import SelectionInspector from '../src/SelectionInspector';
+import {readRoute,parentRoute,routeCrumbs} from '../src/v44Routes';
+import {draftPublication,assertDraftDeploymentAllowed} from '../src/v44Publication';
+import viteConfig from '../vite.config';
 import type {Session,SupabaseClient} from '@supabase/supabase-js';
 const request=vi.hoisted(()=>vi.fn());
+// Config-hook unit test needs the identity helper, not Vite/esbuild inside jsdom.
+vi.mock('vite',()=>({defineConfig:(config:unknown)=>config,loadEnv:()=>({CF_PAGES_BRANCH:process.env.CF_PAGES_BRANCH,LLH_DEPLOY_TARGET:process.env.LLH_DEPLOY_TARGET})}));
 vi.mock('../src/v44Connection',()=>({cloudClient:null,apiBase:'https://example.test',cloudRequest:request}));
 vi.mock('../src/IpaText',()=>({default:({text}:{text:string})=><div>{text}</div>,speakIpaText:()=>true}));
 const session={user:{id:'test-owner'},access_token:'test-token'} as Session;
 beforeEach(()=>{localStorage.clear();history.replaceState({},'','/');vi.stubGlobal('scrollTo',vi.fn());request.mockReset();vi.stubGlobal('fetch',vi.fn(async(url:string)=>new Response(readFileSync('public'+url,'utf8'))));});
-afterEach(()=>{cleanup();vi.unstubAllGlobals();});
+afterEach(()=>{cleanup();vi.unstubAllGlobals();vi.unstubAllEnvs();});
 describe('V4.4 integration contracts',()=>{
+ it('restores the legacy IPA deep link, remount and hash navigation without replacing normal speech',async()=>{
+  history.replaceState({},'','/speech-lab#ipa-studio');
+  const mount=()=>render(<AISettingsProvider><AppShell/></AISettingsProvider>);
+  const first=mount();
+  await screen.findByRole('heading',{name:'IPA 全文音标阅读'});
+  fireEvent.change(screen.getByLabelText('待注音的原文'),{target:{value:'Une phrase française.'}});
+  fireEvent.click(screen.getByRole('button',{name:'显示全文 IPA 音标'}));
+  expect(screen.getByRole('button',{name:'隐藏 IPA 音标'})).toBeTruthy();
+  first.unmount();mount(); // A fresh app at the same deep URL (refresh contract).
+  await screen.findByLabelText('待注音的原文');
+  act(()=>{history.pushState({},'','/speech-lab');window.dispatchEvent(new HashChangeEvent('hashchange'));});
+  await screen.findByRole('region',{name:'跟读与识别文字练习'});
+  act(()=>{history.back();});
+  await screen.findByLabelText('待注音的原文');
+  act(()=>{history.forward();});
+  await screen.findByRole('region',{name:'跟读与识别文字练习'});
+  act(()=>{history.pushState({},'','/?page=ipa');window.dispatchEvent(new PopStateEvent('popstate'));});
+  await screen.findByLabelText('待注音的原文');
+ });
+ it.each([
+  ['/?course=fr-a1-u04&tab=speech','/?course=fr-a1-u04&tab=read'],
+  ['/?course=fr-a1-u04&tab=ipa','/?course=fr-a1-u04&tab=read'],
+  ['/?course=fr-a1-u04&tab=read','/?language=fr&track=A1'],
+  ['/?language=fr&track=A1','/?language=fr'],
+  ['/?language=fr','/'],
+  ['/?page=settings&section=account','/?page=settings'],
+  ['/?page=settings','/'],
+  ['/',null]
+ ])('uses the same parent for breadcrumbs and direct URL %s',(url,parent)=>{
+  const route=readRoute(url),crumbs=routeCrumbs(route);
+  expect(parentRoute(route)).toBe(parent);
+  expect(new Set(crumbs.map(c=>c.url)).size).toBe(crumbs.length);
+  if(parent)expect(crumbs.at(-2)?.url).toBe(parent);
+ });
+ it('returns from course IPA through reading, category and language using the actual header',async()=>{
+  history.replaceState({},'','/?course=fr-a1-u04&tab=ipa');render(<AISettingsProvider><AppShell/></AISettingsProvider>);
+  for(const expected of ['/?course=fr-a1-u04&tab=read','/?language=fr&track=A1','/?language=fr','/']){
+   const links=within(screen.getByRole('navigation',{name:'面包屑'})).getAllByRole('link');
+   expect(links.at(-2)?.getAttribute('href')).toBe(expected);
+   fireEvent.click(screen.getByRole('button',{name:'返回上一层'}));
+   expect(location.pathname+location.search).toBe(expected);
+  }
+  expect((screen.getByRole('button',{name:'返回上一层'}) as HTMLButtonElement).disabled).toBe(true);
+ });
+ it('keeps preview approval, teaching review and formal release separate and blocks production builds',()=>{
+  expect(COURSES.filter(c=>c.status==='original_draft')).toHaveLength(draftPublication.count);
+  expect(draftPublication.public_preview).toEqual({status:'pending_owner_confirmation',owner_approval_reference:null});
+  expect(draftPublication.teaching_review).toBe('pending');expect(draftPublication.formal_release).toBe('not_approved');
+  expect(()=>assertDraftDeploymentAllowed('preview')).not.toThrow();
+  const gate=(viteConfig as any).plugins.find((p:any)=>p.name==='v44-owner-publication-gate');
+  vi.stubEnv('CF_PAGES_BRANCH','main');expect(()=>gate.buildStart()).toThrow(/explicit owner/);
+  vi.stubEnv('CF_PAGES_BRANCH','feat/v44-full-ui-curriculum-one-shot');vi.stubEnv('LLH_DEPLOY_TARGET','production');
+  expect(()=>gate.buildStart()).toThrow(/explicit owner/);
+  const approvedPreview={...draftPublication,public_preview:{status:'approved',owner_approval_reference:'test fixture only'}};
+  expect(()=>assertDraftDeploymentAllowed('production',approvedPreview)).not.toThrow();
+  expect(approvedPreview.teaching_review).toBe('pending');expect(approvedPreview.formal_release).toBe('not_approved');
+ });
  it('opens all 156 genuine detail payloads with existing foundation fields and original appendices',async()=>{
   expect(COURSES).toHaveLength(156);
   for(const course of COURSES){const data=await loadCourse(course);expect(data.text.length).toBeGreaterThan(350);expect(data.text).not.toContain('此处添加示例');if(data.foundation){for(const text of [...data.foundation.concepts,...data.foundation.examples,data.foundation.reading,data.foundation.listening,data.foundation.production,data.foundation.commonMistake])expect(foundationText(data.foundation)).toContain(text);}}

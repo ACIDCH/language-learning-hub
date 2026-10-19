@@ -24,6 +24,16 @@ The course author/owner approved publishing non-personal original sample lessons
 
 ## Mandatory verification before adding a public file
 
+### V4.4 PR #50 original preview exception — awaiting owner decision
+
+The 101 `original_draft` entries are project-authored drafts, not cleared publication snapshots. Their common policy is `content/v44-draft-publication.json`; each ID, source path and SHA-256 is in `content/v44-main-index.json`, and each source retains its version and authorship statement. No teaching text is changed by this status record. Earlier sample-lesson approval does **not** approve these new drafts.
+
+Public preview permission (`pending_owner_confirmation`), human teaching review (`pending`) and formal textbook release (`not_approved`) are independent. The owner must explicitly approve preview use, with a recorded approval reference, before this branch can be deployed to the production site. This does not approve teaching quality, grant a redistribution licence, or waive the formal manifest/individual-review requirements below.
+
+The existing Vite build now fails for Cloudflare production branch `CF_PAGES_BRANCH=main`, or a manual production build with `LLH_DEPLOY_TARGET=production`, while preview permission lacks approval/evidence. Normal local/CI builds and PR review previews remain available. This is a deployment gate, **not secrecy or DRM**: these JSON files, Git history and branch preview are already public. Do not promote an existing preview artifact to production to evade the gate. Keep PR #50 unmerged pending owner approval. If confidentiality is required instead, a separate private-storage migration and public-history/exposure assessment is necessary; deleting a UI link or splitting JS chunks cannot make existing copies private.
+
+## Per-file public asset verification
+
 1. Confirm the **individual audio/text file's** copyright status. Free-to-access, open-source software, and educational use do **not** automatically confer redistribution rights. Check for any third-party components, performances, translations, images and sublicensing restrictions.
 2. Prefer the file's original source and an explicit license or public-domain notice. Do not take materials from unofficial textbook PDF/MP3 mirrors.
 3. Confirm both **redistribution** and any proposed alteration/format conversion rights. CC BY requires author/source/license attribution and modification notice. CC BY-SA may require ShareAlike licensing for derivatives; CC BY-NC / ND and ambiguously licensed content require separate evaluation and default to Drive/external link.
