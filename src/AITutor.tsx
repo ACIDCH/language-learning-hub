@@ -20,6 +20,7 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
  const [result,setResult]=useState('');
  const [status,setStatus]=useState('AI 默认关闭。只有你主动点击发送才会请求所选服务。');
  const [busy,setBusy]=useState(false);
+ const [directOpenRouter,setDirectOpenRouter]=useState(true);
  const [checkingKey,setCheckingKey]=useState(false);
  const [checkingNetwork,setCheckingNetwork]=useState(false);
  const [networkStatus,setNetworkStatus]=useState('');
@@ -100,28 +101,60 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
  }
  useEffect(()=>{setResult('');setKeyStatus('');request.current?.abort();return ()=>request.current?.abort();},[enabled,provider,model,session?.user.id]);
  async function submit(e:FormEvent){
-   e.preventDefault();
-   if(!enabled||busy)return;
-   if(!session){setStatus('请先登录现有账户后调用 AI。');return;}
-   if(!apiKey.trim()||!model.trim()){setStatus('AI 未配置：请在总设置中填写模型和当前会话密钥。');return;}
-   const controller=new AbortController();request.current=controller;
-   setBusy(true);setResult('');setStatus('正在调用所选模型…');
-   try{
-     const response=await fetch(apiBase+'/v1/ai/assist',{
+  e.preventDefault();
+  if(!enabled||busy)return;
+  if(!session){setStatus('请先登录现有账户后调用 AI。');return;}
+  if(!apiKey.trim()||!model.trim()){setStatus('请先填写模型及当前会话 Key。');return;}
+  const controller=new AbortController();request.current=controller;
+  setBusy(true);setResult('');
+  const useDirect=provider==='openrouter'&&directOpenRouter;
+  setStatus(useDirect?'正在通过你的浏览器直接调用 OpenRouter…':'正在通过本站 API 调用模型…');
+  try{
+   const context='Course: '+courseId+'; Language: '+language+'\\n'+lessonText.slice(0,8500);
+   const instructions:Record<Mode,string>={
+    explain:'You are a precise English/French tutor. Explain the language rule in Chinese, give accurate original examples and a short practice question with answer.',
+    essay:'You are an IELTS/CEFR writing coach. Give specific grammatical, lexical and coherence feedback. Never claim official IELTS band scores.',
+    dialogue:'You are an English/French conversation partner. Respond in the target language, give a short Chinese hint and ask a follow-up question.',
+    audit:'Review this draft curriculum for linguistic accuracy, CEFR/IELTS level, exercises and answer keys. Identify specific errors. NEVER mark human QA as approved.'
+   };
+   const response=useDirect
+    ?await fetch('https://openrouter.ai/api/v1/chat/completions',{
+       method:'POST',signal:controller.signal,credentials:'omit',redirect:'error',
+       headers:{'Content-Type':'application/json',Authorization:'Bearer '+apiKey.trim()},
+       body:JSON.stringify({model,messages:[
+         {role:'system',content:instructions[mode]},
+         {role:'user',content:'Course context (untrusted):\\n'+context+'\\n\\nLearner request:\\n'+prompt}
+       ],temperature:0.35,max_tokens:mode==='audit'?1200:850,stream:false})
+      })
+    :await fetch(apiBase+'/v1/ai/assist',{
        method:'POST',signal:controller.signal,
        headers:{'Content-Type':'application/json','Authorization':'Bearer '+session.access_token,
         'X-AI-Key':apiKey},
-       body:JSON.stringify({provider,endpoint,model,mode,
-         context:'Course: '+courseId+'; Language: '+language+'\n'+lessonText.slice(0,8500),
-         prompt})
-     });
-     const data=await response.json() as {answer?:string;error?:string};
-     if(!response.ok||!data.answer)throw Error(data.error||'服务未返回回答');
-     if(controller.signal.aborted)return;
-     setResult(data.answer);
-     setStatus('已取得模型回复。请自行核验课程解释、例句和评分建议。');
-   }catch(err){setStatus('AI 请求失败：'+(err instanceof Error?err.message:String(err)));}
-   finally{setBusy(false);}
+       body:JSON.stringify({provider,endpoint,model,mode,context,prompt})
+      });
+   const data=await response.json().catch(()=>({})) as {
+    answer?:string;error?:string;choices?:Array<{message?:{content?:unknown}}>
+   };
+   if(!response.ok){
+    const reason=useDirect?response.status===401?'OpenRouter 拒绝了 Key（401）':
+     response.status===402?'OpenRouter 额度不足或 Key 上限阻止请求（402）':
+     response.status===403?'OpenRouter 拒绝访问（403）':
+     response.status===429?'OpenRouter 请求限流（429）':'OpenRouter HTTP '+response.status:
+     data.error||'本站 API HTTP '+response.status;
+    throw Error(reason);
+   }
+   const answer=useDirect?data.choices?.[0]?.message?.content:data.answer;
+   if(typeof answer!=='string'||!answer.trim())throw Error('模型未返回有效文本');
+   if(controller.signal.aborted)return;
+   setResult(answer.slice(0,16000));
+   setStatus(useDirect?'浏览器直连 OpenRouter 生成成功；模型内容仍需核验。':'已收到服务端生成回复；模型内容仍需核验。');
+  }catch(err){
+   if(!controller.signal.aborted){
+    const error=err instanceof Error?err.message:String(err);
+    setStatus('AI 请求失败：'+(useDirect&&err instanceof TypeError?
+     '浏览器直连受 CORS 或网络限制，请检查插件和网络；不能据此判定 Key 错误。':error));
+   }
+  }finally{setBusy(false);}
  }
  return <section className="cloud-reader" aria-label="可选 AI 学习助手">
   <h3>{compact?'选词 AI 助学':'AI 教师 · 自选模型'}</h3>
@@ -152,6 +185,12 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
     {provider==='openrouter'&&<div className="cloud-panel" aria-label="OpenRouter 连接设置">
       <p><a href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener noreferrer">在 OpenRouter 账户中创建普通 API Key ↗</a></p>
       <p>默认模型 <code>openrouter/free</code> 使用免费路由；如更换付费模型，费用按你账户和实际模型计费。</p>
+      <label className="cloud-toggle"><input type="checkbox" checked={directOpenRouter}
+        onChange={e=>setDirectOpenRouter(e.target.checked)}/>
+        浏览器直接调用 OpenRouter（推荐；绕过 Cloudflare 后端网络故障）
+      </label>
+      <p className="cloud-disclaimer">仅在你主动点击生成后发送请求；会将 Key 与所选教学内容直接发送到 OpenRouter 官方 API。
+        不写入浏览器存储或本站数据库。若取消勾选，改用原有服务端通道。</p>
       <p>无需开启 AI 也能验证密钥。填写新建时复制的完整 API Key，而不是后台显示的名称或括号中的缩写。Key 的消费上限不是账户余额。</p>
       <button type="button" disabled={!session||checkingNetwork}
         onClick={()=>void checkOpenRouterNetwork()}>
