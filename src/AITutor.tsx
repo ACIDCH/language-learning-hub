@@ -54,22 +54,46 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
  }
  async function checkOpenRouterKey(){
   if(provider!=='openrouter'||!session||!apiKey.trim()||checkingKey)return;
-  setCheckingKey(true);setKeyStatus('正在验证密钥；不会调用模型或消耗推理 Token…');
+  setCheckingKey(true);setKeyStatus('正在从浏览器向 OpenRouter 直接验证 Key，不调用模型…');
   try{
-   const response=await fetch(apiBase+'/v1/ai/openrouter-key-check',{
-    method:'POST',headers:{Authorization:'Bearer '+session.access_token,'X-AI-Key':apiKey}
+   const response=await fetch('https://openrouter.ai/api/v1/key',{
+    method:'GET',redirect:'error',credentials:'omit',cache:'no-store',
+    signal:AbortSignal.timeout(12000),
+    headers:{Authorization:'Bearer '+apiKey.trim(),Accept:'application/json'}
    });
-   const data=await response.json().catch(()=>({})) as {ok?:boolean;error?:string;is_free_tier?:boolean;limit_remaining?:number|null;reason?:string;provider_status?:number};
-   if(!response.ok||!data.ok){
-    const reason=data.reason?' · 原因：'+data.reason:
-      typeof data.provider_status==='number'?' · 上游 HTTP '+data.provider_status:'';
-    throw Error((errors[data.error||'']||'验证失败（HTTP '+response.status+'）')+reason);
+   if(response.status===401){setKeyStatus('OpenRouter 返回 401：Key 不正确或已失效。');return;}
+   if(response.status===403){setKeyStatus('OpenRouter 返回 403：访问被拒绝，不能直接判定 Key 错误。');return;}
+   if(response.status===429){setKeyStatus('OpenRouter 返回 429：请求过于频繁，请稍后再试。');return;}
+   if(!response.ok){setKeyStatus('浏览器连到了 OpenRouter，但密钥接口返回 HTTP '+response.status);return;}
+   const result=await response.json() as {data?:{
+    is_management_key?:boolean;is_free_tier?:boolean;limit_remaining?:number|null
+   }};
+   if(!result?.data){setKeyStatus('OpenRouter 返回的数据格式异常，未能判断 Key。');return;}
+   if(result.data.is_management_key){setKeyStatus('当前是管理 Key，不能用于模型推理。');return;}
+   setKeyStatus('浏览器直连 OpenRouter 验证成功'+
+    (result.data.is_free_tier?' · 免费方案':'')+
+    (typeof result.data.limit_remaining==='number'?' · Key 剩余消费限额 '+result.data.limit_remaining.toFixed(2)+' 美元':'')+
+    '。未进行模型推理或扣除推理 Token。');
+  }catch{
+   setKeyStatus('浏览器直接验证受网络或 CORS 限制，正在尝试原有服务端通道…');
+   try{
+    const response=await fetch(apiBase+'/v1/ai/openrouter-key-check',{
+     method:'POST',headers:{Authorization:'Bearer '+session.access_token,'X-AI-Key':apiKey}
+    });
+    const data=await response.json().catch(()=>({})) as {
+     ok?:boolean;error?:string;is_free_tier?:boolean;limit_remaining?:number|null;reason?:string
+    };
+    if(!response.ok||!data.ok){
+     setKeyStatus('浏览器直连受阻；原服务端：'+(errors[data.error||'']||'HTTP '+response.status)+
+      (data.reason?' · '+data.reason:'')+'。两条通道均未能判定 Key。');
+    }else{
+     setKeyStatus('服务端验证成功'+(data.is_free_tier?' · 免费方案':'')+
+      '。未发起模型推理。');
+    }
+   }catch{
+    setKeyStatus('浏览器及服务端验证请求均受阻，尚不能判断 Key 是否有效。');
    }
-   setKeyStatus('OpenRouter API Key 验证成功'+(data.is_free_tier?' · 免费账户':'')+
-    (typeof data.limit_remaining==='number'?' · Key 剩余消费上限 '+data.limit_remaining.toFixed(2)+' 美元':'')+
-    '。Key 限额不是赠送余额，本次没有模型推理请求。');
-  }catch(error){setKeyStatus('密钥验证未通过：'+(error instanceof Error?error.message:String(error)));}
-  finally{setCheckingKey(false);}
+  }finally{setCheckingKey(false);}
  }
  function changeProvider(next:Provider){
    update({provider:next,model:DEFAULT_MODELS[next],apiKey:''});setResult('');setKeyStatus('');setStatus('已切换服务，未发出任何 AI 请求。');
