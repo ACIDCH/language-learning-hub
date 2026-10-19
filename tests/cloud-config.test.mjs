@@ -23,7 +23,7 @@ test('Cloudflare environment overrides continue to work',()=>{
   assert.match(connection,/VITE_WORKER_API_URL\?\.trim\(\)\|\|cloudPublicDefaults\.workerApiUrl/);
   assert.match(cloud,/import \{cloudClient,apiBase\} from '\.\/v44Connection'/);
   assert.ok(preview.includes('https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev'));
-  assert.match(preview,/PREVIEW_API_BASE='\\/api'/);
+  assert.ok(preview.includes("PREVIEW_API_BASE='/api'"));
 });
 test('cloud progress still routes to authenticated Worker endpoints',()=>{
   assert.match(cloud,/Authorization: 'Bearer ' \+ token/);
