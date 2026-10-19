@@ -140,7 +140,7 @@ describe('V4.4 integration contracts',()=>{
   expect(selectedOriginal(scope,selection)?.text).toBe('J’aime l’école.');expect(selectedOriginal(document.createElement('div'),selection)).toBeNull();scope.remove();selection.removeAllRanges();
  });
  it('validates an OpenRouter key while AI inference is disabled',async()=>{
-  const fetcher=vi.fn().mockResolvedValue(new Response(JSON.stringify({ok:true,provider:'openrouter',is_free_tier:true,limit_remaining:0}),{status:200,headers:{'Content-Type':'application/json'}}));
+  const fetcher=vi.fn().mockResolvedValue(new Response(JSON.stringify({data:{is_free_tier:true,is_management_key:false,limit_remaining:0}}),{status:200,headers:{'Content-Type':'application/json'}}));
   vi.stubGlobal('fetch',fetcher);
   render(<AISettingsProvider><AITutor session={session} apiBase="https://example.test" courseId="fr-a1-u01" language="fr" lessonText="Bonjour"/></AISettingsProvider>);
   expect((screen.getByRole('checkbox',{name:/手动启用 AI/}) as HTMLInputElement).checked).toBe(false);
@@ -148,13 +148,13 @@ describe('V4.4 integration contracts',()=>{
   const input=screen.getByLabelText('API Key（不保存）') as HTMLInputElement;
   fireEvent.change(input,{target:{value:'sk-or-fixture-only'}});
   fireEvent.click(screen.getByRole('button',{name:'验证 OpenRouter API Key（不调用模型）'}));
-  await waitFor(()=>expect(screen.getByText(/OpenRouter API Key 验证成功/)).toBeTruthy());
+  await waitFor(()=>expect(screen.getByText(/浏览器直连 OpenRouter 验证成功/)).toBeTruthy());
   expect(fetcher).toHaveBeenCalledTimes(1);
   const [url,init]=fetcher.mock.calls[0] as [string,RequestInit];
-  expect(url).toContain('/v1/ai/openrouter-key-check');
-  expect(init.method).toBe('POST');
+  expect(url).toBe('https://openrouter.ai/api/v1/key');
+  expect(init.method).toBe('GET');
   expect(init.body).toBeUndefined();
-  expect((init.headers as Record<string,string>)['X-AI-Key']).toBe('sk-or-fixture-only');
+  expect((init.headers as Record<string,string>).Authorization).toBe('Bearer sk-or-fixture-only');
  });
  it('shares AI enable state while refusing unconfigured requests and never inventing an answer',()=>{
   render(<AISettingsProvider><AITutor session={null} apiBase="https://example.test" courseId="fr-a1-u01" language="fr" lessonText="Bonjour"/><AITutor compact session={null} apiBase="https://example.test" courseId="fr-a1-u01" language="fr" lessonText="Bonjour"/></AISettingsProvider>);
