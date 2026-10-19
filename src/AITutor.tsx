@@ -39,25 +39,17 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
  };
  async function checkOpenRouterNetwork(){
   if(!session||checkingNetwork)return;
-  setCheckingNetwork(true);setNetworkStatus('正在检测 OpenRouter 网络；不会使用 Key 或调用模型…');
+  setCheckingNetwork(true);
+  setNetworkStatus('正在从浏览器直连 OpenRouter（不经过 Cloudflare）…');
   try{
-   const response=await fetch(apiBase+'/v1/ai/openrouter-connectivity',{
-    method:'POST',headers:{Authorization:'Bearer '+session.access_token}
+   const response=await fetch('https://openrouter.ai/api/v1/models',{
+    method:'GET',credentials:'omit',redirect:'error',cache:'no-store',signal:AbortSignal.timeout(12000)
    });
-   const info=await response.json().catch(()=>({})) as {
-    reachable?:boolean;provider_ok?:boolean;provider_status?:number;reason?:string;error?:string;content_type?:string
-   };
-   if(!response.ok||!info.reachable){
-    setNetworkStatus('服务器到 OpenRouter 连接失败（'+(info.reason||info.error||'HTTP '+response.status)+
-     '）；与密钥是否有效无关。');
-   }else{
-    setNetworkStatus(info.provider_ok
-     ?'OpenRouter 服务已响应，HTTP '+info.provider_status+'；请继续验证 Key。'
-     :'OpenRouter 返回 HTTP '+info.provider_status+'（'+(info.content_type||'unknown')+
-      '）；网络可达，但 OpenRouter 可能拒绝了请求。');
-   }
-  }catch(error){
-   setNetworkStatus('网站网络检测接口连接失败：'+(error instanceof Error?error.name:String(error)));
+   setNetworkStatus(response.ok
+     ?'浏览器直连成功（HTTP '+response.status+'），可以继续验证 Key。'
+     :'OpenRouter 已响应 HTTP '+response.status+'，但未允许正常访问。');
+  }catch{
+   setNetworkStatus('浏览器直连失败：可能是 CORS、插件或网络限制；不是密钥验证失败。');
   }finally{setCheckingNetwork(false);}
  }
  async function checkOpenRouterKey(){
