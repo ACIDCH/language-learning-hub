@@ -44,3 +44,9 @@ PR：https://github.com/ACIDCH/language-learning-hub/pull/50
 - 「总设置 → AI 助学」默认 OpenRouter／`openrouter/free`，AI 仍默认关闭。用户自行在 [OpenRouter 创建密钥](https://openrouter.ai/settings/keys)，仅在浏览器的密码框填写，不发给助手。
 - 「验证 OpenRouter API Key」仅调用 OpenRouter `GET /api/v1/key` 获取密钥有效性及非敏感元数据，不请求任何聊天生成，不消耗模型推理 Token。验证成功不代表实际模型请求必然成功或没有其他额度限制。
 - 用户主动开启 AI 并点击生成后，才向 `/api/v1/ai/assist` 请求答案；具体服务费/免费限额以 OpenRouter 当时的账户实际情况为准。
+
+## OpenRouter 密钥验证交互改进（2026-10-19）
+- AI 默认关闭时，仍可输入和验证 OpenRouter Key；不会执行模型推理。
+- 验证需要的是创建时复制的完整 API Key，不是后台列表的 Key 名称或括号内的简短标识。
+- Key limit 为密钥的消费上限，不代表赠送余额；$0 的限额不等于密钥本身失效，收费请求会受到限制。
+- 只有主动启用全局 AI，并点击生成按钮后才会请求模型。

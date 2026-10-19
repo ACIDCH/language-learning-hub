@@ -139,11 +139,12 @@ describe('V4.4 integration contracts',()=>{
   const r=document.createRange();r.selectNodeContents(scope);const selection=window.getSelection()!;selection.removeAllRanges();selection.addRange(r);
   expect(selectedOriginal(scope,selection)?.text).toBe('J’aime l’école.');expect(selectedOriginal(document.createElement('div'),selection)).toBeNull();scope.remove();selection.removeAllRanges();
  });
- it('validates an OpenRouter key on demand without performing model inference',async()=>{
+ it('validates an OpenRouter key while AI inference is disabled',async()=>{
   const fetcher=vi.fn().mockResolvedValue(new Response(JSON.stringify({ok:true,provider:'openrouter',is_free_tier:true,limit_remaining:0}),{status:200,headers:{'Content-Type':'application/json'}}));
   vi.stubGlobal('fetch',fetcher);
   render(<AISettingsProvider><AITutor session={session} apiBase="https://example.test" courseId="fr-a1-u01" language="fr" lessonText="Bonjour"/></AISettingsProvider>);
-  fireEvent.click(screen.getByRole('checkbox',{name:/手动启用 AI/}));
+  expect((screen.getByRole('checkbox',{name:/手动启用 AI/}) as HTMLInputElement).checked).toBe(false);
+  expect((screen.getByRole('button',{name:/AI 关闭 · 如需生成请先启用/}) as HTMLButtonElement).disabled).toBe(true);
   const input=screen.getByLabelText('API Key（不保存）') as HTMLInputElement;
   fireEvent.change(input,{target:{value:'sk-or-fixture-only'}});
   fireEvent.click(screen.getByRole('button',{name:'验证 OpenRouter API Key（不调用模型）'}));
