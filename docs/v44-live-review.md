@@ -93,3 +93,10 @@ PR：https://github.com/ACIDCH/language-learning-hub/pull/50
 - 定向修复：`AudioVault.tsx` 仅在浏览器 `canplay` 后报告可解码、`playing` 后报告实际开始播放；签名 URL 成功只标注为临时地址已获得，`error` 和 `stalled` 明确提示。不会因为 Storage 对象存在就宣称人工试听成功。
 - 定向修复：`CloudWorkspace.tsx` 的主课进度远端读取失败时，保留已有本机草稿仅供查看，但**锁定写回**避免覆盖远端记录；提供重新读取按钮。原来单独的 `useCourseProgress.ts` 已具备同样保护，本次不重复改动。
 - 前端新增音频事件的模拟回归测试；音频能否在真实设备播放，仍需用户亲测。私人教材和 48 节基础课原稿均没有修改；个人记录没有新增或覆盖。
+
+## P1 CloudWorkspace 同源 API 误判修复（2026-10-20）
+
+- 用户实际反馈：进入 `/cloud?panel=foundation` / `audio` 时显示「尚未启用云端连接」，尽管 `/?page=settings&section=account` 已成功登录与同步。
+- 实际根因：`src/CloudWorkspace.tsx` 用 `/^https:\/\//` 判断 API 地址为启用条件；已部署的 Cloudflare Pages 同源 API 实际是 `/api`，因此即使 Supabase 客户端存在，也被前端错误禁用。本次修复直接使用已经建立的 Supabase 客户端和 `src/previewWorker.ts` 的受限接口类型判断，并新增分支预览 `/cloud` 的定向回归断言。
+- 这是前端判定错误而非 Supabase 数据库 / Worker 缺失；不应要求重新配置 API 密钥、改 Cloudflare 或再次上传已经保存的私人教材、音频。
+- 更新只通过原 PR #50 预览分支；仍需实际 Chrome/Edge 浏览器再次确认 `/cloud` 内课程、基础课、音频三个模块正常出现。没有更改现有用户学习进度、教学内容、音频对象、Supabase 表或生产部署门禁。

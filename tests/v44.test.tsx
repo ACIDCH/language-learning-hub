@@ -16,7 +16,7 @@ import AccountAccess from '../src/AccountAccess';
 import SelectionInspector from '../src/SelectionInspector';
 import {readRoute,parentRoute,routeCrumbs} from '../src/v44Routes';
 import {draftPublication,assertDraftDeploymentAllowed} from '../src/v44Publication';
-import {pickWorkerOrigin,PREVIEW_PAGES_ORIGIN,PREVIEW_API_BASE} from '../src/previewWorker';
+import {pickWorkerOrigin,PREVIEW_PAGES_ORIGIN,PREVIEW_API_BASE,isCloudWorkspaceConfigured} from '../src/previewWorker';
 import viteConfig from '../vite.config';
 import type {Session,SupabaseClient} from '@supabase/supabase-js';
 const request=vi.hoisted(()=>vi.fn());
@@ -62,6 +62,14 @@ describe('V4.4 integration contracts',()=>{
   expect(pickWorkerOrigin('https://language-learning-hub.pages.dev/', 'https://production.example/api/')).toBe('https://production.example/api');
  });
 
+ it('keeps the connected cloud workspace enabled on the same-origin Pages preview',()=>{
+  expect(isCloudWorkspaceConfigured(true,PREVIEW_API_BASE)).toBe(true);
+  expect(isCloudWorkspaceConfigured(true,'https://language-hub-api.example.com')).toBe(true);
+  expect(isCloudWorkspaceConfigured(false,PREVIEW_API_BASE)).toBe(false);
+  expect(isCloudWorkspaceConfigured(true,'http://insecure.example.com')).toBe(false);
+  expect(isCloudWorkspaceConfigured(true,'')).toBe(false);
+  expect(pickWorkerOrigin(PREVIEW_PAGES_ORIGIN+'/cloud?panel=audio', 'https://old.worker.example.com')).toBe('/api');
+ });
  it('restores the legacy IPA deep link, remount and hash navigation without replacing normal speech',async()=>{
   history.replaceState({},'','/speech-lab#ipa-studio');
   const mount=()=>render(<AISettingsProvider><AppShell/></AISettingsProvider>);

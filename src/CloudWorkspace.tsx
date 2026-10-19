@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { type Session } from '@supabase/supabase-js';
 import './cloud.css';
 import {cloudClient,apiBase} from './v44Connection';
-import { cloudPublicDefaults } from './cloudPublicDefaults';
+import {isCloudWorkspaceConfigured} from './previewWorker';
 import BackupImporter from './BackupImporter';
 import LessonReader from './LessonReader';
 import AudioVault from './AudioVault';
@@ -26,9 +26,8 @@ type State = { stage?: number; notes?: string; completed?: boolean; [key: string
 type Progress = { course_id: string; state: State; updated_at: string };
 type PrivateLesson = { course_id: string; content_body: string; source_version: string; qa_status: string; updated_at: string };
 type AudioAsset = { asset_id:string;filename:string;duration_seconds:number;source_kind:string;decoded:boolean;exact_text:boolean;listened:boolean;audio_verified:boolean };
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL?.trim() || cloudPublicDefaults.supabaseUrl;
-const publicKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY?.trim() || cloudPublicDefaults.supabasePublishableKey;
-const configured = Boolean(supabaseUrl && publicKey && /^https:\/\//.test(apiBase));
+// Preview uses same-origin /api; an absolute HTTPS Worker is not required.
+const configured = isCloudWorkspaceConfigured(Boolean(cloudClient),apiBase);
 const client = configured ? cloudClient : null;
 const stages = ['情境', '语法', '词汇', '听读', '发音', '表达'];
 const draftKey = (uid: string,courseId: string) => 'llh-cloud-draft-v1:' + uid + ':' + courseId;
