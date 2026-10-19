@@ -94,7 +94,7 @@ it('three-provider comparison explicitly adds OpenRouter and does not auto-call 
  fireEvent.click(screen.getByText('Configure three'));
  fireEvent.change(screen.getByLabelText('提问或待批改文本'),{target:{value:'Explain French articles'}});
  expect(requests).toHaveLength(0);
- fireEvent.click(screen.getByRole('button',{name:/三模型对照/}));
+ fireEvent.click(screen.getByRole('button',{name:/三服务对照/}));
  await waitFor(()=>expect(requests).toHaveLength(3));
  expect(requests.map(x=>[x.provider,x.model,x.key]).sort()).toEqual([
   ['deepseek','deepseek-flash','ds-key'],
