@@ -6,9 +6,16 @@
 
 恢复 `/speech-lab#ipa-studio`，与原跟读及新 IPA 入口并存；监听 hash/history。返回按钮与面包屑共享纯函数层级：课程工具→阅读→分类→语言→全部；设置子页→设置→目录，根目录禁用返回，避免自身循环。
 
-101 份初稿的公共状态与 ID/路径/哈希溯源见 `content/v44-draft-publication.json` 及原索引。公开预览待所有者确认、教学审校待完成、正式发布未批准，三者分开。正文及156条映射未重生成或删除。既有 Vite 构建增加生产发布门禁：Cloudflare `main` 或 `LLH_DEPLOY_TARGET=production` 在没有所有者授权及依据时失败；PR/本地评审构建继续可用。这不使公开 GitHub 源码、历史或既有分支预览私有化。
+101 份初稿的公共状态与 ID/路径/哈希溯源见 `content/v44-draft-publication.json` 及原索引。所有者已于 2026-10-19 [明确授权公开预览](https://github.com/ACIDCH/language-learning-hub/pull/50#issuecomment-6258714322)，但教学审校仍待完成，正式教材发布仍未批准。生产站点的合并与部署**尚未获授权**，独立门禁 `production_deployment=pending_final_acceptance` 继续阻止 Cloudflare `main` 或 `LLH_DEPLOY_TARGET=production` 的生产构建；PR/本地评审构建照常。这不会使既已公开的 GitHub 源码、历史或分支预览私有化。课程正文及156条映射未重生成或删除。
 
-定向测试22/22通过（含旧IPA直接入口/重挂载、hash与History、逐级返回、生产门禁），生产格式构建通过，156课内容与既有资产校验通过。构建配置的环境类型问题已修正；未新增依赖、未重复执行全套本地测试。本节不新增真实账户/云同步/语音/AI服务验收结论。唯一待决事项：所有者是否授权101份原创待审草稿用于公开预览；PR保持未合并，正式教材仍须独立审校及发布批准。
+定向测试22/22通过（含旧IPA直接入口/重挂载、hash与History、逐级返回、生产门禁），生产格式构建通过，156课内容与既有资产校验通过。构建配置的环境类型问题已修正；未新增依赖、未重复执行全套本地测试。本节不新增真实账户/云同步/语音/AI服务验收结论。公开预览授权已记录；仍待最终功能验收及**独立的正式站点部署批准**。PR 保持未合并，正式教材仍须独立审校及发布批准。
+
+## 公开预览授权更新（2026-10-19）
+
+- 所有者仅批准 101 份**项目原创、待人工审校课程初稿**用于公开预览；批准依据：[PR #50 记录](https://github.com/ACIDCH/language-learning-hub/pull/50#issuecomment-6258714322)。
+- `public_preview=approved`；`teaching_review=pending`；`formal_release=not_approved`；`production_deployment=pending_final_acceptance`。
+- 本次授权**不等于正式部署许可**，也不授予第三方再分发或改许可权。PR 必须继续保持未合并、未生产部署，直到最终验收。
+- 此次只调整授权状态、门禁、断言和文档，没有重新生成课程或改变既有教材。
 
 ## 已实现
 

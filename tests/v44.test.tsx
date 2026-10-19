@@ -69,18 +69,27 @@ describe('V4.4 integration contracts',()=>{
   }
   expect((screen.getByRole('button',{name:'返回上一层'}) as HTMLButtonElement).disabled).toBe(true);
  });
- it('keeps preview approval, teaching review and formal release separate and blocks production builds',()=>{
+ it('records public preview consent independently from teaching, formal release and production deployment',()=>{
   expect(COURSES.filter(c=>c.status==='original_draft')).toHaveLength(draftPublication.count);
-  expect(draftPublication.public_preview).toEqual({status:'pending_owner_confirmation',owner_approval_reference:null});
-  expect(draftPublication.teaching_review).toBe('pending');expect(draftPublication.formal_release).toBe('not_approved');
+  expect(draftPublication.public_preview.status).toBe('approved');
+  expect(draftPublication.public_preview.owner_approval_reference).toMatch(/github\.com\/ACIDCH\/language-learning-hub\/pull\/50#issuecomment-\d+/);
+  expect(draftPublication.teaching_review).toBe('pending');
+  expect(draftPublication.formal_release).toBe('not_approved');
+  expect(draftPublication.production_deployment).toEqual({status:'pending_final_acceptance',owner_approval_reference:null});
   expect(()=>assertDraftDeploymentAllowed('preview')).not.toThrow();
+  expect(()=>assertDraftDeploymentAllowed('production')).toThrow(/final owner deployment approval/);
   const gate=(viteConfig as any).plugins.find((p:any)=>p.name==='v44-owner-publication-gate');
-  vi.stubEnv('CF_PAGES_BRANCH','main');expect(()=>gate.buildStart()).toThrow(/explicit owner/);
-  vi.stubEnv('CF_PAGES_BRANCH','feat/v44-full-ui-curriculum-one-shot');vi.stubEnv('LLH_DEPLOY_TARGET','production');
-  expect(()=>gate.buildStart()).toThrow(/explicit owner/);
-  const approvedPreview={...draftPublication,public_preview:{status:'approved',owner_approval_reference:'test fixture only'}};
-  expect(()=>assertDraftDeploymentAllowed('production',approvedPreview)).not.toThrow();
-  expect(approvedPreview.teaching_review).toBe('pending');expect(approvedPreview.formal_release).toBe('not_approved');
+  vi.stubEnv('CF_PAGES_BRANCH','main');
+  expect(()=>gate.buildStart()).toThrow(/final owner deployment approval/);
+  vi.stubEnv('CF_PAGES_BRANCH','feat/v44-full-ui-curriculum-one-shot');
+  vi.stubEnv('LLH_DEPLOY_TARGET','production');
+  expect(()=>gate.buildStart()).toThrow(/final owner deployment approval/);
+  const ownerDeployApproved={...draftPublication,production_deployment:{status:'approved',owner_approval_reference:'test fixture only'}};
+  expect(()=>assertDraftDeploymentAllowed('production',ownerDeployApproved)).not.toThrow();
+  const withoutPublicPreview={...ownerDeployApproved,public_preview:{status:'pending_owner_confirmation',owner_approval_reference:null}};
+  expect(()=>assertDraftDeploymentAllowed('production',withoutPublicPreview)).toThrow(/public-preview approval/);
+  expect(ownerDeployApproved.teaching_review).toBe('pending');
+  expect(ownerDeployApproved.formal_release).toBe('not_approved');
  });
  it('opens all 156 genuine detail payloads with existing foundation fields and original appendices',async()=>{
   expect(COURSES).toHaveLength(156);

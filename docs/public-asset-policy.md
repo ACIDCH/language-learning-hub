@@ -24,13 +24,15 @@ The course author/owner approved publishing non-personal original sample lessons
 
 ## Mandatory verification before adding a public file
 
-### V4.4 PR #50 original preview exception — awaiting owner decision
+### V4.4 PR #50 original-draft preview — owner-approved, deployment pending
 
-The 101 `original_draft` entries are project-authored drafts, not cleared publication snapshots. Their common policy is `content/v44-draft-publication.json`; each ID, source path and SHA-256 is in `content/v44-main-index.json`, and each source retains its version and authorship statement. No teaching text is changed by this status record. Earlier sample-lesson approval does **not** approve these new drafts.
+The 101 `original_draft` entries are project-authored teaching drafts, not human-reviewed textbooks. Their common policy is `content/v44-draft-publication.json`; each ID, source path, SHA-256 and version remains in `content/v44-main-index.json`. Earlier sample-lesson approval does not authorize broader textbook publication.
 
-Public preview permission (`pending_owner_confirmation`), human teaching review (`pending`) and formal textbook release (`not_approved`) are independent. The owner must explicitly approve preview use, with a recorded approval reference, before this branch can be deployed to the production site. This does not approve teaching quality, grant a redistribution licence, or waive the formal manifest/individual-review requirements below.
+**The repository owner explicitly approved public preview for these 101 original drafts on 2026-10-19, recorded in [PR #50 owner consent](https://github.com/ACIDCH/language-learning-hub/pull/50#issuecomment-6258714322).** The approval covers viewing and learning from the marked drafts as *public preview*, not teaching-quality approval, formal textbook release, redistribution, relicensing, or any third-party textbook. `teaching_review=pending` and `formal_release=not_approved` therefore remain unchanged.
 
-The existing Vite build now fails for Cloudflare production branch `CF_PAGES_BRANCH=main`, or a manual production build with `LLH_DEPLOY_TARGET=production`, while preview permission lacks approval/evidence. Normal local/CI builds and PR review previews remain available. This is a deployment gate, **not secrecy or DRM**: these JSON files, Git history and branch preview are already public. Do not promote an existing preview artifact to production to evade the gate. Keep PR #50 unmerged pending owner approval. If confidentiality is required instead, a separate private-storage migration and public-history/exposure assessment is necessary; deleting a UI link or splitting JS chunks cannot make existing copies private.
+**No merge or production deployment was approved.** `production_deployment=pending_final_acceptance` remains a separate build gate until the owner explicitly authorizes site deployment after final acceptance. `src/v44Publication.ts` and Vite require both recorded public-preview consent and separate production-deployment authorization for a production build (`CF_PAGES_BRANCH=main` or `LLH_DEPLOY_TARGET=production`). Local/CI/PR review builds remain available.
+
+This is deployment process control, **not confidentiality or DRM**: GitHub JSON sources, history and earlier branch previews were publicly accessible before approval. Keep PR #50 open and unmerged; do not deploy unless the owner separately approves. Formal release would still require its own review and publication procedure.
 
 ## Per-file public asset verification
 

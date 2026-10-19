@@ -1,10 +1,18 @@
 import record from '../content/v44-draft-publication.json';
-type Publication=Omit<typeof record,'public_preview'>&{public_preview:{status:string;owner_approval_reference:string|null}};
+type Publication=Omit<typeof record,'public_preview'|'production_deployment'>&{
+ public_preview:{status:string;owner_approval_reference:string|null};
+ production_deployment:{status:string;owner_approval_reference:string|null};
+};
 export const draftPublication:Publication=record;
-// Gate the existing production build, not just the UI. Public PR source/history
-// and review previews remain public; keeping this PR unmerged is also required.
+// Public preview and production deployment are separately authorized.
+// Neither is equivalent to human teaching review or formal textbook publication.
+// These checks do not make already-public GitHub sources confidential.
 export function assertDraftDeploymentAllowed(target:'preview'|'production',policy:Publication=draftPublication){
- if(target==='production'&&(policy.public_preview.status!=='approved'||!policy.public_preview.owner_approval_reference?.trim())){
-  throw new Error('V4.4 production deployment blocked: 101 original drafts require explicit owner public-preview approval. Keep PR #50 unmerged.');
+ if(target!=='production')return;
+ if(policy.public_preview.status!=='approved'||!policy.public_preview.owner_approval_reference?.trim()){
+  throw new Error('V4.4 production deployment blocked: explicit owner public-preview approval and reference required.');
+ }
+ if(policy.production_deployment.status!=='approved'||!policy.production_deployment.owner_approval_reference?.trim()){
+  throw new Error('V4.4 production deployment blocked: final owner deployment approval required after acceptance. Keep PR #50 unmerged and do not deploy.');
  }
 }
