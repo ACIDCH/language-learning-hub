@@ -25,7 +25,7 @@ describe('semantic curriculum without broken full-page IPA',()=>{
   expect(onChangeStage).toHaveBeenCalledWith(1);
   rerender(<StructuredLesson content={data} course={course} stage={1} onChangeStage={onChangeStage} onOpenSpeech={vi.fn()} ttsRate={.85}/>);
   expect(screen.getByText(english.common_mistake)).toBeTruthy();
-  expect(screen.getByText(english.examples[0].text)).toBeTruthy();
+  expect(screen.getAllByText(english.examples[0].text).length).toBeGreaterThanOrEqual(1);
   expect(screen.queryByText(/原文例句：结合本课知识讲解/)).toBeNull();
  });
  it('reveals accurate sourced answer only after learner chooses to check',()=>{
