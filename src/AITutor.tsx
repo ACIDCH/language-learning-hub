@@ -173,11 +173,10 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
   }finally{setBusy(false);}
  }
  return <section className="cloud-reader" aria-label="可选 AI 学习助手">
-  <h3>{compact?'选词 AI 助学':'AI 教师 · 自选模型'}</h3>
+  <h3>{compact?'AI 讲解':'AI 助学'}</h3>
   <label className="cloud-toggle"><input type="checkbox" checked={enabled}
     onChange={e=>{setEnabled(e.target.checked);setResult('');}}/>
-    手动启用 AI（可能消耗你所选服务商的额度）</label>
-  <p className="cloud-disclaimer">默认不调用 AI；密钥在当前页面内存中使用；登录后可通过 Supabase Vault 加密保存与恢复，不写入明文设置、GitHub 或浏览器本地存储。自定义模型使用兼容 OpenAI Chat Completions 的 HTTPS 接口。服务商可能依据自己的政策处理请求内容。</p>
+    启用 AI 助学</label>
   {enabled&&!apiKey&&<p role="status">AI 未配置：请到总设置输入当前会话密钥。未发送请求。</p>}
   {!session&&<p>请先登录本站账户，才能验证 Key 或调用 AI。</p>}
   {(enabled||!compact)&&<form onSubmit={submit} className="cloud-fields">
@@ -185,7 +184,7 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
     <label>模型服务商
       <select value={provider} onChange={e=>changeProvider(e.target.value as Provider)}>
        <option value="deepseek">DeepSeek</option><option value="gemini">Google Gemini</option>
-       <option value="openrouter">OpenRouter（可选免费模型）</option>
+       <option value="openrouter">OpenRouter</option>
        <option value="openai">OpenAI</option><option value="custom">其他兼容模型</option>
       </select>
     </label>
@@ -195,19 +194,15 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
     </label>}
     <label>模型 ID<input required value={model} onChange={e=>setModel(e.target.value)}
        placeholder="输入该服务商真实提供的模型 ID"/></label>
-    <label>API Key（不保存）<PasswordInput autoComplete="off" required
+    <label>API Key<PasswordInput autoComplete="off" required
        value={apiKey} onChange={e=>setApiKey(e.target.value)}
-       placeholder="只在本页粘贴，不要发到聊天"/></label>
+       placeholder="输入 API Key"/></label>
     {provider==='openrouter'&&<div className="cloud-panel" aria-label="OpenRouter 连接设置">
-      <p><a href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener noreferrer">在 OpenRouter 账户中创建普通 API Key ↗</a></p>
-      <p>默认模型 <code>openrouter/free</code> 使用免费路由；如更换付费模型，费用按你账户和实际模型计费。</p>
+      <p><a href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener noreferrer">在 OpenRouter 账户中创建普通 API Key ↗</a></p><p className="ai-provider-note">模型费用依实际使用的模型而定。</p>
       <label className="cloud-toggle"><input type="checkbox" checked={directOpenRouter}
         onChange={e=>update({directOpenRouter:e.target.checked})}/>
-        浏览器直接调用 OpenRouter（推荐；绕过 Cloudflare 后端网络故障）
+        浏览器直连 OpenRouter
       </label>
-      <p className="cloud-disclaimer">仅在你主动点击生成后发送请求；会将 Key 与所选教学内容直接发送到 OpenRouter 官方 API。
-        Key 不写入浏览器存储；仅经本人同意加密存放 Supabase Vault。若取消勾选，改用原有服务端通道。</p>
-      <p>无需开启 AI 也能验证密钥。填写新建时复制的完整 API Key，而不是后台显示的名称或括号中的缩写。Key 的消费上限不是账户余额。</p>
       <button type="button" disabled={!session||checkingNetwork}
         onClick={()=>void checkOpenRouterNetwork()}>
         {checkingNetwork?'正在检测网络…':'检测 OpenRouter 网络（不需要 Key）'}
@@ -218,7 +213,7 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
       <p role="status" className="cloud-disclaimer">{keyStatus}</p>
     </div>}
     {session&&<div className="cloud-panel" aria-label="云端 AI 密钥管理">
-      <p>此服务商的密钥可单独保存在 Vault，登录后自动恢复；首次使用请保存一次。</p>
+      <h4>密钥同步</h4>
       <button type="button" disabled={!apiKey.trim()} onClick={()=>void saveKeyToCloud()}>保存当前服务商 API Key 到云端</button>
       <button type="button" onClick={()=>void deleteCloudKey()}>删除当前服务商云端密钥</button>
       <p role="status" className="cloud-disclaimer">{keyCloudStatus}</p>
@@ -233,12 +228,11 @@ export default function AITutor({session,apiBase,courseId,language,lessonText,co
         placeholder="例如：解释这节法语课程的主语代词；或粘贴一篇作文进行反馈"/>
     </label>
     <button disabled={!enabled||busy||!session||!apiKey||!prompt.trim()} type="submit">
-      {busy?'正在生成反馈…':enabled?'主动调用一次 AI':'AI 关闭 · 如需生成请先启用'}
+      {busy?'正在生成反馈…':enabled?'生成回答':'生成回答'}
     </button>
   </form>}
-  <p role="status" className="cloud-disclaimer">{status}</p>
+  {status&&<p role="status" className="ai-inline-status">{status}</p>}
   {result&&<div className="cloud-ai-result" aria-label="AI 模型生成的教学反馈">
-    <div className="cloud-disclaimer">AI 生成内容 · 非官方考试评分 · 不自动批准课程</div>
     <div className="lesson-paragraphs">{result}</div>
   </div>}
  </section>;

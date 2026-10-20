@@ -220,43 +220,43 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
   setStatus('仅移除 Hub 内的 Google Drive 关联与该账号的课程绑定，原 Drive 文件及已入库教材未删除。');
  }
  return <section className="cloud-reader" aria-label="可切换 Google Drive 在线教材">
-  <h3>在线 Google Drive 教材与音频 · 多账户可切换</h3>
+  <h3>Google Drive 教材与音频</h3>
 
   <div className="cloud-fields">
-   <label>Google OAuth 网页客户端 ID（公开配置，首次填写）
+   <label>OAuth 客户端 ID
     <input value={clientId} onChange={e=>setClientId(e.target.value.trim())} placeholder="123456789-...apps.googleusercontent.com"/>
    </label>
-   <button type="button" disabled={busy} onClick={()=>void saveClientId()}>保存 OAuth 应用配置到本人账户</button>
-   <button type="button" disabled={busy||!gisReady||!validGoogleClientId(clientId)} onClick={()=>void connectGoogle()}>连接／更换 Google 账户（只读授权）</button>
-   {!validGoogleClientId(clientId)&&<p className="cloud-disclaimer">需要在 Google Cloud 创建 Web OAuth Client，允许本站预览 Origin，并启用 Drive API。Google Drive 聊天连接器的授权不能自动成为本网站的 OAuth 凭据。</p>}
+   <button type="button" disabled={busy} onClick={()=>void saveClientId()}>保存客户端配置</button>
+   <button type="button" disabled={busy||!gisReady||!validGoogleClientId(clientId)} onClick={()=>void connectGoogle()}>连接／切换 Google 账户</button>
+   {!validGoogleClientId(clientId)&&<details className="drive-setup-help"><summary>如何配置 Drive 授权</summary><p>在 Google Cloud 创建 Web OAuth 客户端，设置本站来源网址并启用 Drive API。</p></details>}
    <label>当前 Drive 来源<select value={subject} onChange={e=>void switchProfile(e.target.value)}>
     <option value="">选择 Google 账号</option>
     {profiles.map(p=><option key={p.google_subject} value={p.google_subject}>{p.label||p.email}</option>)}
    </select></label>
    {profile&&<><p>账号：{profile.email} · {token?'本次浏览器授权有效':'本次浏览器尚未授权'}</p>
-    <label>该账号教材根文件夹 ID（可随时替换）
+    <label>教材根文件夹 ID
      <input value={folder} onChange={e=>setFolder(e.target.value.trim())} placeholder="root 或 Drive 文件夹 ID"/>
     </label>
     <button type="button" disabled={busy} onClick={()=>void setRoot()}>保存并切换教材根目录</button>
-    <button type="button" disabled={busy} onClick={()=>void removeSource()}>取消关联当前云盘（不删除 Drive 文件）</button>
+    <button type="button" disabled={busy} onClick={()=>void removeSource()}>取消关联当前云盘</button>
    </>}
    <p role="status">{status}</p>
   </div>
   {profile&&token&&<div className="cloud-fields">
-   <label>在该 Google 账号内搜索课程文件（包括子文件夹）
+   <label>搜索课程文件
     <input value={search} onChange={e=>setSearch(e.target.value)} placeholder={courseId||'课程 ID 或文件名'}/>
    </label>
    <button type="button" disabled={busy||search.trim().length<2} onClick={()=>void searchFiles()}>跨文件夹搜索</button>
-   <p>当前浏览目录：{browse} <button type="button" disabled={busy} onClick={()=>void loadFolder(profile.folder_id)}>回到教材根目录</button></p>
-   <button type="button" disabled={busy||!courseId} onClick={()=>void addMatchingAudio()}>批量关联当前结果中以本课 ID 开头的音轨</button>
+   <p>当前目录：{browse} <button type="button" disabled={busy} onClick={()=>void loadFolder(profile.folder_id)}>回到教材根目录</button></p>
+   <button type="button" disabled={busy||!courseId} onClick={()=>void addMatchingAudio()}>批量关联本课音轨</button>
    {files.map(file=>{
     const kind=driveFileKind(file);
     return <div key={file.id} className="cloud-flex">
      <span>{kind==='folder'?'📁 ':kind==='audio'?'♫ ':'▤ '}{file.name}</span>
      {kind==='folder'?<button type="button" onClick={()=>void loadFolder(file.id)}>打开文件夹</button>:
       kind!=='unsupported'?<>
-       <button type="button" disabled={busy} onClick={()=>void openFile(file)}>在线读取／播放</button>
-       <button type="button" disabled={busy||!courseId} onClick={()=>void bind(file,kind)}>替换本课默认素材</button>
+       <button type="button" disabled={busy} onClick={()=>void openFile(file)}>打开</button>
+       <button type="button" disabled={busy||!courseId} onClick={()=>void bind(file,kind)}>设为本课素材</button>
        {kind==='audio'&&<button type="button" disabled={busy||!courseId} onClick={()=>void addMedia(file)}>加入本课音轨列表</button>}
       </>:<span><small>此格式仅支持官方查看</small>{file.webViewLink?.startsWith('https://')&&
        <a href={file.webViewLink} target="_blank" rel="noopener noreferrer">打开 Drive 官方预览 ↗</a>}</span>}
@@ -270,10 +270,10 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
    {boundAudio&&<button type="button" disabled={busy||!token} onClick={()=>void openBound('audio')}>播放本课已绑定 Drive 音频</button>}
   </div>
   {playlist.length>0&&<section className="cloud-fields" aria-label="Google Drive 多音轨播放列表">
-   <h4>本课 Google Drive 音轨列表 · {playlist.length} 条</h4>
+   <h4>本课音轨 · {playlist.length} 条</h4>
    {playlist.map(item=><div className="cloud-flex" key={item.file_id}>
     <span>{item.file_name}</span>
-    <button type="button" disabled={!token||busy} onClick={()=>void openFile({id:item.file_id,name:item.file_name,mimeType:item.mime_type})}>按需载入播放</button>
+    <button type="button" disabled={!token||busy} onClick={()=>void openFile({id:item.file_id,name:item.file_name,mimeType:item.mime_type})}>播放</button>
     <button type="button" disabled={busy} onClick={()=>void removeMedia(item.file_id)}>解除关联</button>
    </div>)}
   </section>}
@@ -288,11 +288,11 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
   {selected&&audioUrl&&<div className="audio-player">
    <strong>{selected.name}</strong>
    <audio controls preload="metadata" src={audioUrl}
-    onCanPlay={()=>setPlaying('浏览器已成功解码音频，点击播放确认发声。')}
-    onPlaying={()=>setPlaying('浏览器已开始播放此 Drive 音频，请确认实际能听到声音。')}
-    onEnded={()=>setPlaying('浏览器已播放至音频结尾，试听内容仍需人工核验。')}
+    onCanPlay={()=>setPlaying('可以播放')}
+    onPlaying={()=>setPlaying('播放中')}
+    onEnded={()=>setPlaying('播放完成')}
     onError={()=>setPlaying('真实播放失败，请重新授权或替换该文件。')}/>
-   <p role="status">{playing||'尚未实际播放。'}</p>
+   {playing&&<p role="status">{playing}</p>}
   </div>}
  </section>;
 }

@@ -294,7 +294,7 @@ describe('V4.4 integration contracts',()=>{
   render(<AISettingsProvider><AITutor session={session} apiBase="https://example.test" courseId="fr-a1-u01" language="fr" lessonText="Bonjour"/></AISettingsProvider>);
   expect((screen.getByRole('checkbox',{name:/手动启用 AI/}) as HTMLInputElement).checked).toBe(false);
   expect((screen.getByRole('button',{name:/AI 关闭 · 如需生成请先启用/}) as HTMLButtonElement).disabled).toBe(true);
-  const input=screen.getByLabelText('API Key（不保存）') as HTMLInputElement;
+  const input=screen.getByLabelText('API Key') as HTMLInputElement;
   fireEvent.change(input,{target:{value:'sk-or-fixture-only'}});
   fireEvent.click(screen.getByRole('button',{name:'验证 OpenRouter API Key（不调用模型）'}));
   await waitFor(()=>expect(screen.getByText(/浏览器直连 OpenRouter 验证成功/)).toBeTruthy());
@@ -309,7 +309,7 @@ describe('V4.4 integration contracts',()=>{
   const fetcher=vi.fn().mockResolvedValue(new Response(JSON.stringify({choices:[{message:{content:'Bonjour !'}}]}),{status:200,headers:{'Content-Type':'application/json'}}));
   vi.stubGlobal('fetch',fetcher);
   render(<AISettingsProvider><AITutor session={session} apiBase="https://example.test" courseId="fr-a1-u01" language="fr" lessonText="Bonjour"/></AISettingsProvider>);
-  fireEvent.change(screen.getByLabelText('API Key（不保存）'),{target:{value:'key-fixture-for-test'}});
+  fireEvent.change(screen.getByLabelText('API Key'),{target:{value:'key-fixture-for-test'}});
   fireEvent.change(screen.getByLabelText('提问或待批改文本'),{target:{value:'Explain Bonjour'}});
   expect(fetcher).not.toHaveBeenCalled();
   fireEvent.click(screen.getByRole('checkbox',{name:/手动启用 AI/}));
