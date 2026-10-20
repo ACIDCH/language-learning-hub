@@ -26,7 +26,7 @@ export default function AccountAccess({client,onNotify}:{
  }
  return <section className="cloud-panel account-access" aria-label="学习系统账户">
   <h2>学习账号登录</h2>
-  <p className="cloud-disclaimer">仅开放现有账户登录。课程进度、个人设置和密钥继续由 Supabase 按账户同步。</p>
+
   <form className="cloud-fields" onSubmit={login}>
    <label>邮箱<input required type="email" autoComplete="username" value={email} onChange={e=>setEmail(e.target.value)}/></label>
    <label>密码<PasswordInput required type="password" autoComplete="current-password" value={password} onChange={e=>setPassword(e.target.value)}/></label>

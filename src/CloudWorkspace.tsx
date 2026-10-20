@@ -246,7 +246,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
         <nav className="cloud-panel-tabs" aria-label="学习系统模块">
           {([
             ['learn','课程学习'],['path','学习路径'],['foundation','零基础补充'],['audio','课程音频'],['speech','跟读练习'],
-            ['review','质量审校'],['resources','资源管理'],['ai','AI 教师（稍后）']
+            ['review','质量审校'],['resources','资源管理'],['ai','AI 教师']
           ] as const).map(([id,label])=>
             <button type="button" key={id} onClick={()=>setActivePanel(id)}
               aria-current={activePanel===id?'page':undefined}
@@ -324,7 +324,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
             knownIds={catalog.map(c=>c.id)} onImported={()=>setImportNonce(n=>n+1)}/>
         </>}
         {activePanel==='ai'&&<section className="cloud-reader">
-          <h3>AI 教师 · 最后阶段</h3>
+          <h3>AI 教师</h3>
           <details>
             <summary>展开现有 AI 实验模块（手动启用）</summary>
             <AITutor key={'ai-'+selected} session={session} apiBase={apiBase}

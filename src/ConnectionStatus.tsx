@@ -98,10 +98,9 @@ export default function ConnectionStatus({session}:{session:Session|null}){
   void inspect().catch(e=>{if(active)setCheck({busy:false,summary:'检查中断：'+text(e),items:checks});});
   return ()=>{active=false;controller.abort();};
  },[revision,session?.user.id,session?.access_token]);
- return <section className="cloud-panel" aria-label="云端接口逐项检查">
-  <h3>云端接口逐项检查</h3>
+ return <details className="connection-diagnostics cloud-panel" aria-label="云端接口逐项检查">
+  <summary>接口诊断 {check.busy?'· 检查中':check.items.some(x=>x.state==='unavailable')?'· 部分服务异常':'· 已检查'}</summary>
   <p role="status">{check.summary}</p>
-  <p>当前 API：{apiBase==='/api'?'本站同源 /api':'独立 Worker'}；状态来自只读请求或实际代码能力，不代表全部完成验收。</p>
   <ul>
    {check.items.map(item=><li key={item.label}>
      <strong>{item.label}：</strong>
@@ -112,6 +111,5 @@ export default function ConnectionStatus({session}:{session:Session|null}){
   <button type="button" disabled={check.busy} onClick={()=>setRevision(n=>n+1)}>
    {check.busy?'正在检查…':'重新检查云端接口'}
   </button>
-  <p className="cloud-disclaimer">不会执行写入、上传、模型调用或麦克风录音；密钥和个人正文不会显示在检查结果中。</p>
- </section>;
+ </details>;
 }

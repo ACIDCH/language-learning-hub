@@ -221,7 +221,7 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
  }
  return <section className="cloud-reader" aria-label="可切换 Google Drive 在线教材">
   <h3>在线 Google Drive 教材与音频 · 多账户可切换</h3>
-  <p className="cloud-disclaimer">Drive 是可替换的来源而不是唯一数据库。采用 Google 官方只读 OAuth，按需取得原文件；学习记录仍在 Supabase。每个 Google 账号可配置不同根目录和单课教材/音频映射。云端仅保存文件 ID 与连接设置，OAuth 令牌不会入库。</p>
+
   <div className="cloud-fields">
    <label>Google OAuth 网页客户端 ID（公开配置，首次填写）
     <input value={clientId} onChange={e=>setClientId(e.target.value.trim())} placeholder="123456789-...apps.googleusercontent.com"/>
@@ -277,13 +277,13 @@ export default function DriveLibrary({client,session,courseId,mode}:Props){
     <button type="button" disabled={busy} onClick={()=>void removeMedia(item.file_id)}>解除关联</button>
    </div>)}
   </section>}
-  {text&&<details open><summary>在线 Google Drive 全文（仅浏览器临时读取）</summary>
+  {text&&<details open><summary>在线教材全文</summary>
    <pre className="lesson-paragraphs" style={{whiteSpace:'pre-wrap',overflowWrap:'anywhere'}}>{text}</pre>
   </details>}
   {selected&&pdfUrl&&<section aria-label="Drive PDF 原版阅读">
    <h4>{selected.name} · PDF 原版</h4>
    <iframe title="Google Drive PDF 原版在线阅读" src={pdfUrl} style={{width:'100%',minHeight:'70vh',border:'1px solid #ddd'}}/>
-   <p className="cloud-disclaimer">浏览器原生 PDF，保持原始排版。此处没有自动 OCR、教材审校或内容改写。</p>
+
   </section>}
   {selected&&audioUrl&&<div className="audio-player">
    <strong>{selected.name}</strong>
