@@ -13,49 +13,52 @@ export type ChineseLessonNotes={
 };
 export const CHINESE_LESSON_NOTES:Record<string,ChineseLessonNotes>={
  'fr-a1-u01':{
-  situation:'第一次向新同学介绍自己，并说明房间中有什么物品。先学会辨认物品，再学会完整造句。',
-  goal:'能够用 C’est / Ce sont 介绍物品，用 Il y a 说明存在，用 un/une/des 和 le/la/les 区分首次提及与双方已知的对象。',
+  situation:'法语课堂开学日，新同学初次见面，先学习礼貌问候，再介绍姓名、身份和国籍，最后问候对方。',
+  goal:'能够用 Bonjour / Enchanté(e) 自然开场；区分 tu 与 vous；正确使用 être 现在时和 Je m’appelle… 完成 30 秒自我介绍。',
   dialogue:[
-   {target:'Bonjour ! Je m’appelle Marie.',zh:'你好！我叫玛丽。',note:'Je m’appelle… 用于自我介绍。'},
-   {target:'C’est une table.',zh:'这是一张桌子。',note:'用 C’est + 单数名词词组辨认物品。'},
-   {target:'Il y a des livres sur la table.',zh:'桌子上有一些书。',note:'Il y a 说明“有”；sur 表示在上面。'},
-   {target:'Il n’y a pas de stylo ici.',zh:'这里没有钢笔。',note:'否定存在时常使用 pas de。'}
+   {target:"Bonjour ! Je m'appelle Camille.",zh:'你好！我叫卡米耶。',note:'Bonjour 用于日间问候；Je m’appelle 后直接接姓名。'},
+   {target:'Et vous, comment vous appelez-vous ?',zh:'那您呢，您叫什么名字？',note:'vous 用于正式或较礼貌的交际场景。'},
+   {target:'Enchanté !',zh:'很高兴认识您！',note:'说话者为男性可用 enchanté，女性常写 enchantée。'},
+   {target:'Vous êtes étudiant ?',zh:'您是学生吗？',note:'使用 être 的 vous 形式 êtes，不能写 vous es。'}
   ],
   grammar:[
-   {title:'不定冠词：un / une / des',explain:'首次介绍尚未明确指认的名词时，阳性单数用 un，阴性单数用 une，复数用 des。冠词并非英语 a/an 的机械替代；需连同名词的性数一起记。',
+   {title:'être：表示身份或状态的核心动词',explain:'法语“我是一名学生”使用 je suis。être 的现在时需要与主语配合：je suis、tu es、il/elle est、nous sommes、vous êtes、ils/elles sont。学习时应将主语与动词一起记忆。',
     examples:[
-     {target:'C’est un livre.',zh:'这是一本书。',note:'livre 为阳性单数，因此用 un。'},
-     {target:'C’est une table.',zh:'这是一张桌子。',note:'table 为阴性单数，因此用 une。'},
-     {target:'Ce sont des livres.',zh:'这些是书。',note:'复数名词用 des；主语展示句使用 Ce sont。'}]},
-   {title:'定冠词：le / la / les / l’',explain:'当所指对象已经明确或双方已知时，阳性单数用 le，阴性单数用 la，复数用 les；元音或哑音 h 前，单数常缩合为 l’。',
+     {target:'Je suis étudiant.',zh:'我是一名男学生。',note:'说话者为女性时通常写 étudiante。'},
+     {target:'Vous êtes française ?',zh:'您是法国人吗？',note:'vous 对应 êtes；这里形容词配合女性对象。'},
+     {target:'Nous sommes étudiants.',zh:'我们是学生。',note:'nous 后的动词是 sommes。'}]},
+   {title:'Je m’appelle：姓名介绍',explain:'Je m’appelle + 姓名是自然高频表达，其中 m’ 不可遗漏。询问姓名时可使用 Comment vous appelez-vous ?，熟人之间可说 Comment tu t’appelles ?。',
     examples:[
-     {target:'Le livre est sur la table.',zh:'那本书在桌子上。',note:'这本书和桌子在语境里已有明确所指。'},
-     {target:'L’ordinateur est ici.',zh:'电脑在这里。',note:'ordinateur 以元音起首，所以是 l’ordinateur。'}]},
-   {title:'C’est 与 Il y a 的不同作用',explain:'C’est 用来指认“这是什么”；Il y a 用来说明某处“有什么”。否定 Il y a 时通常变成 Il n’y a pas de + 名词。',
+     {target:"Je m'appelle Samira.",zh:'我叫萨米拉。',note:'不要省略 m’ 写成 Je appelle。'},
+     {target:'Comment vous appelez-vous ?',zh:'您叫什么名字？',note:'更正式的提问形式。'}]},
+   {title:'tu / vous 与国籍配合',explain:'tu 适合关系熟悉的单数对象；vous 可以表示礼貌单数或复数。形容词可能随性数变化，如 français / française、étudiant / étudiante。',
     examples:[
-     {target:'C’est une table.',zh:'这是一张桌子。',note:'回答“这是什么？”'},
-     {target:'Il y a une table dans la chambre.',zh:'房间里有一张桌子。',note:'回答“房间里有什么？”'},
-     {target:'Il n’y a pas de livre.',zh:'没有书。',note:'否定不定冠词通常用 de，而不是 des。'}]}
+     {target:'Tu es français ?',zh:'你是法国人吗？',note:'这里用熟人称谓 tu，动词是 es。'},
+     {target:'Elle est canadienne.',zh:'她是加拿大人。',note:'canadienne 是与阴性主语配合的形式。'}]}
   ],
   vocabulary:[
-   {word:'une table',meaning:'桌子',collocation:'sur la table：在桌上'},
-   {word:'un livre',meaning:'书',collocation:'le livre：那本书'},
-   {word:'un stylo',meaning:'钢笔',collocation:'pas de stylo：没有笔'},
-   {word:'un ordinateur',meaning:'电脑',collocation:'l’ordinateur：这台电脑'},
-   {word:'une chambre',meaning:'房间／卧室',collocation:'dans la chambre：在房间里'}
+   {word:'bonjour',meaning:'你好／您好',collocation:'Bonjour, Madame.：您好，女士'},
+   {word:'salut',meaning:'嗨／再见（非正式）',collocation:'Salut !：熟人打招呼'},
+   {word:"je m'appelle",meaning:'我叫……',collocation:"Je m'appelle Camille."},
+   {word:'enchanté(e)',meaning:'很高兴认识您',collocation:'Enchanté de vous rencontrer.'},
+   {word:'étudiant(e)',meaning:'学生',collocation:'Je suis étudiant(e).'},
+   {word:'professeur',meaning:'老师',collocation:'notre professeur：我们的老师'},
+   {word:'au revoir',meaning:'再见',collocation:'Au revoir, à bientôt !'},
+   {word:'à bientôt',meaning:'回头见',collocation:'告别时使用'}
   ],
-  reading:{title:'从单词到句子，再到三句描述',pairs:[
-   {target:'C’est une chambre.',zh:'这是一间房间。',note:'先建立描述对象。'},
-   {target:'Il y a une table dans la chambre.',zh:'房间里有一张桌子。',note:'然后引入新物品。'},
-   {target:'Le livre est sur la table.',zh:'那本书在桌子上。',note:'最后用已知名词说明位置。'}
-  ],technique:'观察三句的衔接：第一句介绍场景，第二句使用不定冠词加入新信息，第三句用定冠词回指已有物品。'},
-  output:{task:'用法语写五句话介绍房间：至少包含两种名词性别、一次定冠词、一次 Il y a，以及一个否定句。',
+  reading:{title:'从自我介绍到小段阅读',pairs:[
+   {target:"Je m'appelle Léa.",zh:'我叫莱娅。',note:'先介绍姓名。'},
+   {target:'Je suis française, et mon ami Thomas est canadien.',zh:'我是法国人，我的朋友托马斯是加拿大人。',note:'比较 française 和 canadien 的性数形式。'},
+   {target:"Nous sommes étudiants à l'université.",zh:'我们是大学生。',note:'nous 对应 sommes。'},
+   {target:"Notre professeur s'appelle Madame Martin.",zh:'我们的老师叫马丁女士。',note:'第三人称 s’appelle 仍然使用反身结构。'}
+  ],technique:'先识别每个句子的主语，再找 être / s’appeler 的变位，最后核对性别、国籍和身份信息。不要逐字按英语词序翻译。',
+  output:{task:'模拟开学日的新同学见面：用四至六句法语依次问候、报姓名、说明身份或国籍、询问对方并礼貌告别。',
    frame:[
-    {target:'Voici ma chambre.',zh:'这是我的房间。',note:'开场。'},
-    {target:'Il y a une table et un livre.',zh:'有一张桌子和一本书。',note:'介绍新物品。'},
-    {target:'Le livre est sur la table.',zh:'那本书在桌上。',note:'回指并描述位置。'},
-    {target:'Il n’y a pas de télévision.',zh:'没有电视机。',note:'使用否定存在结构。'}],
-   review:['逐一核对 un/une 与名词性别','区分首次提到与明确所指','否定 Il n’y a pas de 的 de 不漏写','句子之间有同一房间的语义衔接']}
+    {target:"Bonjour, je m'appelle Camille.",zh:'你好，我叫卡米耶。',note:'问候与姓名。'},
+    {target:'Je suis étudiant en informatique.',zh:'我学习计算机专业。',note:'身份与学科。'},
+    {target:'Et vous, comment vous appelez-vous ?',zh:'那您呢，您叫什么名字？',note:'向对方提问。'},
+    {target:'Enchanté, à bientôt !',zh:'很高兴认识您，回头见！',note:'自然结束。'}],
+   review:['根据场合正确选择 tu 或 vous','je suis 与 vous êtes 变位一致','自我介绍和国籍的性数配合正确','对话开场、介绍、提问、结束完整']}
  },
  'fr-a1-u04':{
   situation:'学生住宿舍后向朋友描述房间，学习先列举物品再说明它们的位置。',
