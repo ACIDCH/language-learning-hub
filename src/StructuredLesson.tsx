@@ -3,8 +3,8 @@ import type {LessonContent,Course,LessonDraft} from './v44Courses';
 import type {FoundationUnit} from './foundationTypes';
 import {speakIpaText} from './IpaText';
 import {LESSON_EXTENSIONS} from './editorialLessonExtensions';
-import LessonIpaPreview from './LessonIpaPreview';
-const TABS=['目标与情境','规则与例句','词汇','听读与理解','发音与跟读','输出与复习'] as const;
+import {STUDY_STAGES,STUDY_TITLES,visibleStudyStage,moveStudyStage} from './lessonStages';
+const TABS=['情境','语法','词汇','听读','表达'] as const;
 type Props={content:LessonContent;course:Course;stage:number;onChangeStage:(stage:number)=>void;
  onOpenSpeech:()=>void;ttsRate:number};
 export default function StructuredLesson({content,course,stage,onChangeStage,onOpenSpeech,ttsRate}:Props){
@@ -14,28 +14,28 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onO
  const draft=content.draft,unit=content.foundation;
  const extension=LESSON_EXTENSIONS[course.id];
  if(!draft&&!unit)return null;
- const active=Math.min(5,Math.max(0,Number.isFinite(stage)?stage:0));
+ const active=visibleStudyStage(stage);
+ const position=STUDY_STAGES.indexOf(active as typeof STUDY_STAGES[number]);
  const goal=draft?.goal||unit!.goal;
  const examples=draft?.examples.map(e=>e.text)||unit!.examples;
  const vocabulary=draft?.vocabulary||unit!.vocab;
  const reading=draft?.reading||unit!.reading;
  const listening=draft?.listening_script||unit!.listening;
- const pronunciation=draft?.pronunciation||unit!.pronunciation;
- const output=draft?.production||unit!.production;
+  const output=draft?.production||unit!.production;
  const isDraft=Boolean(draft);
  const play=(value:string)=>speakIpaText(value,course.language,ttsRate);
  const lessonQuestions= isDraft?draft!.questions.map(q=>({prompt:q.prompt,answer:q.answer,explanation:q.explanation})):
   unit!.questions.map(q=>({prompt:q.prompt,answer:q.choices[q.answer],explanation:q.explanation}));
  return <div className="curriculum-lesson" aria-label="结构化课程学习">
   <nav className="curriculum-tabs" aria-label="本课教学环节">
-   {TABS.map((label,i)=><button type="button" key={label}
-    aria-current={active===i?'step':undefined} aria-pressed={active===i}
-    className={active===i?'current':''} onClick={()=>onChangeStage(i)}>
-    <span>{String(i+1).padStart(2,'0')}</span>{label}</button>)}
+   {STUDY_STAGES.map((id,i)=><button type="button" key={id}
+    aria-current={active===id?'step':undefined} aria-pressed={active===id}
+    className={active===id?'current':''} onClick={()=>onChangeStage(id)}>
+    <span>{String(i+1).padStart(2,'0')}</span>{STUDY_TITLES[i]}</button>)}
   </nav>
-  <article className="curriculum-stage" aria-label={'教学环节：'+TABS[active]}>
-   <header className="curriculum-stage-title"><span className="microtag">第 {active+1} / 6 部分</span>
-    <h2>{TABS[active]}</h2></header>
+  <article className="curriculum-stage" aria-label={'教学环节：'+TABS[position]}>
+   <header className="curriculum-stage-title"><span className="microtag">第 {position+1} / 5 部分</span>
+    <h2>{TABS[position]}</h2></header>
    {active===0&&<div className="curriculum-stack">
      <section><h3>完成这一课，你能够</h3><p className="curriculum-goal">{goal}</p></section>
      <section><h3>学习情境</h3><p>{draft?.context||goal}</p></section>
@@ -84,15 +84,6 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onO
        {shown[i]&&<div className="curriculum-answer"><strong>参考答案</strong><p>{q.answer}</p><p>{q.explanation}</p></div>}
       </div>)}</section>
    </div>}
-   {active===4&&<div className="curriculum-stack">
-     <section><h3>本课发音关注点</h3><p>{pronunciation}</p></section>
-     <section><h3>跟读材料</h3>{examples.slice(0,3).map((example,i)=>
-      <div className="curriculum-example" key={i}><p lang={course.language}>{example}</p>
-       <button type="button" onClick={()=>play(example)}>听示范</button>
-       <LessonIpaPreview key={course.id+'-'+i} text={example} language={course.language}/></div>)}
-      <button className="curriculum-primary" type="button" onClick={onOpenSpeech}>进入跟读训练 →</button>
-     </section>
-   </div>}
    {active===5&&<div className="curriculum-stack">
      <section><h3>完成表达任务</h3><p className="curriculum-goal">{output}</p>
       <p>可以在课程下方的「学习笔记」中保存你的作品。</p></section>
@@ -109,9 +100,9 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onO
    </div>}
   </article>
   <div className="curriculum-navigation">
-   <button type="button" disabled={active===0} onClick={()=>onChangeStage(active-1)}>← 上一部分</button>
-   <span>{active+1} / 6</span>
-   <button type="button" disabled={active===5} onClick={()=>onChangeStage(active+1)}>下一部分 →</button>
+   <button type="button" disabled={position===0} onClick={()=>onChangeStage(moveStudyStage(active,-1))}>← 上一部分</button>
+   <span>{position+1} / 5</span>
+   <button type="button" disabled={position===4} onClick={()=>onChangeStage(moveStudyStage(active,1))}>下一部分 →</button>
   </div>
  </div>;
 }

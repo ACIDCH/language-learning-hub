@@ -9,6 +9,7 @@ import FoundationAlphabet from './FoundationAlphabet.tsx';
 import FoundationNumberDrill from './FoundationNumberDrill';
 import {buildFoundationReviewPlan} from './foundationReview';
 import SpeechPractice from './SpeechPractice';
+import {STUDY_STAGES,visibleStudyStage,moveStudyStage} from './lessonStages';
 import IpaText from './IpaText';
 import IpaReference from './IpaReference';
 
@@ -148,7 +149,7 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
      </button>)}</div>}
    {dirty&&<p role="status">先保存本课尚未同步的练习或笔记，才能跳转复习。</p>}
   </details>
-  <div className="ipa-reader-controls" aria-label="基础课程音标阅读设置">
+  <div className="ipa-reader-controls foundation-ipa-controls" aria-label="基础课程音标阅读设置">
     <label><input type="checkbox" checked={showIpa}
       onChange={e=>setShowIpa(e.target.checked)}/>
       显示 IPA
@@ -171,14 +172,15 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
       <h4>{unit.title}</h4><p>{unit.goal}</p>
     </header>
     <nav className="foundation-stage-tabs" aria-label="本节课学习环节">
-      {['情境','知识','词汇','听读','发音','练习'].map((t,i)=>
-        <button type="button" aria-current={segment===i?'step':undefined} key={t}
-          onClick={()=>setSegment(i)}>{i+1}. {t}</button>)}
+      {(['情境','语法','词汇','听读','表达'] as const).map((t,i)=>{
+        const id=STUDY_STAGES[i];
+        return <button type="button" aria-current={segment===id?'step':undefined} key={t}
+          onClick={()=>setSegment(id)}>{i+1}. {t}</button>;
+      })}
     </nav>
     {segment===0&&<section>
       <h5>本课学习目标</h5><p>{unit.goal}</p>
-      <p>学习顺序：先阅读情境与示例，再学习语法／规则，练习核心词汇，
-        完成听读与跟读，最后做六道自检题并进行开放表达。</p>
+
     </section>}
     {segment===1&&<section>
       <h5>核心规则与常见错误</h5>
@@ -217,13 +219,6 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
       </div>
       <button type="button" onClick={()=>pronounce(unit.reading)}>朗读全文</button>
     </section>}
-    {segment===4&&<section>
-      <h5>发音与跟读</h5><p>{unit.pronunciation}</p>
-      <IpaReference language={unit.language}/>
-      {showIpa&&<IpaText text={unit.pronunciation} language={unit.language}/>}<p>先听示范，再练习本课单词与例句。</p>
-      <SpeechPractice key={unit.id} language={unit.language} lessonText={speechLessonText} initialTarget={starter}
-        accessToken={session.access_token} session={session} variant="standalone"/>
-    </section>}
     {segment===5&&<section>
       <h5>本课核心规则与词汇自检（{allQuestions.length} 道）</h5>
       {allQuestions.map((q,i)=><fieldset className="foundation-question" key={i} disabled={!loaded||busy}>
@@ -245,13 +240,13 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
         onChange={e=>{setDraft(d=>({...d,notes:e.target.value}));setDirty(true);}}/></label>
     </section>}
     <div className="foundation-actions">
-      <button type="button" disabled={segment===0} onClick={()=>setSegment(x=>Math.max(0,x-1))}>上一步</button>
+      <button type="button" disabled={segment===0} onClick={()=>setSegment(x=>moveStudyStage(x,-1))}>上一部分</button>
       <button type="button" disabled={!loaded||busy} onClick={()=>void save(false)}>
         {busy?'保存中…':'保存本课笔记与练习'}
       </button>
       {segment===5&&<button type="button" disabled={!loaded||busy||answered!==allQuestions.length}
         onClick={()=>void save(true)}>标记学完</button>}
-      {segment<5&&<button type="button" onClick={()=>setSegment(x=>Math.min(5,x+1))}>下一步</button>}
+      {segment<5&&<button type="button" onClick={()=>setSegment(x=>moveStudyStage(x,1))}>下一部分</button>}
     </div>
    </article>
   </div>

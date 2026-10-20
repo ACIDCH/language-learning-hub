@@ -26,3 +26,15 @@ export function splitLessonStages(text:string):LessonOutline {
   }
   return {preamble,stages,structured:true};
 }
+
+/** Persisted stages retain their original indices. 4 is an archived speaking segment
+ * and is no longer a navigation destination; choosing 3/5 skips it safely. */
+export const STUDY_STAGES=[0,1,2,3,5] as const;
+export const STUDY_TITLES=['情境','语法','词汇','听读','表达'] as const;
+export function visibleStudyStage(stage:number):number{
+ return STUDY_STAGES.includes(stage as typeof STUDY_STAGES[number])?stage:(stage>=4?5:0);
+}
+export function moveStudyStage(stage:number,delta:number):number{
+ const current=STUDY_STAGES.indexOf(visibleStudyStage(stage) as typeof STUDY_STAGES[number]);
+ return STUDY_STAGES[Math.max(0,Math.min(STUDY_STAGES.length-1,current+delta))];
+}

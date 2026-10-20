@@ -1,66 +1,42 @@
-import {useMemo, useState, useEffect} from 'react';
-import {splitLessonStages,STAGE_NAMES} from './lessonStages';
-import LessonIpaPreview from './LessonIpaPreview';
-import IpaReference from './IpaReference';
+import {useMemo,useState} from 'react';
+import {splitLessonStages,STUDY_STAGES,STUDY_TITLES,visibleStudyStage,moveStudyStage} from './lessonStages';
 import LessonBody from './LessonBody';
 
-type Props={
-  text:string;
-  defaultIpa?:boolean;
-  ttsRate?:number;
-  language?:string;
-  courseId:string;
-  stage:number;
-  onChangeStage:(next:number)=>void;
-};
-export default function LessonReader({text,language='fr',courseId,stage,onChangeStage,defaultIpa=false,ttsRate=.85}:Props){
-  const lesson=useMemo(()=>splitLessonStages(text),[text]);
-  const [showAll,setShowAll]=useState(false);
-  const [showIpa,setShowIpa]=useState(defaultIpa);
-  useEffect(()=>{setShowAll(false);setShowIpa(defaultIpa);},[courseId,defaultIpa]);
-  const safeStage=Math.max(0,Math.min(5,Number.isInteger(stage)?stage:0));
-  return <div className="lesson-reader">
-    <section className="ipa-reader-controls" aria-label="课程原文音标控制">
-      <label><input type="checkbox" checked={showIpa}
-        onChange={e=>setShowIpa(e.target.checked)}/>
-        显示 IPA
-      </label>
-      <div className="ipa-reference-dock"><IpaReference language={language}/></div>
-    </section>
-    {lesson.structured && <>
-
-      <nav className="lesson-stages" aria-label="课程六阶段">
-        {lesson.stages.map(s=><button type="button" key={s.index}
-          className={s.index===safeStage?'stage-active':''}
-          aria-current={s.index===safeStage?'step':undefined}
-          onClick={()=>onChangeStage(s.index)}>
-          <span aria-hidden="true">{s.symbol}</span> {STAGE_NAMES[s.index]}
-        </button>)}
-      </nav>
-      {lesson.preamble&&<details className="lesson-preamble">
-        <summary>课程导入</summary>
-        <LessonBody text={lesson.preamble}/>{showIpa&&<LessonIpaPreview text={lesson.preamble} language={language} initialOpen/>}
-      </details>}
-    </>}
-    {showAll||!lesson.structured?
-      <article className="lesson-paper" aria-label="完整课程原文">
-        <LessonBody text={text}/>{showIpa&&<LessonIpaPreview text={text} language={language} initialOpen/>}
-      </article>:
-      <article className="lesson-paper" aria-label={'阶段：'+STAGE_NAMES[safeStage]}>
-        <header className="lesson-stage-head">
-          <span className="lesson-index">{lesson.stages[safeStage].symbol}</span>
-          <h4>{lesson.stages[safeStage].heading||STAGE_NAMES[safeStage]}</h4>
-        </header>
-        <LessonBody text={lesson.stages[safeStage].body}/>{showIpa&&<LessonIpaPreview key={courseId+'-'+safeStage} text={lesson.stages[safeStage].body} language={language} initialOpen/>}
-      </article>}
-    {lesson.structured&&<div className="lesson-controls">
-      {!showAll&&<button type="button" disabled={safeStage===0}
-        onClick={()=>onChangeStage(Math.max(0,safeStage-1))}>← 上一阶段</button>}
-      <button type="button" className="lesson-toggle" onClick={()=>setShowAll(v=>!v)}>
-        {showAll?'分节阅读':'阅读全文'}
-      </button>
-      {!showAll&&<button type="button" disabled={safeStage===5}
-        onClick={()=>onChangeStage(Math.min(5,safeStage+1))}>下一阶段 →</button>}
-    </div>}
-  </div>;
+type Props={text:string;defaultIpa?:boolean;ttsRate?:number;language?:string;courseId:string;
+ stage:number;onChangeStage:(next:number)=>void};
+/** Original manuscripts keep their source content, but omit editorial prefaces and
+ * the old separate pronunciation stage from learner navigation. */
+export default function LessonReader({text,stage,onChangeStage}:Props){
+ const lesson=useMemo(()=>splitLessonStages(text),[text]);
+ const [showAll,setShowAll]=useState(false);
+ const current=visibleStudyStage(stage);
+ const selected=STUDY_STAGES.indexOf(current as typeof STUDY_STAGES[number]);
+ const sections=lesson.structured?STUDY_STAGES.map((id,index)=>({
+  ...lesson.stages[id],displayName:STUDY_TITLES[index]
+ })):[];
+ const source=lesson.structured?
+  (showAll?sections.map(s=>s.heading+'\n'+s.body).join('\n\n'):sections[selected]?.body||''):text;
+ return <div className="lesson-reader">
+  {lesson.structured&&<nav className="lesson-stages" aria-label="课程五个学习环节">
+   {sections.map((part,index)=><button key={part.index} type="button"
+    aria-current={part.index===current?'step':undefined}
+    className={part.index===current?'stage-active':''}
+    onClick={()=>{setShowAll(false);onChangeStage(part.index);}}>
+    <span aria-hidden="true">{String(index+1).padStart(2,'0')}</span> {part.displayName}
+   </button>)}
+  </nav>}
+  <article className="lesson-paper" aria-label={showAll||!lesson.structured?'完整课程原文':'阶段：'+sections[selected]?.displayName}>
+   {!showAll&&lesson.structured&&<header className="lesson-stage-head">
+    <span className="lesson-index">{String(selected+1).padStart(2,'0')}</span>
+    <h4>{sections[selected]?.displayName}</h4></header>}
+   <LessonBody text={source}/>
+  </article>
+  {lesson.structured&&<div className="lesson-controls">
+   {!showAll&&<button disabled={selected===0} onClick={()=>onChangeStage(moveStudyStage(current,-1))}>← 上一部分</button>}
+   <button className="lesson-toggle" onClick={()=>setShowAll(v=>!v)}>
+    {showAll?'分节学习':'连续阅读五个环节'}</button>
+   {!showAll&&<button disabled={selected===sections.length-1}
+    onClick={()=>onChangeStage(moveStudyStage(current,1))}>下一部分 →</button>}
+  </div>}
+ </div>;
 }

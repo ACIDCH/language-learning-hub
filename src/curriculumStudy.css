@@ -146,3 +146,18 @@
  border-radius:9px;border:1px solid var(--border)}
 .v44 .curriculum-editorial-check ul{margin:5px 0 0;padding-left:20px}
 .v44 .curriculum-editorial-check li{line-height:1.7;padding:3px 0}
+
+/* Five teaching sections; pronunciation is a selection-tool action, never a course stage. */
+.v44 .curriculum-tabs,.v44 .reader-article .lesson-stages{
+ grid-template-columns:repeat(5,minmax(0,1fr));
+}
+.v44 .curriculum-tabs button,.v44 .reader-article .lesson-stages button{
+ justify-content:center;text-align:center;gap:5px;font-size:13px;
+}
+.v44 .lesson-controls{display:flex;flex-wrap:wrap}
+@container lesson (max-width:730px){
+ .v44 .curriculum-tabs,.v44 .reader-article .lesson-stages{
+  grid-template-columns:repeat(5,minmax(110px,1fr));overflow-x:auto;
+  padding-bottom:5px;scrollbar-width:thin;
+ }
+}
