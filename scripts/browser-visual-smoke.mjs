@@ -58,6 +58,9 @@ try{
  const routes=[
   ['catalog','/','.catalog-toolbar'],
   ['lesson','/?course=fr-a1-u01&tab=read','.reader-layout'],
+  ['guidedEnglish','/?course=en-ielts-listening-u01&tab=read','.curriculum-stage'],
+  ['guidedFrench','/?course=fr-a1-u04&tab=read','.curriculum-stage'],
+  ['courseIpa','/?course=en-ielts-listening-u01&tab=ipa','.ipa-study-pane'],
   ['speech','/speech-lab','.speaking-lab-columns'],
   ['ipa','/?page=ipa','.ipa-studio'],
   ['settings','/?page=settings&section=appearance','.settings-content'],
@@ -78,6 +81,20 @@ try{
    const image=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
    writeFileSync(output+'/'+size+'-'+name+'.png',Buffer.from(image.data,'base64'));
    checked++;
+   if(name==='guidedEnglish'||name==='guidedFrench'){
+    const semantic=await js("(function(){const nav=document.querySelector('.curriculum-tabs'),stage=document.querySelector('.curriculum-stage');const tabs=[...nav.querySelectorAll('button')];return {tabs:tabs.length,top:stage.getBoundingClientRect().top-nav.getBoundingClientRect().bottom,height:stage.getBoundingClientRect().height,text:stage.innerText.slice(0,300)};})()");
+    if(semantic.tabs!==6||semantic.top>80||semantic.height<100||!semantic.text.trim())problems.push(size+' '+name+' missing guided lesson '+JSON.stringify(semantic));
+    await js("document.querySelectorAll('.curriculum-tabs button')[3]?.click()");
+    await wait(()=>js("!!document.querySelector('.curriculum-reading')"),'guided listening and source reading');
+    const reading=await js("(function(){const e=document.querySelector('.curriculum-reading');return {text:e.textContent.length,width:e.getBoundingClientRect().width,overflow:document.documentElement.scrollWidth-innerWidth};})()");
+    if(reading.text<40||reading.width>width||reading.overflow>5)problems.push(size+' '+name+' reading '+JSON.stringify(reading));
+    const study=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
+    writeFileSync(output+'/'+size+'-'+name+'-reading.png',Buffer.from(study.data,'base64'));
+   }
+   if(name==='courseIpa'){
+    const phonetic=await js("(function(){const t=document.querySelector('.ipa-text'),s=document.querySelector('.ipa-study-original');return {chunk:s.textContent.length,ipa:!!t,source:!!document.querySelector('.ipa-study-full')};})()");
+    if(!phonetic.ipa||phonetic.chunk>240||!phonetic.source)problems.push(size+' course IPA content not chunked '+JSON.stringify(phonetic));
+   }
    if(name==='catalog'&&width===390){
     const filter=await js("(function(){const el=document.querySelector('.catalog-filter'),r=el.getBoundingClientRect();return {height:r.height,overflowX:getComputedStyle(el).overflowX,scrollWidth:el.scrollWidth,clientWidth:el.clientWidth};})()");
     if(filter.height>90||filter.overflowX!=='auto'||filter.scrollWidth<=filter.clientWidth)
