@@ -161,3 +161,13 @@
   padding-bottom:5px;scrollbar-width:thin;
  }
 }
+
+/* Consistent content density for typed and source manuscripts: Chinese annotations
+   follow each section but cannot cover user-selected original text. */
+.v44 .curriculum-stage>.bilingual-teaching{margin-top:24px}
+.v44 .lesson-paper>.bilingual-teaching{margin-top:23px}
+.v44 .curriculum-stage .bilingual-list,.v44 .lesson-paper .bilingual-list{max-width:100%}
+.v44 .lesson-paper .lesson-content-flow{white-space:normal}
+.v44 .lesson-paper .lesson-content-group{line-height:1.86}
+.v44 .reader-article .lesson-stages{margin-bottom:12px}
+.v44 .lesson-stage-head{margin-bottom:14px}

@@ -9,6 +9,7 @@ import {speakIpaText} from './IpaText';
 import StructuredLesson from './StructuredLesson';
 import IpaStudyPane from './IpaStudyPane';
 import './curriculumStudy.css';
+import './bilingualTeaching.css';
 import SpeechPractice from './SpeechPractice';
 import SelectionInspector,{type TextSelection} from './SelectionInspector';
 import {useCourseProgress} from './useCourseProgress';
@@ -77,7 +78,7 @@ export default function CourseReader({course,session,preferences,tab,navigate,on
  <StructuredLesson content={content} course={course} stage={Number(progress.state.stage)||0}
  onChangeStage={stage=>progress.change({stage})} ttsRate={preferences.ttsRate}
  onOpenSpeech={()=>navigate(courseRoute(course,'speech'))}/>:
- <LessonReader text={text} language={course.language} courseId={course.id}
+ <LessonReader text={text} content={content} language={course.language} courseId={course.id}
  stage={Number(progress.state.stage)||0} onChangeStage={stage=>progress.change({stage})}
  defaultIpa={preferences.ipa} ttsRate={preferences.ttsRate}/>}</div>}
  {privateBody&&content&&<details className="source-appendix"><summary>备用课文</summary><div className="lesson-paragraphs">{content.text}</div></details>}

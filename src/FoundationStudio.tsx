@@ -8,11 +8,9 @@ import FoundationDictation from './FoundationDictation.tsx';
 import FoundationAlphabet from './FoundationAlphabet.tsx';
 import FoundationNumberDrill from './FoundationNumberDrill';
 import {buildFoundationReviewPlan} from './foundationReview';
-import SpeechPractice from './SpeechPractice';
-import {STUDY_STAGES,visibleStudyStage,moveStudyStage} from './lessonStages';
+ import {STUDY_STAGES,moveStudyStage} from './lessonStages';
 import IpaText from './IpaText';
-import IpaReference from './IpaReference';
-
+ 
 type Draft={answers:Record<string,number>;notes:string;completed:boolean};
 const EMPTY:Draft={answers:{},notes:'',completed:false};
 export default function FoundationStudio({client,session,onOpenCourses}:{
@@ -102,11 +100,7 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
  }
  // Pronunciation exercises are selected from this exact lesson, not a generic demo.
  // The speech component keeps attempts only in memory, independently of saved notes.
- const speechLessonText=[
-   ...unit.vocab.map(([word])=>word),...unit.examples,unit.listening,unit.reading
- ].join('\n');
- const starter=unit.examples.find(x=>x.length<=150&&!/[\u3400-\u9fff]/.test(x))||'';
- const vocabChecks=makeVocabularyChecks(unit.vocab);
+  const vocabChecks=makeVocabularyChecks(unit.vocab);
  const allQuestions=[...unit.questions,...vocabChecks];
  const correct=allQuestions.filter((q,i)=>draft.answers[String(i)]===q.answer).length;
  const answered=allQuestions.filter((_,i)=>Number.isInteger(draft.answers[String(i)])).length;

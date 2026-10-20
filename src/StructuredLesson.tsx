@@ -3,6 +3,7 @@ import type {LessonContent,Course,LessonDraft} from './v44Courses';
 import type {FoundationUnit} from './foundationTypes';
 import {speakIpaText} from './IpaText';
 import {LESSON_EXTENSIONS} from './editorialLessonExtensions';
+import BilingualTeaching from './BilingualTeaching';
 import {STUDY_STAGES,STUDY_TITLES,visibleStudyStage,moveStudyStage} from './lessonStages';
 const TABS=['情境','语法','词汇','听读','表达'] as const;
 type Props={content:LessonContent;course:Course;stage:number;onChangeStage:(stage:number)=>void;
@@ -98,6 +99,7 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onO
        <ul>{extension.check.map(item=><li key={item}>{item}</li>)}</ul></div>}
        {isDraft&&draft!.self_review&&<details><summary>原稿自评要求</summary><p>{draft!.self_review}</p></details>}</section>
    </div>}
+   <BilingualTeaching key={course.id+'-'+active} courseId={course.id} stage={active} content={content}/>
   </article>
   <div className="curriculum-navigation">
    <button type="button" disabled={position===0} onClick={()=>onChangeStage(moveStudyStage(active,-1))}>← 上一部分</button>

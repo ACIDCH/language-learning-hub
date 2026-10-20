@@ -1,12 +1,14 @@
 import {useMemo,useState} from 'react';
 import {splitLessonStages,STUDY_STAGES,STUDY_TITLES,visibleStudyStage,moveStudyStage} from './lessonStages';
 import LessonBody from './LessonBody';
+import BilingualTeaching from './BilingualTeaching';
+import type {LessonContent} from './v44Courses';
 
-type Props={text:string;defaultIpa?:boolean;ttsRate?:number;language?:string;courseId:string;
+type Props={text:string;content?:LessonContent|null;defaultIpa?:boolean;ttsRate?:number;language?:string;courseId:string;
  stage:number;onChangeStage:(next:number)=>void};
 /** Original manuscripts keep their source content, but omit editorial prefaces and
  * the old separate pronunciation stage from learner navigation. */
-export default function LessonReader({text,stage,onChangeStage}:Props){
+export default function LessonReader({text,courseId,content,stage,onChangeStage}:Props){
  const lesson=useMemo(()=>splitLessonStages(text),[text]);
  const [showAll,setShowAll]=useState(false);
  const current=visibleStudyStage(stage);
@@ -30,6 +32,8 @@ export default function LessonReader({text,stage,onChangeStage}:Props){
     <span className="lesson-index">{String(selected+1).padStart(2,'0')}</span>
     <h4>{sections[selected]?.displayName}</h4></header>}
    <LessonBody text={source}/>
+   {!showAll&&<BilingualTeaching key={courseId+'-'+current}
+     courseId={courseId} stage={current} content={content} privateSource/>}
   </article>
   {lesson.structured&&<div className="lesson-controls">
    {!showAll&&<button disabled={selected===0} onClick={()=>onChangeStage(moveStudyStage(current,-1))}>← 上一部分</button>}
