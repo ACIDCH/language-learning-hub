@@ -79,6 +79,21 @@ try{
    writeFileSync(output+'/'+size+'-'+name+'.png',Buffer.from(image.data,'base64'));
    checked++;
    if(name==='lesson'){
+    // Regression: a long IPA reference used to stretch the entire top toolbar,
+    // leaving an enormous pale rectangle while the actual lesson disappeared below.
+    await wait(()=>js("!!document.querySelector('.lesson-reader .lesson-paper .lesson-paragraphs')"),'lesson source body');
+    const initial=await js("(function(){const bar=document.querySelector('.ipa-reader-controls').getBoundingClientRect();const lesson=document.querySelector('.lesson-paper').getBoundingClientRect();const text=document.querySelector('.lesson-paper .lesson-paragraphs').textContent;return {barHeight:bar.height,gap:lesson.top-bar.bottom,chars:text.trim().length};})()");
+    if(initial.barHeight>90||initial.gap>260||initial.chars<20)problems.push(size+' lesson initial body hidden '+JSON.stringify(initial));
+    const toggle=await js("(function(){const item=document.querySelector('.ipa-reader-controls .ipa-reference>summary');if(!item)return false;item.click();return true;})()");
+    if(!toggle)problems.push(size+' missing IPA reference menu');
+    else{
+     const expanded=await js("(function(){const bar=document.querySelector('.ipa-reader-controls').getBoundingClientRect();const lesson=document.querySelector('.lesson-paper').getBoundingClientRect();const ref=document.querySelector('.ipa-reference').getBoundingClientRect();const style=getComputedStyle(document.querySelector('.ipa-reference'));return {barHeight:bar.height,gap:lesson.top-bar.bottom,refWidth:ref.width,referenceOpen:document.querySelector('.ipa-reference').open,position:style.position};})()");
+     if(!expanded.referenceOpen||expanded.barHeight>90||expanded.gap>260||expanded.refWidth>width-12||expanded.position!=='absolute')
+      problems.push(size+' IPA opens into lesson flow '+JSON.stringify(expanded));
+     const ipaShot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
+     writeFileSync(output+'/'+size+'-lesson-ipa-open.png',Buffer.from(ipaShot.data,'base64'));
+     await js("document.querySelector('.ipa-reference>summary').click()");
+    }
     await js("document.querySelector('.reader-head-actions button[aria-pressed]').click()");
     await wait(()=>js("!!document.querySelector('.reader-layout:not(.tools-hidden) .reader-tools')"),'right study tool');
     const layout=await js("(function(){const t=document.querySelector('.reader-tools').getBoundingClientRect();const a=document.querySelector('.reader-article').getBoundingClientRect();return {width:t.width,separate:Math.abs(t.left-a.left)>60};})()");
