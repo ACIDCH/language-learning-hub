@@ -1,5 +1,8 @@
 import {lazy,Suspense,useCallback,useEffect,useRef,useState} from 'react';
 import BrowserSpeechFeedback,{type BrowserSpeechHandle} from './BrowserSpeechFeedback';
+import type {Session} from '@supabase/supabase-js';
+import AITutor from './AITutor';
+import {apiBase} from './v44Connection';
 import './speakingWorkbench.css';
 import {ENGINES,browserResult,lessonPractice,cloudSpeechEndpoint,type SpeechEngineId} from './speechEngines';
 const LocalPronunciation=lazy(()=>import('./LocalPronunciation'));
@@ -34,9 +37,9 @@ const ERRORS:Record<string,string>={
  'aborted':'本次识别已停止。'
 };
 export {analyzeTranscript as compareTranscript} from './speechCompare';
-export default function SpeechPractice({language,lessonText="",initialTarget="",accessToken,variant='classic',showChoices=true}:{
+export default function SpeechPractice({language,lessonText="",initialTarget="",accessToken,session=null,variant='classic',showChoices=true}:{
  language:string;lessonText?:string;initialTarget?:string;accessToken?:string;
- variant?:'classic'|'standalone'|'selection';showChoices?:boolean
+ variant?:'classic'|'standalone'|'selection';showChoices?:boolean;session?:Session|null
 }){
  const [target,setTarget]=useState(initialTarget);
  const [mode,setMode]=useState<SpeechEngineId>('browser-asr');
@@ -241,6 +244,12 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
       {coaching.focusWords.slice(0,5).map(word=><button key={word} onClick={()=>focusWord(word)}>复练 {word}</button>)}
     </section>}
    </section>
+   {variant==='standalone'&&<details className="speaking-workbench-ai">
+    <summary>AI 辅助讲解</summary>
+    <AITutor key={target} compact session={session} apiBase={apiBase}
+     courseId="speaking-lab" language={lang} lessonText={target}
+     initialPrompt={'请参考本次英语/法语跟读的文字结果给出简短规则解析与复练建议。目标：'+target+'。识别：'+(heard||'暂无')+'。不要把文字相似度当专业发音评分。'}/>
+   </details>}
    {variant==='standalone'&&<details className="speaking-workbench-more"><summary>更多练习选项</summary>
      <label>示范语速 {rate.toFixed(2)}× <input type="range" min=".65" max="1.15" step=".05" value={rate} onChange={e=>setRate(Number(e.target.value))}/></label>
      <label><input type="checkbox" checked={showIpa} onChange={e=>setShowIpa(e.target.checked)}/>显示参考 IPA</label>

@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import type {Session} from '@supabase/supabase-js';
 import SpeechPractice from './SpeechPractice';
 import IpaStudio from './IpaStudio';
 import './cloud.css';
@@ -11,7 +12,7 @@ const EXAMPLES:Record<string,string[]>={
   'See you again tomorrow!']
 };
 /** The existing navigation entry displays a full sentence library next to the shared trainer. */
-export default function SpeechLab({language:initialLanguage='fr'}:{language?:string}){
+export default function SpeechLab({language:initialLanguage='fr',session=null}:{language?:string;session?:Session|null}){
  const [language,setLanguage]=useState(initialLanguage);
  const [chosen,setChosen]=useState(EXAMPLES[initialLanguage]?.[0]||EXAMPLES.fr[0]);
  const items=EXAMPLES[language]||EXAMPLES.fr;
@@ -33,7 +34,7 @@ export default function SpeechLab({language:initialLanguage='fr'}:{language?:str
     </button>)}</div>
    </section>
    <SpeechPractice key={language+':'+chosen} language={language} initialTarget={chosen}
-    variant="standalone" showChoices={false}/>
+    variant="standalone" showChoices={false} session={session}/>
   </div>
   <section id="ipa-studio"><details open={location.hash==='#ipa-studio'}><summary>全文 IPA 工具</summary><IpaStudio/></details></section>
  </main>;

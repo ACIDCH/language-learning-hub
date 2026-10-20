@@ -35,7 +35,7 @@ export default function SelectionInspector({selection,language,courseId,vocabula
     onClick={()=>setTab(id)}>{label}</button>)}
   </nav>
   {tab==='practice'&&<SpeechPractice key={selection.text} language={language}
-   initialTarget={selection.text} lessonText={selection.context} variant="selection"/>}
+   initialTarget={selection.text} lessonText={selection.context} session={session} variant="selection"/>}
   {tab==='meaning'&&<p>{meaning||'本课词表暂无对应释义。可查看语境或使用 AI 讲解。'}</p>}
   {tab==='ipa'&&<IpaText text={selection.text} language={language}
    onSpeak={word=>speakIpaText(word,language,rate)}/>}
