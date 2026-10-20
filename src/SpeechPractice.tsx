@@ -266,7 +266,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
       }}>清空结果</button>}
     </div>
     <p className="cloud-disclaimer" role="status" aria-live="polite">{note}</p>
-    <Suspense fallback={<p role="status">正在加载本机录音分析工具…</p>}>
+    <Suspense fallback={<p>正在加载本机录音分析工具…</p>}>
       <BrowserSpeechFeedback target={target}/>
     </Suspense>
     {interim&&<p className="speech-interim">识别中：{interim}</p>}
