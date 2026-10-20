@@ -8,6 +8,7 @@ import LessonReader from './LessonReader';
 import {speakIpaText} from './IpaText';
 import StructuredLesson from './StructuredLesson';
 import IpaStudyPane from './IpaStudyPane';
+import './curriculumStudy.css';
 import SpeechPractice from './SpeechPractice';
 import SelectionInspector,{type TextSelection} from './SelectionInspector';
 import {useCourseProgress} from './useCourseProgress';
