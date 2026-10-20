@@ -2,6 +2,7 @@ import {useMemo, useState, useEffect} from 'react';
 import {splitLessonStages,STAGE_NAMES} from './lessonStages';
 import IpaText,{speakIpaText} from './IpaText';
 import IpaReference from './IpaReference';
+import LessonBody from './LessonBody';
 
 type Props={
   text:string;
@@ -38,25 +39,22 @@ export default function LessonReader({text,language='fr',courseId,stage,onChange
       </nav>
       {lesson.preamble&&<details className="lesson-preamble">
         <summary>课程导入</summary>
-        <div className="lesson-paragraphs">{showIpa
-          ? <IpaText onSpeak={value=>speakIpaText(value,language,ttsRate)} text={lesson.preamble} language={language}/>
-          : lesson.preamble}</div>
+        {showIpa?<div className="lesson-paragraphs"><IpaText onSpeak={value=>speakIpaText(value,language,ttsRate)}
+           text={lesson.preamble} language={language}/></div>:<LessonBody text={lesson.preamble}/>}
       </details>}
     </>}
     {showAll||!lesson.structured?
       <article className="lesson-paper" aria-label="完整课程原文">
-        <div className="lesson-paragraphs">{showIpa
-          ? <IpaText onSpeak={value=>speakIpaText(value,language,ttsRate)} text={text} language={language}/>
-          : text}</div>
+        {showIpa?<div className="lesson-paragraphs"><IpaText onSpeak={value=>speakIpaText(value,language,ttsRate)}
+           text={text} language={language}/></div>:<LessonBody text={text}/>}
       </article>:
       <article className="lesson-paper" aria-label={'阶段：'+STAGE_NAMES[safeStage]}>
         <header className="lesson-stage-head">
           <span className="lesson-index">{lesson.stages[safeStage].symbol}</span>
           <h4>{lesson.stages[safeStage].heading||STAGE_NAMES[safeStage]}</h4>
         </header>
-        <div className="lesson-paragraphs">{showIpa
-          ? <IpaText onSpeak={value=>speakIpaText(value,language,ttsRate)} text={lesson.stages[safeStage].body} language={language}/>
-          : lesson.stages[safeStage].body}</div>
+        {showIpa?<div className="lesson-paragraphs"><IpaText onSpeak={value=>speakIpaText(value,language,ttsRate)}
+           text={lesson.stages[safeStage].body} language={language}/></div>:<LessonBody text={lesson.stages[safeStage].body}/>}
       </article>}
     {lesson.structured&&<div className="lesson-controls">
       {!showAll&&<button type="button" disabled={safeStage===0}

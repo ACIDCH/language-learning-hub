@@ -1,6 +1,6 @@
 import {useEffect,useRef,useState} from 'react';
 import type {Session} from '@supabase/supabase-js';
-import {loadCourse,courseRoute,type Course,type LessonContent} from './v44Courses';
+import {loadCourse,courseRoute,languageName,type Course,type LessonContent} from './v44Courses';
 import type {Preferences} from './v44Preferences';
 import {cloudClient,cloudRequest} from './v44Connection';
 import {readLocalFavorites,saveLocalFavorites} from './favoritesCloud';
@@ -61,7 +61,7 @@ export default function CourseReader({course,session,preferences,tab,navigate,on
  if(error&&!content&&!privateBody)return <section role="alert">{error}<button onClick={()=>location.reload()}>重新加载</button></section>;
  if(!text)return <p role="status">正在读取课程全文…</p>;
  const questions=content?.foundation?.questions;
- return <section className="reader-page"><div className="page-intro reader-intro"><div><p className="eyebrow">{course.track} · {course.level}</p><h1>{course.title}</h1></div><div className="reader-head-actions">
+ return <section className="reader-page"><div className="page-intro reader-intro"><div><p className="eyebrow">{languageName(course.language)} · {course.track===course.level?course.level:course.track+' · '+course.level}</p><h1>{course.title}</h1></div><div className="reader-head-actions">
   <button type="button" aria-label="缩小阅读字体" disabled={preferences.fontSize<=14} onClick={()=>onFontChange?.(Math.max(14,preferences.fontSize-1))}>A−</button>
   <button type="button" aria-label="放大阅读字体" disabled={preferences.fontSize>=26} onClick={()=>onFontChange?.(Math.min(26,preferences.fontSize+1))}>A＋</button>
   <button type="button" aria-pressed={showTools} onClick={()=>setShowTools(v=>!v)}>{showTools?'收起工具':'展开工具'}</button>
