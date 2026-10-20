@@ -171,3 +171,15 @@
 .v44 .lesson-paper .lesson-content-group{line-height:1.86}
 .v44 .reader-article .lesson-stages{margin-bottom:12px}
 .v44 .lesson-stage-head{margin-bottom:14px}
+
+.v44 .curriculum-example-gloss{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 2px}
+.v44 .curriculum-example-gloss span{background:var(--pane);padding:5px 9px;
+ border:1px solid var(--border);border-radius:7px;font-size:12px;color:var(--accent)}
+.v44 .curriculum-output-steps{margin:14px 0 0;padding-left:23px;display:grid;gap:8px}
+.v44 .curriculum-output-steps li{line-height:1.8}
+.v44 .curriculum-output-editor{display:grid;gap:9px;color:var(--text);font-weight:600}
+.v44 .curriculum-output-editor textarea{box-sizing:border-box;min-height:156px;
+ width:100%;background:var(--paneSoft);color:var(--text);border:1px solid var(--border);
+ padding:12px 14px;border-radius:10px;line-height:1.8;font:inherit;font-size:14px;resize:vertical}
+.v44 .curriculum-review-extra{margin:12px 0;padding-left:24px}
+.v44 .curriculum-review-extra li{line-height:1.7;padding:3px 0}

@@ -75,9 +75,9 @@ export default function CourseReader({course,session,preferences,tab,navigate,on
  {tab==='speech'?<SpeechPractice language={course.language} lessonText={text} session={session} accessToken={session?.access_token} variant="standalone"/>:
  tab==='ipa'?<div ref={scope} className="reader-selection-scope"><IpaStudyPane key={course.id} text={text} language={course.language}/></div>:
  <div ref={scope} className="reader-selection-scope">{!privateBody&&(content?.draft||content?.foundation)?
- <StructuredLesson content={content} course={course} stage={Number(progress.state.stage)||0}
+ <StructuredLesson key={course.id} content={content} course={course} stage={Number(progress.state.stage)||0}
  onChangeStage={stage=>progress.change({stage})} ttsRate={preferences.ttsRate}
- onOpenSpeech={()=>navigate(courseRoute(course,'speech'))}/>:
+ onOpenSpeech={()=>navigate(courseRoute(course,'speech'))} onSaveOutput={appendNote}/>:
  <LessonReader text={text} content={content} language={course.language} courseId={course.id}
  stage={Number(progress.state.stage)||0} onChangeStage={stage=>progress.change({stage})}
  defaultIpa={preferences.ipa} ttsRate={preferences.ttsRate}/>}</div>}

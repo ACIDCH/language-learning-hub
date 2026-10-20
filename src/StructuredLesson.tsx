@@ -4,12 +4,14 @@ import type {FoundationUnit} from './foundationTypes';
 import {speakIpaText} from './IpaText';
 import {LESSON_EXTENSIONS} from './editorialLessonExtensions';
 import BilingualTeaching from './BilingualTeaching';
+import {outputGuide,exampleVocabulary} from './curriculumTeachingGuide';
 import {STUDY_STAGES,STUDY_TITLES,visibleStudyStage,moveStudyStage} from './lessonStages';
 const TABS=['情境','语法','词汇','听读','表达'] as const;
 type Props={content:LessonContent;course:Course;stage:number;onChangeStage:(stage:number)=>void;
- onOpenSpeech:()=>void;ttsRate:number};
-export default function StructuredLesson({content,course,stage,onChangeStage,onOpenSpeech,ttsRate}:Props){
+ onOpenSpeech:()=>void;onSaveOutput?:(answer:string)=>void;ttsRate:number};
+export default function StructuredLesson({content,course,stage,onChangeStage,onSaveOutput,ttsRate}:Props){
  const [expanded,setExpanded]=useState(false);
+ const [ownText,setOwnText]=useState('');
  const [responses,setResponses]=useState<Record<number,string>>({});
  const [shown,setShown]=useState<Record<number,boolean>>({});
  const draft=content.draft,unit=content.foundation;
@@ -23,6 +25,7 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onO
  const reading=draft?.reading||unit!.reading;
  const listening=draft?.listening_script||unit!.listening;
   const output=draft?.production||unit!.production;
+ const guide=outputGuide(course,content);
  const isDraft=Boolean(draft);
  const play=(value:string)=>speakIpaText(value,course.language,ttsRate);
  const lessonQuestions= isDraft?draft!.questions.map(q=>({prompt:q.prompt,answer:q.answer,explanation:q.explanation})):
@@ -52,7 +55,10 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onO
      <section><h3>例句与应用</h3>{examples.map((example,i)=>
       <div className="curriculum-example" key={i}><span className="microtag">例句 {i+1}</span>
        <p lang={course.language}>{example}</p>
-       <button type="button" onClick={()=>play(example)}>播放</button></div>)}</section>
+       <button type="button" onClick={()=>play(example)}>播放</button>
+       {exampleVocabulary(example,vocabulary).length>0&&<div className="curriculum-example-gloss"
+       aria-label="例句词汇中文对照">{exampleVocabulary(example,vocabulary).map(row=>
+        <span key={row}>{row}</span>)}</div>}</div>)}</section>
      {extension&&<section className="curriculum-editorial"><h3>规则与原文对应</h3>
        {extension.analysis.map(point=><div className="curriculum-analysis-point" key={point.label}>
         <h4>{point.label}</h4><blockquote>{point.evidence}</blockquote><p>{point.teaching}</p></div>)}</section>}
@@ -65,7 +71,12 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onO
        <strong lang={course.language}>{word}</strong><span>{meaning}</span>
        <button type="button" aria-label={'播放 '+word} onClick={()=>play(word)}>听</button>
       </div>)}</div></section>
-     <section><h3>结合原文理解</h3><p>{examples[0]}</p></section>
+     <section><h3>词语在句子中的作用</h3>
+      {examples.slice(0,3).map((ex,i)=><div key={i} className="curriculum-example">
+        <p lang={course.language}>{ex}</p>
+        {exampleVocabulary(ex,vocabulary).length>0&&<div className="curriculum-example-gloss">
+        {exampleVocabulary(ex,vocabulary).map(item=><span key={item}>{item}</span>)}</div>}
+      </div>)}</section>
    </div>}
    {active===3&&<div className="curriculum-stack">
      <section><h3>听力</h3><div className="curriculum-actions"><button type="button" onClick={()=>play(listening)}>播放听力</button>
@@ -86,16 +97,25 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onO
       </div>)}</section>
    </div>}
    {active===5&&<div className="curriculum-stack">
-     <section><h3>完成表达任务</h3><p className="curriculum-goal">{output}</p>
-      <p>可以在课程下方的「学习笔记」中保存你的作品。</p></section>
+     <section><h3>完成表达任务</h3><p className="curriculum-goal">
+       {/^Produce an original/u.test(output)?guide.task:output}</p>
+      <ol className="curriculum-output-steps">{guide.steps.map((step,i)=><li key={i}>{step}</li>)}</ol></section>
      {extension&&<section className="curriculum-editorial"><h3>本课表达实践</h3><p>{extension.exercise}</p>
        <h4>{extension.modelTitle}</h4><pre className="curriculum-model">{extension.model}</pre></section>}
+     <section><h3>我的表达</h3>
+      <label className="curriculum-output-editor">输入自己的完整答案
+       <textarea rows={6} value={ownText} onChange={e=>setOwnText(e.target.value)}
+        placeholder="先完成自己的句子或段落，再和示范对照。"/>
+      </label>
+      {onSaveOutput&&<button disabled={!ownText.trim()} type="button"
+       onClick={()=>onSaveOutput(ownText)}>加入本课笔记</button>}</section>
      <section><h3>自我检查</h3><ul className="curriculum-checklist">
        <li>是否完成题目要求并表达清楚？</li>
        <li>所用信息是否有本课原文或实例支持？</li>
        <li>是否正确使用本课核心词汇和句型？</li>
        <li>是否检查错误并进行至少一次修改？</li>
-      </ul>{extension&&<div className="curriculum-editorial-check"><h4>本课额外核对</h4>
+      </ul><ul className="curriculum-review-extra">{guide.criteria.map(s=><li key={s}>{s}</li>)}</ul>
+      {extension&&<div className="curriculum-editorial-check"><h4>本课额外核对</h4>
        <ul>{extension.check.map(item=><li key={item}>{item}</li>)}</ul></div>}
        {isDraft&&draft!.self_review&&<details><summary>原稿自评要求</summary><p>{draft!.self_review}</p></details>}</section>
    </div>}
