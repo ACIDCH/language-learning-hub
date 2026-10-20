@@ -1,9 +1,9 @@
 import {lazy,Suspense,useCallback,useEffect,useRef,useState} from 'react';
-import type {BrowserSpeechHandle} from './BrowserSpeechFeedback';
+import BrowserSpeechFeedback,{type BrowserSpeechHandle} from './BrowserSpeechFeedback';
 import './speakingWorkbench.css';
 import {ENGINES,browserResult,lessonPractice,cloudSpeechEndpoint,type SpeechEngineId} from './speechEngines';
 const LocalPronunciation=lazy(()=>import('./LocalPronunciation'));
-const BrowserSpeechFeedback=lazy(()=>import('./BrowserSpeechFeedback'));
+
 import {analyzeTranscript,practiceHint} from './speechCompare';
 import {appendAttempt,learnerCoaching,type RecentAttempt} from './speechCoach';
 import {practiceChunks,addReviewWords,clearReviewedWord,type ReviewWord} from './speechLearningTools';
@@ -235,9 +235,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
       {report&&<div className="speech-compare" aria-label="目标词语识别情况">{report.expected.map((word,i)=>
        <span key={i} className={'speech-token speech-'+word.status}>{word.word}{word.status==='substitution'&&<small>→ {word.heard}</small>}</span>)}</div>}
     </div>}
-    <Suspense fallback={<p>正在加载录音分析…</p>}>
-     <BrowserSpeechFeedback ref={browserRecorder} key={target+'-'+lang} target={target} language={lang} embedded onPhaseChange={handleMicrophonePhase}/>
-    </Suspense>
+    <BrowserSpeechFeedback ref={browserRecorder} key={target+'-'+lang} target={target} language={lang} embedded onPhaseChange={handleMicrophonePhase}/>
     {coaching&&<section className="speaking-workbench-coaching" aria-label="纠正与复练建议">
       <h4>纠正与复练建议</h4><p>{coaching.instruction}</p>
       {coaching.focusWords.slice(0,5).map(word=><button key={word} onClick={()=>focusWord(word)}>复练 {word}</button>)}

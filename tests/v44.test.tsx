@@ -255,8 +255,10 @@ describe('V4.4 integration contracts',()=>{
  });
  it('passes the accented selection into the existing speech practice target',()=>{
   render(<AISettingsProvider><SelectionInspector selection={{text:'Enchanté',context:'Bonjour. Enchanté !'}} language="fr" courseId="fr-a1-u01" vocabulary={[]} session={null} rate={.85} onClose={()=>{}} onNote={()=>{}} onFavorite={()=>{}}/></AISettingsProvider>);
-  expect((screen.getByRole('textbox',{name:'练习短句（fr-FR）'}) as HTMLTextAreaElement).value).toBe('Enchanté');
-  expect(screen.getByText(/基础模式未进行音素评估/)).toBeTruthy();
+  expect((screen.getByRole('textbox',{name:'跟读目标文本'}) as HTMLTextAreaElement).value).toBe('Enchanté');
+  expect(screen.getByRole('button',{name:'🎙 开始跟读'})).toBeTruthy();
+  expect(screen.getByRole('navigation',{name:'选词面板工具'})).toBeTruthy();
+  expect(screen.queryByText('跟读四步')).toBeNull();
   expect(fetch).not.toHaveBeenCalled();
  });
  it('restores a course deep link on back/forward and keeps notes across theme/layout changes',async()=>{

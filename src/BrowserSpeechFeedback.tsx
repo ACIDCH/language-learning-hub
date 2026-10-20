@@ -16,7 +16,10 @@ const BrowserSpeechFeedback=forwardRef<BrowserSpeechHandle,Props>(function Brows
  const [playUrl,setPlayUrl]=useState('');
  const controller=useRef<AbortController|null>(null);
  const stop=useRef<(()=>void)|null>(null);
- function finish(){setState('processing');setNote('正在分析录音…');stop.current?.();}
+ function finish(){
+  if(state==='permission'){cancel();return;}
+  if(state==='recording'){setState('processing');setNote('正在分析录音…');stop.current?.();}
+ }
  const audioUrl=useRef<string|null>(null);
  const clip=useRef<Int16Array|null>(null);
  const model=useRef<BrowserPhonemeRunner|null>(null);
@@ -40,8 +43,8 @@ const BrowserSpeechFeedback=forwardRef<BrowserSpeechHandle,Props>(function Brows
  };
  function cancel(){
   controller.current?.abort();controller.current=null;stop.current=null;
-  resetPhones();wipeClip();
-  setState('idle');setNote('已取消并停止录音；未上传或保存任何录音。');
+  resetPhones();wipeClip();clearAudio();setReview(null);
+  setState('idle');setNote('已取消并停止录音。');
  }
  async function analyzePhonemes(){
   if(!clip.current||!review?.usable||phonemeBusy)return;
