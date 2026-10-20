@@ -124,6 +124,21 @@ try{
    }
   }
  }
+ // Readability contract: resizing the manuscript width control must visibly resize
+ // the manuscript in immersive mode. Never test the preference value alone.
+ await call('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
+ const measured=[];
+ for(const readingWidth of [560,1100]){
+  await go('/','.catalog-toolbar');
+  await js("localStorage.setItem('llh-v44-appearance-v1',JSON.stringify({...JSON.parse(localStorage.getItem('llh-v44-appearance-v1')),layout:'immersive',readerWidth:"+readingWidth+"}))");
+  await go('/?course=fr-a1-u01&tab=read','.reader-layout');
+  const geom=await js("(function(){const r=document.querySelector('.reader-selection-scope').getBoundingClientRect(),layout=document.querySelector('.reader-layout').getBoundingClientRect(),article=document.querySelector('.reader-article').getBoundingClientRect();return {textWidth:r.width,layoutWidth:layout.width,articleWidth:article.width,bodyOverflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-innerWidth};})()");
+  measured.push(geom);
+  if(geom.bodyOverflow>5)problems.push('immersive width '+readingWidth+' overflow '+geom.bodyOverflow);
+  if(geom.layoutWidth<1180)problems.push('immersive still max-width capped '+JSON.stringify(geom));
+ }
+ if(measured[1].textWidth-measured[0].textWidth<320)problems.push('reader width preference did not resize actual lesson: '+JSON.stringify(measured));
+ console.log('Immersive adjustable reading width geometry:',JSON.stringify(measured));
  // Verify the two other supported themes on the real reading page.
  await call('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
  for(const theme of ['eye','night']){
