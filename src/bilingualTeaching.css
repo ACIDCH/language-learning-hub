@@ -35,3 +35,10 @@
 .v44 .bilingual-help{margin-top:11px;font-size:12px;color:var(--textMuted)}
 .v44 .bilingual-teaching li{padding:5px 0;line-height:1.7}
 @media(max-width:650px){.v44 .bilingual-vocab{grid-template-columns:minmax(0,1fr)}}
+
+.v44 .bilingual-rule-list{padding-left:24px;margin:8px 0 15px;display:grid;gap:8px}
+.v44 .bilingual-rule-list li{color:var(--text);line-height:1.8}
+.v44 .bilingual-rule-list li p{color:var(--textMuted);font-size:13px;margin:5px 0}
+.v44 .bilingual-rule-warning{margin:11px 0;padding:12px 14px;background:var(--accentTint);border-left:3px solid var(--accent);border-radius:0 8px 8px 0}
+.v44 .bilingual-rule-warning p{margin:5px 0 0;line-height:1.75}
+.v44 .bilingual-vocab>div small{font-size:12px;color:var(--textMuted);line-height:1.5;overflow-wrap:anywhere}
