@@ -12,8 +12,10 @@ const text=(e:unknown)=>e instanceof Error?e.message:String(e);
 
 export default function ConnectionStatus({session}:{session:Session|null}){
  const [revision,setRevision]=useState(0);
- const [check,setCheck]=useState<Check>({busy:true,summary:'正在检查云端服务…',items:[]});
+ const [opened,setOpened]=useState(false);
+ const [check,setCheck]=useState<Check>({busy:false,summary:'',items:[]});
  useEffect(()=>{
+  if(!opened)return;
   let active=true;
   const controller=new AbortController();
   const checks:Item[]=[];
@@ -97,9 +99,10 @@ export default function ConnectionStatus({session}:{session:Session|null}){
   setCheck({busy:true,summary:'正在检查云端服务…',items:[]});
   void inspect().catch(e=>{if(active)setCheck({busy:false,summary:'检查中断：'+text(e),items:checks});});
   return ()=>{active=false;controller.abort();};
- },[revision,session?.user.id,session?.access_token]);
- return <details className="connection-diagnostics cloud-panel" aria-label="云端接口逐项检查">
-  <summary>接口诊断 {check.busy?'· 检查中':check.items.some(x=>x.state==='unavailable')?'· 部分服务异常':'· 已检查'}</summary>
+ },[opened,revision,session?.user.id,session?.access_token]);
+ return <details className="connection-diagnostics cloud-panel" aria-label="云端接口逐项检查"
+  onToggle={e=>setOpened(e.currentTarget.open)}>
+  <summary>接口诊断 {opened?(check.busy?'· 检查中':check.items.some(x=>x.state==='unavailable')?'· 部分服务异常':'· 已检查'):''}</summary>
   <p role="status">{check.summary}</p>
   <ul>
    {check.items.map(item=><li key={item.label}>

@@ -206,3 +206,7 @@ body[data-view-mode="immersive"] .v44.nav-drawer-open>.rail{
   position:static!important;max-height:none!important;overflow-y:visible!important;
  }
 }
+
+/* Keep reader visible even when personal settings are synchronizing; their controls update later. */
+.v44 .reader-tools-empty{background:var(--pane);color:var(--textMuted)}
+.v44 .reader-intro .reader-head-actions button{flex:0 0 auto}

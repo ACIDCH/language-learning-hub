@@ -162,6 +162,45 @@ describe('V4.4 integration contracts',()=>{
   expect(component).not.toContain('优先显示账户私有原稿');
   expect(component).not.toContain('原创预览 · 已获所有者公开预览授权');
  });
+ it('preserves the desktop navigation setting when the app opens on a phone',async()=>{
+  const saved={...DEFAULT_PREFERENCES,layout:'standard' as const,sidebar:true};
+  localStorage.setItem('llh-v44-appearance-v1',JSON.stringify(saved));
+  vi.stubGlobal('innerWidth',390);
+  render(<AISettingsProvider><AppShell/></AISettingsProvider>);
+  await waitFor(()=>{
+   const stored=JSON.parse(localStorage.getItem('llh-v44-appearance-v1')||'{}');
+   expect(stored.sidebar).toBe(true);
+  });
+  const toggle=screen.getByRole('button',{name:'切换导航栏'});
+  expect(toggle.getAttribute('aria-expanded')).toBe('false');
+  fireEvent.click(toggle);
+  expect(toggle.getAttribute('aria-expanded')).toBe('true');
+  fireEvent.click(screen.getByRole('button',{name:'关闭导航菜单'}));
+  expect(toggle.getAttribute('aria-expanded')).toBe('false');
+  expect(JSON.parse(localStorage.getItem('llh-v44-appearance-v1')||'{}').sidebar).toBe(true);
+ });
+ it('expands and collapses a pinned rail with repeated desktop clicks',async()=>{
+  localStorage.setItem('llh-v44-appearance-v1',JSON.stringify({...DEFAULT_PREFERENCES,layout:'standard',sidebar:true}));
+  vi.stubGlobal('innerWidth',1440);
+  render(<AISettingsProvider><AppShell/></AISettingsProvider>);
+  const toggle=screen.getByRole('button',{name:'切换导航栏'});
+  expect(toggle.getAttribute('aria-expanded')).toBe('true');
+  fireEvent.click(toggle);
+  expect(toggle.getAttribute('aria-expanded')).toBe('false');
+  expect(document.querySelector('.rail-collapsed')).toBeTruthy();
+  fireEvent.click(toggle);
+  expect(toggle.getAttribute('aria-expanded')).toBe('true');
+  expect(document.querySelector('.rail-collapsed')).toBeNull();
+  expect(document.querySelector('.navigation-backdrop')).toBeNull();
+ });
+ it('keeps the catalog available while account preferences are being restored',()=>{
+  const component=readFileSync('src/AppShell.tsx','utf8');
+  expect(component).not.toContain("settingsSync==='loading'?<p role");
+  expect(component).toContain("page==='settings'?<GlobalSettings");
+  const inspector=readFileSync('src/ConnectionStatus.tsx','utf8');
+  expect(inspector).toContain('if(!opened)return;');
+  expect(inspector).toContain('onToggle={e=>setOpened(e.currentTarget.open)}');
+ });
  it('opens global navigation from immersive mode without switching layouts',async()=>{
   localStorage.setItem('llh-v44-appearance-v1',JSON.stringify({...DEFAULT_PREFERENCES,layout:'immersive',sidebar:true}));
   render(<AISettingsProvider><AppShell/></AISettingsProvider>);
