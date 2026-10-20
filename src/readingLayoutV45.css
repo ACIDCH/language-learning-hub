@@ -1,0 +1,136 @@
+/* V4.5 learner UI: immersive layout, adaptive selection pane, usable global navigation.
+   Overrides legacy V4.4 prototype rules without touching source manuscripts. */
+.v44.view-root{min-width:0;width:100%;overflow:clip}
+.v44 .work,.v44 .page,.v44 .reader-page,.v44 .reader-layout,.v44 .reader-article,.v44 .reader-tools{min-width:0}
+.v44 .page{width:100%;max-width:1900px;padding:clamp(14px,1.7vw,27px) clamp(14px,2.2vw,32px) 54px}
+.v44 .topbar{z-index:70}
+.v44 .reader-page{container-type:inline-size;container-name:lesson;display:block;width:100%}
+.v44 .reader-intro{align-items:center;margin:0 0 10px;gap:12px}
+.v44 .reader-intro h1{font-size:clamp(23px,2.2vw,33px);margin:5px 0 4px;line-height:1.27}
+.v44 .reader-intro .eyebrow{text-transform:none;letter-spacing:.5px}
+.v44 .reader-page>.page-tab-row{margin:0 0 14px;gap:6px}
+.v44 .page-tab-row .segment{min-height:36px;padding:8px 13px;font-size:12px}
+.v44 .reader-layout{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:clamp(12px,1.4vw,20px);align-items:start}
+.v44 .reader-page .reader-layout.tools-hidden{grid-template-columns:minmax(0,1fr)!important}
+.v44 .reader-article{padding:clamp(18px,2.2vw,32px);overflow-wrap:anywhere}
+.v44 .reader-top{gap:8px;justify-content:flex-end;flex-wrap:wrap;margin:0 0 12px}
+.v44 .reader-top button{min-height:34px;padding:7px 12px;font-size:12px}
+.v44 .reader-selection-scope,.v44 .source-appendix,.v44 .exercise-block,.v44 .learning-notes{max-width:min(100%, 100ch);width:100%;margin-left:auto;margin-right:auto}
+.v44 .lesson-reader{display:grid;gap:12px;min-width:0}
+.v44 .ipa-reader-controls{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:9px;padding:9px 12px;border-radius:10px;background:var(--paneSoft)}
+.v44 .ipa-reader-controls label{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:650;margin:0}
+.v44 .ipa-reader-controls label input{margin:0}
+.v44 .ipa-reference{min-width:min(100%,180px);max-width:100%;margin:0;border:0}
+.v44 .ipa-reference>summary{font-size:12px}
+.v44 .lesson-stages{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px;margin:0}
+.v44 .lesson-stages button{min-width:0;flex:none;white-space:normal;line-height:1.3;min-height:40px;padding:8px 3px;font-size:12px}
+.v44 .lesson-preamble{padding:8px 12px;border:1px solid var(--border);border-radius:10px}
+.v44 .lesson-stage-head{padding:10px 13px;gap:10px}
+.v44 .lesson-stage-head h4{font-size:15px;line-height:1.4;overflow-wrap:anywhere}
+.v44 .lesson-paper{padding:0;margin:3px 0 0}
+.v44 .lesson-paragraphs,.v44 .ipa-transcript,.v44 .ipa-original-pending{
+ font-family:var(--reading-font);font-size:var(--reading-size);line-height:1.76;
+ white-space:pre-wrap;overflow-wrap:anywhere;word-break:normal;hyphens:auto;
+ margin:0;max-width:100%;tab-size:4}
+.v44 .lesson-controls{margin:12px 0 3px;gap:7px;justify-content:space-between}
+.v44 .lesson-controls button{min-height:35px;padding:8px 13px;font-size:12px}
+.v44 .source-appendix,.v44 .exercise-block,.v44 .learning-notes{margin-top:16px;margin-bottom:0;padding-top:14px}
+.v44 .exercise-block h2,.v44 .learning-notes h2{margin:0 0 14px;font-size:16px}
+.v44 .exercise-block details{border:1px solid var(--border);border-radius:10px;margin:8px 0;padding:10px 14px;background:var(--paneSoft)}
+.v44 .exercise-block details p{margin:8px 0 0;line-height:1.7}
+.v44 .exercise-block fieldset{padding:12px;margin-bottom:12px}
+.v44 .exercise-block fieldset label{margin:8px 0}
+.v44 .learning-notes textarea{min-height:95px}
+.v44 .reader-page .tool-notice:empty{display:none}
+.v44 .reader-tools{padding:clamp(12px,1.25vw,18px);max-width:100%;overflow-x:hidden;
+ top:88px;overscroll-behavior:contain;overflow-y:auto;max-height:calc(100dvh - 101px)}
+.v44 .reader-tools .panel-heading{margin-bottom:9px}
+.v44 .reader-tools .panel-heading h2{font-size:16px}
+.v44 .reader-tools .selection-workbench-source{margin-bottom:8px;padding:10px}
+.v44 .reader-tools .selected-text{font-size:clamp(17px,1.7vw,23px);line-height:1.35;margin:5px 0}
+.v44 .reader-tools .selection-actions{gap:5px}
+.v44 .reader-tools .selection-actions button{padding:7px 9px;min-height:34px;font-size:12px}
+.v44 .reader-tools .selection-workbench-tabs{margin:10px 0;gap:5px}
+.v44 .reader-tools .selection-workbench-tabs .segment{flex:1 0 auto;font-size:11px;min-height:33px;padding:7px 8px}
+.v44 .reader-tools .speaking-workbench{min-width:0;max-width:100%;overflow:hidden}
+.v44 .reader-tools .speaking-workbench-target{padding:8px}
+.v44 .reader-tools .speaking-workbench-controls{gap:6px}
+.v44 .reader-tools .speaking-workbench-controls button{min-width:0;white-space:normal}
+.v44 .reader-tools .speaking-workbench-heading{gap:8px}
+.v44 .reader-tools .speaking-workbench-heading label{max-width:100%}
+.v44 .reader-tools .phoneme-gradient-grid{gap:5px}
+.v44 .reader-tools .phoneme-gradient-tile{min-width:65px;max-width:calc(50% - 4px)}
+.v44 .reader-tools .selected-text,.v44 .reader-tools textarea,.v44 .reader-tools blockquote{
+ overflow-wrap:anywhere;word-break:normal}
+.v44 .reader-tools-empty{min-height:280px;display:flex;flex-direction:column}
+.v44 .reader-empty-state{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;
+ color:var(--textMuted);font-size:12px;text-align:center}
+.v44 .reader-empty-state span{font-family:Georgia,serif;font-size:58px;line-height:1;color:var(--border)}
+.v44 .reader-empty-state strong{font-weight:550;color:var(--textMuted);letter-spacing:1px}
+.v44 .source-banner,.v44 .selection-hint{display:none}
+.v44 .catalog-layout{gap:15px}
+.v44 .catalog-cards,.v44 .course-list{gap:11px}
+.v44 .catalog-toolbar{padding:8px 0 15px;gap:10px}
+.v44 .catalog-toolbar label{min-width:0}
+.v44 .course-big{padding:17px;gap:8px}
+.v44 .course-big h2{margin:6px 0;font-size:16px;line-height:1.4}
+.v44 .course-big p{margin:0 0 5px;font-size:12px;line-height:1.55}
+.v44 .course-meta{font-size:11px}
+.v44 .settings-content .cloud-disclaimer{line-height:1.65}
+body[data-view-mode="focus"] .v44.view-root,body[data-view-mode="immersive"] .v44.view-root{
+ display:grid;grid-template-columns:minmax(0,1fr)!important}
+body[data-view-mode="immersive"] .v44 .page{max-width:none;padding-inline:clamp(12px,2vw,38px)}
+body[data-view-mode="focus"] .v44 .page{max-width:1640px}
+body[data-view-mode="immersive"] .v44 .reader-article{box-shadow:var(--shadow);border-color:var(--border)}
+body[data-view-mode="immersive"] .v44 .reader-tools,
+body[data-view-mode="focus"] .v44 .reader-tools{display:block!important}
+/* The overlay opens above page and alongside the always-available topbar toggle. */
+.v44 .navigation-backdrop{display:none}
+.v44.nav-drawer-open .navigation-backdrop{display:block!important;position:fixed;inset:76px 0 0;z-index:74;
+ background:rgba(17,38,37,.28);border:0!important;border-radius:0!important;padding:0!important;
+ width:100vw;height:calc(100dvh - 76px);cursor:default}
+.v44.nav-drawer-open>.rail,
+.v44.rail-collapsed.nav-drawer-open>.rail,
+body[data-view-mode="focus"] .v44.nav-drawer-open>.rail,
+body[data-view-mode="immersive"] .v44.nav-drawer-open>.rail{
+ display:flex!important;position:fixed!important;top:76px;left:0;bottom:0;
+ width:min(275px,85vw);height:calc(100dvh - 76px);z-index:75!important;transform:none!important;
+ box-shadow:12px 0 35px rgba(0,0,0,.18);overflow-y:auto}
+.v44.nav-drawer-open>.rail .rail-head{display:flex}
+.v44.nav-drawer-open>.rail .rail-group,.v44.nav-drawer-open>.rail .rail-bottom{display:block}
+.v44.nav-drawer-open>.rail .nav-item{justify-content:flex-start}
+.v44.nav-drawer-open>.rail .nav-item>span:not(.nav-icon){display:inline}
+.v44.nav-drawer-open>.rail .brand-name{display:flex}
+/* Container query accounts for the width left over after navigation, not just the viewport. */
+@container lesson (min-width:940px){
+ .v44 .reader-page .reader-layout:not(.tools-hidden){
+  grid-template-columns:minmax(0,1fr) clamp(315px,29cqw,420px)!important}
+}
+@container lesson (max-width:939px){
+ .v44 .reader-page .reader-layout:not(.tools-hidden){grid-template-columns:minmax(0,1fr)!important}
+ .v44 .reader-page .reader-tools{position:static;top:auto;max-height:none}
+ .v44 .reader-page .reader-tools-empty{min-height:150px}
+}
+@container lesson (max-width:650px){
+ .v44 .lesson-stages{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .v44 .reader-intro{flex-wrap:wrap;align-items:flex-start}
+ .v44 .reader-intro h1{font-size:24px}
+ .v44 .reader-article{padding:14px}
+ .v44 .reader-top{justify-content:flex-start}
+ .v44 .reader-tools{padding:14px}
+}
+@media(max-width:850px){
+ .v44.nav-drawer-open .navigation-backdrop{top:76px;height:calc(100dvh - 76px)}
+ .v44 .reader-page .reader-layout{gap:12px}
+ .v44 .topbar{z-index:70}
+ .v44.nav-drawer-open>.rail,.v44.rail-collapsed.nav-drawer-open>.rail{top:76px;height:calc(100dvh - 76px)}
+ .v44 .page{padding:15px 13px 45px}
+}
+@media(max-width:550px){
+ .v44 .navigation-backdrop,.v44.nav-drawer-open .navigation-backdrop{top:70px;height:calc(100dvh - 70px)}
+ .v44.nav-drawer-open>.rail,.v44.rail-collapsed.nav-drawer-open>.rail{top:70px;height:calc(100dvh - 70px)}
+ .v44 .page{padding:13px 10px 38px}
+ .v44 .lesson-stages{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .v44 .reader-intro h1{font-size:23px}
+ .v44 .reader-tools,.v44 .reader-article{padding:13px}
+}
