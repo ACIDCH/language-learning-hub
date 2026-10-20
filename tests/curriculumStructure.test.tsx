@@ -8,6 +8,10 @@ import {FOUNDATION_UNITS} from '../src/foundationCurriculum';
 import {lessonIpaSample,parseManuscript} from '../src/manuscriptPresentation';
 import StructuredLesson from '../src/StructuredLesson';
 import LessonReader from '../src/LessonReader';
+import {CHINESE_LESSON_NOTES} from '../src/bilingualTeachingNotes';
+import {ENGLISH_ORIGINAL_BILINGUAL} from '../src/bilingualOriginalEnglish';
+import {outputGuide} from '../src/curriculumTeachingGuide';
+import BilingualTeaching from '../src/BilingualTeaching';
 import type {LessonDraft} from '../src/v44Courses';
 
 vi.mock('../src/IpaText',()=>({default:({text}:{text:string})=><div aria-label="参考国际音标与课程原文">{text}</div>,speakIpaText:()=>true}));
@@ -56,6 +60,36 @@ describe('semantic curriculum without broken full-page IPA',()=>{
     onChangeStage={vi.fn()} onOpenSpeech={vi.fn()} ttsRate={.85}/>);
   expect(view.container.querySelectorAll('.curriculum-concepts li')).toHaveLength(3);
   expect(view.container.querySelectorAll('.curriculum-example')).toHaveLength(3);
+ });
+ it('provides source-grounded aligned Chinese teaching for seven original language units',()=>{
+  const ids=['fr-a1-u01','fr-a1-u02','fr-a1-u03','en-ielts-reading-u01',
+   'en-ielts-reading-u02','en-ielts-writing-task1-u01','en-ielts-writing-task2-u01'];
+  for(const id of ids){
+   const note=CHINESE_LESSON_NOTES[id]||ENGLISH_ORIGINAL_BILINGUAL[id];
+   expect(note,id).toBeDefined();
+   expect(note.grammar.length,id).toBeGreaterThanOrEqual(2);
+   expect(note.dialogue.length,id).toBeGreaterThanOrEqual(3);
+   expect(note.vocabulary.length,id).toBeGreaterThanOrEqual(5);
+   expect(note.output.frame.length,id).toBeGreaterThanOrEqual(2);
+   expect(note.reading.pairs.every(x=>!!x.zh.trim()),id).toBe(true);
+  }
+ });
+ it('does not paste unrelated public example translations over a different private manuscript',()=>{
+  const {container}=render(<BilingualTeaching courseId="en-ielts-listening-u01"
+    stage={1} privateSource sourceText="Private lesson about learning bicycles."/>);
+  expect(container.querySelector('.bilingual-line')).toBeNull();
+ });
+ it('switches Chinese language examples with the selected private lecture topic',()=>{
+  const {container}=render(<BilingualTeaching courseId="en-ielts-listening-u01"
+    stage={3} privateSource sourceText="The lecture considers whether providing study spaces leads to better learning. Room occupancy can be observed."/>);
+  expect(container.textContent).toContain('使用量');
+  expect(container.textContent).not.toContain('树冠');
+ });
+ it('gives actionable Chinese output instructions rather than the generic draft boilerplate',()=>{
+  const sample=outputGuide(course,data);
+  expect(sample.task).toContain('复述');
+  expect(sample.steps.length).toBeGreaterThanOrEqual(3);
+  expect(sample.criteria.length).toBeGreaterThanOrEqual(3);
  });
  it('separates private manuscript headings, application, exemplar and check without dropping instructional text',()=>{
   const source='⑥ APPLIED OUTPUT, EXEMPLAR AND SELF-REVIEW\nFirst-pass: label opening, measurement and conclusion.\nSecond-pass: make a five-cell map.\nOriginal worked model:\nThe lecturer considers whether study spaces lead to better learning.\nCheck: correct speaker attribution and question type.';

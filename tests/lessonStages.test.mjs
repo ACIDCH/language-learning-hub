@@ -28,3 +28,16 @@ test('rejects duplicate or out of order headings by falling back to full text',(
  assert.equal(v.structured,false);
  assert.equal(v.stages[0].body,text);
 });
+
+test('recognizes original Markdown numbered manuscript sections and skips archived phonetic section in navigation',async()=>{
+ const {moveStudyStage,visibleStudyStage,STUDY_STAGES}=await import('../src/lessonStages.ts');
+ const markdown=full.replaceAll('①','## ①').replaceAll('②','## ②')
+ .replaceAll('③','## ③').replaceAll('④','## ④').replaceAll('⑤','## ⑤').replaceAll('⑥','## ⑥');
+ const lesson=splitLessonStages(markdown);
+ assert.equal(lesson.structured,true);
+ assert.equal(lesson.stages.length,6);
+ assert.deepEqual(STUDY_STAGES,[0,1,2,3,5]);
+ assert.equal(moveStudyStage(3,1),5);
+ assert.equal(moveStudyStage(5,-1),3);
+ assert.equal(visibleStudyStage(4),5);
+});
