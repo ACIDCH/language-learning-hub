@@ -1,0 +1,37 @@
+
+/* Chinese-target-language aligned textbook notes, independent of immutable manuscripts. */
+.v44 .bilingual-teaching{border:1px solid var(--border);border-radius:12px;
+ padding:clamp(14px,2vw,21px);background:var(--paneSoft);margin:12px 0;min-width:0}
+.v44 .bilingual-teaching>h3{font-size:16px;color:var(--text);margin:0 0 13px}
+.v44 .bilingual-teaching h4{font-size:14px;color:var(--text);margin:14px 0 9px}
+.v44 .bilingual-lead{line-height:1.8;font-size:14px;color:var(--text);
+ margin:0 0 13px}
+.v44 .bilingual-goal{border-left:3px solid var(--accent);background:var(--accentTint);
+ padding:11px 13px;border-radius:0 8px 8px 0;margin:10px 0 15px;
+ line-height:1.8}
+.v44 .bilingual-list{display:grid;gap:9px}
+.v44 .bilingual-line{padding:12px 14px;background:var(--pane);
+ border:1px solid var(--border);border-radius:9px;min-width:0}
+.v44 .bilingual-line>p{margin:0;overflow-wrap:anywhere}
+.v44 .bilingual-line .bilingual-target{font-family:var(--reading-font);
+ font-size:clamp(15px,1.3vw,18px);line-height:1.65;font-weight:570;color:var(--text)}
+.v44 .bilingual-line .bilingual-chinese{font-size:14px;color:var(--accent);
+ line-height:1.65;margin-top:4px}
+.v44 .bilingual-line .bilingual-usage{font-size:12px;color:var(--textMuted);
+ line-height:1.65;margin-top:6px}
+.v44 .bilingual-topics{display:grid;gap:12px}
+.v44 .bilingual-topic{padding:14px;border-radius:10px;
+ background:var(--pane);border:1px solid var(--border)}
+.v44 .bilingual-topic>h4{margin:0 0 8px;color:var(--accent)}
+.v44 .bilingual-topic>p{line-height:1.75;margin:0 0 12px;color:var(--text)}
+.v44 .bilingual-topic>.bilingual-line{background:var(--paneSoft);margin-top:8px}
+.v44 .bilingual-vocab{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.v44 .bilingual-word,.v44 .bilingual-vocab>div{padding:11px 13px;
+ display:grid;gap:5px;border:1px solid var(--border);border-radius:9px;
+ background:var(--pane);min-width:0}
+.v44 .bilingual-word strong,.v44 .bilingual-vocab>div strong{font-size:15px;color:var(--text)}
+.v44 .bilingual-word span,.v44 .bilingual-vocab>div span{font-size:14px;color:var(--accent)}
+.v44 .bilingual-word small{font-size:12px;color:var(--textMuted);line-height:1.55}
+.v44 .bilingual-help{margin-top:11px;font-size:12px;color:var(--textMuted)}
+.v44 .bilingual-teaching li{padding:5px 0;line-height:1.7}
+@media(max-width:650px){.v44 .bilingual-vocab{grid-template-columns:minmax(0,1fr)}}
