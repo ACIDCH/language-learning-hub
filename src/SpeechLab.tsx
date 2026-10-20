@@ -3,11 +3,14 @@ import SpeechPractice from './SpeechPractice';
 import IpaStudio from './IpaStudio';
 import './cloud.css';
 
-/** Public no-account practice entry; no private curriculum or provider settings. */
-export default function SpeechLab(){
- const [language,setLanguage]=useState('fr');
- return <main className="cloud-shell"><h1>发音练习实验室</h1><p><a href="/cloud">返回课程与现有 A1 示范音频</a></p>
- <label>练习语言<select value={language} onChange={e=>setLanguage(e.target.value)}><option value="fr">Français</option><option value="en">English</option></select></label>
- <SpeechPractice key={language} language={language}/>
- <section id="ipa-studio"><IpaStudio/></section></main>;
+/** Approved independent speaking page, using the same recorder and phoneme analysis as selection. */
+export default function SpeechLab({language:initialLanguage='fr'}:{language?:string}){
+ const [language,setLanguage]=useState(initialLanguage);
+ return <main className="speaking-lab-page">
+  <header className="speaking-lab-heading"><div><p className="eyebrow">SPEAKING PRACTICE</p><h1>跟读训练</h1></div>
+   <label>学习语言 <select value={language} onChange={e=>setLanguage(e.target.value)}>
+    <option value="fr">Français</option><option value="en">English</option></select></label></header>
+  <SpeechPractice key={language} language={language} variant="standalone"/>
+  <section id="ipa-studio"><details><summary>全文 IPA 工具</summary><IpaStudio/></details></section>
+ </main>;
 }

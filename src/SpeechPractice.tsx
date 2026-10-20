@@ -1,4 +1,6 @@
-import {lazy,Suspense,useEffect,useRef,useState} from 'react';
+import {lazy,Suspense,useCallback,useEffect,useRef,useState} from 'react';
+import type {BrowserSpeechHandle} from './BrowserSpeechFeedback';
+import './speakingWorkbench.css';
 import {ENGINES,browserResult,lessonPractice,cloudSpeechEndpoint,type SpeechEngineId} from './speechEngines';
 const LocalPronunciation=lazy(()=>import('./LocalPronunciation'));
 const BrowserSpeechFeedback=lazy(()=>import('./BrowserSpeechFeedback'));
@@ -32,8 +34,9 @@ const ERRORS:Record<string,string>={
  'aborted':'本次识别已停止。'
 };
 export {analyzeTranscript as compareTranscript} from './speechCompare';
-export default function SpeechPractice({language,lessonText="",initialTarget="",accessToken}:{
- language:string;lessonText?:string;initialTarget?:string;accessToken?:string
+export default function SpeechPractice({language,lessonText="",initialTarget="",accessToken,variant='classic'}:{
+ language:string;lessonText?:string;initialTarget?:string;accessToken?:string;
+ variant?:'classic'|'standalone'|'selection'
 }){
  const [target,setTarget]=useState(initialTarget);
  const [mode,setMode]=useState<SpeechEngineId>('browser-asr');
@@ -57,6 +60,9 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
  const [voices,setVoices]=useState<SpeechSynthesisVoice[]>([]);
  const [locale,setLocale]=useState(language==='fr'?'fr-FR':'en-US');
  const engine=useRef<Engine|null>(null);
+ const browserRecorder=useRef<BrowserSpeechHandle|null>(null);
+ const [microphonePhase,setMicrophonePhase]=useState<'idle'|'permission'|'recording'|'processing'>('idle');
+ const handleMicrophonePhase=useCallback((phase:typeof microphonePhase)=>setMicrophonePhase(phase),[]);
  const lang=language==='fr'?'fr':'en';
  useEffect(()=>{
   setLocale(lang==='fr'?'fr-FR':'en-US');setTarget(initialTarget);setHeard('');setAlternatives([]);setListening(false);
@@ -185,7 +191,65 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
    try{engine.current?.stop();setNote('已停止收音，正在等待最终识别结果…');}
    catch{setListening(false);}
  }
- return <section className="cloud-reader" aria-label="跟读与识别文字练习">
+ function startCombined(){
+   if(!target.trim()){setNote('请先选择单词或句子。');return;}
+   browserRecorder.current?.start();
+   listen();
+  }
+  function stopCombined(){
+   browserRecorder.current?.stop();
+   if(listening)end();
+  }
+  function retryCombined(){
+   browserRecorder.current?.cancel();
+   updateTarget(target);
+  }
+  if(variant!=='classic')return <section className={'speaking-workbench'+(variant==='selection'?' speaking-workbench--selection':'')} aria-label="跟读与识别文字练习">
+   <div className="speaking-workbench-heading">
+    <h2>跟读训练 <small>Speaking Practice</small></h2>
+    <label>发音语言 <select aria-label="语言与口音" value={locale} disabled={listening} onChange={e=>{updateTarget(target);setLocale(e.target.value);setVoiceId('');}}>
+     {(lang==='fr'?['fr-FR','fr-CA']:['en-US','en-GB','en-AU']).map(l=><option key={l} value={l}>{l}</option>)}
+    </select></label>
+   </div>
+   <div className="speaking-workbench-target">
+    <label>选中文本<textarea aria-label="跟读目标文本" value={target} maxLength={400}
+     rows={variant==='selection'?2:3} placeholder={SAMPLE[lang][0]} onChange={e=>updateTarget(e.target.value)}/></label>
+    {variant==='standalone'&&<div className="speaking-workbench-choices" aria-label="常用句子">
+     {(examples.length?examples:SAMPLE[lang]).slice(0,8).map(s=><button type="button" key={s}
+       className={s===target?'chosen':''} onClick={()=>updateTarget(s)}>{s}</button>)}
+    </div>}
+   </div>
+   <div className="speaking-workbench-controls">
+    <button type="button" onClick={()=>speak()} disabled={!target.trim()}>▶ 播放示范</button>
+    <button type="button" className="speaking-primary" disabled={!target.trim()||listening||microphonePhase!=='idle'}
+     onClick={startCombined}>🎙 开始跟读</button>
+    <button type="button" disabled={!listening&&microphonePhase==='idle'} onClick={stopCombined}>■ 停止</button>
+    <button type="button" disabled={listening||microphonePhase==='recording'} onClick={retryCombined}>↻ 重试</button>
+   </div>
+   <p className="speaking-workbench-status" role="status" aria-live="polite">{note}</p>
+   <section className="speaking-workbench-result" aria-label="识别与发音分析结果">
+    <div className="speaking-workbench-result-head"><h3>识别与发音分析结果</h3>
+      {report&&<span>文本相似度 <strong>{report.similarity}%</strong></span>}</div>
+    {interim&&<p>识别中：{interim}</p>}
+    {heard&&<div className="speaking-recognition"><b>识别文字</b><p>{heard}</p>
+      {report&&<div className="speech-compare" aria-label="目标词语识别情况">{report.expected.map((word,i)=>
+       <span key={i} className={'speech-token speech-'+word.status}>{word.word}{word.status==='substitution'&&<small>→ {word.heard}</small>}</span>)}</div>}
+    </div>}
+    <Suspense fallback={<p>正在加载录音分析…</p>}>
+     <BrowserSpeechFeedback ref={browserRecorder} key={target+'-'+lang} target={target} language={lang} embedded onPhaseChange={handleMicrophonePhase}/>
+    </Suspense>
+    {coaching&&<section className="speaking-workbench-coaching" aria-label="纠正与复练建议">
+      <h4>纠正与复练建议</h4><p>{coaching.instruction}</p>
+      {coaching.focusWords.slice(0,5).map(word=><button key={word} onClick={()=>focusWord(word)}>复练 {word}</button>)}
+    </section>}
+   </section>
+   {variant==='standalone'&&<details className="speaking-workbench-more"><summary>更多练习选项</summary>
+     <label>示范语速 {rate.toFixed(2)}× <input type="range" min=".65" max="1.15" step=".05" value={rate} onChange={e=>setRate(Number(e.target.value))}/></label>
+     <label><input type="checkbox" checked={showIpa} onChange={e=>setShowIpa(e.target.checked)}/>显示参考 IPA</label>
+     {showIpa&&target&&<IpaText text={target} language={locale}/>}
+   </details>}
+  </section>;
+  return <section className="cloud-reader" aria-label="跟读与识别文字练习">
   <h3>听一句、跟读一句、再复练</h3>
   <p className="cloud-disclaimer">面向日常语言学习：浏览器短录音分析 + 免费文字识别 + 设备语音示范，无需购买专业发音评分服务。文字差异可供复练，但不代表口音或音素诊断；浏览器识别可能调用厂商服务。本页面不保存录音，也不把转写同步到学习记录。</p>
   <ol className="speech-learning-steps" aria-label="跟读四步">
