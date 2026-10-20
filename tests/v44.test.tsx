@@ -343,13 +343,13 @@ describe('V4.4 integration contracts',()=>{
   render(<AISettingsProvider><AppShell/></AISettingsProvider>);
   expect(screen.getByRole('heading',{name:'课程目录'})).toBeTruthy();
   expect(screen.queryByText('正在恢复账户会话…')).toBeNull();
-  expect(screen.getByRole('link',{name:/课程目录/}).getAttribute('aria-current')).toBe('page');
+  expect(document.querySelector('.rail-group .nav-item[aria-current="page"]')?.textContent).toContain('课程目录');
  });
  it('keeps navigation and catalog filter state explicit for keyboard and mobile users',()=>{
   render(<AISettingsProvider><AppShell/></AISettingsProvider>);
   const filter=screen.getByRole('button',{name:/全部课程/});
   expect(filter.getAttribute('aria-pressed')).toBe('true');
-  fireEvent.click(screen.getByRole('button',{name:/基础/}));
+  fireEvent.click(screen.getAllByRole('button',{name:/基础/})[0]);
   const first=screen.getByRole('button',{name:/全部课程/});
   expect(first.getAttribute('aria-pressed')).toBe('false');
  });
