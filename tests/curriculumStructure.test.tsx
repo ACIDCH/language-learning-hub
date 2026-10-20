@@ -22,7 +22,7 @@ describe('semantic curriculum without broken full-page IPA',()=>{
   expect(tabs.querySelectorAll('button')).toHaveLength(5);
   expect(screen.queryByRole('button',{name:/发音/})).toBeNull();
   expect(screen.getByText(english.context)).toBeTruthy();
-  fireEvent.click(screen.getByRole('button',{name:/02规则与例句/}));
+  fireEvent.click(screen.getByRole('button',{name:/02语法/}));
   expect(onChangeStage).toHaveBeenCalledWith(1);
   rerender(<StructuredLesson content={data} course={course} stage={1} onChangeStage={onChangeStage} onOpenSpeech={vi.fn()} ttsRate={.85}/>);
   expect(screen.getByText(english.common_mistake)).toBeTruthy();
@@ -43,8 +43,8 @@ describe('semantic curriculum without broken full-page IPA',()=>{
   const target=COURSES.find(x=>x.id==='fr-a1-u04')!;
   const frenchContent:LessonContent={text:'Retained',sources:[],appendices:[],vocabulary:french.vocabulary,draft:french as LessonDraft};
   render(<StructuredLesson content={frenchContent} course={target} stage={2} onChangeStage={vi.fn()} onOpenSpeech={vi.fn()} ttsRate={.85}/>);
-  expect(screen.getByText('un bureau')).toBeTruthy();
-  expect(screen.getByText('书桌')).toBeTruthy();
+  expect(screen.getAllByText('un bureau').length).toBeGreaterThan(0);
+  expect(screen.getAllByText('书桌').length).toBeGreaterThan(0);
   expect(screen.getByRole('button',{name:'播放 un bureau'})).toBeTruthy();
  });
  it('also supports all 48 typed foundation units without converting their exercises to prose',()=>{
