@@ -20,7 +20,7 @@ export function selectedOriginal(scope:HTMLElement,selection:Selection|null):Tex
  const fragment=range.cloneContents();fragment.querySelectorAll('rt,button,.ipa-status').forEach(n=>n.remove());
  const text=(fragment.textContent||'').normalize('NFC').trim();
  if(!text||text.length>2000)return null;
- return {text,context:range.startContainer.parentElement?.closest('.lesson-paragraphs,.ipa-text')?.textContent?.slice(0,8500)||text};
+ return {text,context:range.startContainer.parentElement?.closest('.lesson-paragraphs,.curriculum-example,.curriculum-reading,.bilingual-line,.ipa-text')?.textContent?.slice(0,8500)||text};
 }
 export default function CourseReader({course,session,preferences,tab,navigate,onFontChange}:{course:Course;session:Session|null;preferences:Preferences;tab:string;navigate:(path:string)=>void;onFontChange?:(next:number)=>void}){
  const [content,setContent]=useState<LessonContent|null>(null),[error,setError]=useState(''),[sourceStatus,setSourceStatus]=useState(''),[privateBody,setPrivateBody]=useState('');
@@ -78,7 +78,7 @@ export default function CourseReader({course,session,preferences,tab,navigate,on
  <StructuredLesson key={course.id} content={content} course={course} stage={Number(progress.state.stage)||0}
  onChangeStage={stage=>progress.change({stage})} ttsRate={preferences.ttsRate}
  onOpenSpeech={()=>navigate(courseRoute(course,'speech'))} onSaveOutput={appendNote}/>:
- <LessonReader text={text} content={content} language={course.language} courseId={course.id}
+ <LessonReader text={text} content={content} privateSource={!!privateBody} language={course.language} courseId={course.id}
  stage={Number(progress.state.stage)||0} onChangeStage={stage=>progress.change({stage})}
  defaultIpa={preferences.ipa} ttsRate={preferences.ttsRate}/>}</div>}
  {privateBody&&content&&<details className="source-appendix"><summary>备用课文</summary><div className="lesson-paragraphs">{content.text}</div></details>}

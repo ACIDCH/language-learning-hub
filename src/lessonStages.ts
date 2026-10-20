@@ -6,7 +6,7 @@
 export type LessonStage = {index:number; symbol:string; heading:string; body:string};
 export type LessonOutline = {preamble:string; stages:LessonStage[]; structured:boolean};
 const SYMBOLS=['①','②','③','④','⑤','⑥'] as const;
-const HEADING=/^[ \t]*([①②③④⑤⑥])[ \t]*([^\r\n]*)/gm;
+const HEADING=/^[ \t]*(?:#{1,4}[ \t]*)?([①②③④⑤⑥])[ \t]*([^\r\n]*)/gm;
 export const STAGE_NAMES=['情境','语法','词汇','听读','发音','表达'] as const;
 
 export function splitLessonStages(text:string):LessonOutline {
