@@ -83,7 +83,7 @@ describe('full-text learning UI',()=>{
   fireEvent.click(menu);
   expect(details.open).toBe(true);
   expect(screen.getByText('法语口元音')).toBeTruthy();
-  expect(screen.getByText('Bonjour, comment allez-vous ?')).toBeTruthy();
+  expect(screen.getByRole('article',{name:'完整课程原文'}).textContent).toContain('Bonjour, comment allez-vous ?');
   fireEvent.pointerDown(document.body);
   expect(details.open).toBe(false);
   fireEvent.click(menu);
