@@ -21,7 +21,7 @@ export default function CourseGuide({courseId,check,onChange,disabled}:{
   </div>
   <p><strong>发音关注：</strong>{unit.pronunciation_focus}</p>
   <fieldset className="course-guide-checks" disabled={disabled}>
-    <legend>学完正文后自行勾选，点击上方“保存到 Supabase”同步</legend>
+    <legend>完成情况</legend>
     {GUIDE_ITEMS.map(item=><label key={item.key}>
       <input type="checkbox" checked={check[item.key]===true}
         onChange={e=>onChange({...check,[item.key]:e.target.checked})}/>

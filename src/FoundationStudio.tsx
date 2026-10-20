@@ -124,7 +124,7 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
   else{
     setRecords(prev=>({...prev,[current]:{lesson_id:current,...next,updated_at}}));
     setDraft(next);setDirty(false);
-    setStatus(complete?'已保存本课完成标记。此记录不表示通过 CEFR 官方语言能力认证。':'已保存本课答案和笔记到 Supabase。');
+    setStatus(complete?'已标记本课完成。':'已保存本课答案和笔记。');
   }
   setBusy(false);
  }
@@ -177,7 +177,7 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
    </aside>
    <article className="foundation-lesson">
     <header>
-      <small>{unit.language.toUpperCase()} · {unit.level} · 原创教材草稿</small>
+      <small>{unit.language.toUpperCase()} · {unit.level}</small>
       <h4>{unit.title}</h4><p>{unit.goal}</p>
     </header>
     <nav className="foundation-stage-tabs" aria-label="本节课学习环节">
@@ -251,7 +251,7 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
           {draft.answers[String(i)]===q.answer?'理解正确。':'建议复习本课规则。'} {q.explanation}
         </p>}
        </fieldset>)}
-      <p>已回答 {answered}/{allQuestions.length}；选对 {correct} 道。前两题检查本课概念，后续四题来自本课原始词汇表；自检用于复习，不作为考试等级认证。</p>
+      <p>已回答 {answered}/{allQuestions.length} · 正确 {correct} 道</p>
       <h5>开放表达</h5><p>{unit.production}</p>
       <label>我的答案与学习笔记<textarea value={draft.notes} maxLength={5000}
         disabled={!loaded||busy} rows={5}
