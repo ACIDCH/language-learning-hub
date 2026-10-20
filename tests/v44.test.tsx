@@ -339,6 +339,20 @@ describe('V4.4 integration contracts',()=>{
   expect(screen.queryByText('跟读四步')).toBeNull();
   expect(fetch).not.toHaveBeenCalled();
  });
+ it('does not block the public course catalog on first authentication handshake',()=>{
+  render(<AISettingsProvider><AppShell/></AISettingsProvider>);
+  expect(screen.getByRole('heading',{name:'课程目录'})).toBeTruthy();
+  expect(screen.queryByText('正在恢复账户会话…')).toBeNull();
+  expect(screen.getByRole('link',{name:/课程目录/}).getAttribute('aria-current')).toBe('page');
+ });
+ it('keeps navigation and catalog filter state explicit for keyboard and mobile users',()=>{
+  render(<AISettingsProvider><AppShell/></AISettingsProvider>);
+  const filter=screen.getByRole('button',{name:/全部课程/});
+  expect(filter.getAttribute('aria-pressed')).toBe('true');
+  fireEvent.click(screen.getByRole('button',{name:/基础/}));
+  const first=screen.getByRole('button',{name:/全部课程/});
+  expect(first.getAttribute('aria-pressed')).toBe('false');
+ });
  it('restores a course deep link on back/forward and keeps notes across theme/layout changes',async()=>{
   const course=COURSES.find(c=>c.id==='fr-a1-u04')!;history.replaceState({},'',courseRoute(course));render(<AISettingsProvider><AppShell/></AISettingsProvider>);
   const notes=await screen.findByLabelText('学习笔记');await waitFor(()=>expect((notes as HTMLTextAreaElement).disabled).toBe(false));fireEvent.change(notes,{target:{value:'retain this note'}});
