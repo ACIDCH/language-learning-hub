@@ -18,7 +18,7 @@ export default function CourseAudit({client,session,onSelect,refreshVersion}:{
       if(!alive)return;
       if(error){setStatus('结构检查暂不可用：'+error.message);return;}
       setRows((data||[]) as QA[]);
-      setStatus('仅表示结构指标；所有语义、语法、音频与教学有效性仍需单独审校。');
+      setStatus('');
     });
    return ()=>{alive=false;};
  },[client,session.user.id,refreshVersion]);
@@ -27,15 +27,15 @@ export default function CourseAudit({client,session,onSelect,refreshVersion}:{
  const flagged=useMemo(()=>rows.filter(r=>r.qa_status!=='approved'),[rows]);
  const visible=(filter==='attention'?flagged:filter==='structure'?structural:rows).slice(0,120);
  return <section className="cloud-reader" aria-label="课程质量结构审计">
-  <h3>108 课质量检查台</h3>
-  <p className="cloud-disclaimer" role="status">{status}</p>
+  <h3>课程结构检查</h3>
+  {status&&<p role="status">{status}</p>}
   <div className="qa-stats">
    <span>已入库：<strong>{rows.length}</strong></span>
    <span>六阶段标记齐全：<strong>{rows.filter(x=>x.has_six_stage_markers).length}</strong></span>
    <span>检测到答案标记：<strong>{rows.filter(x=>x.has_answer_markers).length}</strong></span>
    <span>待人工审校：<strong>{flagged.length}</strong></span>
   </div>
-  <p className="cloud-disclaimer">答案/解析标记仅表示文本中出现相关词语（包括 corrigé），不代表答案准确。机器结构检查不能替代人工语法、练习、难度、来源及听读审校。</p>
+  
   <label>课程列表
    <select value={filter} onChange={e=>setFilter(e.target.value as 'all'|'attention'|'structure')}>
     <option value="attention">未通过人工审校的课程（{flagged.length}）</option>

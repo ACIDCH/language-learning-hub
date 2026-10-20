@@ -96,8 +96,8 @@ export default function AudioVault({client,session,courseId,assets,status}:Props
  }
  return <section className="cloud-reader" aria-label="私人教学音频">
   <h3>法语 A1 教学音频</h3>
-  <p className="cloud-disclaimer">{status}</p>
-  <p className="cloud-disclaimer" role="status">{vaultMessage}</p>
+  {status&&<p role="status">{status}</p>}
+  {vaultMessage&&<p role="status">{vaultMessage}</p>}
   {assets.length>0?
    <ul className="cloud-audio-list">
     {assets.map(asset=><li key={asset.asset_id}>
@@ -108,11 +108,11 @@ export default function AudioVault({client,session,courseId,assets,status}:Props
        onClick={()=>{void play(asset)}}>检查并播放</button>}
     </li>)}
    </ul>:
-   <p className="cloud-disclaimer">当前课程没有关联音频文件。外部参考资源尚未完成课程映射。</p>}
+   <p className="cloud-disclaimer">本课暂无关联音频。</p>}
   {playUrl&&<div className="audio-player"><p>{playId}</p>
     <audio key={playUrl} controls preload="none" src={playUrl}
-      onCanPlay={()=>setPlayNote('浏览器已加载并可解码这条音频；请点击播放确认正常发声。')}
-      onPlaying={()=>setPlayNote('浏览器已开始实际播放这条私人音频；播放完成与发音质量仍待本人试听确认。')}
+      onCanPlay={()=>setPlayNote('可以播放')}
+      onPlaying={()=>setPlayNote('播放中')}
       onError={()=>setPlayNote('此文件的真实播放失败：可能是链接失效、网络阻断或格式不受支持。请重新点击「检查并播放」获取新链接。')}
       onStalled={()=>setPlayNote('音频加载停滞，请检查网络；尚不能认定播放成功。')}>
       浏览器不支持音频播放
@@ -122,13 +122,13 @@ export default function AudioVault({client,session,courseId,assets,status}:Props
   {playNote&&<p role="status" className="cloud-disclaimer">{playNote}</p>}
   <details className="cloud-audio-import">
    <summary>{uploadedNames?.size===24?'音频已经齐全 · 重新核验或恢复备份':'同步或补齐 A1 的 24 首私人音频'}</summary>
-   <p className="cloud-disclaimer">选择已核验的 A1 音频 ZIP；先对全部 24 个文件做 SHA-256 检查，再上传到本人账号的私人 Supabase Storage。Drive 原件不变，无需解压文件。</p>
+   
    <form onSubmit={importZip} className="cloud-fields">
     <label>音频 ZIP<input type="file" accept=".zip" disabled={working} onChange={e=>setZip(e.target.files?.[0]||null)}/></label>
     <button disabled={working||!zip} type="submit">{working?'正在校验并同步…':'核验并同步 24 首音频'}</button>
    </form>
    <p role="status" className="cloud-disclaimer">{importNote}</p>
   </details>
-  <p className="cloud-disclaimer">目前不保存个人跟读录音。音频是否“已验收”仅由独立教学质量流程决定。</p>
+  
  </section>;
 }

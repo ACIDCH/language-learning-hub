@@ -26,7 +26,7 @@ export default function ReferenceIndex({client,session}:{client:SupabaseClient;s
  const visible=filtered.slice(page*20,(page+1)*20);
  function selectFilter(v:Filter){setFilter(v);setPage(0);}
  return <section className="cloud-reader" aria-label="第三方参考音频来源索引">
-  <h3>外部参考音频来源索引</h3>
+  <h3>参考音频目录</h3>
   <p className="cloud-disclaimer" role="status">{status}</p>
   <div className="ref-counts">
    {([
@@ -37,8 +37,8 @@ export default function ReferenceIndex({client,session}:{client:SupabaseClient;s
     <strong>{counts[key]}</strong><span>{title}</span>
    </button>)}
   </div>
-  <p className="cloud-disclaimer">数据库共 {items.length} 条音频索引，基于 SHA-256 有 {uniqueMediaHashes(items)} 个不重复文件；其中一个 FI 词汇音频同时存在于两个来源归档，不必重复审核。</p>
-  <p className="cloud-disclaimer">FI 开放资源须按具体音轨核对许可与署名；Inspire A1 为商业出版社配套，仅保留私人参考索引。原始 MP3 的技术解码成功不等于人工试听或音文对齐成功。</p>
+  <p className="reference-count">共 {items.length} 条 · {uniqueMediaHashes(items)} 个音频文件</p>
+  
   <div className="ref-filters">
    <label>资源类别<select value={filter} onChange={e=>selectFilter(e.target.value as Filter)}>
     <option value="all">全部 {items.length} 条</option>
@@ -49,7 +49,7 @@ export default function ReferenceIndex({client,session}:{client:SupabaseClient;s
    </select></label>
    <label>文件名搜索<input type="search" value={q} onChange={e=>{setQ(e.target.value);setPage(0);}} placeholder="例如：voc_01 / Piste001"/></label>
   </div>
-  <p className="cloud-disclaimer">筛选结果 {filtered.length} 条；每页显示最多 20 条。资源索引不等于已批准的课程音频。</p>
+  <p className="reference-count">{filtered.length} 条结果</p>
   <div className="ref-rows">
    {visible.map(item=>{const source=identifyReference(item),meta=REFERENCES[source];
     return <article key={item.asset_id}>
@@ -57,7 +57,7 @@ export default function ReferenceIndex({client,session}:{client:SupabaseClient;s
      <p>{meta.title} · {Math.round(item.duration_seconds)} 秒 ·
        {item.decoded?'技术解码成功':'技术解码待核验'} ·
        {item.course_id?'已标记课程关联':'未与课程对齐'}</p>
-     <p>{meta.rights}</p>
+     <details className="reference-source-note"><summary>许可说明</summary><p>{meta.rights}</p></details>
      {meta.url&&<a href={meta.url} target="_blank" rel="noopener noreferrer">查看官方来源及使用条款 ↗</a>}
     </article>;
    })}

@@ -33,14 +33,14 @@ export default function AudioCoverage({client,session,courseId}:{client:Supabase
    if(!active)return;
    setItems((index.data||[]) as Asset[]);
    setUploaded((files.data||[]).map(x=>x.name));
-   setStatus('数据库与本人私人 Storage 清单读取完成。这只是可发现性检查，实际浏览器播放与许可仍逐项验证。');
+   setStatus('');
   })().catch(e=>{if(active)setStatus('音频目录读取失败：'+(e instanceof Error?e.message:String(e)));});
   return()=>{active=false;};
  },[client,session.user.id,revision]);
  const m=audioCoverage(items,uploaded,courseId);
  return <section className="cloud-reader" aria-label="音频覆盖与真实可用性">
-  <h3>音频覆盖矩阵 · 索引不等于可播文件</h3>
-  <p role="status">{status}</p>
+  <h3>课程音频概况</h3>
+  {status&&<p role="status">{status}</p>}
   <div className="ref-counts">
    <div><strong>{m.total}</strong><span>总索引</span></div>
    <div><strong>{m.privateUploads}</strong><span>私人 MP3 已上传</span></div>
@@ -48,7 +48,7 @@ export default function AudioCoverage({client,session,courseId}:{client:Supabase
    <div><strong>{m.verified}</strong><span>正式音频审核标志</span></div>
   </div>
   <p>当前课程 {courseId}：索引 {m.selectedAssets} 条，已上传可匹配的本人私人 MP3 {m.selectedUploads} 条；共有 {m.unmapped} 条索引尚未明确绑定课程。</p>
-  <p className="cloud-disclaimer">Drive 关联的素材属于另一个动态来源，应在下方 Drive 面板授权并绑定；首次听音须观察播放器「已开始播放」并实际确认听见声音。FI/Inspire 来源索引不会自动复制到本站或伪称获得再分发授权。</p>
+
   <button type="button" onClick={()=>setRevision(n=>n+1)}>重新检查索引与私人存储</button>
  </section>;
 }
