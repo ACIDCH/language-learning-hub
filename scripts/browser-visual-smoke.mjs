@@ -78,6 +78,11 @@ try{
    const image=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
    writeFileSync(output+'/'+size+'-'+name+'.png',Buffer.from(image.data,'base64'));
    checked++;
+   if(name==='catalog'&&width===390){
+    const filter=await js("(function(){const el=document.querySelector('.catalog-filter'),r=el.getBoundingClientRect();return {height:r.height,overflowX:getComputedStyle(el).overflowX,scrollWidth:el.scrollWidth,clientWidth:el.clientWidth};})()");
+    if(filter.height>90||filter.overflowX!=='auto'||filter.scrollWidth<=filter.clientWidth)
+     problems.push('mobile catalog filters occupy too much vertical space '+JSON.stringify(filter));
+   }
    if(name==='speech'&&width===390){
     const layout=await js("(function(){const library=document.querySelector('.speaking-lab-library').getBoundingClientRect();const player=document.querySelector('.speaking-workbench').getBoundingClientRect();const cards=document.querySelector('.speaking-lab-sentences');return {libraryHeight:library.height,playerTop:player.top,display:getComputedStyle(cards).display,scrollWidth:cards.scrollWidth,clientWidth:cards.clientWidth};})()");
     if(layout.playerTop>630||layout.libraryHeight>310||layout.display!=='flex'||layout.scrollWidth<=layout.clientWidth)

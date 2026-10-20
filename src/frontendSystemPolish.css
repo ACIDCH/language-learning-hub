@@ -185,3 +185,24 @@
  .v44 .speaking-workbench{padding:12px;gap:11px}
  .v44 .speaking-workbench-target{padding:10px}
 }
+
+/* Mobile course search: keep track filters one compact horizontal row, not a tall
+   multi-row button cloud that pushes the first lesson below the fold. */
+@media(max-width:750px){
+ .v44 .catalog-filter{
+  display:flex!important;align-items:center;flex-wrap:nowrap!important;
+  gap:7px;overflow-x:auto;overflow-y:hidden;
+  scrollbar-width:thin;overscroll-behavior-x:contain;
+  width:100%;max-width:100%;min-height:55px;
+  padding:10px!important;border-radius:12px;
+ }
+ .v44 .catalog-filter h2{display:none!important}
+ .v44 .catalog-filter .filter-option{
+  flex:0 0 auto;width:auto;min-width:max-content;
+  padding:9px 12px!important;margin:0!important;
+  white-space:nowrap;border-radius:9px;
+ }
+ .v44 .catalog-layout{gap:9px}
+ .v44 .catalog-toolbar{margin:2px 0 11px}
+ .v44 .catalog-layout .subhead{margin:4px 0 10px}
+}
