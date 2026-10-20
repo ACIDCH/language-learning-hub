@@ -51,7 +51,7 @@ export const CHINESE_LESSON_NOTES:Record<string,ChineseLessonNotes>={
    {target:'Je suis française, et mon ami Thomas est canadien.',zh:'我是法国人，我的朋友托马斯是加拿大人。',note:'比较 française 和 canadien 的性数形式。'},
    {target:"Nous sommes étudiants à l'université.",zh:'我们是大学生。',note:'nous 对应 sommes。'},
    {target:"Notre professeur s'appelle Madame Martin.",zh:'我们的老师叫马丁女士。',note:'第三人称 s’appelle 仍然使用反身结构。'}
-  ],technique:'先识别每个句子的主语，再找 être / s’appeler 的变位，最后核对性别、国籍和身份信息。不要逐字按英语词序翻译。',
+  ],technique:'先识别每个句子的主语，再找 être / s’appeler 的变位，最后核对性别、国籍和身份信息。不要逐字按英语词序翻译。'},
   output:{task:'模拟开学日的新同学见面：用四至六句法语依次问候、报姓名、说明身份或国籍、询问对方并礼貌告别。',
    frame:[
     {target:"Bonjour, je m'appelle Camille.",zh:'你好，我叫卡米耶。',note:'问候与姓名。'},
@@ -59,7 +59,6 @@ export const CHINESE_LESSON_NOTES:Record<string,ChineseLessonNotes>={
     {target:'Et vous, comment vous appelez-vous ?',zh:'那您呢，您叫什么名字？',note:'向对方提问。'},
     {target:'Enchanté, à bientôt !',zh:'很高兴认识您，回头见！',note:'自然结束。'}],
    review:['根据场合正确选择 tu 或 vous','je suis 与 vous êtes 变位一致','自我介绍和国籍的性数配合正确','对话开场、介绍、提问、结束完整']}
- },
  },
  'fr-a1-u04':{
   situation:'学生住宿舍后向朋友描述房间，学习先列举物品再说明它们的位置。',
@@ -176,7 +175,6 @@ export const CHINESE_LESSON_NOTES:Record<string,ChineseLessonNotes>={
     {target:'Room occupancy can show when facilities are used.',zh:'占用数据可显示设施使用时段。',note:'说明指标能够反映什么。'},
     {target:'However, these figures cannot by themselves prove improved grades.',zh:'但这些数据本身不能证明成绩有所提高。',note:'指出结论边界。'}],
    review:['分清 measurement 与 outcome','例子不冒充研究证明','结论强度不能超过证据','五格讲座结构顺序完整']}
- }
  },
  'fr-a1-u02':{
   situation:'新同学交流来自哪个国家、住在哪座城市、说什么语言。由 A1 第一课的 être 和自我介绍过渡到 habiter、parler、apprendre。',
@@ -215,7 +213,7 @@ export const CHINESE_LESSON_NOTES:Record<string,ChineseLessonNotes>={
    {target:'Je suis étudiante en Nouvelle-Zélande.',zh:'我是在新西兰就读的女学生。',note:'étudiante 与女性主语配合。'},
    {target:"J'habite à Auckland et je parle anglais et chinois.",zh:'我住在奥克兰，会说英语和中文。',note:'居住地与语言能力用两个动词组织。'},
    {target:"En ce moment, j'apprends le français.",zh:'目前，我正在学习法语。',note:'en ce moment 表示目前正在进行的学习。'}
-  ],technique:'逐句区分“来自哪里”“住在哪里”“说什么语言”“学习什么语言”，在笔记中将对应动词分列。',
+  ],technique:'逐句区分“来自哪里”“住在哪里”“说什么语言”“学习什么语言”，在笔记中将对应动词分列。'},
   output:{task:'写 6 句法语介绍自己或虚构同学，包含国籍、城市、会说的语言、学习中的语言和问候语。',
    frame:[
     {target:"Je m'appelle Nora.",zh:'我叫诺拉。',note:'第一句：姓名。'},
@@ -223,7 +221,6 @@ export const CHINESE_LESSON_NOTES:Record<string,ChineseLessonNotes>={
     {target:'Je parle anglais et chinois.',zh:'我说英语和中文。',note:'第三句：已有语言能力。'},
     {target:"J'apprends le français.",zh:'我正在学法语。',note:'第四句：学习中的语言。'}],
    review:['城市和国家介词区分准确','parler/apprendre 结构不混淆','国籍形容词性数正确','不同句子之间形成连贯自我介绍']}
- },
  },
  'fr-a1-u03':{
   situation:'向法国朋友介绍家庭成员，说明自己和家人的年龄、职业、住处，练习 avoir 与 mon/ma/mes。',
@@ -264,7 +261,7 @@ export const CHINESE_LESSON_NOTES:Record<string,ChineseLessonNotes>={
    {target:"J'ai un frère et mes parents habitent à Lille.",zh:'我有一个兄弟，我的父母住在里尔。',note:'区分拥有和居住。'},
    {target:'Mon frère s’appelle Hugo.',zh:'我的兄弟叫雨果。',note:'所有限定词连接人物关系。'},
    {target:'Il a dix-neuf ans.',zh:'他十九岁。',note:'年龄用 avoir。'}
-  ],technique:'先找“家庭成员是谁”，再看代词和所有限定词分别指谁；根据原文区分家庭人数与各自年龄。',
+  ],technique:'先找“家庭成员是谁”，再看代词和所有限定词分别指谁；根据原文区分家庭人数与各自年龄。'},
   output:{task:'用 6—8 句法语介绍一位真实或虚构家人，至少表达一项年龄、两名家庭成员、两个不同所有限定词及一个否定句。',
    frame:[
     {target:"Dans ma famille, nous sommes quatre personnes.",zh:'我家有四个人。',note:'先介绍整体。'},
@@ -272,7 +269,5 @@ export const CHINESE_LESSON_NOTES:Record<string,ChineseLessonNotes>={
     {target:'Elle a vingt ans.',zh:'她二十岁。',note:'补充年龄。'},
     {target:"Je n'ai pas de frère.",zh:'我没有兄弟。',note:'练习否定。'}],
    review:['avoir 的人称变位正确','年龄不使用 être','mon/ma/mes 依据后面的名词','否定结构符合基本法语语序']}
- },
-
  },
 };
