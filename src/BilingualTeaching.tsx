@@ -1,4 +1,5 @@
 import {CHINESE_LESSON_NOTES,type ParallelSentence} from './bilingualTeachingNotes';
+import {ENGLISH_ORIGINAL_BILINGUAL} from './bilingualOriginalEnglish';
 import type {LessonContent} from './v44Courses';
 function Parallel({entry}:{entry:ParallelSentence}){
  return <div className="bilingual-line">
@@ -14,7 +15,8 @@ export default function BilingualTeaching({courseId,stage,content,privateSource=
  const source=normalize(sourceText||'');
  const special=privateSource&&courseId==='en-ielts-listening-u01'&&
    /study spaces|occupancy|measurement/.test(source);
- const candidate=CHINESE_LESSON_NOTES[special?'en-ielts-listening-u01-study-spaces':courseId];
+ const candidate=CHINESE_LESSON_NOTES[special?'en-ielts-listening-u01-study-spaces':courseId]||
+  ENGLISH_ORIGINAL_BILINGUAL[courseId];
  // Do not pass a source-specific translation into a wholly different private manuscript.
  const sourceMatched=!privateSource||!source||candidate?.dialogue.some(entry=>
    source.includes(normalize(entry.target).slice(0,25)));
