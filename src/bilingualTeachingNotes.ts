@@ -60,6 +60,7 @@ export const CHINESE_LESSON_NOTES:Record<string,ChineseLessonNotes>={
     {target:'Enchanté, à bientôt !',zh:'很高兴认识您，回头见！',note:'自然结束。'}],
    review:['根据场合正确选择 tu 或 vous','je suis 与 vous êtes 变位一致','自我介绍和国籍的性数配合正确','对话开场、介绍、提问、结束完整']}
  },
+ },
  'fr-a1-u04':{
   situation:'学生住宿舍后向朋友描述房间，学习先列举物品再说明它们的位置。',
   goal:'用 Il y a、près de、sur、sous 以及冠词描述至少三个房间物品的空间关系。',
@@ -176,8 +177,7 @@ export const CHINESE_LESSON_NOTES:Record<string,ChineseLessonNotes>={
     {target:'However, these figures cannot by themselves prove improved grades.',zh:'但这些数据本身不能证明成绩有所提高。',note:'指出结论边界。'}],
    review:['分清 measurement 与 outcome','例子不冒充研究证明','结论强度不能超过证据','五格讲座结构顺序完整']}
  }
-,
-
+ },
  'fr-a1-u02':{
   situation:'新同学交流来自哪个国家、住在哪座城市、说什么语言。由 A1 第一课的 être 和自我介绍过渡到 habiter、parler、apprendre。',
   goal:'能用法语介绍居住城市和国籍，正确搭配 à + 城市、en/au/aux + 国家及三种高频动词。',
@@ -223,6 +223,7 @@ export const CHINESE_LESSON_NOTES:Record<string,ChineseLessonNotes>={
     {target:'Je parle anglais et chinois.',zh:'我说英语和中文。',note:'第三句：已有语言能力。'},
     {target:"J'apprends le français.",zh:'我正在学法语。',note:'第四句：学习中的语言。'}],
    review:['城市和国家介词区分准确','parler/apprendre 结构不混淆','国籍形容词性数正确','不同句子之间形成连贯自我介绍']}
+ },
  },
  'fr-a1-u03':{
   situation:'向法国朋友介绍家庭成员，说明自己和家人的年龄、职业、住处，练习 avoir 与 mon/ma/mes。',
@@ -273,4 +274,5 @@ export const CHINESE_LESSON_NOTES:Record<string,ChineseLessonNotes>={
    review:['avoir 的人称变位正确','年龄不使用 être','mon/ma/mes 依据后面的名词','否定结构符合基本法语语序']}
  },
 
+ },
 };
