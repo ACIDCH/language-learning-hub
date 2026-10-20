@@ -84,6 +84,18 @@ try{
     const layout=await js("(function(){const t=document.querySelector('.reader-tools').getBoundingClientRect();const a=document.querySelector('.reader-article').getBoundingClientRect();return {width:t.width,separate:Math.abs(t.left-a.left)>60};})()");
     if(width===1440&&(layout.width<300||layout.width>425||!layout.separate))problems.push('desktop sidebar geometry '+JSON.stringify(layout));
     if(width===390&&layout.separate)problems.push('mobile sidebar has not stacked');
+    // Activate the real text-selection inspector rather than testing only its empty placeholder.
+    const selectionMade=await js("(function(){const scope=document.querySelector('.reader-selection-scope');if(!scope)return false;const walker=document.createTreeWalker(scope,NodeFilter.SHOW_TEXT);let n;while((n=walker.nextNode())){if(!n.textContent||n.textContent.trim().length<5)continue;const start=n.textContent.search(/[^\\s]/);const range=document.createRange();range.setStart(n,start);range.setEnd(n,Math.min(start+12,n.textContent.length));window.getSelection().removeAllRanges();window.getSelection().addRange(range);document.dispatchEvent(new Event('selectionchange'));return true;}return false;})()");
+    if(!selectionMade)problems.push(size+' lesson cannot select any real paragraph');
+    else{
+     await wait(()=>js("!!document.querySelector('.reader-tools.selection-workbench .speaking-workbench')"),'selected-text pronunciation pane');
+     const selected=await js("(function(){const el=document.querySelector('.reader-tools.selection-workbench');const r=el.getBoundingClientRect();return {width:r.width,position:getComputedStyle(el).position,overflow:document.documentElement.scrollWidth-innerWidth};})()");
+     if(selected.overflow>5)problems.push(size+' selected-text overflow='+selected.overflow);
+     if(width===1440&&selected.position!=='sticky')problems.push('desktop selected-text pane not sticky: '+selected.position);
+     if(width===390&&selected.position!=='static')problems.push('mobile selected-text pane not stacked: '+selected.position);
+     const shot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
+     writeFileSync(output+'/'+size+'-selected-text.png',Buffer.from(shot.data,'base64'));
+    }
     if(width===1440){
      await js("localStorage.setItem('llh-v44-appearance-v1',JSON.stringify({...JSON.parse(localStorage.getItem('llh-v44-appearance-v1')),layout:'immersive'}));location.reload()");
      await wait(()=>js("document.body.dataset.viewMode==='immersive'&&!!document.querySelector('.reader-layout')"),'immersive page');
@@ -96,6 +108,17 @@ try{
     }
    }
   }
+ }
+ // Verify the two other supported themes on the real reading page.
+ await call('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
+ for(const theme of ['eye','night']){
+  await go('/','.catalog-toolbar');
+  await js("localStorage.setItem('llh-v44-appearance-v1',JSON.stringify({...JSON.parse(localStorage.getItem('llh-v44-appearance-v1')),theme:"+JSON.stringify(theme)+"}))");
+  await go('/?course=fr-a1-u01&tab=read','.reader-layout');
+  const contrast=await js("(function(){const styles=getComputedStyle(document.body);return {theme:document.body.dataset.theme,bg:styles.getPropertyValue('--bg'),text:styles.getPropertyValue('--text')};})()");
+  if(contrast.theme!==theme||!contrast.bg||!contrast.text)problems.push('theme '+theme+' inactive');
+  const shot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
+  writeFileSync(output+'/desktop-'+theme+'-lesson.png',Buffer.from(shot.data,'base64'));
  }
  writeFileSync(output+'/results.json',JSON.stringify({checked,problems},null,2));
  console.log('Checked '+checked+' route/viewport combinations; issues: '+problems.length);
