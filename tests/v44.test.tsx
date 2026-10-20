@@ -148,6 +148,20 @@ describe('V4.4 integration contracts',()=>{
   expect((screen.getByRole('button',{name:'返回上一层'}) as HTMLButtonElement).disabled).toBe(true);
  });
 
+ it('keeps immersive navigation and the selection panel responsive without hiding either tool',()=>{
+  const css=readFileSync('src/readingLayoutV45.css','utf8');
+  expect(css).toContain('@container lesson (min-width:940px)');
+  expect(css).toContain('@container lesson (max-width:939px)');
+  expect(css).toContain('.v44.nav-drawer-open>.rail');
+  expect(css).toContain('grid-template-columns:minmax(0,1fr) clamp(315px,29cqw,420px)');
+  expect(css).toContain('.v44:not(.nav-drawer-open)>.rail{transform:translateX(-110%)!important}');
+  const component=readFileSync('src/CourseReader.tsx','utf8');
+  expect(component).toContain('setShowTools]=useState(false)');
+  expect(component).toContain('setShowTools(true)');
+  expect(component).toContain('onFontChange?.');
+  expect(component).not.toContain('优先显示账户私有原稿');
+  expect(component).not.toContain('原创预览 · 已获所有者公开预览授权');
+ });
  it('opens global navigation from immersive mode without switching layouts',async()=>{
   localStorage.setItem('llh-v44-appearance-v1',JSON.stringify({...DEFAULT_PREFERENCES,layout:'immersive',sidebar:true}));
   render(<AISettingsProvider><AppShell/></AISettingsProvider>);

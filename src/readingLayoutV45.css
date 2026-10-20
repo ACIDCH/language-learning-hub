@@ -186,3 +186,9 @@ body[data-view-mode="immersive"] .v44.nav-drawer-open>.rail{
  .v44 .course-guide-fields{grid-template-columns:minmax(0,1fr)}
  .v44 .settings-grid{grid-template-columns:minmax(0,1fr)}
 }
+
+/* A previously expanded desktop rail must not cover a resized mobile reader. */
+@media(max-width:850px){
+ .v44:not(.nav-drawer-open)>.rail{transform:translateX(-110%)!important}
+ .v44.nav-drawer-open>.rail{transform:none!important}
+}
