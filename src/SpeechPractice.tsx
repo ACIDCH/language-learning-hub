@@ -34,9 +34,9 @@ const ERRORS:Record<string,string>={
  'aborted':'本次识别已停止。'
 };
 export {analyzeTranscript as compareTranscript} from './speechCompare';
-export default function SpeechPractice({language,lessonText="",initialTarget="",accessToken,variant='classic'}:{
+export default function SpeechPractice({language,lessonText="",initialTarget="",accessToken,variant='classic',showChoices=true}:{
  language:string;lessonText?:string;initialTarget?:string;accessToken?:string;
- variant?:'classic'|'standalone'|'selection'
+ variant?:'classic'|'standalone'|'selection';showChoices?:boolean
 }){
  const [target,setTarget]=useState(initialTarget);
  const [mode,setMode]=useState<SpeechEngineId>('browser-asr');
@@ -214,7 +214,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
    <div className="speaking-workbench-target">
     <label>选中文本<textarea aria-label="跟读目标文本" value={target} maxLength={400}
      rows={variant==='selection'?2:3} placeholder={SAMPLE[lang][0]} onChange={e=>updateTarget(e.target.value)}/></label>
-    {variant==='standalone'&&<div className="speaking-workbench-choices" aria-label="常用句子">
+    {variant==='standalone'&&showChoices&&<div className="speaking-workbench-choices" aria-label="常用句子">
      {(examples.length?examples:SAMPLE[lang]).slice(0,8).map(s=><button type="button" key={s}
        className={s===target?'chosen':''} onClick={()=>updateTarget(s)}>{s}</button>)}
     </div>}
