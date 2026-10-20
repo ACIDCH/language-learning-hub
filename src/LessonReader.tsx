@@ -1,6 +1,6 @@
 import {useMemo, useState, useEffect} from 'react';
 import {splitLessonStages,STAGE_NAMES} from './lessonStages';
-import IpaText,{speakIpaText} from './IpaText';
+import LessonIpaPreview from './LessonIpaPreview';
 import IpaReference from './IpaReference';
 import LessonBody from './LessonBody';
 
@@ -39,22 +39,19 @@ export default function LessonReader({text,language='fr',courseId,stage,onChange
       </nav>
       {lesson.preamble&&<details className="lesson-preamble">
         <summary>课程导入</summary>
-        {showIpa?<div className="lesson-paragraphs"><IpaText onSpeak={value=>speakIpaText(value,language,ttsRate)}
-           text={lesson.preamble} language={language}/></div>:<LessonBody text={lesson.preamble}/>}
+        <LessonBody text={lesson.preamble}/>{showIpa&&<LessonIpaPreview text={lesson.preamble} language={language} initialOpen/>}
       </details>}
     </>}
     {showAll||!lesson.structured?
       <article className="lesson-paper" aria-label="完整课程原文">
-        {showIpa?<div className="lesson-paragraphs"><IpaText onSpeak={value=>speakIpaText(value,language,ttsRate)}
-           text={text} language={language}/></div>:<LessonBody text={text}/>}
+        <LessonBody text={text}/>{showIpa&&<LessonIpaPreview text={text} language={language} initialOpen/>}
       </article>:
       <article className="lesson-paper" aria-label={'阶段：'+STAGE_NAMES[safeStage]}>
         <header className="lesson-stage-head">
           <span className="lesson-index">{lesson.stages[safeStage].symbol}</span>
           <h4>{lesson.stages[safeStage].heading||STAGE_NAMES[safeStage]}</h4>
         </header>
-        {showIpa?<div className="lesson-paragraphs"><IpaText onSpeak={value=>speakIpaText(value,language,ttsRate)}
-           text={lesson.stages[safeStage].body} language={language}/></div>:<LessonBody text={lesson.stages[safeStage].body}/>}
+        <LessonBody text={lesson.stages[safeStage].body}/>{showIpa&&<LessonIpaPreview key={courseId+'-'+safeStage} text={lesson.stages[safeStage].body} language={language} initialOpen/>}
       </article>}
     {lesson.structured&&<div className="lesson-controls">
       {!showAll&&<button type="button" disabled={safeStage===0}
