@@ -76,9 +76,9 @@ describe('V4.4 integration contracts',()=>{
   const audio=document.querySelector('audio')!;
   expect(audio).toBeTruthy();
   fireEvent.canPlay(audio);
-  expect(screen.getByText(/浏览器已加载并可解码/)).toBeTruthy();
+  expect(screen.getByText('可以播放')).toBeTruthy();
   fireEvent.playing(audio);
-  expect(screen.getByText(/浏览器已开始实际播放/)).toBeTruthy();
+  expect(screen.getByText('播放中')).toBeTruthy();
   fireEvent.error(audio);
   expect(screen.getByText(/真实播放失败/)).toBeTruthy();
   expect(createSignedUrl).toHaveBeenCalledWith('test-owner/fr-a1-u01-dialogue.mp3',900);
