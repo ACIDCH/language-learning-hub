@@ -292,8 +292,8 @@ describe('V4.4 integration contracts',()=>{
   const fetcher=vi.fn().mockResolvedValue(new Response(JSON.stringify({data:{is_free_tier:true,is_management_key:false,limit_remaining:0}}),{status:200,headers:{'Content-Type':'application/json'}}));
   vi.stubGlobal('fetch',fetcher);
   render(<AISettingsProvider><AITutor session={session} apiBase="https://example.test" courseId="fr-a1-u01" language="fr" lessonText="Bonjour"/></AISettingsProvider>);
-  expect((screen.getByRole('checkbox',{name:/手动启用 AI/}) as HTMLInputElement).checked).toBe(false);
-  expect((screen.getByRole('button',{name:/AI 关闭 · 如需生成请先启用/}) as HTMLButtonElement).disabled).toBe(true);
+  expect((screen.getByRole('checkbox',{name:/启用 AI 助学/}) as HTMLInputElement).checked).toBe(false);
+  expect((screen.getByRole('button',{name:'生成回答'}) as HTMLButtonElement).disabled).toBe(true);
   const input=screen.getByLabelText('API Key') as HTMLInputElement;
   fireEvent.change(input,{target:{value:'sk-or-fixture-only'}});
   fireEvent.click(screen.getByRole('button',{name:'验证 OpenRouter API Key（不调用模型）'}));
@@ -312,9 +312,9 @@ describe('V4.4 integration contracts',()=>{
   fireEvent.change(screen.getByLabelText('API Key'),{target:{value:'key-fixture-for-test'}});
   fireEvent.change(screen.getByLabelText('提问或待批改文本'),{target:{value:'Explain Bonjour'}});
   expect(fetcher).not.toHaveBeenCalled();
-  fireEvent.click(screen.getByRole('checkbox',{name:/手动启用 AI/}));
+  fireEvent.click(screen.getByRole('checkbox',{name:/启用 AI 助学/}));
   expect(fetcher).not.toHaveBeenCalled();
-  fireEvent.click(screen.getByRole('button',{name:'主动调用一次 AI'}));
+  fireEvent.click(screen.getByRole('button',{name:'生成回答'}));
   await waitFor(()=>expect(screen.getByText('Bonjour !')).toBeTruthy());
   expect(fetcher).toHaveBeenCalledTimes(1);
   const [url,init]=fetcher.mock.calls[0] as [string,RequestInit];
@@ -344,7 +344,7 @@ describe('V4.4 integration contracts',()=>{
   const notes=await screen.findByLabelText('学习笔记');await waitFor(()=>expect((notes as HTMLTextAreaElement).disabled).toBe(false));fireEvent.change(notes,{target:{value:'retain this note'}});
   fireEvent.change(screen.getByLabelText('网站外观'),{target:{value:'night'}});fireEvent.change(screen.getByLabelText('显示布局'),{target:{value:'focus'}});
   expect((screen.getByLabelText('学习笔记') as HTMLTextAreaElement).value).toBe('retain this note');expect(document.body.dataset.theme).toBe('night');
-  act(()=>{history.pushState({},'',catalogRoute('fr','A1'));window.dispatchEvent(new PopStateEvent('popstate'));});expect(screen.getByRole('heading',{name:'你的语言学习目录'})).toBeTruthy();
+  act(()=>{history.pushState({},'',catalogRoute('fr','A1'));window.dispatchEvent(new PopStateEvent('popstate'));});expect(screen.getByRole('heading',{name:'课程目录'})).toBeTruthy();
   act(()=>{history.replaceState({},'',courseRoute(course));window.dispatchEvent(new PopStateEvent('popstate'));});expect((await screen.findByLabelText('学习笔记') as HTMLTextAreaElement).value).toBe('retain this note');
  });
 });
