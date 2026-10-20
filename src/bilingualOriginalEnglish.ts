@@ -29,7 +29,7 @@ export const ENGLISH_ORIGINAL_BILINGUAL:Record<string,ChineseLessonNotes>={
    {target:'Supporters argue that recorded lectures give students greater control over when and how often they revisit complex information.',zh:'支持者认为录播讲座使学生更能自行决定何时及多频繁地复习复杂信息。',note:'支持者的观点，不必等于作者全盘赞成。'},
    {target:'Critics, however, note that access to recordings does not automatically produce meaningful participation.',zh:'但批评者指出，能够访问录播内容并不会自动带来有意义的参与。',note:'however 带出核心限制。'},
    {target:'Rather than treating online and classroom teaching as opposing choices, institutions could examine which activities are most effective in each format.',zh:'与其把线上和线下教学看成对立选择，院校可以研究不同形式最适合哪些活动。',note:'作者提出的方法性建议。'}
-  ],technique:'用三种标记分别划出支持者、批评者和作者的最终建议；不要把别人的观点错归给作者。',
+  ],technique:'用三种标记分别划出支持者、批评者和作者的最终建议；不要把别人的观点错归给作者。'},
   output:{task:'先用中文写出 3 句论证梗概，再用 100—140 词英文回答：线上课程的优势、局限和作者的建议分别是什么？',
    frame:[
     {target:'Recorded lectures may improve access for some students.',zh:'录播可能改善部分学生获取资源的机会。',note:'优势与范围。'},
@@ -65,7 +65,7 @@ export const ENGLISH_ORIGINAL_BILINGUAL:Record<string,ChineseLessonNotes>={
    {target:'Sixty visits were recorded.',zh:'记录了六十次到访。',note:'次数，不等于六十个不同的人。'},
    {target:'Some participants preferred quiet rooms.',zh:'部分参与者偏好安静房间。',note:'some 不能改写成 all。'},
    {target:'The report did not compare grades.',zh:'报告没有比较成绩。',note:'不比较不意味着成绩完全相同。'}
-  ],technique:'每找到一个数字，都问：统计对象是什么，单位是什么，和谁比较，有哪些未测量的结果？',
+  ],technique:'每找到一个数字，都问：统计对象是什么，单位是什么，和谁比较，有哪些未测量的结果？'},
   output:{task:'从文章找出两条真实支持的判断及两条过度推断，逐句给出英文证据和中文解释。',
    frame:[
     {target:'The report shows an increase in visits.',zh:'报告显示到访次数上升。',note:'支持的结论。'},
@@ -99,7 +99,7 @@ export const ENGLISH_ORIGINAL_BILINGUAL:Record<string,ChineseLessonNotes>={
   reading:{title:'四年数据的中外文概要',pairs:[
    {target:'Overall, digital borrowing rose consistently while printed borrowing declined.',zh:'总体上，数字借阅持续上升，而纸质借阅下降。',note:'这是概览，不逐年罗列。'},
    {target:'Digital loans overtook printed loans in 2023 and the difference widened the following year.',zh:'数字借阅量于 2023 年超过纸质借阅量，此后一年差距进一步扩大。',note:'2023 年 76 对 70，2024 年 91 对 62（千次）。'}
-  ],technique:'做题时先列 4 年 × 2 类别的小表，再核对净增长、交叉点和最大年度增量，最后写英文；不能先套模板再找数字。',
+  ],technique:'做题时先列 4 年 × 2 类别的小表，再核对净增长、交叉点和最大年度增量，最后写英文；不能先套模板再找数字。'},
   output:{task:'根据源数据写一段 150—190 词的英语 Task 1 风格报告：1 句引入、2 句 overview、两段数据比较。',
    frame:[
     {target:'Overall, digital borrowing rose while printed borrowing declined.',zh:'总体上，数字借阅增加，而纸质借阅下降。',note:'概览核心。'},
@@ -135,7 +135,7 @@ export const ENGLISH_ORIGINAL_BILINGUAL:Record<string,ChineseLessonNotes>={
    {target:'Distance learning has made university education more accessible to people who cannot relocate or attend lectures at fixed times.',zh:'远程学习让无法搬迁或无法按固定时间上课的人更容易获得大学教育。',note:'明确获益群体。'},
    {target:'However, flexibility alone does not guarantee effective learning.',zh:'然而，仅有灵活性并不能保证有效学习。',note:'文章核心局限。'},
    {target:'Some students struggle to remain engaged when feedback is delayed or group activities are poorly designed.',zh:'如果反馈不及时或小组活动设计欠佳，部分学生很难保持参与。',note:'解释局限发生的条件。'}
-  ],technique:'对每段标注 claim、reason、illustration、qualification，而非只记高级连接词。',
+  ],technique:'对每段标注 claim、reason、illustration、qualification，而非只记高级连接词。'},
   output:{task:'围绕“大学是否应增加网课”写一个完整论证段落，明确一个优点、一个缺点及你的有条件立场。',
    frame:[
     {target:'Online courses can widen access for students who cannot attend in person.',zh:'网课可为无法到现场的学生扩大教育机会。',note:'优点与范围。'},
