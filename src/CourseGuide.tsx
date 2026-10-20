@@ -28,9 +28,5 @@ export default function CourseGuide({courseId,check,onChange,disabled}:{
       {item.label}
     </label>)}
   </fieldset>
-  <p className="cloud-disclaimer">
-    这些目标来自原始课程设计大纲，仅作为学习导航，不代表实际正文、配套音频或语法内容已经专业审校。
-    三项自评完成也不等于达到相应 CEFR/IELTS 等级。
-  </p>
  </section>;
 }

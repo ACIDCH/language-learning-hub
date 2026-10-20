@@ -129,12 +129,7 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
   setBusy(false);
  }
  return <section className="cloud-reader foundation-studio" aria-label="基础语言课程与练习">
-  <h3>基础衔接课程 · 英语与法语</h3>
-  <p className="cloud-disclaimer">
-    <strong>共 48 节原创基础及 A2 衔接短课程：</strong>英语 24 节、法语 24 节（各新增 12 节 A1→A2 衔接课程）。
-    从字母与声音，过渡到词汇、短句、段落及表达。它们是独立的补充教材，
-    不会改写原有 108 课，也不能当作专业审校通过的完整 CEFR A2 教材或语言等级认证。
-  </p>
+  <h3>基础衔接课程 · 英语与法语</h3><p className="foundation-overview">48 节基础与衔接课程 · 英语 24 节 · 法语 24 节</p>
   <div className="foundation-filters" role="group" aria-label="语言选择">
     <button type="button" disabled={busy} aria-pressed={language==='en'}
       className={language==='en'?'foundation-current':''} onClick={()=>changeLanguage('en')}>英语基础</button>
@@ -144,9 +139,6 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
   </div>
   <details className="foundation-review-agenda">
    <summary>跨课程复习建议 · {loaded?dueReviews.length:'…'} 节待回顾</summary>
-   <p className="cloud-disclaimer">根据全部 48 节基础与 A2 衔接课现有云端进度、答题结果及上次保存时间生成。
-     答错题优先复习；未完成的题目提醒续学；已学完课程约 3 天后建议回顾。
-     这只是复习提示，不是经过校准的遗忘曲线模型。</p>
    {!loaded?<p>正在读取个人复习记录…</p>:
     dueReviews.length===0?<p>当前没有超期或未完成的复习项，可以继续新课。</p>:
     <div className="foundation-review-rows">{dueReviews.map(item=>
@@ -159,10 +151,8 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
   <div className="ipa-reader-controls" aria-label="基础课程音标阅读设置">
     <label><input type="checkbox" checked={showIpa}
       onChange={e=>setShowIpa(e.target.checked)}/>
-      显示本课单词、例句及短文的 IPA 音标
+      显示 IPA
     </label>
-    <p className="cloud-disclaimer">音标在浏览器中即时生成，换课自动更新。
-      初次打开需加载英法语言包，不使用付费 API。规则与连诵的机器预测可能出现偏差。</p>
   </div>
   <div className="foundation-layout">
    <aside className="foundation-menu" aria-label="基础课目录">
@@ -189,7 +179,6 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
       <h5>本课学习目标</h5><p>{unit.goal}</p>
       <p>学习顺序：先阅读情境与示例，再学习语法／规则，练习核心词汇，
         完成听读与跟读，最后做六道自检题并进行开放表达。</p>
-      <p className="cloud-disclaimer">当前教材为项目原创初稿；个别口音、专业语音与语言学审校仍需复核。</p>
     </section>}
     {segment===1&&<section>
       <h5>核心规则与常见错误</h5>
@@ -227,16 +216,12 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
         {showIpa?<IpaText text={unit.reading} language={unit.language}/>:unit.reading}
       </div>
       <button type="button" onClick={()=>pronounce(unit.reading)}>朗读全文</button>
-      <p className="cloud-disclaimer">声音来自当前设备 TTS，不是带时轴的真人教学录音。</p>
     </section>}
     {segment===4&&<section>
       <h5>发音与跟读</h5><p>{unit.pronunciation}</p>
       <IpaReference language={unit.language}/>
-      {showIpa&&<IpaText text={unit.pronunciation} language={unit.language}/>}
-
-      <p>建议先听一遍，再从本课单词或例句开始跟读。下面可以直接用浏览器识别并得到文字对照与复练建议，不要求安装 1.26GB 的本机声学模型。</p>
+      {showIpa&&<IpaText text={unit.pronunciation} language={unit.language}/>}<p>先听示范，再练习本课单词与例句。</p>
       <SpeechPractice key={unit.id} language={unit.language} lessonText={speechLessonText} initialTarget={starter} accessToken={session.access_token}/>
-      <p className="cloud-disclaimer">这里的反馈适合日常自练，不是专业音素／口音打分。本课原始进度及笔记继续单独保存。</p>
     </section>}
     {segment===5&&<section>
       <h5>本课核心规则与词汇自检（{allQuestions.length} 道）</h5>

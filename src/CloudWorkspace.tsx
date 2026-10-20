@@ -218,9 +218,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
       <a href="/" className="cloud-return">返回公开课程 →</a>
     </header>
     {!configured ? <section className="cloud-panel" role="status">
-      <h2>尚未启用云端连接</h2>
-      <p>前端仍可阅读公开课程。云端同步将在 Cloudflare Pages 的公开连接配置和 Worker 服务验证通过后开放。</p>
-      <p>无需在浏览器中粘贴任何数据库管理密钥。</p>
+      <h2>尚未启用云端连接</h2><p>请检查云端连接。</p>
     </section> : <>
       <p role="status" className="cloud-status">{status}</p>
       {!session ? <AccountAccess client={client!} onNotify={setStatus}/> : <section className="cloud-panel">
@@ -285,8 +283,6 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
             <h3>我的课程正文</h3>
             <p role="status" className="cloud-disclaimer">{lessonStatus}</p>
             {currentLesson&&<>
-              <p className="cloud-disclaimer">来源版本：{currentLesson.source_version} ·
-                状态：{currentLesson.qa_status==='approved'?'正文已审核':'草稿/待核验'}</p>
               <CourseGuide courseId={selected} disabled={!progressReady||busy}
                 check={(state.practiceChecklist&&typeof state.practiceChecklist==='object'&&
                   !Array.isArray(state.practiceChecklist)?state.practiceChecklist:{}) as PracticeCheck}
@@ -310,8 +306,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
         </>}
         {activePanel==='speech'&&<>
           <SpeechPractice key={selected} lessonText={currentLesson?.content_body||''}
-            language={catalog.find(c=>c.id===selected)?.language||'fr'} accessToken={session.access_token}/>
-          <p className="cloud-disclaimer"><a href="/speech-lab#ipa-studio">打开 IPA 全文音标阅读室：粘贴任意英语或法语文章，实时查看音标</a></p>
+            language={catalog.find(c=>c.id===selected)?.language||'fr'} accessToken={session.access_token}/><a href="/speech-lab#ipa-studio">全文 IPA 工具 →</a>
         </>}
         {activePanel==='review'&&<>
           <StageCoverage client={client!} session={session} onSelect={chooseCourse}/>
@@ -321,7 +316,6 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
             session={session} courseId={currentLesson.course_id}
             qaStatus={currentLesson.qa_status}
             onUpdated={()=>setImportNonce(n=>n+1)}/>}
-          <p className="cloud-disclaimer">课程内容结构检查与真正的教学审校是两个不同环节。</p>
         </>}
         {activePanel==='resources'&&<>
           <DriveLibrary key={'drive-resources-'+selected} client={client!} session={session} courseId={selected} mode="resources"/>
@@ -331,7 +325,6 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
         </>}
         {activePanel==='ai'&&<section className="cloud-reader">
           <h3>AI 教师 · 最后阶段</h3>
-          <p className="cloud-disclaimer">按照当前开发计划，暂不进行 AI 模型联调，也不会自动发起付费模型请求。</p>
           <details>
             <summary>展开现有 AI 实验模块（手动启用）</summary>
             <AITutor key={'ai-'+selected} session={session} apiBase={apiBase}
