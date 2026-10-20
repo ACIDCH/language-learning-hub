@@ -99,6 +99,7 @@ export default function ConnectionStatus({session}:{session:Session|null}){
     if(!result.ready)throw Error('服务器在线但声学模型尚未加载');
     return '模型服务 /health 返回 ready:true；实际真人录音与专业校准仍需独立验收';
    }));else checks.push(waiting('云端声学模型（非认证评分）','独立计算服务未配置 HTTPS 地址；现有免费跟读正常，尚不能提供专业准确率评分。'));
+   checks.push(good('浏览器本地录音分析','随 V4.4 前端打包的短录音时长/能量/停顿本地处理，无服务端依赖；是否可录音仍需当前设备麦克风授权'));
    checks.push(waiting('大规模音频播放','Supabase 已有 24 条私人 MP3；Drive 按课读取和官方参考索引已接线。实际可播放数量以浏览器媒体事件为准，其他索引仍需逐条匹配与试听。'));
    if(active)setCheck({busy:false,summary:basic.state==='ready'?'已完成接口状态检查；各服务独立显示结果。':'公开 API 检查失败；请查看下方具体错误。',items:checks});
   }

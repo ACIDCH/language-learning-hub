@@ -1,6 +1,7 @@
 import {lazy,Suspense,useEffect,useRef,useState} from 'react';
 import {ENGINES,browserResult,lessonPractice,cloudSpeechEndpoint,type SpeechEngineId} from './speechEngines';
 const LocalPronunciation=lazy(()=>import('./LocalPronunciation'));
+const BrowserSpeechFeedback=lazy(()=>import('./BrowserSpeechFeedback'));
 import {analyzeTranscript,practiceHint} from './speechCompare';
 import {appendAttempt,learnerCoaching,type RecentAttempt} from './speechCoach';
 import {practiceChunks,addReviewWords,clearReviewedWord,type ReviewWord} from './speechLearningTools';
@@ -173,7 +174,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
   if(blindMode)setRevealed(false);
   try{
     rec.start();setListening(true);
-    watchdog.current=setTimeout(()=>{if(engine.current===rec){engine.current=null;rec.abort();setListening(false);setInterim('');setNote('识别服务等待超时，请重试；如已部署云端声学服务，也可选择云端模式。');}},20000);
+    watchdog.current=setTimeout(()=>{if(engine.current===rec){engine.current=null;rec.abort();setListening(false);setInterim('');setNote('识别服务等待超时，请重试；也可直接使用下方浏览器录音分析。');}},20000);
     setNote('正在监听。部分浏览器将语音发送至其服务商识别；本学习系统不保留音频。');
   }catch{
     engine.current=null;setListening(false);
@@ -186,7 +187,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
  }
  return <section className="cloud-reader" aria-label="跟读与识别文字练习">
   <h3>听一句、跟读一句、再复练</h3>
-  <p className="cloud-disclaimer">面向日常语言学习：免费浏览器文字识别 + 设备语音示范，无需购买专业发音评分服务。文字差异可供复练，但不代表口音或音素诊断；浏览器识别可能调用厂商服务。本页面不保存录音，也不把转写同步到学习记录。</p>
+  <p className="cloud-disclaimer">面向日常语言学习：浏览器短录音分析 + 免费文字识别 + 设备语音示范，无需购买专业发音评分服务。文字差异可供复练，但不代表口音或音素诊断；浏览器识别可能调用厂商服务。本页面不保存录音，也不把转写同步到学习记录。</p>
   <ol className="speech-learning-steps" aria-label="跟读四步">
    <li>选一个短句</li><li>听设备示范</li><li>开始跟读并查看识别文字</li><li>听错词、再练一次</li>
   </ol>
@@ -194,7 +195,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
     <details className="speech-advanced">
      <summary>识别方式与高级实验功能（默认使用免费浏览器识别）</summary>
      <label>练习引擎<select aria-label="练习引擎" value={mode} onChange={e=>{updateTarget(target);setMode(e.target.value as SpeechEngineId);}}>{ENGINES.map(x=><option key={x.id} value={x.id} disabled={!x.available||(x.id==='optional-remote-evaluator'&&(!accessToken||!cloudSpeechEndpoint()))}>{x.name}</option>)}</select></label>
-     <p className="cloud-disclaimer">本机模式需启动本机模型；云端模式需要学习账号及已部署的云端服务。两者都只提供未校准的练习参考值，默认免费文字跟读不受影响。</p>
+     <p className="cloud-disclaimer">下方浏览器录音分析不需要部署服务；这里保留兼容旧版高级声学模型的可选入口。普通用户无需使用这些模型。</p>
     </details>
     <label>练习长度<select aria-label="练习长度" value={step} onChange={e=>setStep(e.target.value as typeof step)}><option value="word">短词</option><option value="sentence">短句</option><option value="paragraph">段落（声学模式每次不超过 12 秒）</option></select></label>
     {!!examples.length&&!masked&&<div className="speech-presets" aria-label="当前课程练习片段">{examples.map((s,i)=><button key={i} onClick={()=>updateTarget(s)}>{s}</button>)}</div>}
@@ -265,6 +266,9 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
       }}>清空结果</button>}
     </div>
     <p className="cloud-disclaimer" role="status" aria-live="polite">{note}</p>
+    <Suspense fallback={<p role="status">正在加载本机录音分析工具…</p>}>
+      <BrowserSpeechFeedback target={target}/>
+    </Suspense>
     {interim&&<p className="speech-interim">识别中：{interim}</p>}
     {mode!=='browser-asr'&&<Suspense fallback={<p>正在加载录音组件…</p>}>
       <LocalPronunciation target={target} language={lang}
