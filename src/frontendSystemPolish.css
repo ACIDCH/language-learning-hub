@@ -120,3 +120,23 @@
  .v44 .settings-page .page-tab-row .segment{white-space:nowrap;flex:0 0 auto}
  .v44 .speaking-lab-library{padding:12px}
 }
+
+/* Lean responsive presentation for roadmap, progress and nested legacy panels. */
+.v44 .learning-overview .learning-summary{gap:9px}
+.v44 .learning-overview .learning-summary>div{min-width:0}
+.v44 .learning-continue{border-radius:11px;padding:12px 14px}
+.v44 .learning-ladder{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:15px 0}
+.v44 .learning-ladder li{min-width:0;padding:13px;border:1px solid var(--border);
+ border-radius:11px;background:var(--paneSoft)}
+.v44 .learning-ladder li strong,.v44 .learning-ladder li span{display:block;overflow-wrap:anywhere}
+.v44 .learning-ladder li span{font-size:12px;line-height:1.5;color:var(--textMuted);margin-top:5px}
+.v44 .path-progress{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap}
+.v44 .path-units{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.v44 .path-units button{min-width:0;padding:13px;text-align:left;overflow-wrap:anywhere}
+.v44 .catalog-toolbar,.v44 .catalog-layout,.v44 .course-list,.v44 .course-card-copy{min-width:0}
+.v44 .catalog-layout .course-big{align-items:center}
+@media(max-width:830px){
+ .v44 .learning-ladder{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .v44 .path-units{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:520px){.v44 .learning-ladder{grid-template-columns:minmax(0,1fr)}}

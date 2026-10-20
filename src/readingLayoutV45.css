@@ -348,3 +348,26 @@ body[data-view-mode="immersive"] .v44.nav-drawer-open>.rail{
  .v44 .reader-article .lesson-content-group{padding-bottom:10px}
  .v44 .reader-article .lesson-content-group--cue{padding:9px 11px;margin-bottom:11px}
 }
+
+/* V4.6: honor the actual configured width. Legacy focus/immersive styles
+   capped the full reader at 1050/1200px even on a wide display. */
+.v44 .reader-selection-scope,.v44 .source-appendix,
+.v44 .exercise-block,.v44 .learning-notes{
+ max-width:min(100%,var(--readerWidth,900px))!important;
+ margin-inline:auto;
+}
+body[data-view-mode="immersive"] .v44 .reader-page,
+body[data-view-mode="immersive"] .v44 .reader-layout,
+body[data-view-mode="focus"] .v44 .reader-layout{
+ max-width:none!important;width:100%;margin-inline:0!important;
+}
+body[data-view-mode="focus"] .v44 .reader-page{
+ max-width:1460px!important;margin-inline:auto!important;
+}
+.v44 .reader-page .reader-layout:not(.tools-hidden) .reader-article{min-width:0}
+.v44 .reader-layout.tools-hidden .reader-article{width:100%}
+.v44 a:focus-visible,.v44 button:focus-visible,
+.v44 input:focus-visible,.v44 select:focus-visible,
+.v44 textarea:focus-visible,.v44 summary:focus-visible{
+ outline:2px solid var(--accent);outline-offset:2px;
+}
