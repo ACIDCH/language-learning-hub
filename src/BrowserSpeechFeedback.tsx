@@ -1,4 +1,4 @@
-import {useEffect,useRef,useState} from 'react';
+import {forwardRef,useEffect,useImperativeHandle,useRef,useState} from 'react';
 import {captureSpeech} from './speechCapture';
 import {analyzeBrowserAudio,browserWavBlob,type BrowserAudioReview} from './browserAudioAnalysis';
 import {toIpaLine} from './ipaEngine';
@@ -6,14 +6,17 @@ import {alignPhoneColors,tokenizeReferenceIpa,phoneLevelLabels,type PhoneTile} f
 import {BrowserPhonemeRunner} from './BrowserPhonemeRunner';
 import {phoneHint} from './speechEngines';
 
-/** This runs entirely in the browser; it never calls fetch or uploads the audio. */
-export default function BrowserSpeechFeedback({target,language='fr'}:{target:string;language?:string}){
+/** Browser-only recordings; the unified trainer owns the microphone controls when embedded. */
+export type BrowserSpeechHandle={start:()=>void;stop:()=>void;cancel:()=>void};
+type Props={target:string;language?:string;embedded?:boolean;onPhaseChange?:(phase:'idle'|'permission'|'recording'|'processing')=>void};
+const BrowserSpeechFeedback=forwardRef<BrowserSpeechHandle,Props>(function BrowserSpeechFeedback({target,language='fr',embedded=false,onPhaseChange},ref){
  const [state,setState]=useState<'idle'|'permission'|'recording'|'processing'>('idle');
  const [note,setNote]=useState('准备好后录制一段短句，即可在浏览器内查看音量和停顿。');
  const [review,setReview]=useState<BrowserAudioReview|null>(null);
  const [playUrl,setPlayUrl]=useState('');
  const controller=useRef<AbortController|null>(null);
  const stop=useRef<(()=>void)|null>(null);
+ function finish(){setState('processing');setNote('正在分析录音…');stop.current?.();}
  const audioUrl=useRef<string|null>(null);
  const clip=useRef<Int16Array|null>(null);
  const model=useRef<BrowserPhonemeRunner|null>(null);
@@ -83,6 +86,8 @@ export default function BrowserSpeechFeedback({target,language='fr'}:{target:str
   model.current?.dispose();model.current=null;
   setPhonemeBusy(false);setPhonemeStatus('已取消下载或分析；录音仍可回听。');
  }
+ useImperativeHandle(ref,()=>({start:()=>void start(),stop:finish,cancel}));
+ useEffect(()=>{onPhaseChange?.(state);},[state,onPhaseChange]);
  useEffect(()=>()=>{
   controller.current?.abort();inferAbort.current?.abort();
   model.current?.dispose();wipeClip();
@@ -126,15 +131,13 @@ export default function BrowserSpeechFeedback({target,language='fr'}:{target:str
   }
  }
  return <section className="cloud-panel" aria-label="浏览器本地录音分析">
-  <h4>③ 浏览器录音分析（完全本地）</h4>
-  <p className="cloud-disclaimer">无需 Oracle、独立服务器或大模型。只在本机检查短录音的音量、有声时长与停顿；无法判断具体音素对错。上方「开始跟读」可另行获取语音转写文字对照。</p>
-  <div className="speech-actions">
+  {!embedded&&<><h4>录音分析</h4><div className="speech-actions">
    <button type="button" disabled={state!=='idle'} onClick={()=>void start()}>开始录音并分析</button>
-   {state==='recording'&&<button type="button" onClick={()=>{setState('processing');setNote('正在结束录音并分析…');stop.current?.();}}>停止并分析</button>}
+   {state==='recording'&&<button type="button" onClick={finish}>停止并分析</button>}
    {state!=='idle'&&<button type="button" onClick={cancel}>取消录音</button>}
    {(review||playUrl)&&state==='idle'&&<button type="button" onClick={()=>{cancelPhoneme();wipeClip();clearAudio();resetPhones();setReview(null);setNote('本次临时录音和分析结果已清除。');}}>清除本次结果</button>}
-  </div>
-  <p aria-live="polite">{note}</p>
+  </div></>}
+  {(!embedded||note.includes('失败')||note.includes('无法')||note.includes('不足'))&&<p aria-live="polite">{note}</p>}
   {review&&<div aria-label="浏览器录音分析结果">
    <div className="ref-counts">
     <div><strong>{review.durationSeconds.toFixed(1)} s</strong><span>录音总时长</span></div>
@@ -150,11 +153,10 @@ export default function BrowserSpeechFeedback({target,language='fr'}:{target:str
   </div>}
   {playUrl&&<div><label>回听当前录音（仅本页面内存）<audio controls preload="metadata" src={playUrl} aria-label="回听刚才的录音"/></label></div>}
   {review?.usable&&<section className="phoneme-gradient-panel" aria-label="WebGPU 音素色阶对照">
-   <h4>④ 音素色阶对照 · 可选 WebGPU 增强</h4>
-   <p className="cloud-disclaimer">使用真正的英法语音素识别模型，首次启用需要下载约 188 MB（WebGPU）或 230 MB（WASM）权重，下载后由浏览器缓存。只在你点击时下载；录音不上传到模型网站、AI 服务或云端。</p>
+   <h4>音素色阶对照</h4>
    <div className="speech-actions">
     <button type="button" disabled={phonemeBusy||state!=='idle'} onClick={()=>void analyzePhonemes()}>
-     {phonemeBusy?'音素分析中…':phonemeTiles?'重新分析音素':'启用音素色阶分析（首次需下载模型）'}
+     {phonemeBusy?'音素分析中…':phonemeTiles?'重新分析音素':'分析音素（首次下载模型）'}
     </button>
     {phonemeBusy&&<button type="button" onClick={cancelPhoneme}>取消模型下载／分析</button>}
    </div>
@@ -182,6 +184,6 @@ export default function BrowserSpeechFeedback({target,language='fr'}:{target:str
     </p>}
    </div>}
   </section>}
-  <p className="cloud-disclaimer">不保存到数据库或云盘，不自动发送 OpenRouter；页面关闭或换练习句即释放本次音频。</p>
  </section>;
-}
+});
+export default BrowserSpeechFeedback;
