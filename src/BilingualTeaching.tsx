@@ -26,22 +26,36 @@ export default function BilingualTeaching({courseId,stage,content,privateSource=
   // through the typed draft; no machine-generated translation is presented as reviewed.
   if(!content?.draft&&!content?.foundation)return null;
   const d=content.draft,u=content.foundation;
+  const examples=d?.examples.map(e=>e.text)||u?.examples||[];
+  const vocabulary=d?.vocabulary||u?.vocab||[];
+  const gloss=(example:string)=>vocabulary.filter(([word])=>word&&example.toLocaleLowerCase().includes(word.toLocaleLowerCase())).slice(0,5);
+  const evidence=(example:string,i:number)=><div className="bilingual-line" key={i}>
+   <p className="bilingual-target">{example}</p>
+   {gloss(example).length>0&&<p className="bilingual-chinese">{gloss(example).map(([w,zh])=>w+'：'+zh).join('；')}</p>}
+  </div>;
   if(stage===0)return <section className="bilingual-teaching" aria-label="中文学习指导">
    <h3>情境与中文目标</h3><p>{d?.context||u?.goal}</p>
-   <p>{d?.grammar?.split('。')[0]||u?.concepts[0]}</p></section>;
+   <h4>放进实际句子</h4>{examples.slice(0,3).map(evidence)}</section>;
   if(stage===1)return <section className="bilingual-teaching" aria-label="中文语法讲解">
-   <h3>规则理解</h3><p>{d?.grammar||u?.concepts.join('。')}</p>
-   <p>{d?.common_mistake||u?.commonMistake}</p></section>;
+   <h3>逐条理解语法规则</h3>
+   <ol className="bilingual-rule-list">{(d?d.grammar.split(/[。；]/u):u?.concepts||[])
+     .map(x=>x.trim()).filter(Boolean).map((rule,i)=><li key={i}>{rule}</li>)}</ol>
+   <h4>原文例句中的结构</h4>{examples.map(evidence)}
+   <div className="bilingual-rule-warning"><strong>易错点</strong><p>{d?.common_mistake||u?.commonMistake}</p></div>
+  </section>;
   if(stage===2)return <section className="bilingual-teaching" aria-label="词汇中文对照">
    <h3>本课词语与中文意思</h3><div className="bilingual-vocab">
-   {(d?.vocabulary||u?.vocab||[]).map(([w,zh])=><div key={w}><strong>{w}</strong><span>{zh}</span></div>)}
+   {vocabulary.map(([w,zh])=><div key={w}><strong>{w}</strong><span>{zh}</span>
+    <small>{examples.find(e=>e.toLocaleLowerCase().includes(w.toLocaleLowerCase()))||'本课核心词汇'}</small></div>)}
    </div></section>;
   if(stage===3)return <section className="bilingual-teaching" aria-label="中文阅读指导">
    <h3>阅读理解要点</h3><p>{d?.context||u?.goal}</p>
-   {(d?.questions||[]).map((q,i)=><p key={i}><strong>问题 {i+1}：</strong>{q.explanation}</p>)}</section>;
+   <ol className="bilingual-rule-list">{(d?.questions||u?.questions||[]).map((q,i)=>
+    <li key={i}><strong>{q.prompt}</strong><p>{q.explanation}</p></li>)}</ol></section>;
   if(stage===5)return <section className="bilingual-teaching" aria-label="中文表达指导">
    <h3>表达练习要求</h3><p>{d?.production||u?.production}</p>
-   <p>{d?.common_mistake||u?.commonMistake}</p></section>;
+   <h4>本课可模仿的句子</h4>{examples.slice(0,3).map(evidence)}
+   <div className="bilingual-rule-warning"><strong>修改时注意</strong><p>{d?.common_mistake||u?.commonMistake}</p></div></section>;
   return null;
  }
  const title=stage===0?'情境与中文对照':stage===1?'语法精讲与对比例句':
