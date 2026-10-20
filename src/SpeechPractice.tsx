@@ -267,7 +267,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
     </div>
     <p className="cloud-disclaimer" role="status" aria-live="polite">{note}</p>
     <Suspense fallback={<p>正在加载本机录音分析工具…</p>}>
-      <BrowserSpeechFeedback target={target}/>
+      <BrowserSpeechFeedback target={target} language={lang}/>
     </Suspense>
     {interim&&<p className="speech-interim">识别中：{interim}</p>}
     {mode!=='browser-asr'&&<Suspense fallback={<p>正在加载录音组件…</p>}>
