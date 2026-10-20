@@ -1,0 +1,61 @@
+/* Approved reading/selection speaking interface. Uses existing account theme tokens. */
+.speaking-lab-page{max-width:1280px;margin:auto;display:grid;gap:16px}
+.speaking-lab-heading{display:flex;justify-content:space-between;align-items:center;gap:15px}
+.speaking-lab-heading h1{margin:6px 0 0}
+.speaking-lab-heading label,.speaking-workbench-heading label{display:flex;align-items:center;gap:10px;color:var(--textMuted);font-size:12px}
+.speaking-lab-heading select,.speaking-workbench-heading select{background:var(--pane);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:9px 12px;min-width:95px}
+.speaking-lab-page #ipa-studio{margin-top:10px;border-radius:12px}
+.speaking-workbench{background:var(--pane);border:1px solid var(--border);border-radius:18px;padding:clamp(15px,2.5vw,27px);min-width:0;box-shadow:var(--shadow);display:grid;gap:16px}
+.speaking-workbench-heading,.speaking-workbench-result-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.speaking-workbench-heading h2{font-size:19px;margin:0;color:var(--text)}
+.speaking-workbench-heading h2 small{font-size:11px;color:var(--textMuted);font-weight:500;margin-left:8px}
+.speaking-workbench-target{padding:14px;background:var(--paneSoft);border:1px solid var(--border);border-radius:13px}
+.speaking-workbench-target label{display:grid;gap:6px;color:var(--textMuted);font-size:12px;font-weight:650}
+.speaking-workbench-target textarea{width:100%;resize:vertical;min-height:64px;color:var(--text);font-size:16px;line-height:1.55;font-weight:650;border:1px solid var(--border);border-radius:9px;background:var(--pane);padding:11px 12px}
+.speaking-workbench-choices{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+.speaking-workbench-choices button{border:1px solid var(--border);background:var(--pane);color:var(--text);border-radius:12px;padding:9px 12px;font-size:12px;text-align:left;line-height:1.5}
+.speaking-workbench-choices button.chosen{background:var(--accentTint);border-color:var(--accent);color:var(--accent)}
+.speaking-workbench-controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.speaking-workbench-controls button{border:1px solid var(--border);border-radius:11px;padding:12px 7px;font-size:12px;font-weight:750;background:var(--paneSoft);color:var(--text);min-height:47px}
+.speaking-workbench-controls button.speaking-primary{background:#0c9e92;border-color:#0c9e92;color:white}
+.speaking-workbench-controls button:disabled{opacity:.45}
+.speaking-workbench-status{font-size:12px;color:var(--textMuted);margin:0}
+.speaking-workbench-result{display:grid;gap:12px}
+.speaking-workbench-result-head{border-bottom:1px solid var(--border);padding:0 0 10px}
+.speaking-workbench-result-head h3{margin:0;font-size:16px}
+.speaking-workbench-result-head span{font-size:12px;color:var(--textMuted)}
+.speaking-workbench-result-head strong{color:#0b957a;font-size:18px}
+.speaking-recognition{background:var(--accentTint);border-left:3px solid var(--accent);padding:13px;border-radius:9px}
+.speaking-recognition p{margin:5px 0 8px;font-size:14px;font-weight:600}
+.speaking-workbench .cloud-panel{margin:0;padding:0;background:transparent;border:0;box-shadow:none}
+.speaking-workbench .ref-counts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.speaking-workbench .ref-counts>div{padding:10px;border:1px solid var(--border);border-radius:10px}
+.speaking-workbench .ref-counts strong{font-size:17px}
+.speaking-workbench .ref-counts span{font-size:10px}
+.speaking-workbench .phoneme-gradient-panel{border:1px solid var(--border);background:var(--paneSoft);border-radius:12px;padding:12px;margin-top:13px}
+.speaking-workbench-coaching{padding:14px;border:1px solid var(--border);border-radius:11px}
+.speaking-workbench-coaching h4{margin:0 0 8px;font-size:14px}
+.speaking-workbench-coaching p{margin:4px 0 9px;line-height:1.6}
+.speaking-workbench-coaching button{margin:3px;border:1px solid var(--border);border-radius:8px;padding:6px 10px;background:var(--accentTint);color:var(--accent)}
+.speaking-workbench-more{border-top:1px solid var(--border);padding-top:12px}
+.speaking-workbench-more label{display:block;padding:10px}
+.selection-workbench .selection-workbench-source{border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:10px;background:var(--paneSoft)}
+.selection-workbench-source h3{margin:9px 0 0;font-weight:750}
+.selection-workbench-tabs{display:flex;gap:4px;flex-wrap:wrap;margin:14px 0}
+.selection-workbench-tabs .segment{padding:8px 10px}
+.selection-workbench .selection-actions{display:flex;gap:7px;flex-wrap:wrap}
+.selection-workbench .selection-actions button{border-radius:8px}
+.selection-workbench>.speaking-workbench{border:0;padding:0;box-shadow:none;background:transparent;gap:11px}
+.selection-workbench .speaking-workbench-heading h2{font-size:13px}
+.selection-workbench .speaking-workbench-heading h2 small{display:none}
+.selection-workbench .speaking-workbench-target{padding:8px}
+.selection-workbench .speaking-workbench-target textarea{font-size:14px;min-height:52px}
+.selection-workbench .speaking-workbench-controls{grid-template-columns:repeat(2,minmax(0,1fr))}
+.selection-workbench .speaking-workbench-controls button{font-size:12px;min-height:39px;padding:8px 5px}
+.selection-workbench .speaking-workbench-result-head h3{font-size:14px}
+.selection-workbench .speaking-workbench .ref-counts{grid-template-columns:repeat(2,minmax(0,1fr))}
+.selection-workbench .phoneme-gradient-tile{min-width:63px;flex-basis:63px}
+.v44 .reader-tools.selection-workbench{overflow-y:auto;max-height:calc(100vh - 100px)}
+@media(min-width:1200px){.v44 .reader-layout:not(.tools-hidden){grid-template-columns:minmax(0,1fr) minmax(380px,47%)}}
+@media(max-width:750px){.speaking-workbench-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.speaking-lab-heading{align-items:start}.speaking-workbench-heading h2 small{display:block;margin:3px 0 0}.v44 .reader-tools.selection-workbench{position:static;max-height:none}}
+@media(prefers-reduced-motion:reduce){.speaking-workbench *{transition:none!important}}
