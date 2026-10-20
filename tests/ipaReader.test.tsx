@@ -67,7 +67,7 @@ describe('full-text learning UI',()=>{
   render(<LessonReader text={'Bonjour, nous allons bien.'}
     courseId="fr-a1-u01" language="fr" stage={0} onChangeStage={()=>{}}/>);
   expect(screen.getByText('Bonjour, nous allons bien.')).toBeTruthy();
-  fireEvent.click(screen.getByRole('checkbox',{name:/显示 IPA 国际音标/}));
+  fireEvent.click(screen.getByRole('checkbox',{name:/显示 IPA/}));
   await waitFor(()=>expect(screen.getByLabelText('参考国际音标与课程原文')).toBeTruthy());
   expect(screen.getByLabelText('参考国际音标与课程原文').textContent)
    .toContain('Bonjour, nous allons bien.');
@@ -96,6 +96,6 @@ describe('no-login whole-document IPA lab',()=>{
   expect(screen.queryByLabelText('参考国际音标与课程原文')).toBeNull();
   fireEvent.click(screen.getByRole('button',{name:'显示全文 IPA 音标'}));
   await waitFor(()=>expect(screen.getByLabelText('参考国际音标与课程原文').textContent).toContain('bɔ̃ʒuʁ'));
-  expect(screen.getByText(/不上传全文/)).toBeTruthy();
+  expect(screen.getByRole('button',{name:'隐藏 IPA 音标'})).toBeTruthy();
  });
 });

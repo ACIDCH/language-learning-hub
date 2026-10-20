@@ -147,6 +147,31 @@ describe('V4.4 integration contracts',()=>{
   }
   expect((screen.getByRole('button',{name:'返回上一层'}) as HTMLButtonElement).disabled).toBe(true);
  });
+
+ it('opens global navigation from immersive mode without switching layouts',async()=>{
+  localStorage.setItem('llh-v44-appearance-v1',JSON.stringify({...DEFAULT_PREFERENCES,layout:'immersive',sidebar:true}));
+  render(<AISettingsProvider><AppShell/></AISettingsProvider>);
+  const menu=screen.getByRole('button',{name:'切换导航栏'});
+  expect(menu.getAttribute('aria-expanded')).toBe('false');
+  fireEvent.click(menu);
+  expect(menu.getAttribute('aria-expanded')).toBe('true');
+  expect(document.querySelector('.v44.nav-drawer-open')).not.toBeNull();
+  expect(screen.getByRole('button',{name:'关闭导航菜单'})).toBeTruthy();
+  fireEvent.click(screen.getByRole('button',{name:'关闭导航菜单'}));
+  expect(menu.getAttribute('aria-expanded')).toBe('false');
+  fireEvent.click(menu);
+  fireEvent.keyDown(document,{key:'Escape'});
+  expect(menu.getAttribute('aria-expanded')).toBe('false');
+ });
+ it('keeps the article font size user-adjustable without affecting curriculum content',async()=>{
+  history.replaceState({},'','/?course=fr-a1-u01&tab=read');
+  render(<AISettingsProvider><AppShell/></AISettingsProvider>);
+  const plus=await screen.findByRole('button',{name:'放大阅读字体'});
+  const before=Number(JSON.parse(localStorage.getItem('llh-v44-appearance-v1')||'{}').fontSize);
+  fireEvent.click(plus);
+  await waitFor(()=>expect(JSON.parse(localStorage.getItem('llh-v44-appearance-v1')||'{}').fontSize).toBe(before+1));
+  expect(screen.getByRole('heading',{name:COURSES.find(x=>x.id==='fr-a1-u01')!.title})).toBeTruthy();
+ });
  it('records public preview consent independently from teaching, formal release and production deployment',()=>{
   expect(COURSES.filter(c=>c.status==='original_draft')).toHaveLength(draftPublication.count);
   expect(draftPublication.public_preview.status).toBe('approved');
