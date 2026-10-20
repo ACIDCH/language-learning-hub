@@ -140,3 +140,24 @@
  .v44 .path-units{grid-template-columns:minmax(0,1fr)}
 }
 @media(max-width:520px){.v44 .learning-ladder{grid-template-columns:minmax(0,1fr)}}
+
+/* Screenshot-driven fixes: compact unauthenticated panel and one practice heading. */
+.v44 .cloud-workspace>.account-access{
+ width:min(100%,540px)!important;max-width:540px!important;
+ margin:clamp(18px,3vw,36px) auto!important;
+ padding:clamp(18px,2.4vw,28px)!important;
+}
+.v44 .cloud-workspace>.account-access .cloud-fields{max-width:100%}
+.v44 .cloud-workspace>.account-access input{width:100%;max-width:100%}
+.v44 .cloud-workspace>.account-access button[type=submit]{width:100%}
+.v44 .speaking-workbench-heading{justify-content:flex-end;min-height:32px}
+.v44 .speaking-workbench-heading label{max-width:100%}
+.v44 .speaking-workbench-target{margin-top:0}
+.v44 .ai-provider-note{font-size:12px;color:var(--textMuted);line-height:1.5;margin:6px 0}
+.v44 .ai-inline-status:empty{display:none}
+.v44 .drive-setup-help{background:var(--paneSoft);border:1px solid var(--border);
+ border-radius:9px;padding:10px 12px;font-size:12px}
+.v44 .reference-source-note{font-size:12px;color:var(--textMuted)}
+.v44 .reference-source-note>summary{cursor:pointer;color:var(--accent)}
+.v44 .reference-count{color:var(--textMuted);font-size:12px;margin:8px 0 13px}
+@media(max-width:650px){.v44 .cloud-workspace>.account-access{margin:12px 0!important}}

@@ -221,7 +221,8 @@ export default function FoundationStudio({client,session,onOpenCourses}:{
       <h5>发音与跟读</h5><p>{unit.pronunciation}</p>
       <IpaReference language={unit.language}/>
       {showIpa&&<IpaText text={unit.pronunciation} language={unit.language}/>}<p>先听示范，再练习本课单词与例句。</p>
-      <SpeechPractice key={unit.id} language={unit.language} lessonText={speechLessonText} initialTarget={starter} accessToken={session.access_token}/>
+      <SpeechPractice key={unit.id} language={unit.language} lessonText={speechLessonText} initialTarget={starter}
+        accessToken={session.access_token} session={session} variant="standalone"/>
     </section>}
     {segment===5&&<section>
       <h5>本课核心规则与词汇自检（{allQuestions.length} 道）</h5>

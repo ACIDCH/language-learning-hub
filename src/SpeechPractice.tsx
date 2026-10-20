@@ -48,7 +48,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
  const [heard,setHeard]=useState('');
  const [interim,setInterim]=useState('');
  const [alternatives,setAlternatives]=useState<string[]>([]);
- const [note,setNote]=useState('先听示范，再说完整短句，可重复练习。');
+ const [note,setNote]=useState('');
  const [listening,setListening]=useState(false);
  const [rate,setRate]=useState(0.85);
  const [attempts,setAttempts]=useState(0);
@@ -95,7 +95,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
  function updateTarget(next:string){
   const previous=engine.current;engine.current=null;previous?.abort();clearTimeout(watchdog.current);setListening(false);
   setTarget(next);setHeard('');setInterim('');setAlternatives([]);
-  setAttempts(0);setRecent([]);setReturnSentence('');setRevealed(false);setNote('已更新练习句子。');
+  setAttempts(0);setRecent([]);setReturnSentence('');setRevealed(false);setNote('');
  }
  function focusWord(word:string){
   const original=returnSentence||target;
@@ -114,7 +114,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
   utterance.onerror=()=>setNote('语音朗读没有成功，请尝试切换系统声音或浏览器。');
   try{
     window.speechSynthesis.speak(utterance);
-    setNote('正在播放设备语音示范；不同系统的朗读质量可能不同。');
+    setNote('正在播放示范…');
   }catch{setNote('无法播放系统语音示范。');}
  }
  function listen(){
@@ -155,7 +155,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
           id:++attemptId.current,target,heard:first,
           match:checked.missing===0&&checked.substituted===0&&checked.extra===0
         }));
-        setNote('识别完成。请查看文字核对与下一步复练建议；这不是发音打分。');
+        setNote('识别完成');
         // A final ASR result is usable immediately. Close the microphone now,
         // rather than waiting for vendor onend (which may be delayed).
         clearTimeout(watchdog.current);
@@ -184,7 +184,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
   try{
     rec.start();setListening(true);
     watchdog.current=setTimeout(()=>{if(engine.current===rec){engine.current=null;rec.abort();setListening(false);setInterim('');setNote('识别服务等待超时，请重试；也可直接使用下方浏览器录音分析。');}},20000);
-    setNote('正在监听。部分浏览器将语音发送至其服务商识别；本学习系统不保留音频。');
+    setNote('正在识别…');
   }catch{
     engine.current=null;setListening(false);
     setNote('无法启动识别，请检查设备输入和麦克风权限。');
@@ -209,7 +209,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
   }
   if(variant!=='classic')return <section className={'speaking-workbench'+(variant==='selection'?' speaking-workbench--selection':'')} aria-label="跟读与识别文字练习">
    <div className="speaking-workbench-heading">
-    <h2>跟读训练 <small>Speaking Practice</small></h2>
+
     <label>发音语言 <select aria-label="语言与口音" value={locale} disabled={listening} onChange={e=>{updateTarget(target);setLocale(e.target.value);setVoiceId('');}}>
      {(lang==='fr'?['fr-FR','fr-CA']:['en-US','en-GB','en-AU']).map(l=><option key={l} value={l}>{l}</option>)}
     </select></label>
@@ -229,7 +229,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
     <button type="button" disabled={!listening&&microphonePhase==='idle'} onClick={stopCombined}>■ 停止</button>
     <button type="button" disabled={listening||microphonePhase==='recording'} onClick={retryCombined}>↻ 重试</button>
    </div>
-   <p className="speaking-workbench-status" role="status" aria-live="polite">{note}</p>
+   {note&&<p className="speaking-workbench-status" role="status" aria-live="polite">{note}</p>}
    <section className="speaking-workbench-result" aria-label="识别与发音分析结果">
     <div className="speaking-workbench-result-head"><h3>识别与发音分析结果</h3>
       {report&&<span>文本相似度 <strong>{report.similarity}%</strong></span>}</div>
