@@ -20,7 +20,7 @@ export function selectedOriginal(scope:HTMLElement,selection:Selection|null):Tex
 }
 export default function CourseReader({course,session,preferences,tab,navigate,onFontChange}:{course:Course;session:Session|null;preferences:Preferences;tab:string;navigate:(path:string)=>void;onFontChange?:(next:number)=>void}){
  const [content,setContent]=useState<LessonContent|null>(null),[error,setError]=useState(''),[sourceStatus,setSourceStatus]=useState(''),[privateBody,setPrivateBody]=useState('');
- const [selection,setSelection]=useState<TextSelection|null>(null),[showTools,setShowTools]=useState(true),[toolStatus,setToolStatus]=useState('');
+ const [selection,setSelection]=useState<TextSelection|null>(null),[showTools,setShowTools]=useState(false),[toolStatus,setToolStatus]=useState('');
  const scope=useRef<HTMLDivElement>(null);
  const progress=useCourseProgress(course,session);
  const text=privateBody||content?.text||'';
@@ -29,7 +29,7 @@ export default function CourseReader({course,session,preferences,tab,navigate,on
   void loadCourse(course,abort.signal).then(data=>{if(alive)setContent(data);}).catch(e=>{if(alive)setError(e.message);});
   if(session&&course.kind==='main')void cloudRequest<{lesson:{content_body:string;source_version:string;qa_status:string}}>('/v1/private-courses/'+course.id,session.access_token,{signal:abort.signal})
    .then(({lesson})=>{if(alive){setPrivateBody(lesson.content_body);setSourceStatus('');}})
-   .catch(e=>{if(alive)setSourceStatus('');});
+   .catch(()=>{if(alive)setSourceStatus('私人课文暂不可用，当前显示公开版本。');});
   else setSourceStatus('');
   return ()=>{alive=false;abort.abort();window.speechSynthesis?.cancel();};
  },[course.id,session?.user.id]);

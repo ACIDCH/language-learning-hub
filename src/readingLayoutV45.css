@@ -134,3 +134,55 @@ body[data-view-mode="immersive"] .v44.nav-drawer-open>.rail{
  .v44 .reader-intro h1{font-size:23px}
  .v44 .reader-tools,.v44 .reader-article{padding:13px}
 }
+
+/* Consistent visual rhythm across foundation lessons, stages, review and cloud learning. */
+.v44 .reader-head-actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.v44 .reader-head-actions button{min-height:35px;font-size:12px;padding:8px 10px;white-space:nowrap}
+.v44 .reader-intro .reader-head-actions{flex-shrink:0}
+.v44 .foundation-studio{padding:clamp(15px,2vw,24px);max-width:100%}
+.v44 .foundation-studio>h3{margin:0 0 6px;font-size:20px;line-height:1.35}
+.v44 .foundation-overview{font-size:12px;color:var(--textMuted);margin:0 0 13px}
+.v44 .foundation-filters{margin:8px 0 12px;gap:7px}
+.v44 .foundation-review-agenda{padding:10px 13px;border:1px solid var(--border);border-radius:10px}
+.v44 .foundation-layout{grid-template-columns:minmax(210px,25%) minmax(0,1fr);gap:13px;margin:12px 0;min-width:0}
+.v44 .foundation-menu{max-height:calc(100dvh - 150px);gap:5px;scrollbar-width:thin}
+.v44 .foundation-lesson{min-width:0;padding:clamp(12px,1.7vw,24px);color:var(--text);background:var(--pane);border-color:var(--border)}
+.v44 .foundation-lesson header{border-bottom:1px solid var(--border);padding-bottom:10px;margin-bottom:8px}
+.v44 .foundation-lesson header h4{font-size:clamp(18px,1.7vw,23px);color:var(--text);line-height:1.38}
+.v44 .foundation-lesson header p{font-size:13px;line-height:1.6;color:var(--textMuted);margin:6px 0}
+.v44 .foundation-stage-tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;margin:12px 0 16px}
+.v44 .foundation-stage-tabs button{min-width:0;padding:8px 4px;font-size:12px;white-space:normal}
+.v44 .foundation-lesson section{line-height:1.75}
+.v44 .foundation-lesson section>p{margin:10px 0}
+.v44 .foundation-lesson h5{font-size:15px;margin:13px 0 8px}
+.v44 .foundation-example{padding:8px 0}
+.v44 .foundation-words{width:100%;max-width:100%;table-layout:auto}
+.v44 .foundation-words th,.v44 .foundation-words td{padding:9px 8px;line-height:1.5}
+.v44 .foundation-reading-text{font-size:var(--reading-size);line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere}
+.v44 .foundation-question{margin:11px 0;padding:12px}
+.v44 .course-study-guide{background:var(--paneSoft);border:1px solid var(--border);padding:clamp(12px,1.5vw,18px);margin:12px 0;color:var(--text)}
+.v44 .course-study-guide h3,.v44 .course-study-guide h4{color:var(--text)}
+.v44 .cloud-workspace .cloud-panel,.v44 .cloud-workspace .cloud-reader{min-width:0;max-width:100%;overflow-wrap:anywhere}
+.v44 .legacy-modules .cloud-workspace{width:100%}
+.v44 .cloud-panel-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.v44 .cloud-panel-tabs button{min-width:0}
+.v44 .settings-content{padding:clamp(15px,2vw,26px);max-width:min(100%,1000px)}
+.v44 .settings-grid{gap:14px;margin:15px 0}
+.v44 .ipa-studio{min-width:0;max-width:100%}
+.v44 .ipa-studio textarea{min-height:110px}
+.v44 .foundation-lesson audio,.v44 .reader-tools audio,.v44 .reader-article audio{max-width:100%;width:100%}
+@media(min-width:1200px){.v44 .selection-float{display:none}}
+@media(max-width:1099px){
+ .v44 .foundation-layout{grid-template-columns:minmax(0,1fr)}
+ .v44 .foundation-menu{display:flex;gap:7px;max-height:none;overflow-x:auto;padding-bottom:6px}
+ .v44 .foundation-menu button{flex:0 0 205px}
+ .v44 .foundation-stage-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:650px){
+ .v44 .reader-head-actions{width:100%;justify-content:flex-start}
+ .v44 .foundation-stage-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .v44 .foundation-menu button{flex-basis:180px}
+ .v44 .foundation-words th,.v44 .foundation-words td{font-size:12px;padding:7px 5px}
+ .v44 .course-guide-fields{grid-template-columns:minmax(0,1fr)}
+ .v44 .settings-grid{grid-template-columns:minmax(0,1fr)}
+}
