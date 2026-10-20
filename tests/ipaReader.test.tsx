@@ -72,6 +72,25 @@ describe('full-text learning UI',()=>{
   expect(screen.getByLabelText('参考国际音标与课程原文').textContent)
    .toContain('Bonjour, nous allons bien.');
  });
+ it('keeps a long IPA phoneme reference independently dismissible from the lesson text',()=>{
+  render(<LessonReader text="Bonjour, comment allez-vous ?\n\nJe m’appelle Marie."
+   courseId="fr-a1-u01" language="fr" stage={0} onChangeStage={()=>{}}/>);
+  const control=screen.getByLabelText('课程原文音标控制');
+  const menu=screen.getByText('法语音标表');
+  const details=menu.closest('details')!;
+  expect(control.querySelector('.ipa-reference-dock')).not.toBeNull();
+  expect(details.open).toBe(false);
+  fireEvent.click(menu);
+  expect(details.open).toBe(true);
+  expect(screen.getByText('法语口元音')).toBeTruthy();
+  expect(screen.getByText('Bonjour, comment allez-vous ?')).toBeTruthy();
+  fireEvent.pointerDown(document.body);
+  expect(details.open).toBe(false);
+  fireEvent.click(menu);
+  expect(details.open).toBe(true);
+  fireEvent.keyDown(document,{key:'Escape'});
+  expect(details.open).toBe(false);
+ });
  it('does not phonemize without explicit opt-in in ordinary shadowing mode',()=>{
   render(<SpeechPractice language="fr" initialTarget="bonjour"/>);
   expect(screen.getByRole('checkbox',{name:/实时显示 IPA/})).toBeTruthy();

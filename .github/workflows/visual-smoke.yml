@@ -20,6 +20,11 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci --no-fund
+      - name: Install Chinese language fonts for meaningful visual snapshots
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+          fc-cache -f
       - name: Build frontend
         run: npm run build
       - name: Start Vite preview
