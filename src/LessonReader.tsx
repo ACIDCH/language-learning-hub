@@ -24,7 +24,7 @@ export default function LessonReader({text,language='fr',courseId,stage,onChange
         onChange={e=>setShowIpa(e.target.checked)}/>
         显示 IPA
       </label>
-      <IpaReference language={language}/>
+      <div className="ipa-reference-dock"><IpaReference language={language}/></div>
     </section>
     {lesson.structured && <>
 

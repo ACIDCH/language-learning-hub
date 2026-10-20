@@ -1,3 +1,4 @@
+import {useEffect,useRef} from 'react';
 import {speakIpaText} from './IpaText';
 type Phoneme={symbol:string;example:string;hint:string};
 type Group={name:string;items:Phoneme[]};
@@ -81,7 +82,19 @@ const FR:Group[]=[
 export default function IpaReference({language}:{language:string}){
  const isFrench=language.startsWith('fr');
  const groups=isFrench?FR:EN;
- return <details className="ipa-reference" aria-label={isFrench?'法语 IPA 音标体系':'英语 IPA 音标体系'}>
+ const ref=useRef<HTMLDetailsElement>(null);
+ useEffect(()=>{
+  const outside=(event:PointerEvent)=>{
+   if(ref.current?.open&&!ref.current.contains(event.target as Node))ref.current.open=false;
+  };
+  const escape=(event:KeyboardEvent)=>{
+   if(event.key==='Escape'&&ref.current?.open){ref.current.open=false;event.stopPropagation();}
+  };
+  document.addEventListener('pointerdown',outside);
+  document.addEventListener('keydown',escape,true);
+  return ()=>{document.removeEventListener('pointerdown',outside);document.removeEventListener('keydown',escape,true);};
+ },[]);
+ return <details ref={ref} className="ipa-reference" aria-label={isFrench?'法语 IPA 音标体系':'英语 IPA 音标体系'}>
   <summary>{isFrench?'法语':'英语'}音标表</summary>
 
   {groups.map(group=><section key={group.name}>

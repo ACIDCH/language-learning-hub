@@ -210,3 +210,118 @@ body[data-view-mode="immersive"] .v44.nav-drawer-open>.rail{
 /* Keep reader visible even when personal settings are synchronizing; their controls update later. */
 .v44 .reader-tools-empty{background:var(--pane);color:var(--textMuted)}
 .v44 .reader-intro .reader-head-actions button{flex:0 0 auto}
+
+/* Lesson reader IPA control must never grow to the height of its complete phoneme reference.
+   The old flex child expanded the entire toolbar, pushing all actual course content below
+   the viewport. Keep the reference in an anchored overlay rather than the document flow. */
+.v44 .reader-article .lesson-reader{display:flex;flex-direction:column;gap:15px;min-width:0}
+.v44 .reader-article .ipa-reader-controls{
+ display:flex;flex-flow:row wrap;align-items:center;justify-content:space-between;
+ gap:10px;position:relative;min-height:49px;max-width:100%;
+ padding:7px 10px;margin:0;border:1px solid var(--border);
+ border-radius:11px;background:var(--paneSoft);color:var(--text);
+}
+.v44 .reader-article .ipa-reader-controls>label{
+ display:inline-flex!important;align-items:center!important;gap:8px!important;
+ padding:0!important;margin:0!important;flex:0 0 auto;
+}
+.v44 .reader-article .ipa-reader-controls input[type=checkbox]{margin:0!important}
+.v44 .reader-article .ipa-reference-dock{
+ position:relative;flex:0 0 132px;min-width:0;max-width:45%;height:36px;
+}
+.v44 .reader-article .ipa-reference-dock>.ipa-reference{
+ position:relative;margin:0!important;padding:0!important;border:0!important;
+ border-radius:10px;background:transparent;min-width:0;width:100%;max-width:none;
+ color:var(--text);
+}
+.v44 .reader-article .ipa-reference-dock>.ipa-reference>summary{
+ display:flex;align-items:center;justify-content:center;
+ height:36px;min-height:36px;padding:6px 12px;
+ border:1px solid var(--border);border-radius:9px;background:var(--pane);
+ color:var(--text);font-size:12px;font-weight:680;cursor:pointer;white-space:nowrap;
+ list-style:none;
+}
+.v44 .reader-article .ipa-reference-dock>.ipa-reference>summary::-webkit-details-marker{display:none}
+.v44 .reader-article .ipa-reference-dock>.ipa-reference>summary::before{
+ content:'▾';margin-right:7px;color:var(--accent);font-size:12px;
+}
+.v44 .reader-article .ipa-reference-dock>.ipa-reference[open]{
+ position:absolute;top:0;right:0;z-index:48;
+ width:min(520px,calc(100vw - 55px));max-width:calc(100vw - 55px);
+ max-height:min(68dvh,550px);overflow:auto;
+ border:1px solid var(--border)!important;border-radius:12px;
+ background:var(--pane);box-shadow:0 16px 40px rgba(23,51,58,.18);
+ padding:0 13px 13px!important;scrollbar-width:thin;
+}
+.v44 .reader-article .ipa-reference-dock>.ipa-reference[open]>summary{
+ position:sticky;top:0;z-index:1;border:0;border-bottom:1px solid var(--border);
+ border-radius:0;margin:0 -13px 12px;padding:8px 13px;
+ justify-content:flex-start;background:var(--pane);color:var(--accent);
+}
+.v44 .reader-article .ipa-reference-dock .ipa-reference section{min-width:0;margin:0 0 15px}
+.v44 .reader-article .ipa-reference-dock .ipa-reference h5{
+ color:var(--text);font-size:13px;line-height:1.5;margin:8px 0;
+}
+.v44 .reader-article .ipa-reference-dock .ipa-reference-grid{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;
+}
+.v44 .reader-article .ipa-reference-dock .ipa-reference-item{
+ display:flex;flex-direction:column;align-items:flex-start;gap:5px;
+ min-width:0;padding:10px;border:1px solid var(--border);
+ background:var(--paneSoft);border-radius:9px;color:var(--text);
+}
+.v44 .reader-article .ipa-reference-dock .ipa-reference-symbol{
+ color:var(--accent);font-size:19px;line-height:1.35;
+}
+.v44 .reader-article .ipa-reference-dock .ipa-reference-item>span{
+ font-size:12px;line-height:1.45;color:var(--textMuted);
+}
+.v44 .reader-article .ipa-reference-dock .ipa-reference-item button{
+ background:var(--pane);border:1px solid var(--border);
+ border-radius:8px;padding:6px 9px;color:var(--text);
+}
+.v44 .reader-article .lesson-paper{
+ min-height:0;margin:0;padding:16px clamp(14px,2vw,22px);
+ border:1px solid var(--border);border-radius:11px;
+ background:var(--pane);
+}
+.v44 .reader-article .lesson-stage-head{
+ margin:0 0 10px;padding:0 0 10px;
+ border-bottom:1px solid var(--border);align-items:center;
+}
+.v44 .reader-article .lesson-stage-head h4{color:var(--text);margin:0}
+.v44 .reader-article .lesson-paragraphs{
+ color:var(--text);font-size:var(--reading-size);
+ line-height:1.82;letter-spacing:0;white-space:pre-wrap;
+}
+.v44 .reader-article .lesson-stages{
+ display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
+ gap:6px;margin:0;min-width:0;
+}
+.v44 .reader-article .lesson-stages button{
+ border:1px solid var(--border);background:var(--paneSoft);color:var(--text);
+ min-width:0;min-height:42px;border-radius:9px;white-space:normal;
+ font-size:12px;font-weight:550;padding:8px 5px;
+}
+.v44 .reader-article .lesson-stages button.stage-active{
+ background:var(--accentTint);color:var(--accent);
+ border-color:var(--accent);font-weight:700;
+}
+.v44 .reader-article .lesson-controls{
+ display:flex;flex-wrap:wrap;gap:7px;margin:0;align-items:center;
+}
+.v44 .reader-article .lesson-controls button{
+ border:1px solid var(--border);border-radius:9px;
+ color:var(--text);background:var(--paneSoft);
+ padding:9px 13px;min-height:36px;
+}
+@container lesson (max-width:650px){
+ .v44 .reader-article .lesson-stages{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .v44 .reader-article .ipa-reference-dock>.ipa-reference[open]{
+  width:min(440px,calc(100vw - 55px));max-height:60dvh}
+}
+@container lesson (max-width:410px){
+ .v44 .reader-article .lesson-stages{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .v44 .reader-article .ipa-reference-dock .ipa-reference-grid{grid-template-columns:minmax(0,1fr)}
+ .v44 .reader-article .lesson-paper{padding:12px}
+}
