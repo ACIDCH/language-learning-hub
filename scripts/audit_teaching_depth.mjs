@@ -24,14 +24,14 @@ for(const r of mains){
   if(!d.pronunciation?.trim()||/浏览器转写不能证明音素正确/.test(d.pronunciation))issues.push('pronunciation_not_instructional_enough');
   if(!d.production?.trim()||d.production.startsWith('Produce an original'))issues.push('production_too_generic');
   if(!d.self_review?.trim()||d.self_review.startsWith('核对任务是否回答完整'))issues.push('self_review_generic');
-  if(!['en-ielts-listening-u01','fr-a1-u04'].includes(r.id))issues.push('no_individual_editorial_expansion');
+  if(!['en-ielts-listening-u01','fr-a1-u04','en-ielts-reading-u03','en-ielts-writing-task1-u02','en-ielts-writing-task2-u02','en-ielts-speaking-u01','en-ielts-language-upgrade-u01','fr-a2-u01','fr-b1-u01'].includes(r.id))issues.push('no_individual_editorial_expansion');
  }
  if(!r.public_sources?.length&&r.content_status==='existing_original')issues.push('source_missing');
  rows.push({id:r.id,kind:r.content_status,editorial:'pending',issue_count:issues.length,issues});
 }
 const totals={mainUnits:mains.length,draftUnits:drafts.length,existingOriginals:mains.filter(r=>r.content_status==='existing_original').length,
  foundationUnits:48,fullInventoryUnits:mains.length+48,
- authoredRebuildSamples:2,individuallyPedagogicallyReviewed:0};
+ authoredRebuildSamples:9,individuallyPedagogicallyReviewed:0};
 const escape=value=>'"'+String(value??'').replaceAll('"','""')+'"';
 const data=[['id','kind','editorial','issue_count','issues'],...rows.map(r=>[r.id,r.kind,r.editorial,r.issue_count,r.issues.join(';')])];
 writeFileSync(folder+'/main-lessons.csv',data.map(row=>row.map(escape).join(',')).join('\n')+'\n');
