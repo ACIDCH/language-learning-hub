@@ -161,3 +161,27 @@
 .v44 .reference-source-note>summary{cursor:pointer;color:var(--accent)}
 .v44 .reference-count{color:var(--textMuted);font-size:12px;margin:8px 0 13px}
 @media(max-width:650px){.v44 .cloud-workspace>.account-access{margin:12px 0!important}}
+
+/* Mobile speaking: horizontal compact sentence picker keeps the actual recorder above the fold. */
+@media(max-width:650px){
+ .v44 .speaking-lab-columns{display:flex;flex-direction:column;gap:12px}
+ .v44 .speaking-lab-columns>.speaking-lab-library,
+ .v44 .speaking-lab-columns>.speaking-workbench{width:100%;max-width:100%}
+ .v44 .speaking-lab-library{padding:12px}
+ .v44 .speaking-lab-library-head{padding:9px 11px}
+ .v44 .speaking-lab-library-head h2{font-size:15px;margin:6px 0 0}
+ .v44 .speaking-lab-library h3{font-size:12px;margin:10px 0 8px}
+ .v44 .speaking-lab-sentences{
+  display:flex;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;
+  scroll-snap-type:x proximity;scrollbar-width:thin;padding:0 0 6px;
+ }
+ .v44 .speaking-lab-sentences button{
+  flex:0 0 clamp(190px,64vw,245px);
+  min-height:67px;scroll-snap-align:start;
+  padding:9px 10px;font-size:12px;
+ }
+ .v44 .speaking-lab-sentences button>span:first-child{width:27px;height:27px}
+ .v44 .speaking-lab-sentences small{margin-top:2px}
+ .v44 .speaking-workbench{padding:12px;gap:11px}
+ .v44 .speaking-workbench-target{padding:10px}
+}

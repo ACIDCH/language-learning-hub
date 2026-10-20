@@ -78,6 +78,15 @@ try{
    const image=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
    writeFileSync(output+'/'+size+'-'+name+'.png',Buffer.from(image.data,'base64'));
    checked++;
+   if(name==='speech'&&width===390){
+    const layout=await js("(function(){const library=document.querySelector('.speaking-lab-library').getBoundingClientRect();const player=document.querySelector('.speaking-workbench').getBoundingClientRect();const cards=document.querySelector('.speaking-lab-sentences');return {libraryHeight:library.height,playerTop:player.top,display:getComputedStyle(cards).display,scrollWidth:cards.scrollWidth,clientWidth:cards.clientWidth};})()");
+    if(layout.playerTop>630||layout.libraryHeight>310||layout.display!=='flex'||layout.scrollWidth<=layout.clientWidth)
+     problems.push('mobile speaking lesson picker pushes recorder too far down '+JSON.stringify(layout));
+   }
+   if(name==='cloud'&&width===1440){
+    const auth=await js("(function(){const e=document.querySelector('.cloud-workspace>.account-access');if(!e)return null;return {width:e.getBoundingClientRect().width};})()");
+    if(auth&&auth.width>560)problems.push('cloud guest login panel too wide '+JSON.stringify(auth));
+   }
    if(name==='lesson'){
     // Regression: a long IPA reference used to stretch the entire top toolbar,
     // leaving an enormous pale rectangle while the actual lesson disappeared below.
