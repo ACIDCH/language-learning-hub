@@ -33,7 +33,7 @@ export default function LessonReader({text,courseId,content,stage,onChangeStage}
     <h4>{sections[selected]?.displayName}</h4></header>}
    <LessonBody text={source}/>
    {!showAll&&<BilingualTeaching key={courseId+'-'+current}
-     courseId={courseId} stage={current} content={content} privateSource/>}
+     courseId={courseId} stage={current} content={content} privateSource sourceText={text}/>}
   </article>
   {lesson.structured&&<div className="lesson-controls">
    {!showAll&&<button disabled={selected===0} onClick={()=>onChangeStage(moveStudyStage(current,-1))}>← 上一部分</button>}

@@ -135,5 +135,43 @@ export const CHINESE_LESSON_NOTES:Record<string,ChineseLessonNotes>={
     {target:'However, the benefit depends on several conditions.',zh:'但效果依赖若干条件。',note:'限定。'},
     {target:'Finally, it suggests reporting survival rates.',zh:'最后提出报告存活率。',note:'结论或后续问题。'}],
    review:['是否区分 planting 与 maintenance','however 是否对应条件而非全盘否定','是否保留 may 等不确定表达','是否区分种植总量与存活率']}
+ },
+
+ 'en-ielts-listening-u01-study-spaces':{
+  situation:'学术讲座讨论“提供学习空间是否有助于改善学习”。请先识别讲者介绍的观察方法、结果限制和结论，避免把设施使用量误读为成绩提升。',
+  goal:'能区分研究问题、测量方式、示例与推论局限，用中英文完整说明“占用人数不等于学习效果”。',
+  dialogue:[
+   {target:'The lecture considers whether providing study spaces leads to better learning.',zh:'这场讲座讨论：提供学习空间是否会带来更好的学习效果。',note:'whether 引出待考察的问题，不等于已经得出肯定结论。'},
+   {target:'Its first section describes how room occupancy can be observed.',zh:'讲座第一部分说明如何观察房间的使用情况。',note:'occupancy 是空间占用状态，不是学习成绩。'},
+   {target:'The speaker then explains a critical limitation.',zh:'随后讲者指出一项关键限制。',note:'then 标记论证推进；limitation 引导证据边界。'},
+   {target:'Usage figures indicate when spaces are occupied, but they do not measure academic achievement.',zh:'使用量数据能反映空间何时被占用，却不能测量学业表现。',note:'but 对比可观察事实与不能据此推出的因果结论。'}
+  ],
+  grammar:[
+   {title:'研究问题与结论：whether 并不预设结果',explain:'whether…leads to… 提出待验证的问题；不应把问题直接写成结论“有学习空间就能提高成绩”。',
+    examples:[{target:'The lecture considers whether providing study spaces leads to better learning.',zh:'讲座探讨提供学习空间是否改善学习。',note:'只有研究问题，还没有因果结论。'}]},
+   {title:'测量指标与研究目的不同',explain:'room occupancy 可由人数或时段记录；academic achievement 则需要学业表现证据。两者不是同一个变量。',
+    examples:[{target:'Usage figures indicate when spaces are occupied, but they do not measure academic achievement.',zh:'使用量显示何时有人使用空间，却不衡量学业成绩。',note:'but 提醒听众不要用占用数据代替学习结果。'}]},
+   {title:'引用证据时区分强弱',explain:'may、could、appears to 等表达可能性，demonstrates 常表达更强的论据支持；有限的观察不能擅自上升为因果关系。',
+    examples:[{target:'An illustrative example is not a measured result.',zh:'说明性例子并不等于测量得到的结果。',note:'要区分 illustration 和 evidence。'}]}
+  ],
+  vocabulary:[
+   {word:'room occupancy',meaning:'房间占用情况',collocation:'observe room occupancy：观察空间使用状态'},
+   {word:'measurement',meaning:'测量；衡量',collocation:'a measured result：实际测量的结果'},
+   {word:'limitation',meaning:'局限；限制',collocation:'a critical limitation：关键局限'},
+   {word:'academic achievement',meaning:'学业表现／成绩',collocation:'measure academic achievement：衡量学业表现'},
+   {word:'lecture signpost',meaning:'讲座结构标记',collocation:'opening / illustration / conclusion'}
+  ],
+  reading:{title:'原文推论层次：研究问题—数据—限制',pairs:[
+   {target:'The lecture considers whether providing study spaces leads to better learning.',zh:'讲座提出学习空间是否改善学习的问题。',note:'明确讨论对象。'},
+   {target:'Its first section describes how room occupancy can be observed.',zh:'第一部分说明怎样观察房间占用情况。',note:'介绍观察方法。'},
+   {target:'Usage figures indicate when spaces are occupied, but they do not measure academic achievement.',zh:'使用量只能衡量空间使用，不能直接衡量学业成绩。',note:'核心论证边界。'}
+  ],technique:'听到 measurement、illustration、limitation、conclusion 等结构词时先写它们的功能，再把事实归入对应位置。'},
+  output:{task:'根据讲座写一份五格结构图：研究问题／观察方法／举例／局限／结论；再用 80—110 词英语概括，不将占用数据推断成因果证据。',
+   frame:[
+    {target:'The lecture examines whether study spaces improve learning.',zh:'讲座考察学习空间是否促进学习。',note:'复述问题。'},
+    {target:'Room occupancy can show when facilities are used.',zh:'占用数据可显示设施使用时段。',note:'说明指标能够反映什么。'},
+    {target:'However, these figures cannot by themselves prove improved grades.',zh:'但这些数据本身不能证明成绩有所提高。',note:'指出结论边界。'}],
+   review:['分清 measurement 与 outcome','例子不冒充研究证明','结论强度不能超过证据','五格讲座结构顺序完整']}
  }
+
 };

@@ -8,9 +8,17 @@ function Parallel({entry}:{entry:ParallelSentence}){
  </div>;
 }
 export default function BilingualTeaching({courseId,stage,content,privateSource=false}:{
- courseId:string;stage:number;content?:LessonContent|null;privateSource?:boolean
+ courseId:string;stage:number;content?:LessonContent|null;privateSource?:boolean;sourceText?:string
 }){
- const info=CHINESE_LESSON_NOTES[courseId];
+ const normalize=(value:string)=>value.toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g,' ');
+ const source=normalize(sourceText||'');
+ const special=privateSource&&courseId==='en-ielts-listening-u01'&&
+   /study spaces|occupancy|measurement/.test(source);
+ const candidate=CHINESE_LESSON_NOTES[special?'en-ielts-listening-u01-study-spaces':courseId];
+ // Do not pass a source-specific translation into a wholly different private manuscript.
+ const sourceMatched=!privateSource||!source||candidate?.dialogue.some(entry=>
+   source.includes(normalize(entry.target).slice(0,25)));
+ const info=sourceMatched?candidate:undefined;
  if(!info){
   // Existing Chinese grammar, situational notes and vocabulary remain available
   // through the typed draft; no machine-generated translation is presented as reviewed.
