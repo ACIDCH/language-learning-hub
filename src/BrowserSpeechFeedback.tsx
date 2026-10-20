@@ -67,7 +67,7 @@ export default function BrowserSpeechFeedback({target}:{target:string}){
    {state!=='idle'&&<button type="button" onClick={cancel}>取消录音</button>}
    {(review||playUrl)&&state==='idle'&&<button type="button" onClick={()=>{clearAudio();setReview(null);setNote('本次临时录音和分析结果已清除。');}}>清除本次结果</button>}
   </div>
-  <p role="status" aria-live="polite">{note}</p>
+  <p aria-live="polite">{note}</p>
   {review&&<div aria-label="浏览器录音分析结果">
    <div className="ref-counts">
     <div><strong>{review.durationSeconds.toFixed(1)} s</strong><span>录音总时长</span></div>
