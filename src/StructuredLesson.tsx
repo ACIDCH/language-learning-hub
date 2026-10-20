@@ -1,0 +1,104 @@
+import {useState} from 'react';
+import type {LessonContent,Course,LessonDraft} from './v44Courses';
+import type {FoundationUnit} from './foundationTypes';
+import {speakIpaText} from './IpaText';
+import LessonIpaPreview from './LessonIpaPreview';
+const TABS=['目标与情境','规则与例句','词汇','听读与理解','发音与跟读','输出与复习'] as const;
+type Props={content:LessonContent;course:Course;stage:number;onChangeStage:(stage:number)=>void;
+ onOpenSpeech:()=>void;ttsRate:number};
+export default function StructuredLesson({content,course,stage,onChangeStage,onOpenSpeech,ttsRate}:Props){
+ const [expanded,setExpanded]=useState(false);
+ const [responses,setResponses]=useState<Record<number,string>>({});
+ const [shown,setShown]=useState<Record<number,boolean>>({});
+ const draft=content.draft,unit=content.foundation;
+ if(!draft&&!unit)return null;
+ const active=Math.min(5,Math.max(0,Number.isFinite(stage)?stage:0));
+ const goal=draft?.goal||unit!.goal;
+ const examples=draft?.examples.map(e=>e.text)||unit!.examples;
+ const vocabulary=draft?.vocabulary||unit!.vocab;
+ const reading=draft?.reading||unit!.reading;
+ const listening=draft?.listening_script||unit!.listening;
+ const pronunciation=draft?.pronunciation||unit!.pronunciation;
+ const output=draft?.production||unit!.production;
+ const isDraft=Boolean(draft);
+ const play=(value:string)=>speakIpaText(value,course.language,ttsRate);
+ const lessonQuestions= isDraft?draft!.questions.map(q=>({prompt:q.prompt,answer:q.answer,explanation:q.explanation})):
+  unit!.questions.map(q=>({prompt:q.prompt,answer:q.choices[q.answer],explanation:q.explanation}));
+ return <div className="curriculum-lesson" aria-label="结构化课程学习">
+  <nav className="curriculum-tabs" aria-label="本课教学环节">
+   {TABS.map((label,i)=><button type="button" key={label}
+    aria-current={active===i?'step':undefined} aria-pressed={active===i}
+    className={active===i?'current':''} onClick={()=>onChangeStage(i)}>
+    <span>{String(i+1).padStart(2,'0')}</span>{label}</button>)}
+  </nav>
+  <article className="curriculum-stage" aria-label={'教学环节：'+TABS[active]}>
+   <header className="curriculum-stage-title"><span className="microtag">第 {active+1} / 6 部分</span>
+    <h2>{TABS[active]}</h2></header>
+   {active===0&&<div className="curriculum-stack">
+     <section><h3>完成这一课，你能够</h3><p className="curriculum-goal">{goal}</p></section>
+     <section><h3>学习情境</h3><p>{draft?.context||goal}</p></section>
+     {draft?.prerequisite&&<p className="curriculum-prerequisite">前置课程：{draft.prerequisite}</p>}
+     <section><h3>先看一个例句</h3><blockquote>{examples[0]}</blockquote>
+       <button type="button" onClick={()=>play(examples[0])}>听例句</button></section>
+   </div>}
+   {active===1&&<div className="curriculum-stack">
+     <section><h3>核心规则</h3><ol className="curriculum-concepts">
+      {(draft?draft.grammar.split(/[。](?![^（]*）)/u).map(t=>t.trim()).filter(Boolean):
+      unit!.concepts).map((part,i)=><li key={i}>{part}</li>)}</ol></section>
+     <section><h3>例句与应用</h3>{examples.map((example,i)=>
+      <div className="curriculum-example" key={i}><span className="microtag">例句 {i+1}</span>
+       <p lang={course.language}>{example}</p>
+       <button type="button" onClick={()=>play(example)}>播放</button></div>)}</section>
+     <section className="curriculum-warning"><h3>容易混淆的地方</h3>
+      <p>{draft?.common_mistake||unit!.commonMistake}</p></section>
+   </div>}
+   {active===2&&<div className="curriculum-stack">
+     <section><h3>本课词汇</h3><div className="curriculum-vocabulary" role="list">
+      {vocabulary.map(([word,meaning],i)=><div role="listitem" className="curriculum-word" key={i}>
+       <strong lang={course.language}>{word}</strong><span>{meaning}</span>
+       <button type="button" aria-label={'播放 '+word} onClick={()=>play(word)}>听</button>
+      </div>)}</div></section>
+     <section><h3>结合原文理解</h3><p>{examples[0]}</p></section>
+   </div>}
+   {active===3&&<div className="curriculum-stack">
+     <section><h3>听力</h3><div className="curriculum-actions"><button type="button" onClick={()=>play(listening)}>播放听力</button>
+      <button type="button" onClick={()=>setExpanded(v=>!v)} aria-expanded={expanded}>{expanded?'隐藏文本':'显示文本'}</button></div>
+      {expanded&&<div className="curriculum-transcript" lang={course.language}>{listening}</div>}</section>
+     <section><h3>阅读材料</h3><div className="curriculum-reading" lang={course.language}>
+      {reading}</div></section>
+     <section><h3>理解检查</h3>{lessonQuestions.map((q,i)=>
+      <div className="curriculum-question" key={i}><label htmlFor={'question-'+course.id+'-'+i}>{i+1}. {q.prompt}</label>
+       <textarea id={'question-'+course.id+'-'+i} rows={2} value={responses[i]||''}
+        onChange={e=>setResponses(p=>({...p,[i]:e.target.value}))}/>
+       <button type="button" aria-expanded={!!shown[i]} onClick={()=>setShown(p=>({...p,[i]:!p[i]}))}>
+        {shown[i]?'收起参考答案':'核对参考答案'}</button>
+       {shown[i]&&<div className="curriculum-answer"><strong>参考答案</strong><p>{q.answer}</p><p>{q.explanation}</p></div>}
+      </div>)}</section>
+   </div>}
+   {active===4&&<div className="curriculum-stack">
+     <section><h3>本课发音关注点</h3><p>{pronunciation}</p></section>
+     <section><h3>跟读材料</h3>{examples.slice(0,3).map((example,i)=>
+      <div className="curriculum-example" key={i}><p lang={course.language}>{example}</p>
+       <button type="button" onClick={()=>play(example)}>听示范</button>
+       <LessonIpaPreview key={course.id+'-'+i} text={example} language={course.language}/></div>)}
+      <button className="curriculum-primary" type="button" onClick={onOpenSpeech}>进入跟读训练 →</button>
+     </section>
+   </div>}
+   {active===5&&<div className="curriculum-stack">
+     <section><h3>完成表达任务</h3><p className="curriculum-goal">{output}</p>
+      <p>可以在课程下方的「学习笔记」中保存你的作品。</p></section>
+     <section><h3>自我检查</h3><ul className="curriculum-checklist">
+       <li>是否完成题目要求并表达清楚？</li>
+       <li>所用信息是否有本课原文或实例支持？</li>
+       <li>是否正确使用本课核心词汇和句型？</li>
+       <li>是否检查错误并进行至少一次修改？</li>
+      </ul>{isDraft&&draft!.self_review&&<details><summary>原稿自评要求</summary><p>{draft!.self_review}</p></details>}</section>
+   </div>}
+  </article>
+  <div className="curriculum-navigation">
+   <button type="button" disabled={active===0} onClick={()=>onChangeStage(active-1)}>← 上一部分</button>
+   <span>{active+1} / 6</span>
+   <button type="button" disabled={active===5} onClick={()=>onChangeStage(active+1)}>下一部分 →</button>
+  </div>
+ </div>;
+}

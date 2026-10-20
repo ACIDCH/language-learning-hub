@@ -1,10 +1,14 @@
-/** Display-only grouping: never rewrites lesson text or changes its learning-stage ordering. */
+import {parseManuscript} from './manuscriptPresentation';
+/** Semantic reading layout; the verbatim manuscript remains available in backup/private source. */
 export default function LessonBody({text}:{text:string}){
- const blocks=text.replace(/\r\n?/g,'\n').split(/\n[ \t]*\n+/).filter(piece=>piece.trim().length);
- return <div className="lesson-paragraphs lesson-content-flow">
-  {blocks.map((block,i)=>{
-   const cue=/^(?:目标|阅读|听力文本|练习|例句|常见错误|任务|参考答案|解析|表达任务|要点|语法|词汇|文化提示|示范对话)[：:]/u.test(block.trimStart());
-   return <p className={cue?'lesson-content-group lesson-content-group--cue':'lesson-content-group'} key={i}>{block}</p>;
+ const parts=parseManuscript(text);
+ return <div className="lesson-paragraphs lesson-content-flow" aria-label="课程正文">
+  {parts.map((part,i)=>{
+   if(part.kind==='heading')return <h5 className="lesson-content-section" key={i}>{part.text}</h5>;
+   if(part.kind==='task')return <div className="lesson-content-block lesson-content-task" key={i}>{part.text}</div>;
+   if(part.kind==='example')return <blockquote className="lesson-content-block lesson-content-example" key={i}>{part.text}</blockquote>;
+   if(part.kind==='list')return <p className="lesson-content-list" key={i}>{part.text}</p>;
+   return <p className="lesson-content-group" key={i}>{part.text}</p>;
   })}
  </div>;
 }
