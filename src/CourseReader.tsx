@@ -76,5 +76,5 @@ export default function CourseReader({course,session,preferences,tab,navigate,on
  </article>
  {showTools&&(selection?<SelectionInspector key={selection.text} selection={selection} language={course.language} courseId={course.id} vocabulary={content?.vocabulary||[]} session={session} rate={preferences.ttsRate} onClose={()=>setSelection(null)} onNote={appendNote} onFavorite={favorite}/>:<aside className="panel reader-tools reader-tools-empty" aria-label="选词工具"><h2>选词与跟读</h2><div className="reader-empty-state" aria-hidden="true"><span>“</span><strong>选择词句</strong></div></aside>)}</div>
  {selection&&<div className="selection-float" role="toolbar" aria-label="选中文字操作"><strong>{selection.text.length>30?selection.text.slice(0,30)+'…':selection.text}</strong><button onClick={()=>speakIpaText(selection.text,course.language,preferences.ttsRate)}>朗读选词</button><button onClick={()=>{setShowTools(true);document.querySelector('[aria-label="选词工具"]')?.scrollIntoView({block:'nearest'});}}>选词 / 跟读</button><button onClick={()=>setSelection(null)} aria-label="清除选择">×</button></div>}
- <p role="status" className="tool-notice">{toolStatus}</p></section>;
+ {toolStatus&&<p role="status" className="tool-notice">{toolStatus}</p>}</section>;
 }

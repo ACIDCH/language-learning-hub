@@ -20,7 +20,7 @@ export default function SelectionInspector({selection,language,courseId,vocabula
   ['context','语境'],['notes','笔记'],['ai','AI 讲解']];
  return <aside className="panel reader-tools selection-workbench" aria-label="选词工具">
   <div className="panel-heading"><h2>选词与跟读</h2><button type="button" aria-label="关闭选词工具" onClick={onClose}>×</button></div>
-  <div className="selection-workbench-source"><span className="microtag">{language.toUpperCase()} · 已选择</span>
+  <div className="selection-workbench-source"><span className="microtag">{language==='fr'?'法语':'英语'}</span>
    <h3 className="selected-text">{selection.text}</h3></div>
   <div className="selection-actions">
    <button type="button" onClick={()=>setStatus(speakIpaText(selection.text,language,rate)?'正在播放示范。':'设备没有可用的朗读声音。')}>▶ 听</button>
