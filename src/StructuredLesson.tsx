@@ -2,6 +2,7 @@ import {useState} from 'react';
 import type {LessonContent,Course,LessonDraft} from './v44Courses';
 import type {FoundationUnit} from './foundationTypes';
 import {speakIpaText} from './IpaText';
+import {LESSON_EXTENSIONS} from './editorialLessonExtensions';
 import LessonIpaPreview from './LessonIpaPreview';
 const TABS=['目标与情境','规则与例句','词汇','听读与理解','发音与跟读','输出与复习'] as const;
 type Props={content:LessonContent;course:Course;stage:number;onChangeStage:(stage:number)=>void;
@@ -11,6 +12,7 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onO
  const [responses,setResponses]=useState<Record<number,string>>({});
  const [shown,setShown]=useState<Record<number,boolean>>({});
  const draft=content.draft,unit=content.foundation;
+ const extension=LESSON_EXTENSIONS[course.id];
  if(!draft&&!unit)return null;
  const active=Math.min(5,Math.max(0,Number.isFinite(stage)?stage:0));
  const goal=draft?.goal||unit!.goal;
@@ -38,6 +40,7 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onO
      <section><h3>完成这一课，你能够</h3><p className="curriculum-goal">{goal}</p></section>
      <section><h3>学习情境</h3><p>{draft?.context||goal}</p></section>
      {draft?.prerequisite&&<p className="curriculum-prerequisite">前置课程：{draft.prerequisite}</p>}
+     {extension&&<section className="curriculum-editorial"><h3>本课的学习重点</h3><p>{extension.rationale}</p></section>}
      <section><h3>先看一个例句</h3><blockquote>{examples[0]}</blockquote>
        <button type="button" onClick={()=>play(examples[0])}>听例句</button></section>
    </div>}
@@ -49,6 +52,9 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onO
       <div className="curriculum-example" key={i}><span className="microtag">例句 {i+1}</span>
        <p lang={course.language}>{example}</p>
        <button type="button" onClick={()=>play(example)}>播放</button></div>)}</section>
+     {extension&&<section className="curriculum-editorial"><h3>规则与原文对应</h3>
+       {extension.analysis.map(point=><div className="curriculum-analysis-point" key={point.label}>
+        <h4>{point.label}</h4><blockquote>{point.evidence}</blockquote><p>{point.teaching}</p></div>)}</section>}
      <section className="curriculum-warning"><h3>容易混淆的地方</h3>
       <p>{draft?.common_mistake||unit!.commonMistake}</p></section>
    </div>}
@@ -66,6 +72,9 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onO
       {expanded&&<div className="curriculum-transcript" lang={course.language}>{listening}</div>}</section>
      <section><h3>阅读材料</h3><div className="curriculum-reading" lang={course.language}>
       {reading}</div></section>
+     {extension&&<section className="curriculum-editorial"><h3>{extension.modelTitle}</h3>
+       <pre className="curriculum-model">{extension.model}</pre>
+       <p>{extension.exercise}</p></section>}
      <section><h3>理解检查</h3>{lessonQuestions.map((q,i)=>
       <div className="curriculum-question" key={i}><label htmlFor={'question-'+course.id+'-'+i}>{i+1}. {q.prompt}</label>
        <textarea id={'question-'+course.id+'-'+i} rows={2} value={responses[i]||''}
@@ -87,12 +96,16 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onO
    {active===5&&<div className="curriculum-stack">
      <section><h3>完成表达任务</h3><p className="curriculum-goal">{output}</p>
       <p>可以在课程下方的「学习笔记」中保存你的作品。</p></section>
+     {extension&&<section className="curriculum-editorial"><h3>本课表达实践</h3><p>{extension.exercise}</p>
+       <h4>{extension.modelTitle}</h4><pre className="curriculum-model">{extension.model}</pre></section>}
      <section><h3>自我检查</h3><ul className="curriculum-checklist">
        <li>是否完成题目要求并表达清楚？</li>
        <li>所用信息是否有本课原文或实例支持？</li>
        <li>是否正确使用本课核心词汇和句型？</li>
        <li>是否检查错误并进行至少一次修改？</li>
-      </ul>{isDraft&&draft!.self_review&&<details><summary>原稿自评要求</summary><p>{draft!.self_review}</p></details>}</section>
+      </ul>{extension&&<div className="curriculum-editorial-check"><h4>本课额外核对</h4>
+       <ul>{extension.check.map(item=><li key={item}>{item}</li>)}</ul></div>}
+       {isDraft&&draft!.self_review&&<details><summary>原稿自评要求</summary><p>{draft!.self_review}</p></details>}</section>
    </div>}
   </article>
   <div className="curriculum-navigation">

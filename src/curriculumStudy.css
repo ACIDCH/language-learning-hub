@@ -128,3 +128,21 @@
  .v44 .curriculum-vocabulary{grid-template-columns:minmax(0,1fr)}
  .v44 .curriculum-navigation>button{font-size:12px;padding:8px}
 }
+
+/* Source-anchored editorial teaching expansions for individually rebuilt lessons. */
+.v44 .curriculum-editorial{background:var(--paneSoft);border:1px solid var(--border);
+ border-radius:12px;padding:clamp(12px,1.6vw,19px);margin:4px 0}
+.v44 .curriculum-editorial h3{font-size:15px;color:var(--text);margin:0 0 10px}
+.v44 .curriculum-editorial h4{font-size:13px;color:var(--accent);margin:0 0 7px}
+.v44 .curriculum-analysis-point{border-top:1px solid var(--border);padding:12px 0}
+.v44 .curriculum-analysis-point:first-of-type{border-top:0}
+.v44 .curriculum-analysis-point blockquote{margin:6px 0 9px;background:var(--pane);
+ font-size:clamp(13px,1.15vw,16px)}
+.v44 .curriculum-analysis-point p{margin:5px 0 2px}
+.v44 .curriculum-model{font-family:inherit;white-space:pre-wrap;overflow-wrap:anywhere;
+ font-size:14px;line-height:1.8;background:var(--pane);color:var(--text);
+ border:1px solid var(--border);border-radius:10px;padding:13px 15px;margin:5px 0 12px}
+.v44 .curriculum-editorial-check{padding:12px;margin:10px 0;background:var(--pane);
+ border-radius:9px;border:1px solid var(--border)}
+.v44 .curriculum-editorial-check ul{margin:5px 0 0;padding-left:20px}
+.v44 .curriculum-editorial-check li{line-height:1.7;padding:3px 0}
