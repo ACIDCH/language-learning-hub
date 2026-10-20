@@ -183,3 +183,9 @@
  padding:12px 14px;border-radius:10px;line-height:1.8;font:inherit;font-size:14px;resize:vertical}
 .v44 .curriculum-review-extra{margin:12px 0;padding-left:24px}
 .v44 .curriculum-review-extra li{line-height:1.7;padding:3px 0}
+
+/* The five instructional areas are content-first; pronunciation lives in the existing selection inspector. */
+.v44 .curriculum-stage .bilingual-teaching{margin-top:18px}
+.v44 .curriculum-stage .curriculum-stack>section{margin:0}
+.v44 .curriculum-stage .curriculum-stack>section+section{padding-top:14px;border-top:1px solid var(--border)}
+.v44 .curriculum-stage .curriculum-reading{line-height:1.9;white-space:pre-wrap}

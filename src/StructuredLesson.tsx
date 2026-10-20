@@ -45,7 +45,7 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
      <section><h3>学习情境</h3><p>{draft?.context||goal}</p></section>
      {draft?.prerequisite&&<p className="curriculum-prerequisite">前置课程：{draft.prerequisite}</p>}
      {extension&&<section className="curriculum-editorial"><h3>本课的学习重点</h3><p>{extension.rationale}</p></section>}
-     <section><h3>先看一个例句</h3><blockquote>{examples[0]}</blockquote>
+     <section><h3>情境示例</h3><blockquote>{examples[0]}</blockquote>
        <button type="button" onClick={()=>play(examples[0])}>听例句</button></section>
    </div>}
    {active===1&&<div className="curriculum-stack">
@@ -117,7 +117,7 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
       </ul><ul className="curriculum-review-extra">{guide.criteria.map(s=><li key={s}>{s}</li>)}</ul>
       {extension&&<div className="curriculum-editorial-check"><h4>本课额外核对</h4>
        <ul>{extension.check.map(item=><li key={item}>{item}</li>)}</ul></div>}
-       {isDraft&&draft!.self_review&&<details><summary>原稿自评要求</summary><p>{draft!.self_review}</p></details>}</section>
+       {isDraft&&draft!.self_review&&!draft!.self_review.startsWith('核对任务是否回答完整')&&<details><summary>额外自查说明</summary><p>{draft!.self_review}</p></details>}</section>
    </div>}
    <BilingualTeaching key={course.id+'-'+active} courseId={course.id} stage={active} content={content}/>
   </article>
