@@ -7,7 +7,7 @@ function Parallel({entry}:{entry:ParallelSentence}){
   <p className="bilingual-usage">{entry.note}</p>
  </div>;
 }
-export default function BilingualTeaching({courseId,stage,content,privateSource=false}:{
+export default function BilingualTeaching({courseId,stage,content,privateSource=false,sourceText}:{
  courseId:string;stage:number;content?:LessonContent|null;privateSource?:boolean;sourceText?:string
 }){
  const normalize=(value:string)=>value.toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g,' ');
