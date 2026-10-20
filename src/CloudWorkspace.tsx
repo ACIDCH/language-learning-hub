@@ -219,7 +219,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
     {!configured ? <section className="cloud-panel" role="status">
       <h2>尚未启用云端连接</h2><p>请检查云端连接。</p>
     </section> : <>
-      <p role="status" className="cloud-status">{status}</p>
+      {session&&status&&<p role="status" className="cloud-status">{status}</p>}
       {!session ? <AccountAccess client={client!} onNotify={setStatus}/> : <section className="cloud-panel">
         <div className="cloud-flex"><h2>课程进度与笔记</h2>
           <button type="button" onClick={()=>{void client?.auth.signOut();setState({});setProgressReadyKey('');}}>退出账户</button></div>

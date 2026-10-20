@@ -47,7 +47,7 @@ export default function AudioCoverage({client,session,courseId}:{client:Supabase
    <div><strong>{m.referenced}</strong><span>第三方参考索引</span></div>
    <div><strong>{m.verified}</strong><span>正式音频审核标志</span></div>
   </div>
-  <p>当前课程 {courseId}：索引 {m.selectedAssets} 条，已上传可匹配的本人私人 MP3 {m.selectedUploads} 条；共有 {m.unmapped} 条索引尚未明确绑定课程。</p>
+  <p className="audio-coverage-line">本课关联 {m.selectedAssets} 条 · 可用私人音频 {m.selectedUploads} 条 · 未关联课程 {m.unmapped} 条</p>
 
   <button type="button" onClick={()=>setRevision(n=>n+1)}>重新检查索引与私人存储</button>
  </section>;
