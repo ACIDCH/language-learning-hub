@@ -15,6 +15,7 @@ import {useUserCloudSettings} from './useUserCloudSettings';
 import './cloud.css';
 import './v44.css';
 import './v44Integration.css';
+import './readingLayoutV45.css';
 const CloudWorkspace=lazy(()=>import('./CloudWorkspace'));
 const PersonalHub=lazy(()=>import('./PersonalHub'));
 const SpeechLab=lazy(()=>import('./SpeechLab'));
@@ -24,13 +25,14 @@ export default function AppShell(){
  const [preferences,setPreferences]=useState(()=>{const p=readPreferences();return window.innerWidth<=850?{...p,sidebar:false}:p;});
  const [session,setSession]=useState<Session|null>(null),[authReady,setAuthReady]=useState(!cloudClient),[authError,setAuthError]=useState('');
  const [notice,setNotice]=useState('');
+ const [navOpen,setNavOpen]=useState(false);
  const {clear}=useAISettings();
   const {sync:settingsSync,errorDetail:settingsError}=useUserCloudSettings(session,preferences,setPreferences);
  const params=route.params,course=COURSES.find(c=>c.id===params.get('course'));
  const page=routePage(route);
  const reader=course&&page!=='legacy';
  const section=params.get('section')||'appearance';
- function navigate(url:string){if(window.innerWidth<=850)setPreferences(p=>({...p,sidebar:false}));history.pushState({},'',url);setRoute(readRoute(location.href));window.scrollTo({top:0});}
+ function navigate(url:string){setNavOpen(false);if(window.innerWidth<=850)setPreferences(p=>({...p,sidebar:false}));history.pushState({},'',url);setRoute(readRoute(location.href));window.scrollTo({top:0});}
  useEffect(()=>{const pop=()=>setRoute(readRoute(location.href));window.addEventListener('popstate',pop);window.addEventListener('hashchange',pop);return ()=>{window.removeEventListener('popstate',pop);window.removeEventListener('hashchange',pop);};},[]);
  useEffect(()=>{
   if(!cloudClient)return;let alive=true;
@@ -51,13 +53,29 @@ export default function AppShell(){
    setRuntimeSpeechEndpoint(preferences.speechApiUrl);
   if(!persistPreferences(preferences))setNotice('浏览器不允许保存外观偏好；当前会话仍可使用。');
  },[preferences]);
- function update(p:Partial<Preferences>){setPreferences(old=>cleanPreferences({...old,...p}));}
+ useEffect(()=>{
+  const close=(e:KeyboardEvent)=>{if(e.key==='Escape')setNavOpen(false);};
+  document.addEventListener('keydown',close);
+  return()=>document.removeEventListener('keydown',close);
+ },[]);
+ function toggleNavigation(){
+  if(preferences.layout==='immersive'||preferences.layout==='focus'||window.innerWidth<=850||!preferences.sidebar){
+   setNavOpen(old=>!old);
+  }else{update({sidebar:false});}
+ }
+ function update(p:Partial<Preferences>){
+  if(p.layout&&p.layout!==preferences.layout)setNavOpen(false);
+  setPreferences(old=>cleanPreferences({...old,...p}));
+ }
  const crumbs=routeCrumbs(route),parent=parentRoute(route);
- return <div className={'v44 view-root'+(!preferences.sidebar?' rail-collapsed':'')} style={{'--readerWidth':preferences.readerWidth+'px','--reading-size':preferences.fontSize+'px','--reading-font':preferences.serif?'Georgia, "Noto Serif SC", serif':'inherit'} as CSSProperties}><a className="skip-link" href="#main-content">跳至主要内容</a>
- <aside className="rail" aria-label="主导航"><a className="rail-head" href="/" onClick={e=>{e.preventDefault();navigate('/');}}><span className="brand-symbol">L</span><span className="brand-name">Language Hub<small>LEARN WITH PURPOSE</small></span></a><div className="rail-group"><p className="rail-overline">你的学习空间</p>{[['/','▤','课程目录'],['/speech-lab','◉','跟读练习'],['/?page=ipa','ə','全文 IPA'],['/?page=favorites','◇','我的收藏'],['/cloud?panel=resources','▱','资料与导入'],['/cloud?panel=audio','♫','课程音频'],['/cloud?panel=foundation','◎','基础专项训练']].map(([url,icon,label])=><a className="nav-item" href={url} key={url} onClick={e=>{e.preventDefault();navigate(url);}}><span className="nav-icon">{icon}</span><span>{label}</span></a>)}</div><div className="rail-bottom"><a className="nav-item" href="/?page=settings&section=account" onClick={e=>{e.preventDefault();navigate('/?page=settings&section=account');}}>◯　{session?'我的账户':'登录'}</a><a className="nav-item" href="/?page=settings" onClick={e=>{e.preventDefault();navigate('/?page=settings');}}>⚙　总设置</a><p className="rail-account">{session?'个人学习空间':'访客可阅读全部学习内容'}</p></div></aside>
- <div className="work"><header className="topbar"><div className="header-left"><button className="round-action" aria-label="切换导航栏" aria-expanded={preferences.sidebar} onClick={()=>update({sidebar:!preferences.sidebar})}>☰</button><button className="round-action" aria-label="返回上一层" disabled={!parent} onClick={()=>{if(parent)navigate(parent);}}>←</button><nav className="breadcrumbs" aria-label="面包屑">{crumbs.map((c,i)=><span key={i}><a href={c.url} onClick={e=>{e.preventDefault();navigate(c.url);}} aria-current={i===crumbs.length-1?'page':undefined}>{c.label}</a>{i<crumbs.length-1&&' › '}</span>)}</nav></div><div className="topbar-right"><label>外观<select aria-label="网站外观" value={preferences.theme} onChange={e=>update({theme:e.target.value as Preferences['theme']})}><option value="academic">日常</option><option value="eye">护眼</option><option value="night">黑夜</option></select></label><label>布局<select aria-label="显示布局" value={preferences.layout} onChange={e=>update({layout:e.target.value as Preferences['layout']})}><option value="standard">标准</option><option value="focus">专注</option><option value="immersive">沉浸</option></select></label><button className="round-action" title="总设置" aria-label="打开总设置" onClick={()=>navigate('/?page=settings')}>⚙</button></div></header>
+ return <div className={'v44 view-root'+(!preferences.sidebar?' rail-collapsed':'')+(navOpen?' nav-drawer-open':'')} style={{'--readerWidth':preferences.readerWidth+'px','--reading-size':preferences.fontSize+'px','--reading-font':preferences.serif?'Georgia, "Noto Serif SC", serif':'inherit'} as CSSProperties}><a className="skip-link" href="#main-content">跳至主要内容</a>
+ {navOpen&&<button className="navigation-backdrop" type="button" tabIndex={-1}
+  aria-label="关闭导航菜单" onClick={()=>setNavOpen(false)}/>}
+ <aside className="rail" aria-label="主导航" id="global-navigation"><a className="rail-head" href="/" onClick={e=>{e.preventDefault();navigate('/');}}><span className="brand-symbol">L</span><span className="brand-name">Language Hub<small>LEARN WITH PURPOSE</small></span></a><div className="rail-group"><p className="rail-overline">你的学习空间</p>{[['/','▤','课程目录'],['/speech-lab','◉','跟读练习'],['/?page=ipa','ə','全文 IPA'],['/?page=favorites','◇','我的收藏'],['/cloud?panel=resources','▱','资料与导入'],['/cloud?panel=audio','♫','课程音频'],['/cloud?panel=foundation','◎','基础专项训练']].map(([url,icon,label])=><a className="nav-item" href={url} key={url} onClick={e=>{e.preventDefault();navigate(url);}}><span className="nav-icon">{icon}</span><span>{label}</span></a>)}</div><div className="rail-bottom"><a className="nav-item" href="/?page=settings&section=account" onClick={e=>{e.preventDefault();navigate('/?page=settings&section=account');}}>◯　{session?'我的账户':'登录'}</a><a className="nav-item" href="/?page=settings" onClick={e=>{e.preventDefault();navigate('/?page=settings');}}>⚙　总设置</a><p className="rail-account">{session?'个人学习空间':'访客可阅读全部学习内容'}</p></div></aside>
+ <div className="work"><header className="topbar"><div className="header-left"><button className="round-action" aria-label="切换导航栏" aria-controls="global-navigation" aria-expanded={navOpen||(preferences.sidebar&&preferences.layout==='standard'&&window.innerWidth>850)}
+ onClick={toggleNavigation}>☰</button><button className="round-action" aria-label="返回上一层" disabled={!parent} onClick={()=>{if(parent)navigate(parent);}}>←</button><nav className="breadcrumbs" aria-label="面包屑">{crumbs.map((c,i)=><span key={i}><a href={c.url} onClick={e=>{e.preventDefault();navigate(c.url);}} aria-current={i===crumbs.length-1?'page':undefined}>{c.label}</a>{i<crumbs.length-1&&' › '}</span>)}</nav></div><div className="topbar-right"><label>外观<select aria-label="网站外观" value={preferences.theme} onChange={e=>update({theme:e.target.value as Preferences['theme']})}><option value="academic">日常</option><option value="eye">护眼</option><option value="night">黑夜</option></select></label><label>布局<select aria-label="显示布局" value={preferences.layout} onChange={e=>update({layout:e.target.value as Preferences['layout']})}><option value="standard">标准</option><option value="focus">专注</option><option value="immersive">沉浸</option></select></label><button className="round-action" title="总设置" aria-label="打开总设置" onClick={()=>navigate('/?page=settings')}>⚙</button></div></header>
  <main id="main-content" className="page"><Suspense fallback={<p role="status">正在加载学习工具…</p>}>{!authReady?<p role="status">正在恢复账户会话…</p>:session&&settingsSync==='loading'?<p role="status">正在从云端恢复个人设置与 AI 配置…</p>:page==='settings'?<GlobalSettings key={section} preferences={preferences} update={update} section={section} session={session} settingsSync={settingsSync} settingsError={settingsError} navigate={navigate}/>:page==='legacy'?<div className="legacy-modules"><CloudWorkspace key={params.get('panel')} initialPanel={['learn','path','foundation','audio','speech','review','resources','ai'].includes(params.get('panel')||'')?params.get('panel') as 'learn':'resources'} initialCourse={course?.id}/></div>:reader?<CourseReader key={course.id+':'+(session?.user.id||'guest')} course={course} session={session} preferences={preferences} navigate={navigate} tab={params.get('tab')||'read'}/>:params.has('course')?<p role="alert">课程编号不存在。<button onClick={()=>navigate('/')}>返回课程目录</button></p>:page==='speech'?<SpeechLab language={preferences.language} session={session}/>:page==='ipa'?<IpaStudio/>:page==='favorites'?<Favorites key={session?.user.id||'guest'} uid={session?.user.id||'guest'} session={session} navigate={navigate}/>:page==='personal'&&(import.meta.env.DEV||import.meta.env.VITE_APP_MODE==='personal')?<PersonalHub/>:<CourseCatalog params={params} navigate={navigate}/>}</Suspense>
- {authError&&<p role="status">账户：{authError}；没有验证云端读写。</p>}{notice&&<p role="status">{notice}</p>}<footer className="v44-footer">Language Hub · V4.4　原创初稿仍待教学审校 · 免费基础学习不依赖 AI <a href="/?page=personal">本机个人资料工具</a></footer></main></div></div>;
+ {authError&&<p role="status">账户：{authError}；没有验证云端读写。</p>}{notice&&<p role="status">{notice}</p>}</main></div></div>;
 }
 function Favorites({uid,session,navigate}:{uid:string;session:Session|null;navigate:(p:string)=>void}){
  const [items,setItems]=useState<FavoriteSelection[]>(()=>readLocalFavorites(uid));

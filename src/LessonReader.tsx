@@ -22,14 +22,12 @@ export default function LessonReader({text,language='fr',courseId,stage,onChange
     <section className="ipa-reader-controls" aria-label="课程原文音标控制">
       <label><input type="checkbox" checked={showIpa}
         onChange={e=>setShowIpa(e.target.checked)}/>
-        为{showAll?'课程全文':'当前课程正文'}显示 IPA 国际音标
+        显示 IPA
       </label>
-      <p className="cloud-disclaimer">英语与法语原文由浏览器端自动生成参考音标，首次启用需加载语言包；
-        中文教学说明保留原样。音标不是人工核对的词典读音，同形异音词、法语连诵须结合上下文确认。</p>
       <IpaReference language={language}/>
     </section>
     {lesson.structured && <>
-      <p className="cloud-disclaimer">按六阶段分块阅读，原文完整保留。切换阶段后可点击页面下方“保存到 Supabase”同步学习位置。</p>
+
       <nav className="lesson-stages" aria-label="课程六阶段">
         {lesson.stages.map(s=><button type="button" key={s.index}
           className={s.index===safeStage?'stage-active':''}
@@ -39,7 +37,7 @@ export default function LessonReader({text,language='fr',courseId,stage,onChange
         </button>)}
       </nav>
       {lesson.preamble&&<details className="lesson-preamble">
-        <summary>查看课程前言及原始状态说明</summary>
+        <summary>课程导入</summary>
         <div className="lesson-paragraphs">{showIpa
           ? <IpaText onSpeak={value=>speakIpaText(value,language,ttsRate)} text={lesson.preamble} language={language}/>
           : lesson.preamble}</div>
@@ -64,7 +62,7 @@ export default function LessonReader({text,language='fr',courseId,stage,onChange
       {!showAll&&<button type="button" disabled={safeStage===0}
         onClick={()=>onChangeStage(Math.max(0,safeStage-1))}>← 上一阶段</button>}
       <button type="button" className="lesson-toggle" onClick={()=>setShowAll(v=>!v)}>
-        {showAll?'返回分阶段阅读':'查看完整原稿'}
+        {showAll?'分节阅读':'阅读全文'}
       </button>
       {!showAll&&<button type="button" disabled={safeStage===5}
         onClick={()=>onChangeStage(Math.min(5,safeStage+1))}>下一阶段 →</button>}
