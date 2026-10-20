@@ -39,8 +39,8 @@ export default function LearningOverview({client,session,courses,savedVersion,on
       </div>
       <button type="button" onClick={()=>onContinue(recent.id)}>继续学习 →</button>
      </>:
-     <p>尚未保存学习进度。完成一节练习后点击「保存到 Supabase」，这里会显示最近学习的课程。</p>}
+     <p>暂无学习记录。打开课程即可开始。</p>}
   </div>
-  <p className="cloud-disclaimer">以上数字只表示你保存的学习进度，不表示课程已完成教学审校。</p>
+
  </section>;
 }

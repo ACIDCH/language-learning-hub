@@ -213,9 +213,8 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
   }
   return <main className="cloud-workspace">
     <header className="cloud-head">
-      <div><p className="cloud-kicker">LANGUAGE HUB / CLOUD</p><h1>云端学习进度</h1>
-        <p>108 课云端学习、私人音频与进度记录。Google Drive 保留课程和音频原件。</p></div>
-      <a href="/" className="cloud-return">返回公开课程 →</a>
+      <div><p className="cloud-kicker">MY LEARNING</p><h1>学习工作区</h1></div>
+      <a href="/" className="cloud-return">返回课程 →</a>
     </header>
     {!configured ? <section className="cloud-panel" role="status">
       <h2>尚未启用云端连接</h2><p>请检查云端连接。</p>
@@ -306,7 +305,8 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
         </>}
         {activePanel==='speech'&&<>
           <SpeechPractice key={selected} lessonText={currentLesson?.content_body||''}
-            language={catalog.find(c=>c.id===selected)?.language||'fr'} accessToken={session.access_token}/><a href="/speech-lab#ipa-studio">全文 IPA 工具 →</a>
+            language={catalog.find(c=>c.id===selected)?.language||'fr'} session={session}
+            accessToken={session.access_token} variant="standalone"/><a href="/speech-lab#ipa-studio">全文 IPA 工具 →</a>
         </>}
         {activePanel==='review'&&<>
           <StageCoverage client={client!} session={session} onSelect={chooseCourse}/>
