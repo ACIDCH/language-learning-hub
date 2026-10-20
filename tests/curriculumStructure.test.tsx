@@ -15,11 +15,12 @@ afterEach(()=>{cleanup();});
 const course=COURSES.find(x=>x.id==='en-ielts-listening-u01')!;
 const data:LessonContent={text:'Source text stays immutable.',sources:[],appendices:[],vocabulary:english.vocabulary,draft:english as LessonDraft};
 describe('semantic curriculum without broken full-page IPA',()=>{
- it('exposes six real teaching sections from authored fields instead of concatenated long draft',()=>{
+ it('exposes five teaching sections without a separate pronunciation stage',()=>{
   const onChangeStage=vi.fn();
   const {rerender}=render(<StructuredLesson content={data} course={course} stage={0} onChangeStage={onChangeStage} onOpenSpeech={vi.fn()} ttsRate={.85}/>);
   const tabs=screen.getByRole('navigation',{name:'本课教学环节'});
-  expect(tabs.querySelectorAll('button')).toHaveLength(6);
+  expect(tabs.querySelectorAll('button')).toHaveLength(5);
+  expect(screen.queryByRole('button',{name:/发音/})).toBeNull();
   expect(screen.getByText(english.context)).toBeTruthy();
   fireEvent.click(screen.getByRole('button',{name:/02规则与例句/}));
   expect(onChangeStage).toHaveBeenCalledWith(1);
@@ -69,8 +70,7 @@ describe('semantic curriculum without broken full-page IPA',()=>{
   expect(sample.length).toBeLessThanOrEqual(185);
   expect(sample).toContain('To begin with');
   const {container}=render(<LessonReader text={long} language="en" courseId="en-ielts-listening-u01" stage={0} onChangeStage={vi.fn()}/>);
-  fireEvent.click(screen.getByRole('checkbox',{name:'显示 IPA'}));
-  expect(screen.getByLabelText('参考国际音标与课程原文').textContent?.length).toBeLessThan(210);
+  expect(screen.queryByRole('checkbox',{name:'显示 IPA'})).toBeNull();
   expect(container.querySelector('.lesson-content-flow')?.textContent).toContain('Extended essay paragraphs');
  });
 });
