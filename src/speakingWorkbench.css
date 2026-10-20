@@ -56,7 +56,7 @@
 .selection-workbench .speaking-workbench .ref-counts{grid-template-columns:repeat(2,minmax(0,1fr))}
 .selection-workbench .phoneme-gradient-tile{min-width:63px;flex-basis:63px}
 .v44 .reader-tools.selection-workbench{overflow-y:auto;max-height:calc(100vh - 100px)}
-@media(min-width:1200px){.v44 .reader-layout:not(.tools-hidden){grid-template-columns:minmax(0,1fr) minmax(380px,47%)}}
+/* The reader container query owns its right panel width. */
 @media(max-width:750px){.speaking-workbench-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.speaking-lab-heading{align-items:start}.speaking-workbench-heading h2 small{display:block;margin:3px 0 0}.v44 .reader-tools.selection-workbench{position:static;max-height:none}}
 @media(prefers-reduced-motion:reduce){.speaking-workbench *{transition:none!important}}
 

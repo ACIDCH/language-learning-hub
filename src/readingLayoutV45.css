@@ -192,3 +192,17 @@ body[data-view-mode="immersive"] .v44.nav-drawer-open>.rail{
  .v44:not(.nav-drawer-open)>.rail{transform:translateX(-110%)!important}
  .v44.nav-drawer-open>.rail{transform:none!important}
 }
+
+/* These rules deliberately outrank legacy speaking workbench sticky overrides. */
+@container lesson (min-width:940px){
+ .v44 .reader-layout .reader-tools.selection-workbench{
+  position:sticky!important;top:88px!important;
+  max-height:calc(100dvh - 101px)!important;
+  overflow-y:auto!important;overscroll-behavior:contain;
+ }
+}
+@container lesson (max-width:939px){
+ .v44 .reader-layout .reader-tools.selection-workbench{
+  position:static!important;max-height:none!important;overflow-y:visible!important;
+ }
+}
