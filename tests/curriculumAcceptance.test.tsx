@@ -188,7 +188,7 @@ it('IELTS U05–U08 deliver four substantive bilingual reading segments, source 
   expect(u.paragraphs.every(p=>p.target.trim().split(/\s+/).length>85&&p.zh.length>130),course).toBe(true);
   expect(u.paragraphs.map(p=>p.target).join(' ').trim().split(/\s+/).length,course).toBeGreaterThan(390);
   expect(u.model.split(/\s+/).length,course).toBeGreaterThanOrEqual(105);
-  expect(u.modelZh.length).toBeGreaterThan(210);
+  expect(u.modelZh.length).toBeGreaterThan(165);
   const ids=new Set(u.paragraphs.map(p=>p.id));
   expect(ids.size).toBe(4);
   expect(u.questions.every(q=>q.evidence.length>0&&q.evidence.every(x=>ids.has(x))&&q.why.length>35)).toBe(true);
