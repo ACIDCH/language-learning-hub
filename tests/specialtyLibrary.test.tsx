@@ -243,8 +243,8 @@ describe('source-checked progression from grammar to vocabulary and longer texts
  it('orders the progression by prerequisite and connects adjacent and paired studies',()=>{
   const grammar=orderedSpecialties(SPECIALTY_LESSONS.filter(u=>u.language==='fr'&&u.type==='grammar'));
   expect(grammar.map(u=>u.id)).toEqual([
-   'fr-etre','fr-avoir','fr-possessive-determiners-a1','fr-articles','fr-er','fr-questions-a1','fr-adjective-agreement-a1',
-   'fr-futur-proche-a1','fr-imperative-directions-a1','fr-articles-partitive','fr-passe-compose','fr-imparfait-a2','fr-object-pronouns-a2','fr-comparisons-a2','fr-futur-simple-a2','fr-negative-scope-a2'
+   'fr-etre','fr-avoir','fr-possessive-determiners-a1','fr-articles','fr-er','fr-questions-a1','fr-imperative-directions-a1','fr-adjective-agreement-a1',
+   'fr-futur-proche-a1','fr-articles-partitive','fr-passe-compose','fr-imparfait-a2','fr-object-pronouns-a2','fr-comparisons-a2','fr-futur-simple-a2','fr-negative-scope-a2'
   ]);
   const current=grammar.find(u=>u.id==='fr-er')!;
   expect(adjacentSpecialties(current,SPECIALTY_LESSONS).next?.id).toBe('fr-questions-a1');
