@@ -97,20 +97,36 @@ export const EXPANDED_SPECIALTIES:SpecialtyLesson[]=[
   s('04 从原句到忠实摘要的四步','完整改写先识别主语和说话者，再提取论点，再保留逻辑关系与证据强度，最后核对有没有额外添加事实。结构词如 however 和 in contrast 需要体现真正的转折而不是机械替换。','who says what → measured variable → strength → limitation',[
    e('Room occupancy reveals patterns of facility use.','房间占用情况可以揭示设施使用模式。','只描述可观察数据。'),
    e('However, those patterns alone cannot establish an educational benefit.','然而，单凭这些模式无法确立教育收益。','however 连接对照；cannot 保留局限。'),
-   e('Further evidence would be needed to evaluate learning outcomes.','评估学习成果仍需要进一步证据。','提出证据需求而非编造研究结果。')],'同义改写不是换几个单词：忽略否定词、数量限制和语气都会改变研究含义。')
+   e('Further evidence would be needed to evaluate learning outcomes.','评估学习成果仍需要进一步证据。','提出证据需求而非编造研究结果。')],'同义改写不是换几个单词：忽略否定词、数量限制和语气都会改变研究含义。'),
+
+  s('05 五格讲座笔记：把提示词转为逻辑结构',
+    '听到 To begin with、Next、However、To sum up 时，应识别它们提示的篇章功能，再判断紧接着的内容属于研究问题、观察方法、说明例子、局限还是结论。五格笔记不是逐词速记，而是对讲者论证关系的概括；结构提示词本身不构成研究证据。',
+    'Question → Observation → Illustration → Limitation → Cautious conclusion',[
+     e('The question is whether additional study spaces lead to better learning.','研究问题是增设学习空间是否能改善学习效果。','whether 保留尚待回答的问题，不预设结论。'),
+     e('Room occupancy may show when facilities are being used.','房间占用情况可以反映设施何时有人使用。','这是一种使用情况指标，不直接衡量学习成果。'),
+     e('An example illustrates why students may need rooms at different times.','例子说明为什么学生可能在不同时段需要房间。','举例解释差异，不能当作已完成的因果测量。'),
+     e('However, occupancy alone cannot establish improved grades.','然而，单凭占用情况无法证明成绩提高。','however 引出解释的证据边界。'),
+     e('The conclusion calls for appropriate evidence about learning outcomes.','结论强调需要有关学习成果的恰当证据。','总结的是可支持的结论，而非夸大既有结果。')
+    ],'不能仅因为听到 To sum up 就把后续陈述改写成“研究证明”；也不能凭 however 把例子当成反证。')
  ],
  questions:[
   {question:'may、might、could 是否总能排成确定性固定由高到低？',answer:'不能。',why:'语气强弱依语境、语调及使用者判断，不能机械转换成固定概率。'},
   {question:'改写且保留证据局限：Occupancy does not measure academic achievement.',answer:'Usage figures cannot by themselves establish students’ academic achievement.',why:'保留否定及测量边界，不把占用量当成成绩结果。'},
-  {question:'“讲者认为” 与 “数据显示” 各应采用什么主语框架？',answer:'The lecturer suggests / The data indicate',why:'不同主语清楚表达陈述与观察的来源。'}
+  {question:'“讲者认为” 与 “数据显示” 各应采用什么主语框架？',answer:'The lecturer suggests / The data indicate',why:'不同主语清楚表达陈述与观察的来源。'},
+  {question:'按讲座逻辑给出五格笔记的栏目，并说明 occupancy 应放在哪一格。',answer:'Question → Observation / Method → Illustration → Limitation → Conclusion；occupancy 属于观察对象或指标。',why:'占用情况说明如何观察设施使用，不能直接归入学习成绩结论。'}
  ],
- output:'写 110—140 词学术摘要：明确讲者提出的问题、可观察变量、至少两项限定条件和谨慎结论。再标出文中所有表明证据强度的词。',
+ output:'完成一篇 100–130 个英语单词的讲座摘要：按研究问题→观察方法→说明例子→局限→谨慎结论组织，写出至少两处限定语，并标出表示信息关系的提示语。',
  model:[
-  e('The lecture examines whether improved access to study spaces contributes to better learning.','讲座探讨改善学习空间可用性是否促进学习。','whether 表示问题，不是确定结论。'),
-  e('Although occupancy can be observed, it does not directly measure academic outcomes.','虽然可以观察占用情况，但它不直接测量学业结果。','保留方法与结果的区分。'),
-  e('The speaker therefore calls for more appropriate evidence before drawing causal conclusions.','因此讲者主张在作出因果结论前先收集更合适的证据。','态度归属 + 审慎限制。')
+  e('The lecture examines whether providing more study spaces actually leads to better learning outcomes.','讲座探讨提供更多学习空间是否真正改善学习成果。','whether 保留研究问题的开放性。'),
+  e('To begin with, the speaker distinguishes demand for rooms from evidence of educational benefit.','首先，讲者区分对房间的需求与教育收益的证据。','to begin with 标记论证起点；两种信息不可等同。'),
+  e('The first section explains that room occupancy can be observed at different times.','第一部分说明可以在不同时段观察房间的占用情况。','occupancy 是观察指标。'),
+  e('Next, an illustrative example shows how students may have different schedules and preferences.','接着，说明性的例子展示学生的时间安排和偏好可能不同。','illustrative example 是解释而非独立实验结论。'),
+  e('However, an example does not establish how much learning has improved, or whether it improved at all.','然而，例子无法证明学习改善的程度，甚至无法证明学习是否改善。','保留证据局限，不把例子提升为学习结果。'),
+  e('Occupancy figures can indicate when facilities are busy, but they do not directly measure academic achievement.','占用数据可以显示设施何时繁忙，但不能直接衡量学业表现。','but 引出指标与结果之间的界限。'),
+  e('For that reason, any interpretation should remain limited to the information that was actually collected.','因此，任何解释都应限制在实际收集的信息范围内。','should remain limited to 明确证据适用范围。'),
+  e('To conclude, the lecture calls for appropriate evidence before making claims about the effects of additional study spaces.','最后，讲座强调在断言新增学习空间的效果前应收集合适的证据。','结论以提出证据需求收尾，没有虚构成绩改善数据。')
  ],
- referenceUrls:['https://dictionary.cambridge.org/grammar/british-grammar/may-might-and-could','https://dictionary.cambridge.org/grammar/british-grammar/modal','https://dictionary.cambridge.org/grammar/british-grammar/discourse-'],
+ referenceUrls:['https://dictionary.cambridge.org/grammar/british-grammar/may-might-and-could','https://dictionary.cambridge.org/grammar/british-grammar/modal','https://www.teachingenglish.org.uk/professional-development/teachers/teaching-knowledge-database/d-h/discourse-markers'],
  sourceNote:'从现有学术讲座单元扩展的 C1 学术表达专题；外部资料用于核验 modality 与话语标记，不将新例句标作讲座原文。'
 },
 {
