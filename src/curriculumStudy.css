@@ -189,3 +189,54 @@
 .v44 .curriculum-stage .curriculum-stack>section{margin:0}
 .v44 .curriculum-stage .curriculum-stack>section+section{padding-top:14px;border-top:1px solid var(--border)}
 .v44 .curriculum-stage .curriculum-reading{line-height:1.9;white-space:pre-wrap}
+
+
+/* Real mapped grammar/vocabulary is read here, not on a separate screen. */
+.v44 .course-specialty-inline{display:grid;gap:24px;min-width:0}
+.v44 .course-specialty-topic{min-width:0;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.v44 .course-specialty-topic:last-child{padding-bottom:0;border:0}
+.v44 .course-specialty-topic-title{margin-bottom:14px}
+.v44 .course-specialty-topic-title h3{font-size:clamp(17px,1.8vw,21px);margin:0 0 6px}
+.v44 .course-specialty-topic-title p{margin:0;color:var(--textMuted);line-height:1.75}
+.v44 .course-specialty-prerequisite{font-size:12px;color:var(--textMuted);margin:12px 0}
+.v44 .course-specialty-prerequisite summary{cursor:pointer}
+.v44 .course-specialty-prerequisite p{padding:4px 0}
+.v44 .course-specialty-chapters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:15px 0 20px}
+.v44 .course-specialty-chapters button{width:100%;text-align:left;white-space:normal;min-height:46px;line-height:1.55}
+.v44 .course-specialty-chapters button[aria-current="step"]{border-color:var(--accent);color:var(--accent);background:var(--accentTint);font-weight:700}
+.v44 .course-specialty-reading{min-width:0}
+.v44 .course-specialty-reading h4{font-size:clamp(15px,1.55vw,18px);line-height:1.5;margin:0 0 14px}
+.v44 .course-specialty-reading>p{line-height:1.9;max-width:92ch}
+.v44 .course-specialty-pattern{background:var(--paneSoft);padding:11px 15px;border-radius:9px;margin:15px 0}
+.v44 .course-specialty-pattern strong{font-size:12px;color:var(--textMuted)}
+.v44 .course-specialty-pattern p{white-space:normal;overflow-wrap:anywhere;font-weight:600;margin:8px 0 0}
+.v44 .course-specialty-table{margin:17px 0;max-width:100%;min-width:0}
+.v44 .course-specialty-table h5{font-size:13px;margin:0 0 9px}
+.v44 .course-specialty-table-scroll{overflow-x:auto;width:100%;min-width:0}
+.v44 .course-specialty-table table{border-collapse:collapse;width:100%;font-size:13px}
+.v44 .course-specialty-table th,.v44 .course-specialty-table td{border:1px solid var(--border);text-align:left;padding:10px 12px;min-width:86px}
+.v44 .course-specialty-table th{background:var(--paneSoft);font-weight:700}
+.v44 .course-specialty-table-note{font-size:12px;color:var(--textMuted)!important}
+.v44 .course-specialty-pairs{display:grid;gap:0;border-top:1px solid var(--border);margin:20px 0}
+.v44 .course-specialty-pair{padding:13px 2px;border-bottom:1px solid var(--border)}
+.v44 .course-specialty-phrase{display:flex;align-items:start;justify-content:space-between;gap:12px}
+.v44 .course-specialty-phrase strong{font-size:clamp(14px,1.4vw,17px);line-height:1.7}
+.v44 .course-specialty-phrase button{flex:0 0 auto;min-height:30px;padding:4px 9px}
+.v44 .course-specialty-pair>p{font-size:14px;line-height:1.7;margin:4px 0}
+.v44 .course-specialty-pair small{display:block;color:var(--textMuted);font-size:12px;line-height:1.65}
+.v44 .course-specialty-caution{border-left:2px solid var(--accent);padding:8px 14px;margin:14px 0;color:var(--text)}
+.v44 .course-specialty-caution strong{font-size:12px}
+.v44 .course-specialty-caution p{margin:5px 0 0;line-height:1.75}
+.v44 .course-specialty-questions{margin:20px 0 0;border-top:1px solid var(--border);padding-top:16px;display:grid;gap:12px}
+.v44 .course-specialty-question{display:grid;gap:8px;border-bottom:1px solid var(--border);padding:3px 0 12px}
+.v44 .course-specialty-question label{font-weight:650;font-size:13px;line-height:1.7}
+.v44 .course-specialty-question textarea{box-sizing:border-box;width:100%;resize:vertical;min-height:70px;
+ background:var(--paneSoft);border:1px solid var(--border);border-radius:9px;padding:10px;color:var(--text);font:inherit}
+.v44 .course-specialty-question button{justify-self:start}
+.v44 .course-specialty-answer{padding:11px 14px;background:var(--paneSoft);border-radius:9px;font-size:13px;line-height:1.7}
+.v44 .course-specialty-answer p{margin:6px 0 0}
+@media(max-width:640px){
+ .v44 .course-specialty-chapters{grid-template-columns:minmax(0,1fr)}
+ .v44 .course-specialty-table th,.v44 .course-specialty-table td{padding:8px 10px;min-width:75px}
+ .v44 .course-specialty-pair{padding:12px 0}
+}
