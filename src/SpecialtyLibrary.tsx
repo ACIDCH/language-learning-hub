@@ -2,6 +2,7 @@ import {useEffect,useMemo,useState} from 'react';
 import {COURSES,courseRoute,languageName} from './v44Courses';
 import {SPECIALTY_LESSONS,specialtyRoute,type SpecialtyLesson,type SpecialtyKind,type SpecialtyLanguage,specialtyQuality} from './specialtyLibrary';
 import {speakIpaText} from './IpaText';
+import {orderedSpecialties,adjacentSpecialties,pairedSpecialties} from './specialtyLearningPath';
 
 const LEVELS=['A1','A2','B1','B2','C1'] as const;
 function NotesPractice({unit}:{unit:SpecialtyLesson}){
@@ -36,9 +37,11 @@ function NotesPractice({unit}:{unit:SpecialtyLesson}){
   </section>
  </div>;
 }
-function TopicArticle({unit,navigate,returnPath,onSelectSection}:{unit:SpecialtyLesson;navigate:(p:string)=>void;returnPath:string;onSelectSection:(index:number)=>void}){
+function TopicArticle({unit,navigate,returnPath,onSelectSection,onOpenSpecialty}:{unit:SpecialtyLesson;navigate:(p:string)=>void;returnPath:string;onSelectSection:(index:number)=>void;onOpenSpecialty:(next:SpecialtyLesson)=>void}){
  const [complete,setComplete]=useState<Record<number,boolean>>({});
  const finished=unit.sections.filter((_,i)=>complete[i]).length;
+ const {previous,next}=adjacentSpecialties(unit,SPECIALTY_LESSONS);
+ const related=pairedSpecialties(unit,SPECIALTY_LESSONS);
  return <article className="specialty-textbook" aria-label={unit.title}>
   <div className="specialty-article-head">
    <div><span className="specialty-kicker">{unit.language==='fr'?'FRANÇAIS':'ENGLISH'} · {unit.level} · {unit.type==='grammar'?'GRAMMAR':'VOCABULARY'}</span>
@@ -71,6 +74,12 @@ function TopicArticle({unit,navigate,returnPath,onSelectSection}:{unit:Specialty
      onChange={e=>setComplete(o=>({...o,[i]:e.target.checked}))}/>掌握本节</label>
   </section>)}
   <NotesPractice key={unit.id} unit={unit}/>
+  <nav className="specialty-learning-links" aria-label="前后专题与配套学习">
+   {previous&&<button type="button" onClick={()=>onOpenSpecialty(previous)}>← 上一专题：{previous.title}</button>}
+   {next&&<button type="button" onClick={()=>onOpenSpecialty(next)}>下一专题：{next.title} →</button>}
+   {related.map(u=><button type="button" key={u.id} onClick={()=>onOpenSpecialty(u)}>
+    关联{u.type==='grammar'?'语法':'词汇'}：{u.title} ↗</button>)}
+  </nav>
   <details className="specialty-references"><summary>参考资料与关联教材</summary>
 
    <ul>{unit.referenceUrls.map(url=><li key={url}><a target="_blank" rel="noopener noreferrer" href={url}>{new URL(url).hostname} — 参考资料</a></li>)}</ul>
@@ -103,8 +112,8 @@ export default function SpecialtyLibrary({params,navigate}:{params:URLSearchPara
  const filterLang=params.get('language')==='fr'||params.get('language')==='en'?params.get('language') as SpecialtyLanguage:'all';
  const [level,setLevel]=useState<string>('all');
  const [query,setQuery]=useState('');
- const filtered=useMemo(()=>SPECIALTY_LESSONS.filter(u=>u.type===kind&&(filterLang==='all'||u.language===filterLang)&&
- (level==='all'||u.level===level)&&(u.title+' '+u.subtitle+' '+u.objective+' '+u.sections.map(s=>s.title).join(' ')).toLowerCase().includes(query.toLowerCase())),[kind,filterLang,level,query]);
+ const filtered=useMemo(()=>orderedSpecialties(SPECIALTY_LESSONS.filter(u=>u.type===kind&&(filterLang==='all'||u.language===filterLang)&&
+ (level==='all'||u.level===level)&&(u.title+' '+u.subtitle+' '+u.objective+' '+u.sections.map(s=>s.title).join(' ')).toLowerCase().includes(query.toLowerCase()))),[kind,filterLang,level,query]);
  const requested=params.get('topic');
  const lesson=filtered.find(x=>x.id===requested)||filtered[0];
  const related=COURSES.find(c=>c.id===lesson?.unitLink);
@@ -136,6 +145,10 @@ export default function SpecialtyLibrary({params,navigate}:{params:URLSearchPara
  const permittedReturns=related?['read','ipa','speech'].map(tab=>courseRoute(related,tab)):[];
  const returnPath=returnTo&&permittedReturns.includes(returnTo)?returnTo:
   related?courseRoute(related):'/';
+ const openSpecialty=(target:SpecialtyLesson)=>{
+  setLevel('all');setQuery('');
+  navigate(specialtyRoute(target.type,target.language,target.id,target.unitLink===lesson?.unitLink?returnTo||undefined:undefined));
+ };
  return <section className="specialty-page" aria-label="语法与词汇专题学习">
   <header className="specialty-heading-row">
    <h1>{filterLang==='fr'?'法语 · ':filterLang==='en'?'英语 · ':''}{kind==='grammar'?'语法专题':'词汇专题'}</h1>
@@ -157,7 +170,7 @@ export default function SpecialtyLibrary({params,navigate}:{params:URLSearchPara
     <p className="specialty-total">{filtered.length} 个有正文与练习的专题</p>
     <div className="specialty-topic-list">{filtered.map(u=><button type="button" key={u.id}
      aria-current={lesson?.id===u.id?'page':undefined} className={lesson?.id===u.id?'active':''}
-     onClick={()=>navigate(specialtyRoute(kind,filterLang==='all'?undefined:filterLang,u.id))}>
+     onClick={()=>openSpecialty(u)}>
       <small>{languageName(u.language)} · {u.level}</small><strong>{u.title}</strong>
       <span>{u.sections.length} 个知识点 · {u.questions.length} 组自测</span></button>)}</div>
 
@@ -165,7 +178,7 @@ export default function SpecialtyLibrary({params,navigate}:{params:URLSearchPara
    <div className="specialty-main">
     {lesson&&specialtyQuality(lesson)?<>
      <TopicArticle key={lesson.id} unit={lesson} navigate={navigate} returnPath={returnPath}
-      onSelectSection={index=>setSelectedChapter({topic:lesson.id,index})}/>
+      onSelectSection={index=>setSelectedChapter({topic:lesson.id,index})} onOpenSpecialty={openSpecialty}/>
      <StudyCompanion key={lesson.id+'-helper'} unit={lesson} sectionIndex={sectionIndex}/>
     </>:<div className="panel specialty-empty">
      <h2>没有匹配的专题</h2><p>尝试切换语言、等级或关键词。</p>
