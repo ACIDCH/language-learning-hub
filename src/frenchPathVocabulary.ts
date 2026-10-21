@@ -55,7 +55,9 @@ export const FRENCH_PATH_VOCABULARY:SpecialtyLesson[]=[
  e('Le matin, je me lève à sept heures.','早晨我七点起床。','时间和动作。'),
  e('Puis je prends mon petit déjeuner.','之后我吃早餐。','时间连接。'),
  e('À huit heures, je vais en cours.','八点我去上课。','明确的时刻。'),
+ e('À midi, je déjeune avec mes camarades.','中午我和同学一起吃午饭。','时间段从早晨过渡到中午。'),
  e("J'étudie le français et je pratique la langue avec mes amis.",'我学习法语并和朋友练习这门语言。','区分学习和实践。'),
+ e('Après les cours, je rentre chez moi.','课后我回家。','补充课堂结束与回家这一生活步骤。'),
  e('Le soir, je révise souvent mes notes.','晚上我经常复习笔记。','复习 + 频率。'),
  e('Enfin, je me couche vers onze heures.','最后我大约十一点睡觉。','完成日常段落。')
  ],
@@ -169,7 +171,9 @@ export const FRENCH_PATH_VOCABULARY:SpecialtyLesson[]=[
  model:[
  e('Le mois dernier, je suis parti à Bordeaux.','上个月我出发去了波尔多。（男性叙述者）','复合过去时说明出行事件。'),
  e('J’ai pris le train tôt le matin.','我一早乘坐火车。','交通搭配。'),
+ e('Je suis arrivé à midi.','我中午抵达。（男性叙述者）','交代抵达时间；arriver 用 être。'),
  e('Ensuite, j’ai visité un musée et le vieux centre-ville.','随后我参观了一座博物馆和旧城区。','连续经历。'),
+ e('J’ai pris quelques photos pendant la visite.','参观期间我拍了几张照片。','补充行程中的具体活动。'),
  e('Malheureusement, il a plu dans l’après-midi.','可惜下午下雨了。','说明行程变化。'),
  e('Mais j’ai rencontré une amie et nous avons pris un café.','但我见到了一位朋友，我们一起喝了咖啡。','转折及补充。'),
  e('Finalement, j’ai passé un excellent week-end.','最终我度过了一个很棒的周末。','总结体验。')
@@ -226,7 +230,10 @@ export const FRENCH_PATH_VOCABULARY:SpecialtyLesson[]=[
  e('À mon avis, le bus est plus économique.','我认为公交车更经济。','开头立场。'),
  e('Je le préfère parce qu’il coûte moins cher.','我更喜欢它，因为它价格低。','原因。'),
  e('Cependant, le taxi est parfois plus rapide.','然而出租车有时更快。','承认不同方面。'),
+ e('Le trajet en bus prend plus de temps aux heures de pointe.','高峰期乘公交车更费时间。','用具体情境解释速度差异。'),
  e('Je comprends cet argument, mais le prix compte aussi.','我理解这一点，但价格也很重要。','回应他人的观点。'),
+ e('En outre, il est plus facile de prévoir les dépenses en bus.','此外，乘公交车更容易预估开支。','添加新的支持理由。'),
+ e('Pour un trajet urgent, le taxi peut néanmoins être préférable.','如果行程紧急，出租车可能仍是更好的选择。','承认相反选择有其适用条件。'),
  e('On pourrait donc prendre le bus si nous avons assez de temps.','所以如果时间充裕，我们可以乘公交车。','带条件的建议。')
  ],
  referenceUrls:['https://grammarmama.com/learn/french/','https://www.gymglish.com/en/frantastique/french-grammar'],
