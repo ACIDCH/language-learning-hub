@@ -64,6 +64,11 @@ try{
    ['specialtyGrammar','/?page=specialties&type=grammar&language=fr&topic=fr-etre','.specialty-textbook'],
    ['specialtyVocabulary','/?page=specialties&type=vocabulary&language=en&topic=en-study-vocab','.specialty-textbook'],
    ['frenchVerbs','/?page=specialties&type=grammar&language=fr&topic=fr-er','.specialty-grammar-table'],
+   ['frImparfait','/?page=specialties&type=grammar&language=fr&topic=fr-imparfait-a2','.specialty-grammar-table'],
+   ['frFuture','/?page=specialties&type=grammar&language=fr&topic=fr-futur-proche-a1','.specialty-grammar-table'],
+   ['frDaily','/?page=specialties&type=vocabulary&language=fr&topic=fr-routines-lexicon','.specialty-grammar-table'],
+   ['enTask1','/?page=specialties&type=vocabulary&language=en&topic=en-task1-trend-lexicon','.specialty-grammar-table'],
+   ['enRelative','/?page=specialties&type=grammar&language=en&topic=en-relative-clauses','.specialty-textbook'],
   ['speech','/speech-lab','.speaking-lab-columns'],
   ['ipa','/?page=ipa','.ipa-studio'],
   ['settings','/?page=settings&section=appearance','.settings-content'],
@@ -94,7 +99,7 @@ try{
     const study=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
     writeFileSync(output+'/'+size+'-'+name+'-reading.png',Buffer.from(study.data,'base64'));
    }
-    if(name==='specialtyGrammar'||name==='specialtyVocabulary'||name==='frenchVerbs'){
+    if(['specialtyGrammar','specialtyVocabulary','frenchVerbs','frImparfait','frFuture','frDaily','enTask1','enRelative'].includes(name)){
      const quality=await js("(function(){const unit=document.querySelector('.specialty-textbook');return {chapters:unit?.querySelectorAll('.specialty-chapter').length||0,chars:(unit?.innerText||'').length,back:!!unit?.querySelector('.specialty-course-link'),overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-innerWidth};})()");
      if(quality.chapters<3||quality.chars<600||!quality.back||quality.overflow>5)
       problems.push(size+' '+name+' empty or overflowing chapter: '+JSON.stringify(quality));
@@ -107,6 +112,12 @@ try{
      }
      if(name==='frenchVerbs'&&geom.tableRows!==6)
       problems.push(size+' French six-person table missing '+JSON.stringify(geom));
+     if(['frImparfait','frFuture','frDaily'].includes(name)&&geom.tableRows!==6)
+      problems.push(size+' French six-row table missing '+name+': '+JSON.stringify(geom));
+     if(name==='enTask1'&&geom.tableRows!==8)
+      problems.push(size+' Task1 should show trend pairs and 4-row synthetic chart data '+JSON.stringify(geom));
+     if(!document.querySelector('.specialty-learning-links'))
+      problems.push(size+' '+name+' missing prerequisite learning path');
     }
    if(name==='courseIpa'){
     const phonetic=await js("(function(){const t=document.querySelector('.ipa-text'),s=document.querySelector('.ipa-study-original');return {chunk:s.textContent.length,ipa:!!t,source:!!document.querySelector('.ipa-study-full')};})()");
