@@ -4,10 +4,11 @@ import {speakIpaText} from './IpaText';
 import './curriculumStudy.css';
 
 /** Shows a complete, authored specialty *inside* its mapped main-course stage. */
-function CourseSpecialtyTopic({unit,rate}:{unit:SpecialtyLesson;rate:number}){
+function CourseSpecialtyTopic({unit,rate,onSaveOutput}:{unit:SpecialtyLesson;rate:number;onSaveOutput?:(answer:string)=>void}){
  const [active,setActive]=useState(0);
  const [shown,setShown]=useState<Record<number,boolean>>({});
  const [answer,setAnswer]=useState<Record<number,string>>({});
+ const [writing,setWriting]=useState('');
  const part=unit.sections[active];
  return <section className="course-specialty-topic" aria-label={unit.title}>
   <header className="course-specialty-topic-title"><h3>{unit.title}</h3><p>{unit.objective}</p></header>
@@ -45,12 +46,32 @@ function CourseSpecialtyTopic({unit,rate}:{unit:SpecialtyLesson;rate:number}){
     {shown[i]&&<div className="course-specialty-answer"><strong>{q.answer}</strong><p>{q.why}</p></div>}
    </div>)}
   </section>
+  <details className="course-specialty-production"><summary>综合表达与范文</summary>
+   <p>{unit.output}</p>
+   <label htmlFor={'course-output-'+unit.id}>我的完整表达</label>
+   <textarea id={'course-output-'+unit.id} rows={7} value={writing} onChange={event=>setWriting(event.target.value)}/>
+   {onSaveOutput&&<button type="button" disabled={!writing.trim()} onClick={()=>onSaveOutput(writing)}>加入本课笔记</button>}
+   <details><summary>查看中外文范文</summary>
+    {unit.modelParagraphStarts
+     ?unit.modelParagraphStarts.map((start,i)=>{
+      const group=unit.model.slice(start,unit.modelParagraphStarts?.[i+1]??unit.model.length);
+      return <div className="course-specialty-model-paragraph" key={i}>
+       <p lang={unit.language}>{group.map(x=>x.target).join(' ')}</p>
+       <p lang="zh-Hans">{group.map(x=>x.zh).join('')}</p>
+      </div>;
+     })
+     :unit.model.map((line,i)=><div className="course-specialty-model-pair" key={i}>
+       <p lang={unit.language}>{line.target}</p><p lang="zh-Hans">{line.zh}</p>
+       <small>{line.analysis}</small>
+      </div>)}
+   </details>
+  </details>
  </section>;
 }
-export default function CourseSpecialtyStage({courseId,kind,rate}:{courseId:string;kind:SpecialtyKind;rate:number}){
+export default function CourseSpecialtyStage({courseId,kind,rate,onSaveOutput}:{courseId:string;kind:SpecialtyKind;rate:number;onSaveOutput?:(answer:string)=>void}){
  const matches=linkedSpecialties(kind,courseId);
  if(!matches.length)return null;
  return <div className="course-specialty-inline" aria-label={kind==='grammar'?'本课完整语法教材':'本课完整词汇教材'}>
-  {matches.map(unit=><CourseSpecialtyTopic key={unit.id} unit={unit} rate={rate}/>)}
+  {matches.map(unit=><CourseSpecialtyTopic key={unit.id} unit={unit} rate={rate} onSaveOutput={onSaveOutput}/>)}
  </div>;
 }
