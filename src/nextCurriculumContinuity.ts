@@ -223,7 +223,7 @@ export const NEXT_CURRICULUM_CONTINUITY:SpecialtyLesson[]=[
  ex('By contrast, the library in the north and the central footpath remain in their previous positions.','相比之下，北侧图书馆与中央步道保持原位置。','概述未变部分。'),
  ex('In the original arrangement, a garden occupied the eastern part of the site.','在原布局中，花园位于场地东部。','明确旧版位置。'),
  ex('Under the new plan, the garden is no longer present and study rooms take its place.','在新方案中花园不再保留，学习室占据其原位置。','准确表述替换。'),
- ex('No further detail is provided about the size or number of the new rooms.','资料没有进一步说明新房间的大小或数量。','避免杜撰超出表格的信息。'),
+ ex('This is the main change in the eastern section, whereas the library remains in the northern part of the site.','这是东侧最主要的变化，而图书馆仍位于场地北侧。','对照两种设施的变化与保留，不添加未知尺寸。'),
  ex('The car park, formerly located in the west, is shown as extending farther westwards.','原本位于西侧的停车场向更西方向延伸。','描述扩建方向。'),
  ex('The original parking facility is therefore expanded rather than replaced by a separate new one.','因此原停车设施是扩建，而非被另一处全新设施取代。','说明 extended 与 replaced 的区别。'),
  ex('Throughout these changes, the library continues to occupy the northern area.','在这些变化中，图书馆继续位于北侧。','报告保留的建筑。'),
