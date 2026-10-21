@@ -12,7 +12,7 @@ paragraphs:[
 questions:[
 {prompt:'In P1, what does this intervention refer to? Did the council measure lower energy use?',answer:'The grants for insulation in older homes; no measured reduction was reported.',evidence:['P1'],why:'P1 把 the intervention 明确关联到旧宅隔热补助，同时说降低冬季取暖需求是目标，并未提供测量结果。'},
 {prompt:'What distinguishes being eligible to apply from receiving a grant?',answer:'Eligible owners could apply, but approval was not guaranteed.',evidence:['P2'],why:'P2 对申请资格和实际批准分别表述，不能由 could apply 直接断定已经获拨款。'},
-{prompt:'Are decorative repairs covered, and does their exclusion prevent support for roof insulation?',answer:'Decorative repairs are excluded; the exclusion does not rule out roof insulation.',evidence:['P3'],why:'P3 明确把装饰工程排除，同时说明这一限制不等于拒绝所有隔热工程。'},
+{prompt:'Are decorative repairs covered, and does their exclusion prevent support for roof insulation?',answer:'Decorative repairs are excluded; the exclusion does not rule out roof insulation.',evidence:['P3'],why:'P3 将装饰维修明确列为业主自行承担的排除项目；但屋顶和墙面隔热属于另外的工程类别，因此不能把这一例外扩大为所有工程不受支持。'},
 {prompt:'Are broader housing subsidies identical to the insulation scheme?',answer:'No. They can help similar households but fund different activities.',evidence:['P4'],why:'P4 同时陈述两类政策的共同受助对象与不同资助活动，因此不能认定二者相同。'}
 ],
 languageNotes:[
@@ -35,10 +35,10 @@ paragraphs:[
 {id:'P4',target:"The authors suggested that a controlled comparison could help determine which factors accounted for the observed pattern. Repeating similar observations under other conditions might also show whether the relationship was stable. For the time being, their explanation remained tentative. The paper's conclusion was not that pollution had been proved responsible, and it was not that environmental stress had been ruled out. Instead, the study offered a reason to investigate further and an outline of what a stronger comparison should attempt to separate. The distinction between observation, plausible explanation and confirmed mechanism was therefore central to interpreting the authors' attitude.",zh:'作者建议进行受控比较，以帮助判断哪些因素能够解释观察模式。在其他条件下重复类似观察，也可能显示这种关系是否稳定。在目前阶段，他们的解释仍是暂定的。论文的结论既不是“已经证明污染是原因”，也不是“已经排除了环境胁迫”。相反，这项研究提供了继续调查的理由，并说明更有力的比较需要区分什么。理解观察、可能解释和已确认机制之间的差别，是把握作者态度的核心。'}
 ],
 questions:[
-{prompt:'Which outcome was actually observed?',answer:'Plants beside the busy road had smaller leaves in the observed sample.',evidence:['P1'],why:'P1 描述实际记录的是叶片大小差异，不是污染造成变化的机制。'},
+{prompt:'Which outcome was actually observed?',answer:'Plants beside the busy road had smaller leaves in the observed sample.',evidence:['P1'],why:'P1 的观察指标是两组植物的叶片大小，研究只记录了这种差异，并没有单独控制污染、土壤和供水变量，所以不能据此证明因果机制。'},
 {prompt:'Does consistent with mean pollution was proven to be the only cause?',answer:'No. The result was compatible with stress but not proof of a sole cause.',evidence:['P2'],why:'P2 用 consistent with 保留相容性，明确未把污染与土壤或供水因素分离。'},
 {prompt:'Which unisolated alternatives were discussed?',answer:'Differences in soil conditions and water availability.',evidence:['P2','P3'],why:'P2、P3 给出土壤与水源差异作为候选变量，不代表已证实它们才是真正原因。'},
-{prompt:'What next step did the authors recommend?',answer:'A controlled comparison, with possible replication in other settings.',evidence:['P4'],why:'P4 仅提出后续比较及重复验证建议；原研究没有声称已经完成这两项验证。'}
+{prompt:'What next step did the authors recommend?',answer:'A controlled comparison, with possible replication in other settings.',evidence:['P4'],why:'P4 的作者主张将受控比较和重复观察作为未来步骤，以区分可能原因；本篇既没有提供这些试验的结果，也没有称已经验证污染的唯一作用。'}
 ],
 languageNotes:[
 {target:'observed smaller leaves',zh:'已记录的观察结果；不是因果机制。'},
@@ -60,9 +60,9 @@ paragraphs:[
 {id:'P4',target:"Matching information questions require readers to connect a statement with the section where that information appears. A question asking for a definition should lead to Section A, while a question about volunteer distribution or the recruitment limitation belongs in Section B. A question asking for a proposed methodological change belongs in Section C. The same section can provide evidence for more than one statement if the instructions permit reuse. Repeated words such as survey, community or forms are not sufficient clues, because they occur in different roles. The reliable method is to identify whether the requested detail is a definition, an example, a limitation or a recommendation, and then check the complete supporting sentence.",zh:'段落信息匹配题要求读者把陈述与实际出现信息的段落对应。询问定义，应找到 A 段；询问志愿者的发放方式或招募局限，应找到 B 段；询问方法改进建议，应找到 C 段。在题目允许重复使用的条件下，同一段可为不止一个陈述提供证据。survey、community、forms 等词可能在不同段落以不同功能出现，因此仅靠重复关键词并不可靠。正确做法是先识别题目要求的是定义、例子、局限还是建议，然后核对完整证据句。'}
 ],
 questions:[
-{prompt:'Which section defines a community survey and explains why consistent questions help?',answer:'Section A.',evidence:['P1'],why:'P1 属于 A 段，定义结构化调查并说明统一题目有利于比较。'},
-{prompt:'Which section describes the weekend-market recruitment and an overlooked group?',answer:'Section B.',evidence:['P2'],why:'P2 属于 B 段，志愿者发放及居家居民被遗漏均在该段。'},
-{prompt:'Which section recommends adding a remote method and reporting who was missed?',answer:'Section C.',evidence:['P3'],why:'P3 属于 C 段，明确两项尚未实施的建议，不可将建议当已取得成效。'},
+{prompt:'Which section defines a community survey and explains why consistent questions help?',answer:'Section A.',evidence:['P1'],why:'P1 所对应的 Section A 开头定义 community survey，同时解释 shared set of questions 为什么使回答更易比较；这两处都是概念说明而非招募实例。'},
+{prompt:'Which section describes the weekend-market recruitment and an overlooked group?',answer:'Section B.',evidence:['P2'],why:'P2 所对应的 Section B 同时描述志愿者在周末市场发放问卷，并解释因此无法接触待在家中的居民；实施方式和遗漏人群均有文本依据。'},
+{prompt:'Which section recommends adding a remote method and reporting who was missed?',answer:'Section C.',evidence:['P3'],why:'P3 所对应的 Section C 明确建议增加远程渠道并披露未覆盖人群；这些属于未来改进提议，不代表作者已经完成远程调查或得到代表性样本。'},
 {prompt:'Can the same section answer two questions about the method and its limitation?',answer:'Yes, Section B may support both, when reuse is allowed.',evidence:['P2','P4'],why:'P2 同时描述具体发放方式和受调查人群局限；P4 提醒是否允许重复应以题目说明为准。'}
 ],
 languageNotes:[
@@ -85,10 +85,10 @@ paragraphs:[
 {id:'P4',target:"A careful synthesis would begin by acknowledging the aggregate increase in Passage A. It would then add the transport limitation described by several interviewees in Passage B, without claiming that those respondents represented most residents. The passages need not contradict each other: recorded visits can rise overall while some households find the additional hours difficult to use. The best follow-up question concerns how benefits are distributed and whether the transport barrier affects more people than those interviewed. Answering that question would require branch-level data and a more systematic study of travel access. The evidence supports a balanced statement about average gains and possible inequality, not a claim that weekend opening was either universally successful or entirely useless.",zh:'可靠的综合首先应承认材料 A 的平均到访增长，然后补充材料 B 中一些受访者面临的交通限制，而不能说这些人代表大多数居民。两份材料不必相互矛盾：全区记录的到访次数可以增长，同时部分家庭仍难以利用新增开放时间。最值得继续研究的问题，是收益如何分布，以及交通障碍是否影响了超过受访者范围的人群。回答这一问题需要各分馆的数据以及更系统的交通可达性研究。现有证据支持同时承认平均增长与潜在不平等的平衡陈述，而不是说延时开放对所有人都成功，或完全没有价值。'}
 ],
 questions:[
-{prompt:'What precisely increased in Passage A, and what was not shown for each neighbourhood?',answer:'Average recorded visits rose overall; individual neighbourhood changes were not reported.',evidence:['P1','P2'],why:'A 提供地区汇总到访次数而非每个街区的独立变化，更不证明人人等量受益。'},
-{prompt:'What limitation of the visits measure did Passage A identify?',answer:'Repeat entries and uneven branch contributions were not separately measured.',evidence:['P2'],why:'P2 指出计数可能受重复入馆和分馆集中影响，两点均未细分测量。'},
-{prompt:'Which barrier did interviewed residents report in Passage B?',answer:'Bus services ending early made return travel difficult for several residents.',evidence:['P3'],why:'B 的访谈指出周六公交提前停运与返程问题，但没有地区总体比例。'},
-{prompt:'Why do the two passages not directly contradict each other?',answer:'An aggregate gain can coexist with limited access for some households.',evidence:['P1','P3','P4'],why:'A 是地区平均数据，B 是部分居民的交通体验，两个层次能够同时成立。'}
+{prompt:'What precisely increased in Passage A, and what was not shown for each neighbourhood?',answer:'Average recorded visits rose overall; individual neighbourhood changes were not reported.',evidence:['P1','P2'],why:'材料 A 的 P1、P2 只报告地区层面的 aggregate visits 增长，既未列出各分馆数据也未给出所有街区的变化，因此不能推断每个人都平等受益。'},
+{prompt:'What limitation of the visits measure did Passage A identify?',answer:'Repeat entries and uneven branch contributions were not separately measured.',evidence:['P2'],why:'P2 提到同一人多次入馆、增长集中在交通便利分馆的两种可能性；既没有区分独立访客，也没有提供分馆拆分结果，无法据此确定哪种影响更大。'},
+{prompt:'Which barrier did interviewed residents report in Passage B?',answer:'Bus services ending early made return travel difficult for several residents.',evidence:['P3'],why:'材料 B 的 P3 记录一些受访者受周六公交提前停运影响，特别是返程困难；这只能说明特定受访者的障碍，不能给出全地区受到影响的人数比例。'},
+{prompt:'Why do the two passages not directly contradict each other?',answer:'An aggregate gain can coexist with limited access for some households.',evidence:['P1','P3','P4'],why:'材料 A 汇总全区平均到访量，而材料 B 描述部分居民的交通体验；即便整体访问记录上升，某些家庭仍可能难以实际到馆，因此两份证据并不构成直接矛盾。'}
 ],
 languageNotes:[
 {target:'aggregate visits ≠ unique visitors or every branch',zh:'总到访次数不代表去重人数或每个分馆的变化。'},
