@@ -37,3 +37,40 @@ it('maintains an ID-exact 108 + 48 gap matrix, never equating structure with app
  mkdirSync('docs/qa',{recursive:true});
  writeFileSync('docs/qa/curriculum-gap-matrix.json',JSON.stringify({schema:1,baseline:'b7e98ac',counts:{main:108,foundation:48,specialties:SPECIALTY_LESSONS.length},courses:rows},null,2)+'\n');
 });
+
+
+it('keeps both new full bilingual reception lessons grounded in original course IDs and paragraph evidence',()=>{
+ const coverage=[
+  ['fr-a1-u06','fr',190],
+  ['en-ielts-listening-u03','en',340]
+ ] as const;
+ for(const [id,language,minWords] of coverage){
+  const lesson=RECEPTION_LESSONS[id];
+  expect(lesson,id+' exists').toBeDefined();
+  expect(lesson.language).toBe(language);
+  expect(lesson.paragraphs).toHaveLength(4);
+  const words=lesson.paragraphs.map(p=>p.target).join(' ').trim().split(/\s+/u).length;
+  expect(words,id).toBeGreaterThanOrEqual(minWords);
+  expect(lesson.paragraphs.every(p=>p.target.length>160&&p.zh.length>45),id).toBe(true);
+  const paragraphIds=new Set(lesson.paragraphs.map(p=>p.id));
+  expect(paragraphIds.size).toBe(4);
+  expect(lesson.questions).toHaveLength(4);
+  expect(lesson.questions.every(q=>q.evidence.length>=1&&q.evidence.every(e=>paragraphIds.has(e))),id).toBe(true);
+  expect(lesson.questions.every(q=>q.answer.length>=12&&q.why.length>=28),id).toBe(true);
+  expect(lesson.model.split(/\s+/u).length,id).toBeGreaterThanOrEqual(75);
+  expect(lesson.modelZh.length,id).toBeGreaterThan(80);
+  expect(lesson.languageNotes.length,id).toBeGreaterThanOrEqual(3);
+  expect(lesson.references.every(x=>x.startsWith('https://'))).toBe(true);
+  expect(COURSES.some(c=>c.id===id)).toBe(true);
+  const row=index.find(x=>x.id===id);
+  expect(row?.audio_status).toBe('missing_audio');
+ }
+ const listening=RECEPTION_LESSONS['en-ielts-listening-u03'];
+ expect(listening.paragraphs[2].target).toContain('up to thirty');
+ expect(listening.paragraphs[2].target).toContain('not yet been approved');
+ expect(listening.questions[2].evidence).toContain('P3');
+ const fr=RECEPTION_LESSONS['fr-a1-u06'];
+ expect(fr.paragraphs[1].target).toContain('dix heures et demie');
+ expect(fr.paragraphs[1].target).toContain('à midi');
+ expect(fr.questions[0].evidence).toContain('P2');
+});
