@@ -338,3 +338,20 @@
  .v44 .specialty-section-nav .specialty-progress{position:sticky;right:0;background:var(--pane)}
  .v44 .specialty-grammar-table th,.v44 .specialty-grammar-table td{padding:9px 11px}
 }
+
+/* Editorial learning sequence: compact links appear after the completed lesson. */
+.v44 .specialty-learning-links{
+ display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 10px;padding:15px 0 0;
+ border-top:1px solid var(--border)}
+.v44 .specialty-learning-links button{
+ display:inline-flex;align-items:center;justify-content:flex-start;min-height:35px;
+ max-width:100%;white-space:normal;text-align:left;line-height:1.4;
+ font-size:12px;font-weight:650;color:var(--accent);
+ padding:9px 11px;background:var(--accentTint);border:1px solid var(--border);
+ border-radius:9px}
+.v44 .specialty-learning-links button:hover,.v44 .specialty-learning-links button:focus-visible{
+ border-color:var(--accent);outline-offset:2px}
+@media(max-width:650px){
+ .v44 .specialty-learning-links{display:grid;grid-template-columns:minmax(0,1fr)}
+ .v44 .specialty-learning-links button{width:100%}
+}
