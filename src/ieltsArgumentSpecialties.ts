@@ -1,6 +1,6 @@
 import type {SpecialtyLesson,LearningExample,LearningSection,LearningTable} from './specialtyLibrary';
 const e=(target:string,zh:string,analysis:string):LearningExample=>({target,zh,analysis});
-const sec=(title:string,concept:string,pattern:string,examples:LearningExample[],caution:string,table?:LearningTable);
+const sec=(title:string,concept:string,pattern:string,examples:LearningExample[],caution:string,table?:LearningTable):LearningSection=>({title,concept,pattern,examples,caution,table});
 /** IELTS official criteria are used for task scope; original examples are for language learning, not band-rated model scripts. */
 export const IELTS_ARGUMENT_SPECIALTIES:SpecialtyLesson[]=[
 {
