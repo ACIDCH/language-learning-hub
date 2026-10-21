@@ -175,3 +175,36 @@ it('keeps first A1 completed-past and IELTS TRUE/FALSE/NOT GIVEN reading evidenc
  expect(b.questions[2].evidence).toContain('P4');
  expect(b.paragraphs[3].target).toContain('an absence of funding information');
 });
+
+
+it('IELTS U05–U08 deliver four substantive bilingual reading segments, source evidence and correct uncertainty',()=>{
+ const courses=['en-ielts-reading-u05','en-ielts-reading-u06','en-ielts-reading-u07','en-ielts-reading-u08'] as const;
+ for(const course of courses){
+  const u=RECEPTION_LESSONS[course];
+  expect(u,course).toBeDefined();
+  expect(u.language).toBe('en');
+  expect(u.paragraphs).toHaveLength(4);
+  expect(u.questions).toHaveLength(4);
+  expect(u.paragraphs.every(p=>p.target.trim().split(/\s+/).length>85&&p.zh.length>130),course).toBe(true);
+  expect(u.paragraphs.map(p=>p.target).join(' ').trim().split(/\s+/).length,course).toBeGreaterThan(390);
+  expect(u.model.split(/\s+/).length,course).toBeGreaterThanOrEqual(105);
+  expect(u.modelZh.length).toBeGreaterThan(210);
+  const ids=new Set(u.paragraphs.map(p=>p.id));
+  expect(ids.size).toBe(4);
+  expect(u.questions.every(q=>q.evidence.length>0&&q.evidence.every(x=>ids.has(x))&&q.why.length>35)).toBe(true);
+  expect(u.languageNotes.length).toBeGreaterThanOrEqual(4);
+  expect(u.references.every(x=>x.startsWith('https://'))).toBe(true);
+  expect(index.find(x=>x.id===course)?.audio_status).toBe('missing_audio');
+ }
+ const grant=RECEPTION_LESSONS['en-ielts-reading-u05'];
+ expect(grant.paragraphs[0].target).toContain('this particular grant scheme');
+ expect(grant.questions[0].answer).toContain('no measured reduction');
+ const plant=RECEPTION_LESSONS['en-ielts-reading-u06'];
+ expect(plant.paragraphs[1].target).toContain('tentative');
+ expect(plant.questions[1].answer).toContain('not proof');
+ const survey=RECEPTION_LESSONS['en-ielts-reading-u07'];
+ expect(survey.questions.map(q=>q.answer.slice(0,9))).toEqual(['Section A','Section B','Section C','Yes, Sect']);
+ const library=RECEPTION_LESSONS['en-ielts-reading-u08'];
+ expect(library.paragraphs[0].target).toContain('aggregate result');
+ expect(library.questions[3].answer).toContain('coexist');
+});
