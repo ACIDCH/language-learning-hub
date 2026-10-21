@@ -1,5 +1,6 @@
 import {CHINESE_LESSON_NOTES,type ParallelSentence} from './bilingualTeachingNotes';
 import {ENGLISH_ORIGINAL_BILINGUAL} from './bilingualOriginalEnglish';
+import FrenchArticleModule from './FrenchArticleModule';
 import type {LessonContent} from './v44Courses';
 function Parallel({entry}:{entry:ParallelSentence}){
  return <div className="bilingual-line">
@@ -13,6 +14,8 @@ export default function BilingualTeaching({courseId,stage,content,privateSource=
 }){
  const normalize=(value:string)=>value.toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g,' ');
  const source=normalize(sourceText||'');
+ if(privateSource&&courseId.startsWith('fr-')&&source.includes('un/une/des')&&source.includes('il y a'))
+  return <FrenchArticleModule stage={stage}/>;
  const special=privateSource&&courseId==='en-ielts-listening-u01'&&
    /study spaces|occupancy|measurement/.test(source);
  const candidate=CHINESE_LESSON_NOTES[special?'en-ielts-listening-u01-study-spaces':courseId]||
