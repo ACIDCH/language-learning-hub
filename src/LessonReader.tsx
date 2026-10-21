@@ -30,7 +30,7 @@ export default function LessonReader({text,courseId,content,privateSource=false,
  const source=lesson.structured?
   (showAll?sections.map(s=>s.heading+'\n'+s.body).join('\n\n'):sections[selected]?.body||''):text;
  const kind=current===1?'grammar':current===2?'vocabulary':null;
- const topic=Boolean(kind&&linkedSpecialties(kind,courseId).length>0);
+ const topic=Boolean(!privateSource&&kind&&linkedSpecialties(kind,courseId).length>0);
  const enrich=!showAll&&(topic||current===3&&RECEPTION_LESSONS[courseId]||current===5&&TASK1_WORKSHOPS[courseId]);
  return <div className="lesson-reader">
   {lesson.structured&&!hideTabs&&<nav className="lesson-stages" aria-label="课程五个学习环节">
