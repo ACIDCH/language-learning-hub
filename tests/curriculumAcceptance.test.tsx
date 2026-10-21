@@ -142,3 +142,36 @@ it('supports A1 housing/future and full IELTS headings as actual four-paragraph 
  expect(headings.questions.map(x=>x.answer.slice(0,3))).toEqual(['i. ','ii.','iii','iv.']);
  expect(headings.task).toContain('v、vi');
 });
+
+
+it('keeps first A1 completed-past and IELTS TRUE/FALSE/NOT GIVEN reading evidence aligned',()=>{
+ const selection=[
+  ['fr-a1-u12','fr',200],
+  ['en-ielts-reading-u04','en',350]
+ ] as const;
+ for(const [id,lang,min] of selection){
+  const u=RECEPTION_LESSONS[id];
+  expect(u,id).toBeDefined();
+  expect(u.language).toBe(lang);
+  expect(u.paragraphs).toHaveLength(4);
+  expect(u.paragraphs.every(p=>p.target.length>220&&p.zh.length>85)).toBe(true);
+  expect(u.paragraphs.map(p=>p.target).join(' ').trim().split(/\s+/u).length).toBeGreaterThan(min);
+  const ids=u.paragraphs.map(x=>x.id);
+  expect(new Set(ids).size).toBe(4);
+  expect(u.questions).toHaveLength(4);
+  expect(u.questions.every(q=>q.evidence.length>0&&q.evidence.every(x=>ids.includes(x))&&q.why.length>30)).toBe(true);
+  expect(u.model.split(/\s+/u).length).toBeGreaterThan(80);
+  expect(u.modelZh.length).toBeGreaterThan(100);
+  expect(index.find(x=>x.id===id)?.audio_status).toBe('missing_audio');
+ }
+ const a=RECEPTION_LESSONS['fr-a1-u12'];
+ expect(a.paragraphs[0].target).toContain('je suis allée');
+ expect(a.paragraphs[1].target).toContain('À midi');
+ expect(a.paragraphs[2].target).toContain('à cinq heures');
+ expect(a.paragraphs[3].target).toContain('Aujourd’hui');
+ const b=RECEPTION_LESSONS['en-ielts-reading-u04'];
+ expect(b.questions.map(q=>q.answer)).toEqual(['FALSE','TRUE','NOT GIVEN','NOT GIVEN']);
+ expect(b.questions[0].evidence).toContain('P2');
+ expect(b.questions[2].evidence).toContain('P4');
+ expect(b.paragraphs[3].target).toContain('an absence of funding information');
+});
