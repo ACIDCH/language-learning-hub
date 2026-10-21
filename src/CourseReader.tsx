@@ -5,6 +5,7 @@ import type {Preferences} from './v44Preferences';
 import {cloudClient,cloudRequest} from './v44Connection';
 import {readLocalFavorites,saveLocalFavorites} from './favoritesCloud';
 import LessonReader from './LessonReader';
+import LessonBody from './LessonBody';
 import {speakIpaText} from './IpaText';
 import StructuredLesson from './StructuredLesson';
 import IpaStudyPane from './IpaStudyPane';
@@ -13,6 +14,8 @@ import './bilingualTeaching.css';
 import SpeechPractice from './SpeechPractice';
 import SelectionInspector,{type TextSelection} from './SelectionInspector';
 import {useCourseProgress} from './useCourseProgress';
+import {splitLessonStages,STUDY_STAGES,STUDY_TITLES,visibleStudyStage} from './lessonStages';
+import {learnerFacingText} from './lessonPresentationText';
 export function selectedOriginal(scope:HTMLElement,selection:Selection|null):TextSelection|null{
  if(!selection||selection.isCollapsed||!selection.rangeCount)return null;
  const range=selection.getRangeAt(0);
@@ -65,24 +68,38 @@ export default function CourseReader({course,session,preferences,tab,navigate,on
  if(error&&!content&&!privateBody)return <section role="alert">{error}<button onClick={()=>location.reload()}>重新加载</button></section>;
  if(!text)return <p role="status">正在读取课程全文…</p>;
  const questions=content?.foundation?.questions;
+ const hasStudyStages=Boolean(content?.draft||content?.foundation||splitLessonStages(text).structured);
+ const currentStage=visibleStudyStage(Number(progress.state.stage)||0);
+ const activateStage=(next:number)=>{progress.change({stage:next});if(tab!=='read')navigate(courseRoute(course,'read'));};
  return <section className="reader-page"><div className="page-intro reader-intro"><div><p className="eyebrow">{languageName(course.language)} · {course.track===course.level?course.level:course.track+' · '+course.level}</p><h1>{course.title}</h1></div><div className="reader-head-actions">
   <button type="button" aria-label="缩小阅读字体" disabled={preferences.fontSize<=14} onClick={()=>onFontChange?.(Math.max(14,preferences.fontSize-1))}>A−</button>
   <button type="button" aria-label="放大阅读字体" disabled={preferences.fontSize>=26} onClick={()=>onFontChange?.(Math.min(26,preferences.fontSize+1))}>A＋</button>
   <button type="button" aria-pressed={showTools} onClick={()=>setShowTools(v=>!v)}>{showTools?'收起工具':'展开工具'}</button>
  </div></div>
- {sourceStatus&&<p role="alert" className="tool-notice">{sourceStatus}</p>}<nav className="page-tab-row" aria-label="课程学习工具">{[['read','阅读'],['ipa','段落音标']].map(([id,label])=><a className={tab===id?'segment active':'segment'} key={id} href={courseRoute(course,id)} onClick={e=>{e.preventDefault();navigate(courseRoute(course,id));}}>{label}</a>)}<a className="segment" href={'/cloud?panel=audio&course='+course.id} onClick={e=>{e.preventDefault();navigate('/cloud?panel=audio&course='+course.id);}}>音频与资料</a></nav>
- <div className={'reader-layout'+(showTools?'':' tools-hidden')}><article className="panel reader-article"><div className="reader-top"><button onClick={()=>setToolStatus(speakIpaText(text,course.language,preferences.ttsRate)?'正在朗读':'此设备无法朗读。')}>朗读原文</button><button onClick={()=>window.speechSynthesis?.cancel()}>停止朗读</button></div>
+ {sourceStatus&&<p role="alert" className="tool-notice">{sourceStatus}</p>}
+ <div className={'reader-layout'+(showTools?'':' tools-hidden')}><article className="panel reader-article">
+ <nav className="course-study-switcher" aria-label="本课固定学习导航">
+  {hasStudyStages&&STUDY_STAGES.map((id,i)=><button type="button" key={id}
+   className={tab==='read'&&currentStage===id?'study-selected':''}
+   aria-current={tab==='read'&&currentStage===id?'step':undefined}
+   aria-pressed={tab==='read'&&currentStage===id}
+   onClick={()=>activateStage(id)}><span>{String(i+1).padStart(2,'0')}</span>{STUDY_TITLES[i]}</button>)}
+  <button type="button" className={'course-ipa-tab'+(tab==='ipa'?' study-selected':'')}
+   aria-pressed={tab==='ipa'} aria-current={tab==='ipa'?'page':undefined}
+   onClick={()=>navigate(courseRoute(course,tab==='ipa'?'read':'ipa'))}>段落音标</button>
+ </nav>
+ <div className="reader-top"><button onClick={()=>setToolStatus(speakIpaText(text,course.language,preferences.ttsRate)?'正在朗读':'此设备无法朗读。')}>朗读原文</button><button onClick={()=>window.speechSynthesis?.cancel()}>停止朗读</button></div>
  {tab==='speech'?<SpeechPractice language={course.language} lessonText={text} session={session} accessToken={session?.access_token} variant="standalone"/>:
  tab==='ipa'?<div ref={scope} className="reader-selection-scope"><IpaStudyPane key={course.id} text={text} language={course.language}/></div>:
  <div ref={scope} className="reader-selection-scope">{!privateBody&&(content?.draft||content?.foundation)?
  <StructuredLesson key={course.id} content={content} course={course} stage={Number(progress.state.stage)||0}
  onChangeStage={stage=>progress.change({stage})} ttsRate={preferences.ttsRate}
- onOpenSpeech={()=>navigate(courseRoute(course,'speech'))} onSaveOutput={appendNote}/>:
+ onOpenSpeech={()=>navigate(courseRoute(course,'speech'))} onSaveOutput={appendNote} hideTabs={hasStudyStages}/>:
  <LessonReader text={text} content={content} privateSource={!!privateBody} language={course.language} courseId={course.id}
  stage={Number(progress.state.stage)||0} onChangeStage={stage=>progress.change({stage})} onSaveOutput={appendNote}
- defaultIpa={preferences.ipa} ttsRate={preferences.ttsRate}/>}</div>}
- {privateBody&&content&&<details className="source-appendix"><summary>备用课文</summary><div className="lesson-paragraphs">{content.text}</div></details>}
- {content?.appendices.map((a,i)=><details key={i} className="source-appendix"><summary>{a.title}</summary><div className="lesson-paragraphs">{a.text}</div></details>)}
+ defaultIpa={preferences.ipa} ttsRate={preferences.ttsRate} hideTabs={hasStudyStages}/>}</div>}
+ {privateBody&&content&&<details className="source-appendix"><summary>备用课文</summary><LessonBody text={learnerFacingText(content.text)}/></details>}
+ {content?.appendices.map((a,i)=><details key={i} className="source-appendix"><summary>{a.title}</summary><LessonBody text={learnerFacingText(a.text)}/></details>)}
  {(privateBody||(!content?.draft&&!content?.foundation))&&<section className="exercise-block"><h2>练习与核对</h2>{questions?questions.map((q,i)=><fieldset key={q.prompt}><legend>{i+1}. {q.prompt}</legend>{q.choices.map((choice,n)=><label key={n}><input type="radio" name={'q'+i} checked={progress.state.answers?.[String(i)]===n} disabled={!progress.ready} onChange={()=>progress.change({answers:{[String(i)]:n},completed:false})}/>{choice}</label>)}{Number.isInteger(progress.state.answers?.[String(i)])&&<p>{progress.state.answers?.[String(i)]===q.answer?'回答正确。':'再核对一次。'}参考答案：{q.choices[q.answer]}。{q.explanation}</p>}</fieldset>):content?.draft?.questions.map((q,i)=><details key={i}><summary>{i+1}. {q.prompt}</summary><p>参考答案：{q.answer}</p><p>解析：{q.explanation}</p></details>)||<p>本课练习见正文。</p>}</section>}
  <section className="learning-notes"><h2>本课笔记与进度</h2><label>学习笔记<textarea value={progress.state.notes||''} maxLength={5000} disabled={!progress.ready} onChange={e=>progress.change({notes:e.target.value})}/></label><label><input type="checkbox" checked={!!progress.state.completed} disabled={!progress.ready} onChange={e=>progress.change({completed:e.target.checked})}/>我已完成本课</label><button disabled={!session||!progress.ready||progress.busy} onClick={()=>void progress.save()}>{progress.busy?'保存中…':'保存到 Supabase'}</button><p role="status">{progress.status}</p></section>
  </article>
