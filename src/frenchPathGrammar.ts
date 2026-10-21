@@ -112,7 +112,7 @@ export const FRENCH_PATH_GRAMMAR:SpecialtyLesson[]=[
  e('Nous étions très contents de cette rencontre.','我们对这次偶遇感到非常高兴。','imparfait 补充过去的情绪状态。'),
  e('Cette journée est restée dans ma mémoire.','这一天留在了我的记忆里。','由过去的事件收束到整体回忆。')
  ],
- referenceUrls:['https://grammarmama.com/fr/learn/french/a2/','https://www.laits.utexas.edu/tex/gr/'],
+ referenceUrls:['https://grammarmama.com/fr/learn/french/a2/','https://www.laits.utexas.edu/tex/gr/tap8.html'],
  sourceNote:'对应 fr-a2-u02“Habitudes d’autrefois”；参照 A2 时态目录与 Tex 法语语法的过去时体系，例句和练习原创。'
 },
 {
