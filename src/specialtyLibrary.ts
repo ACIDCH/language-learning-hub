@@ -5,7 +5,8 @@ export type SpecialtyKind='grammar'|'vocabulary';
 export type SpecialtyLanguage='fr'|'en';
 export type SpecialtyLevel='A1'|'A2'|'B1'|'B2'|'C1';
 export type LearningExample={target:string;zh:string;analysis:string};
-export type LearningSection={title:string;concept:string;pattern:string;examples:LearningExample[];caution:string};
+export type LearningTable={title:string;columns:string[];rows:string[][];note:string};
+export type LearningSection={title:string;concept:string;pattern:string;examples:LearningExample[];caution:string;table?:LearningTable};
 export type LearningQuestion={question:string;answer:string;why:string};
 export type SpecialtyLesson={
  id:string;type:SpecialtyKind;language:SpecialtyLanguage;level:SpecialtyLevel;
@@ -18,7 +19,7 @@ const F='https://laits.utexas.edu/tex/gr/';
 const BC='https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2';
 const EVP='https://www.cambridge.org/core/journals/english-profile-journal/article/a1b2-vocabulary-insights-and-issues-arising-from-the-english-profile-wordlists-project/E57847F6C5574124B2354F9BEEC005FA';
 const pair=(target:string,zh:string,analysis:string):LearningExample=>({target,zh,analysis});
-const section=(title:string,concept:string,pattern:string,examples:LearningExample[],caution:string):LearningSection=>({title,concept,pattern,examples,caution});
+const section=(title:string,concept:string,pattern:string,examples:LearningExample[],caution:string,table?:LearningTable):LearningSection=>({title,concept,pattern,examples,caution,table});
 /** Group sourced vocabulary by communicative function, not into an isolated word-per-page list. */
 function curatedVocabularySections(source:typeof FRENCH_ARTICLES):LearningSection[]{
  const french=source.language==='fr';
@@ -95,18 +96,77 @@ const hand:SpecialtyLesson[]=[
  output:'介绍一位家人，写五句，至少包括年龄、一个 mon/ma/mes、一个 avoir 的否定形式。',model:[
  pair("J'ai une sœur.",'我有一个姐妹。','j’ai 表示拥有。'),pair('Ma sœur a vingt ans.','我的姐妹二十岁。','年龄用 a。'),pair("Je n'ai pas de frère.",'我没有兄弟。','否定有 + de。')],
  referenceUrls:[F+'ver2.html',F+'det6.html'],sourceNote:'结合私人 FR A1 U03 路线及 V1.3 编辑纠错（避免 n’ 的重复）。'},
- {id:'fr-er',type:'grammar',language:'fr',level:'A1',title:'第一组 -er 动词、日常活动与否定',subtitle:'从 parler / étudier 进入规律变位',unitLink:'fr-a1-u05',prerequisite:'理解主语代词和 être / avoir 的人称变化。',objective:'能变位规则 -er 动词、表达日常作息并正确构造 ne…pas。',
+ {id:'fr-er',type:'grammar',language:'fr',level:'A1',
+ title:'第一组 -er 动词：现在时、日常作息与否定',
+ subtitle:'parler / étudier / aimer：从变位表到完整句子',
+ unitLink:'fr-a1-u05',
+ prerequisite:'认识 je、tu、il/elle、nous、vous、ils/elles，并掌握 être 和 avoir 的基本变位。',
+ objective:'独立变位 parler 等规则 -er 动词；描述自己的学习、时间和习惯；写出否定句，并辨别常见拼写变化。',
  sections:[
- section('01 -er 动词现在时形成规律','多数以 -er 结尾的动词属于第一组，但 aller 等例外不属于规则变位。规则变位去掉 -er 后加 -e / -es / -e / -ons / -ez / -ent；多种词尾在口语中同音，书写不能凭耳朵推断。','parler → je parle, tu parles, il parle, nous parlons, vous parlez, ils parlent',[
- pair('Je parle français.','我说法语。','je + parle。'),pair('Nous parlons anglais en classe.','我们在课堂上说英语。','nous 使用 -ons。'),pair('Ils étudient le soir.','他们晚上学习。','ils 用 -ent，通常不把字母 ent 逐个读出。')],'aller 的形式不按此规律；不要把所有 -er 都看成完全无例外。'),
- section('02 时间与频率构成段落','单句动词变位后，应再加时间、频率与先后关系，描述一个完整的日常时间安排。法语常见副词 souvent / toujours / parfois 可放在变位动词后。','sujet + verbe + souvent / le matin / à huit heures',[
- pair('Le matin, je travaille à la bibliothèque.','上午我在图书馆工作。','时间前置，句子仍保持完整谓语。'),pair('Elle étudie souvent le soir.','她经常晚上学习。','souvent 修饰动作频率。')],'词语堆叠不能代替句子，如 Je souvent étudier 不是正确的现在时陈述。'),
- section('03 ne…pas 与代词式动词','书面常用 ne + 已变位动词 + pas。若存在直接位于动词前的代词，例如 je me lève，ne 通常放在代词之前。元音前的 ne 省音为 n’。','Je ne parle pas. / Je ne me lève pas tôt.',[
- pair('Je ne parle pas espagnol.','我不会说西班牙语。','ne ... pas 包围 parle。'),pair('Je me lève à sept heures.','我七点起床。','se lever 是代词式动词。'),pair('Je ne me lève pas tôt.','我不早起。','ne 放在 me 前，pas 在变位动词后。')],'原课程校订记录明确提醒：se lever 不能当作完全普通的 -er 动词，须讲明 me 的位置。')],
- questions:[{question:'完成：Nous ___ (parler) français.',answer:'parlons',why:'nous 对应词尾 -ons。'},{question:'否定：Je me lève tôt.',answer:'Je ne me lève pas tôt.',why:'ne 在 me 前，pas 在 lève 后。'}],
- output:'写一段 5 句法语描述一天，至少用三个 -er 动词、两个时间表达和一句否定句。',model:[
- pair('Le matin, je travaille à la maison.','早晨我在家工作。','时间起句。'),pair('Je parle souvent avec mes amis.','我经常与朋友交谈。','频率副词。'),pair('Je ne me lève pas très tôt.','我起床并不特别早。','代词式否定。')],
- referenceUrls:[F+'ver1.html',F+'neg2.html'],sourceNote:'依据私人法语 A1 U05 课程定位和其 V1.3 编辑检查项。'},
+ section('01 六个人称与现在时词尾',
+ '法语的动词不定式相当于词典形式，例如 parler（说）。规则第一组 -er 动词在直陈式现在时的变位分两步：去掉不定式词尾 -er 得到词干 parl-，再按主语加上 -e、-es、-e、-ons、-ez、-ent。书面变位必须保留对应词尾；je、tu、il、ils 的词尾通常不单独发音，但拼写不同。',
+ 'parler → parl- + e / es / e / ons / ez / ent',[
+ pair('Je parle français avec Marie.','我和玛丽用法语交谈。','je 对应 -e；avec Marie 说明交谈对象。'),
+ pair('Nous parlons français en classe.','我们在课堂上说法语。','nous 加 -ons；en classe 表示发生地点。'),
+ pair('Vous parlez très clairement.','您（或你们）说得很清楚。','vous 加 -ez；用于礼貌单数或复数。'),
+ pair('Ils parlent souvent ensemble.','他们经常一起交谈。','ils 加 -ent，不能因为读音近似 parle 就漏写 -ent。')
+ ],'aller 虽以 -er 结尾，却是不规则动词：je vais、nous allons。这里的变位表只针对规则 -er 动词。',
+ {title:'parler · 直陈式现在时',columns:['主语','变位','中文含义'],
+ rows:[['je','parle','我说'],['tu','parles','你说'],['il / elle / on','parle','他／她／人们说'],['nous','parlons','我们说'],['vous','parlez','您／你们说'],['ils / elles','parlent','他们／她们说']],
+ note:'书写时看主语选词尾。parle、parles、parlent 的结尾字母一般不读出来，但不能互换。'}),
+ section('02 把 -er 动词放进完整句子',
+ '先找主语，再用适当形式的变位动词作谓语，最后补全宾语或必要的介词短语。étudier（学习）和 travailler（工作）遵循基本词尾；aimer（喜欢）与 écouter（听）的词干以元音开头，je 在其前写作 j’。不同动词所需的介词不能只靠中文翻译猜测。',
+ '主语 + 变位动词 + 宾语／介词短语',[
+ pair("J'étudie le français à l'université.",'我在大学学习法语。','je 在元音前省音，写作 j’étudie；à l’université 表示地点。'),
+ pair("J'aime la musique française.",'我喜欢法国音乐。','je + aime 变为 j’aime；aimer 的宾语采用名词词组。'),
+ pair("Tu écoutes la radio ?",'你听广播吗？','écouter 是及物动词，这里直接接 la radio。'),
+ pair('Elle travaille dans une bibliothèque.','她在一家图书馆工作。','elle 对应 travaille；dans une bibliothèque 表示工作地点。')
+ ],'不能写 je étudie 或 je aime，也不能把“听某物”机械翻成 écouter à quelque chose。'),
+ section('03 时间、副词与叙述顺序',
+ '现在时既可以说明此刻的动作，也可以描述经常发生的习惯。先用一句说主要活动，再通过 le matin（早晨）、le soir（晚上）、tous les jours（每天）、souvent（经常）和 parfois（有时）补充时间。频率副词通常放在变位动词后；时间短语可置于句首。',
+ 'Le matin, je travaille. / Je travaille souvent le soir.',[
+ pair('Le matin, je travaille à la maison.','早晨我在家工作。','le matin 表示经常性的早晨习惯。'),
+ pair('Elle étudie souvent après le dîner.','她经常晚饭后学习。','souvent 放在变位动词 étudie 之后。'),
+ pair('Nous regardons parfois un film le week-end.','我们周末有时看电影。','parfois 表示有时；le week-end 描述时间。')
+ ],'Je souvent étudier le soir 缺少变位，且把频率副词放到不自然的位置。应写 J’étudie souvent le soir。'),
+ section('04 普通否定与代词式动词',
+ '在规范书面法语中，ne…pas 一般围绕已经变位的动词：Je ne parle pas。动词以元音开头时 ne 变成 n’，如 Je n’étudie pas。代词式动词必须保留反身代词；se lever（起床）的现在时是 je me lève，否定句为 je ne me lève pas，不能把 me 删掉。',
+ 'ne / n’ +（反身代词）+ 变位动词 + pas',[
+ pair('Je ne travaille pas le dimanche.','我星期日不工作。','ne 位于 travaille 前，pas 位于其后。'),
+ pair("Je n'étudie pas ce soir.",'我今晚不学习。','étudie 以元音开头，ne 缩写为 n’。'),
+ pair('Je me lève à sept heures.','我七点起床。','me 是 se lever 必需的反身代词。'),
+ pair('Je ne me lève pas tôt.','我不早起。','ne 位于 me 之前，pas 位于变位动词 lève 之后。')
+ ],'Je ne lève pas tôt 不等于 Je ne me lève pas tôt：省掉 me 会改变动词结构和意义。'),
+ section('05 常见词干拼写变化：-ger / -cer 与例外',
+ '基本词尾规则不能覆盖所有拼写。manger 和 commencer 在 nous 形式中分别写 mangeons、commençons，以保留词干辅音的读音；其他人称仍按基本现在时规律。appeler 和 acheter 还涉及其他人称的词干变化，起步先识别它们，不要强行套用 parler 的不变词干。aller 归入不规则变位，应另学。',
+ 'manger → nous mangeons；commencer → nous commençons；aller → nous allons',[
+ pair('Nous mangeons ensemble à midi.','我们中午一起吃饭。','manger 在 nous 后保留 e，写 mangeons。'),
+ pair('Nous commençons le cours à neuf heures.','我们九点开始上课。','commencer 在 nous 后用 ç，写 commençons。'),
+ pair("J'appelle mon ami.",'我给朋友打电话。','appeler 的这个人称形式写 appelle；不同人称词干可能变化。'),
+ pair('Nous achetons du pain.','我们买面包。','acheter 的 nous 形式保留 achet-，与 j’achète 对照学习。')
+ ],'不能写 nous mangons 或 nous commencons；也不能由“以 -er 结尾”推断 aller 必然规则变位。')
+ ],
+ questions:[
+ {question:'完成变位：Nous ___ (parler) français.',answer:'parlons',why:'去掉 -er 得到 parl-，nous 配 -ons，合成 parlons。'},
+ {question:'完成变位：Ils ___ (étudier) le soir.',answer:'étudient',why:'ils 使用 -ent；étudier 的词干是 étudi-，拼写为 étudient。'},
+ {question:'改错：Je aime étudier.',answer:"J'aime étudier.",why:'主语 je 在以元音开头的 aime 前省音为 j’。'},
+ {question:'改写否定句：Je me lève tôt.',answer:'Je ne me lève pas tôt.',why:'代词式动词保留 me；ne 位于 me 之前，pas 在 lève 之后。'},
+ {question:'改错：Nous mangons ensemble et nous commencons à huit heures.',answer:'Nous mangeons ensemble et nous commençons à huit heures.',why:'manger 的 nous 形式保留 e；commencer 的 nous 形式使用 ç，维持正确辅音发音。'}
+ ],
+ output:'写 7–9 句法语介绍一天的学习和生活：先描述早晨，再描述课堂及晚上；至少使用四种 -er 动词、一组频率副词、一个否定句和一个时间连接词。',
+ model:[
+ pair('Le matin, je me lève à sept heures.','早晨我七点起床。','代词式动词 + 时间表达。'),
+ pair("J'étudie le français à l'université.",'我在大学学习法语。','j’ 省音；学习地点。'),
+ pair('Nous commençons le cours à neuf heures.','我们九点开始上课。','commencer 的 nous 形式含 ç。'),
+ pair('Je parle souvent avec mes camarades.','我经常与同学交谈。','频率副词 + avec 的搭配。'),
+ pair('Le soir, je ne regarde pas la télévision.','晚上我不看电视。','规范书面否定和时间结构。')
+ ],
+ referenceUrls:[
+ 'https://www.laits.utexas.edu/tex/gr/ver1.html',
+ 'https://www.gymglish.com/zh/frantastique/french-grammar/er-ir',
+ 'https://grammarmama.com/zh/learn/french/a1/'
+ ],
+ sourceNote:'保留原 A1 U05 的学习目标和 se lever 否定注意事项，依 Tex / Frantastique 核验规则与例外；新例句、变位表及解析为本项目重新编写。'},
  {id:'en-contrast',type:'grammar',language:'en',level:'B1',title:'because、because of、although、however',subtitle:'原因、让步、转折的句法边界',unitLink:'en-ielts-listening-u01',prerequisite:'理解简单从句和完整主谓结构。',objective:'能按照后接结构正确选择连词、介词短语和句子连接副词。',
  sections:[
  section('01 because 与 because of 的不同','because 后接含主谓的从句；because of 后常接名词词组或动名词形式。两者都说明原因，但句法身份不同。','because + clause / because of + noun phrase',[
