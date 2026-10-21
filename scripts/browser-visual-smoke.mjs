@@ -107,7 +107,7 @@ try{
    ['enListeningU03Integrated','/?course=en-ielts-listening-u03&tab=read','.curriculum-stage'],
    ['frA1LeisureIntegrated','/?course=fr-a1-u07&tab=read','.curriculum-stage'],
    ['frA1MarketIntegrated','/?course=fr-a1-u08&tab=read','.curriculum-stage'],
-   ['enReadingU02Integrated','/?course=en-ielts-reading-u02&tab=read','.curriculum-stage'],
+   ['enReadingU02Integrated','/?course=en-ielts-reading-u02&tab=read','.lesson-reader'],
   ['speech','/speech-lab','.speaking-lab-columns'],
   ['ipa','/?page=ipa','.ipa-studio'],
   ['settings','/?page=settings&section=appearance','.settings-content'],
@@ -135,6 +135,13 @@ try{
     const evidence=await js("(function(){const p=[...document.querySelectorAll('.reception-study > article.reception-paragraph')];return {paragraphs:p.length,chinese:p.filter(x=>x.textContent.length>100).length,overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-innerWidth}})()");
     if(evidence.paragraphs!==4||evidence.chinese!==4||evidence.overflow>5)
      problems.push(size+' '+name+' bilingual reception unavailable '+JSON.stringify(evidence));
+   }
+   if(name==='enReadingU02Integrated'){
+    await js("document.querySelectorAll('.course-study-switcher button')[2]?.click()");
+    await wait(()=>js("!!document.querySelector('.course-specialty-topic')"),'original-source vocabulary directly integrated');
+    const stats=await js("(function(){return {lessons:document.querySelectorAll('.course-specialty-topic').length,source:!!document.querySelector('.course-enrichment details'),questions:document.querySelectorAll('.course-specialty-question').length}})()");
+    if(stats.lessons!==1||!stats.source||stats.questions<4)
+      problems.push(size+' '+name+' existing-original vocabulary not integrated '+JSON.stringify(stats));
    }
    const value=await js('(function(){const e=document.querySelector('+JSON.stringify(selector)+
     ');return {overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-innerWidth,width:e.getBoundingClientRect().width};})()');
