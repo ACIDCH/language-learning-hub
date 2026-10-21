@@ -47,6 +47,12 @@ export default function CourseCatalog({params,navigate}:{params:URLSearchParams;
    <label>学习语言<select value={language} onChange={e=>navigate(catalogRoute(e.target.value))}>
     <option value="">全部语言</option>{languages.map(l=><option key={l} value={l}>{languageName(l)}</option>)}
    </select></label>
+   <label>课程方向<select aria-label="课程方向" value={track}
+    onChange={e=>navigate(catalogRoute(language,e.target.value))}>
+    <option value="">全部方向</option>
+    {groups.map(g=><option key={g} value={g}>{trackLabel(g)}</option>)}
+    <option value="零基础">零基础</option><option value="基础 A2 衔接">基础 A2 衔接</option>
+   </select></label>
    <label>搜索课程<input type="search" placeholder="课名、目标或课程编号" value={query} onChange={e=>setQuery(e.target.value)}/></label>
    <button type="button" aria-pressed={list} onClick={()=>setList(v=>!v)}>{list?'切换卡片':'切换列表'}</button>
   </div>
