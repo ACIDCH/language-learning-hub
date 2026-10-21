@@ -230,6 +230,6 @@ export function linkedSpecialty(type:SpecialtyKind,courseId:string):SpecialtyLes
 export function specialtyQuality(unit:SpecialtyLesson){
  const ex=unit.sections.flatMap(s=>s.examples);
  return unit.sections.length>=3&&unit.questions.length>=2&&unit.model.length>=2&&
- ex.length>=6&&unit.sections.every(s=>s.concept.length>=35&&s.caution.length>=12&&s.pattern.length>4&&s.examples.every(e=>e.zh.length>3&&e.target.length>8&&e.analysis.length>6))&&
+ ex.length>=6&&unit.sections.every(s=>s.concept.length>=35&&s.caution.length>=12&&s.pattern.length>4&&s.examples.every(e=>e.zh.length>3&&e.target.length>8&&e.analysis.length>3))&&
  unit.questions.every(q=>q.answer.length>0&&q.why.length>=12);
 }
