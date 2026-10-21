@@ -42,3 +42,29 @@
 .v44 .bilingual-rule-warning{margin:11px 0;padding:12px 14px;background:var(--accentTint);border-left:3px solid var(--accent);border-radius:0 8px 8px 0}
 .v44 .bilingual-rule-warning p{margin:5px 0 0;line-height:1.75}
 .v44 .bilingual-vocab>div small{font-size:12px;color:var(--textMuted);line-height:1.5;overflow-wrap:anywhere}
+
+/* Curated bilingual textbooks: keep the verified reader design, not a parallel page. */
+.v44 .curated-lesson{margin-top:0}
+.v44 .curated-lesson>.bilingual-topics{margin-top:14px}
+.v44 .curated-precondition,.v44 .curated-guidance{font-size:14px;line-height:1.8;color:var(--text);margin:13px 0}
+.v44 .curated-guidance{border-left:3px solid var(--border);padding:10px 12px;background:var(--pane)}
+.v44 .curated-pattern{padding:9px 11px;border-radius:8px;background:var(--accentTint);overflow-wrap:anywhere}
+.v44 .curated-lesson .bilingual-topic .bilingual-list{gap:8px}
+.v44 .curated-vocab{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.v44 .curated-vocab-item{background:var(--pane);border:1px solid var(--border);border-radius:10px;padding:12px;min-width:0}
+.v44 .curated-vocab-item>h4{margin:0 0 5px;font-size:16px}
+.v44 .curated-vocab-item>p{margin:5px 0;line-height:1.65;overflow-wrap:anywhere}
+.v44 .curated-vocab-item .curated-collocation{color:var(--accent);font-size:14px}
+.v44 .curated-practice{margin-top:18px;border-top:1px solid var(--border);padding-top:8px}
+.v44 .curated-question{display:grid;gap:9px;margin:12px 0;padding:13px;background:var(--pane);border:1px solid var(--border);border-radius:10px}
+.v44 .curated-question label{line-height:1.7}
+.v44 .curated-question textarea,.v44 .curated-output textarea{width:100%;min-width:0;box-sizing:border-box;font:inherit;line-height:1.65}
+.v44 .curated-question button{justify-self:start}
+.v44 .curated-answer{background:var(--accentTint);padding:10px 12px;border-radius:8px}
+.v44 .curated-answer p{margin:4px 0;line-height:1.7}
+.v44 .curated-output{display:grid;gap:8px;margin-bottom:16px}
+.v44 .curated-output p{font-size:13px;margin:2px 0;line-height:1.6}
+.v44 .curated-source-details{margin-top:12px;border:1px solid var(--border);border-radius:10px;padding:12px}
+.v44 .curated-source-details summary{cursor:pointer;font-weight:600}
+.v44 .curated-source-details[open] .lesson-content-flow{margin-top:15px}
+@media(max-width:650px){.v44 .curated-vocab{grid-template-columns:1fr}.v44 .curated-lesson{padding:12px}}
