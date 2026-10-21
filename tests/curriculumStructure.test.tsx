@@ -114,7 +114,7 @@ describe('semantic curriculum without broken full-page IPA',()=>{
   expect(chunks.map(x=>x.text).join('\n')).toContain('correct speaker attribution');
  });
  it('removes stale V4 heading but retains the grammar teaching content beneath it',()=>{
-  const text='un/une/des 表示非特指。\\n【V4 校订与入门补充】\\n冠词要连同名词记忆：une table, un livre.';
+  const text='un/une/des 表示非特指。\n【V4 校订与入门补充】\n冠词要连同名词记忆：une table, un livre.';
   const {container}=render(<LessonBody text={text}/>);
   expect(container.textContent).not.toContain('V4 校订与入门补充');
   expect(container.textContent).toContain('冠词要连同名词记忆');
