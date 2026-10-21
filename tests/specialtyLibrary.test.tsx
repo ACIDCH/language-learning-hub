@@ -82,6 +82,24 @@ describe('independent bilingual grammar and vocabulary teaching',()=>{
   fireEvent.click(screen.getByRole('button',{name:'隐藏中文，自测理解'}));
   expect(screen.getByRole('button',{name:'显示中文对照'})).toBeTruthy();
  });
+ it('adds actual A1 questions and adjective lessons mapped to their existing courses',()=>{
+  for(const [id,course] of [['fr-questions-a1','fr-a1-u06'],['fr-adjective-agreement-a1','fr-a1-u10']]){
+   const lesson=SPECIALTY_LESSONS.find(u=>u.id===id);
+   expect(lesson,id).toBeTruthy();
+   expect(lesson!.unitLink).toBe(course);
+   expect(lesson!.sections.length).toBeGreaterThanOrEqual(4);
+   expect(lesson!.questions.length).toBeGreaterThanOrEqual(4);
+   expect(specialtyQuality(lesson!)).toBe(true);
+   expect(linkedSpecialties('grammar',course).some(u=>u.id===id)).toBe(true);
+  }
+  expect(SPECIALTY_LESSONS.length).toBeGreaterThanOrEqual(24);
+  const questions=SPECIALTY_LESSONS.find(u=>u.id==='fr-questions-a1')!;
+  expect(questions.sections[0].table?.rows).toHaveLength(3);
+  expect(questions.sections[0].caution).toContain('Est-ce que parles-tu');
+  const adjectives=SPECIALTY_LESSONS.find(u=>u.id==='fr-adjective-agreement-a1')!;
+  expect(adjectives.sections[0].table?.rows).toHaveLength(4);
+  expect(adjectives.sections.flatMap(s=>s.examples).some(e=>e.target.includes('chambre est grande'))).toBe(true);
+ });
  it('teaches A1 -er morphology with a six-person paradigm and authentic contrasts',()=>{
   const grammar=SPECIALTY_LESSONS.find(x=>x.id==='fr-er')!;
   expect(grammar.sections).toHaveLength(5);
