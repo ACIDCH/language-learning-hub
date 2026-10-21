@@ -1,5 +1,6 @@
 import {FRENCH_ARTICLES,STUDY_SPACES} from './curatedCurriculum';
 import {EXPANDED_SPECIALTIES} from './expandedSpecialties';
+import {FRENCH_GRAMMAR_EXPANSION} from './frenchGrammarExpansion';
 
 export type SpecialtyKind='grammar'|'vocabulary';
 export type SpecialtyLanguage='fr'|'en';
@@ -300,7 +301,8 @@ export const SPECIALTY_LESSONS:SpecialtyLesson[]=[
  fromCurated('vocabulary',FRENCH_ARTICLES,'fr-objects','生活物品名词与冠词组合','10 个空间物品语块与否定形式','fr-a1-u04','A1',[F+'det4.html']),
  fromCurated('vocabulary',STUDY_SPACES,'en-lecture-terms','讲座关键词与论证词组','occupancy、limitation、measurement 与句意','en-ielts-listening-u01','B2',[EVP]),
  ...hand,
- ...EXPANDED_SPECIALTIES
+ ...EXPANDED_SPECIALTIES,
+ ...FRENCH_GRAMMAR_EXPANSION
 ];
 export function specialtyRoute(type:SpecialtyKind,language?:string,topic?:string,returnTo?:string){
  const params=new URLSearchParams({page:'specialties',type});
