@@ -73,7 +73,7 @@ export const FRENCH_GRAMMAR_CONTINUITY:SpecialtyLesson[]=[
  ex('Tournons à gauche ici.','我们在这里左转吧。','nous 的形式 tournons 带共同提议的语气。'),
  ex('Écoute bien les indications.','认真听说明。','tu 的 -er 规则祈使式通常去掉结尾 -s。')
  ],'不能写 Tu tournez 或 Tournes à droite 作为规则 -er 的普通 tu 祈使式。',
- {title:'turner / tourner 的三种人称',columns:['人称','陈述现在时','祈使式'],
+ {title:'tourner 的三种人称',columns:['人称','陈述现在时','祈使式'],
  rows:[['tu','tu tournes','tourne'],['nous','nous tournons','tournons'],['vous','vous tournez','tournez']],
  note:'tu 的普通 -er 祈使式一般不带 -s，但 en/y 等代词连用时需另看结构。'}),
  sec('02 tu 形式的词尾与特殊提示',
@@ -163,7 +163,7 @@ export const FRENCH_GRAMMAR_CONTINUITY:SpecialtyLesson[]=[
  ex('Je compare deux moyens de transport.','我比较两种交通方式。','设定比较对象。'),
  ex('Le bus est moins cher que le taxi.','公交车比出租车便宜。','价格维度。'),
  ex('Le taxi est parfois plus rapide.','出租车有时候更快。','速度维度和限定。'),
- ex('Le bus est aussi confortable pour ce trajet court.','对于这一段短途，公交车也同样舒适。','在特定路程内比较舒适度。'),
+ ex('Pour ce trajet court, le bus est aussi confortable que le taxi.','对于这段短途，公交车和出租车一样舒适。','在特定路程内比较舒适度。'),
  ex('À mon avis, le bus est le meilleur choix pour notre budget.','在我看来，考虑预算公交车是最佳选择。','最高级与条件衔接。'),
  ex('Mais si nous sommes pressés, je préfère prendre un taxi.','不过如果我们赶时间，我更愿意打车。','最终根据条件选择。')
  ],
