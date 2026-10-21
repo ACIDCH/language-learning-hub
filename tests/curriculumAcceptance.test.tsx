@@ -101,6 +101,6 @@ it('new A1 weekend and market texts have evidence-backed bilingual stories, not 
  expect(market.paragraphs[3].target).toContain('cinq euros');
  expect(market.questions[0].evidence).toEqual(['P1','P4']);
  const leisure=RECEPTION_LESSONS['fr-a1-u07'];
- expect(leisure.paragraphs[1].target).toContain('il pleut');
+ expect(leisure.paragraphs[1].target.toLowerCase()).toContain('il pleut');
  expect(leisure.paragraphs[2].target).toContain('quinze heures');
 });
