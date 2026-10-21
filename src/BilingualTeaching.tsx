@@ -10,11 +10,11 @@ function Parallel({entry}:{entry:ParallelSentence}){
   <p className="bilingual-usage">{entry.note}</p>
  </div>;
 }
-export default function BilingualTeaching({courseId,stage,content,privateSource=false,sourceText}:{
- courseId:string;stage:number;content?:LessonContent|null;privateSource?:boolean;sourceText?:string
+export default function BilingualTeaching({courseId,stage,content,privateSource=false,sourceText,onSaveOutput}:{
+ courseId:string;stage:number;content?:LessonContent|null;privateSource?:boolean;sourceText?:string;onSaveOutput?:(value:string)=>void
 }){
  const curated=curatedUnitForSource(courseId,sourceText||'',privateSource);
- if(curated)return <CuratedLesson unit={curated} stage={stage}/>;
+ if(curated)return <CuratedLesson unit={curated} stage={stage} onSaveOutput={onSaveOutput}/>;
  const normalize=(value:string)=>value.toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g,' ');
  const source=normalize(sourceText||'');
  const special=privateSource&&courseId==='en-ielts-listening-u01'&&
