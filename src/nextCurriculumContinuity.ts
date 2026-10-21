@@ -159,6 +159,7 @@ export const NEXT_CURRICULUM_CONTINUITY:SpecialtyLesson[]=[
  {question:'修正：After cleaned the pulp, it pressed into sheets.',answer:'After the pulp is cleaned, it is pressed into sheets.',why:'after 后补完整从句，pressed 的被动结构需要 is。'}
  ],
  output:'教材练习：根据本课六步原创文字流程，写一篇 150–180 词的英文说明，包含 overview、完整先后次序和正确的被动语态。此处没有提供正式流程图，不属于完整的视觉材料实战模拟。',
+ modelParagraphStarts:[0,1,3,7],
  model:[
  ex('The sequence describes how used paper is transformed into sheets ready for packaging through six main stages.','这组步骤描述废纸如何经过六个主要阶段转化为可包装的纸张。','引言概括对象。'),
  ex('Overall, the procedure starts with collecting discarded paper and ends with drying and packing the newly formed sheets.','总体上，流程从收集废纸开始，以新制纸张的干燥和包装结束。','overview 交代起点与终点。'),
@@ -217,6 +218,7 @@ export const NEXT_CURRICULUM_CONTINUITY:SpecialtyLesson[]=[
  {question:'本课虚构地图中中央步道是否变化？',answer:'没有。The central footpath remained unchanged.',why:'文字资料明确指出旧新布局步道均横穿场地中央。'}
  ],
  output:'依据本节四行原创文字地图对照写 150–180 词英文 Task 1 风格说明：包括总览、位置、替换、扩建和未变设施。没有实际图示，因此此处是语言训练而非正式地图视觉题模拟。',
+ modelParagraphStarts:[0,1,3,6,8],
  model:[
  ex('The information describes changes to a site between an earlier layout and a proposed new arrangement.','这些资料描述场地在旧布局与拟议新布局之间的变化。','引言限定文字描述来源。'),
  ex('Overall, the eastern garden is replaced by study rooms, while the western car park becomes larger.','总体上，东侧花园被学习室替代，西侧停车场扩大。','概述两个主要变化。'),
