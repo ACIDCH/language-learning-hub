@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {linkedSpecialties,type SpecialtyKind,type SpecialtyLesson} from './specialtyLibrary';
 import {speakIpaText} from './IpaText';
+import Task1VisualEvidence from './Task1VisualEvidence';
 import './curriculumStudy.css';
 
 /** Shows a complete, authored specialty *inside* its mapped main-course stage. */
@@ -12,6 +13,7 @@ function CourseSpecialtyTopic({unit,rate,onSaveOutput}:{unit:SpecialtyLesson;rat
  const part=unit.sections[active];
  return <section className="course-specialty-topic" aria-label={unit.title}>
   <header className="course-specialty-topic-title"><h3>{unit.title}</h3><p>{unit.objective}</p></header>
+  <Task1VisualEvidence lessonId={unit.id}/>
   <details className="course-specialty-prerequisite"><summary>前置知识</summary><p>{unit.prerequisite}</p></details>
   <nav className="course-specialty-chapters" aria-label={unit.title+'章节'}>
    {unit.sections.map((s,i)=><button type="button" key={i}
