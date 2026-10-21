@@ -1,0 +1,115 @@
+/* In-course learning workspace. Scoped to the course reader, not global site layouts. */
+.v44 .reader-page{width:100%;max-width:none;min-width:0}
+.v44 .reader-page .reader-layout{width:100%;max-width:none;margin-inline:0;min-width:0}
+.v44 .reader-page .reader-article{width:100%;min-width:0;max-width:none;padding:clamp(17px,2.1vw,34px);overflow:visible}
+.v44 .reader-page .reader-selection-scope,
+.v44 .reader-page .source-appendix,
+.v44 .reader-page .exercise-block,
+.v44 .reader-page .learning-notes{
+ max-width:100%!important;width:100%!important;margin-inline:0!important;min-width:0}
+.v44 .reader-page .lesson-reader,
+.v44 .reader-page .lesson-paper,
+.v44 .reader-page .lesson-paragraphs,
+.v44 .reader-page .curriculum-lesson,
+.v44 .reader-page .curriculum-stage,
+.v44 .reader-page .ipa-study-pane,
+.v44 .reader-page .bilingual-teaching,
+.v44 .reader-page .curated-lesson{width:100%;max-width:100%;min-width:0}
+.v44 .reader-page .lesson-paper{margin:0}
+.v44 .reader-page .lesson-stage-head{margin-bottom:14px}
+.v44 .reader-page .reader-top{margin:7px 0 15px;justify-content:flex-end}
+
+/* One persistent toolbar for the five teaching stages and paragraph IPA.
+   Horizontal scrolling is intentional only for narrow viewports, never the page. */
+.v44 .reader-page .course-study-switcher{
+ position:sticky;top:76px;z-index:36;
+ display:grid;grid-template-columns:repeat(5,minmax(0,1fr)) minmax(135px,1.1fr);
+ gap:7px;align-items:center;
+ width:100%;max-width:100%;min-width:0;
+ padding:10px;
+ margin:-8px 0 9px;
+ border:1px solid var(--border);
+ border-radius:13px;
+ background:var(--pane);
+ box-shadow:0 5px 16px rgba(21,50,43,.08);
+ isolation:isolate}
+.v44 .reader-page .course-study-switcher>button{
+ display:inline-flex;align-items:center;justify-content:center;gap:7px;
+ width:100%;min-width:0;min-height:43px;
+ padding:10px 9px;border:1px solid var(--border);border-radius:9px;
+ background:var(--paneSoft);color:var(--text);
+ font-size:13px;line-height:1.25;font-weight:630;white-space:nowrap;
+ transition:background-color .16s ease,border-color .16s ease}
+.v44 .reader-page .course-study-switcher>button:hover{border-color:var(--accent)}
+.v44 .reader-page .course-study-switcher>button.study-selected{
+ border-color:var(--accent);background:var(--accentTint);color:var(--accent)}
+.v44 .reader-page .course-study-switcher>button span{font-size:11px;font-variant-numeric:tabular-nums;opacity:.72}
+.v44 .reader-page .course-study-switcher .course-ipa-tab{border-left:2px solid var(--accent)}
+
+/* Textbook-style parallel sentences use the page width while keeping translations aligned. */
+.v44 .reader-page .bilingual-line{
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+ gap:4px clamp(14px,2vw,34px);align-items:start;
+ padding:clamp(12px,1.3vw,20px)}
+.v44 .reader-page .bilingual-line>.bilingual-target,
+.v44 .reader-page .bilingual-line>.bilingual-chinese{margin:0;font-size:clamp(14px,1.12vw,18px);line-height:1.8}
+.v44 .reader-page .bilingual-line>.bilingual-target{font-family:var(--reading-font);font-weight:610}
+.v44 .reader-page .bilingual-line>.bilingual-chinese{font-weight:450;color:var(--text)}
+.v44 .reader-page .bilingual-line>.bilingual-usage{
+ grid-column:1/-1;margin:5px 0 0;
+ padding-top:8px;border-top:1px dashed var(--border);
+ color:var(--textMuted);line-height:1.65}
+.v44 .reader-page .bilingual-teaching{padding:clamp(16px,1.9vw,30px);background:var(--pane)}
+.v44 .reader-page .bilingual-list,.v44 .reader-page .bilingual-topics{gap:11px}
+.v44 .reader-page .bilingual-teaching>h3{font-size:clamp(17px,1.5vw,22px);line-height:1.4}
+.v44 .reader-page .bilingual-teaching h4{font-size:clamp(15px,1.3vw,19px);line-height:1.4}
+.v44 .reader-page .bilingual-topic{padding:clamp(14px,1.55vw,24px)}
+.v44 .reader-page .bilingual-topic>p{max-width:96ch}
+.v44 .reader-page .bilingual-vocab,
+.v44 .reader-page .curated-vocab{grid-template-columns:repeat(3,minmax(0,1fr))}
+.v44 .reader-page .curriculum-vocabulary{grid-template-columns:repeat(3,minmax(0,1fr))}
+.v44 .reader-page .curriculum-stage{padding:clamp(14px,2vw,30px)}
+.v44 .reader-page .curated-source-details,
+.v44 .reader-page .ipa-study-full{max-width:100%}
+.v44 .reader-page .lesson-paragraphs{white-space:normal}
+.v44 .reader-page .lesson-content-group{white-space:pre-wrap}
+
+/* Reading-width customization remains meaningful in immersive mode but no longer
+   collapses normal reading to the old 780px/100ch document column. */
+body[data-view-mode="immersive"] .v44 .reader-page .reader-selection-scope{
+ max-width:min(100%,calc(var(--readerWidth) * 1.35))!important;margin-inline:auto!important}
+body[data-view-mode="focus"] .v44 .reader-page .reader-selection-scope{max-width:100%!important}
+
+/* Large screens give prose a generous reading surface, with a reserved selection workbench. */
+@container lesson (min-width:1100px){
+ .v44 .reader-page .reader-layout:not(.tools-hidden){
+  grid-template-columns:minmax(0,1fr) clamp(300px,25cqw,390px)!important}
+}
+@container lesson (max-width:1099px){
+ .v44 .reader-page .reader-layout:not(.tools-hidden){grid-template-columns:minmax(0,1fr)!important}
+}
+@container lesson (max-width:940px){
+ .v44 .reader-page .bilingual-vocab,
+ .v44 .reader-page .curated-vocab,
+ .v44 .reader-page .curriculum-vocabulary{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@container lesson (max-width:760px){
+ .v44 .reader-page .course-study-switcher{
+  display:flex;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;
+  border-radius:11px;padding:8px;scroll-snap-type:x proximity}
+ .v44 .reader-page .course-study-switcher>button{flex:0 0 auto;width:auto;min-width:103px;scroll-snap-align:start}
+ .v44 .reader-page .bilingual-line{grid-template-columns:minmax(0,1fr)}
+ .v44 .reader-page .bilingual-line>.bilingual-usage{grid-column:1}
+ .v44 .reader-page .bilingual-line>.bilingual-chinese{color:var(--accent)}
+}
+@container lesson (max-width:480px){
+ .v44 .reader-page .reader-article{padding:12px}
+ .v44 .reader-page .course-study-switcher{top:70px;margin:0 0 8px}
+ .v44 .reader-page .bilingual-vocab,
+ .v44 .reader-page .curated-vocab,
+ .v44 .reader-page .curriculum-vocabulary{grid-template-columns:minmax(0,1fr)}
+ .v44 .reader-page .bilingual-teaching{padding:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ .v44 .reader-page .course-study-switcher>button{transition:none}
+}
