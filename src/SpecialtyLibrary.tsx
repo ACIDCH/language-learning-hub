@@ -36,22 +36,21 @@ function NotesPractice({unit}:{unit:SpecialtyLesson}){
   </section>
  </div>;
 }
-function TopicArticle({unit,navigate}:{unit:SpecialtyLesson;navigate:(p:string)=>void}){
+function TopicArticle({unit,navigate,returnPath,onSelectSection}:{unit:SpecialtyLesson;navigate:(p:string)=>void;returnPath:string;onSelectSection:(index:number)=>void}){
  const [complete,setComplete]=useState<Record<number,boolean>>({});
  const finished=unit.sections.filter((_,i)=>complete[i]).length;
  return <article className="specialty-textbook" aria-label={unit.title}>
   <div className="specialty-article-head">
    <div><span className="specialty-kicker">{unit.language==='fr'?'FRANÇAIS':'ENGLISH'} · {unit.level} · {unit.type==='grammar'?'GRAMMAR':'VOCABULARY'}</span>
     <h1>{unit.title}</h1><p>{unit.subtitle}</p></div>
-   <button className="specialty-course-link" onClick={()=>navigate(courseRoute(COURSES.find(c=>c.id===unit.unitLink)!,
-     unit.type==='grammar'?'read':'read'))}>回到关联课程 <span aria-hidden="true">↗</span></button>
+   <button className="specialty-course-link" onClick={()=>navigate(returnPath)}>回到关联课程 <span aria-hidden="true">↗</span></button>
   </div>
   <div className="specialty-objectives">
    <div><strong>先备知识</strong><p>{unit.prerequisite}</p></div>
    <div><strong>学习目标</strong><p>{unit.objective}</p></div>
   </div>
   <nav className="specialty-section-nav" aria-label="本专题章节">
-   {unit.sections.map((s,i)=><a key={i} href={'#specialty-section-'+i}>{String(i+1).padStart(2,'0')} {s.title.replace(/^\d+[.、 ]+/u,'')}</a>)}
+   {unit.sections.map((s,i)=><a key={i} href={'#specialty-section-'+i} onClick={()=>onSelectSection(i)}>{String(i+1).padStart(2,'0')} {s.title.replace(/^\d+[.、 ]+/u,'')}</a>)}
   </nav>
   <div className="specialty-progress" role="status">已阅读并自行核对 {finished} / {unit.sections.length} 个知识点</div>
   {unit.sections.map((s,i)=><section id={'specialty-section-'+i} className="specialty-chapter" key={i}>
@@ -76,15 +75,28 @@ function TopicArticle({unit,navigate}:{unit:SpecialtyLesson;navigate:(p:string)=
   </details>
  </article>;
 }
-function StudyCompanion({unit}:{unit:SpecialtyLesson}){
- const sample=unit.sections.flatMap(s=>s.examples)[0];
+function StudyCompanion({unit,sectionIndex,onSelectSection}:{unit:SpecialtyLesson;sectionIndex:number;onSelectSection:(index:number)=>void}){
+ const current=unit.sections[sectionIndex]||unit.sections[0];
+ const sample=current?.examples[0];
  return <aside className="specialty-companion" aria-label="本课知识点辅助栏">
-  <section><h2>本专题重点</h2><ol>{unit.sections.map((s,i)=><li key={i}><a href={'#specialty-section-'+i}>{s.title.replace(/^\d+[.、 ]+/u,'')}</a></li>)}</ol></section>
-  <section><h2>容易混淆的地方</h2><ul>{unit.sections.slice(0,2).map((s,i)=><li key={i}>{s.caution}</li>)}</ul></section>
-  <section><h2>搭配 / 结构速查</h2>{unit.sections.slice(0,3).map((s,i)=><p className="specialty-companion-pattern" lang={unit.language} key={i}>{s.pattern}</p>)}</section>
-  {sample&&<section><h2>选句快速跟读</h2><p lang={unit.language}>{sample.target}</p>
-   <button type="button" onClick={()=>speakIpaText(sample.target,unit.language,.85)}>▶ 播放外语例句</button>
-   <p className="specialty-hint">播放依赖本机语音功能；专业发音准确度评分尚未验收。</p></section>}
+  <section><h2>本专题章节</h2>
+   <ol>{unit.sections.map((s,i)=><li key={i}>
+    <a href={'#specialty-section-'+i} aria-current={sectionIndex===i?'location':undefined}
+     onClick={()=>onSelectSection(i)}>{s.title.replace(/^\d+[.、 ]+/u,'')}</a>
+   </li>)}</ol>
+  </section>
+  {current&&<><section><h2>当前重点 · {String(sectionIndex+1).padStart(2,'0')}</h2>
+   <p><strong>{current.title}</strong></p><p>{current.concept}</p>
+  </section>
+  <section><h2>本节易错点</h2><p>{current.caution}</p></section>
+  <section><h2>结构与搭配速查</h2><p className="specialty-companion-pattern" lang={unit.language}>{current.pattern}</p>
+   {current.examples.slice(0,2).map((e,i)=><div key={i} className="specialty-companion-pair">
+    <strong lang={unit.language}>{e.target}</strong><p lang="zh-Hans">{e.zh}</p>
+   </div>)}
+  </section></>}
+  {sample&&<section><h2>本节快速跟读</h2><p lang={unit.language}>{sample.target}</p>
+   <button type="button" onClick={()=>speakIpaText(sample.target,unit.language,.85)}>▶ 朗读当前例句</button>
+  </section>}
  </aside>;
 }
 export default function SpecialtyLibrary({params,navigate}:{params:URLSearchParams;navigate:(url:string)=>void}){
@@ -97,6 +109,13 @@ export default function SpecialtyLibrary({params,navigate}:{params:URLSearchPara
  const requested=params.get('topic');
  const lesson=filtered.find(x=>x.id===requested)||filtered[0];
  const related=COURSES.find(c=>c.id===lesson?.unitLink);
+ const [selectedChapter,setSelectedChapter]=useState<{topic:string;index:number}|null>(null);
+ const sectionIndex=selectedChapter?.topic===lesson?.id?selectedChapter.index:0;
+ const returnTo=params.get('returnTo');
+ // Never navigate to arbitrary URLs from an untrusted query parameter.
+ const permittedReturns=related?['read','ipa','speech'].map(tab=>courseRoute(related,tab)):[];
+ const returnPath=returnTo&&permittedReturns.includes(returnTo)?returnTo:
+  related?courseRoute(related):'/';
  return <section className="specialty-page" aria-label="语法与词汇专题学习">
   <div className="specialty-top">
    <p className="eyebrow">LANGUAGE LEARNING · SYSTEMATIC STUDY</p><h1>语法与词汇专题</h1>
@@ -126,8 +145,10 @@ export default function SpecialtyLibrary({params,navigate}:{params:URLSearchPara
    </aside>
    <div className="specialty-main">
     {lesson&&specialtyQuality(lesson)?<>
-     <TopicArticle key={lesson.id} unit={lesson} navigate={navigate}/>
-     <StudyCompanion key={lesson.id+'-helper'} unit={lesson}/>
+     <TopicArticle key={lesson.id} unit={lesson} navigate={navigate} returnPath={returnPath}
+      onSelectSection={index=>setSelectedChapter({topic:lesson.id,index})}/>
+     <StudyCompanion key={lesson.id+'-helper'} unit={lesson} sectionIndex={sectionIndex}
+      onSelectSection={index=>setSelectedChapter({topic:lesson.id,index})}/>
     </>:<div className="panel specialty-empty">
      <h2>暂无匹配的已编写专题</h2><p>可尝试切换语言、等级或关键词；不会用空白模板假装已编写教材。</p>
      {related&&<button onClick={()=>navigate(courseRoute(related))}>进入相关课程</button>}</div>}
