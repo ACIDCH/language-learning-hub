@@ -56,7 +56,7 @@ export const HOME_PLANS_READING_HEADINGS:SpecialtyLesson[]=[
  e('Le dimanche, ma colocataire travaille.','星期天我的室友上班。','说明另一人安排。'),
  e('Moi, je fais les courses pour la semaine.','我则为这一周采购物品。','收束分工。')
  ],
- referenceUrls:['https://www.laits.utexas.edu/tex/gr/det3.html','https://www.laits.utexas.edu/tex/gr/pre1a.html'],
+ referenceUrls:['https://www.laits.utexas.edu/tex/gr/det6.html','https://www.laits.utexas.edu/tex/gr/pre1a.html'],
  sourceNote:'围绕 fr-a1-u10 原始合租场景中 le salon、la cuisine、mes clés、le dimanche 逐点扩展，所用句子均为项目原创。'
 },
 {
