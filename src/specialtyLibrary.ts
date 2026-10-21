@@ -233,8 +233,11 @@ export function specialtyRoute(type:SpecialtyKind,language?:string,topic?:string
  if(returnTo&&/^\/\?course=[^#]+$/.test(returnTo))params.set('returnTo',returnTo);
  return '/?'+params.toString();
 }
+export function linkedSpecialties(type:SpecialtyKind,courseId:string):SpecialtyLesson[]{
+ return SPECIALTY_LESSONS.filter(x=>x.type===type&&x.unitLink===courseId);
+}
 export function linkedSpecialty(type:SpecialtyKind,courseId:string):SpecialtyLesson|undefined{
- return SPECIALTY_LESSONS.find(x=>x.type===type&&x.unitLink===courseId);
+ return linkedSpecialties(type,courseId)[0];
 }
 export function specialtyQuality(unit:SpecialtyLesson){
  const ex=unit.sections.flatMap(s=>s.examples);
