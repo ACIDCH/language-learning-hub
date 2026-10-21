@@ -4,6 +4,8 @@ import type {FoundationUnit} from './foundationTypes';
 import {speakIpaText} from './IpaText';
 import {LESSON_EXTENSIONS} from './editorialLessonExtensions';
 import BilingualTeaching from './BilingualTeaching';
+import CourseSpecialtyStage from './CourseSpecialtyStage';
+import {linkedSpecialties} from './specialtyLibrary';
 import {outputGuide,exampleVocabulary} from './curriculumTeachingGuide';
 import {STUDY_STAGES,STUDY_TITLES,visibleStudyStage,moveStudyStage} from './lessonStages';
 const TABS=['情境','语法','词汇','听读','表达'] as const;
@@ -27,6 +29,8 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
   const output=draft?.production||unit!.production;
  const guide=outputGuide(course,content);
  const isDraft=Boolean(draft);
+ const integratedGrammar=linkedSpecialties('grammar',course.id).length>0;
+ const integratedVocabulary=linkedSpecialties('vocabulary',course.id).length>0;
  const play=(value:string)=>speakIpaText(value,course.language,ttsRate);
  const lessonQuestions= isDraft?draft!.questions.map(q=>({prompt:q.prompt,answer:q.answer,explanation:q.explanation})):
   unit!.questions.map(q=>({prompt:q.prompt,answer:q.choices[q.answer],explanation:q.explanation}));
@@ -48,7 +52,7 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
      <section><h3>情境示例</h3><blockquote>{examples[0]}</blockquote>
        <button type="button" onClick={()=>play(examples[0])}>听例句</button></section>
    </div>}
-   {active===1&&<div className="curriculum-stack">
+   {active===1&&(integratedGrammar?<CourseSpecialtyStage courseId={course.id} kind="grammar" rate={ttsRate}/>:<div className="curriculum-stack">
      <section><h3>核心规则</h3><ol className="curriculum-concepts">
       {(draft?draft.grammar.split(/[。](?![^（]*）)/u).map(t=>t.trim()).filter(Boolean):
       unit!.concepts).map((part,i)=><li key={i}>{part}</li>)}</ol></section>
@@ -64,8 +68,8 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
         <h4>{point.label}</h4><blockquote>{point.evidence}</blockquote><p>{point.teaching}</p></div>)}</section>}
      <section className="curriculum-warning"><h3>容易混淆的地方</h3>
       <p>{draft?.common_mistake||unit!.commonMistake}</p></section>
-   </div>}
-   {active===2&&<div className="curriculum-stack">
+   </div>)}
+   {active===2&&(integratedVocabulary?<CourseSpecialtyStage courseId={course.id} kind="vocabulary" rate={ttsRate}/>:<div className="curriculum-stack">
      <section><h3>本课词汇</h3><div className="curriculum-vocabulary" role="list">
       {vocabulary.map(([word,meaning],i)=><div role="listitem" className="curriculum-word" key={i}>
        <strong lang={course.language}>{word}</strong><span>{meaning}</span>
@@ -77,7 +81,7 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
         {exampleVocabulary(ex,vocabulary).length>0&&<div className="curriculum-example-gloss">
         {exampleVocabulary(ex,vocabulary).map(item=><span key={item}>{item}</span>)}</div>}
       </div>)}</section>
-   </div>}
+   </div>)}
    {active===3&&<div className="curriculum-stack">
      <section><h3>听力</h3><div className="curriculum-actions"><button type="button" onClick={()=>play(listening)}>播放听力</button>
       <button type="button" onClick={()=>setExpanded(v=>!v)} aria-expanded={expanded}>{expanded?'隐藏文本':'显示文本'}</button></div>
@@ -119,7 +123,7 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
        <ul>{extension.check.map(item=><li key={item}>{item}</li>)}</ul></div>}
        {isDraft&&draft!.self_review&&!draft!.self_review.startsWith('核对任务是否回答完整')&&<details><summary>额外自查说明</summary><p>{draft!.self_review}</p></details>}</section>
    </div>}
-   <BilingualTeaching key={course.id+'-'+active} courseId={course.id} stage={active} content={content}/>
+   {!(active===1&&integratedGrammar)&&!(active===2&&integratedVocabulary)&&<BilingualTeaching key={course.id+'-'+active} courseId={course.id} stage={active} content={content}/>}
   </article>
   <div className="curriculum-navigation">
    <button type="button" disabled={position===0} onClick={()=>onChangeStage(moveStudyStage(active,-1))}>← 上一部分</button>
