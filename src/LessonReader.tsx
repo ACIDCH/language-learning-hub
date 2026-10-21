@@ -3,6 +3,8 @@ import {splitLessonStages,STUDY_STAGES,STUDY_TITLES,visibleStudyStage,moveStudyS
 import LessonBody from './LessonBody';
 import BilingualTeaching from './BilingualTeaching';
 import {curatedUnitForSource} from './curatedCurriculum';
+import {CHINESE_LESSON_NOTES} from './bilingualTeachingNotes';
+import {ENGLISH_ORIGINAL_BILINGUAL} from './bilingualOriginalEnglish';
 import type {LessonContent} from './v44Courses';
 
 type Props={text:string;content?:LessonContent|null;privateSource?:boolean;defaultIpa?:boolean;ttsRate?:number;language?:string;courseId:string;
@@ -14,6 +16,7 @@ export default function LessonReader({text,courseId,content,privateSource=false,
  const [showAll,setShowAll]=useState(false);
  useEffect(()=>{setShowAll(false);},[stage]);
  const curated=lesson.structured?curatedUnitForSource(courseId,text,privateSource):null;
+ const alignedGuide=Boolean(!privateSource&&(CHINESE_LESSON_NOTES[courseId]||ENGLISH_ORIGINAL_BILINGUAL[courseId]));
  const current=visibleStudyStage(stage);
  const selected=STUDY_STAGES.indexOf(current as typeof STUDY_STAGES[number]);
  const sections=lesson.structured?STUDY_STAGES.map((id,index)=>({
@@ -38,11 +41,15 @@ export default function LessonReader({text,courseId,content,privateSource=false,
      courseId={courseId} stage={current} content={content} privateSource={privateSource} sourceText={text} onSaveOutput={onSaveOutput}/>
      <details className="curated-source-details"><summary>展开本环节对应原文</summary>
        <LessonBody text={source}/></details></>:
-     <>{!showAll&&current!==3&&<BilingualTeaching key={courseId+'-'+current}
+     <>{alignedGuide&&!showAll?<><BilingualTeaching key={courseId+'-'+current}
+        courseId={courseId} stage={current} content={content} privateSource={privateSource} sourceText={text} onSaveOutput={onSaveOutput}/>
+        <details className="curated-source-details"><summary>展开本环节原始教材</summary>
+         <LessonBody text={source}/></details></>:
+       <>{!showAll&&current!==3&&<BilingualTeaching key={courseId+'-'+current}
         courseId={courseId} stage={current} content={content} privateSource={privateSource} sourceText={text} onSaveOutput={onSaveOutput}/>}
        <LessonBody text={source}/>
        {!showAll&&current===3&&<BilingualTeaching key={courseId+'-'+current}
-        courseId={courseId} stage={current} content={content} privateSource={privateSource} sourceText={text} onSaveOutput={onSaveOutput}/>}</>}
+        courseId={courseId} stage={current} content={content} privateSource={privateSource} sourceText={text} onSaveOutput={onSaveOutput}/>}</>}</>}
   </article>
   {lesson.structured&&<div className="lesson-controls">
    {!showAll&&<button disabled={selected===0} onClick={()=>onChangeStage(moveStudyStage(current,-1))}>← 上一部分</button>}
