@@ -75,6 +75,11 @@ try{
    ['frShop','/?page=specialties&type=vocabulary&language=fr&topic=fr-shop-services-lexicon','.specialty-grammar-table'],
    ['enReported','/?page=specialties&type=grammar&language=en&topic=en-reported-speech-listening','.specialty-grammar-table'],
    ['enStance','/?page=specialties&type=vocabulary&language=en&topic=en-stance-lexicon-listening','.specialty-grammar-table'],
+   ['frConditionalB1','/?page=specialties&type=grammar&language=fr&topic=fr-conditional-hypothesis-b1','.specialty-grammar-table'],
+   ['frRelativesB1','/?page=specialties&type=grammar&language=fr&topic=fr-relative-pronouns-b1','.specialty-grammar-table'],
+   ['frMoodB2','/?page=specialties&type=grammar&language=fr&topic=fr-mood-concession-b2','.specialty-grammar-table'],
+   ['frLexiconC1','/?page=specialties&type=vocabulary&language=fr&topic=fr-precise-academic-lexicon-c1','.specialty-grammar-table'],
+   ['enArgumentTask2','/?page=specialties&type=vocabulary&language=en&topic=en-task2-reason-evidence-vocab','.specialty-grammar-table'],
   ['speech','/speech-lab','.speaking-lab-columns'],
   ['ipa','/?page=ipa','.ipa-studio'],
   ['settings','/?page=settings&section=appearance','.settings-content'],
@@ -105,7 +110,7 @@ try{
     const study=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
     writeFileSync(output+'/'+size+'-'+name+'-reading.png',Buffer.from(study.data,'base64'));
    }
-    if(['specialtyGrammar','specialtyVocabulary','frenchVerbs','frImparfait','frFuture','frDaily','enTask1','enRelative','frPossessive','frSimpleFuture','frComparison','frShop','enReported','enStance'].includes(name)){
+    if(['specialtyGrammar','specialtyVocabulary','frenchVerbs','frImparfait','frFuture','frDaily','enTask1','enRelative','frPossessive','frSimpleFuture','frComparison','frShop','enReported','enStance','frConditionalB1','frRelativesB1','frMoodB2','frLexiconC1','enArgumentTask2'].includes(name)){
      const quality=await js("(function(){const unit=document.querySelector('.specialty-textbook');return {chapters:unit?.querySelectorAll('.specialty-chapter').length||0,chars:(unit?.innerText||'').length,back:!!unit?.querySelector('.specialty-course-link'),overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-innerWidth};})()");
      if(quality.chapters<3||quality.chars<600||!quality.back||quality.overflow>5)
       problems.push(size+' '+name+' empty or overflowing chapter: '+JSON.stringify(quality));
@@ -130,6 +135,19 @@ try{
       problems.push(size+' '+name+' reported speech table should have four forms '+JSON.stringify(geom));
      if(name==='enStance'&&geom.tableRows!==5)
       problems.push(size+' '+name+' stance vocabulary table should have five categories '+JSON.stringify(geom));
+     if(name==='frConditionalB1'&&geom.tableRows!==6)
+      problems.push(size+' French B1 conditional conjugation has no six-row table '+JSON.stringify(geom));
+     if(name==='frRelativesB1'&&geom.tableRows!==4)
+      problems.push(size+' French B1 relative pronoun four-row table missing '+JSON.stringify(geom));
+     if(name==='frMoodB2'&&geom.tableRows!==4)
+      problems.push(size+' French B2 mood table missing '+JSON.stringify(geom));
+     if(name==='frLexiconC1'&&geom.tableRows!==5)
+      problems.push(size+' French C1 lexical function table missing '+JSON.stringify(geom));
+     if(name==='enArgumentTask2'){
+      const stats=await js("(function(){const model=document.querySelector('.specialty-production details');return {paragraph:(model?.innerText||'').length,sentences:model?.querySelectorAll('.specialty-example').length||0}})()");
+      if(stats.paragraph<1200||stats.sentences<15)
+       problems.push(size+' IELTS Task 2 essay absent or truncated '+JSON.stringify(stats));
+     }
      if(!await js("!!document.querySelector('.specialty-topic-group')"))
       problems.push(size+' '+name+' missing CEFR directory group');
      if(!await js("!!document.querySelector('.specialty-companion-jump')"))
