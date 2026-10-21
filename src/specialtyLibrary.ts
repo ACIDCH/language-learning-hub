@@ -40,12 +40,28 @@ function curatedVocabularySections(source:typeof FRENCH_ARTICLES):LearningSectio
   return section(spec.name,spec.meaning,
    vocab.map(x=>x.word+' → '+x.collocation).join('；'),
    passage.map(e=>pair(e.target,e.zh,e.why)),
-   '本组记忆要检查单词意义、搭配与完整句意是否一致，不能仅凭中文关键词或单词形式推断语义。');
+   french?['un / une 与 le / la 的差别取决于名词性数和指称是否确定，不能只靠汉语翻译选冠词。','否定 il n’y a pas de 和 c’est 的否定表语结构不同：Ce n’est pas un livre。','sur（上方）、sous（下方）、près de（附近）的空间关系不同，尤其要核对参照物。','描述段落首次提到物品与随后指回物品时，冠词可能从 un / une 变成 le / la。'][specs.indexOf(spec)]:['开篇信号与举例信号的功能不同，不能把 To begin with 或 Let me illustrate this 当作研究结论。','However 引出的限制不能省略；to sum up 表示总结，不自动表明前文证据充分。','occupancy 测量空间占用，不直接测量学习成绩；limitation 指证据使用范围。','is consistent with 表示“与……相符”，不能替换为 proves 或 causes。'][specs.indexOf(spec)]);
  });
 }
+const CURATED_GRAMMAR_CAUTIONS:Record<SpecialtyLanguage,string[]>={
+ fr:[
+  'un / une / des 不是所有名词的默认冠词；说话双方已知、明确限定的物品或泛指类别时可能需要定冠词。',
+  'le / la 在元音或哑音 h 前通常写 l’；泛指“喜欢某类事物”也常用定冠词，例如 J’aime les livres。',
+  'c’est / ce sont 用来指认；il y a 用来陈述某处存在。不能把 C’est un livre 与 Il y a un livre 当成完全同一种句子。',
+  'Il n’y a pas de livre 是否定存在；Ce n’est pas un livre 仍保留 un，Je n’aime pas les livres 也保留 les。',
+  'sur 与 sous 方向相反；près de 后的名词仍有自己的冠词。介绍物品时要让后一句能准确指向前一句。'
+ ],
+ en:[
+  'To begin with 只提示讲座的第一步；However 提示转折，但两者都不等于研究数据或论证已经成立。',
+  'may / might / could 不能人为赋予固定百分比；报告研究观点时要区分可能性、观察结果和已经证实的事实。',
+  'occupancy 是设施使用指标，不是 academic achievement；观察到需求差异也不能自动推断新增空间提升成绩。',
+  '复述时需要保留 whether、not necessarily、however 等限制性措辞，不应把“可能”改成“必然”。',
+  '五格笔记分别标记问题、观察/方法、举例、限制与审慎结论；不能把 illustration 和 measurable evidence 合并。'
+ ]
+};
 function fromCurated(type:SpecialtyKind,source:typeof FRENCH_ARTICLES,id:string,title:string,subtitle:string,course:string,level:SpecialtyLevel,referenceUrls:string[]):SpecialtyLesson{
  return {id,type,language:source.language,level,title,subtitle,unitLink:course,prerequisite:source.prerequisite,objective:source.goal,
- sections:type==='grammar'?source.grammar.map(x=>section(x.title,x.principle,x.pattern,x.examples.map(e=>pair(e.target,e.zh,e.why)),'复述时保留规则的适用条件；练习例句不是未核对的私人原文。')):
+ sections:type==='grammar'?source.grammar.map((x,i)=>section(x.title,x.principle,x.pattern,x.examples.map(e=>pair(e.target,e.zh,e.why)),CURATED_GRAMMAR_CAUTIONS[source.language][i])):
  curatedVocabularySections(source),
  questions:[...(source.practice[type==='grammar'?1:2]||[]),...(type==='vocabulary'?(source.practice[1]||[]).slice(0,2):[])].map(x=>({question:x.question,answer:x.answer,why:x.explanation})),
  output:source.language==='en'
