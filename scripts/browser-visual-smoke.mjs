@@ -61,6 +61,8 @@ try{
   ['guidedEnglish','/?course=en-ielts-listening-u01&tab=read','.curriculum-stage'],
   ['guidedFrench','/?course=fr-a1-u04&tab=read','.curriculum-stage'],
   ['courseIpa','/?course=en-ielts-listening-u01&tab=ipa','.ipa-study-pane'],
+   ['specialtyGrammar','/?page=specialties&type=grammar&language=fr&topic=fr-etre','.specialty-textbook'],
+   ['specialtyVocabulary','/?page=specialties&type=vocabulary&language=en&topic=en-study-vocab','.specialty-textbook'],
   ['speech','/speech-lab','.speaking-lab-columns'],
   ['ipa','/?page=ipa','.ipa-studio'],
   ['settings','/?page=settings&section=appearance','.settings-content'],
@@ -91,6 +93,11 @@ try{
     const study=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
     writeFileSync(output+'/'+size+'-'+name+'-reading.png',Buffer.from(study.data,'base64'));
    }
+    if(name==='specialtyGrammar'||name==='specialtyVocabulary'){
+     const quality=await js("(function(){const unit=document.querySelector('.specialty-textbook');return {chapters:unit?.querySelectorAll('.specialty-chapter').length||0,chars:(unit?.innerText||'').length,back:!!unit?.querySelector('.specialty-course-link'),overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-innerWidth};})()");
+     if(quality.chapters<3||quality.chars<600||!quality.back||quality.overflow>5)
+      problems.push(size+' '+name+' empty or overflowing chapter: '+JSON.stringify(quality));
+    }
    if(name==='courseIpa'){
     const phonetic=await js("(function(){const t=document.querySelector('.ipa-text'),s=document.querySelector('.ipa-study-original');return {chunk:s.textContent.length,ipa:!!t,source:!!document.querySelector('.ipa-study-full')};})()");
     if(!phonetic.ipa||phonetic.chunk>240||!phonetic.source)problems.push(size+' course IPA content not chunked '+JSON.stringify(phonetic));
