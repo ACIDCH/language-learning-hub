@@ -606,7 +606,7 @@
       "reception": {
         "source": "src/ieltsReadingU05U08Reception.ts",
         "paragraphs": 4,
-        "words": 0,
+        "words": 419,
         "chinese": "all_paragraphs",
         "questions": 4,
         "audio": "segmented_device_tts_only",
@@ -659,7 +659,7 @@
       "reception": {
         "source": "src/ieltsReadingU05U08Reception.ts",
         "paragraphs": 4,
-        "words": 0,
+        "words": 407,
         "chinese": "all_paragraphs",
         "questions": 4,
         "audio": "segmented_device_tts_only",
@@ -712,7 +712,7 @@
       "reception": {
         "source": "src/ieltsReadingU05U08Reception.ts",
         "paragraphs": 4,
-        "words": 0,
+        "words": 429,
         "chinese": "all_paragraphs",
         "questions": 4,
         "audio": "segmented_device_tts_only",
@@ -765,7 +765,7 @@
       "reception": {
         "source": "src/ieltsReadingU05U08Reception.ts",
         "paragraphs": 4,
-        "words": 0,
+        "words": 458,
         "chinese": "all_paragraphs",
         "questions": 4,
         "audio": "segmented_device_tts_only",
