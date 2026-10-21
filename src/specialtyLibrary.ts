@@ -18,10 +18,33 @@ const BC='https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2';
 const EVP='https://www.cambridge.org/core/journals/english-profile-journal/article/a1b2-vocabulary-insights-and-issues-arising-from-the-english-profile-wordlists-project/E57847F6C5574124B2354F9BEEC005FA';
 const pair=(target:string,zh:string,analysis:string):LearningExample=>({target,zh,analysis});
 const section=(title:string,concept:string,pattern:string,examples:LearningExample[],caution:string):LearningSection=>({title,concept,pattern,examples,caution});
+/** Group sourced vocabulary by communicative function, not into an isolated word-per-page list. */
+function curatedVocabularySections(source:typeof FRENCH_ARTICLES):LearningSection[]{
+ const french=source.language==='fr';
+ const specs=french?[
+  {name:'01 物品名词与冠词一起学习',indexes:[0,1,2],examples:[1,2,4],meaning:'先确定名词语法性别，再给首次引入的物品选择 un / une / des。说话双方已经确定的对象则可能改用 le / la / les。学习这些词时始终保留冠词，而不是只背中文物品名称。'},
+  {name:'02 家具、电脑和否定存在',indexes:[3,4,5],examples:[0,5,6],meaning:'从句子实际功能辨认“有”和“没有”。引入一件物品可用不定冠词；普通否定存在中常用 de / d’，但 c’est 的否定表语通常仍保留 un / une。'},
+  {name:'03 空间参照：près de / sur / sous',indexes:[6,7],examples:[1,2,3],meaning:'方位词是空间关系而不只是中文翻译。先找位置被描述的物品，再找参照物，辨明是在……上、在……下还是在……附近；位置颠倒会使句意改变。'},
+  {name:'04 以 il y a 连成一段',indexes:[8,9],examples:[1,5,6],meaning:'把存在表达、冠词与方位信息串在一段真实的房间说明中。先交代场景、再引入新的物品、最后补充方位和缺少的物品，写出清楚连贯的描述。'}
+ ]:[
+  {name:'01 引入研究问题与讲座开篇',indexes:[0,1,2],examples:[0,1],meaning:'结构标记用于帮助听众预测讲座的下一步，而不自动证明后面命题正确。先识别开题和说明性例子的功能，再写进笔记的对应位置。'},
+  {name:'02 转折、限制与结论',indexes:[3,4],examples:[2,3],meaning:'however 引出限制或对照；to sum up 表示归纳。这类词决定信息关系，但并不改变证据本身，复述时不可把说明性例子误认作研究测量结果。'},
+  {name:'03 指标、方法与研究局限',indexes:[5,6,7],examples:[1,2],meaning:'occupancy 与 measurement 指向空间占用的观察方法；limitation 让读者意识到指标能回答的范围。这些词必须放到研究问题、方法和数据解释中一起理解。'},
+  {name:'04 结果词汇与谨慎推论',indexes:[8,9],examples:[2,3],meaning:'academic achievement 是学习结果，而 is consistent with 表示与某种解释相符，不能直接表示因果成立。总结时用清晰的词义边界限制结论力度。'}
+ ];
+ return specs.map(spec=>{
+  const vocab=spec.indexes.map(i=>source.vocabulary[i]);
+  const passage=spec.examples.map(i=>source.reading.pairs[i]);
+  return section(spec.name,spec.meaning,
+   vocab.map(x=>x.word+' → '+x.collocation).join('；'),
+   passage.map(e=>pair(e.target,e.zh,e.why)),
+   '本组记忆要检查单词意义、搭配与完整句意是否一致，不能仅凭中文关键词或单词形式推断语义。');
+ });
+}
 function fromCurated(type:SpecialtyKind,source:typeof FRENCH_ARTICLES,id:string,title:string,subtitle:string,course:string,level:SpecialtyLevel,referenceUrls:string[]):SpecialtyLesson{
  return {id,type,language:source.language,level,title,subtitle,unitLink:course,prerequisite:source.prerequisite,objective:source.goal,
  sections:type==='grammar'?source.grammar.map(x=>section(x.title,x.principle,x.pattern,x.examples.map(e=>pair(e.target,e.zh,e.why)),'复述时保留规则的适用条件；练习例句不是未核对的私人原文。')):
- source.vocabulary.map((x,i)=>section((i+1)+'. '+x.word,x.note,x.collocation,[pair(x.collocation,x.zh,x.note),...(source.reading.pairs.filter(e=>e.target.toLowerCase().includes(x.word.toLowerCase())).slice(0,1).map(e=>pair(e.target,e.zh,e.why)))], '词义、搭配和具体语境应同时记忆；遇到一词多义时优先判断句子含义。')),
+ curatedVocabularySections(source),
  questions:[...(source.practice[type==='grammar'?1:2]||[]),...(type==='vocabulary'?(source.practice[1]||[]).slice(0,2):[])].map(x=>({question:x.question,answer:x.answer,why:x.explanation})),
  output:source.output.task,model:source.output.model.map(e=>pair(e.target,e.zh,e.why)),referenceUrls,
  sourceNote:'以仓库内既有课程专题数据为教学基础；第三方资料仅用于规则交叉核查。'};
