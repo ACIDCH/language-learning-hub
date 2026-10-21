@@ -144,7 +144,7 @@ try{
      if(name==='frLexiconC1'&&geom.tableRows!==5)
       problems.push(size+' French C1 lexical function table missing '+JSON.stringify(geom));
      if(name==='enArgumentTask2'){
-      const stats=await js("(function(){const model=document.querySelector('.specialty-production details');return {paragraph:(model?.innerText||'').length,sentences:model?.querySelectorAll('.specialty-example').length||0}})()");
+      const stats=await js("(function(){const model=document.querySelector('.specialty-production details');return {paragraph:(model?.textContent||'').length,sentences:model?.querySelectorAll('.specialty-example').length||0}})()");
       if(stats.paragraph<1200||stats.sentences<15)
        problems.push(size+' IELTS Task 2 essay absent or truncated '+JSON.stringify(stats));
      }
