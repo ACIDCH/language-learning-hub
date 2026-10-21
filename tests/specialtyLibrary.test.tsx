@@ -3,7 +3,7 @@ import {afterEach,describe,expect,it,vi} from 'vitest';
 import {cleanup,fireEvent,render,screen} from '@testing-library/react';
 import CourseCatalog from '../src/CourseCatalog';
 import SpecialtyLibrary from '../src/SpecialtyLibrary';
-import {SPECIALTY_LESSONS,linkedSpecialty,specialtyQuality,specialtyRoute} from '../src/specialtyLibrary';
+import {SPECIALTY_LESSONS,linkedSpecialties,linkedSpecialty,specialtyQuality,specialtyRoute} from '../src/specialtyLibrary';
 import {routeCrumbs,readRoute} from '../src/v44Routes';
 import {COURSES,courseRoute} from '../src/v44Courses';
 vi.mock('../src/IpaText',()=>({speakIpaText:()=>true}));
@@ -112,6 +112,8 @@ describe('independent bilingual grammar and vocabulary teaching',()=>{
   expect(linkedSpecialty('grammar','fr-a1-u04')?.id).toBe('fr-articles');
   expect(linkedSpecialty('vocabulary','en-ielts-listening-u01')?.id).toBe('en-lecture-terms');
   expect(linkedSpecialty('grammar','fr-b2-u08')).toBeUndefined();
+  expect(linkedSpecialties('grammar','en-ielts-listening-u01').length).toBeGreaterThanOrEqual(4);
+  expect(linkedSpecialties('vocabulary','en-ielts-listening-u01').length).toBeGreaterThanOrEqual(5);
  });
  it('builds breadcrumb to new standalone content without redirecting to old cloud panel',()=>{
   const route=readRoute('https://local.test/?page=specialties&type=vocabulary&language=fr&topic=fr-family');
