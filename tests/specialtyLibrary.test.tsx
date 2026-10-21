@@ -476,8 +476,10 @@ describe('B1–B2 past time and evidence-bounded IELTS Task 1 expansion',()=>{
    expect(words,id).toBeLessThanOrEqual(185);
   }
   const process=SPECIALTY_LESSONS.find(x=>x.id==='en-process-report-grammar')!;
+  expect(process.modelParagraphStarts).toEqual([0,1,3,7]);
   expect(process.sections[0].table?.rows).toHaveLength(6);
   const maps=SPECIALTY_LESSONS.find(x=>x.id==='en-map-change-lexicon')!;
+  expect(maps.modelParagraphStarts).toEqual([0,1,3,6,8]);
   expect(maps.sections[0].table?.rows).toHaveLength(4);
  });
  it('renders both advanced French timeline and IELTS evidence directly into textbook',()=>{
@@ -488,6 +490,7 @@ describe('B1–B2 past time and evidence-bounded IELTS Task 1 expansion',()=>{
    expect(container.querySelectorAll('.specialty-chapter')).toHaveLength(4);
    expect(container.querySelectorAll('.specialty-question')).toHaveLength(4);
    expect(container.querySelectorAll('.specialty-grammar-table tbody tr').length).toBeGreaterThanOrEqual(4);
+   if(id==='en-map-change-lexicon')expect(container.querySelectorAll('.specialty-essay-paragraph')).toHaveLength(5);
    unmount();
   }
  });
