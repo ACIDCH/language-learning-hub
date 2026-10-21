@@ -2278,7 +2278,15 @@
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 51,
-      "reception": null,
+      "reception": {
+        "source": "src/frA1RoutinesDirectionsReception.ts",
+        "paragraphs": 4,
+        "words": 277,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-a1-u05.json"
@@ -2486,7 +2494,15 @@
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 49,
-      "reception": null,
+      "reception": {
+        "source": "src/frA1RoutinesDirectionsReception.ts",
+        "paragraphs": 4,
+        "words": 299,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-a1-u09.json"
