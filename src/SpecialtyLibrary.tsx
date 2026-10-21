@@ -2,6 +2,7 @@ import {Fragment,useEffect,useMemo,useState} from 'react';
 import {COURSES,courseRoute,languageName} from './v44Courses';
 import {SPECIALTY_LESSONS,specialtyRoute,type SpecialtyLesson,type SpecialtyKind,type SpecialtyLanguage,specialtyQuality} from './specialtyLibrary';
 import {speakIpaText} from './IpaText';
+import Task1VisualEvidence from './Task1VisualEvidence';
 import {orderedSpecialties,adjacentSpecialties,pairedSpecialties} from './specialtyLearningPath';
 
 const LEVELS=['A1','A2','B1','B2','C1'] as const;
@@ -12,6 +13,7 @@ function NotesPractice({unit}:{unit:SpecialtyLesson}){
  const essayParagraphs=unit.modelParagraphStarts?.map((start,i)=>unit.model.slice(start,unit.modelParagraphStarts?.[i+1]??unit.model.length));
  return <div className="specialty-practice">
   <h2>巩固练习与解析</h2>
+  <Task1VisualEvidence lessonId={unit.id}/>
 
   {unit.questions.map((q,i)=><section className="specialty-question" key={i}>
    <label htmlFor={'specialty-q-'+unit.id+'-'+i}><strong>{i+1}. {q.question}</strong></label>
