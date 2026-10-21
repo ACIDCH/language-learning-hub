@@ -6,6 +6,9 @@ import {FRENCH_PATH_VOCABULARY} from './frenchPathVocabulary';
 import {ENGLISH_PATH_SPECIALTIES} from './englishPathSpecialties';
 import {FRENCH_GRAMMAR_CONTINUITY} from './frenchGrammarContinuity';
 import {REMAINING_LANGUAGE_CONTINUITY} from './remainingLanguageContinuity';
+import {INTERMEDIATE_FRENCH_SPECIALTIES} from './intermediateFrenchSpecialties';
+import {IELTS_ARGUMENT_SPECIALTIES} from './ieltsArgumentSpecialties';
+import {ADVANCED_FRENCH_SPECIALTIES} from './advancedFrenchSpecialties';
 
 export type SpecialtyKind='grammar'|'vocabulary';
 export type SpecialtyLanguage='fr'|'en';
@@ -312,7 +315,10 @@ export const SPECIALTY_LESSONS:SpecialtyLesson[]=[
  ...FRENCH_PATH_VOCABULARY,
  ...ENGLISH_PATH_SPECIALTIES,
  ...FRENCH_GRAMMAR_CONTINUITY,
- ...REMAINING_LANGUAGE_CONTINUITY
+ ...REMAINING_LANGUAGE_CONTINUITY,
+ ...INTERMEDIATE_FRENCH_SPECIALTIES,
+ ...IELTS_ARGUMENT_SPECIALTIES,
+ ...ADVANCED_FRENCH_SPECIALTIES
 ];
 export function specialtyRoute(type:SpecialtyKind,language?:string,topic?:string,returnTo?:string){
  const params=new URLSearchParams({page:'specialties',type});
