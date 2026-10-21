@@ -2,6 +2,177 @@ export type ReceptionLesson={title:string;language:'fr'|'en';genre:string;paragr
  questions:{prompt:string;answer:string;evidence:string[];why:string}[];languageNotes:{target:string;zh:string}[];task:string;model:string;modelZh:string;references:string[]};
 /** Original teaching scenarios. Names, institutions and events below are fictional, not reported research. */
 export const RECEPTION_LESSONS:Record<string,ReceptionLesson>={
+ "fr-a1-u06":{
+ "title": "À l’accueil : comprendre un horaire et trouver sa salle",
+ "language": "fr",
+ "genre": "原创 A1 校园情境听读（设备朗读；无匹配真人录音）",
+ "paragraphs": [
+  {
+   "id": "P1",
+   "target": "Léa arrive dans une école de langues. Elle cherche la salle de français. Elle parle à une personne à l’accueil : « Bonjour, excusez-moi. Où est la salle de français ? » La personne répond : « Elle est au deuxième étage, près de l’escalier. » Léa remercie la personne et regarde le plan du bâtiment.",
+   "zh": "莉娅到了一所语言学校，正在找法语教室。她向接待处的工作人员询问：“您好，打扰一下，法语教室在哪里？”对方回答：“在二楼，楼梯附近。”莉娅表示感谢，并查看建筑平面图。"
+  },
+  {
+   "id": "P2",
+   "target": "Léa demande ensuite : « Est-ce que le cours commence à dix heures ? » La personne répond : « Non, il commence à dix heures et demie et finit à midi. » Léa répète : « À dix heures et demie ? » « Oui, c’est bien ça », confirme la personne. Le cours dure donc une heure et demie.",
+   "zh": "莉娅接着问：“课程是十点开始吗？”工作人员回答：“不是，十点半开始，中午十二点结束。”莉娅重复确认：“十点半？”对方说：“对，没错。”因此这节课持续一个半小时。"
+  },
+  {
+   "id": "P3",
+   "target": "Devant l’escalier, Léa rencontre Amir. Il cherche aussi la salle, mais il pense que le cours est au premier étage. Léa lui explique : « Non, la salle est au deuxième étage. Elle est près de l’escalier. » Amir demande : « Et qui est le professeur aujourd’hui ? » Léa répond : « C’est Madame Martin. »",
+   "zh": "在楼梯前，莉娅遇到了阿米尔。他也在找教室，但以为课程在一楼。莉娅解释：“不是，教室在二楼，靠近楼梯。”阿米尔问：“那么今天谁是老师？”莉娅回答：“是马丁女士。”"
+  },
+  {
+   "id": "P4",
+   "target": "Amir n’a pas bien entendu le nom. Il dit : « Pardon, vous pouvez répéter, s’il vous plaît ? » Léa répond lentement : « Madame Martin. » Ils trouvent enfin la salle. Amir vérifie l’heure : « Le cours commence bien à dix heures et demie ? » Léa confirme. Ils entrent dans la classe avant le début du cours.",
+   "zh": "阿米尔没有听清名字，于是说：“抱歉，您能再说一遍吗？”莉娅慢慢重复：“马丁女士。”两人终于找到了教室。阿米尔再次确认时间：“课程确实是十点半开始，对吗？”莉娅予以确认。他们在上课前走进教室。"
+  }
+ ],
+ "questions": [
+  {
+   "prompt": "课程实际几点开始、几点结束？请标明段落。",
+   "answer": "À dix heures et demie ; à midi.",
+   "evidence": [
+    "P2"
+   ],
+   "why": "P2 先否定 dix heures，再明确 dix heures et demie；结束时间为 midi。"
+  },
+  {
+   "prompt": "教室在几楼？Amir 起初误以为在哪里？",
+   "answer": "Au deuxième étage ; Amir pensait qu'elle était au premier étage.",
+   "evidence": [
+    "P1",
+    "P3"
+   ],
+   "why": "P1 和 P3 均明确为二楼；P3 说明 Amir 起初的误解是一楼。"
+  },
+  {
+   "prompt": "谁是今天的法语教师？哪一段提供姓名？",
+   "answer": "Madame Martin.",
+   "evidence": [
+    "P3",
+    "P4"
+   ],
+   "why": "P3 首次给出老师姓名，P4 因未听清而重复确认。"
+  },
+  {
+   "prompt": "为什么 Amir 请求重复？这是确认时间还是听清姓名？",
+   "answer": "Il n'a pas bien entendu le nom de Madame Martin.",
+   "evidence": [
+    "P4"
+   ],
+   "why": "P4 明确请求重复的是姓名，随后才另行确认上课时间。"
+  }
+ ],
+ "languageNotes": [
+  {
+   "target": "Est-ce que le cours commence à dix heures ?",
+   "zh": "是非问句使用 est-ce que + 原陈述句顺序；后文否定十点并修正为十点半。"
+  },
+  {
+   "target": "Vous pouvez répéter, s’il vous plaît ?",
+   "zh": "向工作人员礼貌请求重复；vous 的称呼保持一致，不能因熟悉名字就自动改 tu。"
+  },
+  {
+   "target": "Il dure une heure et demie.",
+   "zh": "durer 说明时长，而 à dix heures et demie 是具体开课时刻，两者不能混淆。"
+  }
+ ],
+ "task": "用 6–8 句法语重新叙述：人物到校→问教室→问时间→否定纠正→确认老师姓名→进入教室；保持所有时刻和楼层准确。",
+ "model": "Léa arrive à l’école et cherche la salle de français. À l’accueil, elle apprend que la salle est au deuxième étage. Elle croit d’abord que le cours commence à dix heures, mais il commence à dix heures et demie. Le cours finit à midi. Léa rencontre ensuite Amir, qui pense que la salle est au premier étage. Elle lui explique où aller et lui dit que le professeur s’appelle Madame Martin. Amir demande de répéter le nom. Enfin, les deux étudiants trouvent la salle et entrent avant le début du cours.",
+ "modelZh": "莉娅来到学校寻找法语教室。在接待处，她得知教室在二楼。她原本以为课程十点开始，实际是十点半，十二点结束。随后她遇到阿米尔，后者误以为教室在一楼。莉娅告诉他怎么走，并说明老师是马丁女士。阿米尔要求重复姓名。最后两人找到教室，在上课前进入。",
+ "references": [
+  "https://www.laits.utexas.edu/tex/gr/int2.html",
+  "https://www.laits.utexas.edu/tex/gr/neg2.html"
+ ]
+},
+ "en-ielts-listening-u03":{
+ "title": "Attendance, venue and a proposed online workshop",
+ "language": "en",
+ "genre": "原创学术英语听读 · 四段；TTS 非真实 IELTS 录音",
+ "paragraphs": [
+  {
+   "id": "P1",
+   "target": "The evening study workshop moved from a room beside the library to a smaller venue across town. According to the organiser, attendance showed a modest decline during the weeks immediately after the move. She described the change as noticeable but not dramatic. However, she warned that the numbers did not establish why fewer people had attended. In particular, she rejected the suggestion that the participants must have lost interest in the subject. The dates of the move and the drop in attendance were known, but the reason for the change had not been measured.",
+   "zh": "晚间学习工作坊从图书馆旁的房间搬到城另一端较小的场地。组织者表示，搬迁后几周的出席人数小幅下降，变化能够察觉但并不剧烈。不过她提醒，这些数字不能说明人数下降的原因。她特别反对“参加者必然失去兴趣”的推断。搬迁和人数变化发生的时间已知，但变化原因尚未得到测量。"
+  },
+  {
+   "id": "P2",
+   "target": "Several participants told the organiser that reaching the new venue required an additional bus journey. One attendee said the extra journey was manageable on weekdays but difficult on evenings when buses were less frequent. Another participant explained that the issue was not the price of the workshop, which had remained unchanged, but the travel time after work. These accounts helped the organiser understand possible obstacles. They were nevertheless comments from several individuals rather than a survey of every member, so they could not establish how many people had been affected.",
+   "zh": "几名参加者告诉组织者，去新场地需要额外乘坐一段公交。一位参加者表示，工作日这段额外路程尚能应付，但晚间公交班次较少时就比较困难。另一位解释，问题不是工作坊费用——费用并未改变——而是下班后的通勤时间。这些意见帮助组织者理解可能的障碍，但它们只是几位个人的反映，并非针对全体成员的调查，因此无法确定受影响的人数。"
+  },
+  {
+   "id": "P3",
+   "target": "The organiser is considering replacing one face-to-face workshop each month with an online session. The proposal has not yet been approved, and it would not remove the other weekly meetings. The online platform could accommodate up to thirty participants, although the normal group is smaller. The organiser stressed that thirty was a maximum capacity, not a figure for average attendance. No exact number for the usual group was supplied. Before a decision is made, the team plans to ask regular participants whether they would use the online option and whether they have reliable internet access.",
+   "zh": "组织者正在考虑每月将一次线下工作坊改为线上活动。方案尚未获得批准，也不会取消其他每周聚会。线上平台最多可容纳三十人，但平常参加人数少于这一上限。组织者强调，三十是最大容量，不是平均到场人数。团队没有提供日常群体的准确人数。在作决定前，团队计划询问常规参加者是否愿意使用线上方式，以及他们是否有稳定的网络。"
+  },
+  {
+   "id": "P4",
+   "target": "For a clear set of notes, the lecturer suggested separating observed information from proposed changes. Under observed information, students should record the slight decline in attendance and the reports of an extra bus journey. Under proposals, they should write one online session each month and a maximum capacity of thirty. Finally, they should add that approval is pending and that the effect on participation remains uncertain. A summary that writes 'thirty people normally attend online' would be inaccurate, because no online session has yet taken place and no such attendance figure was given.",
+   "zh": "为了整理清晰的笔记，讲者建议将已观察到的信息与拟议调整分开。观察信息应记下出席人数略有下降，以及一些参加者反映多乘坐一段公交。拟议措施应记下每月一次线上活动、最大容量三十人。最后还需注明方案仍待批准，对参与人数的影响仍不确定。若摘要写成“平常有三十人线上参加”，就是错误的，因为线上活动尚未举行，也没有提供这种到场数字。"
+  }
+ ],
+ "questions": [
+  {
+   "prompt": "Which phrase best preserves the reported attendance change: a slight fall or a dramatic collapse? Identify the evidence paragraph.",
+   "answer": "A slight fall (P1).",
+   "evidence": [
+    "P1"
+   ],
+   "why": "P1 explicitly says modest and not dramatic; collapse overstates the change."
+  },
+  {
+   "prompt": "What additional travel difficulty did some participants report, and was it proved to affect every member?",
+   "answer": "An additional bus journey; no, only several individuals reported it.",
+   "evidence": [
+    "P2"
+   ],
+   "why": "Several participants is not the full population. The passage provides no representative count."
+  },
+  {
+   "prompt": "What does up to thirty refer to? Has the monthly online replacement been approved?",
+   "answer": "Maximum proposed online capacity; no, approval is pending.",
+   "evidence": [
+    "P3"
+   ],
+   "why": "P3 distinguishes maximum capacity from usual attendance and a proposed option from a confirmed change."
+  },
+  {
+   "prompt": "Which two categories should the notes separate, and why would thirty normally attend online be inaccurate?",
+   "answer": "Observed information and proposed changes; thirty is capacity, no online attendance has yet been observed.",
+   "evidence": [
+    "P3",
+    "P4"
+   ],
+   "why": "A hypothetical platform limit cannot serve as historical attendance data."
+  }
+ ],
+ "languageNotes": [
+  {
+   "target": "a modest decline / a slight fall",
+   "zh": "均表示小幅下降；dramatic collapse 强度显著更大，不是保留原意的改写。"
+  },
+  {
+   "target": "several participants reported",
+   "zh": "来源归属与样本范围必须保留：有人反映不等于全体成员已证实。"
+  },
+  {
+   "target": "up to thirty / maximum capacity",
+   "zh": "最多三十是上线容量；与 usual attendance、actual attendance 不同。"
+  },
+  {
+   "target": "is considering / has not yet been approved",
+   "zh": "consider 表示正在考虑；不能在填空或摘要中改写成已经决定并执行。"
+  }
+ ],
+ "task": "根据 P1–P4 整理一篇 120–160 词的英文讲座摘要：依次区分已观察事实、个别报告、拟议方案、容量上限与尚未核实事项；不得添加讲座没有给出的实际人数。",
+ "model": "The workshop moved to a smaller venue across town, after which attendance declined slightly. The organiser said that this change was noticeable but did not show that participants had lost interest. Several people reported needing an extra bus journey, although their accounts did not establish how many learners experienced the same problem. The organiser is considering replacing one face-to-face session each month with an online meeting, while keeping the other weekly meetings. The plan is not approved. The online platform could hold up to thirty participants, which is a capacity limit rather than a measure of normal attendance. The team has not supplied a precise usual attendance figure and plans to ask members about their willingness and internet access. The speaker therefore advised students to separate observed attendance from reported travel problems and proposed arrangements in their notes.",
+ "modelZh": "工作坊搬到了城另一端更小的场地，随后出席人数略有下降。组织者指出，这种变化虽然明显，却不能证明参加者失去兴趣。几位参加者反映需要额外乘坐一段公交，但这些意见无法确定所有人中有多少遭遇相同困难。组织者正考虑每月把一次线下活动改为线上，同时保留其他每周活动。方案还未批准。线上平台最多可容纳三十人，这是容量上限，而不是正常参加人数。团队没有提供常规出席人数的准确数值，计划询问成员的使用意愿和网络条件。因此讲者建议笔记分别记录观察到的人数变化、个别交通问题和拟议安排。",
+ "references": [
+  "https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-listening",
+  "https://ielts.org/take-a-test/preparation-resources/sample-test-questions/academic-test"
+ ]
+},
  'fr-c2-u03':{
   title:'Une gare entre inventaire et mémoire',language:'fr',genre:'原创跨体裁阅读 · 虚构车站资料',
   paragraphs:[
