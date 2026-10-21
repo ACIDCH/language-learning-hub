@@ -165,7 +165,10 @@ export const REMAINING_LANGUAGE_CONTINUITY:SpecialtyLesson[]=[
  ex('She explained that facility use could be recorded at different times.','她解释说可以在不同时间记录设施使用情况。','could 保留能力而不虚构结果。'),
  ex('She then said that students might have different schedules and preferences.','随后她说学生可能有不同的时间安排和偏好。','might 限定概括力度。'),
  ex('The speaker noted that a busy room did not necessarily indicate better grades.','讲者指出繁忙的房间并不必然意味着更好的成绩。','保留 not necessarily。'),
- ex('Finally, she asked what evidence would be needed to evaluate educational outcomes.','最后她询问评估教育成果还需要哪些证据。','特殊问题用陈述语序。')
+ ex('Finally, she asked what evidence would be needed to evaluate educational outcomes.','最后她询问评估教育成果还需要哪些证据。','特殊问题用陈述语序。'),
+ ex('She distinguished recorded room occupancy from the separate question of whether students had improved their academic results.','她区分了记录到的房间占用情况与学生学业成果是否改善这一独立问题。','distinguished…from… 明确指标区别。'),
+ ex('Although she described differences in schedules, she did not claim that those examples established a causal relationship.','虽然她描述了时间安排差异，但并未声称这些例子确立了因果关系。','although 把描述性例子与因果推断分开。'),
+ ex('The lecture therefore leaves the educational effect open until more suitable evidence is available.','因此，讲座将教育效果问题保持开放，直到有更合适的证据。','归纳时保留未定结论。')
  ],
  referenceUrls:['https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/reported-speech-statements','https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/reported-speech-questions'],
  sourceNote:'与 en-ielts-listening-u02“speaker stance and purpose”相连。转述语序依据 British Council 核对，听力示例沿用课程已建立的学习空间情境但不冒充真实语音逐字稿。'
@@ -220,7 +223,9 @@ export const REMAINING_LANGUAGE_CONTINUITY:SpecialtyLesson[]=[
  ex('She acknowledges that occupancy only measures facility use.','她承认占用情况仅衡量设施使用。','限定指标边界。'),
  ex('The examples support an explanation of different schedules.','这些例子有助于解释时间安排差异。','说明性支持，不夸大数据。'),
  ex('The speaker questions whether these observations establish better academic outcomes.','讲者质疑这些观察能否证明更好的学业结果。','质疑核心推断。'),
- ex('Her conclusion therefore remains cautious.','因此她的结论保持审慎。','收束态度而非冒充真实研究结论。')
+ ex('Her conclusion therefore remains cautious.','因此她的结论保持审慎。','收束态度而非冒充真实研究结论。'),
+ ex('In my notes, I would separate the measured variable from the lecturer’s interpretation.','做笔记时我会将实际测量变量与讲者解释分开。','读者任务指向具体区分。'),
+ ex('I would also preserve the words may and not necessarily when paraphrasing her conclusion.','改写她的结论时，我也会保留 may 与 not necessarily。','通过保留限定词避免夸大原文。')
  ],
  referenceUrls:['https://www.cambridge.org/core/journals/english-profile-journal/article/a1b2-vocabulary-insights-and-issues-arising-from-the-english-profile-wordlists-project/E57847F6C5574124B2354F9BEEC005FA','https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/reported-speech-reporting-verbs'],
  sourceNote:'对接 en-ielts-listening-u02 讲者观点及目的；词汇按语用功能、搭配和证据力度分组，句子原创。'
