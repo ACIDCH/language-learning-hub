@@ -63,13 +63,14 @@ try{
   ['courseIpa','/?course=en-ielts-listening-u01&tab=ipa','.ipa-study-pane'],
    ['specialtyGrammar','/?page=specialties&type=grammar&language=fr&topic=fr-etre','.specialty-textbook'],
    ['specialtyVocabulary','/?page=specialties&type=vocabulary&language=en&topic=en-study-vocab','.specialty-textbook'],
+   ['frenchVerbs','/?page=specialties&type=grammar&language=fr&topic=fr-er','.specialty-grammar-table'],
   ['speech','/speech-lab','.speaking-lab-columns'],
   ['ipa','/?page=ipa','.ipa-studio'],
   ['settings','/?page=settings&section=appearance','.settings-content'],
   ['account','/?page=settings&section=account','.settings-content'],
   ['cloud','/cloud?panel=resources','.cloud-workspace']
  ];
- const sizes=[['desktop',1440,900],['tablet',1024,768],['mobile',390,844]];
+ const sizes=[['desktop',1440,900],['wide',1920,1000],['tablet',1024,768],['mobile',390,844]];
  for(const [size,width,height] of sizes){
   await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});
   await go('/','.catalog-toolbar');
@@ -93,10 +94,19 @@ try{
     const study=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
     writeFileSync(output+'/'+size+'-'+name+'-reading.png',Buffer.from(study.data,'base64'));
    }
-    if(name==='specialtyGrammar'||name==='specialtyVocabulary'){
+    if(name==='specialtyGrammar'||name==='specialtyVocabulary'||name==='frenchVerbs'){
      const quality=await js("(function(){const unit=document.querySelector('.specialty-textbook');return {chapters:unit?.querySelectorAll('.specialty-chapter').length||0,chars:(unit?.innerText||'').length,back:!!unit?.querySelector('.specialty-course-link'),overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-innerWidth};})()");
      if(quality.chapters<3||quality.chars<600||!quality.back||quality.overflow>5)
       problems.push(size+' '+name+' empty or overflowing chapter: '+JSON.stringify(quality));
+     const geom=await js("(function(){const rect=s=>{const e=document.querySelector(s);if(!e)return null;const r=e.getBoundingClientRect();return {left:r.left,right:r.right,width:r.width,top:r.top};};return {page:rect('.page'),specialty:rect('.specialty-page'),article:rect('.specialty-textbook'),companion:rect('.specialty-companion'),side:rect('.specialty-side'),heading:rect('.specialty-heading-row'),tableRows:document.querySelectorAll('.specialty-grammar-table tbody tr').length};})()");
+     if(!geom.heading)problems.push(size+' '+name+' missing compact heading');
+     if(width>=1440){
+      if(geom.specialty.width<geom.page.width-115)problems.push(size+' '+name+' unused page width '+JSON.stringify(geom));
+      if(geom.article.width<width*.37)problems.push(size+' '+name+' narrow lesson '+JSON.stringify(geom));
+      if(!geom.companion||geom.companion.width<210)problems.push(size+' '+name+' companion not alongside textbook '+JSON.stringify(geom));
+     }
+     if(name==='frenchVerbs'&&geom.tableRows!==6)
+      problems.push(size+' French six-person table missing '+JSON.stringify(geom));
     }
    if(name==='courseIpa'){
     const phonetic=await js("(function(){const t=document.querySelector('.ipa-text'),s=document.querySelector('.ipa-study-original');return {chunk:s.textContent.length,ipa:!!t,source:!!document.querySelector('.ipa-study-full')};})()");
