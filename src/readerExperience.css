@@ -74,13 +74,13 @@
 .v44 .reader-page .lesson-paragraphs{white-space:normal}
 .v44 .reader-page .lesson-content-group{white-space:pre-wrap}
 
-/* Immersive mode is an expansive textbook canvas, not a centered narrow document.
-   --readerWidth may influence a single paragraph's line-length, never the entire
-   structured lesson, bilingual pair, exercise or selection scope. */
+/* The lesson panel stays full-width in immersive mode. Its content surface
+   expands responsively and still respects the reader-width preference: narrow
+   preferences should visibly narrow reading, while wide preferences fill
+   the available canvas without horizontal overflow or a fixed 780px column. */
 body[data-view-mode="immersive"] .v44 .reader-page .reader-selection-scope{
- max-width:100%!important;width:100%!important;margin-inline:0!important}
-body[data-view-mode="immersive"] .v44 .reader-page .lesson-paragraphs>p{
- max-width:min(100%,var(--readerWidth,96ch))}
+ max-width:min(100%,calc(var(--readerWidth,780px) + 390px))!important;
+ width:100%!important;margin-inline:0!important}
 body[data-view-mode="focus"] .v44 .reader-page .reader-selection-scope{max-width:100%!important}
 
 /* Large screens give prose a generous reading surface, with a reserved selection workbench. */
