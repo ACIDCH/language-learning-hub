@@ -1,6 +1,33 @@
 # Grammar + Vocabulary Content Chain — 2026-10-21
 
-## 实际覆盖范围
+
+> **最新更新：44 节独立专题（语法 24、词汇 20）**。在下文记录的 35 节基础上，继续新增 9 节：法语 A1 物主限定词、祈使式、国家语言词汇；法语 A2 比较级/最高级、简单将来时、否定范围、购物服务词汇；英语 B2 间接转述语法、讲者态度语块。此前的“35 节”统计是前一阶段快照。本轮调整只更新独立专题，不代表 156 个课程单元已完成人工审校。
+
+### 第二批补全的课程对应
+
+| ID | 关联原课 | 具体内容 |
+|---|---|---|
+| fr-possessive-determiners-a1 | fr-a1-u03 | mon/ma/mes 与 son/sa/ses、元音前形式、明确所有者 |
+| fr-imperative-directions-a1 | fr-a1-u09 | tu/nous/vous、-er 的 tu 祈使式、vas-y、否定指令和实际路线 |
+| fr-comparisons-a2 | fr-a2-u06 | plus/moins/aussi…que、meilleur/mieux、最高级、条件性消费选择 |
+| fr-futur-simple-a2 | fr-a2-u07 | 六种将来时词尾、不规则词干、futur proche 对比、si/quand 的未来从句 |
+| fr-negative-scope-a2 | fr-a2-u11 | plus/jamais/rien/personne 的语义及复合过去时位置 |
+| fr-countries-languages-lexicon | fr-a1-u02 | en/au/aux/à/de、国籍形容词与语言名词、来源和居住区别 |
+| fr-shop-services-lexicon | fr-a2-u06 | 尺码、价格、试穿、退换、付款和比较决定 |
+| en-reported-speech-listening | en-ielts-listening-u02 | said/told、时态后移、if/whether 问句、讲者归属与力度 |
+| en-stance-lexicon-listening | en-ielts-listening-u02 | argue/suggest/acknowledge/question、支撑与反证、限定性转述 |
+
+### 第二批规则校核依据
+
+- Tex's French Grammar：[物主限定词](https://www.laits.utexas.edu/tex/gr/det6.html)、[祈使式](https://www.laits.utexas.edu/tex/gr/tai1.html)、[形容词比较](https://www.laits.utexas.edu/tex/gr/adj6.html)、[形容词最高级](https://www.laits.utexas.edu/tex/gr/adj7.html)、[将来时规则](https://www.laits.utexas.edu/tex/gr/taf2.html)、[将来时不规则形式](https://www.laits.utexas.edu/tex/gr/taf3.html)、[多种否定形式](https://www.laits.utexas.edu/tex/gr/neg3.html)、[国家与城市介词](https://www.laits.utexas.edu/tex/gr/pre3.html)。
+- British Council：[间接陈述](https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/reported-speech-statements)、[间接问句](https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/reported-speech-questions)、[转述动词](https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/reported-speech-reporting-verbs)。
+- Cambridge English Profile：[词汇学习中的不同义项、固定语块和搭配研究](https://www.cambridge.org/core/journals/english-profile-journal/article/a1b2-vocabulary-insights-and-issues-arising-from-the-english-profile-wordlists-project/E57847F6C5574124B2354F9BEEC005FA)。
+
+所有例句、练习和双语解释为项目内部新编写，外部资料仅用作规则对照和章节范围校核。未重新读取或重新认证全部私人教材。学生教材正文不出现这些开发说明。
+
+---
+
+## 历史快照：35 节阶段的覆盖范围
 
 - PR #50 开发分支：原 24 节独立专题 + **本轮 11 节** = **35 节**；语法 **18**，词汇 **17**。
 - 本轮全部新章均有至少四个顺序明确的知识阶段、每阶段三条以上中外文对照例句、具体误区、至少四道带解析的练习、连贯表达任务和范文。
