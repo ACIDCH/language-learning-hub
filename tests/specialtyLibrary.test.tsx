@@ -11,6 +11,7 @@ afterEach(cleanup);
 
 describe('independent bilingual grammar and vocabulary teaching',()=>{
  it('has real detailed chapters in both languages and both tracks instead of empty shells',()=>{
+  const defects:string[]=[];
   expect(SPECIALTY_LESSONS.length).toBeGreaterThanOrEqual(14);
   expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(SPECIALTY_LESSONS.length);
   for(const lang of ['fr','en']){
@@ -25,7 +26,7 @@ describe('independent bilingual grammar and vocabulary teaching',()=>{
       ['sectionsDetailed',u.sections.every(s=>s.concept.length>=35&&s.caution.length>=12&&s.pattern.length>4&&s.examples.every(e=>e.zh.length>3&&e.target.length>8&&e.analysis.length>3))],
       ['questionExplanations',u.questions.every(q=>q.answer.length>0&&q.why.length>=12)]
      ].filter(x=>!x[1]).map(x=>x[0]);
-     expect(specialtyQuality(u),'Topic below content threshold: '+u.id+'; failing: '+issues.join(',')).toBe(true);
+     if(!specialtyQuality(u))defects.push(u.id+': '+issues.join(','));
      expect(u.sections.length).toBeGreaterThanOrEqual(3);
      expect(u.sections.flatMap(x=>x.examples).every(x=>x.zh.trim()&&x.target.trim()&&x.analysis.trim())).toBe(true);
      expect(COURSES.some(c=>c.id===u.unitLink),'Missing actual linked lesson '+u.unitLink).toBe(true);
@@ -33,6 +34,7 @@ describe('independent bilingual grammar and vocabulary teaching',()=>{
     }
    }
   }
+  expect(defects,'Complete specialty editorial content checks').toEqual([]);
  });
  it('keeps the text independent from copyrighted third-party reading passages',()=>{
   for(const u of SPECIALTY_LESSONS){
