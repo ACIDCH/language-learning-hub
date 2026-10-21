@@ -224,9 +224,9 @@ describe('source-checked progression from grammar to vocabulary and longer texts
   ['en-reading-evidence-lexicon','vocabulary','en-ielts-reading-u04']
  ] as const;
  it('registers exactly the eleven substantive curriculum additions with real lessons',()=>{
-  expect(SPECIALTY_LESSONS.length).toBe(44);
-  expect(SPECIALTY_LESSONS.filter(u=>u.type==='grammar')).toHaveLength(24);
-  expect(SPECIALTY_LESSONS.filter(u=>u.type==='vocabulary')).toHaveLength(20);
+  expect(SPECIALTY_LESSONS.length).toBe(52);
+  expect(SPECIALTY_LESSONS.filter(u=>u.type==='grammar')).toHaveLength(29);
+  expect(SPECIALTY_LESSONS.filter(u=>u.type==='vocabulary')).toHaveLength(23);
   for(const [id,kind,courseId] of newUnits){
    const u=SPECIALTY_LESSONS.find(x=>x.id===id);
    expect(u,id).toBeTruthy();
@@ -292,7 +292,7 @@ describe('source-verified A1/A2 and B2 continuity completed in this pass',()=>{
   ['en-stance-lexicon-listening','vocabulary','en','B2','en-ielts-listening-u02']
  ] as const;
  it('contains nine authentic and fully authored lessons, not headings or repeated summaries',()=>{
-  expect(SPECIALTY_LESSONS.length).toBe(44);
+  expect(SPECIALTY_LESSONS.length).toBe(52);
   const allIds=SPECIALTY_LESSONS.map(x=>x.id);
   expect(new Set(allIds).size).toBe(allIds.length);
   for(const [id,type,language,level,course] of topics){
@@ -347,5 +347,78 @@ describe('source-verified A1/A2 and B2 continuity completed in this pass',()=>{
   expect(container.querySelectorAll('.specialty-question')).toHaveLength(u.questions.length);
   expect(container.querySelectorAll('.specialty-learning-links button').length).toBeGreaterThan(0);
   expect(container.textContent).not.toContain('教学内容草稿');
+ });
+});
+
+
+describe('actual B1–C1 French and IELTS Task 2 learning chain',()=>{
+ const courseMap=[
+  ['fr-conditional-hypothesis-b1','grammar','fr','B1','fr-b1-u03'],
+  ['fr-relative-pronouns-b1','grammar','fr','B1','fr-b1-u06'],
+  ['fr-subjunctive-b1','grammar','fr','B1','fr-b1-u04'],
+  ['fr-b1-argument-lexicon','vocabulary','fr','B1','fr-b1-u02'],
+  ['fr-mood-concession-b2','grammar','fr','B2','fr-b2-u01'],
+  ['fr-precise-academic-lexicon-c1','vocabulary','fr','C1','fr-c1-u01'],
+  ['en-task2-contrast-cohesion','grammar','en','B2','en-ielts-writing-task2-u03'],
+  ['en-task2-reason-evidence-vocab','vocabulary','en','B2','en-ielts-writing-task2-u02']
+ ] as const;
+ it('adds eight original full lessons with correctly linked courses and complete bilingual practice',()=>{
+  expect(SPECIALTY_LESSONS.length).toBe(52);
+  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(52);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(29);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(23);
+  for(const [id,type,language,level,unitLink] of courseMap){
+   const unit=SPECIALTY_LESSONS.find(x=>x.id===id)!;
+   expect(unit,id).toBeDefined();
+   expect([unit.type,unit.language,unit.level,unit.unitLink]).toEqual([type,language,level,unitLink]);
+   expect(unit.sections,id).toHaveLength(4);
+   expect(unit.questions.length,id).toBeGreaterThanOrEqual(4);
+   expect(unit.model.length,id).toBeGreaterThanOrEqual(6);
+   expect(unit.sections.every(x=>x.examples.length>=3),id).toBe(true);
+   expect(unit.referenceUrls.length,id).toBeGreaterThanOrEqual(1);
+   expect(specialtyQuality(unit),id).toBe(true);
+   expect(COURSES.some(c=>c.id===unitLink),id+' mapped to a course').toBe(true);
+   expect(linkedSpecialties(type,unitLink).some(x=>x.id===id)).toBe(true);
+  }
+ });
+ it('checks B1 grammatical contrasts rather than isolated trigger words',()=>{
+  const relative=SPECIALTY_LESSONS.find(x=>x.id==='fr-relative-pronouns-b1')!;
+  expect(relative.sections[0].table?.rows).toHaveLength(4);
+  expect(relative.sections[2].examples.some(x=>x.target.includes('que nous avons visitée'))).toBe(true);
+  const hypothetical=SPECIALTY_LESSONS.find(x=>x.id==='fr-conditional-hypothesis-b1')!;
+  expect(hypothetical.sections[0].table?.rows).toHaveLength(6);
+  expect(hypothetical.sections[1].caution).toContain('Si j’aurais');
+  const mood=SPECIALTY_LESSONS.find(x=>x.id==='fr-mood-concession-b2')!;
+  expect(mood.sections[1].caution).toContain('bien que');
+  expect(mood.sections[2].examples.some(x=>x.target.includes('à condition que'))).toBe(true);
+  expect(SPECIALTY_LESSONS.find(x=>x.id==='fr-subjunctive-b1')!.sections[3].examples.some(x=>x.target.includes('Je pense que'))).toBe(true);
+ });
+ it('offers a real IELTS 250-plus-word bilingual essay instead of a misleading short model',()=>{
+  const vocab=SPECIALTY_LESSONS.find(x=>x.id==='en-task2-reason-evidence-vocab')!;
+  const words=vocab.model.map(x=>x.target).join(' ').trim().split(/\s+/u).length;
+  expect(words).toBeGreaterThanOrEqual(250);
+  expect(words).toBeLessThanOrEqual(400);
+  expect(vocab.output).toContain('不少于 250 词');
+  expect(vocab.model.every(x=>x.zh.length>5&&x.analysis.length>3)).toBe(true);
+  const grammar=SPECIALTY_LESSONS.find(x=>x.id==='en-task2-contrast-cohesion')!;
+  expect(grammar.output).toContain('段落训练');
+  expect(grammar.output).toContain('不是完整 IELTS Task 2');
+  expect(grammar.sections[0].table?.rows).toHaveLength(4);
+  expect(grammar.sections[0].caution).toContain('Despite');
+ });
+ it('connects B1 grammar with B2 and C1 without inserting empty chapters',()=>{
+  const fr=orderedSpecialties(SPECIALTY_LESSONS.filter(x=>x.language==='fr'&&x.type==='grammar'));
+  const seq=fr.map(x=>x.id);
+  expect(seq.indexOf('fr-futur-simple-a2')).toBeLessThan(seq.indexOf('fr-conditional-hypothesis-b1'));
+  expect(seq.indexOf('fr-subjunctive-b1')).toBeLessThan(seq.indexOf('fr-mood-concession-b2'));
+  const c1=SPECIALTY_LESSONS.find(x=>x.id==='fr-precise-academic-lexicon-c1')!;
+  expect(adjacentSpecialties(c1,SPECIALTY_LESSONS).previous?.level).toBe('B1');
+  const renderUnit=SPECIALTY_LESSONS.find(x=>x.id==='en-task2-reason-evidence-vocab')!;
+  const {container}=render(<SpecialtyLibrary params={
+   new URLSearchParams('page=specialties&type=vocabulary&language=en&topic='+renderUnit.id)
+  } navigate={vi.fn()}/>);
+  expect(container.querySelectorAll('.specialty-chapter')).toHaveLength(4);
+  expect(container.querySelectorAll('.specialty-question')).toHaveLength(renderUnit.questions.length);
+  expect(container.textContent).not.toContain('AI');
  });
 });
