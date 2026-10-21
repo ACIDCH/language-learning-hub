@@ -533,6 +533,7 @@ describe('official-format DELF B2 and source-bound DALF C1 writing',()=>{
   expect(words).toBeLessThanOrEqual(240);
   expect(unit.modelParagraphStarts).toEqual([0,1,3,7,11]);
   expect(unit.sections[0].table?.rows).toHaveLength(4);
+  expect(unit.sections[0].examples.slice(0,2).every(x=>x.target.trim().split(/\s+/u).length>120)).toBe(true);
   expect(unit.sections[0].concept).toContain('虚构');
   expect(unit.output).toContain('不要添加个人立场');
   expect(unit.model.map(x=>x.target).join(' ')).not.toMatch(/à mon avis|je pense que/iu);
