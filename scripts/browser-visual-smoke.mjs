@@ -113,8 +113,8 @@ try{
     // The original source reader now has five semantic stages, no course preface,
     // and no full-text phoneme checkbox that covers every English/French word.
     await wait(()=>js("!!document.querySelector('.lesson-paper .lesson-paragraphs')"),'lesson body');
-    const initial=await js("(function(){const paper=document.querySelector('.lesson-paper').getBoundingClientRect(),nav=document.querySelector('.course-study-switcher');const txt=document.querySelector('.lesson-paper').innerText;return {nav:nav?nav.querySelectorAll('button').length:0,sticky:nav?getComputedStyle(nav).position:null,top:paper.top,chars:txt.trim().length,intro:!!document.querySelector('.lesson-preamble'),ipa:!!document.querySelector('.ipa-reader-controls')};})()");
-    if(initial.nav!==6||initial.sticky!=='sticky'||initial.chars<20||initial.intro||initial.ipa||/原创完整样课 v0.1|状态：教学内容草稿已完整编写/.test(document.querySelector('.lesson-paper').innerText))
+    const initial=await js("(function(){const paper=document.querySelector('.lesson-paper').getBoundingClientRect(),nav=document.querySelector('.course-study-switcher');const txt=document.querySelector('.lesson-paper').innerText;return {nav:nav?nav.querySelectorAll('button').length:0,sticky:nav?getComputedStyle(nav).position:null,top:paper.top,chars:txt.trim().length,intro:!!document.querySelector('.lesson-preamble'),ipa:!!document.querySelector('.ipa-reader-controls'),metadata:txt.includes('原创完整样课 v0.1')||txt.includes('状态：教学内容草稿已完整编写')};})()");
+    if(initial.nav!==6||initial.sticky!=='sticky'||initial.chars<20||initial.intro||initial.ipa||initial.metadata)
       problems.push(size+' course five-stage presentation invalid '+JSON.stringify(initial));
     const stageShot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
     writeFileSync(output+'/'+size+'-lesson-five-stages.png',Buffer.from(stageShot.data,'base64'));
