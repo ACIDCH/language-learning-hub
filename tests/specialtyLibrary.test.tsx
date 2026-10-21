@@ -624,7 +624,7 @@ describe('paired A1 classroom clarification and IELTS Listening U03 paraphrase',
   }
   expect(linkedSpecialties('grammar','fr-a1-u06').map(x=>x.id)).toContain('fr-questions-a1');
   expect(linkedSpecialties('grammar','fr-a1-u07').map(x=>x.id)).toContain('fr-a1-leisure-verbs');
-  expect(linkedSpecialties('vocabulary','fr-a1-u07')).toHaveLength(0);
+  expect(linkedSpecialties('vocabulary','fr-a1-u07').map(x=>x.id)).toContain('fr-a1-leisure-choice-vocabulary');
  });
  it('checks meaning-sensitive usage rather than matching isolated foreign words',()=>{
   const leisure=SPECIALTY_LESSONS.find(x=>x.id==='fr-a1-leisure-verbs')!;
