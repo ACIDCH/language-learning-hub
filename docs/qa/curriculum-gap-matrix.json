@@ -4,7 +4,7 @@
   "counts": {
     "main": 108,
     "foundation": 48,
-    "specialties": 60
+    "specialties": 64
   },
   "courses": [
     {
@@ -147,7 +147,16 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "en-listening-paraphrase-scope",
+          "type": "grammar"
+        },
+        {
+          "id": "en-listening-note-lexicon",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 87,
       "reception": null,
@@ -159,8 +168,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -2212,6 +2219,10 @@
         {
           "id": "fr-questions-a1",
           "type": "grammar"
+        },
+        {
+          "id": "fr-a1-clarification-lexicon",
+          "type": "vocabulary"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -2225,7 +2236,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -2251,7 +2261,12 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "fr-a1-leisure-verbs",
+          "type": "grammar"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 53,
       "reception": null,
@@ -2263,7 +2278,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
         "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
