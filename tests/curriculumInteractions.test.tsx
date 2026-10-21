@@ -2,7 +2,10 @@ import React,{useState} from 'react';
 import {afterEach,expect,it,vi} from 'vitest';
 import {act,cleanup,fireEvent,render,screen} from '@testing-library/react';
 import LessonReader from '../src/LessonReader';
-import {mergeLearningState,packFoundationState,unpackFoundationState} from '../src/useCourseProgress';
+import {mergeLearningState,packFoundationState,unpackFoundationState,useCourseProgress} from '../src/useCourseProgress';
+import SpecialtyLibrary from '../src/SpecialtyLibraryView';
+import {COURSES} from '../src/v44Courses';
+import {linkedSpecialties} from '../src/specialtyLibrary';
 import {StudyResponseContext} from '../src/studyResponses';
 import CourseSpecialtyStage from '../src/CourseSpecialtyStage';
 import ReceptionStudy from '../src/ReceptionStudy';
@@ -32,6 +35,17 @@ it('restores specialty chapter, answer and writing after component destruction',
  expect(screen.getAllByRole('navigation')[0].querySelectorAll('button')[1].getAttribute('aria-pressed')).toBe('true');
  expect((restored.container.querySelector('textarea') as HTMLTextAreaElement).value).toBe('Ma réponse conservée.');
  expect(screen.getByDisplayValue('Mon texte complet.')).toBeTruthy();
+});
+it('shares actual saved responses between the independent specialty and its main course',()=>{
+ localStorage.clear();
+ const course=COURSES.find(c=>c.id==='fr-b2-u03')!;
+ const unit=linkedSpecialties('grammar',course.id)[0];
+ const page=render(<SpecialtyLibrary params={new URLSearchParams({page:'specialties',type:'grammar',language:'fr',topic:unit.id})} navigate={()=>{}}/>);
+ fireEvent.change(page.container.querySelector('textarea')!,{target:{value:'Une réponse partagée.'}});
+ page.unmount();
+ function Main(){const p=useCourseProgress(course,null);return <StudyResponseContext.Provider value={{ready:p.ready,values:p.state.studyResponses||{},change:studyResponses=>p.change({studyResponses})}}><CourseSpecialtyStage courseId={course.id} kind="grammar" rate={.85}/></StudyResponseContext.Provider>;}
+ render(<Main/>);expect(screen.getByDisplayValue('Une réponse partagée.')).toBeTruthy();
+ localStorage.clear();
 });
 
 it('provides substantial aligned paragraphs, answer evidence and explicit uncertainty',()=>{

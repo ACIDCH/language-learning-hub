@@ -1,3 +1,6 @@
+import type {Session} from '@supabase/supabase-js';
+import {useCourseProgress} from './useCourseProgress';
+import {StudyResponseContext,useStudyResponses} from './studyResponses';
 import {Fragment,useEffect,useMemo,useState} from 'react';
 import {COURSES,courseRoute,languageName} from './v44Courses';
 import {SPECIALTY_LESSONS,specialtyRoute,type SpecialtyLesson,type SpecialtyKind,type SpecialtyLanguage,specialtyQuality} from './specialtyLibrary';
@@ -7,9 +10,10 @@ import {orderedSpecialties,adjacentSpecialties,pairedSpecialties} from './specia
 
 const LEVELS=['A1','A2','B1','B2','C1'] as const;
 function NotesPractice({unit}:{unit:SpecialtyLesson}){
- const [answers,setAnswers]=useState<Record<number,string>>({});
+ const saved=useStudyResponses(unit.id);
  const [reveal,setReveal]=useState<Record<number,boolean>>({});
- const [written,setWritten]=useState('');
+ const written=saved.get('writing');
+ const setWritten=(value:string)=>saved.set('writing',value);
  const essayParagraphs=unit.modelParagraphStarts?.map((start,i)=>unit.model.slice(start,unit.modelParagraphStarts?.[i+1]??unit.model.length));
  return <div className="specialty-practice">
   <h2>巩固练习与解析</h2>
@@ -17,8 +21,8 @@ function NotesPractice({unit}:{unit:SpecialtyLesson}){
 
   {unit.questions.map((q,i)=><section className="specialty-question" key={i}>
    <label htmlFor={'specialty-q-'+unit.id+'-'+i}><strong>{i+1}. {q.question}</strong></label>
-   <textarea id={'specialty-q-'+unit.id+'-'+i} rows={2} value={answers[i]||''}
-    placeholder="先写下你的答案" onChange={e=>setAnswers(o=>({...o,[i]:e.target.value}))}/>
+   <textarea id={'specialty-q-'+unit.id+'-'+i} rows={2} disabled={!saved.ready} value={saved.get('answer-'+i)}
+    placeholder="先写下你的答案" onChange={e=>saved.set('answer-'+i,e.target.value)}/>
    <button type="button" aria-expanded={!!reveal[i]} onClick={()=>setReveal(o=>({...o,[i]:!o[i]}))}>
     {reveal[i]?'收起解析':'核对答案与解析'}</button>
    {reveal[i]&&<div className="specialty-answer">
@@ -28,7 +32,7 @@ function NotesPractice({unit}:{unit:SpecialtyLesson}){
   <section className="specialty-production">
    <h3>独立应用任务</h3><p>{unit.output}</p>
    <label htmlFor={'specialty-output-'+unit.id}>我的回答</label>
-   <textarea id={'specialty-output-'+unit.id} rows={6} value={written}
+   <textarea id={'specialty-output-'+unit.id} rows={6} disabled={!saved.ready} value={written}
     onChange={e=>setWritten(e.target.value)} placeholder="结合知识点完成自己的连贯表达…"/>
    <details><summary>{essayParagraphs?'查看完整双语范文':'完成后查看分步示范'}</summary>
     {essayParagraphs?<div className="specialty-essay">
@@ -48,12 +52,13 @@ function NotesPractice({unit}:{unit:SpecialtyLesson}){
   </section>
  </div>;
 }
-function TopicArticle({unit,navigate,returnPath,onSelectSection,onOpenSpecialty}:{unit:SpecialtyLesson;navigate:(p:string)=>void;returnPath:string;onSelectSection:(index:number)=>void;onOpenSpecialty:(next:SpecialtyLesson)=>void}){
- const [complete,setComplete]=useState<Record<number,boolean>>({});
- const finished=unit.sections.filter((_,i)=>complete[i]).length;
+function TopicArticle({unit,session=null,navigate,returnPath,onSelectSection,onOpenSpecialty}:{unit:SpecialtyLesson;session?:Session|null;navigate:(p:string)=>void;returnPath:string;onSelectSection:(index:number)=>void;onOpenSpecialty:(next:SpecialtyLesson)=>void}){
+ const progress=useCourseProgress(COURSES.find(c=>c.id===unit.unitLink)!,session);
+ const complete=(i:number)=>progress.state.studyResponses?.[unit.id+':mastery-'+i]==='true';
+ const finished=unit.sections.filter((_,i)=>complete(i)).length;
  const {previous,next}=adjacentSpecialties(unit,SPECIALTY_LESSONS);
  const related=pairedSpecialties(unit,SPECIALTY_LESSONS);
- return <article className="specialty-textbook" aria-label={unit.title}>
+ return <StudyResponseContext.Provider value={{values:progress.state.studyResponses||{},ready:progress.ready,change:studyResponses=>progress.change({studyResponses})}}><article className="specialty-textbook" aria-label={unit.title}>
   <div className="specialty-article-head">
    <div><span className="specialty-kicker">{unit.language==='fr'?'FRANÇAIS':'ENGLISH'} · {unit.level} · {unit.type==='grammar'?'GRAMMAR':'VOCABULARY'}</span>
     <h1>{unit.title}</h1><p>{unit.subtitle}</p></div>
@@ -81,10 +86,11 @@ function TopicArticle({unit,navigate,returnPath,onSelectSection,onOpenSpecialty}
     <p className="specialty-analysis">{e.analysis}</p>
    </div>)}</div>
    <aside className="specialty-error"><strong>易错对比</strong><p>{s.caution}</p></aside>
-   <label className="specialty-check"><input type="checkbox" checked={!!complete[i]}
-     onChange={e=>setComplete(o=>({...o,[i]:e.target.checked}))}/>本次已掌握</label>
+   <label className="specialty-check"><input type="checkbox" disabled={!progress.ready} checked={complete(i)}
+     onChange={e=>progress.change({studyResponses:{[unit.id+':mastery-'+i]:String(e.target.checked)}})}/>本次已掌握</label>
   </section>)}
   <NotesPractice key={unit.id} unit={unit}/>
+  <button type="button" disabled={!session||!progress.ready||progress.busy} onClick={()=>void progress.save()}>保存到 Supabase</button><p role="status">{progress.status}</p>
   <nav className="specialty-learning-links" aria-label="前后专题与配套学习">
    {previous&&<button type="button" onClick={()=>onOpenSpecialty(previous)}>← 上一专题：{previous.title}</button>}
    {next&&<button type="button" onClick={()=>onOpenSpecialty(next)}>下一专题：{next.title} →</button>}
@@ -95,7 +101,7 @@ function TopicArticle({unit,navigate,returnPath,onSelectSection,onOpenSpecialty}
 
    <ul>{unit.referenceUrls.map(url=><li key={url}><a target="_blank" rel="noopener noreferrer" href={url}>{new URL(url).hostname} — 参考资料</a></li>)}</ul>
   </details>
- </article>;
+ </article></StudyResponseContext.Provider>;
 }
 function StudyCompanion({unit,sectionIndex}:{unit:SpecialtyLesson;sectionIndex:number}){
  const current=unit.sections[sectionIndex]||unit.sections[0];
@@ -121,7 +127,7 @@ function StudyCompanion({unit,sectionIndex}:{unit:SpecialtyLesson;sectionIndex:n
   </section>
  </aside>;
 }
-export default function SpecialtyLibrary({params,navigate}:{params:URLSearchParams;navigate:(url:string)=>void}){
+export default function SpecialtyLibrary({params,navigate,session=null}:{params:URLSearchParams;session?:Session|null;navigate:(url:string)=>void}){
  const kind:SpecialtyKind=params.get('type')==='vocabulary'?'vocabulary':'grammar';
  const filterLang=params.get('language')==='fr'||params.get('language')==='en'?params.get('language') as SpecialtyLanguage:'all';
  const [level,setLevel]=useState<string>('all');
@@ -193,7 +199,7 @@ export default function SpecialtyLibrary({params,navigate}:{params:URLSearchPara
    </aside>
    <div className="specialty-main">
     {lesson&&specialtyQuality(lesson)?<>
-     <TopicArticle key={lesson.id} unit={lesson} navigate={navigate} returnPath={returnPath}
+     <TopicArticle key={lesson.id+':'+(session?.user.id||'guest')} unit={lesson} session={session} navigate={navigate} returnPath={returnPath}
       onSelectSection={index=>setSelectedChapter({topic:lesson.id,index})} onOpenSpecialty={openSpecialty}/>
      <StudyCompanion key={lesson.id+'-helper'} unit={lesson} sectionIndex={sectionIndex}/>
     </>:<div className="panel specialty-empty">
