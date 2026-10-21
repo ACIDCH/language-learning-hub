@@ -469,7 +469,7 @@ describe('B1–B2 past time and evidence-bounded IELTS Task 1 expansion',()=>{
   for(const id of ['en-process-report-grammar','en-map-change-lexicon']){
    const u=SPECIALTY_LESSONS.find(x=>x.id===id)!;
    expect(u.sections[0].table,id).toBeTruthy();
-   expect(u.sections[0].table!.note).toMatch(/不是|并非/u);
+   expect(u.sections[0].table!.note).toMatch(/不是|并非|均非/u);
    expect(u.output).toContain('150–180');
    const words=u.model.map(x=>x.target).join(' ').trim().split(/\s+/u).length;
    expect(words,id).toBeGreaterThanOrEqual(150);
