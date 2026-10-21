@@ -74,3 +74,33 @@ it('keeps both new full bilingual reception lessons grounded in original course 
  expect(fr.paragraphs[1].target).toContain('à midi');
  expect(fr.questions[0].evidence).toContain('P2');
 });
+
+
+it('new A1 weekend and market texts have evidence-backed bilingual stories, not isolated example lists',()=>{
+ for(const [id,key,min] of [
+  ['fr-a1-u07','quatre-vingt-dix',230],
+  ['fr-a1-u08','trois euros le kilo',250]
+ ] as const){
+  const unit=RECEPTION_LESSONS[id];
+  expect(unit,id).toBeDefined();
+  expect(unit.language).toBe('fr');
+  expect(unit.paragraphs).toHaveLength(4);
+  expect(unit.paragraphs.every(p=>p.zh.length>90&&p.target.split(/\s+/u).length>=45)).toBe(true);
+  expect(unit.paragraphs.map(p=>p.target).join(' ').split(/\s+/u).length).toBeGreaterThan(min);
+  expect(unit.questions).toHaveLength(4);
+  const ids=unit.paragraphs.map(p=>p.id);
+  expect(unit.questions.every(q=>q.evidence.length>0&&q.evidence.every(x=>ids.includes(x)))).toBe(true);
+  expect(unit.questions.every(q=>q.why.length>30)).toBe(true);
+  expect(unit.model.trim().split(/\s+/u).length).toBeGreaterThan(75);
+  expect(unit.modelZh.length).toBeGreaterThan(90);
+  expect(unit.paragraphs.some(p=>p.target.includes(key))).toBe(true);
+  expect(index.find(x=>x.id===id)?.audio_status).toBe('missing_audio');
+ }
+ const market=RECEPTION_LESSONS['fr-a1-u08'];
+ expect(market.paragraphs[0].target).toContain('trois euros le kilo');
+ expect(market.paragraphs[3].target).toContain('cinq euros');
+ expect(market.questions[0].evidence).toEqual(['P1','P4']);
+ const leisure=RECEPTION_LESSONS['fr-a1-u07'];
+ expect(leisure.paragraphs[1].target).toContain('il pleut');
+ expect(leisure.paragraphs[2].target).toContain('quinze heures');
+});
