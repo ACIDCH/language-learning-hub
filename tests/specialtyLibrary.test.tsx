@@ -68,17 +68,35 @@ describe('independent bilingual grammar and vocabulary teaching',()=>{
   fireEvent.click(screen.getByRole('button',{name:/回到关联课程/}));
   expect(navigate).toHaveBeenLastCalledWith(courseRoute(from));
  });
- it('updates the study companion to the chapter the learner selected',()=>{
+ it('updates compact study tools from the selected chapter, with translation reveal',()=>{
   const navigate=vi.fn();
   const {container}=render(<SpecialtyLibrary params={
    new URLSearchParams('page=specialties&type=grammar&language=fr&topic=fr-etre')
   } navigate={navigate}/>);
-  expect(container.querySelector('.specialty-companion')?.textContent).toContain('当前重点 · 01');
-  const chapterLinks=container.querySelectorAll<HTMLAnchorElement>('.specialty-companion ol a');
+  expect(container.querySelector('.specialty-companion')?.textContent).toContain('01 · 本节结构');
+  const chapterLinks=container.querySelectorAll<HTMLAnchorElement>('.specialty-section-nav a');
   expect(chapterLinks.length).toBeGreaterThan(1);
   fireEvent.click(chapterLinks[1]);
-  expect(container.querySelector('.specialty-companion')?.textContent).toContain('当前重点 · 02');
-  expect(chapterLinks[1].getAttribute('aria-current')).toBe('location');
+  expect(container.querySelector('.specialty-companion')?.textContent).toContain('02 · 本节结构');
+  expect(container.querySelector('.specialty-companion')?.textContent).toContain('m’');
+  fireEvent.click(screen.getByRole('button',{name:'隐藏中文，自测理解'}));
+  expect(screen.getByRole('button',{name:'显示中文对照'})).toBeTruthy();
+ });
+ it('teaches A1 -er morphology with a six-person paradigm and authentic contrasts',()=>{
+  const grammar=SPECIALTY_LESSONS.find(x=>x.id==='fr-er')!;
+  expect(grammar.sections).toHaveLength(5);
+  expect(grammar.sections[0].table?.rows).toHaveLength(6);
+  expect(grammar.sections[0].table?.rows[3]).toContain('parlons');
+  expect(grammar.sections[4].examples.some(e=>e.target.includes('mangeons'))).toBe(true);
+  expect(grammar.sections[3].examples.some(e=>e.target.includes('ne me lève pas'))).toBe(true);
+  expect(grammar.questions).toHaveLength(5);
+  const {container}=render(<SpecialtyLibrary params={
+    new URLSearchParams('page=specialties&type=grammar&language=fr&topic=fr-er')
+   } navigate={vi.fn()}/>);
+  expect(container.querySelectorAll('.specialty-grammar-table tbody tr')).toHaveLength(6);
+  expect(container.querySelector('.specialty-heading-row')).toBeTruthy();
+  expect(container.querySelector('.specialty-top')).toBeNull();
+  expect(container.querySelector('.specialty-fineprint')).toBeNull();
  });
  it('provides dedicated catalog entries for the independent tracks',()=>{
   const navigate=vi.fn();
@@ -105,7 +123,7 @@ describe('independent bilingual grammar and vocabulary teaching',()=>{
  it('lets learners switch grammar and vocabulary while preserving language choice',()=>{
   const navigate=vi.fn();
   render(<SpecialtyLibrary params={new URLSearchParams('page=specialties&type=grammar&language=en')} navigate={navigate}/>);
-  fireEvent.click(screen.getByRole('button',{name:/词汇专题 语块记忆/}));
+  fireEvent.click(screen.getByRole('button',{name:'词汇'}));
   expect(navigate).toHaveBeenCalledWith(specialtyRoute('vocabulary','en'));
  });
  it('preserves source-related modules without mistaking catalog coverage for edited completeness',()=>{
