@@ -100,6 +100,7 @@ export const IELTS_ARGUMENT_SPECIALTIES:SpecialtyLesson[]=[
  {question:'IELTS Academic Writing Task 2 完整作文的最低字数是多少？',answer:'250 words',why:'IELTS 官方 Task 2 说明至少 250 词，不能把 120 词的课堂段落练习冒充完整考场作文。'}
  ],
  output:'自拟讨论题：Some people believe universities should invest more in quiet study rooms, while others prefer spending on digital learning resources. Discuss both views and give your own opinion. 请写不少于 250 词的完整 Task 2 作文，说明双方理由、个人判断及其适用条件。',
+ modelParagraphStarts:[0,3,8,13,17],
  model:[
  e('Universities must decide how to divide limited budgets between physical learning spaces and digital resources.','大学必须决定如何在实体学习空间与数字资源之间分配有限的预算。','引言介绍公共决策问题。'),
  e('Some people argue that more quiet study rooms should be the priority, whereas others favour expanding online materials.','一些人认为优先增加安静学习室，另一些人则赞成扩展线上材料。','准确呈现双方观点。'),
