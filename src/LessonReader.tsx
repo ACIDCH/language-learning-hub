@@ -1,4 +1,4 @@
-import {useMemo,useState} from 'react';
+import {useEffect,useMemo,useState} from 'react';
 import {splitLessonStages,STUDY_STAGES,STUDY_TITLES,visibleStudyStage,moveStudyStage} from './lessonStages';
 import LessonBody from './LessonBody';
 import BilingualTeaching from './BilingualTeaching';
@@ -6,12 +6,13 @@ import {curatedUnitForSource} from './curatedCurriculum';
 import type {LessonContent} from './v44Courses';
 
 type Props={text:string;content?:LessonContent|null;privateSource?:boolean;defaultIpa?:boolean;ttsRate?:number;language?:string;courseId:string;
- stage:number;onChangeStage:(next:number)=>void;onSaveOutput?:(value:string)=>void};
+ stage:number;onChangeStage:(next:number)=>void;onSaveOutput?:(value:string)=>void;hideTabs?:boolean};
 /** Original manuscripts keep their source content, but omit editorial prefaces and
  * the old separate pronunciation stage from learner navigation. */
-export default function LessonReader({text,courseId,content,privateSource=false,stage,onChangeStage,onSaveOutput}:Props){
+export default function LessonReader({text,courseId,content,privateSource=false,stage,onChangeStage,onSaveOutput,hideTabs=false}:Props){
  const lesson=useMemo(()=>splitLessonStages(text),[text]);
  const [showAll,setShowAll]=useState(false);
+ useEffect(()=>{setShowAll(false);},[stage]);
  const curated=lesson.structured?curatedUnitForSource(courseId,text,privateSource):null;
  const current=visibleStudyStage(stage);
  const selected=STUDY_STAGES.indexOf(current as typeof STUDY_STAGES[number]);
@@ -21,7 +22,7 @@ export default function LessonReader({text,courseId,content,privateSource=false,
  const source=lesson.structured?
   (showAll?sections.map(s=>s.heading+'\n'+s.body).join('\n\n'):sections[selected]?.body||''):text;
  return <div className="lesson-reader">
-  {lesson.structured&&<nav className="lesson-stages" aria-label="课程五个学习环节">
+  {lesson.structured&&!hideTabs&&<nav className="lesson-stages" aria-label="课程五个学习环节">
    {sections.map((part,index)=><button key={part.index} type="button"
     aria-current={part.index===current?'step':undefined}
     className={part.index===current?'stage-active':''}
