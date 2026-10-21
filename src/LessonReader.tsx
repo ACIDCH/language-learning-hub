@@ -31,8 +31,10 @@ export default function LessonReader({text,courseId,content,privateSource=false,
    {!showAll&&lesson.structured&&<header className="lesson-stage-head">
     <span className="lesson-index">{String(selected+1).padStart(2,'0')}</span>
     <h4>{sections[selected]?.displayName}</h4></header>}
+   {!showAll&&current!==3&&<BilingualTeaching key={courseId+'-'+current}
+     courseId={courseId} stage={current} content={content} privateSource={privateSource} sourceText={text}/>}
    <LessonBody text={source}/>
-   {!showAll&&<BilingualTeaching key={courseId+'-'+current}
+   {!showAll&&current===3&&<BilingualTeaching key={courseId+'-'+current}
      courseId={courseId} stage={current} content={content} privateSource={privateSource} sourceText={text}/>}
   </article>
   {lesson.structured&&<div className="lesson-controls">
