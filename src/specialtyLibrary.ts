@@ -1,6 +1,9 @@
 import {FRENCH_ARTICLES,STUDY_SPACES} from './curatedCurriculum';
 import {EXPANDED_SPECIALTIES} from './expandedSpecialties';
 import {FRENCH_GRAMMAR_EXPANSION} from './frenchGrammarExpansion';
+import {FRENCH_PATH_GRAMMAR} from './frenchPathGrammar';
+import {FRENCH_PATH_VOCABULARY} from './frenchPathVocabulary';
+import {ENGLISH_PATH_SPECIALTIES} from './englishPathSpecialties';
 
 export type SpecialtyKind='grammar'|'vocabulary';
 export type SpecialtyLanguage='fr'|'en';
@@ -302,7 +305,10 @@ export const SPECIALTY_LESSONS:SpecialtyLesson[]=[
  fromCurated('vocabulary',STUDY_SPACES,'en-lecture-terms','讲座关键词与论证词组','occupancy、limitation、measurement 与句意','en-ielts-listening-u01','B2',[EVP]),
  ...hand,
  ...EXPANDED_SPECIALTIES,
- ...FRENCH_GRAMMAR_EXPANSION
+ ...FRENCH_GRAMMAR_EXPANSION,
+ ...FRENCH_PATH_GRAMMAR,
+ ...FRENCH_PATH_VOCABULARY,
+ ...ENGLISH_PATH_SPECIALTIES
 ];
 export function specialtyRoute(type:SpecialtyKind,language?:string,topic?:string,returnTo?:string){
  const params=new URLSearchParams({page:'specialties',type});
