@@ -16,6 +16,7 @@ import SelectionInspector,{type TextSelection} from './SelectionInspector';
 import {useCourseProgress} from './useCourseProgress';
 import {splitLessonStages,STUDY_STAGES,STUDY_TITLES,visibleStudyStage} from './lessonStages';
 import {learnerFacingText} from './lessonPresentationText';
+import {linkedSpecialty,specialtyRoute} from './specialtyLibrary';
 export function selectedOriginal(scope:HTMLElement,selection:Selection|null):TextSelection|null{
  if(!selection||selection.isCollapsed||!selection.rangeCount)return null;
  const range=selection.getRangeAt(0);
@@ -88,6 +89,13 @@ export default function CourseReader({course,session,preferences,tab,navigate,on
    aria-pressed={tab==='ipa'} aria-current={tab==='ipa'?'page':undefined}
    onClick={()=>navigate(courseRoute(course,tab==='ipa'?'read':'ipa'))}>段落音标</button>
  </nav>
+ <div className="reader-specialty-shortcuts" aria-label="课程相关重点专题">
+  {(['grammar','vocabulary'] as const).map(kind=>{
+   const topic=linkedSpecialty(kind,course.id);
+   return topic?<button type="button" key={kind} onClick={()=>navigate(specialtyRoute(kind,course.language,topic.id))}>
+    {kind==='grammar'?'系统学习本课语法':'系统学习本课词汇'} ↗</button>:null;
+  })}
+ </div>
  <div className="reader-top"><button onClick={()=>setToolStatus(speakIpaText(text,course.language,preferences.ttsRate)?'正在朗读':'此设备无法朗读。')}>朗读原文</button><button onClick={()=>window.speechSynthesis?.cancel()}>停止朗读</button></div>
  {tab==='speech'?<SpeechPractice language={course.language} lessonText={text} session={session} accessToken={session?.access_token} variant="standalone"/>:
  tab==='ipa'?<div ref={scope} className="reader-selection-scope"><IpaStudyPane key={course.id} text={text} language={course.language}/></div>:
