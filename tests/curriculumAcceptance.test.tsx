@@ -208,3 +208,29 @@ it('IELTS U05–U08 deliver four substantive bilingual reading segments, source 
  expect(library.paragraphs[0].target).toContain('aggregate result');
  expect(library.questions[3].answer).toContain('coexist');
 });
+
+
+it('A1 U05 and U09 have complete authentic-level daily and directions sequences without swapping facts',()=>{
+ for(const [id,min] of [['fr-a1-u05',260],['fr-a1-u09',270]] as const){
+  const lesson=RECEPTION_LESSONS[id];
+  expect(lesson,id).toBeDefined();
+  expect(lesson.language).toBe('fr');
+  expect(lesson.paragraphs).toHaveLength(4);
+  expect(lesson.paragraphs.every(p=>p.target.trim().split(/\s+/).length>=60&&p.zh.length>85),id).toBe(true);
+  expect(lesson.paragraphs.map(p=>p.target).join(' ').trim().split(/\s+/).length).toBeGreaterThan(min);
+  expect(lesson.questions).toHaveLength(4);
+  const ids=lesson.paragraphs.map(p=>p.id);
+  expect(lesson.questions.every(q=>q.evidence.length>0&&q.evidence.every(e=>ids.includes(e)))).toBe(true);
+  expect(lesson.model.trim().split(/\s+/).length).toBeGreaterThan(75);
+  expect(lesson.modelZh.length).toBeGreaterThan(90);
+  expect(index.find(x=>x.id===id)?.audio_status).toBe('missing_audio');
+ }
+ const routines=RECEPTION_LESSONS['fr-a1-u05'];
+ expect(routines.paragraphs[0].target).toContain('à neuf heures');
+ expect(routines.paragraphs[1].target).toContain('À midi');
+ expect(routines.questions[0].answer).toBe('À neuf heures.');
+ const directions=RECEPTION_LESSONS['fr-a1-u09'];
+ expect(directions.paragraphs[1].target).toContain('tournez à gauche');
+ expect(directions.paragraphs[2].target).toContain('en face du musée');
+ expect(directions.questions[1].answer).toBe('Au premier feu.');
+});
