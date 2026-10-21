@@ -120,7 +120,7 @@ export const NEXT_CURRICULUM_CONTINUITY:SpecialtyLesson[]=[
  id:'en-process-report-grammar',type:'grammar',language:'en',level:'B2',unitLink:'en-ielts-writing-task1-u05',
  title:'IELTS Task 1 流程写作：阶段、被动语态和顺序',subtitle:'依据实际给定的工序解释变化，不推测原因和数字',
  prerequisite:'了解一般现在时、过去时、被动语态与 Task 1 overview 的功能。',
- objective:'识别输入、阶段、最终产出，使用被动语态和清楚的时序描述流程，并区分练习用文字流程与正式视觉题。',
+ objective:'识别输入、阶段、最终产出，使用被动语态和清楚的时序描述流程，并区分原创可核对图示与官方考试图示。',
  sections:[
  sec('01 先辨认流程的起点、终点和主要阶段',
  '流程图写作必须先依据图中真实信息确定开始、转化过程及最后产出。循环流程与线性流程写法不同；流程没有数字或温度标注时，不可擅自增加具体数据。',
@@ -129,7 +129,7 @@ export const NEXT_CURRICULUM_CONTINUITY:SpecialtyLesson[]=[
  ex('The material is then sorted and cleaned.','随后材料得到分类和清洁。','两个连续环节。'),
  ex('Finally, new sheets are produced.','最后制成新的纸张。','明确产出。')
  ],'不能仅凭常识把“在150℃加热”或“经过五小时”加入没有这些标注的图示。',
- {title:'本课虚构练习流程（文字而非官方图）',columns:['阶段','图示可提供的信息'],rows:[['1','used paper is collected'],['2','paper is sorted'],['3','paper is mixed with water'],['4','pulp is cleaned'],['5','pulp is pressed into sheets'],['6','sheets are dried and packed']],note:'本表是原创文字流程练习，不是任何官方 IELTS 试卷图示。考场中必须以实际图示为准。'}),
+ {title:'本课原创流程图的六阶段数据',columns:['阶段','图示可提供的信息'],rows:[['1','used paper is collected'],['2','paper is sorted'],['3','paper is mixed with water'],['4','pulp is cleaned'],['5','pulp is pressed into sheets'],['6','sheets are dried and packed']],note:'本表与本课原创 SVG 流程图一致，二者均非 IELTS 官方试卷。正式考试只依据考题给出的图示作答。'}),
  sec('02 描述动作时，被动语态突出材料的处理过程',
  '工业处理流程中，如果图示重点是材料如何变化，而不是谁执行操作，常用 be + 过去分词。一般性的流程可用一般现在时；对于特定历史改造图则应按题目时态选择。',
  'is collected / is sorted / is pressed / is dried',[
@@ -145,7 +145,7 @@ export const NEXT_CURRICULUM_CONTINUITY:SpecialtyLesson[]=[
  ex('The finished sheets are then dried and packed.','成型纸张随后干燥并包装。','then 连接最后两步。')
  ],'firstly、secondly、thirdly 不必重复堆积；缺少工序信息时，连接词再多也无法弥补 Task Achievement。'),
  sec('04 overview 只概括可见总体，不复写每步',
- 'Task 1 overview 应突出流程总类型、主要变换与起终点，而不是提前把全部细节复述一次。对有清楚阶段的流程，一般可在两个细节段落介绍早期和后期。当前练习输入仅是六阶段文字说明，因此不能称其为真实图示模拟考试。',
+ 'Task 1 overview 应突出流程总类型、主要变换与起终点，而不是提前把全部细节复述一次。对有清楚阶段的流程，一般可在两个细节段落介绍早期和后期。当前练习使用六阶段数据绘制的原创 SVG 流程图，属于真正的看图语言训练，但不是官方图示试题。',
  'introduction → overview → early stages → later stages',[
  ex('Overall, the six-stage process transforms used paper into packaged sheets.','总体上，这一六阶段流程将废纸转化为包装好的纸张。','总览对照练习明确的六个阶段。'),
  ex('The initial stages involve collecting and preparing the paper.','初期阶段包括收集和准备纸张。','归纳第一部分。'),
@@ -154,11 +154,11 @@ export const NEXT_CURRICULUM_CONTINUITY:SpecialtyLesson[]=[
  ],
  questions:[
  {question:'将 Workers sort the paper. 改为被动句。',answer:'The paper is sorted.',why:'一般现在时被动 is + 过去分词 sorted。'},
- {question:'本课流程第 3 步是什么？',answer:'The paper is mixed with water.',why:'根据本课虚构文字流程中明确给出的第三阶段回答。'},
+ {question:'本课流程第 3 步是什么？',answer:'The paper is mixed with water.',why:'根据本课原创图中清楚标注的第三阶段回答。'},
  {question:'图示没有标温度时能否写 heated to 150°C？',answer:'不能。',why:'Task 1 的说明必须以给定视觉信息为准，不能增加未经标注的数值。'},
  {question:'修正：After cleaned the pulp, it pressed into sheets.',answer:'After the pulp is cleaned, it is pressed into sheets.',why:'after 后补完整从句，pressed 的被动结构需要 is。'}
  ],
- output:'教材练习：根据本课六步原创文字流程，写一篇 150–180 词的英文说明，包含 overview、完整先后次序和正确的被动语态。此处没有提供正式流程图，不属于完整的视觉材料实战模拟。',
+ output:'教材练习：观察本课六步原创流程图，写一篇 150–180 词的英文说明，包含 overview、完整先后次序和正确的被动语态。该图非 IELTS 官方试卷。',
  modelParagraphStarts:[0,1,3,7],
  model:[
  ex('The sequence describes how used paper is transformed into sheets ready for packaging through six main stages.','这组步骤描述废纸如何经过六个主要阶段转化为可包装的纸张。','引言概括对象。'),
@@ -173,7 +173,7 @@ export const NEXT_CURRICULUM_CONTINUITY:SpecialtyLesson[]=[
  ex('As a whole, the material passes from the initial collection and sorting phases through preparation and pressing before the final drying and packing stage.','整体而言，材料从收集和分类阶段经过准备与压制，最终进入干燥与包装阶段。','对流程进行综合归纳而不添加图外设备或数据。')
  ],
  referenceUrls:['https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-writing','https://ielts.org/take-a-test/preparation-resources/writing-test-resources'],
- sourceNote:'对应 en-ielts-writing-task1-u05 的过程与被动语态。IELTS 官方规定 Academic Task 1 150 词以上，练习为虚构文本流程而非官方试卷图。'
+ sourceNote:'对应 en-ielts-writing-task1-u05 的过程与被动语态。IELTS 官方规定 Academic Task 1 150 词以上，练习配有由原创阶段数据绘制的 SVG 图示，并非官方试卷图。'
 },
 {
  id:'en-map-change-lexicon',type:'vocabulary',language:'en',level:'B2',unitLink:'en-ielts-writing-task1-u06',
@@ -188,7 +188,7 @@ export const NEXT_CURRICULUM_CONTINUITY:SpecialtyLesson[]=[
  ex('A car park is located to the south of the building.','停车场位于该建筑南侧。','to the south of 表示参照物南边。'),
  ex('The entrance is next to the main road.','入口位于主干道旁。','next to 说明毗邻关系。')
  ],'不能仅因为英语里都有 north 就将 in the north of 与 to the north of 当作完全同义。',
- {title:'本课虚构地图对照（文字练习）',columns:['设施','旧布局','新布局'],rows:[['library','north of site','north of site; unchanged'],['garden','east of site','replaced by study rooms'],['car park','west of site','extended westwards'],['footpath','crosses centre','crosses centre; unchanged']],note:'这是本课原创文字空间数据，并非实际地图图片，也不是 IELTS 官方题目。'}),
+ {title:'本课原创新旧地图对应数据',columns:['设施','旧布局','新布局'],rows:[['library','north of site','north of site; unchanged'],['garden','east of site','replaced by study rooms'],['car park','west of site','extended westwards'],['footpath','crosses centre','crosses centre; unchanged']],note:'本表与本课原创 SVG 地图直接对应，可逐项对照，二者均非 IELTS 官方题目。'}),
  sec('02 replaced、converted 与 expanded 不可混淆',
  'replace A with B / A was replaced by B 表示旧设施被新设施取代。convert A into B 表示某建筑功能转变。extend / expand 表示既有设施扩大，不能把扩建叙述为完全拆除。',
  'was replaced by / was converted into / was extended',[
@@ -217,7 +217,7 @@ export const NEXT_CURRICULUM_CONTINUITY:SpecialtyLesson[]=[
  {question:'“图书馆不变”用 remain 表达。',answer:'The library remained unchanged.',why:'remain unchanged 是地图变化写作常用保留表达。'},
  {question:'本课虚构地图中中央步道是否变化？',answer:'没有。The central footpath remained unchanged.',why:'文字资料明确指出旧新布局步道均横穿场地中央。'}
  ],
- output:'依据本节四行原创文字地图对照写 150–180 词英文 Task 1 风格说明：包括总览、位置、替换、扩建和未变设施。没有实际图示，因此此处是语言训练而非正式地图视觉题模拟。',
+ output:'观察本节原创前后地图（并核对四行空间数据），写 150–180 词英文 Task 1 风格说明：包括总览、位置、替换、扩建和未变设施。这是自编看图训练，不是官方试卷。',
  modelParagraphStarts:[0,1,3,6,8],
  model:[
  ex('The information describes changes to a site between an earlier layout and a proposed new arrangement.','这些资料描述场地在旧布局与拟议新布局之间的变化。','引言限定文字描述来源。'),
@@ -232,6 +232,6 @@ export const NEXT_CURRICULUM_CONTINUITY:SpecialtyLesson[]=[
  ex('Similarly, the footpath still crosses the centre of the site and is not shown as being moved.','同样，步道依然穿过场地中央，并未显示被迁移。','报告步道未变。')
  ],
  referenceUrls:['https://ielts.org/take-a-test/preparation-resources/writing-test-resources','https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-writing'],
- sourceNote:'对应 en-ielts-writing-task1-u06 地图空间变化；输入是原创文字对照，不假称官方视觉试卷。'
+ sourceNote:'对应 en-ielts-writing-task1-u06 地图空间变化；输入是原创地图和对应空间数据，不假称官方视觉试卷。'
 }
 ];
