@@ -124,8 +124,8 @@ try{
    }
    if(['a1QuestionsIntegrated','enListeningU03Integrated'].includes(name)){
     await js("document.querySelectorAll('.course-study-switcher button')[3]?.click()");
-    await wait(()=>js("document.querySelectorAll('.reception-paragraph').length===4"),name+' four source-linked listening paragraphs');
-    const evidence=await js("(function(){const p=[...document.querySelectorAll('.reception-paragraph')];return {paragraphs:p.length,chinese:p.filter(x=>x.textContent.length>100).length,overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-innerWidth}})()");
+    await wait(()=>js("document.querySelectorAll('.reception-study > article.reception-paragraph').length===4"),name+' four source-linked listening paragraphs');
+    const evidence=await js("(function(){const p=[...document.querySelectorAll('.reception-study > article.reception-paragraph')];return {paragraphs:p.length,chinese:p.filter(x=>x.textContent.length>100).length,overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-innerWidth}})()");
     if(evidence.paragraphs!==4||evidence.chinese!==4||evidence.overflow>5)
      problems.push(size+' '+name+' bilingual reception unavailable '+JSON.stringify(evidence));
    }
