@@ -69,6 +69,12 @@ try{
    ['frDaily','/?page=specialties&type=vocabulary&language=fr&topic=fr-routines-lexicon','.specialty-grammar-table'],
    ['enTask1','/?page=specialties&type=vocabulary&language=en&topic=en-task1-trend-lexicon','.specialty-grammar-table'],
    ['enRelative','/?page=specialties&type=grammar&language=en&topic=en-relative-clauses','.specialty-textbook'],
+   ['frPossessive','/?page=specialties&type=grammar&language=fr&topic=fr-possessive-determiners-a1','.specialty-grammar-table'],
+   ['frSimpleFuture','/?page=specialties&type=grammar&language=fr&topic=fr-futur-simple-a2','.specialty-grammar-table'],
+   ['frComparison','/?page=specialties&type=grammar&language=fr&topic=fr-comparisons-a2','.specialty-grammar-table'],
+   ['frShop','/?page=specialties&type=vocabulary&language=fr&topic=fr-shop-services-lexicon','.specialty-grammar-table'],
+   ['enReported','/?page=specialties&type=grammar&language=en&topic=en-reported-speech-listening','.specialty-grammar-table'],
+   ['enStance','/?page=specialties&type=vocabulary&language=en&topic=en-stance-lexicon-listening','.specialty-grammar-table'],
   ['speech','/speech-lab','.speaking-lab-columns'],
   ['ipa','/?page=ipa','.ipa-studio'],
   ['settings','/?page=settings&section=appearance','.settings-content'],
@@ -99,7 +105,7 @@ try{
     const study=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
     writeFileSync(output+'/'+size+'-'+name+'-reading.png',Buffer.from(study.data,'base64'));
    }
-    if(['specialtyGrammar','specialtyVocabulary','frenchVerbs','frImparfait','frFuture','frDaily','enTask1','enRelative'].includes(name)){
+    if(['specialtyGrammar','specialtyVocabulary','frenchVerbs','frImparfait','frFuture','frDaily','enTask1','enRelative','frPossessive','frSimpleFuture','frComparison','frShop','enReported','enStance'].includes(name)){
      const quality=await js("(function(){const unit=document.querySelector('.specialty-textbook');return {chapters:unit?.querySelectorAll('.specialty-chapter').length||0,chars:(unit?.innerText||'').length,back:!!unit?.querySelector('.specialty-course-link'),overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-innerWidth};})()");
      if(quality.chapters<3||quality.chars<600||!quality.back||quality.overflow>5)
       problems.push(size+' '+name+' empty or overflowing chapter: '+JSON.stringify(quality));
@@ -116,6 +122,18 @@ try{
       problems.push(size+' French six-row table missing '+name+': '+JSON.stringify(geom));
      if(name==='enTask1'&&geom.tableRows!==8)
       problems.push(size+' Task1 should show trend pairs and 4-row synthetic chart data '+JSON.stringify(geom));
+     if(['frPossessive','frSimpleFuture','frShop'].includes(name)&&geom.tableRows!==6)
+      problems.push(size+' '+name+' six-row reference table expected '+JSON.stringify(geom));
+     if(name==='frComparison'&&geom.tableRows!==3)
+      problems.push(size+' '+name+' comparison table should have three comparison forms '+JSON.stringify(geom));
+     if(name==='enReported'&&geom.tableRows!==4)
+      problems.push(size+' '+name+' reported speech table should have four forms '+JSON.stringify(geom));
+     if(name==='enStance'&&geom.tableRows!==5)
+      problems.push(size+' '+name+' stance vocabulary table should have five categories '+JSON.stringify(geom));
+     if(!await js("!!document.querySelector('.specialty-topic-group')"))
+      problems.push(size+' '+name+' missing CEFR directory group');
+     if(!await js("!!document.querySelector('.specialty-companion-jump')"))
+      problems.push(size+' '+name+' missing chapter-rail links');
      if(!await js("!!document.querySelector('.specialty-learning-links')"))
       problems.push(size+' '+name+' missing prerequisite learning path');
     }
