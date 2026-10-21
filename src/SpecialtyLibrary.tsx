@@ -1,4 +1,4 @@
-import {useEffect,useMemo,useState} from 'react';
+import {Fragment,useEffect,useMemo,useState} from 'react';
 import {COURSES,courseRoute,languageName} from './v44Courses';
 import {SPECIALTY_LESSONS,specialtyRoute,type SpecialtyLesson,type SpecialtyKind,type SpecialtyLanguage,specialtyQuality} from './specialtyLibrary';
 import {speakIpaText} from './IpaText';
@@ -71,7 +71,7 @@ function TopicArticle({unit,navigate,returnPath,onSelectSection,onOpenSpecialty}
    </div>)}</div>
    <aside className="specialty-error"><strong>易错对比</strong><p>{s.caution}</p></aside>
    <label className="specialty-check"><input type="checkbox" checked={!!complete[i]}
-     onChange={e=>setComplete(o=>({...o,[i]:e.target.checked}))}/>掌握本节</label>
+     onChange={e=>setComplete(o=>({...o,[i]:e.target.checked}))}/>本次已掌握</label>
   </section>)}
   <NotesPractice key={unit.id} unit={unit}/>
   <nav className="specialty-learning-links" aria-label="前后专题与配套学习">
@@ -93,7 +93,10 @@ function StudyCompanion({unit,sectionIndex}:{unit:SpecialtyLesson;sectionIndex:n
   <section className="specialty-current-rule"><h2>{String(sectionIndex+1).padStart(2,'0')} · 本节结构</h2>
    <p className="specialty-companion-pattern" lang={unit.language}>{current.pattern}</p>
   </section>
-  <section><h2>容易混淆</h2><p>{current.caution}</p></section>
+  <nav className="specialty-companion-jump" aria-label="本专题章节跳转">
+   {unit.sections.map((s,i)=><a key={i} href={'#specialty-section-'+i}
+    aria-current={i===sectionIndex?'location':undefined}>{String(i+1).padStart(2,'0')} {s.title.replace(/^\d+[.、 ]+/u,'')}</a>)}
+  </nav>
   <section><h2>例句速练</h2>
    {current.examples.slice(0,2).map((e,i)=><div key={i} className="specialty-companion-pair">
     <p lang={unit.language}><strong>{e.target}</strong></p>
@@ -167,12 +170,14 @@ export default function SpecialtyLibrary({params,navigate}:{params:URLSearchPara
     <label>课程等级<select aria-label="专题课程等级" value={level} onChange={e=>setLevel(e.target.value)}>
      <option value="all">全部等级</option>{LEVELS.map(x=><option key={x} value={x}>{x}</option>)}</select></label>
     <label>检索专题<input type="search" value={query} placeholder="规则、词组、使用场景" onChange={e=>setQuery(e.target.value)}/></label>
-    <p className="specialty-total">{filtered.length} 个有正文与练习的专题</p>
-    <div className="specialty-topic-list">{filtered.map(u=><button type="button" key={u.id}
+    <p className="specialty-total">{filtered.length} 个专题</p>
+    <div className="specialty-topic-list">{filtered.map((u,i)=><Fragment key={u.id}>
+     {(i===0||filtered[i-1].level!==u.level||filtered[i-1].language!==u.language)&&<h3 className="specialty-topic-group">{languageName(u.language)} · {u.level}</h3>}
+     <button type="button"
      aria-current={lesson?.id===u.id?'page':undefined} className={lesson?.id===u.id?'active':''}
      onClick={()=>openSpecialty(u)}>
       <small>{languageName(u.language)} · {u.level}</small><strong>{u.title}</strong>
-      <span>{u.sections.length} 个知识点 · {u.questions.length} 组自测</span></button>)}</div>
+      <span>{u.sections.length} 个知识点 · {u.questions.length} 组自测</span></button></Fragment>)}</div>
 
    </aside>
    <div className="specialty-main">
