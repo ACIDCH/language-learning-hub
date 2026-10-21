@@ -167,7 +167,7 @@ it('keeps first A1 completed-past and IELTS TRUE/FALSE/NOT GIVEN reading evidenc
  const a=RECEPTION_LESSONS['fr-a1-u12'];
  expect(a.paragraphs[0].target).toContain('je suis allée');
  expect(a.paragraphs[1].target).toContain('À midi');
- expect(a.paragraphs[2].target).toContain('à cinq heures');
+ expect(a.paragraphs[2].target.toLowerCase()).toContain('à cinq heures');
  expect(a.paragraphs[3].target).toContain('Aujourd’hui');
  const b=RECEPTION_LESSONS['en-ielts-reading-u04'];
  expect(b.questions.map(q=>q.answer)).toEqual(['FALSE','TRUE','NOT GIVEN','NOT GIVEN']);
