@@ -26,7 +26,7 @@ function PracticeSet({items,stage}:{items:Practice[];stage:number}){
 }
 /** Learner-first five-stage teaching for matching existing private sources.
  * Supplementary model examples are visible as examples, without rewriting source bytes. */
-export default function CuratedLesson({unit,stage}:{unit:CuratedUnit;stage:number}){
+export default function CuratedLesson({unit,stage,onSaveOutput}:{unit:CuratedUnit;stage:number;onSaveOutput?:(value:string)=>void}){
  const pairs=(lines:SentencePair[])=><div className="bilingual-list">{lines.map((entry,i)=>
   <PairedSentence key={i} entry={entry} language={unit.language}/>)}</div>;
  return <section className="bilingual-teaching curated-lesson" aria-label="系统双语教材">
@@ -72,13 +72,13 @@ export default function CuratedLesson({unit,stage}:{unit:CuratedUnit;stage:numbe
    <ol>{unit.output.steps.map((step,i)=><li key={i}>{step}</li>)}</ol>
    <h4>中外文对照示范</h4>{pairs(unit.output.model)}
    <h4>现在写出自己的版本</h4>
-   <OutputEditor unit={unit}/>
+   <OutputEditor unit={unit} onSaveOutput={onSaveOutput}/>
    <h4>交稿前检查</h4><ul>{unit.output.checklist.map(x=><li key={x}>{x}</li>)}</ul>
   </>}
   {unit.practice[stage as 0|1|2|3|5]&&<PracticeSet key={unit.id+'-'+stage} stage={stage} items={unit.practice[stage as 0|1|2|3|5]!}/>}
  </section>;
 }
-function OutputEditor({unit}:{unit:CuratedUnit}){
+function OutputEditor({unit,onSaveOutput}:{unit:CuratedUnit;onSaveOutput?:(value:string)=>void}){
  const [value,setValue]=useState('');
  const words=value.trim().split(/\s+/u).filter(Boolean).length;
  const sentences=(value.match(/[.!?。！？]+/gu)||[]).length;
@@ -87,6 +87,7 @@ function OutputEditor({unit}:{unit:CuratedUnit}){
   <textarea id={'curated-output-'+unit.id} rows={7} value={value}
    onChange={e=>setValue(e.target.value)} placeholder="参考步骤完成自己的连贯段落，然后再与示范对照。"/>
   <p role="status">{unit.language==='en'?'当前英文词数：'+words+'（目标 80—120 词）':'当前已写句数（按句末标点估计）：'+sentences+'（目标 5—6 句）'}</p>
-  <p className="bilingual-help">此处是即时练习区。需要长期保存时，可选择内容并加入右侧笔记，或使用本课下方的个人笔记。</p>
+  {onSaveOutput&&<button type="button" disabled={!value.trim()} onClick={()=>onSaveOutput(value)}>加入本课学习笔记</button>}
+  <p className="bilingual-help">请先完成自己的版本再与示范比较；加入笔记后，可通过本课底部的云端保存按钮同步。</p>
  </div>;
 }
