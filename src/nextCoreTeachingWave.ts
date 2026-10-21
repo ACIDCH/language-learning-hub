@@ -233,7 +233,7 @@ export const NEXT_CORE_TEACHING_WAVE:SpecialtyLesson[]=[
  e('The voluntary questionnaire excluded non-users.','自愿问卷没有覆盖非到访者。','说明样本边界。'),
  e('The approaching deadline was an alternative explanation.','临近的截止日期是另一种可能解释。','存在候选原因不等于确认因果。'),
  e('The analysis should account for changes in deadlines.','分析应考虑截止日期变化。','account for 在这里是控制可能影响。')
- ],'alternative explanation 不是 alternative fact；更不能自动说 deadline caused the increase，因为原文未建立因果。',
+ ],'alternative explanation 不是 alternative fact；更不能自动说 deadline caused the increase，因为原文未建立因果。'),
  s('04 用支持、提示和证明表达不同论断力度','support a claim 表证据与结论相符，suggest 表提示，demonstrate 常意味着更强的显示或证明。没有对照组时，有观察到增长≠可以归因。论文中 a measurable outcome 表可测量的结果，不能理解为已经测量过。',
  'suggest / support / demonstrate / did not measure',[
  e('The figures support a claim about library use.','这些数字支持关于图书馆使用情况的主张。','衡量的是使用，不是学习成绩。'),
