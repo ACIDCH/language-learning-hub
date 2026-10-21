@@ -3,14 +3,14 @@ import type {SpecialtyLesson,SpecialtyKind,SpecialtyLanguage} from './specialtyL
 const PATH_ORDER:Record<SpecialtyLanguage,Record<SpecialtyKind,string[]>>={
  fr:{
   grammar:['fr-etre','fr-avoir','fr-possessive-determiners-a1','fr-articles','fr-er','fr-questions-a1','fr-a1-leisure-verbs','fr-a1-market-quantities-grammar','fr-imperative-directions-a1','fr-adjective-agreement-a1',
-   'fr-futur-proche-a1','fr-articles-partitive','fr-passe-compose','fr-imparfait-a2','fr-object-pronouns-a2','fr-comparisons-a2','fr-futur-simple-a2','fr-negative-scope-a2',
+   'fr-futur-proche-a1','fr-a1-first-past-grammar','fr-articles-partitive','fr-passe-compose','fr-imparfait-a2','fr-object-pronouns-a2','fr-comparisons-a2','fr-futur-simple-a2','fr-negative-scope-a2',
    'fr-pluperfect-narration-b1','fr-conditional-hypothesis-b1','fr-subjunctive-b1','fr-relative-pronouns-b1','fr-mood-concession-b2','fr-past-conditional-regret-b2','fr-b2-reported-news-reading','fr-b2-formal-argument-writing'],
   vocabulary:['fr-greetings','fr-campus-vocab','fr-a1-clarification-lexicon','fr-countries-languages-lexicon','fr-family','fr-objects','fr-room',
-   'fr-routines-lexicon','fr-a1-leisure-choice-vocabulary','fr-a1-market-service-vocabulary','fr-a1-shared-home-lexicon','fr-a1-near-future-planning-lexicon','fr-directions-lexicon','fr-food-vocab','fr-past-events-lexicon','fr-shop-services-lexicon','fr-opinions-lexicon','fr-b1-argument-lexicon','fr-precise-academic-lexicon-c1','fr-c1-cross-source-synthesis','fr-c1-media-stance-reading']
+   'fr-routines-lexicon','fr-a1-leisure-choice-vocabulary','fr-a1-market-service-vocabulary','fr-a1-shared-home-lexicon','fr-a1-near-future-planning-lexicon','fr-a1-yesterday-journey-lexicon','fr-directions-lexicon','fr-food-vocab','fr-past-events-lexicon','fr-shop-services-lexicon','fr-opinions-lexicon','fr-b1-argument-lexicon','fr-precise-academic-lexicon-c1','fr-c1-cross-source-synthesis','fr-c1-media-stance-reading']
  },
  en:{
   grammar:['en-contrast','en-conditionals','en-signposts','en-listening-paraphrase-scope','en-modals','en-reported-speech-listening','en-academic-passive',
-   'en-relative-clauses','en-reading-evidence-scope-u02','en-process-report-grammar','en-task2-contrast-cohesion','en-lecture-hedging'],
+   'en-relative-clauses','en-reading-evidence-scope-u02','en-ielts-tfng-scope-grammar-u04','en-process-report-grammar','en-task2-contrast-cohesion','en-lecture-hedging'],
   vocabulary:['en-signpost-vocab','en-study-vocab','en-listening-note-lexicon','en-stance-lexicon-listening','en-task1-trend-lexicon','en-lecture-terms',
    'en-evidence-vocab','en-reading-research-evidence-lexicon-u02','en-ielts-heading-paragraph-function-lexicon','en-academic-collocations','en-map-change-lexicon','en-reading-evidence-lexicon','en-task2-reason-evidence-vocab']
  }
