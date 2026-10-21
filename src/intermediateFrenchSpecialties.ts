@@ -11,7 +11,7 @@ export const INTERMEDIATE_FRENCH_SPECIALTIES:SpecialtyLesson[]=[
  sections:[
  s('01 将来词干加未完成过去时词尾',
  '条件式现在时使用与简单将来时相同的词干，加 imparfait 的 -ais、-ais、-ait、-ions、-iez、-aient。规则 -er/-ir 一般保留不定式词干；-re 去末尾 e；être、avoir、aller 等沿用不规则将来词干。',
- 'parler- + ais / as? → parlerais；ser- + ions → serions',[
+ 'parler- + -ais → parlerais；ser- + -ions → serions',[
  e('Je parlerais français plus souvent.','我会更经常说法语。','parler- + -ais 构成 je parlerais。'),
  e('Nous serions disponibles vendredi.','我们星期五会有空。','être 的不规则词干 ser- + -ions。'),
  e('Ils auraient plus de temps.','他们会有更多时间。','avoir 使用 aur- + -aient。')
