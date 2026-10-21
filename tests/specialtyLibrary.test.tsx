@@ -224,9 +224,9 @@ describe('source-checked progression from grammar to vocabulary and longer texts
   ['en-reading-evidence-lexicon','vocabulary','en-ielts-reading-u04']
  ] as const;
  it('registers exactly the eleven substantive curriculum additions with real lessons',()=>{
-  expect(SPECIALTY_LESSONS.length).toBe(56);
-  expect(SPECIALTY_LESSONS.filter(u=>u.type==='grammar')).toHaveLength(32);
-  expect(SPECIALTY_LESSONS.filter(u=>u.type==='vocabulary')).toHaveLength(24);
+  expect(SPECIALTY_LESSONS.length).toBe(58);
+  expect(SPECIALTY_LESSONS.filter(u=>u.type==='grammar')).toHaveLength(33);
+  expect(SPECIALTY_LESSONS.filter(u=>u.type==='vocabulary')).toHaveLength(25);
   for(const [id,kind,courseId] of newUnits){
    const u=SPECIALTY_LESSONS.find(x=>x.id===id);
    expect(u,id).toBeTruthy();
@@ -245,7 +245,7 @@ describe('source-checked progression from grammar to vocabulary and longer texts
   expect(grammar.map(u=>u.id)).toEqual([
    'fr-etre','fr-avoir','fr-possessive-determiners-a1','fr-articles','fr-er','fr-questions-a1','fr-imperative-directions-a1','fr-adjective-agreement-a1',
    'fr-futur-proche-a1','fr-articles-partitive','fr-passe-compose','fr-imparfait-a2','fr-object-pronouns-a2','fr-comparisons-a2','fr-futur-simple-a2','fr-negative-scope-a2',
-   'fr-pluperfect-narration-b1','fr-conditional-hypothesis-b1','fr-subjunctive-b1','fr-relative-pronouns-b1','fr-mood-concession-b2','fr-past-conditional-regret-b2'
+   'fr-pluperfect-narration-b1','fr-conditional-hypothesis-b1','fr-subjunctive-b1','fr-relative-pronouns-b1','fr-mood-concession-b2','fr-past-conditional-regret-b2','fr-b2-formal-argument-writing'
   ]);
   const current=grammar.find(u=>u.id==='fr-er')!;
   expect(adjacentSpecialties(current,SPECIALTY_LESSONS).next?.id).toBe('fr-questions-a1');
@@ -293,7 +293,7 @@ describe('source-verified A1/A2 and B2 continuity completed in this pass',()=>{
   ['en-stance-lexicon-listening','vocabulary','en','B2','en-ielts-listening-u02']
  ] as const;
  it('contains nine authentic and fully authored lessons, not headings or repeated summaries',()=>{
-  expect(SPECIALTY_LESSONS.length).toBe(56);
+  expect(SPECIALTY_LESSONS.length).toBe(58);
   const allIds=SPECIALTY_LESSONS.map(x=>x.id);
   expect(new Set(allIds).size).toBe(allIds.length);
   for(const [id,type,language,level,course] of topics){
@@ -364,10 +364,10 @@ describe('actual B1–C1 French and IELTS Task 2 learning chain',()=>{
   ['en-task2-reason-evidence-vocab','vocabulary','en','B2','en-ielts-writing-task2-u02']
  ] as const;
  it('adds eight original full lessons with correctly linked courses and complete bilingual practice',()=>{
-  expect(SPECIALTY_LESSONS.length).toBe(56);
-  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(56);
-  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(32);
-  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(24);
+  expect(SPECIALTY_LESSONS.length).toBe(58);
+  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(58);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(33);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(25);
   for(const [id,type,language,level,unitLink] of courseMap){
    const unit=SPECIALTY_LESSONS.find(x=>x.id===id)!;
    expect(unit,id).toBeDefined();
@@ -435,10 +435,10 @@ describe('B1–B2 past time and evidence-bounded IELTS Task 1 expansion',()=>{
   ['en-map-change-lexicon','vocabulary','en','B2','en-ielts-writing-task1-u06']
  ] as const;
  it('contains 56 unique lessons, four complete mapped additions and individual practice',()=>{
-  expect(SPECIALTY_LESSONS).toHaveLength(56);
-  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(56);
-  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(32);
-  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(24);
+  expect(SPECIALTY_LESSONS).toHaveLength(58);
+  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(58);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(33);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(25);
   for(const [id,type,language,level,course] of added){
    const u=SPECIALTY_LESSONS.find(x=>x.id===id)!;
    expect(u,id).toBeDefined();
@@ -493,5 +493,48 @@ describe('B1–B2 past time and evidence-bounded IELTS Task 1 expansion',()=>{
    if(id==='en-map-change-lexicon')expect(container.querySelectorAll('.specialty-essay-paragraph')).toHaveLength(5);
    unmount();
   }
+ });
+});
+
+
+describe('official-format DELF B2 and source-bound DALF C1 writing',()=>{
+ it('connects both complete writing courses without inventing full coverage of all outlines',()=>{
+  const ids=[
+   ['fr-b2-formal-argument-writing','grammar','fr-b2-u06','B2'],
+   ['fr-c1-cross-source-synthesis','vocabulary','fr-c1-u03','C1']
+  ] as const;
+  expect(SPECIALTY_LESSONS.length).toBe(58);
+  expect(SPECIALTY_LESSONS.filter(u=>u.type==='grammar')).toHaveLength(33);
+  expect(SPECIALTY_LESSONS.filter(u=>u.type==='vocabulary')).toHaveLength(25);
+  for(const [id,type,course,level] of ids){
+   const lesson=SPECIALTY_LESSONS.find(u=>u.id===id)!;
+   expect(lesson).toBeDefined();
+   expect([lesson.type,lesson.unitLink,lesson.level]).toEqual([type,course,level]);
+   expect(lesson.sections).toHaveLength(4);
+   expect(lesson.questions.length).toBeGreaterThanOrEqual(4);
+   expect(lesson.sections.every(x=>x.examples.length>=3)).toBe(true);
+   expect(specialtyQuality(lesson)).toBe(true);
+   expect(linkedSpecialties(type,course).map(x=>x.id)).toContain(id);
+  }
+ });
+ it('keeps DELF B2 complete formal model over 250 whitespace-separated words',()=>{
+  const lesson=SPECIALTY_LESSONS.find(x=>x.id==='fr-b2-formal-argument-writing')!;
+  const text=lesson.model.map(x=>x.target).join(' ');
+  expect(text.split(/\s+/u).filter(Boolean).length).toBeGreaterThanOrEqual(250);
+  expect(lesson.modelParagraphStarts).toEqual([0,3,8,13,18]);
+  expect(lesson.model[0].target).toContain('Madame la Directrice');
+  expect(text).toContain('Je reste à votre disposition');
+  expect(lesson.output).toContain('至少 250');
+ });
+ it('keeps C1 synthesis in 200–240 words without title and never claims invented sources are real',()=>{
+  const unit=SPECIALTY_LESSONS.find(x=>x.id==='fr-c1-cross-source-synthesis')!;
+  const words=unit.model.slice(1).map(x=>x.target).join(' ').trim().split(/\s+/u).filter(Boolean).length;
+  expect(words).toBeGreaterThanOrEqual(200);
+  expect(words).toBeLessThanOrEqual(240);
+  expect(unit.modelParagraphStarts).toEqual([0,1,3,7,11]);
+  expect(unit.sections[0].table?.rows).toHaveLength(4);
+  expect(unit.sections[0].concept).toContain('虚构');
+  expect(unit.output).toContain('不要添加个人立场');
+  expect(unit.model.map(x=>x.target).join(' ')).not.toMatch(/à mon avis|je pense que/iu);
  });
 });
