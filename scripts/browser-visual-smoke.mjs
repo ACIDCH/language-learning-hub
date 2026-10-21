@@ -82,9 +82,9 @@ try{
    writeFileSync(output+'/'+size+'-'+name+'.png',Buffer.from(image.data,'base64'));
    checked++;
    if(name==='guidedEnglish'||name==='guidedFrench'){
-    const semantic=await js("(function(){const nav=document.querySelector('.curriculum-tabs'),stage=document.querySelector('.curriculum-stage');const tabs=[...nav.querySelectorAll('button')];return {tabs:tabs.length,top:stage.getBoundingClientRect().top-nav.getBoundingClientRect().bottom,height:stage.getBoundingClientRect().height,text:stage.innerText.slice(0,300)};})()");
-    if(semantic.tabs!==5||semantic.top>80||semantic.height<100||!semantic.text.trim())problems.push(size+' '+name+' missing guided lesson '+JSON.stringify(semantic));
-    await js("document.querySelectorAll('.curriculum-tabs button')[3]?.click()");
+    const semantic=await js("(function(){const nav=document.querySelector('.course-study-switcher'),stage=document.querySelector('.curriculum-stage');const tabs=[...nav.querySelectorAll('button')];return {tabs:tabs.length,position:getComputedStyle(nav).position,top:stage.getBoundingClientRect().top-nav.getBoundingClientRect().bottom,height:stage.getBoundingClientRect().height,text:stage.innerText.slice(0,300)};})()");
+    if(semantic.position!=='sticky'||semantic.tabs!==6||semantic.top>140||semantic.height<100||!semantic.text.trim())problems.push(size+' '+name+' missing guided lesson '+JSON.stringify(semantic));
+    await js("document.querySelectorAll('.course-study-switcher button')[3]?.click()");
     await wait(()=>js("!!document.querySelector('.curriculum-reading')"),'guided listening and source reading');
     const reading=await js("(function(){const e=document.querySelector('.curriculum-reading');return {text:e.textContent.length,width:e.getBoundingClientRect().width,overflow:document.documentElement.scrollWidth-innerWidth};})()");
     if(reading.text<40||reading.width>width||reading.overflow>5)problems.push(size+' '+name+' reading '+JSON.stringify(reading));
@@ -113,8 +113,8 @@ try{
     // The original source reader now has five semantic stages, no course preface,
     // and no full-text phoneme checkbox that covers every English/French word.
     await wait(()=>js("!!document.querySelector('.lesson-paper .lesson-paragraphs')"),'lesson body');
-    const initial=await js("(function(){const paper=document.querySelector('.lesson-paper').getBoundingClientRect(),nav=document.querySelector('.lesson-stages');const txt=document.querySelector('.lesson-paper .lesson-paragraphs').textContent;return {nav:nav?nav.querySelectorAll('button').length:0,top:paper.top,chars:txt.trim().length,intro:!!document.querySelector('.lesson-preamble'),ipa:!!document.querySelector('.ipa-reader-controls')};})()");
-    if(initial.nav!==5||initial.chars<20||initial.intro||initial.ipa)
+    const initial=await js("(function(){const paper=document.querySelector('.lesson-paper').getBoundingClientRect(),nav=document.querySelector('.course-study-switcher');const txt=document.querySelector('.lesson-paper').innerText;return {nav:nav?nav.querySelectorAll('button').length:0,sticky:nav?getComputedStyle(nav).position:null,top:paper.top,chars:txt.trim().length,intro:!!document.querySelector('.lesson-preamble'),ipa:!!document.querySelector('.ipa-reader-controls')};})()");
+    if(initial.nav!==6||initial.sticky!=='sticky'||initial.chars<20||initial.intro||initial.ipa||/原创完整样课 v0.1|状态：教学内容草稿已完整编写/.test(document.querySelector('.lesson-paper').innerText))
       problems.push(size+' course five-stage presentation invalid '+JSON.stringify(initial));
     const stageShot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
     writeFileSync(output+'/'+size+'-lesson-five-stages.png',Buffer.from(stageShot.data,'base64'));
@@ -124,7 +124,7 @@ try{
     if(width===1440&&(layout.width<300||layout.width>425||!layout.separate))problems.push('desktop sidebar geometry '+JSON.stringify(layout));
     if(width===390&&layout.separate)problems.push('mobile sidebar has not stacked');
     // Activate the real text-selection inspector rather than testing only its empty placeholder.
-    const selectionMade=await js("(function(){const scope=document.querySelector('.reader-selection-scope .lesson-paper .lesson-paragraphs');if(!scope)return false;const walker=document.createTreeWalker(scope,NodeFilter.SHOW_TEXT);let n;while((n=walker.nextNode())){if(!n.textContent||n.textContent.trim().length<5)continue;const start=n.textContent.search(/[^\\s]/);const range=document.createRange();range.setStart(n,start);range.setEnd(n,Math.min(start+12,n.textContent.length));window.getSelection().removeAllRanges();window.getSelection().addRange(range);document.dispatchEvent(new Event('selectionchange'));return true;}return false;})()");
+    const selectionMade=await js("(function(){const scope=document.querySelector('.reader-selection-scope .lesson-paper .bilingual-target')||document.querySelector('.reader-selection-scope .lesson-paper .lesson-paragraphs');if(!scope)return false;const walker=document.createTreeWalker(scope,NodeFilter.SHOW_TEXT);let n;while((n=walker.nextNode())){if(!n.textContent||n.textContent.trim().length<5)continue;const start=n.textContent.search(/[^\\s]/);const range=document.createRange();range.setStart(n,start);range.setEnd(n,Math.min(start+12,n.textContent.length));window.getSelection().removeAllRanges();window.getSelection().addRange(range);document.dispatchEvent(new Event('selectionchange'));return true;}return false;})()");
     if(!selectionMade)problems.push(size+' lesson cannot select any real paragraph');
     else{
      await wait(()=>js("!!document.querySelector('.reader-tools.selection-workbench .speaking-workbench')"),'selected-text pronunciation pane');
