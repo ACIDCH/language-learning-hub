@@ -113,7 +113,7 @@ export const FRENCH_GRAMMAR_CONTINUITY:SpecialtyLesson[]=[
  ex('Continuez jusqu’à la pharmacie.','继续走到药店。','用地标核实路线。'),
  ex('La gare est juste en face.','车站就在正对面。','给出终点。')
  ],
- referenceUrls:['https://www.laits.utexas.edu/tex/gr/tai1.html','https://www.laits.utexas.edu/tex/gr/tai2.html'],
+ referenceUrls:['https://www.laits.utexas.edu/tex/gr/tai1.html'],
  sourceNote:'对应 fr-a1-u09 指路主题。祈使式人称、tu -s 省略及 y/en 位置据 Tex 核验，场景对话原创。'
 },
 {
