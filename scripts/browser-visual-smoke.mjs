@@ -286,6 +286,7 @@ try{
    await go('/?course='+id+'&tab=read','.course-study-switcher');
    await js('document.querySelectorAll(".course-study-switcher button")['+stage+'].click()');
    await wait(()=>js("!!document.querySelector('.curriculum-stage,.lesson-paper')"),'representative content');
+   await wait(()=>js("(()=>{const nav=document.querySelector('.course-study-switcher'),active=nav?.querySelector('[aria-pressed=true]');if(!active)return false;const n=nav.getBoundingClientRect(),a=active.getBoundingClientRect();return a.left>=n.left-2&&a.right<=n.right+2;})()"),'active stage visible after navigation');
    const metric=await js("(()=>{const a=document.querySelector('.reader-article').getBoundingClientRect(),s=document.querySelector('.reader-selection-scope').getBoundingClientRect();return {article:a.width,content:s.width,unusedRatio:1-s.width/a.width,overflow:document.documentElement.scrollWidth-innerWidth,structured:!!document.querySelector('.curriculum-lesson'),columns:document.querySelector('.reception-parallel')?getComputedStyle(document.querySelector('.reception-parallel')).gridTemplateColumns:null};})()");
    acceptance.push({id,width,...metric});
    if(metric.overflow>5||metric.structured&&width>=1440&&metric.unusedRatio>.12)problems.push('usable width '+JSON.stringify({id,width,...metric}));
@@ -301,6 +302,7 @@ try{
    if(!await js("document.querySelector('.task1-feedback')?.textContent.includes('还差')"))problems.push(id+' lacks material-specific feedback');
    await call('Page.reload');
    await wait(()=>js("!!document.querySelector('.task1-workshop textarea')"),'saved stage after reload');
+   await wait(()=>js("(()=>{const nav=document.querySelector('.course-study-switcher'),active=nav?.querySelector('[aria-pressed=true]');if(!active)return false;const n=nav.getBoundingClientRect(),a=active.getBoundingClientRect();return a.left>=n.left-2&&a.right<=n.right+2;})()"),'restored stage visible after reload');
    if(!await js("document.querySelector('.task1-workshop textarea').value==='The diagram provides evidence for this comparison.'"))problems.push(id+' lost writing after reload');
    checked++;
   }

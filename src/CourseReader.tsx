@@ -31,6 +31,7 @@ export default function CourseReader({course,session,preferences,tab,navigate,on
  const [content,setContent]=useState<LessonContent|null>(null),[error,setError]=useState(''),[sourceStatus,setSourceStatus]=useState(''),[privateBody,setPrivateBody]=useState('');
  const [selection,setSelection]=useState<TextSelection|null>(null),[showTools,setShowTools]=useState(false),[toolStatus,setToolStatus]=useState('');
  const scope=useRef<HTMLDivElement>(null);
+ const stageNav=useRef<HTMLElement>(null);
  const progress=useCourseProgress(course,session);
  const text=privateBody||content?.text||'';
  useEffect(()=>{
@@ -48,6 +49,17 @@ export default function CourseReader({course,session,preferences,tab,navigate,on
   document.addEventListener('selectionchange',capture);document.addEventListener('keyup',key);
   return ()=>{document.removeEventListener('selectionchange',capture);document.removeEventListener('keyup',key);};
  },[]);
+ useEffect(()=>{
+  const nav=stageNav.current;if(!nav)return;
+  const reveal=()=>{
+   const button=nav.querySelector<HTMLElement>('button[aria-pressed="true"]');if(!button)return;
+   const n=nav.getBoundingClientRect(),b=button.getBoundingClientRect();
+   if(b.left<n.left||b.right>n.right)nav.scrollLeft+=b.left-n.left-(n.width-b.width)/2;
+  };
+  reveal();
+  const observer=typeof ResizeObserver!=='undefined'?new ResizeObserver(reveal):null;
+  observer?.observe(nav);return ()=>observer?.disconnect();
+ },[progress.state.stage,content?.text,privateBody,tab]);
  function appendNote(value:string){
   const next=[progress.state.notes||'',value].filter(Boolean).join('\n\n');
   if(next.length>5000){setToolStatus('笔记超过 5000 字符，请先整理现有笔记。');return;}
@@ -81,7 +93,7 @@ export default function CourseReader({course,session,preferences,tab,navigate,on
  {sourceStatus&&<p role="alert" className="tool-notice">{sourceStatus}</p>}
  {showTools&&!selection&&<p role="status">在课文中选择词句，即可打开朗读与学习工具。</p>}
  <div className={'reader-layout'+(showTools&&selection?'':' tools-hidden')}><article className="panel reader-article">
- <nav className="course-study-switcher" aria-label="本课固定学习导航">
+ <nav ref={stageNav} className="course-study-switcher" aria-label="本课固定学习导航">
   {hasStudyStages&&STUDY_STAGES.map((id,i)=><button type="button" key={id}
    className={tab==='read'&&currentStage===id?'study-selected':''}
    aria-current={tab==='read'&&currentStage===id?'step':undefined}
