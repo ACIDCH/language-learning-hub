@@ -22,6 +22,9 @@ export default function BilingualTeaching({courseId,stage,content,privateSource=
    source.includes(normalize(entry.target).slice(0,25)));
  const info=sourceMatched?candidate:undefined;
  if(!info){
+  // A different private manuscript must not inherit explanations for its public draft.
+  // Only source-matched companion notes can be shown as sentence translations.
+  if(privateSource)return null;
   // Existing Chinese grammar, situational notes and vocabulary remain available
   // through the typed draft; no machine-generated translation is presented as reviewed.
   if(!content?.draft&&!content?.foundation)return null;
