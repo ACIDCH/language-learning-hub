@@ -224,9 +224,9 @@ describe('source-checked progression from grammar to vocabulary and longer texts
   ['en-reading-evidence-lexicon','vocabulary','en-ielts-reading-u04']
  ] as const;
  it('registers exactly the eleven substantive curriculum additions with real lessons',()=>{
-  expect(SPECIALTY_LESSONS.length).toBe(75);
-  expect(SPECIALTY_LESSONS.filter(u=>u.type==='grammar')).toHaveLength(40);
-  expect(SPECIALTY_LESSONS.filter(u=>u.type==='vocabulary')).toHaveLength(35);
+  expect(SPECIALTY_LESSONS.length).toBe(83);
+  expect(SPECIALTY_LESSONS.filter(u=>u.type==='grammar')).toHaveLength(44);
+  expect(SPECIALTY_LESSONS.filter(u=>u.type==='vocabulary')).toHaveLength(39);
   for(const [id,kind,courseId] of newUnits){
    const u=SPECIALTY_LESSONS.find(x=>x.id===id);
    expect(u,id).toBeTruthy();
@@ -293,7 +293,7 @@ describe('source-verified A1/A2 and B2 continuity completed in this pass',()=>{
   ['en-stance-lexicon-listening','vocabulary','en','B2','en-ielts-listening-u02']
  ] as const;
  it('contains nine authentic and fully authored lessons, not headings or repeated summaries',()=>{
-  expect(SPECIALTY_LESSONS.length).toBe(75);
+  expect(SPECIALTY_LESSONS.length).toBe(83);
   const allIds=SPECIALTY_LESSONS.map(x=>x.id);
   expect(new Set(allIds).size).toBe(allIds.length);
   for(const [id,type,language,level,course] of topics){
@@ -364,10 +364,10 @@ describe('actual B1–C1 French and IELTS Task 2 learning chain',()=>{
   ['en-task2-reason-evidence-vocab','vocabulary','en','B2','en-ielts-writing-task2-u02']
  ] as const;
  it('adds eight original full lessons with correctly linked courses and complete bilingual practice',()=>{
-  expect(SPECIALTY_LESSONS.length).toBe(75);
-  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(75);
-  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(40);
-  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(35);
+  expect(SPECIALTY_LESSONS.length).toBe(83);
+  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(83);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(44);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(39);
   for(const [id,type,language,level,unitLink] of courseMap){
    const unit=SPECIALTY_LESSONS.find(x=>x.id===id)!;
    expect(unit,id).toBeDefined();
@@ -435,10 +435,10 @@ describe('B1–B2 past time and evidence-bounded IELTS Task 1 expansion',()=>{
   ['en-map-change-lexicon','vocabulary','en','B2','en-ielts-writing-task1-u06']
  ] as const;
  it('contains 56 unique lessons, four complete mapped additions and individual practice',()=>{
-  expect(SPECIALTY_LESSONS).toHaveLength(75);
-  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(75);
-  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(40);
-  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(35);
+  expect(SPECIALTY_LESSONS).toHaveLength(83);
+  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(83);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(44);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(39);
   for(const [id,type,language,level,course] of added){
    const u=SPECIALTY_LESSONS.find(x=>x.id===id)!;
    expect(u,id).toBeDefined();
@@ -503,9 +503,9 @@ describe('official-format DELF B2 and source-bound DALF C1 writing',()=>{
    ['fr-b2-formal-argument-writing','grammar','fr-b2-u06','B2'],
    ['fr-c1-cross-source-synthesis','vocabulary','fr-c1-u03','C1']
   ] as const;
-  expect(SPECIALTY_LESSONS.length).toBe(75);
-  expect(SPECIALTY_LESSONS.filter(u=>u.type==='grammar')).toHaveLength(40);
-  expect(SPECIALTY_LESSONS.filter(u=>u.type==='vocabulary')).toHaveLength(35);
+  expect(SPECIALTY_LESSONS.length).toBe(83);
+  expect(SPECIALTY_LESSONS.filter(u=>u.type==='grammar')).toHaveLength(44);
+  expect(SPECIALTY_LESSONS.filter(u=>u.type==='vocabulary')).toHaveLength(39);
   for(const [id,type,course,level] of ids){
    const lesson=SPECIALTY_LESSONS.find(u=>u.id===id)!;
    expect(lesson).toBeDefined();
@@ -543,10 +543,10 @@ describe('official-format DELF B2 and source-bound DALF C1 writing',()=>{
 
 describe('B2 news attribution and C1 critical reading and visible Task1 evidence',()=>{
  it('contains 60 authentic authored source-aligned lessons',()=>{
-  expect(SPECIALTY_LESSONS).toHaveLength(75);
-  expect(new Set(SPECIALTY_LESSONS.map(u=>u.id)).size).toBe(75);
-  expect(SPECIALTY_LESSONS.filter(u=>u.type==='grammar')).toHaveLength(40);
-  expect(SPECIALTY_LESSONS.filter(u=>u.type==='vocabulary')).toHaveLength(35);
+  expect(SPECIALTY_LESSONS).toHaveLength(83);
+  expect(new Set(SPECIALTY_LESSONS.map(u=>u.id)).size).toBe(83);
+  expect(SPECIALTY_LESSONS.filter(u=>u.type==='grammar')).toHaveLength(44);
+  expect(SPECIALTY_LESSONS.filter(u=>u.type==='vocabulary')).toHaveLength(39);
   for(const [id,type,course] of [
    ['fr-b2-reported-news-reading','grammar','fr-b2-u03'],
    ['fr-c1-media-stance-reading','vocabulary','fr-c1-u07']
@@ -598,10 +598,10 @@ describe('paired A1 classroom clarification and IELTS Listening U03 paraphrase',
   ['en-listening-note-lexicon','vocabulary','en','B2','en-ielts-listening-u03']
  ] as const;
  it('adds exactly four deep original lessons without duplicating existing question grammar',()=>{
-  expect(SPECIALTY_LESSONS).toHaveLength(75);
-  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(75);
-  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(40);
-  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(35);
+  expect(SPECIALTY_LESSONS).toHaveLength(83);
+  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(83);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(44);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(39);
   expect(SPECIALTY_LESSONS.find(x=>x.id==='fr-a1-information-questions')).toBeUndefined();
   for(const [id,type,lang,level,course] of added){
    const unit=SPECIALTY_LESSONS.find(x=>x.id===id);
@@ -668,10 +668,10 @@ describe('A1 market/leisure and IELTS Reading U02 from actual source lessons',()
   ['en-reading-research-evidence-lexicon-u02','vocabulary','en-ielts-reading-u02']
  ] as const;
  it('keeps 69 unique complete lessons with exact source-course mapping',()=>{
-  expect(SPECIALTY_LESSONS).toHaveLength(75);
-  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(75);
-  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(40);
-  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(35);
+  expect(SPECIALTY_LESSONS).toHaveLength(83);
+  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(83);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(44);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(39);
   for(const [id,type,course] of added){
    const u=SPECIALTY_LESSONS.find(x=>x.id===id)!;
    expect(u,id).toBeDefined();
@@ -726,10 +726,10 @@ describe('A1 household/future vocabulary and IELTS heading-function content',()=
   ['en-ielts-heading-paragraph-function-lexicon','en-ielts-reading-u03','en','B2']
  ] as const;
  it('keeps seventy-two unique lessons and real original-course matches',()=>{
-  expect(SPECIALTY_LESSONS).toHaveLength(75);
-  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(75);
-  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(40);
-  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(35);
+  expect(SPECIALTY_LESSONS).toHaveLength(83);
+  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(83);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(44);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(39);
   for(const [id,course,lang,level] of mapped){
    const u=SPECIALTY_LESSONS.find(x=>x.id===id)!;
    expect(u,id).toBeDefined();
@@ -779,10 +779,10 @@ describe('A1 first past and IELTS Reading U04 evidence course repair',()=>{
   ['en-ielts-tfng-scope-grammar-u04','grammar','en-ielts-reading-u04']
  ] as const;
  it('registers 75 distinct authored modules linked to real classes',()=>{
-  expect(SPECIALTY_LESSONS).toHaveLength(75);
-  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(75);
-  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(40);
-  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(35);
+  expect(SPECIALTY_LESSONS).toHaveLength(83);
+  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(83);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(44);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(39);
   for(const [id,type,course] of added){
    const u=SPECIALTY_LESSONS.find(x=>x.id===id)!;
    expect(u,id).toBeDefined();
@@ -816,5 +816,53 @@ describe('A1 first past and IELTS Reading U04 evidence course repair',()=>{
    expect(view.container.querySelector('.specialty-grammar-table'),id).not.toBeNull();
    view.unmount();
   }
+ });
+});
+
+
+describe('IELTS Reading U05–U08 source-bound complete bilingual knowledge tracks',()=>{
+ const courses=[
+  ['en-ielts-reading-u05','en-reading-u05-reference-logic','en-reading-u05-retrofit-lexicon'],
+  ['en-ielts-reading-u06','en-reading-u06-hedging-inference','en-reading-u06-science-caution-lexicon'],
+  ['en-ielts-reading-u07','en-reading-u07-information-matching-logic','en-reading-u07-survey-method-lexicon'],
+  ['en-ielts-reading-u08','en-reading-u08-two-source-synthesis','en-reading-u08-access-equity-lexicon']
+ ] as const;
+ it('keeps exactly 83 unique textbooks, each attached to a real draft course',()=>{
+  expect(SPECIALTY_LESSONS).toHaveLength(83);
+  expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(83);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='grammar')).toHaveLength(44);
+  expect(SPECIALTY_LESSONS.filter(x=>x.type==='vocabulary')).toHaveLength(39);
+  for(const [course,grammar,vocabulary] of courses){
+   expect(COURSES.some(x=>x.id===course)).toBe(true);
+   expect(linkedSpecialties('grammar',course).map(x=>x.id)).toContain(grammar);
+   expect(linkedSpecialties('vocabulary',course).map(x=>x.id)).toContain(vocabulary);
+   for(const id of [grammar,vocabulary]){
+    const u=SPECIALTY_LESSONS.find(x=>x.id===id)!;
+    expect(u,id).toBeDefined();
+    expect(u.unitLink).toBe(course);
+    expect(u.sections).toHaveLength(4);
+    expect(u.questions).toHaveLength(4);
+    expect(u.model.length).toBe(8);
+    expect(u.sections.every(section=>section.examples.length===3&&section.concept.length>65&&section.caution.length>35),id).toBe(true);
+    expect(u.sections.flatMap(section=>section.examples).every(e=>e.target.length>15&&e.zh.length>10&&e.analysis.length>8)).toBe(true);
+    expect(u.questions.every(q=>q.answer.length>10&&q.why.length>28)).toBe(true);
+    expect(specialtyQuality(u)).toBe(true);
+    const view=render(<SpecialtyLibrary params={new URLSearchParams('page=specialties&type='+u.type+'&language=en&topic='+id)} navigate={vi.fn()}/>);
+    expect(view.container.querySelectorAll('.specialty-chapter'),id).toHaveLength(4);
+    expect(view.container.querySelectorAll('.specialty-question'),id).toHaveLength(4);
+    view.unmount();
+   }
+  }
+ });
+ it('preserves reference, hedge, sample and aggregate distinctions',()=>{
+  const byId=(id:string)=>SPECIALTY_LESSONS.find(u=>u.id===id)!;
+  expect(byId('en-reading-u05-reference-logic').questions[0].answer).toContain('insulation');
+  expect(byId('en-reading-u05-retrofit-lexicon').questions[0].answer).toContain('qualify');
+  expect(byId('en-reading-u06-hedging-inference').questions[1].answer).toContain('No.');
+  expect(byId('en-reading-u06-science-caution-lexicon').questions[0].answer).toBe('Tentative.');
+  expect(byId('en-reading-u07-information-matching-logic').questions.map(q=>q.answer)).toEqual(['Section A.','Section B.','Section B.','Section C.']);
+  expect(byId('en-reading-u07-survey-method-lexicon').questions[3].answer).toContain('remote');
+  expect(byId('en-reading-u08-two-source-synthesis').questions[2].answer).toContain('coexist');
+  expect(byId('en-reading-u08-access-equity-lexicon').questions[2].answer).toContain('No.');
  });
 });
