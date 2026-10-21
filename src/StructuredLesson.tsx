@@ -52,7 +52,7 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
      <section><h3>情境示例</h3><blockquote>{examples[0]}</blockquote>
        <button type="button" onClick={()=>play(examples[0])}>听例句</button></section>
    </div>}
-   {active===1&&(integratedGrammar?<CourseSpecialtyStage courseId={course.id} kind="grammar" rate={ttsRate}/>:<div className="curriculum-stack">
+   {active===1&&(integratedGrammar?<CourseSpecialtyStage courseId={course.id} kind="grammar" rate={ttsRate} onSaveOutput={onSaveOutput}/>:<div className="curriculum-stack">
      <section><h3>核心规则</h3><ol className="curriculum-concepts">
       {(draft?draft.grammar.split(/[。](?![^（]*）)/u).map(t=>t.trim()).filter(Boolean):
       unit!.concepts).map((part,i)=><li key={i}>{part}</li>)}</ol></section>
@@ -69,7 +69,7 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
      <section className="curriculum-warning"><h3>容易混淆的地方</h3>
       <p>{draft?.common_mistake||unit!.commonMistake}</p></section>
    </div>)}
-   {active===2&&(integratedVocabulary?<CourseSpecialtyStage courseId={course.id} kind="vocabulary" rate={ttsRate}/>:<div className="curriculum-stack">
+   {active===2&&(integratedVocabulary?<CourseSpecialtyStage courseId={course.id} kind="vocabulary" rate={ttsRate} onSaveOutput={onSaveOutput}/>:<div className="curriculum-stack">
      <section><h3>本课词汇</h3><div className="curriculum-vocabulary" role="list">
       {vocabulary.map(([word,meaning],i)=><div role="listitem" className="curriculum-word" key={i}>
        <strong lang={course.language}>{word}</strong><span>{meaning}</span>
