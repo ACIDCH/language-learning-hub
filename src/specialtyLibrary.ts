@@ -11,6 +11,7 @@ import {IELTS_ARGUMENT_SPECIALTIES} from './ieltsArgumentSpecialties';
 import {ADVANCED_FRENCH_SPECIALTIES} from './advancedFrenchSpecialties';
 import {NEXT_CURRICULUM_CONTINUITY} from './nextCurriculumContinuity';
 import {FRENCH_EXAM_WRITING_CONTINUITY} from './frenchExamWritingContinuity';
+import {FRENCH_MEDIA_READING_CONTINUITY} from './frenchMediaReadingContinuity';
 
 export type SpecialtyKind='grammar'|'vocabulary';
 export type SpecialtyLanguage='fr'|'en';
@@ -324,7 +325,8 @@ export const SPECIALTY_LESSONS:SpecialtyLesson[]=[
  ...IELTS_ARGUMENT_SPECIALTIES,
  ...ADVANCED_FRENCH_SPECIALTIES,
  ...NEXT_CURRICULUM_CONTINUITY,
- ...FRENCH_EXAM_WRITING_CONTINUITY
+ ...FRENCH_EXAM_WRITING_CONTINUITY,
+ ...FRENCH_MEDIA_READING_CONTINUITY
 ];
 export function specialtyRoute(type:SpecialtyKind,language?:string,topic?:string,returnTo?:string){
  const params=new URLSearchParams({page:'specialties',type});
