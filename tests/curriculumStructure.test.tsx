@@ -89,6 +89,14 @@ describe('semantic curriculum without broken full-page IPA',()=>{
   expect(container.textContent).toContain('预订过');
   expect(container.textContent).toContain('不要把助动词当作过去分词');
  });
+ it('teaches French un/une/des and il y a from the matching private grammar topic',()=>{
+  const raw="② GRAMMAIRE\\nun/une/des 表示非特指；le/la/les 表示已知事物。il y a 表示存在。";
+  const {container}=render(<BilingualTeaching courseId="fr-a1-u01"
+    stage={1} privateSource sourceText={raw}/>);
+  expect(container.textContent).toContain('不定冠词：un / une / des');
+  expect(container.textContent).toContain('Il n');
+  expect(container.textContent).toContain('这里没有笔');
+ });
  it('does not paste unrelated public example translations over a different private manuscript',()=>{
   const {container}=render(<BilingualTeaching courseId="en-ielts-listening-u01"
     stage={1} content={data} privateSource sourceText="Private lesson about learning bicycles."/>);
