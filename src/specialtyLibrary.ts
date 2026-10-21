@@ -135,7 +135,11 @@ const hand:SpecialtyLesson[]=[
  section('01 第一条件句：现实中可能发生','当条件有实际可能发生时，英语常使用 if + 一般现在时，主句用 will / can / may 表达结果或可能性。时间指向未来并不意味着 if 从句必须用 will。','If + present simple, will/can/may + base verb',[
  pair('If the library opens early, I will study there.','如果图书馆早开门，我就在那里学习。','if 从句用 opens，主句 will study。'),pair('If we collect better data, we may reach a clearer conclusion.','如果收集更好的数据，我们可能得出更明确的结论。','主句 may 保留可能性。')],'入门规则中不要写 If the library will open early；但 will 在 if 从句中有特殊意愿含义时另当别论。'),
  section('02 第二条件句：假设与当前距离','假设不太可能、与事实相反或纯想象的情况时，常用 if + 过去式，主句 would + 原形。它表示与现实的距离，而非单纯过去发生的事。','If + past simple, would + base verb',[
- pair('If I had more time, I would read every day.','如果我有更多时间，我会每天阅读。','实际可能没有这么多时间。'),pair('If the campus were quieter, students might concentrate better.','假如校园更安静，学生可能更容易集中注意力。','were 常用于正式假设，might 表可能性。')],'不能把 would 随意放进普通 if 条件从句；先判断现实性，再选结构。')],
+ pair('If I had more time, I would read every day.','如果我有更多时间，我会每天阅读。','实际可能没有这么多时间。'),pair('If the campus were quieter, students might concentrate better.','假如校园更安静，学生可能更容易集中注意力。','were 常用于正式假设，might 表可能性。')],'不能把 would 随意放进普通 if 条件从句；先判断现实性，再选结构。'),
+ section('03 零条件句：普遍规律与每次重复发生的结果','零条件句常用于普遍规律或反复出现的结果，条件与结果两个分句一般都用现在时。它不同于第一条件句：第一条件句谈某个将来可能发生的情境及其结果，而零条件句讨论通常成立的关系。','If + present simple, present simple',[
+ pair('If a student studies regularly, their vocabulary usually grows.','如果学生经常学习，词汇量通常会增长。','现在时表示一般习惯性趋势，不是对某个学生的准确保证。'),
+ pair('If the library closes early, students need another place to study.','如果图书馆关门早，学生就需要别的学习地点。','可表达反复出现的实际问题，取决于语境。')
+ ],'不要把零条件句误当成所有带 if 的句子都必须表达绝对科学事实；也不要把它和将来一次性的第一条件句混为一谈。')],
  questions:[{question:'填空：If it ___ (rain), we will stay inside.',answer:'rains',why:'第一条件句 if 从句使用现在时。'},{question:'填空：If I ___ (have) more time, I would study French.',answer:'had',why:'第二条件句 if + 过去式。'}],
  output:'写两组对比：一个真实可行的学习计划、一个理想化学习安排，各写两句。',model:[
  pair('If I finish my work, I will review the vocabulary tonight.','如果做完工作，我今晚会复习词汇。','现实可能。'),pair('If I had more free time, I would practise speaking daily.','如果有更多空闲，我就会每天练习口语。','假设条件。')],
