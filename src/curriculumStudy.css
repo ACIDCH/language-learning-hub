@@ -240,3 +240,20 @@
  .v44 .course-specialty-table th,.v44 .course-specialty-table td{padding:8px 10px;min-width:75px}
  .v44 .course-specialty-pair{padding:12px 0}
 }
+
+/* Full written output remains collapsed until needed; source course notes retain the answer. */
+.v44 .course-specialty-production{margin-top:22px;padding-top:16px;border-top:1px solid var(--border);min-width:0}
+.v44 .course-specialty-production>summary,.v44 .course-specialty-production>details>summary{
+ cursor:pointer;color:var(--accent);font-weight:700;line-height:1.7;padding:6px 0}
+.v44 .course-specialty-production>label{display:block;font-weight:700;margin:10px 0 8px;font-size:13px}
+.v44 .course-specialty-production>textarea{width:100%;min-height:156px;box-sizing:border-box;background:var(--paneSoft);
+ color:var(--text);border:1px solid var(--border);padding:13px;border-radius:10px;resize:vertical;font:inherit}
+.v44 .course-specialty-production>button{display:block;margin:10px 0}
+.v44 .course-specialty-production>details{border-top:1px solid var(--border);margin-top:15px;padding-top:8px}
+.v44 .course-specialty-model-paragraph,.v44 .course-specialty-model-pair{
+ padding:14px 0;border-bottom:1px solid var(--border);min-width:0;overflow-wrap:anywhere}
+.v44 .course-specialty-model-paragraph p:first-child,.v44 .course-specialty-model-pair p:first-child{
+ font-size:clamp(14px,1.4vw,17px);line-height:1.85;margin:0 0 9px}
+.v44 .course-specialty-model-paragraph p:nth-child(2),.v44 .course-specialty-model-pair p:nth-child(2){
+ border-left:2px solid var(--accent);padding-left:12px;color:var(--textMuted);line-height:1.8;margin:0}
+.v44 .course-specialty-model-pair small{color:var(--textMuted);line-height:1.6}
