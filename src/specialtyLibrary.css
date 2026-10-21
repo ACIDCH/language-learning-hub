@@ -355,3 +355,36 @@
  .v44 .specialty-learning-links{display:grid;grid-template-columns:minmax(0,1fr)}
  .v44 .specialty-learning-links button{width:100%}
 }
+
+
+/* Lesson directory: actual CEFR buckets, not one continuous undifferentiated list. */
+.v44 .specialty-topic-list .specialty-topic-group{
+ margin:11px 0 3px;padding:7px 9px 5px;border-bottom:1px solid var(--border);
+ color:var(--textMuted);font-size:11px;letter-spacing:.025em;font-weight:750;
+ line-height:1.5}
+.v44 .specialty-topic-list .specialty-topic-group:first-child{margin-top:0}
+.v44 .specialty-companion-jump{
+ display:grid;gap:4px;padding:9px;background:var(--pane);
+ border:1px solid var(--border);border-radius:10px;min-width:0}
+.v44 .specialty-companion-jump a{
+ display:block;line-height:1.5;padding:7px 8px;
+ font-size:11px;color:var(--textMuted);text-decoration:none;
+ border-radius:7px;overflow-wrap:anywhere}
+.v44 .specialty-companion-jump a[aria-current="location"]{
+ background:var(--accentTint);color:var(--accent);font-weight:750}
+.v44 .specialty-companion-jump a:hover,.v44 .specialty-companion-jump a:focus-visible{
+ color:var(--accent);text-decoration:underline}
+.v44 .specialty-chapter{scroll-margin-top:96px}
+.v44 .specialty-example-grid p{overflow-wrap:anywhere}
+.v44 .specialty-table-scroll{max-width:100%}
+@media(max-width:929px){
+ .v44 .specialty-topic-list .specialty-topic-group{
+  flex:1 0 100%;width:100%;margin-top:7px;padding-left:4px}
+ .v44 .specialty-companion-jump{align-self:start}
+}
+@media(max-width:600px){
+ .v44 .specialty-companion-jump{
+  display:flex;gap:6px;overflow-x:auto;flex-wrap:nowrap}
+ .v44 .specialty-companion-jump a{
+  flex:0 0 auto;max-width:min(240px,70vw);white-space:normal}
+}
