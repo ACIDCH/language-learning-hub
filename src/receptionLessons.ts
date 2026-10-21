@@ -53,7 +53,7 @@ export const RECEPTION_LESSONS:Record<string,ReceptionLesson>={
     "P3",
     "P4"
    ],
-   "why": "P3 首次给出老师姓名，P4 因未听清而重复确认。"
+   "why": "P3 明确给出老师姓名 Madame Martin；P4 说明 Amir 没听清姓名，才请 Léa 再重复一次。"
   },
   {
    "prompt": "为什么 Amir 请求重复？这是确认时间还是听清姓名？",
