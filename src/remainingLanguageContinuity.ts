@@ -52,7 +52,7 @@ export const REMAINING_LANGUAGE_CONTINUITY:SpecialtyLesson[]=[
  ex('Bonjour, je m’appelle Lucas.','你好，我叫卢卡斯。','开场姓名。'),
  ex('Je suis français et je viens de Lyon.','我是法国人，来自里昂。','国籍和来源。'),
  ex('Maintenant, j’habite à Auckland.','现在我住在奥克兰。','现居城市。'),
- ex('Je parle français et un peu anglais.','我说法语，也会一点英语。','表达语言能力。'),
+ ex('Je parle français et un peu d’anglais.','我说法语，也会一点英语。','表达语言能力。'),
  ex('J’apprends aussi le japonais.','我也在学习日语。','区分已会的语言和正在学的语言。'),
  ex('Je veux pratiquer l’anglais à l’université.','我想在大学练习英语。','学习目标。')
  ],
