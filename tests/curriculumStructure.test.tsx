@@ -13,6 +13,7 @@ import {CHINESE_LESSON_NOTES} from '../src/bilingualTeachingNotes';
 import {ENGLISH_ORIGINAL_BILINGUAL} from '../src/bilingualOriginalEnglish';
 import {outputGuide} from '../src/curriculumTeachingGuide';
 import BilingualTeaching from '../src/BilingualTeaching';
+import {curatedUnitForSource,FRENCH_ARTICLES,STUDY_SPACES} from '../src/curatedCurriculum';
 import type {LessonDraft} from '../src/v44Courses';
 
 vi.mock('../src/IpaText',()=>({default:({text}:{text:string})=><div aria-label="参考国际音标与课程原文">{text}</div>,speakIpaText:()=>true}));
@@ -142,5 +143,90 @@ describe('semantic curriculum without broken full-page IPA',()=>{
   const {container}=render(<LessonReader text={long} language="en" courseId="en-ielts-listening-u01" stage={0} onChangeStage={vi.fn()}/>);
   expect(screen.queryByRole('checkbox',{name:'显示 IPA'})).toBeNull();
   expect(container.querySelector('.lesson-content-flow')?.textContent).toContain('Extended essay paragraphs');
+ });
+});
+
+
+describe('source-matched textbooks: grammar accuracy, bilingual alignment and non-destructive private rendering',()=>{
+ const frenchSource=[
+  '① SITUATION\nVoici ma chambre.',
+  '② GRAMMAIRE\nun/une/des signifie une première introduction. il y a montre une présence.',
+  '③ VOCABULAIRE\nun livre, une table.',
+  '④ LECTURE\nIl y a des livres sur la table.',
+  '⑤ PRONONCIATION\nHistorical speech material remains stored.',
+  '⑥ EXPRESSION\nPrésentez une chambre.'
+ ].join('\n\n');
+ const englishSource=[
+  '① SCENARIO\nThe lecture considers whether providing study spaces leads to better learning.',
+  '② GRAMMAR\nRoom occupancy can be observed. However, evidence must be qualified.',
+  '③ VOCABULARY\nmeasurement, limitation, conclusion.',
+  '④ LISTENING\nUsage figures do not measure academic achievement.',
+  '⑤ PRONUNCIATION\nHistorical audio source content.',
+  '⑥ OUTPUT\nFirst-pass: label opening, measurement and conclusion.'
+ ].join('\n\n');
+ it('matches only genuine topical private texts without repurposing public drafts',()=>{
+  expect(curatedUnitForSource('fr-a1-u01',frenchSource,true)?.id).toBe('french-articles');
+  expect(curatedUnitForSource('en-ielts-listening-u01',englishSource,true)?.id).toBe('study-spaces');
+  expect(curatedUnitForSource('en-ielts-listening-u01',englishSource,false)).toBeNull();
+  expect(curatedUnitForSource('fr-a1-u01','A dialogue on railway tickets.',true)).toBeNull();
+  expect(curatedUnitForSource('en-ielts-listening-u01','Other private content.',true)).toBeNull();
+ });
+ it('provides complete nonempty Chinese sentence alignments and actual answer explanations',()=>{
+  for(const unit of [FRENCH_ARTICLES,STUDY_SPACES]){
+   const pairs=[...unit.scene,...unit.reading.pairs,...unit.output.model,
+    ...unit.grammar.flatMap(x=>x.examples)];
+   expect(pairs.length).toBeGreaterThan(18);
+   expect(pairs.every(p=>p.target.trim().length>5&&p.zh.trim().length>5&&p.why.trim().length>5)).toBe(true);
+   expect(unit.grammar.length).toBeGreaterThanOrEqual(4);
+   expect(unit.vocabulary.length).toBeGreaterThanOrEqual(8);
+   expect((unit.practice[1]||[]).every(p=>p.answer.length>0&&p.explanation.length>5)).toBe(true);
+   expect(unit.output.model.length).toBeGreaterThanOrEqual(4);
+  }
+ });
+ it('preserves French negative-article exceptions instead of teaching pas de universally',()=>{
+  const examples=FRENCH_ARTICLES.grammar.flatMap(g=>g.examples.map(x=>x.target));
+  expect(examples).toContain("Il n'y a pas de livre ici.");
+  expect(examples).toContain("Ce n'est pas un livre.");
+  expect(examples).toContain("Je n'aime pas les livres.");
+  expect(examples).toContain("Il n'y a pas d'ordinateur.");
+ });
+ it('renders private French grammar as chaptered bilingual teaching with review controls',()=>{
+  const {container}=render(<LessonReader text={frenchSource} courseId='fr-a1-u01' language='fr'
+   privateSource stage={1} onChangeStage={vi.fn()}/>);
+  expect(container.querySelectorAll('.lesson-stages button')).toHaveLength(5);
+  expect(container.querySelector('.curated-lesson')).not.toBeNull();
+  expect(container.textContent).toContain('不定冠词：un / une / des');
+  expect(container.textContent).toContain('这不是一本书');
+  expect(container.querySelector('.curated-source-details')).not.toBeNull();
+  expect(container.querySelector('.curated-source-details')?.textContent).toContain('un/une/des');
+  expect(container.querySelectorAll('.curated-question')).toHaveLength(FRENCH_ARTICLES.practice[1]!.length);
+  expect(container.querySelector('.curated-answer')).toBeNull();
+  fireEvent.click(screen.getAllByRole('button',{name:'核对答案与解析'})[0]);
+  expect(container.querySelector('.curated-answer')?.textContent).toContain('chaise');
+ });
+ it('keeps a different private manuscript untouched instead of pasting unrelated curated chapters',()=>{
+  const unrelated=frenchSource.replace('un/une/des signifie une première introduction. il y a montre une présence.','les trains se déplacent en France.');
+  const {container}=render(<LessonReader text={unrelated} courseId='fr-a1-u01' language='fr'
+   privateSource stage={1} onChangeStage={vi.fn()}/>);
+  expect(container.querySelector('.curated-lesson')).toBeNull();
+  expect(container.querySelector('.lesson-content-flow')?.textContent).toContain('les trains se déplacent');
+ });
+ it('teaches academic lecture evidence constraints and preserves source quotations',()=>{
+  const {container}=render(<LessonReader text={englishSource} courseId='en-ielts-listening-u01' language='en'
+   privateSource stage={3} onChangeStage={vi.fn()}/>);
+  expect(container.querySelector('.curated-lesson')).not.toBeNull();
+  expect(container.textContent).toContain('使用量');
+  expect(container.textContent).toContain('研究问题');
+  expect(container.textContent).toContain('学业成就');
+  expect(container.querySelectorAll('.curated-sentence')).toHaveLength(STUDY_SPACES.reading.pairs.length);
+  expect(container.querySelector('.curated-source-details')?.textContent).toContain('do not measure academic achievement');
+ });
+ it('keeps a meaningful bilingual drafting task in the final stage',()=>{
+  const {container}=render(<LessonReader text={englishSource} courseId='en-ielts-listening-u01' language='en'
+   privateSource stage={5} onChangeStage={vi.fn()}/>);
+  expect(container.textContent).toContain('80—120');
+  expect(container.querySelectorAll('.curated-sentence')).toHaveLength(STUDY_SPACES.output.model.length);
+  fireEvent.change(screen.getByLabelText('我的完整表达'),{target:{value:'The lecture raises a question about facilities.'}});
+  expect(container.textContent).toContain('当前英文词数：8');
  });
 });
