@@ -101,7 +101,7 @@ describe('research-extended grammar and vocabulary paths',()=>{
  });
  it('avoids false absolutes about modality, French negatives and research causality',()=>{
   const academic=SPECIALTY_LESSONS.find(x=>x.id==='en-lecture-hedging')!;
-  expect(academic.sections[0].caution).toContain('固定概率');
+  expect(academic.sections[0].caution).toContain('概率顺序');
   expect(academic.sections.flatMap(x=>x.examples).some(x=>x.target.includes('cannot establish'))).toBe(true);
   const french=SPECIALTY_LESSONS.find(x=>x.id==='fr-articles-partitive')!;
   expect(french.sections.flatMap(x=>x.examples).some(x=>x.target.includes("Ce n'est pas une pomme"))).toBe(true);
