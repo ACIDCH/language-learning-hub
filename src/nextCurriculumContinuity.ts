@@ -77,7 +77,7 @@ export const NEXT_CURRICULUM_CONTINUITY:SpecialtyLesson[]=[
  sec('02 与过去事实相反的 si 条件句',
  '说话人描述过去没有满足的条件及因此未发生的结果时，si 从句用 plus-que-parfait，结果句用 conditionnel passé。真实过去发生了什么，需要由上下文或其他句子交代，不能将假设说成已证实结果。',
  'Si + plus-que-parfait, conditionnel passé',[
- ex('Si nous étions partis plus tôt, nous aurions eu le train.','如果我们早些出发，本来就能赶上火车。','étaient? 实际是 étions partis，结果是 aurions eu。'),
+ ex('Si nous étions partis plus tôt, nous aurions eu le train.','如果我们早些出发，本来就能赶上火车。','étions partis 是先行的愈过去时，aurions eu 是未实现的过去结果。'),
  ex('Si j’avais étudié davantage, j’aurais mieux compris le cours.','如果我更认真学习，本可以更好理解课程。','avais étudié 与 aurais compris 标记未实现的过去。'),
  ex('Elle serait venue si elle avait été libre.','如果她有空，本来就会来。','结果句可以放在 si 句之前，时态不变。')
  ],'Si j’aurais su 不符合该条件结构；应使用 Si j’avais su。',
@@ -169,7 +169,7 @@ export const NEXT_CURRICULUM_CONTINUITY:SpecialtyLesson[]=[
  ex('Once this mixture has been prepared, the pulp is cleaned.','混合物准备好后，纸浆得到清洁。','第四阶段。'),
  ex('The cleaned material is then pressed into sheets, which are the main product of the process.','清洁后的材料随后被压成纸张，即这一流程的主要产品。','第五阶段的产出。'),
  ex('Finally, these sheets are dried and packed, completing the series of operations described here.','最后纸张干燥并包装，完成所描述的一系列操作。','第六阶段与结尾。'),
- ex('No temperatures, processing times or specialist machines are specified in the exercise, so the description remains limited to the six labelled stages.','练习没有给出温度、时长或专用设备，因此描述仅限于六个明确阶段。','说明原创练习证据边界；在真正考场报告中应以图示信息取代这句。')
+ ex('As a whole, the material passes from the initial collection and sorting phases through preparation and pressing before the final drying and packing stage.','整体而言，材料从收集和分类阶段经过准备与压制，最终进入干燥与包装阶段。','对流程进行综合归纳而不添加图外设备或数据。')
  ],
  referenceUrls:['https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-writing','https://ielts.org/take-a-test/preparation-resources/writing-test-resources'],
  sourceNote:'对应 en-ielts-writing-task1-u05 的过程与被动语态。IELTS 官方规定 Academic Task 1 150 词以上，练习为虚构文本流程而非官方试卷图。'
