@@ -1,5 +1,38 @@
 # 语法与词汇专项：资料来源与内容交接（2026-10-21）
 
+## 当前实际覆盖基线（更新于 2026-10-21）
+
+- 已有 **22 节可访问的独立专题**：11 节语法、11 节词汇；分为最初 16 节和 src/expandedSpecialties.ts 新增的 6 节。
+- 后续新增六节：语法 fr-articles-partitive、fr-passe-compose、en-lecture-hedging；词汇 en-academic-collocations、fr-campus-vocab、fr-food-vocab。
+- 22 节具备数据页面、分章节双语示例、自测和答案解析；存在 specialtyQuality 最低门槛及单测，**这不等于人工语言审校通过，也不等于 156 个课程各自有独立专题**。
+- 本次检查仅使用现有仓库和公开权威网页。私人 YUNPAN 教材读取状态保留历史审计记录；**本次没有重新逐页打开私人文件**。
+
+### 课程—语法—词汇关系（当前明确 unitLink，非全集自动覆盖）
+
+| 课程 ID | 当前关联语法专题 | 当前关联词汇专题 |
+|---|---|---|
+| fr-a1-u01 | fr-etre | fr-greetings、fr-campus-vocab |
+| fr-a1-u03 | fr-avoir | fr-family |
+| fr-a1-u04 | fr-articles | fr-objects、fr-room |
+| fr-a1-u05 | fr-er | 暂无独立对应专题 |
+| fr-a2-u01 | fr-articles-partitive、fr-passe-compose | fr-food-vocab |
+| en-ielts-listening-u01 | en-signposts、en-contrast、en-modals、en-lecture-hedging | en-lecture-terms、en-signpost-vocab、en-evidence-vocab、en-study-vocab、en-academic-collocations |
+| en-ielts-language-upgrade-u01 | en-conditionals | 暂无独立对应专题 |
+
+**关联局限**：当前 linkedSpecialty() 只返回一门课程某类型的首条结果。目录仍可进入同一课程的其余专题，但课内尚未显示全部“一课多专题”的关联索引。不能把这张表解读为其余目录单元不存在语法/词汇教学，只能说尚无**独立专题**映射。还未开展 CEFR 外部认证、逐句人工审校、真正间隔复习和专业音频核查。
+
+### 本轮公开参考资料
+
+- 欧洲委员会 CEFR 分级描述符：https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors
+- 德州大学 Tex's French Grammar 的冠词与否定等法语语法条目：https://laits.utexas.edu/tex/gr/
+- British Council 对 discourse markers 的教学解释：https://www.teachingenglish.org.uk/professional-development/teachers/teaching-knowledge-database/d-h/discourse-markers
+- British Council may/might 语法参考：https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/may-might
+- Cambridge English Profile Wordlists 对义项/固定语块分级的说明：https://www.cambridge.org/core/journals/english-profile-journal/article/a1b2-vocabulary-insights-and-issues-arising-from-the-english-profile-wordlists-project/E57847F6C5574124B2354F9BEEC005FA
+
+以下“第一批完整教材（16 个）”为此前阶段的记录，保留用于追溯，不再代表现行总数。
+
+---
+
 ## 第一批完整教材（16 个）
 
 法语语法：fr-etre、fr-avoir、fr-articles、fr-er。英语语法：en-signposts、en-contrast、en-modals、en-conditionals。
@@ -34,6 +67,6 @@ FR A1 U04：c'est 与 se 不是同音。仅在实测验证后才能展示发音�
 
 ## 发布与覆盖边界
 
-该次实现只是首批 16 个完整专题样板，并不代表 156 门课程及 A1–C2 全等级已逐节重构、音频已逐条合法配对或获得专业人工教学审校。保留 main 不变，继续在现有 PR #50 开发分支评审。专题中的练习为会话临时编辑，不声称自动同步 Supabase 或长期间隔复习调度已经实现。
+该历史阶段只实现首批 16 个独立专题样板（现行基线已扩展为 22），并不代表 156 门课程及 A1–C2 全等级已逐节重构、音频已逐条合法配对或获得专业人工教学审校。保留 main 不变，继续在现有 PR #50 开发分支评审。专题中的练习为会话临时编辑，不声称自动同步 Supabase 或长期间隔复习调度已经实现。
 
 下一步按当前等级路标扩展独立专题的全面覆盖，记录每个课程对应的专题学习路径，并进一步逐课完成校订。
