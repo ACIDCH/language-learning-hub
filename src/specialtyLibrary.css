@@ -227,3 +227,20 @@
  .v44 .catalog-filter .filter-option{width:auto;flex:0 0 auto}
  .v44 .reader-specialty-group{min-width:0;width:100%}
 }
+/* On 390px readers, two collapsed topic groups share one row; opening either
+   group still provides the complete list, without a tall blank preamble. */
+@media(max-width:750px){
+ .v44 .reader-page .reader-specialty-shortcuts{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:5px!important;margin:4px 0!important;align-items:start}
+ .v44 .reader-page .reader-specialty-group{width:100%;min-width:0!important;margin:0}
+ .v44 .reader-page .reader-specialty-group summary{
+  padding:7px 6px;font-size:10px;line-height:1.35;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .v44 .reader-page .reader-specialty-group summary small{
+  font-size:9px;margin-left:3px}
+ .v44 .reader-page .reader-specialty-shortcuts>button{
+  min-width:0!important;margin:0;padding:7px 6px;font-size:10px;min-height:32px}
+ .v44 .reader-page .reader-specialty-options{display:grid;grid-template-columns:minmax(0,1fr)}
+ .v44 .reader-page .reader-top{margin:2px 0 8px!important}
+}
