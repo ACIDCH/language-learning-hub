@@ -9,7 +9,7 @@ import ReceptionStudy from '../src/ReceptionStudy';
 import {RECEPTION_LESSONS} from '../src/receptionLessons';
 import Task1WritingWorkshop,{TASK1_WORKSHOPS} from '../src/Task1WritingWorkshop';
 import {BORROWING_CHART,CHART_MODEL} from '../src/task1ChartData';
-import {task1Evidence,wordCount} from '../src/Task1Feedback';
+import {numericEvidenceChecks,task1Evidence,wordCount} from '../src/Task1Feedback';
 afterEach(()=>{cleanup();vi.unstubAllGlobals();});
 
 it('merges opaque old state and answers while round-tripping foundation responses through existing JSONB',()=>{
@@ -108,4 +108,10 @@ it('keeps chart/table/model numbers and comparison arithmetic consistent',()=>{
  expect(wordCount(CHART_MODEL.map(p=>p.target).join(' '))).toBeGreaterThanOrEqual(150);
  const {container}=render(<Task1WritingWorkshop courseId="en-ielts-writing-task1-u03"/>);
  expect([...container.querySelectorAll('tbody tr')].map(r=>r.textContent)).toEqual(['20102080','20153565','20206040']);
+});
+it('flags unsupported numerical claims in the submitted writing without pretending to grade meaning',()=>{
+ expect(numericEvidenceChecks('en-chart-comparison','Online borrowing reached 90% in 2012.')).toHaveLength(2);
+ expect(numericEvidenceChecks('en-chart-comparison',CHART_MODEL.map(p=>p.target).join(' '))).toEqual([]);
+ expect(numericEvidenceChecks('en-process-report-grammar','The pulp is heated to 90°C for 20 minutes.')).toHaveLength(2);
+ expect(numericEvidenceChecks('en-map-change-lexicon','The library doubled in size in 2010.')[0]).toContain('2010');
 });
