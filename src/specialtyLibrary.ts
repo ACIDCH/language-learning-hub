@@ -22,7 +22,7 @@ function fromCurated(type:SpecialtyKind,source:typeof FRENCH_ARTICLES,id:string,
  return {id,type,language:source.language,level,title,subtitle,unitLink:course,prerequisite:source.prerequisite,objective:source.goal,
  sections:type==='grammar'?source.grammar.map(x=>section(x.title,x.principle,x.pattern,x.examples.map(e=>pair(e.target,e.zh,e.why)),'复述时保留规则的适用条件；练习例句不是未核对的私人原文。')):
  source.vocabulary.map((x,i)=>section((i+1)+'. '+x.word,x.note,x.collocation,[pair(x.collocation,x.zh,x.note),...(source.reading.pairs.filter(e=>e.target.toLowerCase().includes(x.word.toLowerCase())).slice(0,1).map(e=>pair(e.target,e.zh,e.why)))], '词义、搭配和具体语境应同时记忆；遇到一词多义时优先判断句子含义。')),
- questions:(source.practice[type==='grammar'?1:2]||[]).map(x=>({question:x.question,answer:x.answer,why:x.explanation})),
+ questions:[...(source.practice[type==='grammar'?1:2]||[]),...(type==='vocabulary'?(source.practice[1]||[]).slice(0,2):[])].map(x=>({question:x.question,answer:x.answer,why:x.explanation})),
  output:source.output.task,model:source.output.model.map(e=>pair(e.target,e.zh,e.why)),referenceUrls,
  sourceNote:'以仓库内既有课程专题数据为教学基础；第三方资料仅用于规则交叉核查。'};
 }
