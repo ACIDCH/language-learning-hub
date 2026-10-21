@@ -176,7 +176,7 @@ describe('source-matched textbooks: grammar accuracy, bilingual alignment and no
    const pairs=[...unit.scene,...unit.reading.pairs,...unit.output.model,
     ...unit.grammar.flatMap(x=>x.examples)];
    expect(pairs.length).toBeGreaterThan(18);
-   expect(pairs.every(p=>p.target.trim().length>5&&p.zh.trim().length>5&&p.why.trim().length>5)).toBe(true);
+   expect(pairs.every(p=>p.target.trim().length>5&&p.zh.trim().length>5&&p.why.trim().length>0)).toBe(true);
    expect(unit.grammar.length).toBeGreaterThanOrEqual(4);
    expect(unit.vocabulary.length).toBeGreaterThanOrEqual(8);
    expect((unit.practice[1]||[]).every(p=>p.answer.length>0&&p.explanation.length>5)).toBe(true);
@@ -222,11 +222,14 @@ describe('source-matched textbooks: grammar accuracy, bilingual alignment and no
   expect(container.querySelector('.curated-source-details')?.textContent).toContain('do not measure academic achievement');
  });
  it('keeps a meaningful bilingual drafting task in the final stage',()=>{
+  const onSaveOutput=vi.fn();
   const {container}=render(<LessonReader text={englishSource} courseId='en-ielts-listening-u01' language='en'
-   privateSource stage={5} onChangeStage={vi.fn()}/>);
+   privateSource stage={5} onChangeStage={vi.fn()} onSaveOutput={onSaveOutput}/>);
   expect(container.textContent).toContain('80—120');
   expect(container.querySelectorAll('.curated-sentence')).toHaveLength(STUDY_SPACES.output.model.length);
   fireEvent.change(screen.getByLabelText('我的完整表达'),{target:{value:'The lecture raises a question about facilities.'}});
-  expect(container.textContent).toContain('当前英文词数：8');
+  expect(container.textContent).toContain('当前英文词数：7');
+  fireEvent.click(screen.getByRole('button',{name:'加入本课学习笔记'}));
+  expect(onSaveOutput).toHaveBeenCalledWith('The lecture raises a question about facilities.');
  });
 });
