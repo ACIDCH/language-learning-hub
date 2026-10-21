@@ -5,7 +5,7 @@ export const RECEPTION_LESSONS:Record<string,ReceptionLesson>={
  "fr-a1-u06":{
  "title": "À l’accueil : comprendre un horaire et trouver sa salle",
  "language": "fr",
- "genre": "原创 A1 校园情境听读（设备朗读；无匹配真人录音）",
+ "genre": "校园接待处问答 · 原创 A1 文本",
  "paragraphs": [
   {
    "id": "P1",
@@ -89,7 +89,7 @@ export const RECEPTION_LESSONS:Record<string,ReceptionLesson>={
  "en-ielts-listening-u03":{
  "title": "Attendance, venue and a proposed online workshop",
  "language": "en",
- "genre": "原创学术英语听读 · 四段；TTS 非真实 IELTS 录音",
+ "genre": "学术英语讲座 · 原创练习文本",
  "paragraphs": [
   {
    "id": "P1",
