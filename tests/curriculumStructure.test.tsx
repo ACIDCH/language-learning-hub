@@ -14,6 +14,7 @@ import {ENGLISH_ORIGINAL_BILINGUAL} from '../src/bilingualOriginalEnglish';
 import {outputGuide} from '../src/curriculumTeachingGuide';
 import BilingualTeaching from '../src/BilingualTeaching';
 import {curatedUnitForSource,FRENCH_ARTICLES,STUDY_SPACES} from '../src/curatedCurriculum';
+import {learnerFacingText,learnerFacingLessonText,pronunciationPassages} from '../src/lessonPresentationText';
 import type {LessonDraft} from '../src/v44Courses';
 
 vi.mock('../src/IpaText',()=>({default:({text}:{text:string})=><div aria-label="参考国际音标与课程原文">{text}</div>,speakIpaText:()=>true}));
@@ -231,5 +232,59 @@ describe('source-matched textbooks: grammar accuracy, bilingual alignment and no
   expect(container.textContent).toContain('当前英文词数：7');
   fireEvent.click(screen.getByRole('button',{name:'加入本课学习笔记'}));
   expect(onSaveOutput).toHaveBeenCalledWith('The lecture raises a question about facilities.');
+ });
+});
+
+
+describe('wide learner reader without editorial metadata in prose or IPA',()=>{
+ const source=[
+  'FR-A1-U01｜Saluer et se présenter：问候与自我介绍（原创完整样课 v0.1）',
+  '状态：教学内容草稿已完整编写；等待原始音频逐条核对与授权绑定。',
+  '① 情境\nA : Bonjour ! Je m\'appelle Camille. Et vous, comment vous appelez-vous ?',
+  '② 语法\nJe suis étudiante. 这是法语的动词形式。',
+  '③ 词汇\nbonjour 你好；enchantée 很高兴认识你。',
+  '④ 听读\nJe m\'appelle Alex. Enchanté !',
+  '⑤ 发音与跟读\nHistorical standalone pronunciation drill.',
+  '⑥ 表达\nBonjour Madame, je m\'appelle Lina.',
+  '课程权利与来源：\n上述对话、阅读、例句和讲解均为本项目原创示范。',
+  'https://example.org/manual',
+  '===== V0.2 ADDENDUM — U01 =====',
+  '本补充包只追加在原课件后面，原版全部内容、示例和参考来源均保留。',
+  'A. 语法练习\nJe suis professeur.'
+ ].join('\n\n');
+ it('keeps learnable examples but excludes version, licensing and source statements',()=>{
+  const visible=learnerFacingText(source);
+  expect(visible).toContain('Bonjour !');
+  expect(visible).toContain('Je suis professeur.');
+  expect(visible).not.toContain('原创完整样课 v0.1');
+  expect(visible).not.toContain('状态：教学内容');
+  expect(visible).not.toContain('版权');
+  expect(visible).not.toContain('课程权利与来源');
+  expect(visible).not.toContain('本补充包只追加');
+  expect(visible).not.toContain('https://example.org/manual');
+ });
+ it('keeps the existing five-stage transition and removes archived pronunciation in the source projection',()=>{
+  const text=learnerFacingLessonText(source);
+  expect(text).toContain('Je suis étudiante.');
+  expect(text).toContain('Je m\'appelle Alex.');
+  expect(text).not.toContain('Historical standalone pronunciation drill.');
+ });
+ it('does not generate ruby IPA from the title, administrative prose or Chinese text',()=>{
+  const chunks=pronunciationPassages(source);
+  expect(chunks.length).toBeGreaterThan(0);
+  expect(chunks[0]).toContain('Bonjour');
+  expect(chunks.every(s=>s.length<=240)).toBe(true);
+  expect(chunks.join(' ')).not.toContain('原创完整样课');
+  expect(chunks.join(' ')).not.toContain('Historical standalone pronunciation drill.');
+ });
+ it('preserves standard course stage controls when rendered standalone without the shared toolbar',()=>{
+  const {container}=render(<LessonReader text={source} courseId='fr-a1-u01' stage={0} onChangeStage={vi.fn()}/>);
+  expect(container.querySelectorAll('.lesson-stages button')).toHaveLength(5);
+ });
+ it('can suppress duplicate stage navigation when the parent provides the sticky reader toolbar',()=>{
+  const {container}=render(<LessonReader text={source} courseId='fr-a1-u01' stage={0}
+   onChangeStage={vi.fn()} hideTabs/>);
+  expect(container.querySelector('.lesson-stages')).toBeNull();
+  expect(container.querySelector('.bilingual-teaching')).not.toBeNull();
  });
 });
