@@ -2,8 +2,8 @@ import type {SpecialtyLesson,SpecialtyKind,SpecialtyLanguage} from './specialtyL
 
 const PATH_ORDER:Record<SpecialtyLanguage,Record<SpecialtyKind,string[]>>={
  fr:{
-  grammar:['fr-etre','fr-avoir','fr-possessive-determiners-a1','fr-articles','fr-er','fr-questions-a1','fr-adjective-agreement-a1',
-   'fr-futur-proche-a1','fr-imperative-directions-a1','fr-articles-partitive','fr-passe-compose','fr-imparfait-a2','fr-object-pronouns-a2','fr-comparisons-a2','fr-futur-simple-a2','fr-negative-scope-a2'],
+  grammar:['fr-etre','fr-avoir','fr-possessive-determiners-a1','fr-articles','fr-er','fr-questions-a1','fr-imperative-directions-a1','fr-adjective-agreement-a1',
+   'fr-futur-proche-a1','fr-articles-partitive','fr-passe-compose','fr-imparfait-a2','fr-object-pronouns-a2','fr-comparisons-a2','fr-futur-simple-a2','fr-negative-scope-a2'],
   vocabulary:['fr-greetings','fr-campus-vocab','fr-countries-languages-lexicon','fr-family','fr-objects','fr-room',
    'fr-routines-lexicon','fr-directions-lexicon','fr-food-vocab','fr-past-events-lexicon','fr-shop-services-lexicon','fr-opinions-lexicon']
  },
