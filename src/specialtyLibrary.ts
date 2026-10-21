@@ -16,6 +16,7 @@ import {A1_QUESTIONS_LISTENING_PARAPHRASE} from './a1QuestionsListeningParaphras
 import {FR_A1_LEISURE_GRAMMAR} from './frA1LeisureGrammar';
 import {NEXT_CORE_TEACHING_WAVE} from './nextCoreTeachingWave';
 import {HOME_PLANS_READING_HEADINGS} from './homePlansReadingHeadingsWave';
+import {A1_PAST_AND_READING_EVIDENCE} from './a1PastAndReadingEvidenceWave';
 
 export type SpecialtyKind='grammar'|'vocabulary';
 export type SpecialtyLanguage='fr'|'en';
@@ -334,7 +335,8 @@ export const SPECIALTY_LESSONS:SpecialtyLesson[]=[
  ...A1_QUESTIONS_LISTENING_PARAPHRASE,
  ...FR_A1_LEISURE_GRAMMAR,
  ...NEXT_CORE_TEACHING_WAVE,
- ...HOME_PLANS_READING_HEADINGS
+ ...HOME_PLANS_READING_HEADINGS,
+ ...A1_PAST_AND_READING_EVIDENCE
 ];
 export function specialtyRoute(type:SpecialtyKind,language?:string,topic?:string,returnTo?:string){
  const params=new URLSearchParams({page:'specialties',type});
