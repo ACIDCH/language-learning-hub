@@ -4,61 +4,6 @@ const part=(title:string,concept:string,pattern:string,examples:LearningExample[
 /** Original bilingual modules extending exact pre-existing classroom and listening drafts. */
 export const A1_QUESTIONS_LISTENING_PARAPHRASE:SpecialtyLesson[]=[
 {
- id:'fr-a1-information-questions',language:'fr',type:'grammar',level:'A1',unitLink:'fr-a1-u06',
- title:'法语 A1｜完整提问：是非问句、疑问词和否定回答',subtitle:'从课程时间和教室位置的真实问答入手',prerequisite:'会用 être、avoir 与常见 -er 动词的现在时，能够理解 le cours、la salle 和时间表达。',
- objective:'用语调和 est-ce que 提出是非问句，选用 où、quand、qui、comment、combien 获取特定信息，再通过正确的否定及纠正回答完成一次对话。',
- sections:[
- part('01 是非问句：语调和 est-ce que',
- '初级口语中可以保留陈述句词序、通过句末升调提问，也可以把 est-ce que 放在完整陈述句前面。主语和变位动词在这两种常用形式中不必倒装。est-ce que 遇到元音起始的后续词时常写成 est-ce qu’。',
- 'Le cours commence à dix heures. → Le cours commence à dix heures ? / Est-ce que le cours commence à dix heures ?',[
- e('Le cours commence à dix heures ?','课程十点开始吗？','保留陈述词序，通过语调提问。'),
- e('Est-ce que la salle est au deuxième étage ?','教室在二楼吗？','est-ce que 放在句首，后面 la salle est 仍是陈述顺序。'),
- e('Est-ce qu’il y a un cours demain ?','明天有课吗？','que 在 il 前省音成 qu’，il y a 保持整体结构。')
- ],'Est-ce que commence le cours… 把两种提问结构混在一起；此处应说 Est-ce que le cours commence…。',
- {title:'同一信息的两种常用问法',columns:['方式','句子','语境'],rows:[['升调','Vous avez cours lundi ?','日常交流'],['est-ce que','Est-ce que vous avez cours lundi ?','中性清晰的问句'],['升调','La salle est libre ?','询问是否可用'],['est-ce que','Est-ce que la salle est libre ?','句首明确标记问题']],note:'动词倒装也存在，但不是此课的默认初学者句型。'}),
- part('02 疑问词先匹配信息类型',
- 'où 用来问位置，quand 问时间，qui 问人物，comment 问方式或状况，combien 问数量或价格。日常口语可以把疑问词置于句末；用 où est-ce que / quand est-ce que 等放句首时，后面保持主谓的常规顺序。',
- 'Où est la salle ? / Quand est-ce que le cours commence ?',[
- e('Où est l’escalier, s’il vous plaît ?','请问楼梯在哪里？','回答应提供地点，而不是时间。'),
- e('Quand est-ce que le cours commence ?','课程什么时候开始？','quand 对应时间，commence 与 le cours 的主谓关系正确。'),
- e('Qui est le professeur aujourd’hui ?','今天谁是老师？','qui 提问人物，此处 qui 自身充当主语。')
- ],'où（在哪里）与 ou（或者）不同；où 不因在句首或句末而丢掉重音符号。'),
- part('03 否定与纠正：回答问题的关键在新信息',
- '一般现在时中 ne…pas 分别位于变位动词两侧，元音前 ne 变成 n’。听到否定回答后要继续抓取纠正信息，例如“不是十点，是十点半”。在通常表达不定数量的否定句中 un/une/des 常转为 de 或 d’，但 être 的表语并不自动这样变化。',
- 'Je ne connais pas la salle. / Il n’y a pas de cours.',[
- e('Non, le cours ne commence pas à dix heures.','不，课程不是十点开始。','ne…pas 围绕变位动词 commence。'),
- e('Il commence à dix heures et demie.','课程十点半开始。','否定后的纠正时间才是需要记录的关键信息。'),
- e('Il n’y a pas de cours demain.','明天没有课。','n’…pas 包围 a；否定 il y a 中用 de cours。')
- ],'不能写 Je ne pas sais；否定一般围绕变位动词。Ce n’est pas un professeur 的不定冠词通常仍保留。'),
- part('04 澄清听不懂的信息：重复和确认',
- '真实对话不仅要提出问题，还需要在听不清、时间相近或地点不确定时用适当礼貌方式请求重复与确认。pardon、vous pouvez répéter 和 c’est bien…? 对应不同的沟通功能；确认时必须复述关键数字或位置。',
- 'Pardon ? / Vous pouvez répéter, s’il vous plaît ? / C’est bien à… ?',[
- e('Pardon, vous pouvez répéter l’heure, s’il vous plaît ?','抱歉，您能再重复一遍时间吗？','明确要重复的是 l’heure。'),
- e('Le cours commence bien à dix heures et demie ?','课程确实是十点半开始，对吗？','bien 强调确认此前听到的信息。'),
- e('Merci. Et la salle est près de l’accueil ?','谢谢。那么教室在接待处附近吗？','用 et 顺畅进入地点确认。')
- ],'重复问题时不能悄悄把 dix heures et demie 改成 dix heures；确认的目的正是排除信息偏差。')
- ],
- questions:[
- {question:'把 La salle est au deuxième étage. 改成 est-ce que 的是非问句。',answer:'Est-ce que la salle est au deuxième étage ?',why:'在原陈述句前加 est-ce que，后面保留主语 la salle 和动词 est 的顺序。'},
- {question:'填写：___ est l’escalier ?（询问地点）',answer:'Où',why:'地点用 où 且必须保留重音；ou 表示“或者”。'},
- {question:'改错：Je ne pas connais le professeur.',answer:'Je ne connais pas le professeur.',why:'ne 放在变位动词前，pas 放在变位动词后。'},
- {question:'原话 Non, il commence à dix heures et demie. 课程实际几点开始？',answer:'À dix heures et demie (10 h 30).',why:'Non 否定之前的猜测；真正的时间是十点半，不能误记十点。'}
- ],
- output:'写八句法语完成“第一次到语言学校”的双人问答：至少问一次地点、一次时间、一次人物，出现一条否定纠正、一句请求重复和一句确认；使用适当的礼貌表达。',
- model:[
- e('Bonjour, je cherche la salle de français.','您好，我在找法语教室。','先说明需求。'),
- e('Est-ce que le cours commence à dix heures ?','课程十点开始吗？','est-ce que 是非问句。'),
- e('Non, il ne commence pas à dix heures.','不，不是十点开始。','明确否定错误时间。'),
- e('Il commence à dix heures et demie.','它十点半开始。','补充正确时间。'),
- e('Pardon, vous pouvez répéter, s’il vous plaît ?','抱歉，您能再说一遍吗？','礼貌请求重复。'),
- e('Oui, à dix heures et demie.','可以，十点半。','再次确认关键时间。'),
- e('Où est la salle, et qui est le professeur ?','教室在哪里，老师是谁？','问地点和人物。'),
- e('Elle est au deuxième étage, et le professeur est Madame Martin.','教室在二楼，老师是马丁女士。','按问句顺序提供地点和人物。')
- ],
- referenceUrls:['https://www.laits.utexas.edu/tex/gr/int2.html','https://www.laits.utexas.edu/tex/gr/int7.html','https://www.laits.utexas.edu/tex/gr/neg2.html'],
- sourceNote:'对应 fr-a1-u06 已有课程原稿（学校、教室、十点半、Madame Martin），对照 Tex 问句和否定规则重写。'
-},
-{
  id:'fr-a1-clarification-lexicon',language:'fr',type:'vocabulary',level:'A1',unitLink:'fr-a1-u06',
  title:'法语 A1｜询问与澄清语块：课程、地点、时间',subtitle:'疑问词连同固定搭配及礼貌回应一起学习',prerequisite:'会区分 où、quand、qui，认识常见时间和方位介词。',
  objective:'在学校场景中准确运用 salle de cours、horaire、au deuxième étage、près de l’accueil、répéter 等搭配，并通过纠正与确认维护对话准确性。',
