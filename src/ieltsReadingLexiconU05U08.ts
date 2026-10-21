@@ -33,9 +33,9 @@ e('The policies are related but not identical.','两项政策有关联但不相�
 ],'intervention 是上义词，并不意味着所有具有这个名字的计划是相同政策。')
 ],
 questions:[
-{question:'eligible dwellings 是已经收到款项的住房吗？',answer:'No. They qualify to apply; the text does not confirm payment.',why:'eligible 指申请资格，而非资助已经到账。'},
+{question:'eligible dwellings 是已经收到款项的住房吗？',answer:'No. They qualify to apply; the text does not confirm payment.',why:'eligible 只说明住宅满足提出申请的条件；原文的 could apply 并没有说明所有申请均获批或资金已经发放。'},
 {question:'“改造旧住宅”的英语搭配？',answer:'retrofit existing homes / a retrofit programme',why:'retrofit 表对现有建筑实施改善，不是建造新的住宅。'},
-{question:'谁承担 decorative repairs？',answer:'The owner remains responsible for decorative repairs.',why:'原文排除装饰性维修，责任属于业主。'},
+{question:'谁承担 decorative repairs？',answer:'The owner remains responsible for decorative repairs.',why:'原文把 decorative repairs 明确列为补助范围之外，并说明这项工程继续由业主自行承担，不等于全部工程都无法申请。'},
 {question:'冬季取暖需求属于已测结果还是预期目标？',answer:'An intended objective: reduce winter heating demand.',why:'intended to 是目的；文章不包含节能效果测量结果。'}
 ],
 output:'使用八个固定搭配写明住宅隔热补助的对象、申请、工程范围、排除项目和与一般补贴的差异，写中英对照。',
@@ -81,9 +81,9 @@ e('A controlled comparison could test alternatives.','受控比较可以检测�
 ],
 questions:[
 {question:'tentative 与 proven 哪个更符合原课态度？',answer:'Tentative.',why:'研究者未隔离污染与土壤/供水因素，因而明确表示解释只是暂定。'},
-{question:'replicate findings 在这里表示什么？',answer:'Repeat an investigation to check whether results recur.',why:'重复检验以确认可重复性，不是已经有重复验证的结论。'},
+{question:'replicate findings 在这里表示什么？',answer:'Repeat an investigation to check whether results recur.',why:'replicate 指在其他条件下重复研究以检验结果能否重现；原文章并没有报告实际完成重复试验的数据。'},
 {question:'account for the pattern 在研究句中表示？',answer:'Explain or help explain the observed pattern.',why:'account for 在此表解释模式，而不是百分比占有。'},
-{question:'哪种术语对应下一个推荐的方法？',answer:'A controlled comparison.',why:'原课推荐未来用受控比较分离混杂因素，没有说已经完成。'}
+{question:'哪种术语对应下一个推荐的方法？',answer:'A controlled comparison.',why:'原课建议下一阶段安排 controlled comparison 以区别污染、土壤和水源的影响，这仍是计划而不是已完成的因果检验。'}
 ],
 output:'写 8 句研究说明按方法、观察、解释、混杂因素和未来建议排序，逐句中文对照，不能把假设改为已证实因果。',
 model:[
@@ -129,8 +129,8 @@ e('Researchers should report who was not reached.','研究者应报告哪些群�
 questions:[
 {question:'respondent 与 resident 是否完全相同？',answer:'No. A respondent answered the survey; a resident may not have been contacted.',why:'只有真正答卷的人才属于 respondents；住户本身未必接触问卷。'},
 {question:'谁负责在周末市场发放问卷？',answer:'Volunteers distributed the forms.',why:'志愿者是原文行动主体，weekend market 是地点。'},
-{question:'underrepresent 的意思是什么？',answer:'To include too few members of a group relative to that group.',why:'该词描述样本覆盖不足，不是证明某群体持何观点。'},
-{question:'Section C 有哪两项方法建议？',answer:'Add an accessible remote option and report which residents were not reached.',why:'一项改善访问渠道，一项透明报告抽样局限；均属于建议。'}
+{question:'underrepresent 的意思是什么？',answer:'To include too few members of a group relative to that group.',why:'underrepresent 指某一人群在问卷样本中出现不足；仅凭遗漏情况不能推断被遗漏者对调查主题持何种意见。'},
+{question:'Section C 有哪两项方法建议？',answer:'Add an accessible remote option and report which residents were not reached.',why:'远程选项希望增加问卷覆盖，披露未接触者则改善报告透明度；C 段只提出这两项建议，未声称完成实施。'}
 ],
 output:'写八句英语解释问卷从设计、分发、样本局限到改进措施的顺序，配中文并区分建议和已实施。',
 model:[
@@ -175,8 +175,8 @@ e('Further data are required to estimate the barrier’s prevalence.','仍需更
 ],
 questions:[
 {question:'aggregate result 指什么？',answer:'An overall combined result across the district.',why:'aggregate 把地区层面的数合并，不能显示各街区的独立变化。'},
-{question:'哪条词组对应末班车形成的问题？',answer:'a transport barrier',why:'提早停运造成现实可达性限制，与建筑开放时间不同。'},
-{question:'访谈能计算障碍在全区的确切比例吗？',answer:'No. The interviews do not establish district-wide prevalence.',why:'缺少代表性抽样和分母，访谈揭示体验而非总体比例。'},
+{question:'哪条词组对应末班车形成的问题？',answer:'a transport barrier',why:'交通障碍来自周六公交服务提前结束，受访者虽能面对延时开放的图书馆，却可能难以完成返程。'},
+{question:'访谈能计算障碍在全区的确切比例吗？',answer:'No. The interviews do not establish district-wide prevalence.',why:'几位受访居民的叙述可以揭示交通障碍，但没有代表性抽样或全区人数分母，不能用来计算障碍在全区的普遍程度。'},
 {question:'reconcile 两份资料的适当结论？',answer:'The overall rise and unequal practical benefits may coexist.',why:'整体增幅与部分人未受益分别发生在不同层级，逻辑上可以同时成立。'}
 ],
 output:'写八句双材料综合说明，先划分来源和指标，再解释收益差异以及仍缺的代表性数据；提供逐句中文译文。',
