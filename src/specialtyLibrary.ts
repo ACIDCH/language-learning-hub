@@ -4,6 +4,8 @@ import {FRENCH_GRAMMAR_EXPANSION} from './frenchGrammarExpansion';
 import {FRENCH_PATH_GRAMMAR} from './frenchPathGrammar';
 import {FRENCH_PATH_VOCABULARY} from './frenchPathVocabulary';
 import {ENGLISH_PATH_SPECIALTIES} from './englishPathSpecialties';
+import {FRENCH_GRAMMAR_CONTINUITY} from './frenchGrammarContinuity';
+import {REMAINING_LANGUAGE_CONTINUITY} from './remainingLanguageContinuity';
 
 export type SpecialtyKind='grammar'|'vocabulary';
 export type SpecialtyLanguage='fr'|'en';
@@ -308,7 +310,9 @@ export const SPECIALTY_LESSONS:SpecialtyLesson[]=[
  ...FRENCH_GRAMMAR_EXPANSION,
  ...FRENCH_PATH_GRAMMAR,
  ...FRENCH_PATH_VOCABULARY,
- ...ENGLISH_PATH_SPECIALTIES
+ ...ENGLISH_PATH_SPECIALTIES,
+ ...FRENCH_GRAMMAR_CONTINUITY,
+ ...REMAINING_LANGUAGE_CONTINUITY
 ];
 export function specialtyRoute(type:SpecialtyKind,language?:string,topic?:string,returnTo?:string){
  const params=new URLSearchParams({page:'specialties',type});
