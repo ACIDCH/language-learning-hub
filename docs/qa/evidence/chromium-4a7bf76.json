@@ -1,0 +1,326 @@
+{
+  "checked": 232,
+  "acceptance": [
+    {
+      "id": "fr-a1-u01",
+      "width": 390,
+      "article": 346,
+      "content": 320,
+      "unusedRatio": 0.07514450867052025,
+      "overflow": 0,
+      "structured": false,
+      "columns": null
+    },
+    {
+      "id": "fr-a2-u03",
+      "width": 390,
+      "article": 346,
+      "content": 320,
+      "unusedRatio": 0.07514450867052025,
+      "overflow": 0,
+      "structured": true,
+      "columns": null
+    },
+    {
+      "id": "fr-b2-u03",
+      "width": 390,
+      "article": 346,
+      "content": 320,
+      "unusedRatio": 0.07514450867052025,
+      "overflow": 0,
+      "structured": true,
+      "columns": "273px"
+    },
+    {
+      "id": "fr-c1-u07",
+      "width": 390,
+      "article": 346,
+      "content": 320,
+      "unusedRatio": 0.07514450867052025,
+      "overflow": 0,
+      "structured": true,
+      "columns": "273px"
+    },
+    {
+      "id": "fr-c2-u03",
+      "width": 390,
+      "article": 346,
+      "content": 320,
+      "unusedRatio": 0.07514450867052025,
+      "overflow": 0,
+      "structured": true,
+      "columns": "273px"
+    },
+    {
+      "id": "en-ielts-listening-u02",
+      "width": 390,
+      "article": 346,
+      "content": 320,
+      "unusedRatio": 0.07514450867052025,
+      "overflow": 0,
+      "structured": true,
+      "columns": "273px"
+    },
+    {
+      "id": "en-ielts-writing-task1-u03",
+      "width": 390,
+      "article": 346,
+      "content": 320,
+      "unusedRatio": 0.07514450867052025,
+      "overflow": 0,
+      "structured": true,
+      "columns": "266px"
+    },
+    {
+      "id": "en-ielts-writing-task2-u01",
+      "width": 390,
+      "article": 346,
+      "content": 320,
+      "unusedRatio": 0.07514450867052025,
+      "overflow": 0,
+      "structured": false,
+      "columns": null
+    },
+    {
+      "id": "fr-a1-u01",
+      "width": 768,
+      "article": 727,
+      "content": 691,
+      "unusedRatio": 0.04951856946354882,
+      "overflow": -15,
+      "structured": false,
+      "columns": null
+    },
+    {
+      "id": "fr-a2-u03",
+      "width": 768,
+      "article": 727,
+      "content": 691,
+      "unusedRatio": 0.04951856946354882,
+      "overflow": -15,
+      "structured": true,
+      "columns": null
+    },
+    {
+      "id": "fr-b2-u03",
+      "width": 768,
+      "article": 727,
+      "content": 691,
+      "unusedRatio": 0.04951856946354882,
+      "overflow": -15,
+      "structured": true,
+      "columns": "641.281px"
+    },
+    {
+      "id": "fr-c1-u07",
+      "width": 768,
+      "article": 727,
+      "content": 691,
+      "unusedRatio": 0.04951856946354882,
+      "overflow": -15,
+      "structured": true,
+      "columns": "641.281px"
+    },
+    {
+      "id": "fr-c2-u03",
+      "width": 768,
+      "article": 727,
+      "content": 691,
+      "unusedRatio": 0.04951856946354882,
+      "overflow": -15,
+      "structured": true,
+      "columns": "641.281px"
+    },
+    {
+      "id": "en-ielts-listening-u02",
+      "width": 768,
+      "article": 727,
+      "content": 691,
+      "unusedRatio": 0.04951856946354882,
+      "overflow": -15,
+      "structured": true,
+      "columns": "641.281px"
+    },
+    {
+      "id": "en-ielts-writing-task1-u03",
+      "width": 768,
+      "article": 727,
+      "content": 691,
+      "unusedRatio": 0.04951856946354882,
+      "overflow": -15,
+      "structured": true,
+      "columns": "634.281px"
+    },
+    {
+      "id": "en-ielts-writing-task2-u01",
+      "width": 768,
+      "article": 727,
+      "content": 691,
+      "unusedRatio": 0.04951856946354882,
+      "overflow": -15,
+      "structured": false,
+      "columns": null
+    },
+    {
+      "id": "fr-a1-u01",
+      "width": 1440,
+      "article": 1133.65625,
+      "content": 1071.1875,
+      "unusedRatio": 0.0551037847672079,
+      "overflow": -15,
+      "structured": false,
+      "columns": null
+    },
+    {
+      "id": "fr-a2-u03",
+      "width": 1440,
+      "article": 1133.65625,
+      "content": 1071.1875,
+      "unusedRatio": 0.0551037847672079,
+      "overflow": -15,
+      "structured": true,
+      "columns": null
+    },
+    {
+      "id": "fr-b2-u03",
+      "width": 1440,
+      "article": 1133.65625,
+      "content": 1071.1875,
+      "unusedRatio": 0.0551037847672079,
+      "overflow": -15,
+      "structured": true,
+      "columns": "484.297px 484.297px"
+    },
+    {
+      "id": "fr-c1-u07",
+      "width": 1440,
+      "article": 1133.65625,
+      "content": 1071.1875,
+      "unusedRatio": 0.0551037847672079,
+      "overflow": -15,
+      "structured": true,
+      "columns": "484.297px 484.297px"
+    },
+    {
+      "id": "fr-c2-u03",
+      "width": 1440,
+      "article": 1133.65625,
+      "content": 1071.1875,
+      "unusedRatio": 0.0551037847672079,
+      "overflow": -15,
+      "structured": true,
+      "columns": "484.297px 484.297px"
+    },
+    {
+      "id": "en-ielts-listening-u02",
+      "width": 1440,
+      "article": 1133.65625,
+      "content": 1071.1875,
+      "unusedRatio": 0.0551037847672079,
+      "overflow": -15,
+      "structured": true,
+      "columns": "484.297px 484.297px"
+    },
+    {
+      "id": "en-ielts-writing-task1-u03",
+      "width": 1440,
+      "article": 1133.65625,
+      "content": 1071.1875,
+      "unusedRatio": 0.0551037847672079,
+      "overflow": -15,
+      "structured": true,
+      "columns": "480.797px 480.797px"
+    },
+    {
+      "id": "en-ielts-writing-task2-u01",
+      "width": 1440,
+      "article": 1133.65625,
+      "content": 1071.1875,
+      "unusedRatio": 0.0551037847672079,
+      "overflow": -15,
+      "structured": false,
+      "columns": null
+    },
+    {
+      "id": "fr-a1-u01",
+      "width": 1920,
+      "article": 1613,
+      "content": 1543,
+      "unusedRatio": 0.043397396156230617,
+      "overflow": -15,
+      "structured": false,
+      "columns": null
+    },
+    {
+      "id": "fr-a2-u03",
+      "width": 1920,
+      "article": 1613,
+      "content": 1543,
+      "unusedRatio": 0.043397396156230617,
+      "overflow": -15,
+      "structured": true,
+      "columns": null
+    },
+    {
+      "id": "fr-b2-u03",
+      "width": 1920,
+      "article": 1613,
+      "content": 1543,
+      "unusedRatio": 0.043397396156230617,
+      "overflow": -15,
+      "structured": true,
+      "columns": "719px 719px"
+    },
+    {
+      "id": "fr-c1-u07",
+      "width": 1920,
+      "article": 1613,
+      "content": 1543,
+      "unusedRatio": 0.043397396156230617,
+      "overflow": -15,
+      "structured": true,
+      "columns": "719px 719px"
+    },
+    {
+      "id": "fr-c2-u03",
+      "width": 1920,
+      "article": 1613,
+      "content": 1543,
+      "unusedRatio": 0.043397396156230617,
+      "overflow": -15,
+      "structured": true,
+      "columns": "719px 719px"
+    },
+    {
+      "id": "en-ielts-listening-u02",
+      "width": 1920,
+      "article": 1613,
+      "content": 1543,
+      "unusedRatio": 0.043397396156230617,
+      "overflow": -15,
+      "structured": true,
+      "columns": "719px 719px"
+    },
+    {
+      "id": "en-ielts-writing-task1-u03",
+      "width": 1920,
+      "article": 1613,
+      "content": 1543,
+      "unusedRatio": 0.043397396156230617,
+      "overflow": -15,
+      "structured": true,
+      "columns": "715.5px 715.5px"
+    },
+    {
+      "id": "en-ielts-writing-task2-u01",
+      "width": 1920,
+      "article": 1613,
+      "content": 1543,
+      "unusedRatio": 0.043397396156230617,
+      "overflow": -15,
+      "structured": false,
+      "columns": null
+    }
+  ],
+  "problems": []
+}
