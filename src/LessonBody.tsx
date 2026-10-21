@@ -4,7 +4,7 @@ export default function LessonBody({text}:{text:string}){
  // Hide obsolete editorial headers, but preserve any useful explanations under them.
  const parts=parseManuscript(text).map(part=>({
   ...part,
-  text:part.text.replace(/(?:^|\\n)\\s*(?:【V4 校订与入门补充】|原创草稿\\s*[·•][^\\n]*|课程导入)\\s*(?=\\n|$)/gu,'').trim()
+  text:part.text.replace(/(?:^|\n)\s*(?:【V4 校订与入门补充】|原创草稿\s*[·•][^\n]*|课程导入)\s*(?=\n|$)/gu,'').trim()
  })).filter(part=>part.text.length>0);
  return <div className="lesson-paragraphs lesson-content-flow" aria-label="课程正文">
   {parts.map((part,i)=>{
