@@ -91,7 +91,7 @@ describe('semantic curriculum without broken full-page IPA',()=>{
  });
  it('does not paste unrelated public example translations over a different private manuscript',()=>{
   const {container}=render(<BilingualTeaching courseId="en-ielts-listening-u01"
-    stage={1} privateSource sourceText="Private lesson about learning bicycles."/>);
+    stage={1} content={data} privateSource sourceText="Private lesson about learning bicycles."/>);
   expect(container.querySelector('.bilingual-line')).toBeNull();
  });
  it('switches Chinese language examples with the selected private lecture topic',()=>{
