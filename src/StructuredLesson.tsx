@@ -8,8 +8,8 @@ import {outputGuide,exampleVocabulary} from './curriculumTeachingGuide';
 import {STUDY_STAGES,STUDY_TITLES,visibleStudyStage,moveStudyStage} from './lessonStages';
 const TABS=['情境','语法','词汇','听读','表达'] as const;
 type Props={content:LessonContent;course:Course;stage:number;onChangeStage:(stage:number)=>void;
- onOpenSpeech:()=>void;onSaveOutput?:(answer:string)=>void;ttsRate:number};
-export default function StructuredLesson({content,course,stage,onChangeStage,onSaveOutput,ttsRate}:Props){
+ onOpenSpeech:()=>void;onSaveOutput?:(answer:string)=>void;ttsRate:number;hideTabs?:boolean};
+export default function StructuredLesson({content,course,stage,onChangeStage,onSaveOutput,ttsRate,hideTabs=false}:Props){
  const [expanded,setExpanded]=useState(false);
  const [ownText,setOwnText]=useState('');
  const [responses,setResponses]=useState<Record<number,string>>({});
@@ -31,12 +31,12 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
  const lessonQuestions= isDraft?draft!.questions.map(q=>({prompt:q.prompt,answer:q.answer,explanation:q.explanation})):
   unit!.questions.map(q=>({prompt:q.prompt,answer:q.choices[q.answer],explanation:q.explanation}));
  return <div className="curriculum-lesson" aria-label="结构化课程学习">
-  <nav className="curriculum-tabs" aria-label="本课教学环节">
+  {!hideTabs&&<nav className="curriculum-tabs" aria-label="本课教学环节">
    {STUDY_STAGES.map((id,i)=><button type="button" key={id}
     aria-current={active===id?'step':undefined} aria-pressed={active===id}
     className={active===id?'current':''} onClick={()=>onChangeStage(id)}>
     <span>{String(i+1).padStart(2,'0')}</span>{STUDY_TITLES[i]}</button>)}
-  </nav>
+  </nav>}
   <article className="curriculum-stage" aria-label={'教学环节：'+TABS[position]}>
    <header className="curriculum-stage-title"><span className="microtag">第 {position+1} / 5 部分</span>
     <h2>{TABS[position]}</h2></header>
