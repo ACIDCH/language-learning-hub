@@ -1,6 +1,6 @@
 /**
- * Six-stage navigation for personal V4 manuscripts.
- * Keeps the complete original text, including the preamble and every section,
+ * Parse six historical source sections while showing only five learner stages.
+ * Keeps the complete source text, including the preamble and every section,
  * without interpreting untrusted manuscript text as HTML.
  */
 export type LessonStage = {index:number; symbol:string; heading:string; body:string};
