@@ -74,6 +74,20 @@ describe('semantic curriculum without broken full-page IPA',()=>{
    expect(note.reading.pairs.every(x=>!!x.zh.trim()),id).toBe(true);
   }
  });
+ it('teaches source-linked Chinese grammar and example usage even before a lesson receives a bespoke translation',()=>{
+  const source=COURSES.find(c=>c.id==='fr-a2-u01')!;
+  expect(source.kind).toBe('main');
+  const lesson={...data,draft:{...data.draft!,id:'fr-a2-u01',
+    context:'周末旅行',grammar:'先辨认助动词。avoir 下通常不与主语配合。',
+    common_mistake:'不要把助动词当作过去分词。',
+    examples:[{text:'Elles ont réservé deux lits.',note:''}],
+    vocabulary:[['réservé','预订过'],['deux lits','两张床']]}} as LessonContent;
+  const {container}=render(<BilingualTeaching courseId='fr-a2-u01' stage={1} content={lesson}/>);
+  expect(container.textContent).toContain('逐条理解语法规则');
+  expect(container.textContent).toContain('Elles ont réservé deux lits.');
+  expect(container.textContent).toContain('预订过');
+  expect(container.textContent).toContain('不要把助动词当作过去分词');
+ });
  it('does not paste unrelated public example translations over a different private manuscript',()=>{
   const {container}=render(<BilingualTeaching courseId="en-ielts-listening-u01"
     stage={1} privateSource sourceText="Private lesson about learning bicycles."/>);
