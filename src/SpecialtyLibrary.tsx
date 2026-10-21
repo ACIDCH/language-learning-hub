@@ -113,6 +113,7 @@ export default function SpecialtyLibrary({params,navigate}:{params:URLSearchPara
  useEffect(()=>{
   if(!lesson)return;
   const topicId=lesson.id;
+  if(typeof requestAnimationFrame!=='function')return;
   let frame=0;
   const sync=()=>{
    if(frame)return;
