@@ -10,7 +10,7 @@ function NotesPractice({unit}:{unit:SpecialtyLesson}){
  const [written,setWritten]=useState('');
  return <div className="specialty-practice">
   <h2>巩固练习与解析</h2>
-  <p>先独立完成，再逐题核对。开放题允许等义答案，系统不将字符串不一致判定为语言能力错误。</p>
+
   {unit.questions.map((q,i)=><section className="specialty-question" key={i}>
    <label htmlFor={'specialty-q-'+unit.id+'-'+i}><strong>{i+1}. {q.question}</strong></label>
    <textarea id={'specialty-q-'+unit.id+'-'+i} rows={2} value={answers[i]||''}
@@ -31,7 +31,7 @@ function NotesPractice({unit}:{unit:SpecialtyLesson}){
      <strong lang={unit.language}>{e.target}</strong><p>{e.zh}</p><small>{e.analysis}</small>
     </div>)}
    </details>
-   <p className="specialty-hint">本区用于本次练习，暂不自动声称已同步云端。可把完成的文本复制到对应课程的学习笔记中。</p>
+
    <button type="button" disabled={!written.trim()} onClick={()=>navigator.clipboard?.writeText(written)}>复制我的回答</button>
   </section>
  </div>;
@@ -45,19 +45,21 @@ function TopicArticle({unit,navigate,returnPath,onSelectSection}:{unit:Specialty
     <h1>{unit.title}</h1><p>{unit.subtitle}</p></div>
    <button className="specialty-course-link" onClick={()=>navigate(returnPath)}>回到关联课程 <span aria-hidden="true">↗</span></button>
   </div>
-  <div className="specialty-objectives">
-   <div><strong>先备知识</strong><p>{unit.prerequisite}</p></div>
-   <div><strong>学习目标</strong><p>{unit.objective}</p></div>
-  </div>
+  <div className="specialty-learning-goal"><strong>本节目标</strong><span>{unit.objective}</span>
+   <details><summary>先备知识</summary><p>{unit.prerequisite}</p></details></div>
   <nav className="specialty-section-nav" aria-label="本专题章节">
    {unit.sections.map((s,i)=><a key={i} href={'#specialty-section-'+i} onClick={()=>onSelectSection(i)}>{String(i+1).padStart(2,'0')} {s.title.replace(/^\d+[.、 ]+/u,'')}</a>)}
+   <span className="specialty-progress" role="status">掌握 {finished}/{unit.sections.length}</span>
   </nav>
-  <div className="specialty-progress" role="status">已阅读并自行核对 {finished} / {unit.sections.length} 个知识点</div>
   {unit.sections.map((s,i)=><section id={'specialty-section-'+i} className="specialty-chapter" key={i}>
    <header className="specialty-chapter-title"><span>{i+1}</span><h2>{s.title}</h2></header>
    <p className="specialty-concept">{s.concept}</p>
    <div className="specialty-pattern"><strong>结构 / 搭配</strong><p lang={unit.language}>{s.pattern}</p></div>
-   <h3>逐句理解与迁移</h3>
+   {s.table&&<div className="specialty-grammar-table"><h3>{s.table.title}</h3>
+    <div className="specialty-table-scroll"><table><thead><tr>{s.table.columns.map((c,k)=><th key={k} scope="col">{c}</th>)}</tr></thead>
+     <tbody>{s.table.rows.map((row,k)=><tr key={k}>{row.map((v,j)=><td key={j} lang={j?unit.language:undefined}>{v}</td>)}</tr>)}</tbody>
+    </table></div><p>{s.table.note}</p></div>}
+   <h3>例句与解析</h3>
    <div className="specialty-example-stack">{s.examples.map((e,j)=><div className="specialty-example" key={j}>
     <div className="specialty-example-grid"><p lang={unit.language}><strong>{e.target}</strong>
       <button type="button" aria-label={'朗读 '+e.target} title="朗读句子" onClick={()=>speakIpaText(e.target,unit.language,.85)}>▶</button></p>
@@ -66,37 +68,34 @@ function TopicArticle({unit,navigate,returnPath,onSelectSection}:{unit:Specialty
    </div>)}</div>
    <aside className="specialty-error"><strong>易错对比</strong><p>{s.caution}</p></aside>
    <label className="specialty-check"><input type="checkbox" checked={!!complete[i]}
-     onChange={e=>setComplete(o=>({...o,[i]:e.target.checked}))}/>我已能用自己的话解释本节规则，并区分例句用法</label>
+     onChange={e=>setComplete(o=>({...o,[i]:e.target.checked}))}/>掌握本节</label>
   </section>)}
   <NotesPractice key={unit.id} unit={unit}/>
   <details className="specialty-references"><summary>参考资料与关联教材</summary>
-   <p>本专题以项目课程和已有讲解为起点；以下资料用于规则校核或拓展阅读。这里的例句及中文解释不冒充外部教材原句。</p>
+
    <ul>{unit.referenceUrls.map(url=><li key={url}><a target="_blank" rel="noopener noreferrer" href={url}>{new URL(url).hostname} — 参考资料</a></li>)}</ul>
   </details>
  </article>;
 }
-function StudyCompanion({unit,sectionIndex,onSelectSection}:{unit:SpecialtyLesson;sectionIndex:number;onSelectSection:(index:number)=>void}){
+function StudyCompanion({unit,sectionIndex}:{unit:SpecialtyLesson;sectionIndex:number}){
  const current=unit.sections[sectionIndex]||unit.sections[0];
- const sample=current?.examples[0];
+ const [showTranslation,setShowTranslation]=useState(true);
  return <aside className="specialty-companion" aria-label="本课知识点辅助栏">
-  <section><h2>本专题章节</h2>
-   <ol>{unit.sections.map((s,i)=><li key={i}>
-    <a href={'#specialty-section-'+i} aria-current={sectionIndex===i?'location':undefined}
-     onClick={()=>onSelectSection(i)}>{s.title.replace(/^\d+[.、 ]+/u,'')}</a>
-   </li>)}</ol>
+  <section className="specialty-current-rule"><h2>{String(sectionIndex+1).padStart(2,'0')} · 本节结构</h2>
+   <p className="specialty-companion-pattern" lang={unit.language}>{current.pattern}</p>
   </section>
-  {current&&<><section><h2>当前重点 · {String(sectionIndex+1).padStart(2,'0')}</h2>
-   <p><strong>{current.title}</strong></p><p>{current.concept}</p>
-  </section>
-  <section><h2>本节易错点</h2><p>{current.caution}</p></section>
-  <section><h2>结构与搭配速查</h2><p className="specialty-companion-pattern" lang={unit.language}>{current.pattern}</p>
+  <section><h2>容易混淆</h2><p>{current.caution}</p></section>
+  <section><h2>例句速练</h2>
    {current.examples.slice(0,2).map((e,i)=><div key={i} className="specialty-companion-pair">
-    <strong lang={unit.language}>{e.target}</strong><p lang="zh-Hans">{e.zh}</p>
+    <p lang={unit.language}><strong>{e.target}</strong></p>
+    {showTranslation&&<p lang="zh-Hans">{e.zh}</p>}
+    <button type="button" aria-label={'跟读 '+e.target}
+     onClick={()=>speakIpaText(e.target,unit.language,.85)}>▶ 朗读</button>
    </div>)}
-  </section></>}
-  {sample&&<section><h2>本节快速跟读</h2><p lang={unit.language}>{sample.target}</p>
-   <button type="button" onClick={()=>speakIpaText(sample.target,unit.language,.85)}>▶ 朗读当前例句</button>
-  </section>}
+   <button type="button" aria-pressed={!showTranslation} onClick={()=>setShowTranslation(v=>!v)}>
+    {showTranslation?'隐藏中文，自测理解':'显示中文对照'}
+   </button>
+  </section>
  </aside>;
 }
 export default function SpecialtyLibrary({params,navigate}:{params:URLSearchParams;navigate:(url:string)=>void}){
@@ -117,16 +116,15 @@ export default function SpecialtyLibrary({params,navigate}:{params:URLSearchPara
  const returnPath=returnTo&&permittedReturns.includes(returnTo)?returnTo:
   related?courseRoute(related):'/';
  return <section className="specialty-page" aria-label="语法与词汇专题学习">
-  <div className="specialty-top">
-   <p className="eyebrow">LANGUAGE LEARNING · SYSTEMATIC STUDY</p><h1>语法与词汇专题</h1>
-   <p>先理解规则和词义，再通过双语句段、对比纠错、主动回忆与实际输出形成可迁移的语言能力。</p>
-  </div>
-  <nav className="specialty-kind-tabs" aria-label="选择重点专题类型">
-   <button type="button" aria-pressed={kind==='grammar'} className={kind==='grammar'?'active':''}
-    onClick={()=>navigate(specialtyRoute('grammar',filterLang==='all'?undefined:filterLang))}>语法专题 <small>系统理解 · 结构应用</small></button>
-   <button type="button" aria-pressed={kind==='vocabulary'} className={kind==='vocabulary'?'active':''}
-    onClick={()=>navigate(specialtyRoute('vocabulary',filterLang==='all'?undefined:filterLang))}>词汇专题 <small>语块记忆 · 搭配辨析</small></button>
-  </nav>
+  <header className="specialty-heading-row">
+   <h1>{filterLang==='fr'?'法语 · ':filterLang==='en'?'英语 · ':''}{kind==='grammar'?'语法专题':'词汇专题'}</h1>
+   <nav className="specialty-kind-tabs" aria-label="选择重点专题类型">
+    <button type="button" aria-pressed={kind==='grammar'} className={kind==='grammar'?'active':''}
+     onClick={()=>navigate(specialtyRoute('grammar',filterLang==='all'?undefined:filterLang))}>语法</button>
+    <button type="button" aria-pressed={kind==='vocabulary'} className={kind==='vocabulary'?'active':''}
+     onClick={()=>navigate(specialtyRoute('vocabulary',filterLang==='all'?undefined:filterLang))}>词汇</button>
+   </nav>
+  </header>
   <div className="specialty-layout">
    <aside className="specialty-side" aria-label="专题课程目录">
     <h2>{kind==='grammar'?'语法体系':'词汇体系'}</h2>
@@ -141,16 +139,15 @@ export default function SpecialtyLibrary({params,navigate}:{params:URLSearchPara
      onClick={()=>navigate(specialtyRoute(kind,filterLang==='all'?undefined:filterLang,u.id))}>
       <small>{languageName(u.language)} · {u.level}</small><strong>{u.title}</strong>
       <span>{u.sections.length} 个知识点 · {u.questions.length} 组自测</span></button>)}</div>
-    <p className="specialty-fineprint">目录仅展示已编写完整知识点与练习的专题；其余课程仍可从原课程目录进入，不能视作已完成专题审校。</p>
+
    </aside>
    <div className="specialty-main">
     {lesson&&specialtyQuality(lesson)?<>
      <TopicArticle key={lesson.id} unit={lesson} navigate={navigate} returnPath={returnPath}
       onSelectSection={index=>setSelectedChapter({topic:lesson.id,index})}/>
-     <StudyCompanion key={lesson.id+'-helper'} unit={lesson} sectionIndex={sectionIndex}
-      onSelectSection={index=>setSelectedChapter({topic:lesson.id,index})}/>
+     <StudyCompanion key={lesson.id+'-helper'} unit={lesson} sectionIndex={sectionIndex}/>
     </>:<div className="panel specialty-empty">
-     <h2>暂无匹配的已编写专题</h2><p>可尝试切换语言、等级或关键词；不会用空白模板假装已编写教材。</p>
+     <h2>没有匹配的专题</h2><p>尝试切换语言、等级或关键词。</p>
      {related&&<button onClick={()=>navigate(courseRoute(related))}>进入相关课程</button>}</div>}
    </div>
   </div>
