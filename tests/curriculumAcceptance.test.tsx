@@ -104,3 +104,38 @@ it('new A1 weekend and market texts have evidence-backed bilingual stories, not 
  expect(leisure.paragraphs[1].target.toLowerCase()).toContain('il pleut');
  expect(leisure.paragraphs[2].target).toContain('quinze heures');
 });
+
+
+it('supports A1 housing/future and full IELTS headings as actual four-paragraph bilingual evidence sources',()=>{
+ for(const [id,lang,min] of [
+  ['fr-a1-u10','fr',235],
+  ['fr-a1-u11','fr',245],
+  ['en-ielts-reading-u03','en',380]
+ ] as const){
+  const u=RECEPTION_LESSONS[id];
+  expect(u,id).toBeDefined();
+  expect(u.language).toBe(lang);
+  expect(u.paragraphs).toHaveLength(4);
+  expect(u.paragraphs.every(x=>x.target.length>210&&x.zh.length>90)).toBe(true);
+  expect(u.paragraphs.map(x=>x.target).join(' ').split(/\s+/u).length).toBeGreaterThan(min);
+  const keys=u.paragraphs.map(p=>p.id);
+  expect(new Set(keys).size).toBe(4);
+  expect(u.questions).toHaveLength(4);
+  expect(u.questions.every(q=>q.evidence.length>0&&q.evidence.every(x=>keys.includes(x))&&q.why.length>35)).toBe(true);
+  expect(u.model.split(/\s+/u).length).toBeGreaterThan(75);
+  expect(u.modelZh.length).toBeGreaterThan(100);
+  expect(u.references.every(x=>x.startsWith('https://'))).toBe(true);
+  expect(index.find(x=>x.id===id)?.audio_status).toBe('missing_audio');
+ }
+ const home=RECEPTION_LESSONS['fr-a1-u10'];
+ expect(home.questions[2].evidence).toContain('P3');
+ expect(home.paragraphs[1].target).toContain('chacun range son assiette');
+ const planning=RECEPTION_LESSONS['fr-a1-u11'];
+ expect(planning.paragraphs[0].target).toContain('devant la gare à neuf heures');
+ expect(planning.paragraphs[2].target).toContain('peut-être pleuvoir');
+ expect(planning.questions[3].answer).toContain('pas encore répondu');
+ const headings=RECEPTION_LESSONS['en-ielts-reading-u03'];
+ expect(headings.paragraphs[0].target).toContain('Yet');
+ expect(headings.questions.flatMap(x=>x.evidence)).toEqual(['P1','P2','P3','P4']);
+ expect(headings.paragraphs[3].target).toContain('combine several methods');
+});
