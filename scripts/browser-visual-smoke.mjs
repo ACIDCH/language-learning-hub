@@ -218,8 +218,8 @@ try{
       problems.push(size+' DELF structure and model table missing '+JSON.stringify(geom));
      if(name==='frDALF'&&geom.tableRows!==4)
       problems.push(size+' DALF input matrix missing '+JSON.stringify(geom));
-     if(['frB2News','frC1Media','frA1Leisure','frA1Clarification','enListenScope','enListenLexicon','frLeisureVocab','frMarketGrammar','frMarketVocabulary','enReadingScope','enReadingLexicon','frHomeLexicon','frFutureLexicon','enHeadingsLexicon','frPastGrammar','frPastVocab','enReadingTFNG'].includes(name)&&geom.tableRows!==4)
-      problems.push(size+' new French media evidence comparison table missing '+JSON.stringify(geom));
+     if(['frB2News','frC1Media','frA1Leisure','frA1Clarification','enListenScope','enListenLexicon','frLeisureVocab','frMarketGrammar','frMarketVocabulary','enReadingScope','enReadingLexicon','frHomeLexicon','frFutureLexicon','enHeadingsLexicon','frPastGrammar','frPastVocab','enReadingTFNG'].includes(name)&&geom.tableRows!==(name==='frPastGrammar'?8:4))
+      problems.push(size+' '+name+' expected complete instructional table rows '+JSON.stringify({expected:name==='frPastGrammar'?8:4,...geom}));
      if(name==='enTask1Process'){
       const count=await js("document.querySelectorAll('.task1-flow-step').length");
       if(count!==6)problems.push(size+' flow diagram has '+count+' labelled stages, expected six');
