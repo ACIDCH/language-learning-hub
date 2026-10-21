@@ -2,6 +2,7 @@ import {useMemo,useState} from 'react';
 import {splitLessonStages,STUDY_STAGES,STUDY_TITLES,visibleStudyStage,moveStudyStage} from './lessonStages';
 import LessonBody from './LessonBody';
 import BilingualTeaching from './BilingualTeaching';
+import {curatedUnitForSource} from './curatedCurriculum';
 import type {LessonContent} from './v44Courses';
 
 type Props={text:string;content?:LessonContent|null;privateSource?:boolean;defaultIpa?:boolean;ttsRate?:number;language?:string;courseId:string;
@@ -11,6 +12,7 @@ type Props={text:string;content?:LessonContent|null;privateSource?:boolean;defau
 export default function LessonReader({text,courseId,content,privateSource=false,stage,onChangeStage}:Props){
  const lesson=useMemo(()=>splitLessonStages(text),[text]);
  const [showAll,setShowAll]=useState(false);
+ const curated=lesson.structured?curatedUnitForSource(courseId,text,privateSource):null;
  const current=visibleStudyStage(stage);
  const selected=STUDY_STAGES.indexOf(current as typeof STUDY_STAGES[number]);
  const sections=lesson.structured?STUDY_STAGES.map((id,index)=>({
@@ -31,11 +33,15 @@ export default function LessonReader({text,courseId,content,privateSource=false,
    {!showAll&&lesson.structured&&<header className="lesson-stage-head">
     <span className="lesson-index">{String(selected+1).padStart(2,'0')}</span>
     <h4>{sections[selected]?.displayName}</h4></header>}
-   {!showAll&&current!==3&&<BilingualTeaching key={courseId+'-'+current}
-     courseId={courseId} stage={current} content={content} privateSource={privateSource} sourceText={text}/>}
-   <LessonBody text={source}/>
-   {!showAll&&current===3&&<BilingualTeaching key={courseId+'-'+current}
-     courseId={courseId} stage={current} content={content} privateSource={privateSource} sourceText={text}/>}
+   {curated&&!showAll?<><BilingualTeaching key={courseId+'-'+current}
+     courseId={courseId} stage={current} content={content} privateSource={privateSource} sourceText={text}/>
+     <details className="curated-source-details"><summary>展开本环节对应原文</summary>
+       <LessonBody text={source}/></details></>:
+     <>{!showAll&&current!==3&&<BilingualTeaching key={courseId+'-'+current}
+        courseId={courseId} stage={current} content={content} privateSource={privateSource} sourceText={text}/>}
+       <LessonBody text={source}/>
+       {!showAll&&current===3&&<BilingualTeaching key={courseId+'-'+current}
+        courseId={courseId} stage={current} content={content} privateSource={privateSource} sourceText={text}/>}</>}
   </article>
   {lesson.structured&&<div className="lesson-controls">
    {!showAll&&<button disabled={selected===0} onClick={()=>onChangeStage(moveStudyStage(current,-1))}>← 上一部分</button>}
