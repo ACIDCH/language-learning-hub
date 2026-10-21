@@ -5,14 +5,14 @@ import CourseCatalog from '../src/CourseCatalog';
 import SpecialtyLibrary from '../src/SpecialtyLibrary';
 import {SPECIALTY_LESSONS,linkedSpecialty,specialtyQuality,specialtyRoute} from '../src/specialtyLibrary';
 import {routeCrumbs,readRoute} from '../src/v44Routes';
-import {COURSES} from '../src/v44Courses';
+import {COURSES,courseRoute} from '../src/v44Courses';
 vi.mock('../src/IpaText',()=>({speakIpaText:()=>true}));
 afterEach(cleanup);
 
 describe('independent bilingual grammar and vocabulary teaching',()=>{
  it('has real detailed chapters in both languages and both tracks instead of empty shells',()=>{
   const defects:string[]=[];
-  expect(SPECIALTY_LESSONS.length).toBeGreaterThanOrEqual(14);
+  expect(SPECIALTY_LESSONS.length).toBeGreaterThanOrEqual(22);
   expect(new Set(SPECIALTY_LESSONS.map(x=>x.id)).size).toBe(SPECIALTY_LESSONS.length);
   for(const lang of ['fr','en']){
    for(const type of ['grammar','vocabulary']){
@@ -43,6 +43,42 @@ describe('independent bilingual grammar and vocabulary teaching',()=>{
    expect(u.output).toBeTruthy();
    expect(u.model.length).toBeGreaterThanOrEqual(2);
   }
+ });
+ it('exposes real A1-C2 level filtering and secondary skill paths in the catalog',()=>{
+  const navigate=vi.fn();
+  const {container}=render(<CourseCatalog params={new URLSearchParams('language=fr')} navigate={navigate}/>);
+  expect(container.querySelectorAll('.catalog-specialty-primary')).toHaveLength(2);
+  fireEvent.click(screen.getByRole('button',{name:/A2 初级/}));
+  expect(navigate).toHaveBeenCalledWith('/?language=fr&level=A2');
+  fireEvent.click(screen.getByRole('link',{name:/听读训练/}));
+  expect(navigate).toHaveBeenCalledWith('/?language=fr&skill=listen');
+  expect(screen.getByRole('button',{name:/C2 精通/})).toBeTruthy();
+ });
+ it('returns to the exact course tab rather than forcing the course homepage',()=>{
+  const navigate=vi.fn();
+  const from=COURSES.find(c=>c.id==='fr-a1-u01')!;
+  const returnPath=courseRoute(from,'ipa');
+  const params=new URLSearchParams({page:'specialties',type:'grammar',language:'fr',topic:'fr-etre',returnTo:returnPath});
+  const {unmount}=render(<SpecialtyLibrary params={params} navigate={navigate}/>);
+  fireEvent.click(screen.getByRole('button',{name:/回到关联课程/}));
+  expect(navigate).toHaveBeenCalledWith(returnPath);
+  unmount();
+  const externalParams=new URLSearchParams({page:'specialties',type:'grammar',language:'fr',topic:'fr-etre',returnTo:'https://unsafe.invalid'});
+  render(<SpecialtyLibrary params={externalParams} navigate={navigate}/>);
+  fireEvent.click(screen.getByRole('button',{name:/回到关联课程/}));
+  expect(navigate).toHaveBeenLastCalledWith(courseRoute(from));
+ });
+ it('updates the study companion to the chapter the learner selected',()=>{
+  const navigate=vi.fn();
+  const {container}=render(<SpecialtyLibrary params={
+   new URLSearchParams('page=specialties&type=grammar&language=fr&topic=fr-etre')
+  } navigate={navigate}/>);
+  expect(container.querySelector('.specialty-companion')?.textContent).toContain('当前重点 · 01');
+  const chapterLinks=container.querySelectorAll<HTMLAnchorElement>('.specialty-companion ol a');
+  expect(chapterLinks.length).toBeGreaterThan(1);
+  fireEvent.click(chapterLinks[1]);
+  expect(container.querySelector('.specialty-companion')?.textContent).toContain('当前重点 · 02');
+  expect(chapterLinks[1].getAttribute('aria-current')).toBe('location');
  });
  it('provides dedicated catalog entries for the independent tracks',()=>{
   const navigate=vi.fn();
