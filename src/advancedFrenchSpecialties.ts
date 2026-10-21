@@ -72,7 +72,7 @@ export const ADVANCED_FRENCH_SPECIALTIES:SpecialtyLesson[]=[
  e('L’auteur soutient que cette mesure serait utile.','作者主张该措施可能有用。','soutient que 表示立场而不是已证实事实。'),
  e('Les chercheurs constatent une hausse de fréquentation.','研究者观察到使用人数增加。','constatent 对应已观察的指标。'),
  e('On peut supposer que plusieurs facteurs interviennent.','可以假设有多种因素在起作用。','supposer 明确保留假设状态。')
- ],'constater 与 supposer 并不等价；不能把尚未测得的因果效果写成 les chercheurs constatent。'),
+ ],'constater 与 supposer 并不等价；不能把尚未测得的因果效果写成 les chercheurs constatent。',
  {title:'书面动词与宾语搭配',columns:['动词','常见搭配','表达功能'],rows:[['soutenir','soutenir une thèse','提出并支持论点'],['constater','constater une évolution','报告观察'],['supposer','supposer que…','提出假设'],['nuancer','nuancer un propos','限制强度'],['mettre en évidence','mettre en évidence un écart','凸显具体差异']],note:'mettre en évidence 指呈现差异或事实，不自动等于证明某个因果机制。'}),
  s('02 搭配决定表达是否自然准确',
  '实施方案可说 mettre en œuvre une mesure；考虑条件可说 tenir compte de；应对挑战可说 faire face à；追求目标可说 viser à + infinitif。写作时先记词组的支配介词，再把它放进完整句子。',
