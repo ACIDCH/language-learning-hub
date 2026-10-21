@@ -36,7 +36,7 @@ questions:[
 {question:'原文 This intervention 指向什么？',answer:'Council grants for insulation in older homes.',why:'前句介绍的具体干预是旧住宅隔热工程补助，this intervention 不是泛指全部房屋政策。'},
 {question:'The grants were intended to reduce heating demand 是否证明取暖需求已经下降？',answer:'No. It expresses an intended aim, not measured results.',why:'intended to 表示计划目的，原稿没有列出实施后能源需求的测量结果。'},
 {question:'not every type of work 等价于 no type of work 吗？',answer:'No. Some work may be covered, but decorative repairs are excluded.',why:'not every 是否定全称，no type 是否定所有；后文明确提供一项排除类别。'},
-{question:'两项住房支持政策可以直接称为 identical 吗？',answer:'No. Both support households but fund different activities.',why:'原稿同时承认对象共同点与资助活动差异，不可省略后者。'}
+{question:'两项住房支持政策可以直接称为 identical 吗？',answer:'No. Both support households but fund different activities.',why:'原稿同时承认两项计划都支持家庭，并指出资助活动不同；identical 会抹除这项明示差异，因此不能选。'}
 ],
 output:'用八句双语分析隔热补助的先行词、目的、资格、排除范围和与普通住房补助的比较；每个推断分别注明原文是否支持。',
 model:[
@@ -80,10 +80,10 @@ e('The report invites further investigation.','报告提出值得进一步研究
 ],'把 proposed future comparison 改写成 researchers completed a controlled trial 就会虚构研究设计与完成状态。')
 ],
 questions:[
-{question:'路边叶片较小是 observation 还是 proven causal mechanism？',answer:'An observation, not a proven causal mechanism.',why:'文章描述叶片大小模式，但未将污染从土壤或水源差异中分离。'},
+{question:'路边叶片较小是 observation 还是 proven causal mechanism？',answer:'An observation, not a proven causal mechanism.',why:'文章只描述路旁植物叶片较小的观察模式，研究未将污染从土壤、水源差异中分离，因此不能据此推出单一因果。'},
 {question:'consistent with pollution 允许写成 caused only by pollution 吗？',answer:'No. Consistency does not exclude alternative causes.',why:'consistent with 仅表示相容；不能由此得出唯一解释。'},
-{question:'作者称解释 tentative 的关键理由？',answer:'Pollution was not isolated from soil and water availability.',why:'其他变量没有被控制，作者明确保留因果不确定性。'},
-{question:'原文支持的下一步研究是什么？',answer:'A controlled comparison to assess different possible factors.',why:'这一比较是提出的未来方向，并非已经完成的复制试验。'}
+{question:'作者称解释 tentative 的关键理由？',answer:'Pollution was not isolated from soil and water availability.',why:'作者没有隔离污染、土壤和水分等不同因素，因此暂时无法确认哪一个因素造成叶片变化，必须保留不确定性。'},
+{question:'原文支持的下一步研究是什么？',answer:'A controlled comparison to assess different possible factors.',why:'受控比较是为解决现有混杂因素而提出的下一步研究方向，原文没有声称该试验已经完成或确认因果。'}
 ],
 output:'写八句英语研究摘要，将观察、弱结论、潜在混杂和后续建议分段解释，并加逐句中文。不得宣称污染已被证明是唯一原因。',
 model:[
@@ -128,9 +128,9 @@ e('The programme has already reached all residents online.','项目已经在线�
 ],
 questions:[
 {question:'Which section defines a community survey and explains comparability?',answer:'Section A.',why:'A 提供 structured collection 定义和统一问题集，均属于概念说明。'},
-{question:'Which section describes the weekend-market pilot?',answer:'Section B.',why:'B 描述志愿者在周末市场分发表格，是具体实施示例。'},
-{question:'Which section reveals who could be underrepresented?',answer:'Section B.',why:'B 明示留在家中的人未被接触，可能覆盖不足。'},
-{question:'Which section recommends a remote option and disclosure of exclusions?',answer:'Section C.',why:'C 明确提出结合远程渠道并报告未覆盖人群，两项均为建议。'}
+{question:'Which section describes the weekend-market pilot?',answer:'Section B.',why:'原文 B 段有志愿者、周末市场和发放表格的完整行动过程，属于已执行方法的例子而非调查的定义。'},
+{question:'Which section reveals who could be underrepresented?',answer:'Section B.',why:'B 段直接说明留在家中的居民未通过市场发放渠道被接触，因而样本可能低估这部分人，不是已测比例。'},
+{question:'Which section recommends a remote option and disclosure of exclusions?',answer:'Section C.',why:'C 段以 recommendations 形式提出远程作答渠道及未覆盖群体报告，两项都属于后续建议，不是已实施措施。'}
 ],
 output:'按 A–C 分别整理概念、方法、局限、建议；以八句英语给出证据与对应中文，说明为何不能用关键词出现次数代替定位。',
 model:[
@@ -174,7 +174,7 @@ e('More data are needed to estimate how common the barrier is.','仍需更多数
 ],'不可把 B 的若干访谈扩写为多数居民未受益，也不能把 A 的平均增幅写成所有人都已受益。')
 ],
 questions:[
-{question:'Passage A 的结果为什么不能保证所有街区均受益？',answer:'It reports an aggregate increase, not separate neighbourhood outcomes.',why:'总平均不能确定各分组实际情况，文章也未给出分区结果。'},
+{question:'Passage A 的结果为什么不能保证所有街区均受益？',answer:'It reports an aggregate increase, not separate neighbourhood outcomes.',why:'A 段报告的是虚构地区的汇总平均到访次数，并没有按街区拆分，因此不能从整体增长推出各街区同幅受益。'},
 {question:'Passage B 的访谈是否证实全地区公交障碍的比例？',answer:'No. Several interviews do not establish district-wide prevalence.',why:'缺少代表性样本、分母和覆盖范围，不能从部分受访者推断全体比例。'},
 {question:'两篇材料是逻辑上的直接矛盾吗？',answer:'No. Average gains can coexist with unequal access for some residents.',why:'A 描述地区汇总增长，B 描述个别人的困难，两者指标及范围不同。'},
 {question:'哪种连接词适合保留均值增长和局部限制？',answer:'Although / whereas, with clear source attribution.',why:'让步与对比需同时明确各来源，不能将两者合并为同一个测量结论。'}
