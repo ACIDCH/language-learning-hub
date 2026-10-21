@@ -389,3 +389,25 @@
  .v44 .specialty-companion-jump a{
   flex:0 0 auto;max-width:min(240px,70vw);white-space:normal}
 }
+
+/* Long-form exemplars are documents, not dozens of isolated flash cards. */
+.v44 .specialty-essay{display:grid;gap:0;margin-top:12px}
+.v44 .specialty-essay-paragraph{
+ padding:18px 8px;border-bottom:1px solid var(--border);
+ min-width:0;overflow-wrap:anywhere}
+.v44 .specialty-essay-paragraph:last-child{border-bottom:none;padding-bottom:4px}
+.v44 .specialty-essay-original{
+ margin:0 0 10px;font-family:var(--reading-font);
+ font-size:clamp(15px,1.2vw,18px);line-height:1.9;color:var(--text)}
+.v44 .specialty-essay-translation{
+ margin:0;padding-left:13px;border-left:2px solid var(--accent);
+ font-size:13px;line-height:1.9;color:var(--textMuted)}
+.v44 .specialty-essay-notes{margin:8px 0 0;border:0!important;padding:4px 0!important}
+.v44 .specialty-essay-notes summary{font-size:12px;color:var(--accent)}
+.v44 .specialty-essay-notes ol{padding:6px 0 2px 22px;margin:0;color:var(--textMuted)}
+.v44 .specialty-essay-notes li{margin:4px 0;font-size:12px;line-height:1.7}
+@media(max-width:600px){
+ .v44 .specialty-essay-paragraph{padding:13px 0}
+ .v44 .specialty-essay-original{font-size:15px;line-height:1.82}
+ .v44 .specialty-essay-translation{font-size:12px;line-height:1.78}
+}
