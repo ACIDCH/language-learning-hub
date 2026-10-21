@@ -145,6 +145,18 @@ describe('research-extended grammar and vocabulary paths',()=>{
   expect(french.sections.flatMap(x=>x.examples).some(x=>x.target.includes("Ce n'est pas une pomme"))).toBe(true);
   expect(french.sections.flatMap(x=>x.examples).some(x=>x.target.includes("n'y a pas d'eau"))).toBe(true);
  });
+ it('teaches the lecture as a five-cell argument with a complete bilingual model',()=>{
+  const u=SPECIALTY_LESSONS.find(x=>x.id==='en-lecture-hedging')!;
+  expect(u.sections).toHaveLength(5);
+  expect(u.sections[4].examples).toHaveLength(5);
+  expect(u.sections[4].concept).toContain('研究问题');
+  const model=u.model.map(e=>e.target).join(' ');
+  const words=model.trim().split(/\s+/u).length;
+  expect(words).toBeGreaterThanOrEqual(100);
+  expect(words).toBeLessThanOrEqual(130);
+  expect(u.model.every(e=>e.zh&&e.analysis)).toBe(true);
+  expect(u.output).toContain('100–130');
+ });
  it('opens each authored research extension from grammar or vocabulary navigation',()=>{
   for(const id of ['en-lecture-hedging','fr-food-vocab']){
    const unit=SPECIALTY_LESSONS.find(x=>x.id===id)!;
