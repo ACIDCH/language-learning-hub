@@ -18,7 +18,14 @@ describe('independent bilingual grammar and vocabulary teaching',()=>{
     const selected=SPECIALTY_LESSONS.filter(x=>x.language===lang&&x.type===type);
     expect(selected.length,lang+' '+type).toBeGreaterThanOrEqual(3);
     for(const u of selected){
-     expect(specialtyQuality(u),'Topic below content threshold: '+u.id).toBe(true);
+     const pairRows=u.sections.flatMap(s=>s.examples);
+     const issues=[
+      ['sections',u.sections.length>=3],['questions',u.questions.length>=2],
+      ['model',u.model.length>=2],['pairs',pairRows.length>=6],
+      ['sectionsDetailed',u.sections.every(s=>s.concept.length>=35&&s.caution.length>=12&&s.pattern.length>4&&s.examples.every(e=>e.zh.length>3&&e.target.length>8&&e.analysis.length>6))],
+      ['questionExplanations',u.questions.every(q=>q.answer.length>0&&q.why.length>=12)]
+     ].filter(x=>!x[1]).map(x=>x[0]);
+     expect(specialtyQuality(u),'Topic below content threshold: '+u.id+'; failing: '+issues.join(',')).toBe(true);
      expect(u.sections.length).toBeGreaterThanOrEqual(3);
      expect(u.sections.flatMap(x=>x.examples).every(x=>x.zh.trim()&&x.target.trim()&&x.analysis.trim())).toBe(true);
      expect(COURSES.some(c=>c.id===u.unitLink),'Missing actual linked lesson '+u.unitLink).toBe(true);
