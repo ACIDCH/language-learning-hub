@@ -155,7 +155,8 @@ export const ENGLISH_PATH_SPECIALTIES:SpecialtyLesson[]=[
  e('Overall, one category increased while the other declined.','总体而言，一类上升，另一类下降。','总览只对比方向，不虚构数字。'),
  e('The first category was consistently higher than the second.','第一类在整个时期一直高于第二类。','consistently higher 需要图上每个相应时段都支持。'),
  e('By the end of the period, the gap had narrowed.','到这个时期结束时，二者差距已经缩小。','narrowed 描述类目间差距。')
- ],'不应为了“高级词汇”而写 dramatically、approximately 或 doubled，除非图表数据确实支持。')
+ ],'不应为了“高级词汇”而写 dramatically、approximately 或 doubled，除非图表数据确实支持。',
+ {title:'教学用示例数据（虚构，单位：units）',columns:['时期','Category A','Category B'],rows:[['第1期','20','30'],['第2期','25','32'],['第3期','30','28'],['第4期','35','28']],note:'本表为本课程自拟的语言练习数据，不是任何外部真实统计。先读数，再写趋势与比较。'})
  ],
  questions:[
  {question:'从 20% 到 30% 增加了多少百分点？',answer:'10 percentage points.',why:'30 减 20 等于 10 个百分点；相对增幅另按起点计算。'},
@@ -163,19 +164,19 @@ export const ENGLISH_PATH_SPECIALTIES:SpecialtyLesson[]=[
  {question:'哪种表达适合“先涨后保持稳定”？',answer:'The figure rose initially and then levelled off.',why:'level off 表达变化阶段结束后的趋稳状态。'},
  {question:'解释 fluctuate 与 rise steadily 的差别。',answer:'fluctuate 是多次上下波动；rise steadily 是持续、相对稳定地增长。',why:'前者不表示单向走势，后者体现较稳定的上升。'}
  ],
- output:'假设有两条不同走势的示意曲线，为其编写 100–130 词英文 Task 1 报告；不可虚构来源数据。包含总览、至少两项比较和三种不同趋势搭配。',
+ output:'依据本节的虚构示例数据表，写 100–130 词英文 Task 1 报告：总览、两组趋势、起止值和最重要的比较。不要在表格之外添加数字或原因解释。',
  model:[
- e('The two categories followed different overall patterns.','两类指标总体呈现不同的走势。','概述先描述方向。'),
- e('The first category increased steadily throughout the period.','第一类在整个时期稳定增长。','使用 steadily 限定形态。'),
- e('By contrast, the second category fluctuated before levelling off.','相比之下，第二类先波动，然后趋于平稳。','fluctuate 与 level off 描述不同阶段。'),
- e('The comparison should be supported by the figures shown in the chart.','具体比较应由图表中展示的数据支持。','示范侧重语言组织，不伪装成真实报告。'),
- e("In the illustrative first series, the increase appears gradual rather than sudden.","在示意的第一条序列中，上升显得逐步发生而非突变。","仅描述假想走势，不声称有外部图表。"),
- e("The second series shows short-term changes in both directions, so it would be inaccurate to describe it as a continuous rise.","第二条序列短期内上下变化，因此不能说它一直在上升。","解释 fluctuate 的实际含义。"),
- e("Once the second series becomes more stable, the phrase levelled off is more suitable than continued to fluctuate.","当第二条序列逐渐稳定后，用 levelled off 比 continued to fluctuate 更合适。","词汇选择依据阶段变化。"),
- e("The overview should present these contrasting patterns before any supporting measurements are introduced.","在列出具体测量值之前，总览应先交代这两条对照走势。","说明总体描述顺序。"),
- e("If exact values are available, the final sentences should state the relevant units, start and end points, and differences.","如果有精确数值，最后几句应说明相应单位、起止值及差异。","明确数值写作的证据要求。"),
- e("Without those values, numerical percentages or comparisons must not be invented.","若缺乏这些数据，不能凭空编写百分比或数值比较。","与实际图表保持一致。")
+ e('The table shows two illustrative categories over four equal periods.','该表展示两个示例类别在四个等长时期内的数值。','开头说明图表对象及时间范围。'),
+ e('Overall, Category A rose steadily, whereas Category B fluctuated before becoming stable.','总体而言，A 类稳定上升，而 B 类先波动后趋于稳定。','第一句概述最明显的整体差异。'),
+ e('Category A began at 20 units and increased to 25 in the second period.','A 类从20个单位开始，第二期增至25。','按数据表准确报告初始变化。'),
+ e('It then reached 30 and finished at 35 units.','随后升至30，最终达到35个单位。','避免重复名词，用 it 指回 Category A。'),
+ e('In contrast, Category B started at 30 units, rose to 32, and then fell to 28.','相比之下，B 类从30开始，升至32，然后降至28。','报告实际升降顺序。'),
+ e('The latter figure remained unchanged in the final period.','后者在最后一期保持不变。','remain unchanged 与数据一致。'),
+ e('Although B was initially higher, A overtook it by the third period.','尽管最初 B 较高，A 到第三期已经超过它。','对比转折时点。'),
+ e('The gap changed from a 10-unit advantage for B to a 7-unit advantage for A.','两组差距从 B 领先10个单位变为 A 领先7个单位。','核对期首和期末差值。'),
+ e('The table does not provide any explanation for the changes.','表格没有提供导致这些变化的原因。','结尾不编造因果信息。')
  ],
+
  referenceUrls:['https://englishprofile.org/?menu=english-vocabulary-profile','https://www.cambridge.org/core/journals/english-profile-journal/article/a1b2-vocabulary-insights-and-issues-arising-from-the-english-profile-wordlists-project/E57847F6C5574124B2354F9BEEC005FA'],
  sourceNote:'对应既有 Task1 U02 趋势描述主题，原创的百分比仅为词汇形式演示，未声称课程提供某份真实图表。'
 },
@@ -222,7 +223,7 @@ export const ENGLISH_PATH_SPECIALTIES:SpecialtyLesson[]=[
  {question:'associated with 是否必然意味着 caused by？',answer:'不意味着。',why:'关联关系和因果关系的论证要求不同。'},
  {question:'“The evidence does not prove X” 是否等于 “The evidence proves not-X”？',answer:'不等于。',why:'缺乏足够支持与有证据支持相反命题，属于不同的逻辑状态。'}
  ],
- output:'读一段包含 may、only、some 和 not necessarily 的研究陈述，用英语写 90–110 词评价：作者主张、具体证据、范围限定和仍然未知的事项。',
+ output:'读一段包含 may、only、some 和 not necessarily 的研究陈述，用英语写 110–140 词评价：作者主张、具体证据、范围限定和仍然未知的事项。',
  model:[
  e('The author reports observations about study-space usage.','作者报告了有关学习空间使用的观察。','先明确信息来源。'),
  e('The figures indicate when some rooms were occupied.','数字表明部分房间何时有人使用。','限定观察对象。'),
