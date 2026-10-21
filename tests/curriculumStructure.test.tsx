@@ -120,6 +120,12 @@ describe('semantic curriculum without broken full-page IPA',()=>{
   expect(container.textContent).toContain('冠词要连同名词记忆');
   expect(container.textContent).toContain('un/une/des');
  });
+ it('formats semantic headings and bold concepts in private teaching notes',()=>{
+  const {container}=render(<LessonBody text={'## Concepts'+String.fromCharCode(10)+'**Stance and modality:** may and could have different evidence strength.'}/>);
+  expect(container.querySelector('.lesson-content-section')?.textContent).toBe('Concepts');
+  expect(container.querySelector('.lesson-content-group strong')?.textContent).toBe('Stance and modality:');
+  expect(container.textContent).toContain('may and could');
+ });
  it('keeps IPA bounded to a short excerpt and never phonemizes a 500-word manuscript all at once',()=>{
   const long='To begin with, we need to distinguish planting trees from maintaining them. '+'Extended essay paragraphs. '.repeat(100);
   const sample=lessonIpaSample(long);
