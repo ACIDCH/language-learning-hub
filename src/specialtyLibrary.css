@@ -143,3 +143,34 @@
  .v44 .catalog-filter .catalog-specialty strong{font-size:12px;line-height:1.15}
  .v44 .catalog-filter .catalog-specialty small{font-size:9px;line-height:1.1;white-space:nowrap}
 }
+
+/* Readable wide lesson + compact genuinely useful right-hand reference desk. */
+@media(min-width:1430px){
+ .v44 .specialty-main{display:grid;grid-template-columns:minmax(0,1fr) 242px;gap:15px;align-items:start}
+}
+.v44 .specialty-companion{
+ position:sticky;top:90px;max-height:calc(100dvh - 106px);overflow-y:auto;
+ display:grid;gap:11px;scrollbar-width:thin;min-width:0
+}
+.v44 .specialty-companion section{
+ border:1px solid var(--border);background:var(--pane);border-radius:12px;
+ padding:13px;box-shadow:var(--shadow);min-width:0
+}
+.v44 .specialty-companion h2{font-size:13px;color:var(--accent);margin:0 0 9px}
+.v44 .specialty-companion li{font-size:12px;line-height:1.7;margin:5px 0;color:var(--text)}
+.v44 .specialty-companion ul,.v44 .specialty-companion ol{padding-left:19px;margin:0}
+.v44 .specialty-companion a{color:var(--text);text-decoration:none}
+.v44 .specialty-companion a:hover{text-decoration:underline}
+.v44 .specialty-companion p{font-size:12px;line-height:1.7;margin:6px 0;overflow-wrap:anywhere}
+.v44 .specialty-companion-pattern{padding:7px 8px;background:var(--paneSoft);border-radius:8px}
+.v44 .specialty-companion button{
+ background:var(--accentTint);border:1px solid var(--border);color:var(--accent);
+ padding:8px 10px;border-radius:9px;font-size:12px}
+@media(max-width:1429px){
+ .v44 .specialty-companion{position:static;max-height:none;display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));margin-top:13px}
+ .v44 .specialty-companion section{padding:14px}
+}
+@media(max-width:600px){
+ .v44 .specialty-companion{grid-template-columns:minmax(0,1fr)}
+}
