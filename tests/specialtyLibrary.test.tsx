@@ -224,9 +224,9 @@ describe('source-checked progression from grammar to vocabulary and longer texts
   ['en-reading-evidence-lexicon','vocabulary','en-ielts-reading-u04']
  ] as const;
  it('registers exactly the eleven substantive curriculum additions with real lessons',()=>{
-  expect(SPECIALTY_LESSONS.length).toBe(35);
-  expect(SPECIALTY_LESSONS.filter(u=>u.type==='grammar')).toHaveLength(18);
-  expect(SPECIALTY_LESSONS.filter(u=>u.type==='vocabulary')).toHaveLength(17);
+  expect(SPECIALTY_LESSONS.length).toBe(44);
+  expect(SPECIALTY_LESSONS.filter(u=>u.type==='grammar')).toHaveLength(24);
+  expect(SPECIALTY_LESSONS.filter(u=>u.type==='vocabulary')).toHaveLength(20);
   for(const [id,kind,courseId] of newUnits){
    const u=SPECIALTY_LESSONS.find(x=>x.id===id);
    expect(u,id).toBeTruthy();
@@ -243,8 +243,8 @@ describe('source-checked progression from grammar to vocabulary and longer texts
  it('orders the progression by prerequisite and connects adjacent and paired studies',()=>{
   const grammar=orderedSpecialties(SPECIALTY_LESSONS.filter(u=>u.language==='fr'&&u.type==='grammar'));
   expect(grammar.map(u=>u.id)).toEqual([
-   'fr-etre','fr-avoir','fr-articles','fr-er','fr-questions-a1','fr-adjective-agreement-a1',
-   'fr-futur-proche-a1','fr-articles-partitive','fr-passe-compose','fr-imparfait-a2','fr-object-pronouns-a2'
+   'fr-etre','fr-avoir','fr-possessive-determiners-a1','fr-articles','fr-er','fr-questions-a1','fr-adjective-agreement-a1',
+   'fr-futur-proche-a1','fr-imperative-directions-a1','fr-articles-partitive','fr-passe-compose','fr-imparfait-a2','fr-object-pronouns-a2','fr-comparisons-a2','fr-futur-simple-a2','fr-negative-scope-a2'
   ]);
   const current=grammar.find(u=>u.id==='fr-er')!;
   expect(adjacentSpecialties(current,SPECIALTY_LESSONS).next?.id).toBe('fr-questions-a1');
@@ -276,5 +276,76 @@ describe('source-checked progression from grammar to vocabulary and longer texts
   expect(relative.sections[2].caution).toContain('that');
   const evidence=SPECIALTY_LESSONS.find(x=>x.id==='en-reading-evidence-lexicon')!;
   expect(evidence.sections[3].caution).toContain('不等于');
+ });
+});
+
+describe('source-verified A1/A2 and B2 continuity completed in this pass',()=>{
+ const topics=[
+  ['fr-possessive-determiners-a1','grammar','fr','A1','fr-a1-u03'],
+  ['fr-imperative-directions-a1','grammar','fr','A1','fr-a1-u09'],
+  ['fr-comparisons-a2','grammar','fr','A2','fr-a2-u06'],
+  ['fr-futur-simple-a2','grammar','fr','A2','fr-a2-u07'],
+  ['fr-negative-scope-a2','grammar','fr','A2','fr-a2-u11'],
+  ['fr-countries-languages-lexicon','vocabulary','fr','A1','fr-a1-u02'],
+  ['fr-shop-services-lexicon','vocabulary','fr','A2','fr-a2-u06'],
+  ['en-reported-speech-listening','grammar','en','B2','en-ielts-listening-u02'],
+  ['en-stance-lexicon-listening','vocabulary','en','B2','en-ielts-listening-u02']
+ ] as const;
+ it('contains nine authentic and fully authored lessons, not headings or repeated summaries',()=>{
+  expect(SPECIALTY_LESSONS.length).toBe(44);
+  const allIds=SPECIALTY_LESSONS.map(x=>x.id);
+  expect(new Set(allIds).size).toBe(allIds.length);
+  for(const [id,type,language,level,course] of topics){
+   const u=SPECIALTY_LESSONS.find(x=>x.id===id);
+   expect(u,id).toBeTruthy();
+   expect(u?.type).toBe(type);
+   expect(u?.language).toBe(language);
+   expect(u?.level).toBe(level);
+   expect(u?.unitLink).toBe(course);
+   expect(u?.sections).toHaveLength(4);
+   expect(u?.sections.every(x=>x.examples.length>=3&&x.concept.length>=45&&x.caution.length>=20),id).toBe(true);
+   expect(u?.questions.length,id).toBeGreaterThanOrEqual(4);
+   expect(u?.model.length,id).toBeGreaterThanOrEqual(5);
+   expect(specialtyQuality(u!),id).toBe(true);
+   expect(COURSES.some(x=>x.id===course),id+' course exists').toBe(true);
+   expect(u?.referenceUrls.every(url=>url.startsWith('https://'))).toBe(true);
+  }
+ });
+ it('guards against actual grammatical reversals and overclaiming',()=>{
+  const possess=SPECIALTY_LESSONS.find(x=>x.id==='fr-possessive-determiners-a1')!;
+  expect(possess.sections[0].table?.rows).toHaveLength(6);
+  expect(possess.sections[2].examples.some(x=>x.target==='Mon amie arrive à midi.')).toBe(true);
+  const imperative=SPECIALTY_LESSONS.find(x=>x.id==='fr-imperative-directions-a1')!;
+  expect(imperative.sections[1].examples.some(x=>x.target.startsWith('Vas-y'))).toBe(true);
+  const future=SPECIALTY_LESSONS.find(x=>x.id==='fr-futur-simple-a2')!;
+  expect(future.sections[0].table?.rows).toHaveLength(6);
+  expect(future.sections[3].caution).toContain('aurons');
+  const comparison=SPECIALTY_LESSONS.find(x=>x.id==='fr-comparisons-a2')!;
+  expect(comparison.sections[1].examples.some(x=>x.target.includes('mieux'))).toBe(true);
+  const negative=SPECIALTY_LESSONS.find(x=>x.id==='fr-negative-scope-a2')!;
+  expect(negative.sections[1].examples.some(x=>x.target.includes('rencontré personne'))).toBe(true);
+  const report=SPECIALTY_LESSONS.find(x=>x.id==='en-reported-speech-listening')!;
+  expect(report.sections[2].examples.some(x=>x.target.includes('asked whether'))).toBe(true);
+  expect(report.sections[3].caution).toContain('proved that');
+  const vocab=SPECIALTY_LESSONS.find(x=>x.id==='fr-countries-languages-lexicon')!;
+  expect(vocab.sections[0].table?.rows).toHaveLength(4);
+ });
+ it('correctly advances through prerequisite sequence and pairs grammar with vocabulary',()=>{
+  const g=SPECIALTY_LESSONS.find(x=>x.id==='fr-possessive-determiners-a1')!;
+  expect(adjacentSpecialties(g,SPECIALTY_LESSONS).previous?.id).toBe('fr-avoir');
+  expect(adjacentSpecialties(g,SPECIALTY_LESSONS).next?.id).toBe('fr-articles');
+  const q=SPECIALTY_LESSONS.find(x=>x.id==='en-reported-speech-listening')!;
+  expect(pairedSpecialties(q,SPECIALTY_LESSONS).map(x=>x.id)).toContain('en-stance-lexicon-listening');
+ });
+ it('renders a complete structured source-checked chapter in the actual learning page',()=>{
+  const u=SPECIALTY_LESSONS.find(x=>x.id==='fr-futur-simple-a2')!;
+  const {container}=render(<SpecialtyLibrary
+   params={new URLSearchParams('page=specialties&type=grammar&language=fr&topic='+u.id)}
+   navigate={vi.fn()}/>);
+  expect(container.querySelectorAll('.specialty-chapter')).toHaveLength(4);
+  expect(container.querySelectorAll('.specialty-grammar-table tbody tr')).toHaveLength(6);
+  expect(container.querySelectorAll('.specialty-question')).toHaveLength(u.questions.length);
+  expect(container.querySelectorAll('.specialty-learning-links button').length).toBeGreaterThan(0);
+  expect(container.textContent).not.toContain('教学内容草稿');
  });
 });
