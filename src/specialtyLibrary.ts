@@ -46,7 +46,9 @@ function fromCurated(type:SpecialtyKind,source:typeof FRENCH_ARTICLES,id:string,
  sections:type==='grammar'?source.grammar.map(x=>section(x.title,x.principle,x.pattern,x.examples.map(e=>pair(e.target,e.zh,e.why)),'复述时保留规则的适用条件；练习例句不是未核对的私人原文。')):
  curatedVocabularySections(source),
  questions:[...(source.practice[type==='grammar'?1:2]||[]),...(type==='vocabulary'?(source.practice[1]||[]).slice(0,2):[])].map(x=>({question:x.question,answer:x.answer,why:x.explanation})),
- output:source.output.task,model:source.output.model.map(e=>pair(e.target,e.zh,e.why)),referenceUrls,
+ output:source.language==='en'
+  ?'按原始 IELTS Listening U01 任务：先标记 opening、measurement、illustration、limitation、conclusion；第二遍形成五格讲座地图，然后写出 100–130 词的英语口头或书面综合摘要，明确保留讲者的限制条件且不虚构成绩改善。'
+  :source.output.task,model:source.output.model.map(e=>pair(e.target,e.zh,e.why)),referenceUrls,
  sourceNote:'以仓库内既有课程专题数据为教学基础；第三方资料仅用于规则交叉核查。'};
 }
 const hand:SpecialtyLesson[]=[
