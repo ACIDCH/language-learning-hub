@@ -53,7 +53,8 @@ export const FRENCH_PATH_GRAMMAR:SpecialtyLesson[]=[
  e('Je vais acheter des légumes et du pain.','我打算买蔬菜和面包。','并列采购对象。'),
  e('Ensuite, nous allons préparer le déjeuner.','然后我们准备午饭。','ensuite 连贯安排。'),
  e('Dimanche, je ne vais pas travailler.','周日我不打算工作。','否定包围 aller。'),
- e('Est-ce que tu vas venir avec nous ?','你准备和我们一起来吗？','是非疑问句。')
+ e('Est-ce que tu vas venir avec nous ?','你准备和我们一起来吗？','是非疑问句。'),
+ e('Après le déjeuner, nous allons visiter le musée.','午饭后我们打算参观博物馆。','用 après 补充计划顺序。')
  ],
  referenceUrls:['https://laits.utexas.edu/tex/gr/taf1.html','https://www.gymglish.com/en/frantastique/french-lesson'],
  sourceNote:'对应既有 fr-a1-u11 的最近将来时及周末活动目标；对照 Tex futur proche 规则，所有中法例句重新编写。'
@@ -107,7 +108,9 @@ export const FRENCH_PATH_GRAMMAR:SpecialtyLesson[]=[
  e('Chaque été, nous allions souvent à la plage.','每年夏天我们经常去海滩。','说明重复习惯。'),
  e('Un jour, il faisait très chaud.','有一天，天气很热。','天气背景。'),
  e('Soudain, nous avons vu un dauphin.','突然，我们看见了一只海豚。','一次明确的发生事件。'),
- e('Ensuite, nous avons raconté cette histoire à nos amis.','之后，我们把这件事讲给了朋友。','用完成动作收尾。')
+ e('Ensuite, nous avons raconté cette histoire à nos amis.','之后，我们把这件事讲给了朋友。','用完成动作收尾。'),
+ e('Nous étions très contents de cette rencontre.','我们对这次偶遇感到非常高兴。','imparfait 补充过去的情绪状态。'),
+ e('Cette journée est restée dans ma mémoire.','这一天留在了我的记忆里。','由过去的事件收束到整体回忆。')
  ],
  referenceUrls:['https://grammarmama.com/fr/learn/french/a2/','https://www.laits.utexas.edu/tex/gr/'],
  sourceNote:'对应 fr-a2-u02“Habitudes d’autrefois”；参照 A2 时态目录与 Tex 法语语法的过去时体系，例句和练习原创。'
@@ -162,7 +165,9 @@ export const FRENCH_PATH_GRAMMAR:SpecialtyLesson[]=[
  e('Oui, je les connais.','认识，我认识他们。','les 替换复数直接宾语。'),
  e('Je parle souvent à Sophie et je lui écris chaque semaine.','我经常和索菲说话，每周给她写信。','parler à / écrire à 都保留间接宾语结构。'),
  e('Je ne vois pas Marc aujourd’hui.','我今天见不到马克。','否定句表达今天的情况。'),
- e('Mais je vais le voir demain.','不过我明天打算见他。','代词 le 紧靠不定式 voir。')
+ e('Mais je vais le voir demain.','不过我明天打算见他。','代词 le 紧靠不定式 voir。'),
+ e('Je la connais mieux que Marc.','我对她的了解比对马克更多。','la 指回 Sophie，表现直接宾语。'),
+ e('Je vais lui envoyer un message demain.','我明天准备给她发消息。','lui 是 envoyer à Sophie 的间接宾语。')
  ],
  referenceUrls:['https://grammarmama.com/learn/french/a2/direct-object-pronouns/','https://laits.utexas.edu/tex/gr/pro8.html','https://laits.utexas.edu/tex/gr/pro9.html'],
  sourceNote:'对应 fr-a2-u04“Relations et messages”，从动词补语关系进入代词位置，再过渡到实际联系人对话，案例重新撰写。'
