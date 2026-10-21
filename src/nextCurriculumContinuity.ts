@@ -77,10 +77,10 @@ export const NEXT_CURRICULUM_CONTINUITY:SpecialtyLesson[]=[
  sec('02 与过去事实相反的 si 条件句',
  '说话人描述过去没有满足的条件及因此未发生的结果时，si 从句用 plus-que-parfait，结果句用 conditionnel passé。真实过去发生了什么，需要由上下文或其他句子交代，不能将假设说成已证实结果。',
  'Si + plus-que-parfait, conditionnel passé',[
- ex('Si nous étions partis plus tôt, nous aurions pris le train.','如果我们早些出发，本来就能赶上火车。','étions partis 是先行的愈过去时，aurions eu 是未实现的过去结果。'),
+ ex('Si nous étions partis plus tôt, nous aurions pris le train.','如果我们早些出发，本来就能赶上火车。','étions partis 是先行的愈过去时，aurions pris 是未实现的过去结果。'),
  ex('Si j’avais étudié davantage, j’aurais mieux compris le cours.','如果我更认真学习，本可以更好理解课程。','avais étudié 与 aurais compris 标记未实现的过去。'),
  ex('Elle serait venue si elle avait été libre.','如果她有空，本来就会来。','结果句可以放在 si 句之前，时态不变。')
- ],'Si j’aurais su 不符合该条件结构；应使用 Si j’avais su。',
+ ],'Si j’aurais su 不符合该条件结构；应使用 Si j’avais su。'),
  sec('03 regretter、aurais dû、aurais pu 的区别',
  'regretter de + 不定式表达后悔；j’aurais dû + 不定式表示本应该做但没有做；j’aurais pu + 不定式表示原本有机会或能力却未实现。三者不能互作精确同义词。',
  'regretter de… / j’aurais dû… / j’aurais pu…',[
