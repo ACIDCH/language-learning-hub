@@ -10,17 +10,17 @@ export const RECEPTION_LESSONS:Record<string,ReceptionLesson>={
   {
    "id": "P1",
    "target": "Léa arrive dans une école de langues. Elle cherche la salle de français. Elle parle à une personne à l’accueil : « Bonjour, excusez-moi. Où est la salle de français ? » La personne répond : « Elle est au deuxième étage, près de l’escalier. » Léa remercie la personne et regarde le plan du bâtiment.",
-   "zh": "莉娅到了一所语言学校，正在找法语教室。她向接待处的工作人员询问：“您好，打扰一下，法语教室在哪里？”对方回答：“在二楼，楼梯附近。”莉娅表示感谢，并查看建筑平面图。"
+   "zh": "莉娅来到一所语言学校，正在寻找上法语课的教室。她走到接待处，礼貌地向工作人员问：“您好，打扰一下，法语教室在哪里？”工作人员回答：“教室在二楼，就在楼梯附近。”莉娅向对方道谢，然后查看这栋教学楼的平面图，准备按楼层与楼梯的位置寻找教室。"
   },
   {
    "id": "P2",
    "target": "Léa demande ensuite : « Est-ce que le cours commence à dix heures ? » La personne répond : « Non, il commence à dix heures et demie et finit à midi. » Léa répète : « À dix heures et demie ? » « Oui, c’est bien ça », confirme la personne. Le cours dure donc une heure et demie.",
-   "zh": "莉娅接着问：“课程是十点开始吗？”工作人员回答：“不是，十点半开始，中午十二点结束。”莉娅重复确认：“十点半？”对方说：“对，没错。”因此这节课持续一个半小时。"
+   "zh": "莉娅接着向工作人员确认开课时间：“课程是上午十点开始吗？”工作人员明确纠正：“不是，课程在十点半开始，中午十二点结束。”莉娅担心自己听错，便把时间重新说了一遍：“是十点半吗？”对方回答：“对，正是这个时间。”从十点半到中午十二点，这堂课共持续一个半小时。"
   },
   {
    "id": "P3",
    "target": "Devant l’escalier, Léa rencontre Amir. Il cherche aussi la salle, mais il pense que le cours est au premier étage. Léa lui explique : « Non, la salle est au deuxième étage. Elle est près de l’escalier. » Amir demande : « Et qui est le professeur aujourd’hui ? » Léa répond : « C’est Madame Martin. »",
-   "zh": "在楼梯前，莉娅遇到了阿米尔。他也在找教室，但以为课程在一楼。莉娅解释：“不是，教室在二楼，靠近楼梯。”阿米尔问：“那么今天谁是老师？”莉娅回答：“是马丁女士。”"
+   "zh": "在楼梯旁，莉娅遇到了阿米尔。他和莉娅一样，正在寻找那间法语教室，但原先误以为课程设在一楼。莉娅向他纠正道：“不，教室在二楼，就在楼梯附近。”阿米尔接着询问今天由谁授课：“那么今天的老师是哪位？”莉娅告诉他：“今天是马丁女士上课。”"
   },
   {
    "id": "P4",
@@ -61,7 +61,7 @@ export const RECEPTION_LESSONS:Record<string,ReceptionLesson>={
    "evidence": [
     "P4"
    ],
-   "why": "P4 明确请求重复的是姓名，随后才另行确认上课时间。"
+   "why": "P4 明确说明 Amir 因为没听清 Madame Martin 的名字而请求重复；随后他才单独确认课程开始时间。这两次确认的对象不同。"
   }
  ],
  "languageNotes": [
