@@ -226,10 +226,11 @@ export const SPECIALTY_LESSONS:SpecialtyLesson[]=[
  ...hand,
  ...EXPANDED_SPECIALTIES
 ];
-export function specialtyRoute(type:SpecialtyKind,language?:string,topic?:string){
+export function specialtyRoute(type:SpecialtyKind,language?:string,topic?:string,returnTo?:string){
  const params=new URLSearchParams({page:'specialties',type});
  if(language)params.set('language',language);
  if(topic)params.set('topic',topic);
+ if(returnTo&&/^\/\?course=[^#]+$/.test(returnTo))params.set('returnTo',returnTo);
  return '/?'+params.toString();
 }
 export function linkedSpecialty(type:SpecialtyKind,courseId:string):SpecialtyLesson|undefined{
