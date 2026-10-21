@@ -5,6 +5,7 @@ import CourseCatalog from '../src/CourseCatalog';
 import SpecialtyLibrary from '../src/SpecialtyLibrary';
 import {SPECIALTY_LESSONS,linkedSpecialties,linkedSpecialty,specialtyQuality,specialtyRoute} from '../src/specialtyLibrary';
 import {routeCrumbs,readRoute} from '../src/v44Routes';
+import {orderedSpecialties,adjacentSpecialties,pairedSpecialties} from '../src/specialtyLearningPath';
 import {COURSES,courseRoute} from '../src/v44Courses';
 vi.mock('../src/IpaText',()=>({speakIpaText:()=>true}));
 afterEach(cleanup);
@@ -205,5 +206,75 @@ describe('research-extended grammar and vocabulary paths',()=>{
    expect(container.querySelectorAll('.specialty-question')).toHaveLength(unit.questions.length);
    unmount();
   }
+ });
+});
+
+describe('source-checked progression from grammar to vocabulary and longer texts',()=>{
+ const newUnits=[
+  ['fr-futur-proche-a1','grammar','fr-a1-u11'],
+  ['fr-imparfait-a2','grammar','fr-a2-u02'],
+  ['fr-object-pronouns-a2','grammar','fr-a2-u04'],
+  ['fr-routines-lexicon','vocabulary','fr-a1-u05'],
+  ['fr-directions-lexicon','vocabulary','fr-a1-u09'],
+  ['fr-past-events-lexicon','vocabulary','fr-a2-u01'],
+  ['fr-opinions-lexicon','vocabulary','fr-a2-u08'],
+  ['en-academic-passive','grammar','en-ielts-reading-u01'],
+  ['en-relative-clauses','grammar','en-ielts-reading-u03'],
+  ['en-task1-trend-lexicon','vocabulary','en-ielts-writing-task1-u02'],
+  ['en-reading-evidence-lexicon','vocabulary','en-ielts-reading-u04']
+ ] as const;
+ it('registers exactly the eleven substantive curriculum additions with real lessons',()=>{
+  expect(SPECIALTY_LESSONS.length).toBe(35);
+  expect(SPECIALTY_LESSONS.filter(u=>u.type==='grammar')).toHaveLength(18);
+  expect(SPECIALTY_LESSONS.filter(u=>u.type==='vocabulary')).toHaveLength(17);
+  for(const [id,kind,courseId] of newUnits){
+   const u=SPECIALTY_LESSONS.find(x=>x.id===id);
+   expect(u,id).toBeTruthy();
+   expect(u?.unitLink).toBe(courseId);
+   expect(u?.type).toBe(kind);
+   expect(u!.sections.length,id+' sections').toBeGreaterThanOrEqual(4);
+   expect(u!.questions.length,id+' exercises').toBeGreaterThanOrEqual(4);
+   expect(u!.model.length,id+' model').toBeGreaterThanOrEqual(4);
+   expect(u!.sections.every(section=>section.examples.length>=3),id+' detailed examples').toBe(true);
+   expect(specialtyQuality(u!),id).toBe(true);
+   expect(linkedSpecialties(kind,courseId).some(x=>x.id===id)).toBe(true);
+  }
+ });
+ it('orders the progression by prerequisite and connects adjacent and paired studies',()=>{
+  const grammar=orderedSpecialties(SPECIALTY_LESSONS.filter(u=>u.language==='fr'&&u.type==='grammar'));
+  expect(grammar.map(u=>u.id)).toEqual([
+   'fr-etre','fr-avoir','fr-articles','fr-er','fr-questions-a1','fr-adjective-agreement-a1',
+   'fr-futur-proche-a1','fr-articles-partitive','fr-passe-compose','fr-imparfait-a2','fr-object-pronouns-a2'
+  ]);
+  const current=grammar.find(u=>u.id==='fr-er')!;
+  expect(adjacentSpecialties(current,SPECIALTY_LESSONS).next?.id).toBe('fr-questions-a1');
+  expect(pairedSpecialties(current,SPECIALTY_LESSONS).map(x=>x.id)).toContain('fr-routines-lexicon');
+ });
+ it('opens the next grammar chapter and then the related vocabulary chapter',()=>{
+  const navigate=vi.fn();
+  const {container,rerender}=render(<SpecialtyLibrary params={
+   new URLSearchParams('page=specialties&type=grammar&language=fr&topic=fr-er')
+  } navigate={navigate}/>);
+  expect(container.querySelectorAll('.specialty-learning-links button').length).toBeGreaterThanOrEqual(2);
+  fireEvent.click(screen.getByRole('button',{name:/下一专题：法语疑问句/}));
+  expect(navigate).toHaveBeenCalledWith(specialtyRoute('grammar','fr','fr-questions-a1'));
+  rerender(<SpecialtyLibrary params={
+   new URLSearchParams('page=specialties&type=grammar&language=fr&topic=fr-er')
+  } navigate={navigate}/>);
+  fireEvent.click(screen.getByRole('button',{name:/关联词汇：一天的活动/}));
+  expect(navigate).toHaveBeenLastCalledWith(specialtyRoute('vocabulary','fr','fr-routines-lexicon'));
+ });
+ it('preserves semantically essential distinctions across the actual new material',()=>{
+  const imparfait=SPECIALTY_LESSONS.find(x=>x.id==='fr-imparfait-a2')!;
+  expect(imparfait.sections[0].table?.rows).toHaveLength(6);
+  expect(imparfait.sections.some(x=>x.examples.some(e=>e.target.includes('lisais quand')))).toBe(true);
+  const objects=SPECIALTY_LESSONS.find(x=>x.id==='fr-object-pronouns-a2')!;
+  expect(objects.sections[0].examples.some(x=>x.target.includes('Je lui parle'))).toBe(true);
+  const trend=SPECIALTY_LESSONS.find(x=>x.id==='en-task1-trend-lexicon')!;
+  expect(trend.sections[0].caution).toContain('百分点');
+  const relative=SPECIALTY_LESSONS.find(x=>x.id==='en-relative-clauses')!;
+  expect(relative.sections[2].caution).toContain('that');
+  const evidence=SPECIALTY_LESSONS.find(x=>x.id==='en-reading-evidence-lexicon')!;
+  expect(evidence.sections[3].caution).toContain('不等于');
  });
 });
