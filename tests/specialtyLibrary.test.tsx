@@ -83,3 +83,41 @@ describe('independent bilingual grammar and vocabulary teaching',()=>{
   expect(specialtyRoute('grammar','fr','fr-etre')).not.toContain('/cloud');
  });
 });
+
+
+describe('research-extended grammar and vocabulary paths',()=>{
+ it('includes six complete new units, two languages and two skills',()=>{
+  const ids=['fr-articles-partitive','fr-passe-compose','en-lecture-hedging',
+   'en-academic-collocations','fr-campus-vocab','fr-food-vocab'];
+  for(const id of ids){
+   const unit=SPECIALTY_LESSONS.find(x=>x.id===id);
+   expect(unit,id).toBeDefined();
+   expect(specialtyQuality(unit!),id).toBe(true);
+   expect(unit!.sections.length).toBeGreaterThanOrEqual(4);
+   expect(unit!.questions.length).toBeGreaterThanOrEqual(3);
+   expect(unit!.referenceUrls.length).toBeGreaterThan(0);
+  }
+  expect(SPECIALTY_LESSONS.length).toBeGreaterThanOrEqual(20);
+ });
+ it('avoids false absolutes about modality, French negatives and research causality',()=>{
+  const academic=SPECIALTY_LESSONS.find(x=>x.id==='en-lecture-hedging')!;
+  expect(academic.sections[0].caution).toContain('固定概率');
+  expect(academic.sections.flatMap(x=>x.examples).some(x=>x.target.includes('cannot establish'))).toBe(true);
+  const french=SPECIALTY_LESSONS.find(x=>x.id==='fr-articles-partitive')!;
+  expect(french.sections.flatMap(x=>x.examples).some(x=>x.target.includes("Ce n'est pas une pomme"))).toBe(true);
+  expect(french.sections.flatMap(x=>x.examples).some(x=>x.target.includes("n'y a pas d'eau"))).toBe(true);
+ });
+ it('opens each authored research extension from grammar or vocabulary navigation',()=>{
+  for(const id of ['en-lecture-hedging','fr-food-vocab']){
+   const unit=SPECIALTY_LESSONS.find(x=>x.id===id)!;
+   const navigate=vi.fn();
+   const {container,unmount}=render(<SpecialtyLibrary params={
+    new URLSearchParams('page=specialties&type='+unit.type+'&language='+unit.language+'&topic='+unit.id)
+   } navigate={navigate}/>);
+   expect(container.querySelectorAll('.specialty-chapter')).toHaveLength(unit.sections.length);
+   expect(container.textContent).toContain(unit.title);
+   expect(container.querySelectorAll('.specialty-question')).toHaveLength(unit.questions.length);
+   unmount();
+  }
+ });
+});
