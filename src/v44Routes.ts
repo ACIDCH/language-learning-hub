@@ -1,4 +1,5 @@
 import {COURSES,catalogRoute,courseRoute,languageName} from './v44Courses';
+import {specialtyRoute} from './specialtyLibrary';
 
 export function readRoute(href:string){
  const u=new URL(href,'https://language-hub.invalid');
@@ -19,6 +20,9 @@ export function routeCrumbs(route:Route){
    {label:course.title+' · 阅读',url:courseRoute(course)});
   const tab=params.get('tab');
   if(tab==='speech'||tab==='ipa')crumbs.push({label:tab==='speech'?'跟读':'全文 IPA',url:courseRoute(course,tab)});
+ }else if(page==='specialties'){
+  const kind=params.get('type')==='vocabulary'?'vocabulary':'grammar';
+  crumbs.push({label:'重点学习专题',url:specialtyRoute(kind)}, {label:kind==='grammar'?'语法专题':'词汇专题',url:specialtyRoute(kind)});
  }else if(page==='catalog'){
   const language=params.get('language')||'',track=params.get('track')||'';
   if(language)crumbs.push({label:languageName(language),url:catalogRoute(language)});
