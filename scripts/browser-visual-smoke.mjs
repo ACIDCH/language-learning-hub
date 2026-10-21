@@ -116,7 +116,7 @@ try{
       problems.push(size+' French six-row table missing '+name+': '+JSON.stringify(geom));
      if(name==='enTask1'&&geom.tableRows!==8)
       problems.push(size+' Task1 should show trend pairs and 4-row synthetic chart data '+JSON.stringify(geom));
-     if(!document.querySelector('.specialty-learning-links'))
+     if(!await js("!!document.querySelector('.specialty-learning-links')"))
       problems.push(size+' '+name+' missing prerequisite learning path');
     }
    if(name==='courseIpa'){
