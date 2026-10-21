@@ -35,7 +35,8 @@ export const FRENCH_ARTICLES:CuratedUnit={
   {title:'3. 指认 c’est / ce sont 与存在 il y a',principle:'c’est / ce sont 侧重回答“这是什么／这些是什么”；il y a 回答“某处有什么”。规范的入门表达中 c’est 常接单数名词词组，ce sont 接复数词组；日常口语中也能听到 c’est + 复数，但书面练习先掌握标准区分。',pattern:'C’est + 单数名词词组 / Ce sont + 复数名词词组 / Il y a + 名词词组 + 位置',
    examples:[fr('C’est une chaise.','这是一把椅子。','指认眼前的单件物品。'),fr('Ce sont des chaises.','这些是一些椅子。','指认多件物品。'),fr('Il y a des chaises dans la salle.','房间里有一些椅子。','表达存在，句子不需要指向手里的物品。')]},
   {title:'4. 否定与冠词变化：ne … pas de / d’',principle:'在表示“没有”的普通否定中，不定冠词 un/une/des 通常变成 de，元音前为 d’。但这不是所有否定句的统一规则：être 后作表语的不定冠词一般保留；定冠词表示确定对象或泛指类别时也不直接换 de。',pattern:"Il n’y a pas de + 名词 / Il n’y a pas d’ + 元音名词",
-   examples:[fr("Il n'y a pas de livre ici.",'这里没有书。','Il y a un livre → Il n’y a pas de livre。'),fr("Il n'y a pas d'ordinateur.",'这里没有电脑。','de 在元音前省音成为 d’。'),fr("Ce n'est pas un livre.",'这不是一本书。','être 的表语不定冠词 un 保留，不是 de livre。'),fr("Je n'aime pas les livres.",'我不喜欢书。','les 在这里表示书这一类别，否定后仍是 les。')]},
+   examples:[fr("Il n'y a pas de livre ici.",'这里没有书。','Il y a un livre → Il n’y a pas de livre。'),
+    fr("Il n'y a pas de stylo ici.",'这里没有笔。','stylo 是辅音开头名词，普通否定存在句用 pas de stylo。'),fr("Il n'y a pas d'ordinateur.",'这里没有电脑。','de 在元音前省音成为 d’。'),fr("Ce n'est pas un livre.",'这不是一本书。','être 的表语不定冠词 un 保留，不是 de livre。'),fr("Je n'aime pas les livres.",'我不喜欢书。','les 在这里表示书这一类别，否定后仍是 les。')]},
   {title:'5. 用连接关系写完整描述',principle:'房间描述通常先建立场景，再介绍新物品，随后用已知名词定位，最后表达不存在的物品。sur（在上面）、sous（在下面）、près de（在旁边）之间不能混淆。',pattern:'Voici … → Il y a … → Le/La … est … → Il n’y a pas de …',
    examples:[fr('Il y a une lampe sur le bureau.','书桌上有一盏灯。','先引入新物品 lampe。'),fr('La lampe est près de l’ordinateur.','那盏灯在电脑旁边。','第二句的 la lampe 是已指明的物品。')]}
  ],
