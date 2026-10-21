@@ -159,7 +159,15 @@
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 87,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 372,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-listening-u03.json"
@@ -2227,7 +2235,15 @@
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 52,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 236,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-a1-u06.json"
