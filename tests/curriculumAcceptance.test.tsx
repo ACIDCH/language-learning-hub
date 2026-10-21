@@ -138,4 +138,7 @@ it('supports A1 housing/future and full IELTS headings as actual four-paragraph 
  expect(headings.paragraphs[0].target).toContain('Yet');
  expect(headings.questions.flatMap(x=>x.evidence)).toEqual(['P1','P2','P3','P4']);
  expect(headings.paragraphs[3].target).toContain('combine several methods');
+ expect(headings.languageNotes[0].target).toContain('vi. The history');
+ expect(headings.questions.map(x=>x.answer.slice(0,3))).toEqual(['i. ','ii.','iii','iv.']);
+ expect(headings.task).toContain('v、vi');
 });
