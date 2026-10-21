@@ -92,7 +92,7 @@ export default function CourseReader({course,session,preferences,tab,navigate,on
  <div className="reader-specialty-shortcuts" aria-label="课程相关重点专题">
   {(['grammar','vocabulary'] as const).map(kind=>{
    const topic=linkedSpecialty(kind,course.id);
-   return topic?<button type="button" key={kind} onClick={()=>navigate(specialtyRoute(kind,course.language,topic.id))}>
+   return topic?<button type="button" key={kind} onClick={()=>navigate(specialtyRoute(kind,course.language,topic.id,courseRoute(course,tab==='ipa'||tab==='speech'?tab:'read')))}>
     {kind==='grammar'?'系统学习本课语法':'系统学习本课词汇'} ↗</button>:null;
   })}
  </div>
