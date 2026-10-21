@@ -54,7 +54,12 @@ export const ENGLISH_PATH_SPECIALTIES:SpecialtyLesson[]=[
  e('Room occupancy was recorded at different times.','不同时间段的房间占用情况得到记录。','被动句描述观察。'),
  e('Patterns of facility use were then compared.','随后比较了设施使用的模式。','被动句描述比较操作。'),
  e('However, such data do not directly measure educational achievement.','但这些数据无法直接测量教育成绩。','结论只限定到指标边界。'),
- e('Further evidence would be needed before drawing causal conclusions.','作因果结论前仍需要更多证据。','语气保留审慎条件。')
+ e('Further evidence would be needed before drawing causal conclusions.','作因果结论前仍需要更多证据。','语气保留审慎条件。'),
+ e("The first observation concerns whether the rooms were occupied, not whether students achieved higher scores.","第一种观察涉及房间是否有人使用，而非学生成绩是否更高。","区分使用指标和学习结果。"),
+ e("Because the measures address different questions, the proposed educational benefit cannot be inferred from usage alone.","由于测量回答的是不同问题，不能单凭使用量推断教育收益。","because 引出方法与结论不匹配的原因。"),
+ e("Any interpretation must therefore be limited to the information that was actually collected.","因此，所有解释都必须限制在实际收集的信息范围内。","结论限定在数据边界内。"),
+ e("If learning outcomes are assessed later, those findings should be reported separately and attributed to the relevant source.","如果之后评估学习成果，相关发现应独立报告并注明实际来源。","假设未来情形，不声称已发生。"),
+ e("This separation allows a report to describe the procedure accurately without exaggerating the strength of its conclusions.","这种区分使报告能够准确描述方法，又不夸大结论的证据力度。","归纳方法与表达关系。")
  ],
  referenceUrls:['https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/passives','https://englishprofile.org/?menu=english-vocabulary-profile'],
  sourceNote:'按 en-ielts-reading-u01 的研究阅读和语法拆解目标重写；使用 British Council 被动结构说明作语法核验。'
@@ -106,7 +111,11 @@ export const ENGLISH_PATH_SPECIALTIES:SpecialtyLesson[]=[
  e('I read a report that examined how students use shared study areas.','我读了一份研究学生如何使用共享学习区域的报告。','限制性从句限定是哪份报告。'),
  e('The observations that concerned evening usage were discussed separately.','晚间使用情况的观察记录单独讨论。','限定观察子集。'),
  e('The report, which was intended as an illustration, did not claim a causal effect.','该报告意在说明问题，没有提出因果效应主张。','非限制性从句提供背景。'),
- e('The conclusion was restricted to the patterns that the observations supported.','结论仅限于观察能够支持的模式。','who/that 范围限定与证据边界。')
+ e('The conclusion was restricted to the patterns that the observations supported.','结论仅限于观察能够支持的模式。','who/that 范围限定与证据边界。'),
+ e("Those students who used the rooms during the observation period were not necessarily representative of everyone on campus.","在观察期使用房间的学生并不一定能代表全校学生。","限制性从句明确对象，同时保留代表性限制。"),
+ e("The researchers, whose original aim was to describe usage, did not set out to measure examination results.","这些研究者原本旨在描述使用情况，并未计划测量考试结果。","非限制性 whose 从句解释研究目的。"),
+ e("For this reason, a claim that describes facility demand is narrower than a claim about educational improvement.","因此，描述设施需求的主张比描述教育改善的主张范围更窄。","that describes 是限制性定语从句。"),
+ e("When reading such a report, I would identify the main clause first and then check which information each relative clause adds.","阅读这类报告时，我会先识别主句，再核查每个关系从句增加了什么信息。","说明解读策略，避免修饰关系错位。")
  ],
  referenceUrls:['https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/relative-clauses-defining-relative-clauses','https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/relative-clauses-non-defining-relative-clauses'],
  sourceNote:'与 en-ielts-reading-u03 的段落主旨及长句定位相匹配；本项目重写例句，按 British Council 的定语从句规则交叉校验。'
@@ -159,7 +168,13 @@ export const ENGLISH_PATH_SPECIALTIES:SpecialtyLesson[]=[
  e('The two categories followed different overall patterns.','两类指标总体呈现不同的走势。','概述先描述方向。'),
  e('The first category increased steadily throughout the period.','第一类在整个时期稳定增长。','使用 steadily 限定形态。'),
  e('By contrast, the second category fluctuated before levelling off.','相比之下，第二类先波动，然后趋于平稳。','fluctuate 与 level off 描述不同阶段。'),
- e('The comparison should be supported by the figures shown in the chart.','具体比较应由图表中展示的数据支持。','示范侧重语言组织，不伪装成真实报告。')
+ e('The comparison should be supported by the figures shown in the chart.','具体比较应由图表中展示的数据支持。','示范侧重语言组织，不伪装成真实报告。'),
+ e("In the illustrative first series, the increase appears gradual rather than sudden.","在示意的第一条序列中，上升显得逐步发生而非突变。","仅描述假想走势，不声称有外部图表。"),
+ e("The second series shows short-term changes in both directions, so it would be inaccurate to describe it as a continuous rise.","第二条序列短期内上下变化，因此不能说它一直在上升。","解释 fluctuate 的实际含义。"),
+ e("Once the second series becomes more stable, the phrase levelled off is more suitable than continued to fluctuate.","当第二条序列逐渐稳定后，用 levelled off 比 continued to fluctuate 更合适。","词汇选择依据阶段变化。"),
+ e("The overview should present these contrasting patterns before any supporting measurements are introduced.","在列出具体测量值之前，总览应先交代这两条对照走势。","说明总体描述顺序。"),
+ e("If exact values are available, the final sentences should state the relevant units, start and end points, and differences.","如果有精确数值，最后几句应说明相应单位、起止值及差异。","明确数值写作的证据要求。"),
+ e("Without those values, numerical percentages or comparisons must not be invented.","若缺乏这些数据，不能凭空编写百分比或数值比较。","与实际图表保持一致。")
  ],
  referenceUrls:['https://englishprofile.org/?menu=english-vocabulary-profile','https://www.cambridge.org/core/journals/english-profile-journal/article/a1b2-vocabulary-insights-and-issues-arising-from-the-english-profile-wordlists-project/E57847F6C5574124B2354F9BEEC005FA'],
  sourceNote:'对应既有 Task1 U02 趋势描述主题，原创的百分比仅为词汇形式演示，未声称课程提供某份真实图表。'
@@ -212,7 +227,12 @@ export const ENGLISH_PATH_SPECIALTIES:SpecialtyLesson[]=[
  e('The author reports observations about study-space usage.','作者报告了有关学习空间使用的观察。','先明确信息来源。'),
  e('The figures indicate when some rooms were occupied.','数字表明部分房间何时有人使用。','限定观察对象。'),
  e('However, this information does not necessarily measure learning outcomes.','但这类信息不一定能衡量学习结果。','保留 not necessarily。'),
- e('The evidence therefore supports a narrower conclusion about usage, not a causal claim about achievement.','因此，证据能支持的是使用情况的较窄结论，而不是学业表现的因果断言。','将 claim 范围限制到可证实部分。')
+ e('The evidence therefore supports a narrower conclusion about usage, not a causal claim about achievement.','因此，证据能支持的是使用情况的较窄结论，而不是学业表现的因果断言。','将 claim 范围限制到可证实部分。'),
+ e("A statement about all students would go beyond these observations if the original sample included only some students.","如果原样本只包括部分学生，关于全体学生的陈述就会超出这些观察。","some 与 all 改变命题范围。"),
+ e("Similarly, a report of correlation does not demonstrate that one change caused another.","同样，相关性报告不能证明一种变化导致另一种变化。","关联与因果应区别。"),
+ e("The words may and not necessarily are therefore important because they preserve the strength of the original argument.","因此 may 和 not necessarily 非常重要，因为它们保留了原论证的确定程度。","保留限定语。"),
+ e("If a detail is absent from the passage, the reader should not invent it or treat the omission as a direct contradiction.","如果文章没有某项信息，读者不能自行编造或把缺失当作直接矛盾。","区分信息不足与反证。"),
+ e("Accurate paraphrasing depends on the relationships between claims, observations and limitations, not simply on repeated keywords.","准确改写取决于主张、观察和限制之间的关系，而不只是关键词重复。","从单词辨认升级为逻辑理解。")
  ],
  referenceUrls:['https://englishprofile.org/?menu=english-vocabulary-profile','https://www.cambridge.org/core/journals/english-profile-journal/article/completing-the-english-vocabulary-profile-c1-and-c2-vocabulary/418955FC7ED2455E98A499BC40C2C816'],
  sourceNote:'对接现有 en-ielts-reading-u04 True/False/Not Given 的范围识别任务，例句与解析原创，参考 Cambridge EVP 的义项/语块组织原则。'
