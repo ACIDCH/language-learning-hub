@@ -378,8 +378,9 @@
 .v44 .specialty-example-grid p{overflow-wrap:anywhere}
 .v44 .specialty-table-scroll{max-width:100%}
 @media(max-width:929px){
- .v44 .specialty-topic-list .specialty-topic-group{
-  flex:1 0 100%;width:100%;margin-top:7px;padding-left:4px}
+ /* The topics become a horizontal ribbon here; section headers would occupy
+    entire ribbon pages. Every topic already carries its language/level tag. */
+ .v44 .specialty-topic-list .specialty-topic-group{display:none}
  .v44 .specialty-companion-jump{align-self:start}
 }
 @media(max-width:600px){
