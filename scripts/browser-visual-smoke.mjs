@@ -131,6 +131,8 @@ try{
    ['enReadingu06Integrated','/?course=en-ielts-reading-u06&tab=read','.curriculum-stage'],
    ['enReadingu07Integrated','/?course=en-ielts-reading-u07&tab=read','.curriculum-stage'],
    ['enReadingu08Integrated','/?course=en-ielts-reading-u08&tab=read','.curriculum-stage'],
+   ['frDailyIntegrated','/?course=fr-a1-u05&tab=read','.curriculum-stage'],
+   ['frDirectionsIntegrated','/?course=fr-a1-u09&tab=read','.curriculum-stage'],
   ['speech','/speech-lab','.speaking-lab-columns'],
   ['ipa','/?page=ipa','.ipa-studio'],
   ['settings','/?page=settings&section=appearance','.settings-content'],
@@ -144,7 +146,7 @@ try{
   await js("localStorage.setItem('llh-v44-appearance-v1',JSON.stringify({layout:'standard',theme:'academic',fontSize:17,readerWidth:780,sidebar:true,serif:false,ttsRate:.85,ipa:false,language:'fr',speechApiUrl:''}))");
   for(const [name,path,selector] of routes){
    await go(path,selector);
-   if(['frCourseIntegrated','enCourseIntegrated','delfCourseIntegrated','dalfCourseIntegrated','b2NewsIntegrated','c1MediaIntegrated','a1QuestionsIntegrated','enListeningU03Integrated','frA1LeisureIntegrated','frA1MarketIntegrated','enReadingU02Integrated','frHomeIntegrated','frFutureIntegrated','enHeadingsIntegrated','frPastIntegrated','enReadingTFNGIntegrated','enReadingu05Integrated','enReadingu06Integrated','enReadingu07Integrated','enReadingu08Integrated'].includes(name)){
+   if(['frCourseIntegrated','enCourseIntegrated','delfCourseIntegrated','dalfCourseIntegrated','b2NewsIntegrated','c1MediaIntegrated','a1QuestionsIntegrated','enListeningU03Integrated','frA1LeisureIntegrated','frA1MarketIntegrated','enReadingU02Integrated','frHomeIntegrated','frFutureIntegrated','enHeadingsIntegrated','frPastIntegrated','enReadingTFNGIntegrated','enReadingu05Integrated','enReadingu06Integrated','enReadingu07Integrated','enReadingu08Integrated','frDailyIntegrated','frDirectionsIntegrated'].includes(name)){
     const index=(name==='enCourseIntegrated'||name==='dalfCourseIntegrated'||name==='c1MediaIntegrated'||name==='a1QuestionsIntegrated'||name==='frA1LeisureIntegrated'||name==='frHomeIntegrated'||name==='frFutureIntegrated'||name==='enHeadingsIntegrated')?2:1;
     await js("document.querySelectorAll('.course-study-switcher button')["+index+"]?.click()");
     await wait(()=>js("!!document.querySelector('.course-specialty-topic')"),name+' integrated source course stage');
@@ -152,7 +154,7 @@ try{
     if(intact.chapters<4||intact.questions<4||intact.overflow>5)
      problems.push(size+' '+name+' in-course learning incomplete '+JSON.stringify(intact));
    }
-   if(['a1QuestionsIntegrated','enListeningU03Integrated','frA1LeisureIntegrated','frA1MarketIntegrated','frHomeIntegrated','frFutureIntegrated','enHeadingsIntegrated','frPastIntegrated','enReadingTFNGIntegrated','enReadingu05Integrated','enReadingu06Integrated','enReadingu07Integrated','enReadingu08Integrated'].includes(name)){
+   if(['a1QuestionsIntegrated','enListeningU03Integrated','frA1LeisureIntegrated','frA1MarketIntegrated','frHomeIntegrated','frFutureIntegrated','enHeadingsIntegrated','frPastIntegrated','enReadingTFNGIntegrated','enReadingu05Integrated','enReadingu06Integrated','enReadingu07Integrated','enReadingu08Integrated','frDailyIntegrated','frDirectionsIntegrated'].includes(name)){
     await js("document.querySelectorAll('.course-study-switcher button')[3]?.click()");
     await wait(()=>js("document.querySelectorAll('.reception-study > article.reception-paragraph').length===4"),name+' four source-linked listening paragraphs');
     const evidence=await js("(function(){const p=[...document.querySelectorAll('.reception-study > article.reception-paragraph')];return {paragraphs:p.length,chinese:p.filter(x=>x.textContent.length>100).length,overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-innerWidth}})()");
