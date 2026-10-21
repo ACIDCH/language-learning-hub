@@ -2,8 +2,17 @@ import {useEffect,useRef,useState} from 'react';
 import type {Session} from '@supabase/supabase-js';
 import {cloudClient,cloudRequest} from './v44Connection';
 import type {Course} from './v44Courses';
-export type LearningState={stage?:number;notes?:string;completed?:boolean;answers?:Record<string,number>;[key:string]:unknown};
-export function mergeLearningState(old:LearningState,patch:Partial<LearningState>){return {...old,...patch, ...(patch.answers?{answers:{...old.answers,...patch.answers}}:{})};}
+export type LearningState={stage?:number;notes?:string;completed?:boolean;answers?:Record<string,number>;studyResponses?:Record<string,string>;[key:string]:unknown};
+export function mergeLearningState(old:LearningState,patch:Partial<LearningState>){return {...old,...patch, ...(patch.answers?{answers:{...old.answers,...patch.answers}}:{}),...(patch.studyResponses?{studyResponses:{...old.studyResponses,...patch.studyResponses}}:{})};}
+// The existing JSONB answers column carries a namespaced envelope; numeric answers stay intact.
+export function packFoundationState(state:LearningState){return {...state.answers,__learning:{stage:state.stage,studyResponses:state.studyResponses}};}
+export function unpackFoundationState(answers:Record<string,unknown>|null):Pick<LearningState,'answers'|'stage'|'studyResponses'>{
+ const {__learning,...rest}=answers||{};
+ const extra=__learning&&typeof __learning==='object'?__learning as LearningState:{};
+ return {answers:Object.fromEntries(Object.entries(rest).filter(([,v])=>typeof v==='number')) as Record<string,number>,
+  stage:typeof extra.stage==='number'?extra.stage:0,
+  studyResponses:extra.studyResponses&&typeof extra.studyResponses==='object'?Object.fromEntries(Object.entries(extra.studyResponses).filter(([,v])=>typeof v==='string')):{}};
+}
 export function useCourseProgress(course:Course,session:Session|null){
  const key=course.kind==='main'&&session?'llh-cloud-draft-v1:'+session.user.id+':'+course.id:'llh-v44-draft:'+ (session?.user.id||'guest')+':'+course.id;
  const [state,setState]=useState<LearningState>({}),[ready,setReady]=useState(false),[busy,setBusy]=useState(false),[status,setStatus]=useState('正在读取学习记录…');
@@ -20,7 +29,7 @@ export function useCourseProgress(course:Course,session:Session|null){
     if(course.kind==='foundation'){
      const {data,error}=await cloudClient!.from('foundation_progress').select('answers,notes,completed,updated_at').eq('user_id',session.user.id).eq('lesson_id',course.id).maybeSingle();
      if(error)throw error;
-     if(data){remote={answers:data.answers,notes:data.notes,completed:data.completed};updated=data.updated_at;}
+     if(data){remote={...unpackFoundationState(data.answers),notes:data.notes,completed:data.completed};updated=data.updated_at;}
     }else{
      const {progress}=await cloudRequest<{progress:{state:LearningState;updated_at:string}|null}>('/v1/progress/'+course.id,session.access_token);
      if(progress){remote=progress.state;updated=progress.updated_at;}
@@ -43,7 +52,8 @@ export function useCourseProgress(course:Course,session:Session|null){
   const next=stateRef.current,version=revision.current;setBusy(true);
   try{
    if(course.kind==='foundation'){
-    const {error}=await cloudClient!.from('foundation_progress').upsert({user_id:session.user.id,lesson_id:course.id,answers:next.answers||{},notes:next.notes||'',completed:!!next.completed,updated_at:new Date().toISOString()},{onConflict:'user_id,lesson_id'});
+    if(new TextEncoder().encode(JSON.stringify(packFoundationState(next))).byteLength>3500)throw Error('本课作答超过基础课程云端容量，请精简后重试；完整内容仍保存在本机。');
+    const {error}=await cloudClient!.from('foundation_progress').upsert({user_id:session.user.id,lesson_id:course.id,answers:packFoundationState(next),notes:next.notes||'',completed:!!next.completed,updated_at:new Date().toISOString()},{onConflict:'user_id,lesson_id'});
     if(error)throw error;
    }else await cloudRequest('/v1/progress/'+course.id,session.access_token,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({state:next})});
    if(version===revision.current){try{localStorage.removeItem(key);}catch{}}

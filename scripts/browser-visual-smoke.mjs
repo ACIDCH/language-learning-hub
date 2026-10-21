@@ -224,10 +224,7 @@ try{
     const stageShot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
     writeFileSync(output+'/'+size+'-lesson-five-stages.png',Buffer.from(stageShot.data,'base64'));
     await js("document.querySelector('.reader-head-actions button[aria-pressed]').click()");
-    await wait(()=>js("!!document.querySelector('.reader-layout:not(.tools-hidden) .reader-tools')"),'right study tool');
-    const layout=await js("(function(){const t=document.querySelector('.reader-tools').getBoundingClientRect();const a=document.querySelector('.reader-article').getBoundingClientRect();return {width:t.width,separate:Math.abs(t.left-a.left)>60};})()");
-    if(width===1440&&(layout.width<300||layout.width>425||!layout.separate))problems.push('desktop sidebar geometry '+JSON.stringify(layout));
-    if(width===390&&layout.separate)problems.push('mobile sidebar has not stacked');
+    if(!await js("!!document.querySelector('.reader-layout.tools-hidden')&&!document.querySelector('.reader-tools-empty')"))problems.push('empty tools still reserve a column');
     // Activate the real text-selection inspector rather than testing only its empty placeholder.
     const selectionMade=await js("(function(){const scope=document.querySelector('.reader-selection-scope .lesson-paper .bilingual-target')||document.querySelector('.reader-selection-scope .lesson-paper .lesson-paragraphs');if(!scope)return false;const walker=document.createTreeWalker(scope,NodeFilter.SHOW_TEXT);let n;while((n=walker.nextNode())){if(!n.textContent||n.textContent.trim().length<5)continue;const start=n.textContent.search(/[^\\s]/);const range=document.createRange();range.setStart(n,start);range.setEnd(n,Math.min(start+12,n.textContent.length));window.getSelection().removeAllRanges();window.getSelection().addRange(range);document.dispatchEvent(new Event('selectionchange'));return true;}return false;})()");
     if(!selectionMade)problems.push(size+' lesson cannot select any real paragraph');
@@ -279,7 +276,45 @@ try{
   const shot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
   writeFileSync(output+'/desktop-'+theme+'-lesson.png',Buffer.from(shot.data,'base64'));
  }
- writeFileSync(output+'/results.json',JSON.stringify({checked,problems},null,2));
+ const acceptance=[];
+ const representatives=[['fr-a1-u01',1],['fr-a2-u03',1],['fr-b2-u03',3],['fr-c1-u07',3],['fr-c2-u03',3],['en-ielts-listening-u02',3],['en-ielts-writing-task1-u03',4],['en-ielts-writing-task2-u01',1]];
+ for(const width of [390,768,1440,1920]){
+  await call('Emulation.setDeviceMetricsOverride',{width,height:1000,deviceScaleFactor:1,mobile:width<600});
+  for(const [id,stage] of representatives){
+   await go('/','.catalog-toolbar');
+   await js("localStorage.setItem('llh-v44-appearance-v1',JSON.stringify({theme:'academic',layout:'standard',readerWidth:780}))");
+   await go('/?course='+id+'&tab=read','.course-study-switcher');
+   await js('document.querySelectorAll(".course-study-switcher button")['+stage+'].click()');
+   await wait(()=>js("!!document.querySelector('.curriculum-stage,.lesson-paper')"),'representative content');
+   const metric=await js("(()=>{const a=document.querySelector('.reader-article').getBoundingClientRect(),s=document.querySelector('.reader-selection-scope').getBoundingClientRect();return {article:a.width,content:s.width,unusedRatio:1-s.width/a.width,overflow:document.documentElement.scrollWidth-innerWidth,structured:!!document.querySelector('.curriculum-lesson'),columns:document.querySelector('.reception-parallel')?getComputedStyle(document.querySelector('.reception-parallel')).gridTemplateColumns:null};})()");
+   acceptance.push({id,width,...metric});
+   if(metric.overflow>5||metric.structured&&width>=1440&&metric.unusedRatio>.12)problems.push('usable width '+JSON.stringify({id,width,...metric}));
+   const shot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
+   writeFileSync(output+'/acceptance-'+width+'-'+id+'.png',Buffer.from(shot.data,'base64'));checked++;
+  }
+  for(const id of ['en-ielts-writing-task1-u03','en-ielts-writing-task1-u05','en-ielts-writing-task1-u06']){
+   await go('/?course='+id+'&tab=read','.course-study-switcher');
+   await js('document.querySelectorAll(".course-study-switcher button")[4].click()');
+   await wait(()=>js("!!document.querySelector('.task1-workshop textarea')"),'Task 1 writing');
+   await js("(()=>{const t=document.querySelector('.task1-workshop textarea');Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype,'value').set.call(t,'The diagram provides evidence for this comparison.');t.dispatchEvent(new Event('input',{bubbles:true}));})()");
+   await js("document.querySelector('.task1-workshop>button').click()");
+   if(!await js("document.querySelector('.task1-feedback')?.textContent.includes('还差')"))problems.push(id+' lacks material-specific feedback');
+   await call('Page.reload');
+   await wait(()=>js("!!document.querySelector('.task1-workshop textarea')"),'saved stage after reload');
+   if(!await js("document.querySelector('.task1-workshop textarea').value==='The diagram provides evidence for this comparison.'"))problems.push(id+' lost writing after reload');
+   checked++;
+  }
+  for(const layout of ['standard','immersive'])for(const theme of ['academic','night']){
+   await go('/','.catalog-toolbar');
+   await js("localStorage.setItem('llh-v44-appearance-v1',JSON.stringify({theme:"+JSON.stringify(theme)+",layout:"+JSON.stringify(layout)+",readerWidth:780}))");
+   await go('/?course=fr-c1-u07&tab=read','.course-study-switcher');
+   await js('document.querySelectorAll(".course-study-switcher button")[3].click()');
+   const result=await js("({overflow:document.documentElement.scrollWidth-innerWidth,paragraphs:document.querySelectorAll('.reception-parallel').length,theme:document.body.dataset.theme,layout:document.body.dataset.viewMode})");
+   if(result.overflow>5||result.paragraphs<5||result.theme!==theme||result.layout!==layout)problems.push('reception theme/layout '+JSON.stringify({width,theme,layout,...result}));
+   const shot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});writeFileSync(output+'/reception-'+width+'-'+layout+'-'+theme+'.png',Buffer.from(shot.data,'base64'));checked++;
+  }
+ }
+ writeFileSync(output+'/results.json',JSON.stringify({checked,acceptance,problems},null,2));
  console.log('Checked '+checked+' route/viewport combinations; issues: '+problems.length);
  for(const issue of problems)console.error(issue);
  if(problems.length)process.exitCode=1;

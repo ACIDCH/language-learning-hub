@@ -1,3 +1,7 @@
+import Task1WritingWorkshop,{TASK1_WORKSHOPS} from './Task1WritingWorkshop';
+import ReceptionStudy from './ReceptionStudy';
+import {RECEPTION_LESSONS} from './receptionLessons';
+import {useStudyResponses} from './studyResponses';
 import {useState} from 'react';
 import type {LessonContent,Course,LessonDraft} from './v44Courses';
 import type {FoundationUnit} from './foundationTypes';
@@ -13,8 +17,9 @@ type Props={content:LessonContent;course:Course;stage:number;onChangeStage:(stag
  onOpenSpeech:()=>void;onSaveOutput?:(answer:string)=>void;ttsRate:number;hideTabs?:boolean};
 export default function StructuredLesson({content,course,stage,onChangeStage,onSaveOutput,ttsRate,hideTabs=false}:Props){
  const [expanded,setExpanded]=useState(false);
- const [ownText,setOwnText]=useState('');
- const [responses,setResponses]=useState<Record<number,string>>({});
+ const saved=useStudyResponses(course.id);
+ const ownText=saved.get('writing');
+ const setOwnText=(value:string)=>saved.set('writing',value);
  const [shown,setShown]=useState<Record<number,boolean>>({});
  const draft=content.draft,unit=content.foundation;
  const extension=LESSON_EXTENSIONS[course.id];
@@ -83,6 +88,8 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
       </div>)}</section>
    </div>)}
    {active===3&&<div className="curriculum-stack">
+     {RECEPTION_LESSONS[course.id]&&<ReceptionStudy courseId={course.id} rate={ttsRate}/>}
+     <details open={!RECEPTION_LESSONS[course.id]}><summary>本课基础听读与练习</summary>
      <section><h3>听力</h3><div className="curriculum-actions"><button type="button" onClick={()=>play(listening)}>播放听力</button>
       <button type="button" onClick={()=>setExpanded(v=>!v)} aria-expanded={expanded}>{expanded?'隐藏文本':'显示文本'}</button></div>
       {expanded&&<div className="curriculum-transcript" lang={course.language}>{listening}</div>}</section>
@@ -93,14 +100,17 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
        <p>{extension.exercise}</p></section>}
      <section><h3>理解检查</h3>{lessonQuestions.map((q,i)=>
       <div className="curriculum-question" key={i}><label htmlFor={'question-'+course.id+'-'+i}>{i+1}. {q.prompt}</label>
-       <textarea id={'question-'+course.id+'-'+i} rows={2} value={responses[i]||''}
-        onChange={e=>setResponses(p=>({...p,[i]:e.target.value}))}/>
+       <textarea id={'question-'+course.id+'-'+i} rows={2} disabled={!saved.ready} value={saved.get('answer-'+i)}
+        onChange={e=>saved.set('answer-'+i,e.target.value)}/>
        <button type="button" aria-expanded={!!shown[i]} onClick={()=>setShown(p=>({...p,[i]:!p[i]}))}>
         {shown[i]?'收起参考答案':'核对参考答案'}</button>
        {shown[i]&&<div className="curriculum-answer"><strong>参考答案</strong><p>{q.answer}</p><p>{q.explanation}</p></div>}
       </div>)}</section>
+     </details>
    </div>}
    {active===5&&<div className="curriculum-stack">
+     {TASK1_WORKSHOPS[course.id]&&<Task1WritingWorkshop courseId={course.id}/>}
+     <details open={!TASK1_WORKSHOPS[course.id]}><summary>本课其他表达练习</summary>
      <section><h3>完成表达任务</h3><p className="curriculum-goal">
        {/^Produce an original/u.test(output)?guide.task:output}</p>
       <ol className="curriculum-output-steps">{guide.steps.map((step,i)=><li key={i}>{step}</li>)}</ol></section>
@@ -108,7 +118,7 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
        <h4>{extension.modelTitle}</h4><pre className="curriculum-model">{extension.model}</pre></section>}
      <section><h3>我的表达</h3>
       <label className="curriculum-output-editor">输入自己的完整答案
-       <textarea rows={6} value={ownText} onChange={e=>setOwnText(e.target.value)}
+       <textarea rows={6} disabled={!saved.ready} value={ownText} onChange={e=>setOwnText(e.target.value)}
         placeholder="先完成自己的句子或段落，再和示范对照。"/>
       </label>
       {onSaveOutput&&<button disabled={!ownText.trim()} type="button"
@@ -122,8 +132,9 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
       {extension&&<div className="curriculum-editorial-check"><h4>本课额外核对</h4>
        <ul>{extension.check.map(item=><li key={item}>{item}</li>)}</ul></div>}
        {isDraft&&draft!.self_review&&!draft!.self_review.startsWith('核对任务是否回答完整')&&<details><summary>额外自查说明</summary><p>{draft!.self_review}</p></details>}</section>
+     </details>
    </div>}
-   {!(active===1&&integratedGrammar)&&!(active===2&&integratedVocabulary)&&<BilingualTeaching key={course.id+'-'+active} courseId={course.id} stage={active} content={content}/>}
+   {!(active===5&&TASK1_WORKSHOPS[course.id])&&!(active===3&&RECEPTION_LESSONS[course.id])&&!(active===1&&integratedGrammar)&&!(active===2&&integratedVocabulary)&&<BilingualTeaching key={course.id+'-'+active} courseId={course.id} stage={active} content={content}/>}
   </article>
   <div className="curriculum-navigation">
    <button type="button" disabled={position===0} onClick={()=>onChangeStage(moveStudyStage(active,-1))}>← 上一部分</button>

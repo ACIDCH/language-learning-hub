@@ -1,0 +1,111 @@
+import React,{useState} from 'react';
+import {afterEach,expect,it,vi} from 'vitest';
+import {act,cleanup,fireEvent,render,screen} from '@testing-library/react';
+import LessonReader from '../src/LessonReader';
+import {mergeLearningState,packFoundationState,unpackFoundationState} from '../src/useCourseProgress';
+import {StudyResponseContext} from '../src/studyResponses';
+import CourseSpecialtyStage from '../src/CourseSpecialtyStage';
+import ReceptionStudy from '../src/ReceptionStudy';
+import {RECEPTION_LESSONS} from '../src/receptionLessons';
+import Task1WritingWorkshop,{TASK1_WORKSHOPS} from '../src/Task1WritingWorkshop';
+import {BORROWING_CHART,CHART_MODEL} from '../src/task1ChartData';
+import {task1Evidence,wordCount} from '../src/Task1Feedback';
+afterEach(()=>{cleanup();vi.unstubAllGlobals();});
+
+it('merges opaque old state and answers while round-tripping foundation responses through existing JSONB',()=>{
+ const old={answers:{'0':1},notes:'keep',legacy:{done:true},studyResponses:{'a':'old'}};
+ const next=mergeLearningState(old,{answers:{'1':2},stage:3,studyResponses:{'b':'new'}});
+ expect(next).toMatchObject({answers:{'0':1,'1':2},notes:'keep',legacy:{done:true},studyResponses:{a:'old',b:'new'}});
+ expect(unpackFoundationState(packFoundationState(next))).toEqual({answers:next.answers,stage:3,studyResponses:next.studyResponses});
+ expect(unpackFoundationState({'0':2,__learning:null})).toEqual({answers:{'0':2},stage:0,studyResponses:{}});
+});
+
+it('restores specialty chapter, answer and writing after component destruction',()=>{
+ let saved:Record<string,string>={};
+ function Harness(){const [values,setValues]=useState(saved);return <StudyResponseContext.Provider value={{ready:true,values,change:p=>{saved={...saved,...p};setValues(saved);}}}><CourseSpecialtyStage courseId="fr-b2-u03" kind="grammar" rate={.85}/></StudyResponseContext.Provider>;}
+ const page=render(<Harness/>);
+ const chapter=screen.getAllByRole('navigation')[0].querySelectorAll('button')[1];fireEvent.click(chapter);
+ const fields=page.container.querySelectorAll('textarea');expect(fields.length).toBeGreaterThan(1);
+ fireEvent.change(fields[0],{target:{value:'Ma réponse conservée.'}});
+ fireEvent.change(fields[fields.length-1],{target:{value:'Mon texte complet.'}});
+ page.unmount();const restored=render(<Harness/>);
+ expect(screen.getAllByRole('navigation')[0].querySelectorAll('button')[1].getAttribute('aria-pressed')).toBe('true');
+ expect((restored.container.querySelector('textarea') as HTMLTextAreaElement).value).toBe('Ma réponse conservée.');
+ expect(screen.getByDisplayValue('Mon texte complet.')).toBeTruthy();
+});
+
+it('provides substantial aligned paragraphs, answer evidence and explicit uncertainty',()=>{
+ for(const [id,u] of Object.entries(RECEPTION_LESSONS)){
+  expect(wordCount(u.paragraphs.map(p=>p.target).join(' ')),id).toBeGreaterThan(350);
+  expect(u.paragraphs.every(p=>p.zh.length>90),id).toBe(true);
+  expect(u.questions.every(q=>q.evidence.length&&q.evidence.every(e=>u.paragraphs.some(p=>p.id===e))),id).toBe(true);
+  expect(u.questions.every(q=>q.answer&&q.why),id).toBe(true);
+ }
+ expect(RECEPTION_LESSONS['fr-b2-u03'].paragraphs[2].target).toContain('si le projet était adopté');
+ expect(RECEPTION_LESSONS['fr-c1-u07'].paragraphs[3].target).toContain("Si le bilan avait distingué");
+ expect(RECEPTION_LESSONS['fr-c2-u03'].paragraphs[2].target).toContain('Du moins ai-je voulu le croire');
+});
+
+it('handles paragraph replay, pause/resume, rate changes, stale events, errors and unmount cancellation',()=>{
+ const voices:any[]=[];const synth={speak:vi.fn((u:any)=>voices.push(u)),cancel:vi.fn(),pause:vi.fn(),resume:vi.fn()};
+ vi.stubGlobal('speechSynthesis',synth);vi.stubGlobal('SpeechSynthesisUtterance',class {constructor(public text:string){}});
+ const page=render(<ReceptionStudy courseId="fr-b2-u03" rate={.85}/>);
+ fireEvent.click(screen.getByRole('button',{name:'朗读 P1'}));expect(voices[0].lang).toBe('fr-FR');
+ fireEvent.click(screen.getByRole('button',{name:'暂停'}));expect(synth.pause).toHaveBeenCalled();
+ fireEvent.click(screen.getByRole('button',{name:'继续'}));expect(synth.resume).toHaveBeenCalled();
+ fireEvent.click(screen.getByRole('button',{name:'下一段'}));expect(voices[1].text).toBe(RECEPTION_LESSONS['fr-b2-u03'].paragraphs[1].target);
+ fireEvent.change(screen.getByRole('combobox'),{target:{value:'1.15'}});
+ fireEvent.click(screen.getByRole('button',{name:'播放 / 回听本段'}));expect(voices[2].rate).toBe(1.15);
+ fireEvent.click(screen.getByRole('button',{name:'停止'}));voices[0].onend();expect(screen.getByRole('status').textContent).toBe('已停止');
+ fireEvent.click(screen.getByRole('button',{name:'朗读 P1'}));
+ act(()=>voices[3].onerror());expect(screen.getByRole('status').textContent).toContain('失败');
+ page.unmount();expect(synth.cancel.mock.calls.length).toBeGreaterThan(4);
+});
+
+it('keeps private manuscripts while providing the same mapped listening and writing supplements',()=>{
+ const {rerender}=render(<LessonReader courseId="fr-c1-u07" privateSource text="Private source remains intact." stage={3} onChangeStage={()=>{}}/>);
+ expect(screen.getByRole('region',{name:'逐段双语听读'})).toBeTruthy();
+ expect(screen.getByText('Private source remains intact.')).toBeTruthy();
+ rerender(<LessonReader courseId="en-ielts-writing-task1-u03" privateSource text="Private chart practice remains intact." stage={5} onChangeStage={()=>{}}/>);
+ expect(screen.getByRole('region',{name:'完整图示写作练习'})).toBeTruthy();
+ expect(screen.getByText('Private chart practice remains intact.')).toBeTruthy();
+});
+
+it('ends silent speech-engine startup instead of leaving an endless playing indicator',()=>{
+ vi.useFakeTimers();
+ vi.stubGlobal('speechSynthesis',{speak:vi.fn(),cancel:vi.fn()});
+ vi.stubGlobal('SpeechSynthesisUtterance',class {constructor(public text:string){}});
+ render(<ReceptionStudy courseId="fr-b2-u03" rate={.85}/>);
+ fireEvent.click(screen.getByRole('button',{name:'朗读 P1'}));
+ act(()=>vi.advanceTimersByTime(8000));
+ expect(screen.getByRole('status').textContent).toContain('未能启动');
+ vi.useRealTimers();
+});
+
+it('shows a readable fallback when the browser has no speech engine',()=>{
+ vi.stubGlobal('speechSynthesis',undefined);
+ render(<ReceptionStudy courseId="en-ielts-listening-u02" rate={.85}/>);
+ fireEvent.click(screen.getByRole('button',{name:'朗读 P1'}));
+ expect(screen.getByRole('status').textContent).toContain('不支持');
+ expect(screen.getByText(RECEPTION_LESSONS['en-ielts-listening-u02'].paragraphs[0].zh)).toBeTruthy();
+});
+
+it('runs all three input → writing → source-check loops with a saved answer',()=>{
+ for(const [id,visual] of Object.entries(TASK1_WORKSHOPS)){
+  const {unmount}=render(<Task1WritingWorkshop courseId={id}/>);
+  expect(screen.getAllByRole('img').length).toBeGreaterThan(0);
+  fireEvent.change(screen.getByRole('textbox',{name:'我的 Task 1 全文'}),{target:{value:'The figure shows changes.'}});
+  fireEvent.click(screen.getByRole('button',{name:'核对本次写作与源材料'}));
+  expect(screen.getByRole('region',{name:'依据材料核对写作'}).textContent).toContain('还差 146 词');
+  for(const evidence of task1Evidence(visual))expect(screen.getByText(evidence)).toBeTruthy();
+  unmount();
+ }
+});
+it('keeps chart/table/model numbers and comparison arithmetic consistent',()=>{
+ expect(BORROWING_CHART.years).toEqual([2010,2015,2020]);
+ for(let i=0;i<3;i++)expect(BORROWING_CHART.series.reduce((n,s)=>n+s.values[i],0)).toBe(100);
+ expect(BORROWING_CHART.series[0].values[2]-BORROWING_CHART.series[0].values[0]).toBe(40);
+ expect(wordCount(CHART_MODEL.map(p=>p.target).join(' '))).toBeGreaterThanOrEqual(150);
+ const {container}=render(<Task1WritingWorkshop courseId="en-ielts-writing-task1-u03"/>);
+ expect([...container.querySelectorAll('tbody tr')].map(r=>r.textContent)).toEqual(['20102080','20153565','20206040']);
+});

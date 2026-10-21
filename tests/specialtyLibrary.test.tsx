@@ -2,7 +2,7 @@ import React from 'react';
 import {afterEach,describe,expect,it,vi} from 'vitest';
 import {cleanup,fireEvent,render,screen} from '@testing-library/react';
 import CourseCatalog from '../src/CourseCatalog';
-import SpecialtyLibrary from '../src/SpecialtyLibrary';
+import SpecialtyLibrary from '../src/SpecialtyLibraryView';
 import {SPECIALTY_LESSONS,linkedSpecialties,linkedSpecialty,specialtyQuality,specialtyRoute} from '../src/specialtyLibrary';
 import {routeCrumbs,readRoute} from '../src/v44Routes';
 import {orderedSpecialties,adjacentSpecialties,pairedSpecialties} from '../src/specialtyLearningPath';

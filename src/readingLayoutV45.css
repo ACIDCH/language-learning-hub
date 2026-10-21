@@ -366,6 +366,26 @@ body[data-view-mode="focus"] .v44 .reader-page{
 }
 .v44 .reader-page .reader-layout:not(.tools-hidden) .reader-article{min-width:0}
 .v44 .reader-layout.tools-hidden .reader-article{width:100%}
+/* Structured lessons use the full workspace; the width preference still governs
+   continuous prose. Bilingual pairs and tables occupy the available columns. */
+.v44 .reader-selection-scope:has(.curriculum-lesson),.v44 .reader-selection-scope:has(.course-enrichment){max-width:100%!important;width:100%}
+.v44 .curriculum-reading,.v44 .course-specialty-reading>p,
+.v44 .curriculum-goal{max-width:var(--readerWidth,780px)}
+.v44 .reception-parallel{display:grid;gap:18px;grid-template-columns:minmax(0,1fr);min-width:0}
+.v44 .reception-parallel p{min-width:0;max-width:var(--readerWidth,780px);line-height:1.85;overflow-wrap:anywhere;margin:8px 0}
+.v44 .reception-paragraph{border-bottom:1px solid var(--border);padding:14px 0;scroll-margin-top:100px}
+.v44 .reception-paragraph[aria-current="true"]{border-left:3px solid var(--accent);padding-left:14px}
+.v44 .reception-paragraph header,.v44 .reception-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.v44 .reception-study textarea,.v44 .task1-workshop textarea{display:block;width:100%;box-sizing:border-box;resize:vertical;min-height:90px;font:inherit;padding:12px;background:var(--paneSoft);color:var(--text);border:1px solid var(--border);border-radius:8px}
+.v44 .task1-workshop{min-width:0}.v44 .task1-feedback{padding:16px;background:var(--paneSoft);margin:12px 0}
+.v44 .task1-evidence>svg{width:100%;height:auto;max-height:480px}.v44 .task1-evidence table{width:100%;border-collapse:collapse}
+.v44 .task1-evidence th,.v44 .task1-evidence td{padding:10px;border-bottom:1px solid var(--border)}
+@media(min-width:1280px){
+ .v44 .reception-parallel{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+ .v44 .course-specialty-pairs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 26px}
+ .v44 .reader-layout:not(.tools-hidden) .reception-parallel,
+ .v44 .reader-layout:not(.tools-hidden) .course-specialty-pairs{grid-template-columns:1fr}
+}
 .v44 a:focus-visible,.v44 button:focus-visible,
 .v44 input:focus-visible,.v44 select:focus-visible,
 .v44 textarea:focus-visible,.v44 summary:focus-visible{

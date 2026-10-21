@@ -1,3 +1,4 @@
+import {useStudyResponses} from './studyResponses';
 import {useState} from 'react';
 import {linkedSpecialties,type SpecialtyKind,type SpecialtyLesson} from './specialtyLibrary';
 import {speakIpaText} from './IpaText';
@@ -6,10 +7,12 @@ import './curriculumStudy.css';
 
 /** Shows a complete, authored specialty *inside* its mapped main-course stage. */
 function CourseSpecialtyTopic({unit,rate,onSaveOutput}:{unit:SpecialtyLesson;rate:number;onSaveOutput?:(answer:string)=>void}){
- const [active,setActive]=useState(0);
+ const saved=useStudyResponses(unit.id);
+ const active=Math.min(unit.sections.length-1,Math.max(0,Number(saved.get('chapter'))||0));
+ const setActive=(n:number)=>saved.set('chapter',String(n));
  const [shown,setShown]=useState<Record<number,boolean>>({});
- const [answer,setAnswer]=useState<Record<number,string>>({});
- const [writing,setWriting]=useState('');
+ const writing=saved.get('writing');
+ const setWriting=(value:string)=>saved.set('writing',value);
  const part=unit.sections[active];
  return <section className="course-specialty-topic" aria-label={unit.title}>
   <header className="course-specialty-topic-title"><h3>{unit.title}</h3><p>{unit.objective}</p></header>
@@ -41,8 +44,8 @@ function CourseSpecialtyTopic({unit,rate,onSaveOutput}:{unit:SpecialtyLesson;rat
    <h4>应用练习</h4>
    {unit.questions.map((q,i)=><div className="course-specialty-question" key={i}>
     <label htmlFor={'inline-'+unit.id+'-'+i}>{i+1}. {q.question}</label>
-    <textarea id={'inline-'+unit.id+'-'+i} rows={2} value={answer[i]||''}
-     onChange={e=>setAnswer(a=>({...a,[i]:e.target.value}))}/>
+    <textarea id={'inline-'+unit.id+'-'+i} rows={2} disabled={!saved.ready} value={saved.get('answer-'+i)}
+     onChange={e=>saved.set('answer-'+i,e.target.value)}/>
     <button type="button" aria-expanded={!!shown[i]}
      onClick={()=>setShown(old=>({...old,[i]:!old[i]}))}>{shown[i]?'收起解析':'核对答案与解析'}</button>
     {shown[i]&&<div className="course-specialty-answer"><strong>{q.answer}</strong><p>{q.why}</p></div>}
@@ -51,7 +54,7 @@ function CourseSpecialtyTopic({unit,rate,onSaveOutput}:{unit:SpecialtyLesson;rat
   <details className="course-specialty-production"><summary>综合表达与范文</summary>
    <p>{unit.output}</p>
    <label htmlFor={'course-output-'+unit.id}>我的完整表达</label>
-   <textarea id={'course-output-'+unit.id} rows={7} value={writing} onChange={event=>setWriting(event.target.value)}/>
+   <textarea id={'course-output-'+unit.id} rows={7} disabled={!saved.ready} value={writing} onChange={event=>setWriting(event.target.value)}/>
    {onSaveOutput&&<button type="button" disabled={!writing.trim()} onClick={()=>onSaveOutput(writing)}>加入本课笔记</button>}
    <details><summary>查看中外文范文</summary>
     {unit.modelParagraphStarts

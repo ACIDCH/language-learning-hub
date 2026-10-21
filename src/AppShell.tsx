@@ -2,7 +2,7 @@ import {lazy,Suspense,useEffect,useState,type CSSProperties} from 'react';
 import type {Session} from '@supabase/supabase-js';
 import CourseCatalog from './CourseCatalog';
 import CourseReader from './CourseReader';
-import SpecialtyLibrary from './SpecialtyLibrary';
+import SpecialtyLibrary from './SpecialtyLibraryView';
 import {specialtyRoute} from './specialtyLibrary';
 import GlobalSettings from './GlobalSettings';
 import {COURSES,languageName} from './v44Courses';

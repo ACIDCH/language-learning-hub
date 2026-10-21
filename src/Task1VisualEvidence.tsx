@@ -1,8 +1,10 @@
 import './task1VisualEvidence.css';
+import {BORROWING_CHART} from './task1ChartData';
 
 /** Original task-specific figures backed by the exact authored lesson data, never an official IELTS sample. */
-export type VisualExerciseId='en-process-report-grammar'|'en-map-change-lexicon';
+export type VisualExerciseId='en-process-report-grammar'|'en-map-change-lexicon'|'en-chart-comparison';
 export const VISUAL_EXERCISES={
+ 'en-chart-comparison':{kind:'chart',title:'借阅渠道占比 · 原创统计图与数据表'},
  'en-process-report-grammar':{
   kind:'process',title:'废纸制成纸张 · 六阶段原创流程',
   items:['Used paper collected','Paper sorted','Mixed with water','Pulp cleaned','Pressed into sheets','Dried and packed']
@@ -18,7 +20,19 @@ export const VISUAL_EXERCISES={
  }
 } as const;
 export function hasTask1VisualEvidence(id:string):id is VisualExerciseId{
- return id==='en-process-report-grammar'||id==='en-map-change-lexicon';
+ return id==='en-process-report-grammar'||id==='en-map-change-lexicon'||id==='en-chart-comparison';
+}
+
+function BorrowingChart(){
+ const d=BORROWING_CHART;
+ return <><svg viewBox="0 0 760 420" role="img" aria-label="2010、2015、2020年线上与校内借阅百分比柱图，精确数值见下方表格">
+  <text x="30" y="26" fill="currentColor">{d.title} (%)</text>
+  {[0,20,40,60,80,100].map(n=><g key={n}><line x1="60" x2="730" y1={340-n*2.6} y2={340-n*2.6} stroke="currentColor" opacity=".15"/><text x="16" y={345-n*2.6} fill="currentColor">{n}</text></g>)}
+  {d.years.map((year,i)=><g key={year}><text x={120+i*220} y="370" fill="currentColor">{year}</text>{d.series.map((s,j)=><g key={s.name}>
+   <rect x={95+i*220+j*70} y={340-s.values[i]*2.6} width="54" height={s.values[i]*2.6} fill={j?'#66819c':'#2457cc'}/><text x={107+i*220+j*70} y={330-s.values[i]*2.6} fill="currentColor">{s.values[i]}%</text>
+  </g>)}</g>)}
+  <text x="60" y="408" fill="currentColor">Left: Online · Right: On campus</text>
+ </svg><table><caption>题目数据（虚构教学数据）</caption><thead><tr><th>Year</th>{d.series.map(s=><th key={s.name}>{s.name} (%)</th>)}</tr></thead><tbody>{d.years.map((y,i)=><tr key={y}><th scope="row">{y}</th>{d.series.map(s=><td key={s.name}>{s.values[i]}</td>)}</tr>)}</tbody></table></>;
 }
 
 function ProcessDiagram(){
@@ -66,7 +80,7 @@ export default function Task1VisualEvidence({lessonId}:{lessonId:string}){
  return <section className="task1-evidence" aria-label="本课实际视觉练习材料">
   <h3>{VISUAL_EXERCISES[lessonId].title}</h3>
   <p className="task1-evidence-caption">以下是本课原创练习图，不是 IELTS 官方试卷。根据图中明确标注的信息完成写作，不补充未提供的时间、数量或原因。</p>
-  {isProcess?<ProcessDiagram/>:
+  {lessonId==='en-chart-comparison'?<BorrowingChart/>:isProcess?<ProcessDiagram/>:
    <div className="task1-map-compare">
     <figure><SiteMap after={false}/><figcaption>原有布局 · Before</figcaption></figure>
     <figure><SiteMap after/><figcaption>规划后布局 · After</figcaption></figure>
