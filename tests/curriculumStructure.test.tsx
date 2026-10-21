@@ -316,6 +316,7 @@ describe('fully mapped main-course grammar and vocabulary are directly teachable
   fireEvent.click(screen.getByRole('button',{name:/时间线：先前动作/}));
   expect(container.textContent).toContain('le cours avait déjà commencé');
   expect(container.querySelectorAll('.course-specialty-question')).toHaveLength(4);
+  expect(container.querySelector('.course-specialty-production')).not.toBeNull();
   expect(container.querySelector('.course-specialty-answer')).toBeNull();
   fireEvent.click(screen.getAllByRole('button',{name:'核对答案与解析'})[0]);
   expect(container.querySelector('.course-specialty-answer')).not.toBeNull();
@@ -339,5 +340,34 @@ describe('fully mapped main-course grammar and vocabulary are directly teachable
    stage={1} onChangeStage={vi.fn()} onOpenSpeech={vi.fn()} ttsRate={.85}/>);
   expect(container.querySelector('.course-specialty-inline')).toBeNull();
   expect(container.querySelector('.curriculum-concepts')).not.toBeNull();
+ });
+});
+
+
+describe('mapped B2/C1 written outputs remain inside the exact source course',()=>{
+ it('allows drafting and saving the DELF B2 answer without visiting a separate specialty page',()=>{
+  const c=COURSES.find(x=>x.id==='fr-b2-u06')!;
+  const courseData={...data,draft:{...data.draft!,id:c.id}} as LessonContent;
+  const save=vi.fn();
+  const {container}=render(<StructuredLesson content={courseData} course={c}
+   stage={1} onChangeStage={vi.fn()} onOpenSpeech={vi.fn()} onSaveOutput={save} ttsRate={.85}/>);
+  expect(container.querySelector('.course-specialty-inline')).not.toBeNull();
+  expect(container.textContent).toContain('正式论证写作');
+  const writing=screen.getByLabelText('我的完整表达');
+  fireEvent.change(writing,{target:{value:'Madame la Directrice, je souhaite proposer une discussion.'}});
+  fireEvent.click(screen.getByRole('button',{name:'加入本课笔记'}));
+  expect(save).toHaveBeenCalledWith('Madame la Directrice, je souhaite proposer une discussion.');
+  expect(container.querySelector('.course-specialty-model-paragraph')).not.toBeNull();
+ });
+ it('contains both invented synthesis documents in the mapped C1 vocabulary stage',()=>{
+  const c=COURSES.find(x=>x.id==='fr-c1-u03')!;
+  const courseData={...data,draft:{...data.draft!,id:c.id}} as LessonContent;
+  const {container}=render(<StructuredLesson content={courseData} course={c}
+   stage={2} onChangeStage={vi.fn()} onOpenSpeech={vi.fn()} ttsRate={.85}/>);
+  expect(container.querySelector('.course-specialty-inline')).not.toBeNull();
+  expect(container.textContent).toContain('Document A');
+  expect(container.textContent).toContain('Document B');
+  expect(container.textContent).toContain('虚构');
+  expect(container.querySelectorAll('.course-specialty-question')).toHaveLength(4);
  });
 });
