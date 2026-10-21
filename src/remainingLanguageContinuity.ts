@@ -144,7 +144,7 @@ export const REMAINING_LANGUAGE_CONTINUITY:SpecialtyLesson[]=[
  ex('“Are the rooms available?” → He asked whether the rooms were available.','“房间可用吗？”→ 他询问房间是否可用。','whether 后恢复 rooms were 陈述词序。'),
  ex('“When does the lecture begin?” → She asked when the lecture began.','“讲座什么时候开始？”→ 她询问讲座何时开始。','间接问句不用 does，谓语为 began。'),
  ex('“Why did they leave?” → He asked why they had left.','“他们为何离开？”→ 他询问他们离开的原因。','保留 why，删去原来的 did 倒装。')
- ],'He asked where did they go 是把直接问句词序误带入间接问句；应为 where they had gone / where they went。',
+ ],'He asked where did they go 是把直接问句词序误带入间接问句；应为 where they had gone / where they went。'),
  sec('04 把观点、问题与证据边界写成可靠摘要',
  '听力笔记先区分谁提出研究问题、谁报告观察、谁提醒限制。转述时同时保留 may、might、not necessarily 等限定，不能将提问改写成已证实的结论。',
  'question → speaker attribution → observation → limitation',[
