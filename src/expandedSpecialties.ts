@@ -133,7 +133,7 @@ export const EXPANDED_SPECIALTIES:SpecialtyLesson[]=[
   s('04 Limitations：识别、承认与处理','identify a limitation、acknowledge a limitation、address a limitation 含义不同，分别指发现、承认、着手处理限制。准确词组有助于建立清晰完整的讨论段落。','identify · acknowledge · address a limitation',[
    e('The study acknowledges several limitations.','研究承认存在若干局限。','acknowledge 指正式承认。'),
    e('Further measurements could address this limitation.','进一步测量可能有助于处理这项局限。','address 是设法回应，不意味着完全消除。'),
-   e('The conclusion should reflect the available evidence.','结论应体现现有证据的范围。','refect 在此为与证据一致，避免夸张。')],'address a limitation 不等于 eliminate a limitation；学术行文须保留谨慎语气。')
+   e('The conclusion should reflect the available evidence.','结论应体现现有证据的范围。','reflect 在此为与证据一致，避免夸张。')],'address a limitation 不等于 eliminate a limitation；学术行文须保留谨慎语气。')
  ],
  questions:[
   {question:'改错：We collected many evidences.',answer:'We collected a lot of evidence. / We collected several pieces of evidence.',why:'evidence 在一般意义上是不可数名词。'},
