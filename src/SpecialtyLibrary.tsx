@@ -1,4 +1,4 @@
-import {useMemo,useState} from 'react';
+import {useEffect,useMemo,useState} from 'react';
 import {COURSES,courseRoute,languageName} from './v44Courses';
 import {SPECIALTY_LESSONS,specialtyRoute,type SpecialtyLesson,type SpecialtyKind,type SpecialtyLanguage,specialtyQuality} from './specialtyLibrary';
 import {speakIpaText} from './IpaText';
@@ -110,6 +110,26 @@ export default function SpecialtyLibrary({params,navigate}:{params:URLSearchPara
  const related=COURSES.find(c=>c.id===lesson?.unitLink);
  const [selectedChapter,setSelectedChapter]=useState<{topic:string;index:number}|null>(null);
  const sectionIndex=selectedChapter?.topic===lesson?.id?selectedChapter.index:0;
+ useEffect(()=>{
+  if(!lesson)return;
+  const topicId=lesson.id;
+  let frame=0;
+  const sync=()=>{
+   if(frame)return;
+   frame=requestAnimationFrame(()=>{
+    frame=0;
+    const chapters=[...document.querySelectorAll<HTMLElement>('.specialty-chapter')];
+    if(!chapters.length)return;
+    let active=0;
+    chapters.forEach((el,i)=>{if(el.getBoundingClientRect().top<=185)active=i;});
+    setSelectedChapter(old=>old?.topic===topicId&&old.index===active?old:{topic:topicId,index:active});
+   });
+  };
+  sync();
+  window.addEventListener('scroll',sync,{passive:true});
+  window.addEventListener('resize',sync);
+  return ()=>{window.removeEventListener('scroll',sync);window.removeEventListener('resize',sync);if(frame)cancelAnimationFrame(frame);};
+ },[lesson?.id]);
  const returnTo=params.get('returnTo');
  // Never navigate to arbitrary URLs from an untrusted query parameter.
  const permittedReturns=related?['read','ipa','speech'].map(tab=>courseRoute(related,tab)):[];
