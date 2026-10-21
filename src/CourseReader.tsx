@@ -79,7 +79,7 @@ export default function CourseReader({course,session,preferences,tab,navigate,on
  onChangeStage={stage=>progress.change({stage})} ttsRate={preferences.ttsRate}
  onOpenSpeech={()=>navigate(courseRoute(course,'speech'))} onSaveOutput={appendNote}/>:
  <LessonReader text={text} content={content} privateSource={!!privateBody} language={course.language} courseId={course.id}
- stage={Number(progress.state.stage)||0} onChangeStage={stage=>progress.change({stage})}
+ stage={Number(progress.state.stage)||0} onChangeStage={stage=>progress.change({stage})} onSaveOutput={appendNote}
  defaultIpa={preferences.ipa} ttsRate={preferences.ttsRate}/>}</div>}
  {privateBody&&content&&<details className="source-appendix"><summary>备用课文</summary><div className="lesson-paragraphs">{content.text}</div></details>}
  {content?.appendices.map((a,i)=><details key={i} className="source-appendix"><summary>{a.title}</summary><div className="lesson-paragraphs">{a.text}</div></details>)}
