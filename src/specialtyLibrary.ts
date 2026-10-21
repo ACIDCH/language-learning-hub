@@ -22,6 +22,8 @@ export type SpecialtyLesson={
  title:string;subtitle:string;unitLink:string;prerequisite:string;objective:string;
  sections:LearningSection[];questions:LearningQuestion[];
  output:string;model:LearningExample[];
+ /** Segment indices for full essays; ordinary lesson examples remain sentence cards. */
+ modelParagraphStarts?:number[];
  referenceUrls:string[];sourceNote:string;
 };
 const F='https://laits.utexas.edu/tex/gr/';
