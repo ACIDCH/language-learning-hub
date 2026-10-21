@@ -401,6 +401,7 @@ describe('actual B1–C1 French and IELTS Task 2 learning chain',()=>{
   expect(words).toBeLessThanOrEqual(400);
   expect(vocab.output).toContain('不少于 250 词');
   expect(vocab.model.every(x=>x.zh.length>5&&x.analysis.length>3)).toBe(true);
+  expect(vocab.modelParagraphStarts).toEqual([0,3,8,13,17]);
   const grammar=SPECIALTY_LESSONS.find(x=>x.id==='en-task2-contrast-cohesion')!;
   expect(grammar.output).toContain('段落训练');
   expect(grammar.output).toContain('不是完整 IELTS Task 2');
@@ -420,6 +421,7 @@ describe('actual B1–C1 French and IELTS Task 2 learning chain',()=>{
   } navigate={vi.fn()}/>);
   expect(container.querySelectorAll('.specialty-chapter')).toHaveLength(4);
   expect(container.querySelectorAll('.specialty-question')).toHaveLength(renderUnit.questions.length);
-  expect(container.textContent).not.toContain('AI');
+  expect(container.querySelectorAll('.specialty-essay-paragraph')).toHaveLength(5);
+  expect(container.querySelectorAll('.specialty-essay-notes')).toHaveLength(5);
  });
 });
