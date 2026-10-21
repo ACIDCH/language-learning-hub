@@ -2,7 +2,7 @@ import type {SpecialtyLesson,SpecialtyKind,SpecialtyLanguage} from './specialtyL
 
 const PATH_ORDER:Record<SpecialtyLanguage,Record<SpecialtyKind,string[]>>={
  fr:{
-  grammar:['fr-etre','fr-avoir','fr-possessive-determiners-a1','fr-articles','fr-er','fr-questions-a1','fr-a1-information-questions','fr-imperative-directions-a1','fr-adjective-agreement-a1',
+  grammar:['fr-etre','fr-avoir','fr-possessive-determiners-a1','fr-articles','fr-er','fr-questions-a1','fr-a1-leisure-verbs','fr-imperative-directions-a1','fr-adjective-agreement-a1',
    'fr-futur-proche-a1','fr-articles-partitive','fr-passe-compose','fr-imparfait-a2','fr-object-pronouns-a2','fr-comparisons-a2','fr-futur-simple-a2','fr-negative-scope-a2',
    'fr-pluperfect-narration-b1','fr-conditional-hypothesis-b1','fr-subjunctive-b1','fr-relative-pronouns-b1','fr-mood-concession-b2','fr-past-conditional-regret-b2','fr-b2-reported-news-reading','fr-b2-formal-argument-writing'],
   vocabulary:['fr-greetings','fr-campus-vocab','fr-a1-clarification-lexicon','fr-countries-languages-lexicon','fr-family','fr-objects','fr-room',
