@@ -152,9 +152,9 @@ export const ENGLISH_PATH_SPECIALTIES:SpecialtyLesson[]=[
  sec('04 从总体概述到具体比较',
  'Task 1 报告中先识别最重要的总体特征，再挑选两到三个确有数据支持的比较。句子必须交代指标、时间段、变化方向；没有具体数值时可以写定性概述，不能捏造百分比。',
  'overview → main change → comparison → measured detail',[
- e('Overall, one category increased while the other declined.','总体而言，一类上升，另一类下降。','总览只对比方向，不虚构数字。'),
- e('The first category was consistently higher than the second.','第一类在整个时期一直高于第二类。','consistently higher 需要图上每个相应时段都支持。'),
- e('By the end of the period, the gap had narrowed.','到这个时期结束时，二者差距已经缩小。','narrowed 描述类目间差距。')
+ e('Overall, Category A rose steadily, while Category B fluctuated and then stabilised.','总体上，A 类稳定增长，B 类先波动后趋稳。','总览与本节虚构表格的实际走势完全一致。'),
+ e('Category A overtook Category B in the third period.','A 类在第三期超过了 B 类。','第3期 A 为30、B 为28，前两期则是 B 较高。'),
+ e('The gap changed from a ten-unit lead for B to a seven-unit lead for A.','差距从 B 领先10个单位变为 A 领先7个单位。','明确比较方向发生了反转，不能只用 narrowed 掩盖变化。')
  ],'不应为了“高级词汇”而写 dramatically、approximately 或 doubled，除非图表数据确实支持。',
  {title:'教学用示例数据（虚构，单位：units）',columns:['时期','Category A','Category B'],rows:[['第1期','20','30'],['第2期','25','32'],['第3期','30','28'],['第4期','35','28']],note:'本表为本课程自拟的语言练习数据，不是任何外部真实统计。先读数，再写趋势与比较。'})
  ],
