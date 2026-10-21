@@ -1,6 +1,7 @@
 import {CHINESE_LESSON_NOTES,type ParallelSentence} from './bilingualTeachingNotes';
 import {ENGLISH_ORIGINAL_BILINGUAL} from './bilingualOriginalEnglish';
-import FrenchArticleModule from './FrenchArticleModule';
+import CuratedLesson from './CuratedLesson';
+import {curatedUnitForSource} from './curatedCurriculum';
 import type {LessonContent} from './v44Courses';
 function Parallel({entry}:{entry:ParallelSentence}){
  return <div className="bilingual-line">
@@ -12,10 +13,10 @@ function Parallel({entry}:{entry:ParallelSentence}){
 export default function BilingualTeaching({courseId,stage,content,privateSource=false,sourceText}:{
  courseId:string;stage:number;content?:LessonContent|null;privateSource?:boolean;sourceText?:string
 }){
+ const curated=curatedUnitForSource(courseId,sourceText||'',privateSource);
+ if(curated)return <CuratedLesson unit={curated} stage={stage}/>;
  const normalize=(value:string)=>value.toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g,' ');
  const source=normalize(sourceText||'');
- if(privateSource&&courseId.startsWith('fr-')&&source.includes('un/une/des')&&source.includes('il y a'))
-  return <FrenchArticleModule stage={stage}/>;
  const special=privateSource&&courseId==='en-ielts-listening-u01'&&
    /study spaces|occupancy|measurement/.test(source);
  const candidate=CHINESE_LESSON_NOTES[special?'en-ielts-listening-u01-study-spaces':courseId]||
