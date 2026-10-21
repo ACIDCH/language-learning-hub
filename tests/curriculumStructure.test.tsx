@@ -7,6 +7,7 @@ import {COURSES,foundationText,type LessonContent} from '../src/v44Courses';
 import {FOUNDATION_UNITS} from '../src/foundationCurriculum';
 import {lessonIpaSample,parseManuscript} from '../src/manuscriptPresentation';
 import StructuredLesson from '../src/StructuredLesson';
+import {linkedSpecialties} from '../src/specialtyLibrary';
 import LessonReader from '../src/LessonReader';
 import LessonBody from '../src/LessonBody';
 import {CHINESE_LESSON_NOTES} from '../src/bilingualTeachingNotes';
@@ -32,8 +33,14 @@ describe('semantic curriculum without broken full-page IPA',()=>{
   fireEvent.click(screen.getByRole('button',{name:/02语法/}));
   expect(onChangeStage).toHaveBeenCalledWith(1);
   rerender(<StructuredLesson content={data} course={course} stage={1} onChangeStage={onChangeStage} onOpenSpeech={vi.fn()} ttsRate={.85}/>);
-  expect(screen.getByText(english.common_mistake)).toBeTruthy();
-  expect(screen.getAllByText(english.examples[0].text).length).toBeGreaterThanOrEqual(1);
+  if(linkedSpecialties('grammar',course.id).length){
+   expect(document.querySelector('.course-specialty-inline')).not.toBeNull();
+   expect(document.querySelector('.course-specialty-pair')).not.toBeNull();
+   expect(document.querySelector('.curriculum-concepts')).toBeNull();
+  }else{
+   expect(screen.getByText(english.common_mistake)).toBeTruthy();
+   expect(screen.getAllByText(english.examples[0].text).length).toBeGreaterThanOrEqual(1);
+  }
   expect(screen.queryByText(/原文例句：结合本课知识讲解/)).toBeNull();
  });
  it('reveals accurate sourced answer only after learner chooses to check',()=>{
@@ -50,9 +57,14 @@ describe('semantic curriculum without broken full-page IPA',()=>{
   const target=COURSES.find(x=>x.id==='fr-a1-u04')!;
   const frenchContent:LessonContent={text:'Retained',sources:[],appendices:[],vocabulary:french.vocabulary,draft:french as LessonDraft};
   render(<StructuredLesson content={frenchContent} course={target} stage={2} onChangeStage={vi.fn()} onOpenSpeech={vi.fn()} ttsRate={.85}/>);
-  expect(screen.getAllByText('un bureau').length).toBeGreaterThan(0);
-  expect(screen.getAllByText('书桌').length).toBeGreaterThan(0);
-  expect(screen.getByRole('button',{name:'播放 un bureau'})).toBeTruthy();
+  if(linkedSpecialties('vocabulary',target.id).length){
+   expect(document.querySelector('.course-specialty-inline')).not.toBeNull();
+   expect(document.querySelector('.curriculum-vocabulary')).toBeNull();
+  }else{
+   expect(screen.getAllByText('un bureau').length).toBeGreaterThan(0);
+   expect(screen.getAllByText('书桌').length).toBeGreaterThan(0);
+   expect(screen.getByRole('button',{name:'播放 un bureau'})).toBeTruthy();
+  }
  });
  it('also supports all 48 typed foundation units without converting their exercises to prose',()=>{
   expect(FOUNDATION_UNITS.length).toBe(48);
@@ -286,5 +298,46 @@ describe('wide learner reader without editorial metadata in prose or IPA',()=>{
    onChangeStage={vi.fn()} hideTabs/>);
   expect(container.querySelector('.lesson-stages')).toBeNull();
   expect(container.querySelector('.bilingual-teaching')).not.toBeNull();
+ });
+});
+
+
+describe('fully mapped main-course grammar and vocabulary are directly teachable',()=>{
+ it('renders a mapped French B1 grammar chapter without redirect or generic outline duplication',()=>{
+  const c=COURSES.find(x=>x.id==='fr-b1-u01')!;
+  const courseData={...data,draft:{...data.draft!,id:c.id}} as LessonContent;
+  const {container}=render(<StructuredLesson content={courseData} course={c}
+   stage={1} onChangeStage={vi.fn()} onOpenSpeech={vi.fn()} ttsRate={.85}/>);
+  expect(container.querySelectorAll('.course-specialty-inline')).toHaveLength(1);
+  expect(container.textContent).toContain('plus-que-parfait');
+  expect(container.querySelectorAll('.course-specialty-chapters button')).toHaveLength(4);
+  expect(container.querySelector('.curriculum-concepts')).toBeNull();
+  expect(container.querySelector('.bilingual-teaching')).toBeNull();
+  fireEvent.click(screen.getByRole('button',{name:/时间线：先前动作/}));
+  expect(container.textContent).toContain('le cours avait déjà commencé');
+  expect(container.querySelectorAll('.course-specialty-question')).toHaveLength(4);
+  expect(container.querySelector('.course-specialty-answer')).toBeNull();
+  fireEvent.click(screen.getAllByRole('button',{name:'核对答案与解析'})[0]);
+  expect(container.querySelector('.course-specialty-answer')).not.toBeNull();
+ });
+ it('renders authored B2 lexical content inside its course and keeps the course stage navigation',()=>{
+  const c=COURSES.find(x=>x.id==='en-ielts-writing-task1-u06')!;
+  const courseData={...data,draft:{...data.draft!,id:c.id}} as LessonContent;
+  const {container}=render(<StructuredLesson content={courseData} course={c}
+   stage={2} onChangeStage={vi.fn()} onOpenSpeech={vi.fn()} ttsRate={.85}/>);
+  expect(container.querySelectorAll('.course-specialty-topic')).toHaveLength(1);
+  expect(container.querySelectorAll('.course-specialty-chapters button')).toHaveLength(4);
+  expect(container.querySelectorAll('.course-specialty-table tbody tr')).toHaveLength(4);
+  expect(container.querySelectorAll('.curriculum-vocabulary')).toHaveLength(0);
+  expect(container.querySelectorAll('.curriculum-tabs button')).toHaveLength(5);
+ });
+ it('keeps ordinary source content on courses without an exact unit mapping',()=>{
+  const c=COURSES.find(x=>x.id==='fr-b2-u08')!;
+  expect(linkedSpecialties('grammar',c.id)).toHaveLength(0);
+  const courseData={...data,draft:{...data.draft!,id:c.id}} as LessonContent;
+  const {container}=render(<StructuredLesson content={courseData} course={c}
+   stage={1} onChangeStage={vi.fn()} onOpenSpeech={vi.fn()} ttsRate={.85}/>);
+  expect(container.querySelector('.course-specialty-inline')).toBeNull();
+  expect(container.querySelector('.curriculum-concepts')).not.toBeNull();
  });
 });
