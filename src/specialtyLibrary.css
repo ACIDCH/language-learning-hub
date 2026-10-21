@@ -126,3 +126,20 @@
  .v44 .specialty-kind-tabs{gap:6px}
  .v44 .specialty-kind-tabs button{padding:10px}
 }
+
+/* Mobile catalog keeps newly added specialty links inside the existing single-row
+   horizontally scrollable filter, not a 700px-tall nested cards column. */
+@media(max-width:750px){
+ .v44 .catalog-filter .catalog-specialties{display:contents!important}
+ .v44 .catalog-filter .catalog-specialties h3,
+ .v44 .catalog-filter .catalog-specialties p,
+ .v44 .catalog-filter .catalog-level-heading{display:none!important}
+ .v44 .catalog-filter .catalog-specialty{
+  display:flex!important;flex-direction:column;justify-content:center;gap:2px;
+  flex:0 0 auto;width:145px;min-width:145px;max-width:145px;
+  height:39px;min-height:39px;padding:4px 9px!important;margin:0!important;
+  border-radius:9px;white-space:nowrap;
+ }
+ .v44 .catalog-filter .catalog-specialty strong{font-size:12px;line-height:1.15}
+ .v44 .catalog-filter .catalog-specialty small{font-size:9px;line-height:1.1;white-space:nowrap}
+}
