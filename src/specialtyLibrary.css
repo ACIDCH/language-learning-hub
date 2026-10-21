@@ -174,3 +174,45 @@
 @media(max-width:600px){
  .v44 .specialty-companion{grid-template-columns:minmax(0,1fr)}
 }
+
+
+/* Approved catalog hierarchy: the two knowledge tracks are primary; skills are secondary. */
+.v44 .catalog-specialties{padding:14px;gap:9px;background:var(--accentTint)}
+.v44 .catalog-specialties>h3{font-size:14px;line-height:1.4}
+.v44 .catalog-specialty-primary{
+ display:grid;grid-template-columns:40px minmax(0,1fr) 12px;gap:10px;
+ align-items:center;min-height:72px;padding:12px;border-radius:12px;
+ background:var(--pane);border:1px solid var(--border)}
+.v44 .catalog-specialty-icon{
+ display:grid;place-items:center;width:40px;height:40px;border-radius:10px;
+ background:var(--accentTint);color:var(--accent);font-size:23px}
+.v44 .catalog-specialty-copy{min-width:0;display:grid;gap:4px}
+.v44 .catalog-specialty-copy strong{font-size:15px}
+.v44 .catalog-specialty-copy small{font-size:11px;line-height:1.4;white-space:normal}
+.v44 .catalog-specialty-arrow{color:var(--accent);font-size:22px}
+.v44 .catalog-specialties .catalog-skills-title{
+ margin:6px 0 0;padding-top:11px;border-top:1px solid var(--border);
+ font-size:12px;color:var(--text)}
+.v44 .catalog-skill-link{
+ display:flex;align-items:center;justify-content:space-between;gap:8px;
+ padding:9px 11px;border:1px solid var(--border);border-radius:9px;
+ background:var(--pane);color:var(--text);text-decoration:none;font-size:12px}
+.v44 .catalog-skill-link small{font-size:10px;color:var(--textMuted)}
+.v44 .catalog-skill-link[aria-current="page"]{border-color:var(--accent);background:var(--accentTint)}
+.v44 .catalog-filter .filter-option{width:100%;text-align:left}
+.v44 .catalog-filter .filter-option small{font-size:11px;font-weight:450}
+.v44 .catalog-extra-tracks{border-top:1px solid var(--border);margin-top:13px;padding-top:12px}
+.v44 .catalog-extra-tracks summary{cursor:pointer;font-size:12px;color:var(--textMuted);padding:5px 0}
+.v44 .catalog-extra-tracks .filter-option{margin-top:5px}
+@media(max-width:750px){
+ .v44 .catalog-filter .catalog-specialty-primary{
+  display:flex!important;align-items:center;justify-content:center}
+ .v44 .catalog-filter .catalog-specialty-icon,
+ .v44 .catalog-filter .catalog-specialty-arrow,
+ .v44 .catalog-filter .catalog-skills-title,
+ .v44 .catalog-filter .catalog-skill-link{display:none!important}
+ .v44 .catalog-filter .catalog-specialty-copy{display:grid}
+ .v44 .catalog-filter .catalog-specialty-copy strong{font-size:12px}
+ .v44 .catalog-filter .catalog-specialty-copy small{font-size:9px;white-space:nowrap}
+ .v44 .catalog-extra-tracks{display:none}
+}
