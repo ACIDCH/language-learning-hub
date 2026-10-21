@@ -16,7 +16,7 @@ import SelectionInspector,{type TextSelection} from './SelectionInspector';
 import {useCourseProgress} from './useCourseProgress';
 import {splitLessonStages,STUDY_STAGES,STUDY_TITLES,visibleStudyStage} from './lessonStages';
 import {learnerFacingText} from './lessonPresentationText';
-import {linkedSpecialty,specialtyRoute} from './specialtyLibrary';
+import {linkedSpecialties,specialtyRoute} from './specialtyLibrary';
 export function selectedOriginal(scope:HTMLElement,selection:Selection|null):TextSelection|null{
  if(!selection||selection.isCollapsed||!selection.rangeCount)return null;
  const range=selection.getRangeAt(0);
@@ -91,9 +91,18 @@ export default function CourseReader({course,session,preferences,tab,navigate,on
  </nav>
  <div className="reader-specialty-shortcuts" aria-label="课程相关重点专题">
   {(['grammar','vocabulary'] as const).map(kind=>{
-   const topic=linkedSpecialty(kind,course.id);
-   return topic?<button type="button" key={kind} onClick={()=>navigate(specialtyRoute(kind,course.language,topic.id,courseRoute(course,tab==='ipa'||tab==='speech'?tab:'read')))}>
-    {kind==='grammar'?'系统学习本课语法':'系统学习本课词汇'} ↗</button>:null;
+   const topics=linkedSpecialties(kind,course.id);
+   if(!topics.length)return null;
+   const label=kind==='grammar'?'语法':'词汇';
+   const returnTo=courseRoute(course,tab==='ipa'||tab==='speech'?tab:'read');
+   const open=(id:string)=>navigate(specialtyRoute(kind,course.language,id,returnTo));
+   return topics.length===1?
+    <button type="button" key={kind} onClick={()=>open(topics[0].id)}>系统学习本课{label} ↗</button>:
+    <details key={kind} className="reader-specialty-group">
+     <summary>系统学习本课{label} <small>{topics.length} 个专题</small></summary>
+     <div className="reader-specialty-options">{topics.map(topic=><button type="button"
+       key={topic.id} onClick={()=>open(topic.id)}>{topic.title} ↗</button>)}</div>
+    </details>;
   })}
  </div>
  <div className="reader-top"><button onClick={()=>setToolStatus(speakIpaText(text,course.language,preferences.ttsRate)?'正在朗读':'此设备无法朗读。')}>朗读原文</button><button onClick={()=>window.speechSynthesis?.cancel()}>停止朗读</button></div>
