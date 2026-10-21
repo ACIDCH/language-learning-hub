@@ -9,6 +9,7 @@ function NotesPractice({unit}:{unit:SpecialtyLesson}){
  const [answers,setAnswers]=useState<Record<number,string>>({});
  const [reveal,setReveal]=useState<Record<number,boolean>>({});
  const [written,setWritten]=useState('');
+ const essayParagraphs=unit.modelParagraphStarts?.map((start,i)=>unit.model.slice(start,unit.modelParagraphStarts?.[i+1]??unit.model.length));
  return <div className="specialty-practice">
   <h2>巩固练习与解析</h2>
 
@@ -27,8 +28,16 @@ function NotesPractice({unit}:{unit:SpecialtyLesson}){
    <label htmlFor={'specialty-output-'+unit.id}>我的回答</label>
    <textarea id={'specialty-output-'+unit.id} rows={6} value={written}
     onChange={e=>setWritten(e.target.value)} placeholder="结合知识点完成自己的连贯表达…"/>
-   <details><summary>完成后查看分步示范</summary>
-    {unit.model.map((e,i)=><div className="specialty-example" key={i}>
+   <details><summary>{essayParagraphs?'查看完整双语范文':'完成后查看分步示范'}</summary>
+    {essayParagraphs?<div className="specialty-essay">
+     {essayParagraphs.map((sentences,i)=><section className="specialty-essay-paragraph" key={i}>
+      <p className="specialty-essay-original" lang={unit.language}>{sentences.map(e=>e.target).join(' ')}</p>
+      <p className="specialty-essay-translation" lang="zh-Hans">{sentences.map(e=>e.zh).join('')}</p>
+      <details className="specialty-essay-notes"><summary>逐句解析</summary>
+       <ol>{sentences.map((e,j)=><li key={j}>{e.analysis}</li>)}</ol>
+      </details>
+     </section>)}
+    </div>:unit.model.map((e,i)=><div className="specialty-example" key={i}>
      <strong lang={unit.language}>{e.target}</strong><p>{e.zh}</p><small>{e.analysis}</small>
     </div>)}
    </details>
