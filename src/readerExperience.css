@@ -77,7 +77,8 @@
 /* Reading-width customization remains meaningful in immersive mode but no longer
    collapses normal reading to the old 780px/100ch document column. */
 body[data-view-mode="immersive"] .v44 .reader-page .reader-selection-scope{
- max-width:100%!important;width:100%!important;margin-inline:0!important}
+ max-width:min(100%,calc(var(--readerWidth) + 390px))!important;
+ width:100%!important;margin-inline:auto!important}
 body[data-view-mode="focus"] .v44 .reader-page .reader-selection-scope{max-width:100%!important}
 
 /* Large screens give prose a generous reading surface, with a reserved selection workbench. */
