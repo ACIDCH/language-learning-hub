@@ -90,6 +90,8 @@ try{
    ['task1U03Vocabulary','/?page=specialties&type=vocabulary&language=en&topic=en-task1-u03-comparison-lexicon','.specialty-grammar-table'],
    ['task1U04Grammar','/?page=specialties&type=grammar&language=en&topic=en-task1-u04-shares-grammar','.specialty-grammar-table'],
    ['task1U04Vocabulary','/?page=specialties&type=vocabulary&language=en&topic=en-task1-u04-allocation-lexicon','.specialty-grammar-table'],
+   ['task1U05Vocab','/?page=specialties&type=vocabulary&language=en&topic=en-task1-u05-recycling-process-lexicon','.specialty-grammar-table'],
+   ['task1U06Grammar','/?page=specialties&type=grammar&language=en&topic=en-task1-u06-map-reference-grammar','.specialty-grammar-table'],
    ['enTask1Map','/?page=specialties&type=vocabulary&language=en&topic=en-map-change-lexicon','.specialty-grammar-table'],
    ['frDELF','/?page=specialties&type=grammar&language=fr&topic=fr-b2-formal-argument-writing','.specialty-grammar-table'],
    ['frDALF','/?page=specialties&type=vocabulary&language=fr&topic=fr-c1-cross-source-synthesis','.specialty-grammar-table'],
@@ -154,6 +156,8 @@ try{
    ['task1U02Integrated','/?course=en-ielts-writing-task1-u02&tab=read','.curriculum-stage'],
    ['task1U03Integrated','/?course=en-ielts-writing-task1-u03&tab=read','.curriculum-stage'],
    ['task1U04Integrated','/?course=en-ielts-writing-task1-u04&tab=read','.curriculum-stage'],
+   ['task1U05Integrated','/?course=en-ielts-writing-task1-u05&tab=read','.curriculum-stage'],
+   ['task1U06Integrated','/?course=en-ielts-writing-task1-u06&tab=read','.curriculum-stage'],
    ['frRouteIntegrated','/?course=fr-a2-u03&tab=read','.curriculum-stage'],
    ['frHealthIntegrated','/?course=fr-a2-u05&tab=read','.curriculum-stage'],
    ['frHomeIntegrated','/?course=fr-a1-u10&tab=read','.curriculum-stage'],
@@ -227,6 +231,23 @@ try{
     await wait(()=>js("document.querySelectorAll('.reception-study > article.reception-paragraph').length===4"),name+' bilingual reading');
     const metric=await js("({paragraphs:document.querySelectorAll('.reception-study > article.reception-paragraph').length,source:!!document.querySelector('.course-enrichment details')})");
     if(metric.paragraphs!==4||name==='task1U01Integrated'&&!metric.source)problems.push(size+' '+name+' original manuscripts not retained '+JSON.stringify(metric));
+   }
+   if(['task1U05Vocab','task1U06Grammar'].includes(name)){
+    const metric=await js("({chapters:document.querySelectorAll('.specialty-chapter').length,questions:document.querySelectorAll('.specialty-question').length,rows:document.querySelectorAll('.specialty-grammar-table tbody tr').length})");
+    if(metric.chapters!==4||metric.questions!==4||metric.rows<4)problems.push(size+' '+name+' incomplete source-matched textbook '+JSON.stringify(metric));
+   }
+   if(['task1U05Integrated','task1U06Integrated'].includes(name)){
+    await js("document.querySelectorAll('.course-study-switcher button')[1]?.click()");
+    await wait(()=>js("!!document.querySelector('.course-specialty-topic')"),name+' source course grammar');
+    await js("document.querySelectorAll('.course-study-switcher button')[2]?.click()");
+    await wait(()=>js("!!document.querySelector('.course-specialty-topic')"),name+' source course vocabulary');
+    await js("document.querySelectorAll('.course-study-switcher button')[3]?.click()");
+    await wait(()=>js("document.querySelectorAll('.reception-study > article.reception-paragraph').length===4"),name+' four bilingual evidence passages');
+    await js("document.querySelectorAll('.course-study-switcher button')[4]?.click()");
+    await wait(()=>js("!!document.querySelector('.task1-evidence svg')"),name+' faithful visual exercise');
+    const label=await js("document.querySelector('.task1-evidence svg')?.getAttribute('aria-label')||''");
+    if(name==='task1U05Integrated'&&!label.includes('裁切'))problems.push(size+' Task1 U05 diagram source end not cut');
+    if(name==='task1U06Integrated'&&!label.includes('北侧'))problems.push(size+' Task1 U06 map missing mapped directions');
    }
    if(['enReadingU01Integrated','enReadingU02Integrated'].includes(name)){
     const integrated=await js("(function(){return {topic:!!document.querySelector('.course-specialty-topic'),source:!!document.querySelector('.course-enrichment details'),questions:document.querySelectorAll('.course-specialty-question').length}})()");
