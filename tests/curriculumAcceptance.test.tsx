@@ -430,3 +430,24 @@ it('Task1 U07/U08 retain exact source shares and weekly units across 4 full bili
  expect(u8.questions[2].answer).toContain('no evidence');
  expect(u8.paragraphs[0].zh).toContain('每周访问');
 });
+
+
+it('legacy Task 1 U05/U06 grammar/vocabulary sources do not reintroduce mismatched packing and study-site maps',()=>{
+ const process=SPECIALTY_LESSONS.find(u=>u.id==='en-process-report-grammar')!;
+ const recycling=SPECIALTY_LESSONS.find(u=>u.id==='en-task1-u05-recycling-process-lexicon')!;
+ expect(process.sections[0].table?.rows).toHaveLength(6);
+ expect(process.sections[0].table?.rows[5][1]).toContain('cut for reuse');
+ expect(process.model.map(e=>e.target).join(' ')).not.toMatch(/packaging|packed\s+sheets|dried\s+and\s+packed/iu);
+ expect(recycling.sections[0].table?.rows[5][0]).toContain('Cut');
+ const map=SPECIALTY_LESSONS.find(u=>u.id==='en-map-change-lexicon')!;
+ const geometry=map.sections[0].table!.rows;
+ expect(geometry).toHaveLength(4);
+ expect(geometry[0]).toContain('North');
+ expect(geometry[0].join(' ')).toContain('Car park');
+ expect(geometry[0].join(' ')).toContain('Garden');
+ expect(geometry[1].join(' ')).toContain('Library retained unchanged');
+ expect(geometry[2].join(' ')).toContain('Existing café extended');
+ expect(geometry[3].join(' ')).toContain('New footpath along southern boundary');
+ expect(map.model.map(x=>x.target).join(' ')).not.toContain('study rooms');
+ expect(map.model.map(x=>x.target).join(' ')).not.toContain('central footpath');
+});
