@@ -518,7 +518,7 @@ it('audits all authored paragraph-level Chinese links and preserves independent 
   if(indexed.has(courseId))expect(index.find(x=>x.id===courseId)?.audio_status,courseId+' audio remains unverified').toBe('missing_audio');
   checked++;
  }
- expect(checked).toBeGreaterThanOrEqual(41);
+ expect(checked).toBeGreaterThanOrEqual(42);
 });
 
 
@@ -557,4 +557,30 @@ it('Task 2 U06–U08 full bilingual argument lessons follow original cause, refe
  const social=RECEPTION_LESSONS['en-ielts-writing-task2-u08'];
  expect(social.questions[0].answer).toContain('universal');
  expect(social.questions[2].answer).toContain('No.');
+});
+
+
+it('Task2 U01 follows the actual pre-existing 9k-character original online-university source, not a substituted example',()=>{
+ const course='en-ielts-writing-task2-u01';
+ const source=readFileSync('public/learning-assets/en-ielts-writing-task2-u01.txt','utf8');
+ expect(source).toContain('Some universities offer more courses online rather than in traditional classrooms.');
+ expect(source).toContain('Discuss one important benefit and one potential drawback');
+ expect(source).toContain('which matters more in your view');
+ expect(source).toContain('does not guarantee effective learning');
+ const lesson=RECEPTION_LESSONS[course];
+ expect(lesson.language).toBe('en');
+ expect(lesson.paragraphs.map(p=>p.id)).toEqual(['P1','P2','P3','P4']);
+ expect(lesson.paragraphs.map(p=>p.target).join(' ').trim().split(/\s+/u)).toHaveLength(531);
+ expect(lesson.paragraphs.every(p=>p.target.trim().split(/\s+/u).length>=120&&p.zh.length>=195)).toBe(true);
+ expect(lesson.questions.length).toBe(4);
+ expect(lesson.questions.every(q=>q.evidence.length>0&&q.evidence.every(id=>lesson.paragraphs.some(p=>p.id===id))&&q.why.length>=40)).toBe(true);
+ expect(lesson.languageNotes.length).toBe(4);
+ expect(lesson.model.trim().split(/\s+/u).length).toBeGreaterThanOrEqual(250);
+ expect(lesson.modelZh.length).toBeGreaterThanOrEqual(500);
+ expect(lesson.questions[0].answer).toContain('which effect matters more');
+ expect(lesson.questions[1].answer).toContain('outcomes');
+ expect(lesson.questions[3].answer).toContain('No.');
+ expect(lesson.references).toContain('public/learning-assets/en-ielts-writing-task2-u01.txt');
+ expect(index.find(x=>x.id===course)?.audio_status).toBe('missing_audio');
+ expect(index.find(x=>x.id===course)?.content_status).toBe('existing_original');
 });
