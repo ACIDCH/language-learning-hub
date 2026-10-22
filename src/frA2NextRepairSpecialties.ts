@@ -13,7 +13,7 @@ export const FR_A2_REPAIR_SPECIALTIES:SpecialtyLesson[]=[
  s('01 devoir 表必须，pouvoir 表可以','在交通服务语境中，nous devons + 动词原形表示行程要求，nous pouvons + 动词原形表示可供选择的行动。原稿说必须在奥尔良换站台，但如果改为明天出发，只说可以申请退款；“可以申请”不能扩张成“退款已获批准”。','devoir / pouvoir (présent) + infinitif',[
  e('Nous devons changer de quai à Orléans.','我们必须在奥尔良换站台。','devoir + changer，表示行程要求。'),
  e('Nous pouvons demander un remboursement.','我们可以申请退款。','pouvoir + demander，表示可采取的行动。'),
- e('Vous devez vérifier le numéro du quai.','您必须确认站台编号。','vou s 的变位 devez；quai 指站台。')
+ e('Vous devez vérifier le numéro du quai.','您必须确认站台编号。','vous 的变位 devez；quai 指站台。')
  ],'pouvoir demander 仅赋予申请可能性，不能译成“工作人员已经批准退款”；义务与选择应分开记录。',
  t('人称与动作组合',[['je dois partir','我必须出发','devoir 第一人称'],['nous devons changer','我们必须换乘／换站台','devoir 第一人称复数'],['vous pouvez demander','您可以提出申请','pouvoir 第二人称复数'],['nous pouvons partir','我们可以出发','pouvoir 第一人称复数']],'变位随主语改变，后面始终接不定式。')),
  s('02 Si 条件句不是既定事实','si + 现在时可以引出真实条件，主句说明条件成立时可采取的行动。Si vous préférez partir demain, vous pouvez demander un remboursement 不意味着说话者已经选择明天出发；实际最后选择的是今天。','si + présent, présent / pouvoir + infinitif',[
