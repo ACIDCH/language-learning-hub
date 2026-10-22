@@ -19,6 +19,7 @@ import {HOME_PLANS_READING_HEADINGS} from './homePlansReadingHeadingsWave';
 import {A1_PAST_AND_READING_EVIDENCE} from './a1PastAndReadingEvidenceWave';
 import {IELTS_READING_GRAMMAR_U05_U08} from './ieltsReadingGrammarU05U08';
 import {IELTS_READING_LEXICON_U05_U08} from './ieltsReadingLexiconU05U08';
+import {IELTS_READING_U01_PLATFORM_VOCAB} from './ieltsReadingU01PlatformVocabulary';
 
 export type SpecialtyKind='grammar'|'vocabulary';
 export type SpecialtyLanguage='fr'|'en';
@@ -340,7 +341,8 @@ export const SPECIALTY_LESSONS:SpecialtyLesson[]=[
  ...HOME_PLANS_READING_HEADINGS,
  ...A1_PAST_AND_READING_EVIDENCE,
  ...IELTS_READING_GRAMMAR_U05_U08,
- ...IELTS_READING_LEXICON_U05_U08
+ ...IELTS_READING_LEXICON_U05_U08,
+ ...IELTS_READING_U01_PLATFORM_VOCAB
 ];
 export function specialtyRoute(type:SpecialtyKind,language?:string,topic?:string,returnTo?:string){
  const params=new URLSearchParams({page:'specialties',type});
