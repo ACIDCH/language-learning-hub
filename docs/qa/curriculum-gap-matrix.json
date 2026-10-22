@@ -4,7 +4,7 @@
   "counts": {
     "main": 108,
     "foundation": 48,
-    "specialties": 83
+    "specialties": 84
   },
   "courses": [
     {
@@ -400,6 +400,10 @@
         {
           "id": "en-academic-passive",
           "type": "grammar"
+        },
+        {
+          "id": "en-reading-u01-learning-evidence-lexicon",
+          "type": "vocabulary"
         }
       ],
       "body": "source_manuscript",
@@ -413,7 +417,6 @@
       "audio": "missing_audio",
       "exercises": null,
       "gaps": [
-        "full_vocabulary_specialty",
         "natural_audio_alignment",
         "independent_semantic_review"
       ],
