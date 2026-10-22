@@ -4,7 +4,7 @@
   "counts": {
     "main": 108,
     "foundation": 48,
-    "specialties": 123
+    "specialties": 125
   },
   "courses": [
     {
@@ -1316,10 +1316,27 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "en-task2-u01-question-thesis-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task2-u01-online-learning-lexicon",
+          "type": "vocabulary"
+        }
+      ],
       "body": "source_manuscript",
       "readingWords": null,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 531,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "en-ielts-writing-task2-u01"
@@ -1328,8 +1345,6 @@
       "audio": "missing_audio",
       "exercises": null,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "natural_audio_alignment",
         "independent_semantic_review"
       ],
