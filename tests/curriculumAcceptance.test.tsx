@@ -291,3 +291,37 @@ it('French A1 U12 Chinese text preserves what was done, not invented intentions 
  expect(lesson.modelZh).not.toContain('弟弟');
  expect(lesson.paragraphs[0].zh).toContain('兄弟');
 });
+
+
+it('IELTS Task 1 U03 and U04 provide faithful four-paragraph bilingual readings and traceable comparison evidence',()=>{
+ for(const id of ['en-ielts-writing-task1-u03','en-ielts-writing-task1-u04']){
+  const lesson=RECEPTION_LESSONS[id];
+  expect(lesson,id).toBeDefined();
+  expect(lesson.language).toBe('en');
+  expect(lesson.paragraphs.map(p=>p.id)).toEqual(['P1','P2','P3','P4']);
+  expect(lesson.paragraphs.every(p=>p.target.length>=390&&p.zh.length>=150),id).toBe(true);
+  expect(lesson.paragraphs.map(p=>p.target).join(' ').trim().split(/\s+/u).length,id).toBeGreaterThanOrEqual(300);
+  expect(lesson.questions,id).toHaveLength(4);
+  expect(lesson.questions.every(q=>q.why.length>=50&&q.evidence.length>=1&&q.evidence.every(p=>lesson.paragraphs.some(s=>s.id===p))),id).toBe(true);
+  expect(lesson.languageNotes.length,id).toBeGreaterThanOrEqual(4);
+  expect(lesson.model.trim().split(/\s+/u).length,id).toBeGreaterThanOrEqual(150);
+  expect(lesson.modelZh.length,id).toBeGreaterThan(200);
+  expect(index.find(x=>x.id===id)?.audio_status).toBe('missing_audio');
+ }
+ const commuting=RECEPTION_LESSONS['en-ielts-writing-task1-u03'];
+ const source1=JSON.parse(readFileSync('content/lesson-drafts/en-ielts-writing-task1-u03.json','utf8'));
+ expect(source1.context).toContain('40/25/35%');
+ expect(source1.context).toContain('30/50/20%');
+ expect(commuting.questions[0].answer).toContain('25 percentage points');
+ expect(commuting.questions[2].answer).toContain('no dates');
+ expect(commuting.questions[3].answer).toContain('not specified');
+ expect(commuting.paragraphs[3].target).toContain('borrowing-channel chart');
+ const budget=RECEPTION_LESSONS['en-ielts-writing-task1-u04'];
+ const source2=JSON.parse(readFileSync('content/lesson-drafts/en-ielts-writing-task1-u04.json','utf8'));
+ expect(source2.context).toContain('30/50/20%');
+ expect(source2.context).toContain('40/45/15%');
+ expect(budget.questions[1].answer).toContain('10 percentage points');
+ expect(budget.questions[2].answer).toContain('33.3%');
+ expect(budget.questions[3].answer).toContain('total budget');
+ expect(budget.paragraphs[3].zh).toContain('实际');
+});
