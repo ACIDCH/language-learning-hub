@@ -48,10 +48,15 @@ try{
  }
  async function go(path,selector){
   await call('Page.navigate',{url:local+path});
-  await wait(async()=>{
-   const value=await js('({path:location.pathname+location.search,exists:!!document.querySelector('+JSON.stringify(selector)+')})');
-   return value.path===path&&value.exists;
-  },path+' '+selector);
+  try{
+   await wait(async()=>{
+    const value=await js('({path:location.pathname+location.search,exists:!!document.querySelector('+JSON.stringify(selector)+')})');
+    return value.path===path&&value.exists;
+   },path+' '+selector);
+  }catch(err){
+   const diagnostic=await js("({path:location.pathname+location.search,title:document.title,article:document.querySelector('.specialty-textbook')?.textContent?.slice(0,220),tables:document.querySelectorAll('.specialty-grammar-table').length,notice:document.querySelector('[role=alert]')?.textContent||''})").catch(e=>({evaluationError:String(e)}));
+   throw Error('Page '+path+' '+selector+': '+JSON.stringify(diagnostic)+'; '+String(err));
+  }
   await delay(260);
  }
  await call('Page.enable');await call('Runtime.enable');
@@ -92,6 +97,10 @@ try{
    ['task1U04Vocabulary','/?page=specialties&type=vocabulary&language=en&topic=en-task1-u04-allocation-lexicon','.specialty-grammar-table'],
    ['task1U05Vocab','/?page=specialties&type=vocabulary&language=en&topic=en-task1-u05-recycling-process-lexicon','.specialty-grammar-table'],
    ['task1U06Grammar','/?page=specialties&type=grammar&language=en&topic=en-task1-u06-map-reference-grammar','.specialty-grammar-table'],
+   ['task1U07Grammar','/?page=specialties&type=grammar&language=en&topic=en-task1-u07-cohesion-scope-grammar','.specialty-grammar-table'],
+   ['task1U07Vocab','/?page=specialties&type=vocabulary&language=en&topic=en-task1-u07-borrowing-cohesion-lexicon','.specialty-grammar-table'],
+   ['task1U08Grammar','/?page=specialties&type=grammar&language=en&topic=en-task1-u08-revision-scope-grammar','.specialty-grammar-table'],
+   ['task1U08Vocab','/?page=specialties&type=vocabulary&language=en&topic=en-task1-u08-precision-editing-lexicon','.specialty-grammar-table'],
    ['enTask1Map','/?page=specialties&type=vocabulary&language=en&topic=en-map-change-lexicon','.specialty-grammar-table'],
    ['frDELF','/?page=specialties&type=grammar&language=fr&topic=fr-b2-formal-argument-writing','.specialty-grammar-table'],
    ['frDALF','/?page=specialties&type=vocabulary&language=fr&topic=fr-c1-cross-source-synthesis','.specialty-grammar-table'],
@@ -158,6 +167,8 @@ try{
    ['task1U04Integrated','/?course=en-ielts-writing-task1-u04&tab=read','.curriculum-stage'],
    ['task1U05Integrated','/?course=en-ielts-writing-task1-u05&tab=read','.curriculum-stage'],
    ['task1U06Integrated','/?course=en-ielts-writing-task1-u06&tab=read','.curriculum-stage'],
+   ['task1U07Integrated','/?course=en-ielts-writing-task1-u07&tab=read','.curriculum-stage'],
+   ['task1U08Integrated','/?course=en-ielts-writing-task1-u08&tab=read','.curriculum-stage'],
    ['frRouteIntegrated','/?course=fr-a2-u03&tab=read','.curriculum-stage'],
    ['frHealthIntegrated','/?course=fr-a2-u05&tab=read','.curriculum-stage'],
    ['frHomeIntegrated','/?course=fr-a1-u10&tab=read','.curriculum-stage'],
@@ -248,6 +259,18 @@ try{
     const label=await js("document.querySelector('.task1-evidence svg')?.getAttribute('aria-label')||''");
     if(name==='task1U05Integrated'&&!label.includes('裁切'))problems.push(size+' Task1 U05 diagram source end not cut');
     if(name==='task1U06Integrated'&&!label.includes('北侧'))problems.push(size+' Task1 U06 map missing mapped directions');
+   }
+   if(['task1U07Grammar','task1U07Vocab','task1U08Grammar','task1U08Vocab'].includes(name)){
+    const metric=await js("({sections:document.querySelectorAll('.specialty-chapter').length,questions:document.querySelectorAll('.specialty-question').length,rows:document.querySelectorAll('.specialty-grammar-table tbody tr').length})");
+    if(metric.sections!==4||metric.questions!==4||metric.rows!==4)problems.push(size+' '+name+' incomplete fully authored U07 U08 '+JSON.stringify(metric));
+   }
+   if(['task1U07Integrated','task1U08Integrated'].includes(name)){
+    await js("document.querySelectorAll('.course-study-switcher button')[1]?.click()");
+    await wait(()=>js("document.querySelectorAll('.course-specialty-question').length===4"),name+' grammar evidence');
+    await js("document.querySelectorAll('.course-study-switcher button')[2]?.click()");
+    await wait(()=>js("document.querySelectorAll('.course-specialty-question').length===4"),name+' vocabulary evidence');
+    await js("document.querySelectorAll('.course-study-switcher button')[3]?.click()");
+    await wait(()=>js("document.querySelectorAll('.reception-study > article.reception-paragraph').length===4"),name+' complete bilingual paragraphs');
    }
    if(['enReadingU01Integrated','enReadingU02Integrated'].includes(name)){
     const integrated=await js("(function(){return {topic:!!document.querySelector('.course-specialty-topic'),source:!!document.querySelector('.course-enrichment details'),questions:document.querySelectorAll('.course-specialty-question').length}})()");
