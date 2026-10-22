@@ -175,63 +175,69 @@ export const NEXT_CURRICULUM_CONTINUITY:SpecialtyLesson[]=[
  referenceUrls:['https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-writing','https://ielts.org/take-a-test/preparation-resources/writing-test-resources'],
  sourceNote:'对应 en-ielts-writing-task1-u05 的过程与被动语态。IELTS 官方规定 Academic Task 1 150 词以上，练习配有由原创阶段数据绘制的 SVG 图示，并非官方试卷图。'
 },
+
 {
  id:'en-map-change-lexicon',type:'vocabulary',language:'en',level:'B2',unitLink:'en-ielts-writing-task1-u06',
- title:'IELTS 地图变化表达：位置、替换、扩建与保留',subtitle:'from the north of to was replaced by，精确表达前后布局',
- prerequisite:'认识 Task 1 的过去/现在时和被动语态，能够区分方向与位置。',
- objective:'根据地图前后差别准确描述 demolished、replaced by、converted into、extended、remained unchanged，避免杜撰地图上没有的设施。',
+ title:'地图方位词汇：停车场改花园、咖啡馆扩建及步道新增',subtitle:'基于 Task 1 U06 原始公共广场四方位地图',
+ prerequisite:'掌握 north / south / east / west 及基本被动语态；阅读原稿广场改造前后的说明。',
+ objective:'将 replaced by、extended、retained、added 和 north/east/west/south 准确对应同一张广场地图，不混入旧的学习场地实验图。',
  sections:[
- sec('01 位置与方向是两种信息',
- 'in the north of / to the north of / on the northern side of 需与地图参照对象对应。in 表示处于某区域内部，to 表示位于参照对象外部的相对方向；next to、opposite、between 是不同空间关系。',
- 'in the north of the site / to the north of the road / next to the gate',[
- ex('The library stands in the north of the site.','图书馆位于场地北部。','in 表示场地内部位置。'),
- ex('A car park is located to the south of the building.','停车场位于该建筑南侧。','to the south of 表示参照物南边。'),
- ex('The entrance is next to the main road.','入口位于主干道旁。','next to 说明毗邻关系。')
- ],'不能仅因为英语里都有 north 就将 in the north of 与 to the north of 当作完全同义。',
- {title:'本课原创新旧地图对应数据',columns:['设施','旧布局','新布局'],rows:[['library','north of site','north of site; unchanged'],['garden','east of site','replaced by study rooms'],['car park','west of site','extended westwards'],['footpath','crosses centre','crosses centre; unchanged']],note:'本表与本课原创 SVG 地图直接对应，可逐项对照，二者均非 IELTS 官方题目。'}),
- sec('02 replaced、converted 与 expanded 不可混淆',
- 'replace A with B / A was replaced by B 表示旧设施被新设施取代。convert A into B 表示某建筑功能转变。extend / expand 表示既有设施扩大，不能把扩建叙述为完全拆除。',
- 'was replaced by / was converted into / was extended',[
- ex('The garden was replaced by two study rooms.','花园被两间学习室取代。','替换意味着花园不再原样保留。'),
- ex('The warehouse was converted into a library.','仓库被改造成图书馆。','converted into 强调用途改变。'),
- ex('The car park was extended towards the west.','停车场向西扩建。','extended 表示面积增长，非新建另一处停车场。')
- ],'The car park was replaced by an extension 与 car park was extended 表达的空间变化可能不同，应按具体图示核对。'),
- sec('03 remained unchanged 是关键特征之一',
- '有的地图变化题同时包含改变与保持不变的设施，overview 可突出主要变化和保留的路线。不能只找拆除和新建，忽略仍在相同位置的道路或建筑。',
- 'remained unchanged / retained its position / was preserved',[
- ex('The library remained unchanged in the northern area.','图书馆在北侧保持不变。','明确没有改变的主要设施。'),
- ex('The central footpath was retained.','中央步道得到保留。','retained 描述仍存在的路线。'),
- ex('The eastern garden no longer appears on the new plan.','东侧花园已不再出现在新平面图中。','谨慎报告图示中的消失。')
- ],'某条路径“被保留”并不表示整幅地图完全不变；需对照其他改变。'),
- sec('04 先总体再按位置展开，不按词汇顺序堆砌',
- '根据地图可将细节分组为东侧新设施、西侧扩建和北侧未变。写作应说明发生了什么、发生在哪里、与之前相比如何，而不是把 demolished、expanded、converted 等词排列成列表。',
- 'overview → east changes → west changes → unchanged features',[
- ex('Overall, the site gained study rooms and a larger car park, while the library and central footpath were retained.','总体上，场地增加学习室、扩大停车场，而图书馆与中央步道得到保留。','总览准确对应该课程文字数据。'),
- ex('In the east, the garden was replaced by study rooms.','东侧花园被学习室取代。','位置和替换关系。'),
- ex('To the west, the parking area was extended, with no recorded change to the library.','西侧停车区域扩大，图书馆则没有记录到改变。','分组说明修改与保留。')
- ],'地图题没有说明“节省空间”“学生更满意”等主观原因时，不能把这些因素添加到报告。')
+ sec('01 方位要先确定整座广场作参照',
+ '本题原稿以公共广场为统一参照框架。in the north of the site 表示场地内部北部，on the eastern side 表示东侧；north of the library 则是相对于图书馆，原稿未提供这种额外的位置判断。',
+ 'in the north of the square / on the eastern side / along the southern boundary',[
+ ex('The original car park was in the north of the square.','原停车场位于广场北侧。','北侧停车场是明确的旧设施。'),
+ ex('The library remained on the eastern side.','图书馆仍位于东侧。','图书馆位置和保留状态均有据。'),
+ ex('A new footpath runs along the southern boundary in the plan.','规划图在南侧边界新增步道。','南侧步道是新增项，不是已存在的中央步道。')
+ ],'不能把 north of the site 与 north of the library 互换，也不能凭空添加建筑间距离。',
+ {title:'与原稿一致的四方向资料（并非官方试卷）',columns:['方位','改造前','拟议改造后'],rows:[
+ ['North','Car park','Garden; car park replaced'],
+ ['East','Library','Library retained unchanged'],
+ ['West','Café','Existing café extended'],
+ ['South','No path specified','New footpath along southern boundary']
+ ],note:'这四项与 en-ielts-writing-task1-u06 原始文字与课堂 SVG 对齐；不是官方 IELTS 地图。'}),
+ sec('02 replace 与 extend 表示不同变化',
+ 'replace 说明原设施被另一设施取代，本课北侧 car park → garden。extend 表示原建筑扩大，本课西侧 café 向邻近空地扩展，并非搬迁。两种表达需要准确标出新旧主体。',
+ 'was replaced by a garden / the café was extended into adjacent space',[
+ ex('The northern car park was replaced by a garden.','北侧停车场被花园替代。','被替换的是旧停车场，花园是新设施。'),
+ ex('The western café was extended into an adjacent vacant area.','西侧咖啡馆向相邻空地扩建。','扩建的对象是咖啡馆，不是停车场。'),
+ ex('The café was not replaced by another building.','咖啡馆并未被另一建筑替代。','保留原建筑并扩展面积。')
+ ],'不能用 The garden was replaced by a car park 颠倒改造方向；更不能写停车场向西扩建。'),
+ sec('03 retain、remain 与 add 区分保留和新增',
+ '图书馆依旧位于东侧，因而 retained 和 remained unchanged 均适用。南侧新增一条 footpath，使用 was added；如果写 central footpath was retained，便把新增误写成既有设施的保留。',
+ 'remained unchanged / was retained / a footpath was added',[
+ ex('The eastern library remained unchanged.','东侧图书馆保持不变。','图中仅保留这座建筑的现有布局。'),
+ ex('The proposed design retains the library.','拟议规划保留图书馆。','retains 不表示对图书馆进行改建。'),
+ ex('A new footpath was added to the southern boundary.','沿南侧边界新建了一条步道。','新增位置是南侧，绝非中央步道继续存在。')
+ ],'不能把图书馆保留写成“图书馆改作学习室”，也不能补写尚未说明的修建年月。'),
+ sec('04 用空间顺序形成连贯概述与细节',
+ '总览先点出北侧新增绿地和南侧步行通道，并说明东侧图书馆保留；细节随后按北东、西南的方位叙述。广场平面没有面积数据、成本或改造动机，不能额外推断。',
+ 'overview → northern replacement and eastern retention → western extension and southern addition',[
+ ex('Overall, the proposed changes introduce a garden and a footpath.','总体上，规划新增花园与步道。','概述主要新增设施。'),
+ ex('The library remains in the east, while the café expands in the west.','东侧图书馆保持不变，西侧咖啡馆扩大。','将保留与扩建放在同一句对照。'),
+ ex('The diagrams show relative positions but no exact building sizes.','示意图给出相对位置，但没有建筑精确尺寸。','说明证据适用范围。')
+ ],'没有施工实际进度数据，不能将规划布局当成已完成的真实工程，也不可编造数值尺寸。')
  ],
  questions:[
- {question:'“花园被学习室取代”用 replaced by 完成。',answer:'The garden was replaced by study rooms.',why:'被动 replace 表示原设施由新设施替代。'},
- {question:'“停车场向西扩建”用 extended 完成。',answer:'The car park was extended westwards.',why:'extend 表示扩大原有设施，westwards 表方向。'},
- {question:'“图书馆不变”用 remain 表达。',answer:'The library remained unchanged.',why:'remain unchanged 是地图变化写作常用保留表达。'},
- {question:'本课虚构地图中中央步道是否变化？',answer:'没有。The central footpath remained unchanged.',why:'文字资料明确指出旧新布局步道均横穿场地中央。'}
+ {question:'“北侧停车场被花园替代”如何写？',answer:'The northern car park was replaced by a garden.',why:'原设施为 car park，新设施是 garden，顺序不可倒转。'},
+ {question:'西侧扩建的是什么设施？',answer:'The existing western café was extended into adjacent space.',why:'原稿说 café 扩建，而不是停车场扩大或被拆除。'},
+ {question:'哪里保持不变？',answer:'The library on the eastern side remained unchanged.',why:'图书馆位于东侧且未改，北侧停车场属于替换项目。'},
+ {question:'南侧原有中央步道是否只是保留？',answer:'No. A new footpath was added along the southern boundary.',why:'原稿明确说新增 southern footpath，不能借用另一套中央步道未变的地图数据。'}
  ],
- output:'观察本节原创前后地图（并核对四行空间数据），写 150–180 词英文 Task 1 风格说明：包括总览、位置、替换、扩建和未变设施。这是自编看图训练，不是官方试卷。',
+ output:'参照与 U06 原稿完全一致的虚构广场地图，写 150–180 词英文 Task 1 报告并附中文，描述替换、扩建、新增与保留四类变化。',
  modelParagraphStarts:[0,1,3,6,8],
  model:[
- ex('The information describes changes to a site between an earlier layout and a proposed new arrangement.','这些资料描述场地在旧布局与拟议新布局之间的变化。','引言限定文字描述来源。'),
- ex('Overall, the eastern garden is replaced by study rooms, while the western car park becomes larger.','总体上，东侧花园被学习室替代，西侧停车场扩大。','概述两个主要变化。'),
- ex('By contrast, the library in the north and the central footpath remain in their previous positions.','相比之下，北侧图书馆与中央步道保持原位置。','概述未变部分。'),
- ex('In the original arrangement, a garden occupied the eastern part of the site.','在原布局中，花园位于场地东部。','明确旧版位置。'),
- ex('Under the new plan, the garden is no longer present and study rooms take its place.','在新方案中花园不再保留，学习室占据其原位置。','准确表述替换。'),
- ex('This is the main change in the eastern section, whereas the library remains in the northern part of the site.','这是东侧最主要的变化，而图书馆仍位于场地北侧。','对照两种设施的变化与保留，不添加未知尺寸。'),
- ex('The car park, formerly located in the west, is shown as extending farther westwards.','原本位于西侧的停车场向更西方向延伸。','描述扩建方向。'),
- ex('The original parking facility is therefore expanded rather than replaced by a separate new one.','因此原停车设施是扩建，而非被另一处全新设施取代。','说明 extended 与 replaced 的区别。'),
- ex('Throughout these changes, the library continues to occupy the northern area.','在这些变化中，图书馆继续位于北侧。','报告保留的建筑。'),
- ex('Similarly, the footpath still crosses the centre of the site and is not shown as being moved.','同样，步道依然穿过场地中央，并未显示被迁移。','报告步道未变。')
+ ex('The diagrams compare the existing layout of a fictional public square with a proposed arrangement after redevelopment.','两张图比较一处虚构公共广场改造前的布局与拟议改造后的布局。','引言明确虚构地图与规划状态。'),
+ ex('Overall, the new layout introduces a garden in the north and a pedestrian footpath along the south.','总体而言，新规划在北部加入花园，并沿南侧新增行人步道。','同时概括两项新增变化。'),
+ ex('The library stays in the east, and the existing café on the western side is shown as enlarged.','图书馆保留在东侧，而原有西侧咖啡馆的占地范围扩大。','概述保留与扩建。'),
+ ex('In the original plan, a car park occupied the northern portion of the public square.','在原布局中，停车场位于公共广场北部区域。','明确旧设施。'),
+ ex('Under the proposed design, the car park is removed and its former site becomes a garden.','按照拟议设计，停车场被移除，其原位置改为花园。','正确表达替换方向。'),
+ ex('By contrast, the library on the eastern side is retained without any specified alteration to its position.','相比之下，东侧图书馆被保留，题目没有说明其位置发生变化。','不要编造图书馆改造。'),
+ ex('The café in the west is extended into an adjacent vacant area rather than moved elsewhere.','西侧咖啡馆向相邻空地扩展，并非迁往其他位置。','扩建而非迁移。'),
+ ex('This change affects the existing café footprint, but the drawings give no exact dimensions for the extension.','这一变化扩大原有咖啡馆占地，但示意图没有提供扩建的精确尺寸。','保持未知范围。'),
+ ex('A new footpath is also shown along the southern boundary, adding a pedestrian route to the square.','沿广场南侧边界另新增步道，为场地增加一条行人通行路线。','新增设施定位南侧。'),
+ ex('The diagrams provide no construction dates, costs or reasons for these proposed changes, so the report remains descriptive.','图示没有说明施工日期、费用或规划原因，因此报告应只做客观描述。','不编造时间和因果。')
  ],
  referenceUrls:['https://ielts.org/take-a-test/preparation-resources/writing-test-resources','https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-writing'],
- sourceNote:'对应 en-ielts-writing-task1-u06 地图空间变化；输入是原创地图和对应空间数据，不假称官方视觉试卷。'
+ sourceNote:'修复旧版北侧图书馆／东侧花园等与原稿不一致的独立地图语料；现与 U06 虚构广场原始草稿和配套 SVG 逐项一致。'
 }
 ];
