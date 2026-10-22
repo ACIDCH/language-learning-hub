@@ -4,7 +4,7 @@
   "counts": {
     "main": 108,
     "foundation": 48,
-    "specialties": 111
+    "specialties": 117
   },
   "courses": [
     {
@@ -1358,11 +1358,23 @@
         {
           "id": "en-task2-reason-evidence-vocab",
           "type": "vocabulary"
+        },
+        {
+          "id": "en-task2-u02-reasoning-chain-grammar",
+          "type": "grammar"
         }
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 87,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 492,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-writing-task2-u02.json"
@@ -1371,7 +1383,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -1401,11 +1412,23 @@
         {
           "id": "en-task2-contrast-cohesion",
           "type": "grammar"
+        },
+        {
+          "id": "en-task2-u03-fair-rebuttal-lexicon",
+          "type": "vocabulary"
         }
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 84,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 477,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-writing-task2-u03.json"
@@ -1414,7 +1437,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -1440,10 +1462,27 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "en-task2-u04-discussion-stance-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task2-u04-curriculum-judgement-lexicon",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 95,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 519,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-writing-task2-u04.json"
@@ -1452,8 +1491,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -1479,10 +1516,27 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "en-task2-u05-outweigh-conditions-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task2-u05-public-access-lexicon",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 104,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 488,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-writing-task2-u05.json"
@@ -1491,8 +1545,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
