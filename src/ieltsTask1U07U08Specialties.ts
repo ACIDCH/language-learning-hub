@@ -131,10 +131,10 @@ export const IELTS_TASK1_U07_U08_SPECIALTIES:SpecialtyLesson[]=[
  ],'about / approximately 不能使 20→30 的“翻倍”成为合理近似，语言润色必须晚于事实核对。')
  ],
  questions:[
- Q('When do weekly visits first double relative to the initial figure?', 'At the third observation: 40 compared with 20 initially.',why:'40÷20=2；第二年 30÷20=1.5，不能说第二年就翻倍。'),
- Q('What is the rise from first to second as a percentage of the first?', '50%, because (30−20)/20=0.5.',why:'基期为 20，增加 10，10÷20=50%，不是 100%。'),
- Q('Can you name the exact calendar years?', 'No. The source says only three successive years.',why:'题目没有给出 2020 等具体年份，不能自行补造日历日期。'),
- Q('What should be removed from the flawed draft?', 'The claim that visits doubled in year two and the unsupported advertising explanation.',why:'第一个结论倍数错误，第二个结论没有任何因果数据支撑。')
+ Q('When do weekly visits first double relative to the initial figure?', 'At the third observation: 40 compared with 20 initially.','40÷20=2；第二年 30÷20=1.5，不能说第二年就翻倍。'),
+ Q('What is the rise from first to second as a percentage of the first?', '50%, because (30−20)/20=0.5.','基期为 20，增加 10，10÷20=50%，不是 100%。'),
+ Q('Can you name the exact calendar years?', 'No. The source says only three successive years.','题目没有给出 2020 等具体年份，不能自行补造日历日期。'),
+ Q('What should be removed from the flawed draft?', 'The claim that visits doubled in year two and the unsupported advertising explanation.','第一个结论倍数错误，第二个结论没有任何因果数据支撑。')
  ],
  output:'对三句错误报告逐项修订，给出真实起点、基期和英文原因说明；最终写不少于150词的双语 Task1报告，避免推断未列年份和广告原因。',
  model:[
@@ -180,10 +180,10 @@ export const IELTS_TASK1_U07_U08_SPECIALTIES:SpecialtyLesson[]=[
  ],'编辑者不能把“可能”的个人猜测包装成表格事实；没有因果数据便不写原因。')
  ],
  questions:[
- Q('Which word means checking a statement against evidence?', 'Verify.',why:'verify 强调利用原始表格核对陈述是否正确，而不是随意估计。'),
- Q('Is the second-year increase an exact doubling?', 'No. It is a 50% rise from 20 to 30.',why:'精确翻倍必须从 20 到 40；30 只有原值的 1.5 倍。'),
- Q('What belongs in an overview of this series?', 'The overall increase across both intervals.',why:'概述表达大趋势，详细 20、30、40 的算术比较放在主体段。'),
- Q('Why is “visits rose because of advertising” inaccurate?', 'The source provides no evidence about advertising or any other cause.',why:'数据只包含三个连续年份的周访问量，无法通过共同变动证明广告因果。')
+ Q('Which word means checking a statement against evidence?', 'Verify.','verify 强调利用原始表格核对陈述是否正确，而不是随意估计。'),
+ Q('Is the second-year increase an exact doubling?', 'No. It is a 50% rise from 20 to 30.','精确翻倍必须从 20 到 40；30 只有原值的 1.5 倍。'),
+ Q('What belongs in an overview of this series?', 'The overall increase across both intervals.','概述表达大趋势，详细 20、30、40 的算术比较放在主体段。'),
+ Q('Why is “visits rose because of advertising” inaccurate?', 'The source provides no evidence about advertising or any other cause.','数据只包含三个连续年份的周访问量，无法通过共同变动证明广告因果。')
  ],
  output:'写一份双语修改清单：至少识别三个正确陈述、两处错误原因及修订方法，并完成至少150词完整数据报告。',
  model:[
