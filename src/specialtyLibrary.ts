@@ -31,6 +31,7 @@ import {IELTS_TASK2_U02_U05_SPECIALTIES} from './ieltsTask2U02U05Specialties';
 import {IELTS_TASK2_U06_SPECIALTIES} from './ieltsTask2U06Specialties';
 import {IELTS_TASK2_U07_SPECIALTIES} from './ieltsTask2U07Specialties';
 import {IELTS_TASK2_U08_SPECIALTIES} from './ieltsTask2U08Specialties';
+import {IELTS_TASK2_U01_SPECIALTIES} from './ieltsTask2U01Specialties';
 
 export type SpecialtyKind='grammar'|'vocabulary';
 export type SpecialtyLanguage='fr'|'en';
@@ -364,7 +365,8 @@ export const SPECIALTY_LESSONS:SpecialtyLesson[]=[
  ...IELTS_TASK2_U02_U05_SPECIALTIES,
  ...IELTS_TASK2_U06_SPECIALTIES,
  ...IELTS_TASK2_U07_SPECIALTIES,
- ...IELTS_TASK2_U08_SPECIALTIES
+ ...IELTS_TASK2_U08_SPECIALTIES,
+ ...IELTS_TASK2_U01_SPECIALTIES
 ];
 export function specialtyRoute(type:SpecialtyKind,language?:string,topic?:string,returnTo?:string){
  const params=new URLSearchParams({page:'specialties',type});
