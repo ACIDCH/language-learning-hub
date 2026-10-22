@@ -1,4 +1,5 @@
 import {expect,it} from 'vitest';
+import {splitLessonStages,STUDY_STAGES} from '../src/lessonStages';
 import {mkdirSync,writeFileSync,readFileSync} from 'node:fs';
 import {COURSES} from '../src/v44Courses';
 import {FOUNDATION_UNITS} from '../src/foundationCurriculum';
@@ -233,4 +234,17 @@ it('A1 U05 and U09 have complete authentic-level daily and directions sequences 
  expect(directions.paragraphs[1].target).toContain('tournez à gauche');
  expect(directions.paragraphs[2].target).toContain('en face du musée');
  expect(directions.questions[1].answer).toBe('Au premier feu.');
+});
+
+it('keeps inline-heading source prose in all five original IELTS Reading U01 learner stages',()=>{
+ const source=readFileSync('public/learning-assets/en-ielts-reading-u01.txt','utf8');
+ const outline=splitLessonStages(source);
+ expect(outline.structured).toBe(true);
+ expect(outline.stages).toHaveLength(6);
+ expect(outline.stages[0].body).toContain('你正在阅读一篇关于远程学习');
+ expect(outline.stages[4].body).toContain('opportunities for feedback and collaboration');
+ expect(outline.stages[1].body).toContain('Hedging');
+ expect(outline.stages[2].body).toContain('asynchronous delivery');
+ expect(outline.stages[3].body).toContain('Universities increasingly combine');
+ expect(STUDY_STAGES).toEqual([0,1,2,3,5]);
 });
