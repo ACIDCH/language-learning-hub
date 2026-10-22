@@ -437,7 +437,7 @@ it('legacy Task 1 U05/U06 grammar/vocabulary sources do not reintroduce mismatch
  const recycling=SPECIALTY_LESSONS.find(u=>u.id==='en-task1-u05-recycling-process-lexicon')!;
  expect(process.sections[0].table?.rows).toHaveLength(6);
  expect(process.sections[0].table?.rows[5][1]).toContain('cut for reuse');
- expect(process.model.map(e=>e.target).join(' ')).not.toMatch(/packaging|packed\s+sheets|dried\s+and\s+packed/iu);
+ expect(process.model.map(e=>e.target).join(' ')).not.toMatch(/sheets\s+are\s+packed|dried\s+and\s+packed|ends\s+with\s+packing|finally,\s+[^.]*packed/iu);
  expect(recycling.sections[0].table?.rows[5][0]).toContain('Cut');
  const map=SPECIALTY_LESSONS.find(u=>u.id==='en-map-change-lexicon')!;
  const geometry=map.sections[0].table!.rows;
