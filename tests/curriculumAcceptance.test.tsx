@@ -325,3 +325,38 @@ it('IELTS Task 1 U03 and U04 provide faithful four-paragraph bilingual readings 
  expect(budget.questions[3].answer).toContain('total budget');
  expect(budget.paragraphs[3].zh).toContain('实际');
 });
+
+
+it('Task 1 U01–U02 bilingual readings preserve original source, units, overview and paragraph evidence',()=>{
+ for(const id of ['en-ielts-writing-task1-u01','en-ielts-writing-task1-u02']){
+  const unit=RECEPTION_LESSONS[id];
+  expect(unit,id).toBeDefined();
+  expect(unit.language).toBe('en');
+  expect(unit.paragraphs.map(x=>x.id)).toEqual(['P1','P2','P3','P4']);
+  expect(unit.paragraphs.every(p=>p.target.length>=500&&p.zh.length>=175),id).toBe(true);
+  expect(unit.paragraphs.map(x=>x.target).join(' ').split(/\s+/u).length,id).toBeGreaterThanOrEqual(400);
+  expect(unit.questions,id).toHaveLength(4);
+  expect(unit.questions.every(q=>q.why.length>=43&&q.evidence.length>0&&q.evidence.every(p=>unit.paragraphs.some(x=>x.id===p))),id).toBe(true);
+  expect(unit.languageNotes,id).toHaveLength(4);
+  expect(unit.model.trim().split(/\s+/u).length,id).toBeGreaterThanOrEqual(150);
+  expect(unit.modelZh.length,id).toBeGreaterThan(200);
+  expect(index.find(x=>x.id===id)?.audio_status).toBe('missing_audio');
+ }
+ const loan=RECEPTION_LESSONS['en-ielts-writing-task1-u01'];
+ const source=readFileSync('public/learning-assets/en-ielts-writing-task1-u01.txt','utf8');
+ expect(source).toContain('2023 | 76 | 70');
+ expect(source).toContain('2024 | 91 | 62');
+ expect(loan.questions[0].answer).toContain('2023');
+ expect(loan.questions[1].answer).toContain('43 thousand');
+ expect(loan.questions[2].answer).toContain('15 thousand');
+ expect(loan.questions[3].answer).toContain('1.90');
+ expect(loan.paragraphs[3].target).toContain('separate dataset');
+ const trend=RECEPTION_LESSONS['en-ielts-writing-task1-u02'];
+ const draft=JSON.parse(readFileSync('content/lesson-drafts/en-ielts-writing-task1-u02.json','utf8'));
+ expect(draft.context).toContain('1200/900/1500/1800');
+ expect(trend.questions[0].answer).toContain('fell');
+ expect(trend.questions[1].answer).toContain('600');
+ expect(trend.questions[2].answer).toContain('50%');
+ expect(trend.questions[3].answer).toContain('no causal');
+ expect(trend.paragraphs[0].zh).toContain('月访问量');
+});
