@@ -76,7 +76,7 @@ export const IELTS_TASK2_U06_SPECIALTIES:SpecialtyLesson[]=[
  E('Schools could stagger the beginning of classes.','学校可以错开课程开始时间。','stagger 描述安排变化。'),
  E('Employers may need to coordinate their own schedules.','雇主可能需要协调各自的时间安排。','主体不同但需要合作。'),
  E('Coordination is a condition for the proposed benefit.','协调是提出收益的成立条件。','不当作已落实。')
- ],'不能把协调条件删除后仍写成该措施无论如何都会奏效。'),
+ ],'不能把协调条件删除后仍写成该措施无论如何都会奏效；学校和雇主是否配合仍需实际确认。'),
  S('03 feasible 与 effective 的证据要求不同','feasible 表示在一定条件下实际可选，effective 指措施达到预期结果。公交增班可能让一部分通勤者改乘变得 feasible，但还需要观测才能证实 effective。','make another mode feasible / assess whether it is effective',[
  E('Frequent buses might make a switch feasible.','班次更密集可能使换乘公交成为可行选择。','指有条件可做。'),
  E('Actual uptake would need to be evaluated.','实际选择公交的人数变化仍需评估。','未提供实测数据。'),
