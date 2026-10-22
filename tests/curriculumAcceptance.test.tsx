@@ -276,3 +276,15 @@ it('keeps IELTS Listening U04–U06 evidence and bilingual listening distinct fr
  expect(lab.questions[1].answer).toContain('collection date');
  expect(lab.questions[3].answer).toContain('method');
 });
+
+it('French A1 U12 Chinese text preserves what was done, not invented intentions or past acquaintance',()=>{
+ const lesson=RECEPTION_LESSONS['fr-a1-u12'];
+ expect(lesson.paragraphs[0].target).toContain('Nous avons décidé de visiter');
+ expect(lesson.paragraphs[0].zh).toContain('我们决定参观');
+ expect(lesson.paragraphs[1].target).toContain('Il n’a pas pris beaucoup de photos');
+ expect(lesson.paragraphs[1].zh).toContain('他没有拍很多照片');
+ expect(lesson.paragraphs[1].zh).not.toContain('他不想拍');
+ expect(lesson.paragraphs[2].target).toContain('Je ne connais pas cette personne');
+ expect(lesson.paragraphs[2].zh).toContain('我不认识这个人');
+ expect(lesson.paragraphs[2].zh).not.toContain('我以前不认识');
+});
