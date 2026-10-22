@@ -12,7 +12,7 @@ const PATH_ORDER:Record<SpecialtyLanguage,Record<SpecialtyKind,string[]>>={
   grammar:['en-contrast','en-conditionals','en-signposts','en-listening-paraphrase-scope','en-modals','en-reported-speech-listening','en-academic-passive',
    'en-relative-clauses','en-reading-evidence-scope-u02','en-ielts-tfng-scope-grammar-u04','en-reading-u05-reference-logic','en-reading-u06-hedging-inference','en-reading-u07-information-matching-logic','en-reading-u08-two-source-synthesis','en-process-report-grammar','en-task2-contrast-cohesion','en-lecture-hedging'],
   vocabulary:['en-signpost-vocab','en-study-vocab','en-listening-note-lexicon','en-stance-lexicon-listening','en-task1-trend-lexicon','en-lecture-terms',
-   'en-evidence-vocab','en-reading-research-evidence-lexicon-u02','en-ielts-heading-paragraph-function-lexicon','en-reading-u05-retrofit-lexicon','en-reading-u06-science-caution-lexicon','en-reading-u07-survey-method-lexicon','en-reading-u08-access-equity-lexicon','en-academic-collocations','en-map-change-lexicon','en-reading-evidence-lexicon','en-task2-reason-evidence-vocab']
+   'en-evidence-vocab','en-reading-u01-learning-evidence-lexicon','en-reading-research-evidence-lexicon-u02','en-ielts-heading-paragraph-function-lexicon','en-reading-u05-retrofit-lexicon','en-reading-u06-science-caution-lexicon','en-reading-u07-survey-method-lexicon','en-reading-u08-access-equity-lexicon','en-academic-collocations','en-map-change-lexicon','en-reading-evidence-lexicon','en-task2-reason-evidence-vocab']
  }
 };
 const LEVEL_RANK:Record<string,number>={A1:0,A2:1,B1:2,B2:3,C1:4,C2:5};
