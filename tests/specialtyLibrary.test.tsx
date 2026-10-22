@@ -924,5 +924,5 @@ it('IELTS Writing Task 1 U03 and U04 have independent source-exact grammar and v
   }
  }
  expect(linkedSpecialties('grammar','en-ielts-writing-task1-u03')[0].model.some(x=>x.target.includes('twice'))).toBe(true);
- expect(linkedSpecialties('vocabulary','en-ielts-writing-task1-u04')[0].sections[3].caution).toContain('货币');
+ expect(linkedSpecialties('vocabulary','en-ielts-writing-task1-u04')[0].sections[3].caution).toContain('数据边界');
 });
