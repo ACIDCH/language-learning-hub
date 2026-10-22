@@ -25,7 +25,7 @@ export const IELTS_LISTENING_U04_U06_RECEPTION:Record<string,ReceptionLesson>={
  ],
  task:'按 P1–P4 各写两句英文：前四句描述地图路线，后四句描述标本交接与处理。每句加自然中文，不能虚构距离或参观权限。',
  model:'Visitors enter the research garden through the southern gate. The office is on their left, opposite a small pond. They continue past the office and follow the path north to the greenhouse. The seed store is beyond the greenhouse on the same side of the path. Visitors who bring a specimen leave it at the reception desk. They do not carry it directly into storage. Staff check the information and attach a label to each specimen. Only then is it moved to the controlled room. The garden route and the specimen-handling process should be recorded separately.',
- modelZh:'访客从研究花园南门进入。办公室位于他们左手边，正对一个小池塘。访客经过办公室，沿小路向北到达温室。种子库在温室更远处，与温室位于道路同侧。带来标本的访客在接待台交付，不会直接将其送进储存室。工作人员核对信息并给每件标本贴标签，然后才将标本转移到受控室。花园行进路线与标本处理流程需要分别记录。',
+ modelZh:'访客从研究花园南门进入。办公室位于他们左手边，正对一个小池塘。访客经过办公室，沿小路向北到达温室。种子库在温室更远处，与温室位于道路同侧。带来标本的访客在接待台交付，不会直接将其送进储存室。工作人员核对信息并给每件标本贴标签，然后才将标本转移到受控室。花园行进路线与标本处理流程需要分别记录，切勿把经过办公室与进入办公室混同，也不能推测尚未说明的距离和访客进入受控室的权限。',
  references:['https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-listening']
 },
 'en-ielts-listening-u05':{
