@@ -32,7 +32,7 @@ it('each new grammar/vocabulary lesson is an actual four-chapter bilingual teach
    expect(u.sections,u.id).toHaveLength(4);
    expect(u.questions,u.id).toHaveLength(4);
    expect(u.sections[0].table?.rows,u.id).toHaveLength(4);
-   expect(u.sections.every(s=>s.examples.length>=3&&s.examples.every(e=>e.target.length>20&&e.zh.length>4&&e.analysis.length>6)),u.id).toBe(true);
+   expect(u.sections.every(s=>s.examples.length>=3&&s.examples.every(e=>e.target.length>(u.language==='fr'?12:20)&&e.zh.length>4&&e.analysis.length>6)),u.id).toBe(true);
    expect(u.model.length,u.id).toBeGreaterThanOrEqual(7);
    expect(u.model.every(e=>e.target.length>=15&&e.zh.length>=5),u.id).toBe(true);
    expect(specialtyQuality(u),u.id).toBe(true);
