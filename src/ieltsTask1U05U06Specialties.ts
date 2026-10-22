@@ -28,7 +28,7 @@ export const IELTS_TASK1_U05_U06_SPECIALTIES:SpecialtyLesson[]=[
  ],'原始教学场景没有包装、消毒、烘干温度、耗时或回收利用率，不能写成由图证实的流程步骤。'),
  S('04 用阶段语块写出完整 overview','overview 必须给出起点、终点和核心物质转化：从废纸收集出发，经过分类、加水制浆、去除杂质、成形压干，最终裁切。用 processed / converted / finally 做自然衔接，不必每句堆砌 furthermore。','The process begins with ... and ends when ...',[
  E('Overall, waste paper passes through a series of preparation and forming stages.','总体上，废纸经历准备和成形等一系列阶段。','概述中概括中段功能。'),
- E('It begins with the collection of used paper.','流程始于废纸收集。','起点。'),
+ E('It begins with the collection of used paper.','流程始于废纸收集。','明确对应流程起点。'),
  E('The final dried sheets are cut for reuse.','最后干燥的纸张被裁切后再利用。','终点与原稿吻合。')
  ],'示意流程没有说明它无限循环运行，不能从“for reuse”推出回收率或下一轮加工流程已经发生。')
  ],
@@ -42,7 +42,7 @@ export const IELTS_TASK1_U05_U06_SPECIALTIES:SpecialtyLesson[]=[
  model:[
  E('The diagram illustrates a simplified paper-recycling process.','该图示描述简化的纸张回收流程。','定义性质。'),
  E('Overall, used paper is prepared, converted into pulp and formed into reusable sheets.','总体上，废纸经处理转成纸浆，再形成可再利用的纸张。','概述起止与转化。'),
- E('First, used paper is collected from designated bins.','首先，从指定回收箱收集废纸。','起点。'),
+ E('First, used paper is collected from designated bins.','首先，从指定回收箱收集废纸。','明确对应流程起点。'),
  E('The material is then sorted.','随后对材料分类。','第二步。'),
  E('Selected paper is mixed with water to form pulp.','将选出的纸张与水混合形成纸浆。','第三步。'),
  E('Unwanted particles are removed before the mixture is spread into a thin layer.','先去除杂质，再将混合物铺成薄层。','第四步。'),
@@ -86,7 +86,7 @@ export const IELTS_TASK1_U05_U06_SPECIALTIES:SpecialtyLesson[]=[
  ],
  output:'根据修订后的原稿一致地图写一篇不少于 150 词的地图报告，明确 north/east/west/south 四项关系，至少出现 replaced、retained、extended、added，配自然中文并保留规划语气。',
  model:[
- E('The two plans compare a fictional public square before and after proposed redevelopment.','两张规划图比较一处虚构广场改造前后的布局。','范围。'),
+ E('The two plans compare a fictional public square before and after proposed redevelopment.','两张规划图比较一处虚构广场改造前后的布局。','本句交代图示范围。'),
  E('Overall, the proposal adds a garden and a footpath.','总体上，规划新增花园与步道。','主要改变。'),
  E('The library on the eastern side remains unchanged.','东侧图书馆保持不变。','保留项目。'),
  E('In the north, the former car park is replaced by a garden.','北侧原有停车场被花园替代。','旧新方向。'),
