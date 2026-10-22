@@ -3,6 +3,8 @@ import {readFileSync} from 'node:fs';
 import {SPECIALTY_LESSONS,linkedSpecialties,specialtyQuality} from '../src/specialtyLibrary';
 import {RECEPTION_LESSONS} from '../src/receptionLessons';
 import index from '../content/v44-main-index.json';
+import {draftText} from '../src/v44Courses';
+import {learnerFacingText} from '../src/lessonPresentationText';
 
 const cases=[
  ['en-ielts-listening-u07','en','fifty residents','six volunteers'],
@@ -82,4 +84,14 @@ it('bilingual passages do not claim real speech recordings or independent editor
   expect(JSON.parse(raw).qa_status).toBe('pending');
   expect(JSON.parse(raw).audio_status).toBe('missing_audio');
  }
+});
+
+it('does not expose original drafting boilerplate as student teaching content',()=>{
+ const raw=JSON.parse(readFileSync('content/lesson-drafts/fr-a2-u03.json','utf8'));
+ const original=draftText(raw);
+ expect(original).toContain('原文例句：结合本课知识讲解，辨认表达的功能与适用条件。');
+ const student=learnerFacingText(original);
+ expect(student).not.toContain('原文例句：结合本课知识讲解，辨认表达的功能与适用条件。');
+ expect(student).toContain('Nous devons partir à onze heures et changer de quai à Orléans.');
+ expect(student).toContain('Notre billet reste valable pour ce nouveau trajet.');
 });
