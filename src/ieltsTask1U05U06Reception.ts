@@ -11,7 +11,7 @@ export const IELTS_TASK1_U05_U06_RECEPTION:Record<string,ReceptionLesson>={
  ],
  questions:[
  {prompt:'What is the correct order of collecting, sorting and making pulp?',answer:'Used paper is collected, sorted and then mixed with water to form pulp.',evidence:['P1','P2'],why:'P1 明确收集先于分类，P2 明确选出的纸张随后与水混合形成纸浆；颠倒顺序会改变流程描述。'},
- {prompt:'What should happen before pulp is spread into a thin layer?',answer:'Unwanted particles are removed from the mixture.',evidence:['P2'],why:'P2 明确先去除杂质后铺成薄层，因此不能写成先铺展、再加入或去除其他材料。'},
+ {prompt:'What should happen before pulp is spread into a thin layer?',answer:'Unwanted particles are removed from the mixture.',evidence:['P2'],why:'P2 明确先去除杂质后铺成薄层，因此不能写成先铺展、再加入或去除其他材料；原图的顺序就是先清理再成形。'},
  {prompt:'What is the last operation in this source-based diagram?',answer:'The dried material is cut for reuse, not packed.',evidence:['P3'],why:'P3 明确原稿终点是 cut for reuse。包装未在课程源稿中出现，不应以另一张通用图取代原本证据。'},
  {prompt:'Can a report add a drying temperature or production quantity?',answer:'No. The schematic provides neither temperatures nor output volumes.',evidence:['P4'],why:'P4 逐项说明图中未提供时间、温度、费用和产量，加入具体数值是无依据推测，不能视为原始事实。'}
  ],
