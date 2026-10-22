@@ -491,3 +491,32 @@ it('Task2 U02–U05 provides four genuine bilingual argument lessons and 250+ wo
  const u05=RECEPTION_LESSONS['en-ielts-writing-task2-u05'];
  expect(u05.questions[2].answer).toContain('non-digital');
 });
+
+
+it('audits all authored paragraph-level Chinese links and preserves independent editorial/audio gates',()=>{
+ const indexed=new Set(index.map(x=>x.id));
+ const courses=new Set(COURSES.map(x=>x.id));
+ let checked=0;
+ for(const [courseId,lesson] of Object.entries(RECEPTION_LESSONS)){
+  expect(courses.has(courseId),courseId+' unknown original course').toBe(true);
+  expect(lesson.paragraphs.length,courseId+' incomplete paragraph mapping').toBeGreaterThanOrEqual(4);
+  const paragraphIds=new Set(lesson.paragraphs.map(x=>x.id));
+  expect(paragraphIds.size,courseId+' duplicate paragraph ids').toBe(lesson.paragraphs.length);
+  for(const part of lesson.paragraphs){
+   expect(/^P\d+$/u.test(part.id),courseId+' invalid paragraph id').toBe(true);
+   expect(part.target.trim().length,courseId+':'+part.id+' empty original').toBeGreaterThan(65);
+   expect(part.zh.trim().length,courseId+':'+part.id+' incomplete Chinese counterpart').toBeGreaterThan(28);
+   expect(part.zh.trim(),courseId+':'+part.id+' untranslated duplication').not.toBe(part.target.trim());
+  }
+  expect(lesson.questions.every(q=>q.evidence.length>0&&q.evidence.every(id=>paragraphIds.has(id))),courseId+' broken evidence ids').toBe(true);
+  expect(lesson.questions.every(q=>q.answer.trim().length>0&&q.why.trim().length>=10),courseId+' empty answer explanation').toBe(true);
+  expect(lesson.model.trim().length,courseId+' empty model').toBeGreaterThan(45);
+  expect(lesson.modelZh.trim().length,courseId+' missing model Chinese').toBeGreaterThan(45);
+  if(courseId.startsWith('en-ielts-writing-task2-')){
+   expect(lesson.model.trim().split(/\s+/u).length,courseId+' under 250 Task2 words').toBeGreaterThanOrEqual(250);
+  }
+  if(indexed.has(courseId))expect(index.find(x=>x.id===courseId)?.audio_status,courseId+' audio remains unverified').toBe('missing_audio');
+  checked++;
+ }
+ expect(checked).toBeGreaterThanOrEqual(38);
+});
