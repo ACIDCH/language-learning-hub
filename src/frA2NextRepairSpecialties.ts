@@ -60,7 +60,7 @@ export const FR_A2_REPAIR_SPECIALTIES:SpecialtyLesson[]=[
  e('Nous sommes à la gare.','我们在火车站。','gare 是车站。'),
  e('Nous allons au guichet.','我们去服务窗口。','à + le 缩合为 au。'),
  e('Nous changeons de quai à Orléans.','我们在奥尔良换站台。','站台与城市各有不同层级。')
- ],'ne dites pas une correspondance de gare 表示本课的换站台；换乘与设施词不能随意互换。',
+ ],'表达换乘地点时用 une correspondance à Orléans；不要用 gare 和 quai 混淆车站、站台与换乘动作。',
  t('四项场所与动作',[['la gare','火车站','整体交通设施'],['le guichet','服务／售票窗口','询问信息的位置'],['le quai','站台','需确认号码'],['la correspondance','换乘','在奥尔良进行的动作']],'先看题目问的是地点、站台还是交通转换动作。')),
  s('02 列车状态：annulé / retardé / valable','annulé 是取消，retardé 是延误，valable 是票证有效。前两个经常描述服务，valable 在本课描述车票。取消和延误都可能改变旅行安排，但含义完全不同。','un train annulé / un train en retard / un billet valable',[
  e('Le train direct est annulé.','直达列车被取消。','不是单纯晚点。'),
@@ -68,13 +68,13 @@ export const FR_A2_REPAIR_SPECIALTIES:SpecialtyLesson[]=[
  e('Le billet reste valable pour le nouveau trajet.','车票对新行程仍然有效。','限定推荐的替代路线。')
  ],'不能把取消译为延误，也不能把 billet valable 解释成任何改签路线均免费；只有原文确认的路线有效。'),
  s('03 票务操作：demander ≠ obtenir','demander un remboursement 是申请退款，obtenir un remboursement 才是获得退款。employée propose un trajet 指工作人员提出可行方案，不能保证旅客已经订到其他路线。','proposer un trajet / demander un remboursement / obtenir une confirmation',[
- e('Une employée propose une correspondance.','工作人员提出一条换乘路线。','方案提出。'),
+ e('Une employée propose une correspondance.','工作人员提出一条换乘路线。','propose 只是提出可选择路线，不意味着已经旅行。'),
  e('Nous pouvons demander un remboursement.','我们可以申请退款。','许可／选择而非完成。'),
  e('Le remboursement n’est pas confirmé.','退款尚未得到确认。','不得写成已收款。')
  ],'申请与批准不是同一阶段。要保留文中能够验证的状态，不凭“可以申请”推断退款已经到账。'),
  s('04 实际问答的复述和核对','交通信息中的时间、地点和票证有效性应一起复述。c’est bien ça ? 用于确认理解；vérifier sur l’écran 指查看显示屏，不能把尚未知的站台编号当作已收到的信息。','si j’ai bien compris / c’est bien ça ? / vérifier le quai',[
- e('Si j’ai bien compris, nous partons à onze heures.','如果我没理解错，我们十一点出发。','核对时间。'),
- e('La correspondance est à Orléans, c’est bien ça ?','在奥尔良换乘，是这样吗？','核对地点。'),
+ e('Si j’ai bien compris, nous partons à onze heures.','如果我没理解错，我们十一点出发。','si j’ai bien compris 用来重复确认十一点出发。'),
+ e('La correspondance est à Orléans, c’est bien ça ?','在奥尔良换乘，是这样吗？','反问 c’est bien ça ? 礼貌确认换乘城市是奥尔良。'),
  e('Je vais vérifier le numéro du quai sur l’écran.','我要在显示屏上核对站台编号。','不编造具体编号。')
  ],'再次确认时应按“时间—换乘点—车票”有序复述，避免只记录一个孤立数字。')
  ],
@@ -137,7 +137,7 @@ export const FR_A2_REPAIR_SPECIALTIES:SpecialtyLesson[]=[
  e('J’ai mal à la tête.','我头疼。','部位搭配。'),
  e('Je ne connais pas la cause.','我不知道原因。','不推断疾病。'),
  e('Nous pouvons vous proposer un rendez-vous cet après-midi.','我们可以为您安排今天下午的预约。','时间段，不自编具体时刻。'),
- e('Merci. Que me conseillez-vous ?','谢谢。您建议我怎么做？','礼貌求建议。'),
+ e('Merci. Que me conseillez-vous ?','谢谢。您建议我怎么做？','礼貌通过礼貌提问请求建议，而不是自行判断疾病。'),
  e('Je vais noter les informations du rendez-vous.','我会记下预约信息。','后续行动。')
  ],
  referenceUrls:[FR+'cond1.html'],sourceNote:'限定为语言表达教学，不替代医学建议；课文未提供诊断、具体预约时刻或请假结果。'
@@ -151,7 +151,7 @@ export const FR_A2_REPAIR_SPECIALTIES:SpecialtyLesson[]=[
  s('01 症状与原因分开表达','fatigué 是感到疲惫，avoir mal à la tête 是头疼；la cause 表示原因。病人描述感受不等于确定病因，课堂练习只能组织清晰的表达，不能根据少量词汇推断疾病。','être fatigué / avoir mal à / ne pas connaître la cause',[
  e('Je suis fatigué depuis deux jours.','我已经疲惫两天。','描述持续状态。'),
  e('J’ai mal à la tête.','我头疼。','描述具体感受。'),
- e('Je ne connais pas la cause.','我不知道原因。','明确未知。')
+ e('Je ne connais pas la cause.','我不知道原因。','明确保罗不清楚头疼原因，不能凭症状补诊断。')
  ],'mal à la tête 与 fièvre 不是同义词；故事没有说保罗发烧，也没有任何诊断。',
  t('四组核心语块',[['être fatigué','感到疲惫','形容词随主语配合'],['avoir mal à la tête','头疼','avoir mal à + 身体部位'],['ne pas connaître la cause','不知道原因','否定知识而非否定症状'],['depuis deux jours','已经两天','配现在时表示仍持续']],'将“症状”“时间”“原因是否已知”分三个栏目。')),
  s('02 医疗预约中的名词和动词','le cabinet médical 是诊所或门诊，prendre rendez-vous 表预约，proposer un rendez-vous 指提供一项安排。秘书可以处理预约，但不因此承担医生的诊断行为。','téléphoner au cabinet / prendre rendez-vous / proposer une heure',[
@@ -160,12 +160,12 @@ export const FR_A2_REPAIR_SPECIALTIES:SpecialtyLesson[]=[
  e('La secrétaire propose un rendez-vous l’après-midi.','秘书提出下午的预约安排。','尚无具体时刻可填写。')
  ],'proposer un rendez-vous 不能自动等于完成治疗；预约只是安排，后续就诊尚未在本课发生。'),
  s('03 se reposer、conseiller 与责任范围','se reposer 是休息，conseiller 指给建议；本课训练 Vous devriez + 不定式，但建议不代替专业判断。un responsable 是主管，rentrer plus tôt 指提前回家。','se reposer / demander un conseil / prévenir son responsable',[
- e('Que me conseillez-vous ?','您建议我怎么做？','求建议。'),
+ e('Que me conseillez-vous ?','您建议我怎么做？','通过礼貌提问请求建议，而不是自行判断疾病。'),
  e('Vous devriez vous reposer.','您应该休息一下。','礼貌建议表达例句。'),
  e('Paul prévient son responsable.','保罗告知主管。','信息沟通，不代表主管已批准请假。')
  ],'不能把 la secrétaire 误译为 le médecin；也不能将员工“通知主管”当作已获得准假。'),
  s('04 记录信息避免补写缺失细节','电话听力要区分明确出现与未提及的内容：症状已明确、持续两天已明确、下午预约已提出；具体诊断、预约分钟数和主管回复没有给出。学会用未确定表达代替猜测。','noter l’heure / heure exacte non précisée / réponse inconnue',[
- e('Il note les informations du rendez-vous.','他记下预约信息。','动作已发生。'),
+ e('Il note les informations du rendez-vous.','他记下预约信息。','保罗已记下收到的信息，但预约具体时间仍未披露。'),
  e('Le texte ne précise pas l’heure exacte.','课文没有明确预约的具体时刻。','不凭下午编具体小时。'),
  e('La demande de congé n’est pas encore confirmée.','请假请求尚未得到确认。','保留未知结果。')
  ],'不要从 rendez-vous l’après-midi 填出“下午三点”，也不能把请假申请误写成已获批准。')
