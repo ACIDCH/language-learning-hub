@@ -1,3 +1,4 @@
+import {VISUAL_EXERCISES} from '../src/Task1VisualEvidence';
 import {expect,it} from 'vitest';
 import {splitLessonStages,STUDY_STAGES} from '../src/lessonStages';
 import {mkdirSync,writeFileSync,readFileSync} from 'node:fs';
@@ -359,4 +360,37 @@ it('Task 1 U01–U02 bilingual readings preserve original source, units, overvie
  expect(trend.questions[2].answer).toContain('50%');
  expect(trend.questions[3].answer).toContain('no causal');
  expect(trend.paragraphs[0].zh).toContain('月访问量');
+});
+
+
+it('Task1 U05 and U06 source narratives, parallel Chinese and visual diagrams refer to the SAME exercises',()=>{
+ for(const [course,words] of [['en-ielts-writing-task1-u05',518],['en-ielts-writing-task1-u06',523]] as const){
+  const lesson=RECEPTION_LESSONS[course];
+  expect(lesson,course).toBeDefined();
+  expect(lesson.language).toBe('en');
+  expect(lesson.paragraphs.map(p=>p.id)).toEqual(['P1','P2','P3','P4']);
+  expect(lesson.paragraphs.map(p=>p.target).join(' ').trim().split(/\s+/u).length).toBe(words);
+  expect(lesson.paragraphs.every(p=>p.target.length>=600&&p.zh.length>=180)).toBe(true);
+  expect(lesson.questions).toHaveLength(4);
+  expect(lesson.questions.every(q=>q.why.length>=40&&q.evidence.length>=1&&q.evidence.every(p=>lesson.paragraphs.some(t=>t.id===p)))).toBe(true);
+  expect(lesson.languageNotes.length).toBeGreaterThanOrEqual(4);
+  expect(lesson.model.trim().split(/\s+/u).length).toBeGreaterThanOrEqual(150);
+  expect(lesson.modelZh.length).toBeGreaterThan(200);
+  expect(index.find(x=>x.id===course)?.audio_status).toBe('missing_audio');
+ }
+ const process=VISUAL_EXERCISES['en-process-report-grammar'].items;
+ const manuscript5=JSON.parse(readFileSync('content/lesson-drafts/en-ielts-writing-task1-u05.json','utf8'));
+ expect(manuscript5.reading).toContain('cut for reuse');
+ expect(process).toHaveLength(6);
+ expect(process[5]).toContain('Cut for reuse');
+ expect(process.some(step=>step.toLowerCase().includes('pack'))).toBe(false);
+ const old=VISUAL_EXERCISES['en-map-change-lexicon'].sites;
+ const manuscript6=JSON.parse(readFileSync('content/lesson-drafts/en-ielts-writing-task1-u06.json','utf8'));
+ expect(manuscript6.reading).toContain('car park in the north was replaced by a garden');
+ expect(old.north).toMatchObject({before:'Car park',after:'Garden'});
+ expect(old.east).toMatchObject({before:'Library',after:'Library',change:'unchanged'});
+ expect(old.west.before).toBe('Café');
+ expect(old.centre.after).toContain('southern footpath');
+ expect(RECEPTION_LESSONS['en-ielts-writing-task1-u06'].questions[0].answer).toContain('garden');
+ expect(RECEPTION_LESSONS['en-ielts-writing-task1-u05'].questions[2].answer).toContain('not packed');
 });
