@@ -451,3 +451,43 @@ it('legacy Task 1 U05/U06 grammar/vocabulary sources do not reintroduce mismatch
  expect(map.model.map(x=>x.target).join(' ')).not.toContain('study rooms');
  expect(map.model.map(x=>x.target).join(' ')).not.toContain('central footpath');
 });
+
+
+it('Task2 U02–U05 provides four genuine bilingual argument lessons and 250+ word non-official model essays',()=>{
+ const expected=[
+  ['en-ielts-writing-task2-u02',492,'public spaces','hypothetical','庭院'],
+  ['en-ielts-writing-task2-u03',477,'standardised tests','consistent','考试'],
+  ['en-ielts-writing-task2-u04',519,'vocational','programme','专业'],
+  ['en-ielts-writing-task2-u05',488,'online','non-digital','线上']
+ ] as const;
+ for(const [id,words,term,answerTerm,mandarin] of expected){
+  const source=JSON.parse(readFileSync('content/lesson-drafts/'+id+'.json','utf8'));
+  const lesson=RECEPTION_LESSONS[id];
+  expect(lesson,id).toBeDefined();
+  expect(lesson.language).toBe('en');
+  expect(lesson.paragraphs.map(x=>x.id)).toEqual(['P1','P2','P3','P4']);
+  expect(lesson.paragraphs.map(x=>x.target).join(' ').trim().split(/\s+/u).length,id).toBe(words);
+  expect(lesson.paragraphs.every(x=>x.target.trim().split(/\s+/u).length>=110&&x.zh.length>=175),id).toBe(true);
+  expect(lesson.questions.length,id).toBe(4);
+  expect(lesson.questions.every(x=>x.answer.length>22&&x.why.length>=32&&x.evidence.length>=1&&x.evidence.every(e=>lesson.paragraphs.some(p=>p.id===e))),id).toBe(true);
+  expect(lesson.languageNotes.length,id).toBe(4);
+  expect(lesson.model.trim().split(/\s+/u).length,id).toBeGreaterThanOrEqual(250);
+  expect(lesson.modelZh.length,id).toBeGreaterThan(500);
+  expect(lesson.paragraphs.map(x=>x.target).join(' ').toLowerCase(),id).toContain(term);
+  expect(lesson.questions.map(x=>x.answer).join(' '),id).toMatch(new RegExp(answerTerm,'i'));
+  expect(lesson.paragraphs.map(x=>x.zh).join(' '),id).toContain(mandarin);
+  expect(source.content_status).toBe('original_draft');
+  expect(index.find(x=>x.id===id)?.audio_status).toBe('missing_audio');
+  expect(lesson.references).toContain('content/lesson-drafts/'+id+'.json');
+  expect(lesson.references.some(url=>url.startsWith('https://ielts.org/'))).toBe(true);
+ }
+ const u02=RECEPTION_LESSONS['en-ielts-writing-task2-u02'];
+ expect(u02.questions[1].answer).toContain('hypothetical');
+ expect(u02.questions[1].why).toContain('研究');
+ const u03=RECEPTION_LESSONS['en-ielts-writing-task2-u03'];
+ expect(u03.questions[2].answer).toContain('complements');
+ const u04=RECEPTION_LESSONS['en-ielts-writing-task2-u04'];
+ expect(u04.questions[2].answer).toContain('programme');
+ const u05=RECEPTION_LESSONS['en-ielts-writing-task2-u05'];
+ expect(u05.questions[2].answer).toContain('non-digital');
+});
