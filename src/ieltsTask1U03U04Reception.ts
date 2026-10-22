@@ -14,7 +14,7 @@ export const IELTS_TASK1_U03_U04_RECEPTION:Record<string,ReceptionLesson>={
  {prompt:'Which campus has bus use exceeding cycling, and by how much?',answer:'Campus B; bus use is 25 percentage points higher (50% versus 25%).',evidence:['P1','P3'],why:'P1 给出 B 的公交 50%、骑行 25%，P3 明确差值为 25 个百分点；不能错译为公交多出 25 个人。'},
  {prompt:'What should the overview say about the other two campuses?',answer:'Cycling exceeds bus use at both campuses A and C.',evidence:['P2'],why:'P2 对照 A:40%>30% 以及 C:35%>20%，因此可概括为 A、C 校区骑行比例高于公交。'},
  {prompt:'Can the report claim a rise between years?',answer:'No. The table compares three campuses and provides no dates.',evidence:['P3'],why:'P3 说明所有百分比都是空间横向比较，题面没有年份或时间序列，因此 rise over time 没有依据。'},
- {prompt:'Can the unreported remainder be identified as car use?',answer:'No. Other commuting categories are not specified by the source.',evidence:['P4'],why:'P4 明确列出剩余方式名称未提供，不能根据不足 100% 的合计自行推断为汽车、步行或其他方式。'}
+ {prompt:'Can the unreported remainder be identified as car use?',answer:'No. Other commuting categories are not specified by the source.',evidence:['P4'],why:'P4 明确列出剩余方式名称未提供，不能根据不足 100% 的合计自行推断为汽车、步行或其他方式；原表只报告了骑行和公交。'}
  ],
  languageNotes:[
  {target:'compared with / whereas',zh:'用于同类指标对照；whereas 后通常跟完整分句，必须对应正确校区和方式。'},
@@ -39,7 +39,7 @@ export const IELTS_TASK1_U03_U04_RECEPTION:Record<string,ReceptionLesson>={
  {prompt:'Which budget category remained the largest in both years?',answer:'Teaching: 50% in 2020 and 45% in 2025.',evidence:['P1','P2'],why:'P1 列出两个年份三类比例，P2 明确教学在 2020 和 2025 年都保持最大份额，虽然份额从 50% 降到 45%。'},
  {prompt:'How many percentage points did the research share gain?',answer:'10 percentage points, rising from 30% to 40%.',evidence:['P1','P3'],why:'研究由 2020 年的 30% 变为 2025 年的 40%，计算 40−30=10 个百分点，而非资金增幅 10%。'},
  {prompt:'What is the relative increase of the research share compared with its original share?',answer:'Approximately 33.3%, calculated as (40−30) divided by 30.',evidence:['P3'],why:'基期研究份额为 30%，差额是 10 个百分点，10÷30≈33.3%；这不等于实际货币支出的相对变化。'},
- {prompt:'Can we conclude that teaching was allocated less money in 2025?',answer:'No. The total budget for each year is not given.',evidence:['P1','P4'],why:'实际金额等于份额乘以年度总预算；即使教学份额从 50% 降到 45%，总额未知仍无法确认金额下降。'}
+ {prompt:'Can we conclude that teaching was allocated less money in 2025?',answer:'No. The total budget for each year is not given.',evidence:['P1','P4'],why:'实际金额等于份额乘以年度总预算；即使教学份额从 50% 降到 45%，总额未知仍无法确认金额下降，份额变化不等于货币金额变化。'}
  ],
  languageNotes:[
  {target:'the share allocated to research',zh:'分配给研究的预算份额，而不是研究实际得到的金额。'},
