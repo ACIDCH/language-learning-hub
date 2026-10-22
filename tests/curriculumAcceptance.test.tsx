@@ -255,12 +255,12 @@ it('keeps IELTS Listening U04–U06 evidence and bilingual listening distinct fr
   expect(u,id).toBeDefined();
   expect(u.language).toBe('en');
   expect(u.paragraphs.map(p=>p.id)).toEqual(['P1','P2','P3','P4']);
-  expect(u.paragraphs.every(p=>p.target.trim().split(/\\s+/u).length>=80&&p.zh.length>=120),id).toBe(true);
-  expect(u.paragraphs.map(p=>p.target).join(' ').trim().split(/\\s+/u).length,id).toBeGreaterThan(350);
+  expect(u.paragraphs.every(p=>p.target.trim().split(/\s+/u).length>=80&&p.zh.length>=120),id).toBe(true);
+  expect(u.paragraphs.map(p=>p.target).join(' ').trim().split(/\s+/u).length,id).toBeGreaterThan(350);
   expect(u.questions).toHaveLength(4);
   expect(u.questions.every(q=>q.answer.length>15&&q.why.length>35&&q.evidence.length>0&&q.evidence.every(e=>['P1','P2','P3','P4'].includes(e))),id).toBe(true);
   expect(u.languageNotes.length,id).toBeGreaterThanOrEqual(4);
-  expect(u.model.split(/\\s+/u).length,id).toBeGreaterThanOrEqual(90);
+  expect(u.model.split(/\s+/u).length,id).toBeGreaterThanOrEqual(90);
   expect(u.modelZh.length,id).toBeGreaterThan(150);
   expect(index.find(x=>x.id===id)?.audio_status).toBe('missing_audio');
  }
