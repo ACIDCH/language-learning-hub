@@ -5,7 +5,7 @@ const sec=(title:string,concept:string,pattern:string,examples:LearningExample[]
 export const IELTS_ARGUMENT_SPECIALTIES:SpecialtyLesson[]=[
 {
  id:'en-task2-contrast-cohesion',type:'grammar',language:'en',level:'B2',unitLink:'en-ielts-writing-task2-u03',
- title:'论证句法：让步、反驳与指代衔接',subtitle:'although / despite / however / whereas 的结构和篇章功能',
+ title:'论证句法：让步、反驳与指代衔接',subtitle:'跨题句法迁移训练：句型以课堂自编情境讲解；主课 U03 的标准化考试反驳另见听读与词汇',
  prerequisite:'能够写完整陈述句，掌握 because、but、so，并能区分名词短语和从句。',
  objective:'使用让步从句、名词化让步结构、对照句及回指结构组织理由与反驳，不靠堆砌连接副词制造虚假逻辑。',
  sections:[
@@ -55,11 +55,11 @@ export const IELTS_ARGUMENT_SPECIALTIES:SpecialtyLesson[]=[
  e('Universities could allocate resources according to demonstrated demand rather than assuming that one solution will serve every learner equally well.','大学可以根据实际得到证实的需求分配资源，而不是假设同一方案能同样满足所有学习者。','结论回应两种资源的适用边界。')
  ],
  referenceUrls:['https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/contrasting-ideas-although-despite-others','https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-writing'],
- sourceNote:'关联现有 Task2 U03 论证和反驳。短段训练不应标识为达到 IELTS 至少 250 词的完整 Task2 作文。'
+ sourceNote:'跨题语法迁移训练：例句使用线上课程等原创情境，与 U03 原稿标准化考试观点不是同一份论证材料；U03 主课听读和词汇专题依据标准化考试原文。短段练习不代表完成 IELTS Task 2 至少250词作文。'
 },
 {
  id:'en-task2-reason-evidence-vocab',type:'vocabulary',language:'en',level:'B2',unitLink:'en-ielts-writing-task2-u02',
- title:'理由与论据语块：机制、例子、限制及结论',subtitle:'从 make a claim 发展为符合 Task 2 要求的完整讨论',
+ title:'理由与论据语块：机制、例子、限制及结论',subtitle:'跨题词汇迁移训练：此专题用学习室与数字资源的自拟题练词，U02 主课原稿讨论公共空间与邻里交流',
  prerequisite:'会写观点句、because 句及基本的对比句，理解 Task 2 的不同设问。',
  objective:'使用 reason, illustrate, address, balance, justify 等搭配解释观点，识别虚构例子与真实证据的边界，完成至少 250 词的 Task 2 议论文。',
  sections:[
@@ -122,6 +122,6 @@ export const IELTS_ARGUMENT_SPECIALTIES:SpecialtyLesson[]=[
  e('In conclusion, universities should support both spaces and online materials, while deciding the balance through evidence about their own students.','总之大学应支持实体空间与线上材料，并依据本校学生的相关证据决定投入比例。','结论重申立场并呼应双方观点。')
  ],
  referenceUrls:['https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-writing','https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/contrasting-ideas-although-despite-others'],
- sourceNote:'将官方 Task 2 字数与 Task Response / Coherence and Cohesion 的要求用于检查范围，不对自拟范文声称任何官方分数。'
+ sourceNote:'本专题是另一道学习室与线上资源原创讨论题的跨题词汇训练，不是 U02 公共空间与邻里交流原稿的文本证据；请在主课听读使用原始公共空间情境。250词与论证检查仅用于语言教学，不代表官方评分。'
 }
 ];
