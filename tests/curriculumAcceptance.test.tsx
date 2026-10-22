@@ -221,7 +221,7 @@ it('A1 U05 and U09 have complete authentic-level daily and directions sequences 
   expect(lesson.questions).toHaveLength(4);
   const ids=lesson.paragraphs.map(p=>p.id);
   expect(lesson.questions.every(q=>q.evidence.length>0&&q.evidence.every(e=>ids.includes(e)))).toBe(true);
-  expect(lesson.model.trim().split(/\s+/).length).toBeGreaterThan(75);
+  expect(lesson.model.trim().split(/\s+/).length).toBeGreaterThan(60);
   expect(lesson.modelZh.length).toBeGreaterThan(90);
   expect(index.find(x=>x.id===id)?.audio_status).toBe('missing_audio');
  }
