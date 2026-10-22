@@ -38,7 +38,7 @@ export const IELTS_LISTENING_U04_U06_SPECIALTIES:SpecialtyLesson[]=[
  e('The office comes before the greenhouse on the described route.','按所述路线，经过办公室后才到温室。','由 walk past ... towards 还原先后。'),
  e('The seed store is on the same side of the path as the greenhouse.','种子库与温室在小路同一侧。','根据原稿明确的 same side。'),
  e('The passage does not specify the distance between buildings.','说明没有交代建筑之间的距离。','不能虚构米数或步行时间。')
- ],'没有提到的距离、楼层、入口和权限不能变成肯定答案。')
+ ],'原稿没有提到建筑之间的具体距离、楼层、附加入口或访客进入受控室的权限；不能把这些缺失的信息写成已确认的答案。')
  ],
  questions:[
  {question:'从南门进入时，办公室在什么位置？',answer:'Immediately on your left, opposite a small pond.',why:'原文明确给出左侧与池塘对面的双重参照。'},
@@ -128,7 +128,7 @@ export const IELTS_LISTENING_U04_U06_SPECIALTIES:SpecialtyLesson[]=[
  e('Please update the room number on the invitation.','请修改邀请函上的房号。','修改对象明确。'),
  e('Do not change the date.','不要修改日期。','否定式限定了修改范围。'),
  e('The remaining balance has not yet been determined.','余款金额尚未确定。','缺失数值不能填成零。')
- ],'“未知”不等于“没有费用”；没有确认的余款只能保留为待定。')
+ ],'“未知”不等于“没有费用”；目前只确认三十英镑订金，尚未算出余款和总额，记录时须写待定而不是零。')
  ],
  questions:[
  {question:'最终确认的房号是 16 还是 60？',answer:'Room sixty (60).',why:'actually we now need room sixty 明确修正了 originally requested room sixteen。'},
@@ -157,7 +157,7 @@ export const IELTS_LISTENING_U04_U06_SPECIALTIES:SpecialtyLesson[]=[
  e('They request a larger room.','他们申请一间更大的房间。','申请动作。'),
  e('The receptionist confirms availability.','接待员确认房间可用。','已确认条件。'),
  e('The equipment list has not been finalised.','设备清单还未最终确定。','仍有待完成的步骤。')
- ],'“确认房间可用”不等于“全部费用已确认”。',
+ ],'“确认房间可用”仅能说明指定时段有空房；设备清单未定，不能凭预约确认就推定全部费用已核准。',
  t('常见预订词边界',[['reservation','预约／预订','不表示费用已付清'],['amend','修改已有预订','不是新建两项预订'],['deposit','订金','不是总价'],['remaining fee','待支付余款','原稿未给出金额']],'将状态词和对象词一起记录，比只背中文词义更可靠。')),
  s('02 amend、update 与 change 的对象','amend a reservation 表修改现有预约；update the invitation 指更新邀请函上的信息；change the date 只有被明确要求时才执行。','amend a booking / update a room number / keep the date',[
  e('Please amend the room number.','请修改房号。','改动对象是 room number。'),
@@ -202,7 +202,7 @@ export const IELTS_LISTENING_U04_U06_SPECIALTIES:SpecialtyLesson[]=[
  e('Place each sample in a clean container.','将每份样品放进干净的容器。','a clean 修饰单数名词 container。'),
  e('Complete: Place each sample in a clean ___.','填空：将每份样品放进干净的___。','只填 container。'),
  e('The answer is container, not a container.','应填 container，而不是 a container。','题目已给出冠词。')
- ],'不能机械粘贴整句；先确认空格的词类和字数限制。',
+ ],'不能机械粘贴整句；题面已经有 a clean，空格只容纳一个可数名词 container，须同时满足语法、原文和 ONE WORD 限制。',
  t('填空证据检查',[['a clean ___','一个干净的容器','只填 container'],['location and date','地点与日期','两项信息'],['under consistent conditions','在一致条件下','不是新的测量结果'],['method as well as result','方法和结果','不能漏一列']],'词类预测只是缩小范围，最终答案仍须由原文证据决定。')),
  s('02 被动式突显实验步骤而非施事','should be placed 与 are kept 描述样品要经历的流程，不必虚构是谁操作。标本先入容器，再贴地点和采集日期标签，随后在一致条件下保存；时间先后对完成流程题很重要。','should be placed / attach a label / are kept',[
  e('Each soil sample should be placed in a container.','每份土壤样品应放在一个容器中。','被动式聚焦操作要求。'),
