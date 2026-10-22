@@ -4,7 +4,7 @@
   "counts": {
     "main": 108,
     "foundation": 48,
-    "specialties": 84
+    "specialties": 90
   },
   "courses": [
     {
@@ -201,10 +201,27 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "en-listening-u04-route-reference-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-listening-u04-site-process-lexicon",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 84,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 385,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-listening-u04.json"
@@ -213,8 +230,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -240,10 +255,27 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "en-listening-u05-correction-scope-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-listening-u05-booking-revision-lexicon",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 76,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 400,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-listening-u05.json"
@@ -252,8 +284,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -279,10 +309,27 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "en-listening-u06-word-class-completion-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-listening-u06-lab-record-lexicon",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 74,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 378,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-listening-u06.json"
@@ -291,8 +338,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
