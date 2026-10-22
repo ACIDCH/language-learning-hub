@@ -14,8 +14,8 @@ export const IELTS_LISTENING_U04_U06_RECEPTION:Record<string,ReceptionLesson>={
  questions:[
  {prompt:'Starting at the southern gate, which side is the office on, and what is opposite it?',answer:'The office is immediately on the left; a small pond is opposite it.',evidence:['P1'],why:'P1 同时给出 on your left 和 opposite a pond。左右参照必须以从南门进入后的朝向为准。'},
  {prompt:'What comes after the greenhouse, and how is it placed relative to the path?',answer:'The seed store; it is just beyond the greenhouse on the same side of the path.',evidence:['P2'],why:'P2 明确说明先后次序和 same side；不是温室对面，也没有距离数值。'},
- {prompt:'Where do visitors leave a collected specimen?',answer:'At the reception desk, not in the controlled storage room.',evidence:['P3'],why:'P3 将访客交接处与员工后续储存处明确区分。'},
- {prompt:'What happens immediately before staff move a specimen to the controlled room?',answer:'Staff attach a label to the specimen.',evidence:['P3','P4'],why:'P3、P4 都说明先贴标签再转移；流程不等于游览路线。'}
+ {prompt:'Where do visitors leave a collected specimen?',answer:'At the reception desk, not in the controlled storage room.',evidence:['P3'],why:'P3 明确要求访客把标本交到接待台；受控储存室是工作人员贴标签后的转移目的地，不能混为访客的交付点。'},
+ {prompt:'What happens immediately before staff move a specimen to the controlled room?',answer:'Staff attach a label to the specimen.',evidence:['P3','P4'],why:'P3 和 P4 均写明工作人员先核对信息并贴标签，之后才转移标本；这一处理流程不是访客在花园里的行走路线。'}
  ],
  languageNotes:[
  {target:'through the southern gate / follow the path north',zh:'先确定入口，再按向北的运动方向解释左右，不能以屏幕朝向替代说话人参照。'},
@@ -39,7 +39,7 @@ export const IELTS_LISTENING_U04_U06_RECEPTION:Record<string,ReceptionLesson>={
  questions:[
  {prompt:'What room is now requested, and what was originally requested?',answer:'Room 60 is final; room 16 was the original request.',evidence:['P1','P4'],why:'P1 使用 originally 与 actually 清楚修正房号，P4 再次最终确认。'},
  {prompt:'On what date will the training take place?',answer:'14 May (the fourteenth of May).',evidence:['P2','P4'],why:'P2 明确 remains 14 May, not 16 May；房号改动不影响日期。'},
- {prompt:'What payment is due by Friday, and is it the total charge?',answer:'A £30 deposit is due by Friday; it is not the total charge.',evidence:['P3'],why:'P3 将订金与待计算余款分开；总费用仍未给出。'},
+ {prompt:'What payment is due by Friday, and is it the total charge?',answer:'A £30 deposit is due by Friday; it is not the total charge.',evidence:['P3'],why:'P3 明确把三十英镑列为周五前支付的订金，并说明设备清单确定后才计算余款；总费用尚不能从原文推出。'},
  {prompt:'What has to be changed on the invitation?',answer:'Only the room number, from 16 to 60; the date remains unchanged.',evidence:['P2','P4'],why:'P2、P4 都明确是更新房号而不改日期；不能把“修正”理解为所有字段更新。'}
  ],
  languageNotes:[
@@ -63,9 +63,9 @@ export const IELTS_LISTENING_U04_U06_RECEPTION:Record<string,ReceptionLesson>={
  ],
  questions:[
  {prompt:'Complete with ONE WORD: Place each sample in a clean ___.',answer:'container',evidence:['P1'],why:'P1 直接提供 clean container；题干已有 a clean，只需填 container 一个词。'},
- {prompt:'What TWO details must appear on the label?',answer:'The collection location and collection date.',evidence:['P2'],why:'P2 明确指出地点和采集日期，不能换成实验室名称或写报告日期。'},
- {prompt:'Why are samples kept under consistent conditions?',answer:'To reduce variation caused by different storage temperatures.',evidence:['P3'],why:'P3 只说明减少这一来源的变异，并未保证不同样品数值相同。'},
- {prompt:'What TWO entries must the record sheet include?',answer:'The measurement method and the result.',evidence:['P4'],why:'P4 规定两个栏目都必须填写；未给结果数值不能捏造。'}
+ {prompt:'What TWO details must appear on the label?',answer:'The collection location and collection date.',evidence:['P2'],why:'P2 明确要求记录标本原始采集地点与采集日期，用于日后追溯；不能替换为实验室名称或撰写报告的日期。'},
+ {prompt:'Why are samples kept under consistent conditions?',answer:'To reduce variation caused by different storage temperatures.',evidence:['P3'],why:'P3 指出一致的保存条件能够减少因存储温度差异产生的变异，却无法消除样品之间原有的水分差别；不意味着测量数值必定一致。'},
+ {prompt:'What TWO entries must the record sheet include?',answer:'The measurement method and the result.',evidence:['P4'],why:'P4 明确列出测量方法和结果两栏，两项都属于完整记录；原稿没有提供任何实际测量值，不能为了填写结果栏而编造数字。'}
  ],
  languageNotes:[
  {target:'a clean container',zh:'题面若已有 a clean，单词填空只能补 container；冠词不重复。'},
