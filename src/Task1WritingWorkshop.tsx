@@ -17,6 +17,7 @@ export default function Task1WritingWorkshop({courseId}:{courseId:string}){
  return <section aria-label="完整图示写作练习" className="task1-workshop">
   <Task1VisualEvidence lessonId={id}/>
   <p>用至少150词概括主要特征，并进行适当比较。图表数据及场地均为本课虚构练习材料。</p>
+  {courseId==='en-ielts-writing-task1-u03'&&<p className="task1-evidence-caption">本页借阅渠道统计图是独立写作练习；原课程的 A/B/C 校区自行车与公交比例表是另一道题。两套数据、类别与年份不能混写；下方练习以当前显示的借阅渠道图为准。</p>}
   <label>我的 Task 1 全文<textarea rows={9} disabled={!saved.ready} value={saved.get('writing')} onChange={e=>{saved.set('writing',e.target.value);setChecked(false);}}/></label>
   <button type="button" disabled={!saved.get('writing').trim()} onClick={()=>setChecked(true)}>核对本次写作与源材料</button>
   {checked&&<Task1Feedback lessonId={id} writing={saved.get('writing')}/>}
