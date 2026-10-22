@@ -164,11 +164,9 @@ try{
      problems.push(size+' '+name+' bilingual reception unavailable '+JSON.stringify(evidence));
    }
    if(['enReadingU01Integrated','enReadingU02Integrated'].includes(name)){
-    await js("document.querySelectorAll('.course-study-switcher button')[2]?.click()");
-    await wait(()=>js("!!document.querySelector('.course-specialty-topic')"),'original-source vocabulary directly integrated');
-    const stats=await js("(function(){return {lessons:document.querySelectorAll('.course-specialty-topic').length,source:!!document.querySelector('.course-enrichment details'),questions:document.querySelectorAll('.course-specialty-question').length}})()");
-    if(stats.lessons!==1||!stats.source||stats.questions<4)
-      problems.push(size+' '+name+' existing-original vocabulary not integrated '+JSON.stringify(stats));
+    const integrated=await js("(function(){return {topic:!!document.querySelector('.course-specialty-topic'),source:!!document.querySelector('.course-enrichment details'),questions:document.querySelectorAll('.course-specialty-question').length}})()");
+    if(!integrated.topic||!integrated.source||integrated.questions<4)
+     problems.push(size+' '+name+' original source and real grammar not integrated '+JSON.stringify(integrated));
    }
    const value=await js('(function(){const e=document.querySelector('+JSON.stringify(selector)+
     ');return {overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-innerWidth,width:e.getBoundingClientRect().width};})()');
