@@ -53,7 +53,7 @@ export const IELTS_TASK2_U01_SPECIALTIES:SpecialtyLesson[]=[
  E('Universities should match teaching methods to task requirements.','大学应让教学方式匹配任务要求。','方案。'),
  E('I favour online provision where support and interaction are maintained.','当支持和互动得以保持时，我倾向线上授课。','明确有条件立场。'),
  E('This conclusion addresses both convenience and educational quality.','该结论同时回应便利性与教学质量。','回答题目。')
- ],referenceUrls:[REF],sourceNote:'直接依据 public/learning-assets/en-ielts-writing-task2-u01.txt 完整既有原创稿；其附带练习和文字全部保留。'
+ ],referenceUrls:[REF],sourceNote:'U01：直接依据 public/learning-assets/en-ielts-writing-task2-u01.txt 完整既有原创稿；其附带练习和文字全部保留。'
 },
 {
  id:'en-task2-u01-online-learning-lexicon',type:'vocabulary',language:'en',level:'B2',unitLink:'en-ielts-writing-task2-u01',
