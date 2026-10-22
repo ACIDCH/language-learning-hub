@@ -11,8 +11,8 @@ export const IELTS_TASK2_U06_U07_RECEPTION:Record<string,ReceptionLesson>={
  ],
  questions:[
  {prompt:'Which two possible causes appear in the original congestion scenario?',answer:'Overlapping work and school schedules, and limited practical alternatives to driving.',evidence:['P1'],why:'P1 明确区分出行时间集中和替代交通方式不足两项机制，且没有声称它们适用于所有城市。'},
- {prompt:'What must happen for staggered start times to help?',answer:'Schools and employers need to coordinate their schedules so journeys can spread across time.',evidence:['P2'],why:'P2 以机构协调为前提，将错峰方案与同时出行的拥堵机制准确连接。'},
- {prompt:'Does making public transport feasible prove everyone will stop driving?',answer:'No. More frequent services may make another mode practical for some commuters, but uptake needs evaluating.',evidence:['P3'],why:'P3 区分替代方式“可行”与实际“被选择”，没有提供所有人改乘的统计。'},
+ {prompt:'What must happen for staggered start times to help?',answer:'Schools and employers need to coordinate their schedules so journeys can spread across time.',evidence:['P2'],why:'P2 以学校和雇主之间的协调为前提，将错峰措施与同一时间出行造成的高峰拥堵准确对接。'},
+ {prompt:'Does making public transport feasible prove everyone will stop driving?',answer:'No. More frequent services may make another mode practical for some commuters, but uptake needs evaluating.',evidence:['P3'],why:'P3 区分替代方式变得“可行”与通勤者实际“选择改乘”两个阶段，原稿没有关于全部通勤者改乘的实测统计。'},
  {prompt:'Why is “raise awareness” insufficient as a stand-alone solution?',answer:'It specifies neither a behavioural mechanism, responsible actors nor a way to evaluate change.',evidence:['P4'],why:'P4 明确要求原因、责任方、实施条件和核验方式成链；单独一句提高意识没有形成有效建议。'}
  ],
  languageNotes:[
@@ -36,7 +36,7 @@ export const IELTS_TASK2_U06_U07_RECEPTION:Record<string,ReceptionLesson>={
  ],
  questions:[
  {prompt:'What exact charge does “this charge” refer to?',answer:'The instrument hire fee; music tuition itself is free.',evidence:['P1'],why:'P1 对 tuition 和 instrument hire 进行清楚区分，this charge 回指后者，不能译成收取学费。'},
- {prompt:'Which barrier could removing the hire fee target?',answer:'The financial restriction on using instruments, not shortages of teachers or rehearsal space.',evidence:['P2'],why:'P2 说明取消收费直接作用于器材费用障碍，其他资源供给问题仍然独立存在。'},
+ {prompt:'Which barrier could removing the hire fee target?',answer:'The financial restriction on using instruments, not shortages of teachers or rehearsal space.',evidence:['P2'],why:'P2 说明取消收费直接作用于乐器租赁造成的经济障碍，但教师数量和练习空间不足仍是单独的资源问题。'},
  {prompt:'Does a larger school budget prove that all pupils enjoy music?',answer:'No. Budget availability does not establish student preferences.',evidence:['P3'],why:'P3 举例说明因此类推断缺少前提，连接词 therefore 无法让预算自动证明喜好。'},
  {prompt:'Does the lesson report a measured rise in participation after removing fees?',answer:'No. It proposes hypothetical changes and gives no school-level participation data.',evidence:['P4'],why:'P4 明确教材没有真实学校的参与率或政策成效数据，不能把示例措施当作既成研究结果。'}
  ],
