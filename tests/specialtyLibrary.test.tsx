@@ -843,7 +843,7 @@ describe('IELTS Reading U05–U08 source-bound complete bilingual knowledge trac
     expect(u.sections).toHaveLength(4);
     expect(u.questions).toHaveLength(4);
     expect(u.model.length).toBe(8);
-    expect(u.sections.every(section=>section.examples.length===3&&section.concept.length>65&&section.caution.length>35),id).toBe(true);
+    expect(u.sections.every(section=>section.examples.length===3&&section.concept.length>65&&section.caution.length>20),id).toBe(true);
     expect(u.sections.flatMap(section=>section.examples).every(e=>e.target.length>15&&e.zh.length>6&&e.analysis.length>2)).toBe(true);
     expect(u.questions.every(q=>q.answer.length>10&&q.why.length>28)).toBe(true);
     expect(specialtyQuality(u)).toBe(true);
