@@ -287,4 +287,7 @@ it('French A1 U12 Chinese text preserves what was done, not invented intentions 
  expect(lesson.paragraphs[2].target).toContain('Je ne connais pas cette personne');
  expect(lesson.paragraphs[2].zh).toContain('我不认识这个人');
  expect(lesson.paragraphs[2].zh).not.toContain('我以前不认识');
+ expect(lesson.paragraphs.every(p=>!p.zh.includes('弟弟'))).toBe(true);
+ expect(lesson.modelZh).not.toContain('弟弟');
+ expect(lesson.paragraphs[0].zh).toContain('兄弟');
 });
