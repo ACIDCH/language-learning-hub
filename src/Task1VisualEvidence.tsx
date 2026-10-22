@@ -7,7 +7,7 @@ export const VISUAL_EXERCISES={
  'en-chart-comparison':{kind:'chart',title:'借阅渠道占比 · 原创统计图与数据表'},
  'en-process-report-grammar':{
   kind:'process',title:'废纸制成纸张 · 六阶段原创流程',
-  items:['Used paper collected','Paper sorted','Mixed into pulp','Particles removed; pulp spread','Water pressed out; sheet dried','Dried paper cut for reuse']
+  items:['Used paper collected','Paper sorted','Mixed into pulp','Pulp cleaned & spread','Pressed, then dried','Cut for reuse']
  },
  'en-map-change-lexicon':{
   kind:'map',title:'公共广场规划变化 · 与 Task 1 U06 原稿一致的前后地图',
@@ -63,7 +63,7 @@ function SiteMap({after}:{after:boolean}){
   aria-label={after?'新地图：北侧停车场改为花园，东侧图书馆不变，西侧咖啡馆向西扩建，南侧新增步道':'旧地图：北侧停车场，东侧图书馆，西侧咖啡馆，南侧没有步道'}>
   <rect x="20" y="22" width="410" height="316" rx="10" className="task1-site-boundary"/>
   <text x="224" y="17" className="task1-map-north">N ↑</text>
-  <rect x="156" y="45" width="140" height="75" rx="8" className="task1-site-building"/>
+  <rect x="156" y="45" width="140" height="75" rx="8" className={after?'task1-site-garden':'task1-site-carpark'}/>
   <text x="226" y="87" className="task1-map-label" textAnchor="middle">{after?data.north.after:data.north.before}</text>
   {after&&<path d="M20 320 H430" className="task1-site-path"/>}
   <text x="225" y="309" textAnchor="middle" className="task1-map-secondary">{after?data.centre.after:data.centre.before}</text>
