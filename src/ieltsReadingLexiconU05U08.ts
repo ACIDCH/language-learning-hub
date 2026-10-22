@@ -73,11 +73,11 @@ e('The team did not isolate pollution from soil conditions.','研究团队没有
 e('Water availability could account for part of the pattern.','供水可能解释一部分模式。','候选解释。'),
 e('Replication would test whether the pattern recurs.','重复验证可检验模式是否重现。','未来目标。')
 ],'replicate 与 report 不是同义：报告一次观察不代表做了重复研究。'),
-s('04 总结用两列：已知与未知','已知路边叶片较小；未知的是该模式究竟由哪一具体因素导致。较好的总结还会说明推荐受控比较，而不是从缺少结论得出“研究毫无意义”。','observed → tentative → not isolated → test further',[
+s('04 总结用两列：已知与未知','已知路边叶片较小，这是实际记录的现象；但尚未知道究竟是污染、土壤还是水源因素造成该模式。准确总结既要保存这个观察结果，也要写出作者推荐受控比较的下一步，而不是因为暂时没有因果结论就将研究判为毫无价值。','observed → tentative → not isolated → test further',[
 e('The observation provides a reason to investigate.','这一观察提供继续研究的理由。','保留研究价值。'),
 e('The causal explanation has not been established.','因果解释尚未成立。','准确标明未知。'),
 e('A controlled comparison could test alternatives.','受控比较可以检测替代解释。','后续方法。')
-],'没有因果结论不意味着没有任何观察数据；研究局限不应被绝对化。')
+],'研究没有证明单一因果不等于没有取得观察结果：叶片较小是记录的事实，污染等候选解释仍需分离检验，这两层不能相互抵消。')
 ],
 questions:[
 {question:'tentative 与 proven 哪个更符合原课态度？',answer:'Tentative.',why:'研究者未隔离污染与土壤/供水因素，因而明确表示解释只是暂定。'},
