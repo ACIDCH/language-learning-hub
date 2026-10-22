@@ -101,6 +101,12 @@ try{
    ['task1U07Vocab','/?page=specialties&type=vocabulary&language=en&topic=en-task1-u07-borrowing-cohesion-lexicon','.specialty-grammar-table'],
    ['task1U08Grammar','/?page=specialties&type=grammar&language=en&topic=en-task1-u08-revision-scope-grammar','.specialty-grammar-table'],
    ['task1U08Vocab','/?page=specialties&type=vocabulary&language=en&topic=en-task1-u08-precision-editing-lexicon','.specialty-grammar-table'],
+   ['task2U02Grammar','/?page=specialties&type=grammar&language=en&topic=en-task2-u02-reasoning-chain-grammar','.specialty-grammar-table'],
+   ['task2U03Vocab','/?page=specialties&type=vocabulary&language=en&topic=en-task2-u03-fair-rebuttal-lexicon','.specialty-grammar-table'],
+   ['task2U04Grammar','/?page=specialties&type=grammar&language=en&topic=en-task2-u04-discussion-stance-grammar','.specialty-grammar-table'],
+   ['task2U04Vocab','/?page=specialties&type=vocabulary&language=en&topic=en-task2-u04-curriculum-judgement-lexicon','.specialty-grammar-table'],
+   ['task2U05Grammar','/?page=specialties&type=grammar&language=en&topic=en-task2-u05-outweigh-conditions-grammar','.specialty-grammar-table'],
+   ['task2U05Vocab','/?page=specialties&type=vocabulary&language=en&topic=en-task2-u05-public-access-lexicon','.specialty-grammar-table'],
    ['enTask1Map','/?page=specialties&type=vocabulary&language=en&topic=en-map-change-lexicon','.specialty-grammar-table'],
    ['frDELF','/?page=specialties&type=grammar&language=fr&topic=fr-b2-formal-argument-writing','.specialty-grammar-table'],
    ['frDALF','/?page=specialties&type=vocabulary&language=fr&topic=fr-c1-cross-source-synthesis','.specialty-grammar-table'],
@@ -169,6 +175,10 @@ try{
    ['task1U06Integrated','/?course=en-ielts-writing-task1-u06&tab=read','.curriculum-stage'],
    ['task1U07Integrated','/?course=en-ielts-writing-task1-u07&tab=read','.curriculum-stage'],
    ['task1U08Integrated','/?course=en-ielts-writing-task1-u08&tab=read','.curriculum-stage'],
+   ['task2U02Integrated','/?course=en-ielts-writing-task2-u02&tab=read','.curriculum-stage'],
+   ['task2U03Integrated','/?course=en-ielts-writing-task2-u03&tab=read','.curriculum-stage'],
+   ['task2U04Integrated','/?course=en-ielts-writing-task2-u04&tab=read','.curriculum-stage'],
+   ['task2U05Integrated','/?course=en-ielts-writing-task2-u05&tab=read','.curriculum-stage'],
    ['frRouteIntegrated','/?course=fr-a2-u03&tab=read','.curriculum-stage'],
    ['frHealthIntegrated','/?course=fr-a2-u05&tab=read','.curriculum-stage'],
    ['frHomeIntegrated','/?course=fr-a1-u10&tab=read','.curriculum-stage'],
@@ -271,6 +281,20 @@ try{
     await wait(()=>js("document.querySelectorAll('.course-specialty-question').length===4"),name+' vocabulary evidence');
     await js("document.querySelectorAll('.course-study-switcher button')[3]?.click()");
     await wait(()=>js("document.querySelectorAll('.reception-study > article.reception-paragraph').length===4"),name+' complete bilingual paragraphs');
+   }
+   if(['task2U02Grammar','task2U03Vocab','task2U04Grammar','task2U04Vocab','task2U05Grammar','task2U05Vocab'].includes(name)){
+    const data=await js("({chapters:document.querySelectorAll('.specialty-chapter').length,questions:document.querySelectorAll('.specialty-question').length,tableRows:document.querySelectorAll('.specialty-grammar-table tbody tr').length})");
+    if(data.chapters!==4||data.questions!==4||data.tableRows<4)problems.push(size+' '+name+' incomplete Task2 original textbook '+JSON.stringify(data));
+   }
+   if(['task2U02Integrated','task2U03Integrated','task2U04Integrated','task2U05Integrated'].includes(name)){
+    await js("document.querySelectorAll('.course-study-switcher button')[1]?.click()");
+    await wait(()=>js("document.querySelectorAll('.course-specialty-question').length>=4"),name+' Task2 grammar explanation');
+    await js("document.querySelectorAll('.course-study-switcher button')[2]?.click()");
+    await wait(()=>js("document.querySelectorAll('.course-specialty-question').length>=4"),name+' Task2 vocabulary explanation');
+    await js("document.querySelectorAll('.course-study-switcher button')[3]?.click()");
+    await wait(()=>js("document.querySelectorAll('.reception-study > article.reception-paragraph').length===4"),name+' Task2 complete bilingual reading');
+    const stats=await js("({body:document.querySelectorAll('.reception-study > article.reception-paragraph').length,essay:document.querySelector('.reception-study')?.textContent?.includes('250')})");
+    if(stats.body!==4)problems.push(size+' '+name+' missing four bilingual Task2 passages');
    }
    if(['enReadingU01Integrated','enReadingU02Integrated'].includes(name)){
     const integrated=await js("(function(){return {topic:!!document.querySelector('.course-specialty-topic'),source:!!document.querySelector('.course-enrichment details'),questions:document.querySelectorAll('.course-specialty-question').length}})()");
