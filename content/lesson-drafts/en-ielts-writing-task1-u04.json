@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-writing-task1-u04",
+  "title": "Proportions and multi-series graphs",
+  "language": "en",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply proportions and multi-series graphs in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-writing-task1-u03",
+  "context": "自编预算练习：2020 年研究/教学/设施占 30/50/20%，2025 年占 40/45/15%；总预算未知。",
+  "grammar": "a share rose 不等于 spending rose，因为分母可能变化。percentage points 描述份额差，percent increase 描述相对变化。总体概述先写排序和方向，再选择细节。",
+  "common_mistake": "不知道总预算，不能计算实际金额或断言教学支出减少。",
+  "vocabulary": [
+    [
+      "allocation",
+      "分配"
+    ],
+    [
+      "share",
+      "份额"
+    ],
+    [
+      "account for",
+      "占据"
+    ],
+    [
+      "budget",
+      "预算"
+    ],
+    [
+      "relative",
+      "相对的"
+    ],
+    [
+      "absolute",
+      "绝对的"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Teaching remained the largest category in both years of the fictional budget.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Its share nevertheless fell from 50% to 45%.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Research gained ten percentage points, rising from 30% to 40%.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Facilities accounted for the remaining 20% and 15% respectively.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Teaching remained the largest category in both years of the fictional budget. Its share nevertheless fell from 50% to 45%. Research gained ten percentage points, rising from 30% to 40%. Facilities accounted for the remaining 20% and 15% respectively. The figures show a redistribution of shares towards research. They do not reveal whether the total budget expanded or contracted. Consequently, a lower share for teaching should not be reported as a confirmed fall in its monetary allocation.",
+  "listening_script": "Teaching remained the largest category in both years of the fictional budget. Its share nevertheless fell from 50% to 45%. Research gained ten percentage points, rising from 30% to 40%. Facilities accounted for the remaining 20% and 15% respectively. The figures show a redistribution of shares towards research. They do not reveal whether the total budget expanded or contracted. Consequently, a lower share for teaching should not be reported as a confirmed fall in its monetary allocation.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Can we conclude that teaching received less money ?",
+      "answer": "No, the total budgets are unknown.",
+      "explanation": "比例下降可与金额上升同时发生。"
+    },
+    {
+      "prompt": "How much did research's share rise ?",
+      "answer": "10 percentage points; about 33.3% relative to its original share.",
+      "explanation": "40−30=10；10/30≈33.3%，两种表达不是同一单位。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating proportions and multi-series graphs",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

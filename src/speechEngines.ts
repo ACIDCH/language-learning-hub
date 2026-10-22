@@ -3,9 +3,13 @@ export type SpeechEngineId = 'browser-asr' | 'optional-local-evaluator' | 'optio
 export type PhoneObservation = {expected:string|null;phone:string|null;kind:'match'|'different'|'not_detected'|'additional';start_s?:number;end_s?:number};
 export type PracticeReference = {available:boolean;percent:number|null;calibrated:false;reference_phones:number;observed_phones:number;method:'generated_g2p_vs_greedy_ctc_edit_agreement';reason?:'short_reference'|'insufficient_observation'|'unstable_coverage'|'unsupported_reference'|null;alignment_edits?:number};
 export type SpeechResult = {engine:SpeechEngineId;status:'transcript-only'|'experimental'|'unscorable';canScore:false;transcript?:string;phones?:PhoneObservation[];elapsed_ms?:number;signal?:{duration_s:number;rms:number;low_energy_s:number;rejection:string|null};reference_unknown?:string[];reason?:'empty_model_output'|'empty_reference';practice_reference?:PracticeReference};
-/** Published cloud endpoint address contains no credential. Only an HTTPS origin is accepted. */
+/** Public cloud endpoint URL may be configured by the learner's synced account preferences.
+ * No bearer token, Google authorization, or audio data is stored in preferences.
+ */
+let runtimeSpeechEndpoint='';
+export function setRuntimeSpeechEndpoint(value:string){runtimeSpeechEndpoint=value.trim();}
 export function cloudSpeechEndpoint():string|null {
- const configured=import.meta.env.VITE_SPEECH_API_URL?.trim();
+ const configured=runtimeSpeechEndpoint||import.meta.env.VITE_SPEECH_API_URL?.trim();
  if(!configured)return null;
  try{
   const url=new URL(configured);
@@ -16,7 +20,7 @@ export function cloudSpeechEndpoint():string|null {
 export const ENGINES = [
  {id:'browser-asr',name:'免费基础：浏览器文字识别',available:true},
  {id:'optional-local-evaluator',name:'实验性：本机音素练习参考值',available:true},
- {id:'optional-remote-evaluator',name:'云端音素练习（登录后使用）',available:!!cloudSpeechEndpoint()},
+ {id:'optional-remote-evaluator',name:'云端模型分析（需在线声学服务）',available:true},
 ] as const;
 export function browserResult(transcript:string):SpeechResult {return {engine:'browser-asr',status:'transcript-only',canScore:false,transcript};}
 export function localAllowed(host:string) {return host==='localhost'||host==='127.0.0.1';}

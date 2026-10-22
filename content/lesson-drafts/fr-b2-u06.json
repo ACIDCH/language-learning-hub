@@ -1,0 +1,78 @@
+{
+  "id": "fr-b2-u06",
+  "title": "Écriture professionnelle",
+  "language": "fr",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Write an organized report",
+  "prerequisite": "fr-b2-u05",
+  "context": "撰写项目延期通知，让收件人知道影响、责任与下一步。",
+  "grammar": "正式书面语使用明确的主体和时间；被动式可突出结果，但不应掩盖责任。sous réserve de 表示条件尚未满足，d'ici + date 表示截至某日。",
+  "common_mistake": "‘尽快’不足以替代可追踪的日期和负责人。",
+  "vocabulary": [
+    [
+      "une échéance",
+      "截止时间"
+    ],
+    [
+      "un livrable",
+      "交付物"
+    ],
+    [
+      "reporter",
+      "推迟"
+    ],
+    [
+      "un engagement",
+      "承诺"
+    ],
+    [
+      "sous réserve de",
+      "以……为条件"
+    ],
+    [
+      "valider",
+      "确认"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Madame, Monsieur, la livraison du rapport est reportée au 18 novembre.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Deux tableaux transmis par notre équipe contenaient des incohérences qui nécessitent une vérification.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Nous en assumons la correction et vous adresserons une version révisée d'ici vendredi.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Ce report ne modifie pas la réunion de restitution prévue la semaine suivante.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Madame, Monsieur, la livraison du rapport est reportée au 18 novembre. Deux tableaux transmis par notre équipe contenaient des incohérences qui nécessitent une vérification. Nous en assumons la correction et vous adresserons une version révisée d'ici vendredi. Ce report ne modifie pas la réunion de restitution prévue la semaine suivante. En revanche, les annexes techniques resteront provisoires jusqu'à la validation des données. Si cette modification compromet une décision de votre côté, merci de nous l'indiquer afin que nous priorisions les éléments nécessaires. Nous vous confirmerons chaque étape par écrit.",
+  "listening_script": "Madame, Monsieur, la livraison du rapport est reportée au 18 novembre. Deux tableaux transmis par notre équipe contenaient des incohérences qui nécessitent une vérification. Nous en assumons la correction et vous adresserons une version révisée d'ici vendredi. Ce report ne modifie pas la réunion de restitution prévue la semaine suivante. En revanche, les annexes techniques resteront provisoires jusqu'à la validation des données. Si cette modification compromet une décision de votre côté, merci de nous l'indiquer afin que nous priorisions les éléments nécessaires. Nous vous confirmerons chaque étape par écrit.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "La réunion est-elle reportée ?",
+      "answer": "Non, elle est maintenue.",
+      "explanation": "报告延期不能被扩大理解为所有活动延期。"
+    },
+    {
+      "prompt": "Quelle formule marque une limite de temps ?",
+      "answer": "d'ici vendredi",
+      "explanation": "表示最迟周五提供修订版本。"
+    }
+  ],
+  "pronunciation": "lecture de rapport。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Rédigez un rapport de synthèse",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

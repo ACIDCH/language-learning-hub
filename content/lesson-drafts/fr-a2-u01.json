@@ -1,0 +1,78 @@
+{
+  "id": "fr-a2-u01",
+  "title": "Récits au passé",
+  "language": "fr",
+  "level": "A2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Tell a coherent account of completed events",
+  "prerequisite": null,
+  "context": "叙述一次周末旅行，组织动作顺序并说明发生了什么。",
+  "grammar": "复合过去时叙述已完成的动作；先辨认助动词，再选择过去分词。avoir 下普通主语变化不自动改变分词：elles ont visité。être 下主语配合：elles sont arrivées。d'abord、puis、enfin 帮助组织时间顺序。",
+  "common_mistake": "不要把所有移动相关动词都归为 être，例如 voyager 用 avoir。",
+  "vocabulary": [
+    [
+      "un séjour",
+      "短期停留"
+    ],
+    [
+      "réserver",
+      "预订"
+    ],
+    [
+      "arriver",
+      "到达"
+    ],
+    [
+      "un billet",
+      "车票"
+    ],
+    [
+      "finalement",
+      "最终"
+    ],
+    [
+      "une auberge",
+      "旅舍"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Samedi, Manon et sa sœur sont parties pour Nantes.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Elles ont réservé deux lits dans une auberge près de la gare.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "D'abord, elles ont déposé leurs sacs.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Puis elles ont visité un quartier ancien et acheté du pain.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Samedi, Manon et sa sœur sont parties pour Nantes. Elles ont réservé deux lits dans une auberge près de la gare. D'abord, elles ont déposé leurs sacs. Puis elles ont visité un quartier ancien et acheté du pain. La pluie a commencé en fin d'après-midi, alors elles sont entrées dans un café. Elles ont parlé avec la propriétaire, qui leur a conseillé une exposition. Finalement, elles sont rentrées à pied malgré le mauvais temps.",
+  "listening_script": "Samedi, Manon et sa sœur sont parties pour Nantes. Elles ont réservé deux lits dans une auberge près de la gare. D'abord, elles ont déposé leurs sacs. Puis elles ont visité un quartier ancien et acheté du pain. La pluie a commencé en fin d'après-midi, alors elles sont entrées dans un café. Elles ont parlé avec la propriétaire, qui leur a conseillé une exposition. Finalement, elles sont rentrées à pied malgré le mauvais temps.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Pourquoi sont-elles entrées dans un café ?",
+      "answer": "Parce que la pluie a commencé.",
+      "explanation": "alors 把天气变化与决定连接起来。"
+    },
+    {
+      "prompt": "补全：Elles ont ___ deux lits. (réserver)",
+      "answer": "réservé",
+      "explanation": "avoir 后这里没有前置直接宾语，不随 elles 加 es。"
+    }
+  ],
+  "pronunciation": "liaison et rythme narratif。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Racontez un voyage",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

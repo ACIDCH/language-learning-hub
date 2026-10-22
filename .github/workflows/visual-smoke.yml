@@ -1,0 +1,43 @@
+name: Visual layout smoke
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'scripts/browser-visual-smoke.mjs'
+      - '.github/workflows/visual-smoke.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  chromium-layout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --no-fund
+      - name: Install Chinese language fonts for meaningful visual snapshots
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+          fc-cache -f
+      - name: Build frontend
+        run: npm run build
+      - name: Start Vite preview
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4173 > /tmp/llh-vite.log 2>&1 &
+          echo $! > /tmp/llh-vite.pid
+      - name: Inspect seven routes in Chrome at three viewport sizes
+        run: node scripts/browser-visual-smoke.mjs
+      - name: Save screenshots and layout checks
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-layout-screenshots
+          path: artifacts/visual-smoke
+          if-no-files-found: ignore
+          retention-days: 14

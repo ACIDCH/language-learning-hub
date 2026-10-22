@@ -1,0 +1,78 @@
+{
+  "id": "fr-c1-u01",
+  "title": "Précision lexicale",
+  "language": "fr",
+  "level": "C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Convey subtle semantic distinctions",
+  "prerequisite": null,
+  "context": "为政策分析编辑词语，辨别近义词的论证力度。",
+  "grammar": "attester、suggérer、corroborer、démontrer 的证据力度不同；一个结果 peut suggérer 一种解释，而未必 la démontrer。近义替换还受搭配与语域限制：lever une ambiguïté、étayer une hypothèse，不能逐字换成任意近义词。",
+  "common_mistake": "用 démontrer 替换 suggérer 会提升确定性，可能改变作者主张。",
+  "vocabulary": [
+    [
+      "étayer",
+      "以证据支持"
+    ],
+    [
+      "corroborer",
+      "佐证"
+    ],
+    [
+      "nuancer",
+      "加以限定"
+    ],
+    [
+      "une ambiguïté",
+      "歧义"
+    ],
+    [
+      "plausible",
+      "有合理可能的"
+    ],
+    [
+      "probant",
+      "有说服力的"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Le rapport qualifie d'abord la baisse des plaintes de preuve décisive de l'amélioration du service.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Cette formulation excède pourtant ce que les données permettent d'établir.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Une diminution peut corroborer l'hypothèse d'une amélioration, mais elle peut aussi résulter d'un formulaire devenu moins accessible.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Remplacer preuve par indice ne relève donc pas d'une prudence purement stylistique.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Le rapport qualifie d'abord la baisse des plaintes de preuve décisive de l'amélioration du service. Cette formulation excède pourtant ce que les données permettent d'établir. Une diminution peut corroborer l'hypothèse d'une amélioration, mais elle peut aussi résulter d'un formulaire devenu moins accessible. Remplacer preuve par indice ne relève donc pas d'une prudence purement stylistique. Ce choix lexical restitue une incertitude méthodologique. Il convient ensuite de distinguer une explication plausible d'une explication étayée par plusieurs observations indépendantes. Si les entretiens décrivent eux aussi un meilleur accueil, l'interprétation gagne en solidité sans devenir irréfutable. La précision lexicale consiste ici à calibrer la portée de chaque verbe au regard de la preuve disponible. Elle n'exige ni l'accumulation de réserves vagues ni l'abandon de toute conclusion.",
+  "listening_script": "Le rapport qualifie d'abord la baisse des plaintes de preuve décisive de l'amélioration du service. Cette formulation excède pourtant ce que les données permettent d'établir. Une diminution peut corroborer l'hypothèse d'une amélioration, mais elle peut aussi résulter d'un formulaire devenu moins accessible. Remplacer preuve par indice ne relève donc pas d'une prudence purement stylistique. Ce choix lexical restitue une incertitude méthodologique. Il convient ensuite de distinguer une explication plausible d'une explication étayée par plusieurs observations indépendantes. Si les entretiens décrivent eux aussi un meilleur accueil, l'interprétation gagne en solidité sans devenir irréfutable. La précision lexicale consiste ici à calibrer la portée de chaque verbe au regard de la preuve disponible. Elle n'exige ni l'accumulation de réserves vagues ni l'abandon de toute conclusion.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Pourquoi indice est-il préférable à preuve décisive ?",
+      "answer": "Plusieurs mécanismes peuvent expliquer la baisse des plaintes.",
+      "explanation": "用词应反映替代解释尚未排除。"
+    },
+    {
+      "prompt": "Réécrivez Les données démontrent la réussite en conservant l'incertitude.",
+      "answer": "Les données suggèrent une amélioration, à confirmer par d'autres observations.",
+      "explanation": "降低确定性并注明进一步证据的需要。"
+    }
+  ],
+  "pronunciation": "liaisons soutenues。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Réécrivez un texte pour la nuance",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

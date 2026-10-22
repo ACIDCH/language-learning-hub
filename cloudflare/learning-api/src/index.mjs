@@ -21,7 +21,8 @@ function allowOrigin(request, env) {
   const origin = request.headers.get('Origin');
   // Calls without an Origin (e.g. CLI health checks) need no CORS headers.
   if (!origin) return {};
-  if (!env.FRONTEND_ORIGIN || origin !== env.FRONTEND_ORIGIN) return null;
+  // Exact PR Pages alias only: do not allow a wildcard *.pages.dev Origin.
+  if (origin !== env.FRONTEND_ORIGIN && origin !== env.PREVIEW_FRONTEND_ORIGIN) return null;
   return {'Access-Control-Allow-Origin': origin, 'Vary': 'Origin',
     'Access-Control-Allow-Methods': 'GET, PUT, POST, OPTIONS',
     'Access-Control-Allow-Headers': 'authorization, content-type, x-ai-key',
@@ -39,6 +40,14 @@ async function upstream(fetchFn, url, init = {}) {
   if (!response.ok) return {ok:false, status:response.status};
   const data = await response.json();
   return {ok:true, data};
+}
+function openRouterFailureClass(error) {
+  const name=error?.name;
+  if(name==='AbortError'||name==='TimeoutError')return 'timeout';
+  const code=error?.cause?.code;
+  if(code==='ENOTFOUND'||code==='EAI_AGAIN')return 'dns';
+  if(code==='ECONNRESET'||code==='ETIMEDOUT'||code==='ECONNREFUSED')return 'connection';
+  return 'transport';
 }
 function tokenOf(request) {
   const value = request.headers.get('Authorization') || '';
@@ -65,7 +74,10 @@ export async function handle(request, env = {}, fetchFn = fetch) {
     return output({service:'language-hub-api',version:1,
       ready:Boolean(backend(env)), modules:{catalog:backend(env)?'configured':'not-connected',
         progress:backend(env)?'configured':'not-connected',
-        fullText:'owner-scoped-snapshot-adapter',ai:'not-connected'}},200,cors);
+        fullText:'owner-scoped-snapshot-adapter',ai:'manual-opt-in-with-learner-key',
+        audioIndex:'authenticated-metadata-only',audioPlayback:'private-storage-user-check',
+        foundationProgress:'supabase-rls-client',driveSync:'not-connected',
+        phonemeScoring:'not-deployed'}},200,cors);
   }
   const config = backend(env);
   if (!config) return output({error:'backend_not_configured'},503,cors);
@@ -172,6 +184,66 @@ export async function handle(request, env = {}, fetchFn = fetch) {
         return output({error:'progress_write_failed'},502,cors);
       }
       return output({saved:true,progress:result.data[0]},200,cors);
+    }
+    // Optional no-Key check: test Cloudflare -> OpenRouter transport separately.
+    // It never triggers model inference or uses the learner's OpenRouter Key.
+    if (url.pathname === '/v1/ai/openrouter-connectivity' && verb === 'POST') {
+      const token=tokenOf(request);
+      if(!token)return output({error:'authentication_required'},401,cors);
+      if(!await resolveUser(token,config,fetchFn))
+        return output({error:'invalid_session'},401,cors);
+      try{
+        const upstream=await fetchFn('https://openrouter.ai/api/v1/models',{
+          method:'GET',redirect:'error',signal:AbortSignal.timeout(12000),
+          headers:{Accept:'application/json'}
+        });
+        return output({reachable:true,provider_status:upstream.status,provider_ok:upstream.ok,
+          content_type:upstream.headers.get('content-type')?.includes('json')?'json':'other'},200,cors);
+      }catch(error){
+        return output({reachable:false,error:'openrouter_transport_failed',
+          reason:openRouterFailureClass(error)},503,cors);
+      }
+    }
+    // Check the user's OpenRouter inference key WITHOUT an inference request.
+    // Authentication and model keys must never enter logs, storage or response.
+    if (url.pathname === '/v1/ai/openrouter-key-check' && verb === 'POST') {
+      const token=tokenOf(request);
+      if(!token)return output({error:'authentication_required'},401,cors);
+      const uid=await resolveUser(token,config,fetchFn);
+      if(!uid)return output({error:'invalid_session'},401,cors);
+      const key=request.headers.get('X-AI-Key');
+      if(typeof key!=='string'||key.trim().length<5||key.length>500)
+        return output({error:'openrouter_key_required'},422,cors);
+      let response;
+      try{
+        response=await fetchFn('https://openrouter.ai/api/v1/key',{
+          method:'GET',redirect:'error',signal:AbortSignal.timeout(12000),
+          headers:{Authorization:'Bearer '+key}
+        });
+      }catch(error){
+        return output({error:'openrouter_transport_failed',
+          reason:openRouterFailureClass(error)},503,cors);
+      }
+      if(response.status===401)
+        return output({error:'openrouter_key_invalid'},422,cors);
+      // 403 may be network/CDN access protection, not a bad Key.
+      if(response.status===403)
+        return output({error:'openrouter_access_denied',provider_status:403},502,cors);
+      if(response.status===429)
+        return output({error:'openrouter_rate_limited'},429,cors);
+      if(!response.ok)return output({error:'openrouter_key_check_failed',provider_status:response.status},502,cors);
+      let result;
+      try{result=await response.json();}
+      catch{return output({error:'openrouter_invalid_response'},502,cors);}
+      if(!result?.data||typeof result.data!=='object')
+        return output({error:'openrouter_invalid_response'},502,cors);
+      if(result.data.is_management_key===true)
+        return output({error:'openrouter_management_key_not_for_inference'},422,cors);
+      return output({ok:true,provider:'openrouter',
+        is_free_tier:result.data.is_free_tier===true,
+        limit_remaining:typeof result.data.limit_remaining==='number'&&Number.isFinite(result.data.limit_remaining)
+          ?result.data.limit_remaining:null
+      },200,cors);
     }
     if (url.pathname === '/v1/ai/assist' && verb === 'POST') {
       const token=tokenOf(request);

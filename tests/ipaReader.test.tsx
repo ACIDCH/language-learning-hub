@@ -63,14 +63,23 @@ describe('full-text learning UI',()=>{
   expect(content.textContent).toContain('bɔ̃ʒuʁ');
   expect(content.textContent).toContain('中文说明');
  });
- it('keeps the original manuscripts until IPA is requested and switches with stage',async()=>{
+ it('keeps original text readable and removes the redundant IPA checkbox and course preface',()=>{
   render(<LessonReader text={'Bonjour, nous allons bien.'}
-    courseId="fr-a1-u01" language="fr" stage={0} onChangeStage={()=>{}}/>);
+   courseId="fr-a1-u01" language="fr" stage={0} onChangeStage={()=>{}}/>);
   expect(screen.getByText('Bonjour, nous allons bien.')).toBeTruthy();
-  fireEvent.click(screen.getByRole('checkbox',{name:/显示 IPA 国际音标/}));
-  await waitFor(()=>expect(screen.getByLabelText('参考国际音标与课程原文')).toBeTruthy());
-  expect(screen.getByLabelText('参考国际音标与课程原文').textContent)
-   .toContain('Bonjour, nous allons bien.');
+  expect(screen.queryByRole('checkbox',{name:/显示 IPA/})).toBeNull();
+  expect(screen.queryByText('课程导入')).toBeNull();
+ });
+ it('presents five navigable manuscript stages without the archived pronunciation stage',()=>{
+  const full='Introduction to the lesson\n① 情境\nSituation.\n② 语法\nGrammar.\n③ 词汇\nVocabulary.\n④ 听读\nListening text.\n⑤ 发音\nArchived phonetics.\n⑥ 表达\nMy own dialogue.';
+  const handler=vi.fn();
+  render(<LessonReader text={full} courseId="fr-a1-u01"
+    language="fr" stage={3} onChangeStage={handler}/>);
+  expect(screen.getByRole('navigation',{name:'课程五个学习环节'}).querySelectorAll('button')).toHaveLength(5);
+  expect(screen.queryByText('课程导入')).toBeNull();
+  expect(screen.queryByText('Archived phonetics.')).toBeNull();
+  fireEvent.click(screen.getByRole('button',{name:/下一部分/}));
+  expect(handler).toHaveBeenCalledWith(5);
  });
  it('does not phonemize without explicit opt-in in ordinary shadowing mode',()=>{
   render(<SpeechPractice language="fr" initialTarget="bonjour"/>);
@@ -96,6 +105,6 @@ describe('no-login whole-document IPA lab',()=>{
   expect(screen.queryByLabelText('参考国际音标与课程原文')).toBeNull();
   fireEvent.click(screen.getByRole('button',{name:'显示全文 IPA 音标'}));
   await waitFor(()=>expect(screen.getByLabelText('参考国际音标与课程原文').textContent).toContain('bɔ̃ʒuʁ'));
-  expect(screen.getByText(/不上传全文/)).toBeTruthy();
+  expect(screen.getByRole('button',{name:'隐藏 IPA 音标'})).toBeTruthy();
  });
 });

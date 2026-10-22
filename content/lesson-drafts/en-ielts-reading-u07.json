@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-reading-u07",
+  "title": "Matching information across sections",
+  "language": "en",
+  "level": "B1-B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply matching information across sections in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-reading-u06",
+  "context": "跨多个小节定位不同类型信息，先找功能再核对细节。",
+  "grammar": "题目可能问 limitation、example、definition 或 recommendation。定位后检查整句而非只匹配名词；同一关键词可能出现在多个小节并承担不同功能。",
+  "common_mistake": "找到 survey 一词不意味着找到调查的局限；必须读出限制内容。",
+  "vocabulary": [
+    [
+      "section",
+      "小节"
+    ],
+    [
+      "limitation",
+      "局限"
+    ],
+    [
+      "respondent",
+      "受访者"
+    ],
+    [
+      "coverage",
+      "覆盖范围"
+    ],
+    [
+      "recommendation",
+      "建议"
+    ],
+    [
+      "distribution",
+      "分布"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Section A defines a community survey as a structured collection of residents' views.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "It explains that a shared question set makes answers easier to compare.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Section B describes a pilot in which volunteers distributed forms at a weekend market.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Because people who stayed at home were not approached, the responses may underrepresent them.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Section A defines a community survey as a structured collection of residents' views. It explains that a shared question set makes answers easier to compare. Section B describes a pilot in which volunteers distributed forms at a weekend market. Because people who stayed at home were not approached, the responses may underrepresent them. Section C recommends combining face-to-face distribution with an accessible remote option. It also advises reporting who was not reached, rather than presenting the sample as the entire community.",
+  "listening_script": "Section A defines a community survey as a structured collection of residents' views. It explains that a shared question set makes answers easier to compare. Section B describes a pilot in which volunteers distributed forms at a weekend market. Because people who stayed at home were not approached, the responses may underrepresent them. Section C recommends combining face-to-face distribution with an accessible remote option. It also advises reporting who was not reached, rather than presenting the sample as the entire community.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Which section identifies a limitation in recruitment ?",
+      "answer": "Section B.",
+      "explanation": "在家的人未被接触，明确描述抽样覆盖问题。"
+    },
+    {
+      "prompt": "Where is a methodological recommendation located ?",
+      "answer": "Section C.",
+      "explanation": "combining 和 reporting 是行动建议。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating matching information across sections",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

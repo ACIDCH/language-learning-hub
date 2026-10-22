@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-speaking-u06",
+  "title": "Abstract questions and evaluation",
+  "language": "en",
+  "level": "B1-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply abstract questions and evaluation in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-speaking-u05",
+  "context": "回答关于社会变化的抽象问题，明确评价标准与例外。",
+  "grammar": "抽象题可分个体与制度层面，避免无证据的时代绝对比较。to some extent、in the longer term 标出程度与时间；one reason is that 展开机制。",
+  "common_mistake": "没有历史证据时，不要声称过去所有人都更有耐心。",
+  "vocabulary": [
+    [
+      "expectation",
+      "期望"
+    ],
+    [
+      "immediacy",
+      "即时性"
+    ],
+    [
+      "adapt",
+      "适应"
+    ],
+    [
+      "pressure",
+      "压力"
+    ],
+    [
+      "evaluate",
+      "评价"
+    ],
+    [
+      "context",
+      "背景"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Instant communication has probably changed what people expect from one another.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "A message can arrive immediately, but that does not mean its recipient is free to answer.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "One consequence may be pressure to treat every request as urgent.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "On the other hand, quick communication can help families coordinate complicated schedules.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Instant communication has probably changed what people expect from one another. A message can arrive immediately, but that does not mean its recipient is free to answer. One consequence may be pressure to treat every request as urgent. On the other hand, quick communication can help families coordinate complicated schedules. I would evaluate it by whether people can set reasonable boundaries, not simply by how fast messages travel. In professional settings, agreed response times may be more useful than an expectation of permanent availability.",
+  "listening_script": "Instant communication has probably changed what people expect from one another. A message can arrive immediately, but that does not mean its recipient is free to answer. One consequence may be pressure to treat every request as urgent. On the other hand, quick communication can help families coordinate complicated schedules. I would evaluate it by whether people can set reasonable boundaries, not simply by how fast messages travel. In professional settings, agreed response times may be more useful than an expectation of permanent availability.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What evaluation criterion does the speaker propose ?",
+      "answer": "Whether people can establish reasonable boundaries.",
+      "explanation": "标准不是速度本身。"
+    },
+    {
+      "prompt": "Why use may in one consequence may be ?",
+      "answer": "The effect is possible and context-dependent rather than universal.",
+      "explanation": "限定与论据强度相匹配。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating abstract questions and evaluation",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

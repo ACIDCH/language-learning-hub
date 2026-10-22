@@ -1,0 +1,78 @@
+{
+  "id": "fr-a1-u11",
+  "title": "Projets proches",
+  "language": "fr",
+  "level": "A1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Describe near future actions",
+  "prerequisite": "fr-a1-u10",
+  "context": "告诉同学明天的安排并邀请对方一起参加活动。",
+  "grammar": "近期将来时为 aller 的现在时 + 不定式：je vais visiter、nous allons partir。否定包围变位后的 aller：Nous n'allons pas rester。demain/après le cours 可以交代计划时间。",
+  "common_mistake": "不要把两个动词都变位：je vais visite 应改为 je vais visiter。",
+  "vocabulary": [
+    [
+      "demain",
+      "明天"
+    ],
+    [
+      "visiter",
+      "参观"
+    ],
+    [
+      "inviter",
+      "邀请"
+    ],
+    [
+      "un rendez-vous",
+      "约会"
+    ],
+    [
+      "préparer",
+      "准备"
+    ],
+    [
+      "après",
+      "在之后"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Demain, nous allons visiter le musée de la ville.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Je vais acheter les billets ce soir.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Ma sœur va préparer un petit pique-nique.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Nous allons nous retrouver devant la gare à neuf heures.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Demain, nous allons visiter le musée de la ville. Je vais acheter les billets ce soir. Ma sœur va préparer un petit pique-nique. Nous allons nous retrouver devant la gare à neuf heures. Après la visite, nous allons manger dans le parc. Il va peut-être pleuvoir, alors je vais prendre un parapluie. Tu veux venir avec nous ?",
+  "listening_script": "Demain, nous allons visiter le musée de la ville. Je vais acheter les billets ce soir. Ma sœur va préparer un petit pique-nique. Nous allons nous retrouver devant la gare à neuf heures. Après la visite, nous allons manger dans le parc. Il va peut-être pleuvoir, alors je vais prendre un parapluie. Tu veux venir avec nous ?",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Où est le rendez-vous ?",
+      "answer": "Devant la gare.",
+      "explanation": "博物馆是参观地点，车站前才是集合地点。"
+    },
+    {
+      "prompt": "改错：Nous allons préparons le repas.",
+      "answer": "Nous allons préparer le repas.",
+      "explanation": "近期将来时第二个动词用不定式。"
+    }
+  ],
+  "pronunciation": "liaison avec aller。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Présentez votre programme du week-end",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

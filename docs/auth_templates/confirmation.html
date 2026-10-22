@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>确认 Language Hub 邮箱</title></head>
+<body style="font-family:Arial,'Noto Sans SC',sans-serif;color:#172329;background:#f6f8f7;padding:28px;line-height:1.65">
+<main style="max-width:520px;margin:auto;padding:28px;background:white;border:1px solid #e2e8e6;border-radius:14px">
+<h1 style="font-size:23px">确认你的 Language Learning Hub 邮箱</h1>
+<p>你正在申请个人学习账号。点击下方按钮确认邮箱，即可继续使用云端课程、进度与账号设置。</p>
+<p><a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#174d47;color:#fff;padding:11px 22px;border-radius:8px;text-decoration:none">确认注册邮箱</a></p>
+<p>如果邮件客户端无法打开按钮，可以复制以下链接到浏览器：</p>
+<p style="overflow-wrap:anywhere;font-size:12px">{{ .ConfirmationURL }}</p>
+<p>如果你的邮箱客户端或系统页面要求输入六位代码，请使用：<strong>{{ .Token }}</strong></p>
+<p style="font-size:12px;color:#697875">如果你没有申请此账号，可以忽略本邮件。请勿把链接或验证码发给其他人。</p>
+</main></body></html>

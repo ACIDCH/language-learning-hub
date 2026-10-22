@@ -1,0 +1,78 @@
+{
+  "id": "fr-c1-u03",
+  "title": "Synthèse de sources",
+  "language": "fr",
+  "level": "C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Integrate complex source material",
+  "prerequisite": "fr-c1-u02",
+  "context": "对有张力的两份原创资料作跨来源综合，保留不同尺度。",
+  "grammar": "综合时区分单位、时间尺度和证据类型；une hausse moyenne 不否认某群体的下降。selon、à l'échelle de、en revanche 指定来源与比较框架。不得把不同层面的数字强行相减。",
+  "common_mistake": "总体改善和部分人群受损可以同时成立，不一定是来源互相矛盾。",
+  "vocabulary": [
+    [
+      "agréger",
+      "汇总"
+    ],
+    [
+      "une disparité",
+      "差异"
+    ],
+    [
+      "une échelle",
+      "尺度"
+    ],
+    [
+      "une moyenne",
+      "平均值"
+    ],
+    [
+      "une trajectoire",
+      "变化路径"
+    ],
+    [
+      "désagréger",
+      "拆分数据"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Le document A présente une hausse moyenne du temps consacré à la lecture dans une enquête municipale fictive.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Il décrit une évolution positive à l'échelle de la population interrogée.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le document B recueille des entretiens auprès de travailleurs aux horaires variables, dont plusieurs déclarent lire moins.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Ces constats ne se réfutent pas nécessairement.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Le document A présente une hausse moyenne du temps consacré à la lecture dans une enquête municipale fictive. Il décrit une évolution positive à l'échelle de la population interrogée. Le document B recueille des entretiens auprès de travailleurs aux horaires variables, dont plusieurs déclarent lire moins. Ces constats ne se réfutent pas nécessairement. Le premier agrège des situations, tandis que le second rend visibles certaines trajectoires sans en mesurer la fréquence générale. Une synthèse rigoureuse doit donc expliciter cette différence de portée. Elle peut retenir l'existence d'une amélioration moyenne tout en signalant qu'elle ne bénéficie pas uniformément aux groupes étudiés. Pour aller plus loin, il faudrait désagréger l'enquête et vérifier si les catégories des deux documents sont comparables. Présenter les entretiens comme une preuve d'échec global serait aussi abusif que les écarter au nom de la moyenne.",
+  "listening_script": "Le document A présente une hausse moyenne du temps consacré à la lecture dans une enquête municipale fictive. Il décrit une évolution positive à l'échelle de la population interrogée. Le document B recueille des entretiens auprès de travailleurs aux horaires variables, dont plusieurs déclarent lire moins. Ces constats ne se réfutent pas nécessairement. Le premier agrège des situations, tandis que le second rend visibles certaines trajectoires sans en mesurer la fréquence générale. Une synthèse rigoureuse doit donc expliciter cette différence de portée. Elle peut retenir l'existence d'une amélioration moyenne tout en signalant qu'elle ne bénéficie pas uniformément aux groupes étudiés. Pour aller plus loin, il faudrait désagréger l'enquête et vérifier si les catégories des deux documents sont comparables. Présenter les entretiens comme une preuve d'échec global serait aussi abusif que les écarter au nom de la moyenne.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Pourquoi les deux documents ne se réfutent-ils pas forcément ?",
+      "answer": "Ils décrivent des populations et des niveaux d'agrégation différents.",
+      "explanation": "总体平均值与特定群体经历并非同一测量。"
+    },
+    {
+      "prompt": "Quelle étape permettrait une meilleure comparaison ?",
+      "answer": "Désagréger l'enquête et harmoniser les catégories.",
+      "explanation": "先建立可比性，再讨论是否存在矛盾。"
+    }
+  ],
+  "pronunciation": "reformulation orale。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produisez une synthèse",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "fr-a2-u06",
+  "title": "Achats et comparaisons",
+  "language": "fr",
+  "level": "A2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Compare goods and express quantities",
+  "prerequisite": "fr-a2-u05",
+  "context": "比较两件商品的价格、尺寸与使用条件，解释选择。",
+  "grammar": "形容词比较使用 plus/moins/aussi + adjectif + que。bon 的比较级是 meilleur，bien 的比较级是 mieux：un meilleur sac / il fonctionne mieux。比较前需确保比较的是同一属性。",
+  "common_mistake": "plus meilleur 是重复比较，不使用。",
+  "vocabulary": [
+    [
+      "un prix",
+      "价格"
+    ],
+    [
+      "léger",
+      "轻的"
+    ],
+    [
+      "solide",
+      "结实的"
+    ],
+    [
+      "une taille",
+      "尺寸"
+    ],
+    [
+      "essayer",
+      "试用"
+    ],
+    [
+      "une garantie",
+      "保修"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Inès cherche un sac pour aller au travail.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le sac bleu coûte soixante euros et le sac gris quarante-cinq euros.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le bleu est plus léger que le gris, mais il est moins grand.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Inès doit transporter un ordinateur et plusieurs dossiers.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Inès cherche un sac pour aller au travail. Le sac bleu coûte soixante euros et le sac gris quarante-cinq euros. Le bleu est plus léger que le gris, mais il est moins grand. Inès doit transporter un ordinateur et plusieurs dossiers. Elle essaie les deux sacs dans le magasin. Le gris est assez solide et son ordinateur y entre facilement. Elle choisit donc le gris, même si elle préfère la couleur du bleu.",
+  "listening_script": "Inès cherche un sac pour aller au travail. Le sac bleu coûte soixante euros et le sac gris quarante-cinq euros. Le bleu est plus léger que le gris, mais il est moins grand. Inès doit transporter un ordinateur et plusieurs dossiers. Elle essaie les deux sacs dans le magasin. Le gris est assez solide et son ordinateur y entre facilement. Elle choisit donc le gris, même si elle préfère la couleur du bleu.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Pourquoi choisit-elle le sac gris ?",
+      "answer": "Il peut contenir son ordinateur et ses dossiers.",
+      "explanation": "颜色偏好不等于最终选择的实用理由。"
+    },
+    {
+      "prompt": "改错：C'est un plus meilleur sac.",
+      "answer": "C'est un meilleur sac.",
+      "explanation": "meilleur 本身已表示比较级。"
+    }
+  ],
+  "pronunciation": "intonation des comparaisons。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Comparez deux produits",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

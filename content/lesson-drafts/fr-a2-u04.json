@@ -1,0 +1,78 @@
+{
+  "id": "fr-a2-u04",
+  "title": "Relations et messages",
+  "language": "fr",
+  "level": "A2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Talk about people and communicate politely",
+  "prerequisite": "fr-a2-u03",
+  "context": "给朋友写简短消息，说明变化、请求帮助并约定回信。",
+  "grammar": "直接宾语代词 le/la/les 替代直接对象；间接宾语 lui/leur 在 parler à、écrire à 等结构中指人。代词一般放在变位动词前：Je lui écris。不要按中文‘他’选择 le 或 lui，要看动词搭配。",
+  "common_mistake": "Je lui vois 错误；voir quelqu'un 用直接宾语，应说 Je le vois。",
+  "vocabulary": [
+    [
+      "prévenir",
+      "通知"
+    ],
+    [
+      "un message",
+      "消息"
+    ],
+    [
+      "répondre",
+      "回复"
+    ],
+    [
+      "prêter",
+      "借出"
+    ],
+    [
+      "un voisin",
+      "邻居"
+    ],
+    [
+      "disponible",
+      "有空的"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Salut Nora, je dois changer l'heure de notre rendez-vous.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Mon voisin arrive à quinze heures et je dois lui donner mes clés.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Est-ce que tu es disponible à seize heures ?",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "J'ai aussi retrouvé ton livre et je vais te le rendre.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Salut Nora, je dois changer l'heure de notre rendez-vous. Mon voisin arrive à quinze heures et je dois lui donner mes clés. Est-ce que tu es disponible à seize heures ? J'ai aussi retrouvé ton livre et je vais te le rendre. Il est dans mon sac. Si tu ne peux pas venir, écris-moi ce soir. À bientôt, Léa.",
+  "listening_script": "Salut Nora, je dois changer l'heure de notre rendez-vous. Mon voisin arrive à quinze heures et je dois lui donner mes clés. Est-ce que tu es disponible à seize heures ? J'ai aussi retrouvé ton livre et je vais te le rendre. Il est dans mon sac. Si tu ne peux pas venir, écris-moi ce soir. À bientôt, Léa.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "À qui Léa doit-elle donner ses clés ?",
+      "answer": "À son voisin.",
+      "explanation": "lui 对应前文 mon voisin，不是 Nora。"
+    },
+    {
+      "prompt": "将 J'écris à Nora 改用代词。",
+      "answer": "Je lui écris.",
+      "explanation": "écrire à quelqu'un 是间接宾语结构。"
+    }
+  ],
+  "pronunciation": "intonation des demandes。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Laissez un message vocal",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

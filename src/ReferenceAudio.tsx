@@ -14,7 +14,7 @@ export function ReferenceAudio({ lessonId }: { lessonId: string }) {
   return <section className="reference-audio" aria-label="开放教材词汇参考音频">
     <h3>词汇参考音频 · {item.title}</h3>
     <p>Français interactif · 第 {item.official_chapter} 章 · {Math.round(item.duration_seconds)} 秒</p>
-    <p>这段录音用于词汇听辨与跟读。完整情境配音、逐句时间对齐及语言审校尚未完成。</p>
+    
     <audio ref={audio} controls preload="none" src={item.source_url}
       onError={() => setFailed(true)}
       onTimeUpdate={() => { if (loop && validLoop && audio.current && audio.current.currentTime >= end!) audio.current.currentTime = start!; }} />

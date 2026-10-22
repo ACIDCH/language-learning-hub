@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-speaking-u01",
+  "title": "Developing nuanced opinions",
+  "language": "en",
+  "level": "B1-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply developing nuanced opinions in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": null,
+  "context": "回答抽象口语问题时给出有层次的观点，不背诵固定立场。",
+  "grammar": "I tend to、for the most part、it depends on 精确表达倾向与条件。先直接回答，再给理由和一个限定；避免让 depends 成为不作答的借口。",
+  "common_mistake": "为了显得高级而堆叠多个 hedge 会让立场听不清。",
+  "vocabulary": [
+    [
+      "preference",
+      "偏好"
+    ],
+    [
+      "priority",
+      "优先考虑"
+    ],
+    [
+      "circumstance",
+      "情况"
+    ],
+    [
+      "convenient",
+      "方便的"
+    ],
+    [
+      "trade-off",
+      "权衡"
+    ],
+    [
+      "generally",
+      "通常"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "I generally prefer studying in a library because the setting helps me separate work from home.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "That said, the best place depends on the task.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "If I need to practise a presentation aloud, a quiet library desk is not suitable.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "At home I can record a rehearsal without disturbing other readers.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "I generally prefer studying in a library because the setting helps me separate work from home. That said, the best place depends on the task. If I need to practise a presentation aloud, a quiet library desk is not suitable. At home I can record a rehearsal without disturbing other readers. So I would not describe one place as better for every learner or every activity. My preference reflects the kind of concentration I usually need, rather than a universal rule about effective study.",
+  "listening_script": "I generally prefer studying in a library because the setting helps me separate work from home. That said, the best place depends on the task. If I need to practise a presentation aloud, a quiet library desk is not suitable. At home I can record a rehearsal without disturbing other readers. So I would not describe one place as better for every learner or every activity. My preference reflects the kind of concentration I usually need, rather than a universal rule about effective study.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What condition changes the speaker's preference ?",
+      "answer": "Needing to practise a presentation aloud.",
+      "explanation": "条件具体，能解释例外。"
+    },
+    {
+      "prompt": "Identify a phrase that qualifies the initial answer.",
+      "answer": "That said, the best place depends on the task.",
+      "explanation": "限定没有撤销开头偏好，而是界定适用范围。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating developing nuanced opinions",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-listening-u08",
+  "title": "Synthesis from extended academic audio",
+  "language": "en",
+  "level": "B1-B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply synthesis from extended academic audio in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-listening-u07",
+  "context": "综合长讲座的主张、机制与限制；脚本可分段朗读，但不称真实考试录音。",
+  "grammar": "摘要句须覆盖主论点而非罗列细节。区分 contributes to 与 determines；听完段落后把‘结论—支持—反例’重新组织，不把每个数字都放入摘要。",
+  "common_mistake": "一个成功案例不足以证明普遍效果；遗漏限制会改变讲座结论。",
+  "vocabulary": [
+    [
+      "retention",
+      "保持"
+    ],
+    [
+      "retrieval",
+      "提取"
+    ],
+    [
+      "spacing",
+      "间隔"
+    ],
+    [
+      "transfer",
+      "迁移"
+    ],
+    [
+      "context",
+      "情境"
+    ],
+    [
+      "qualification",
+      "限定条件"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Today we have considered why repeated exposure alone may not produce flexible learning.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Familiarity can make material feel easy even when a learner cannot explain it without prompts.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Retrieval practice addresses this gap by requiring an answer before the source is reopened.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Spacing such attempts across several days may also help, although the best interval depends on the material and the goal.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Today we have considered why repeated exposure alone may not produce flexible learning. Familiarity can make material feel easy even when a learner cannot explain it without prompts. Retrieval practice addresses this gap by requiring an answer before the source is reopened. Spacing such attempts across several days may also help, although the best interval depends on the material and the goal. Our classroom example illustrated a possible routine, not a universal prescription. Learners must still check mistakes and use knowledge in contexts different from the original exercise. The central message is therefore to combine recall, feedback and varied use rather than judge progress by the smoothness of rereading.",
+  "listening_script": "Today we have considered why repeated exposure alone may not produce flexible learning. Familiarity can make material feel easy even when a learner cannot explain it without prompts. Retrieval practice addresses this gap by requiring an answer before the source is reopened. Spacing such attempts across several days may also help, although the best interval depends on the material and the goal. Our classroom example illustrated a possible routine, not a universal prescription. Learners must still check mistakes and use knowledge in contexts different from the original exercise. The central message is therefore to combine recall, feedback and varied use rather than judge progress by the smoothness of rereading.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Summarise the central recommendation in one sentence.",
+      "answer": "Combine recall, feedback and varied use rather than relying only on rereading.",
+      "explanation": "概括主旨，保留对单纯重读的限制。"
+    },
+    {
+      "prompt": "Is one spacing interval recommended for every task ?",
+      "answer": "No, it depends on the material and goal.",
+      "explanation": "脚本明确拒绝统一处方。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating synthesis from extended academic audio",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

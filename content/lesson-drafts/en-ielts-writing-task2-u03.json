@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-writing-task2-u03",
+  "title": "Argument and counterargument",
+  "language": "en",
+  "level": "B2-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply argument and counterargument in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-writing-task2-u02",
+  "context": "写一段反驳，先准确表达对方最有力的理由。",
+  "grammar": "Although X, Y 让步结构不应把 X 弱化为荒谬说法。rebuttal 可否定因果、范围或必要性；先指出具体争议点，再给替代方案。",
+  "common_mistake": "对方支持‘部分考试’，不能改写成‘只用考试评价一切’后反驳。",
+  "vocabulary": [
+    [
+      "counterargument",
+      "反论点"
+    ],
+    [
+      "fairness",
+      "公平"
+    ],
+    [
+      "standardised",
+      "标准化的"
+    ],
+    [
+      "criterion",
+      "标准"
+    ],
+    [
+      "rebuttal",
+      "反驳"
+    ],
+    [
+      "complement",
+      "补充"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Supporters of standardised tests argue that common tasks make comparisons more consistent.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "This is a serious advantage when applicants come from different schools.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "However, consistency in scoring does not ensure that a test captures every relevant ability.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Collaborative work, revision and sustained inquiry may require other forms of evidence.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Supporters of standardised tests argue that common tasks make comparisons more consistent. This is a serious advantage when applicants come from different schools. However, consistency in scoring does not ensure that a test captures every relevant ability. Collaborative work, revision and sustained inquiry may require other forms of evidence. The objection does not imply that tests should be abolished. It supports combining them with carefully designed additional tasks. Such a position answers the strongest argument for tests while limiting the conclusion drawn from it.",
+  "listening_script": "Supporters of standardised tests argue that common tasks make comparisons more consistent. This is a serious advantage when applicants come from different schools. However, consistency in scoring does not ensure that a test captures every relevant ability. Collaborative work, revision and sustained inquiry may require other forms of evidence. The objection does not imply that tests should be abolished. It supports combining them with carefully designed additional tasks. Such a position answers the strongest argument for tests while limiting the conclusion drawn from it.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What advantage is conceded ?",
+      "answer": "More consistent comparison through common tasks.",
+      "explanation": "让步保留对方合理理由。"
+    },
+    {
+      "prompt": "Does the rebuttal demand abolition ?",
+      "answer": "No, it proposes complementary evidence.",
+      "explanation": "限制适用范围不等于完全否定。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating argument and counterargument",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "fr-c2-u01",
+  "title": "Maîtrise des nuances",
+  "language": "fr",
+  "level": "C2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Choose exact shades of meaning",
+  "prerequisite": null,
+  "context": "辨析保留、否认与轻描淡写在高阶论辩中的不同作用。",
+  "grammar": "litote 以弱化形式表达较强判断，但必须依语境识别；ne saurait、loin de、il n'est pas exclu 的强度不可机械互换。语用推论不等于句子的字面真值条件。",
+  "common_mistake": "il n'est pas exclu que 只说不能排除，不能译成‘肯定会’。",
+  "vocabulary": [
+    [
+      "une litote",
+      "曲言"
+    ],
+    [
+      "une réticence",
+      "保留"
+    ],
+    [
+      "la portée",
+      "作用范围"
+    ],
+    [
+      "une inflexion",
+      "语气转折"
+    ],
+    [
+      "implicite",
+      "隐含的"
+    ],
+    [
+      "catégorique",
+      "绝对的"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Dire qu'une démonstration n'est pas entièrement convaincante peut constituer une réserve mesurée ou une critique sévère, selon la situation d'énonciation.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Dans un compte rendu diplomatique, la négation partielle ménage parfois une sortie honorable à l'interlocuteur.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Elle ne permet pourtant pas au lecteur extérieur de quantifier le désaccord.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "À l'inverse, l'expression on ne saurait accepter formule souvent un refus plus ferme que son apparente conditionnalité ne le laisse croire.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Dire qu'une démonstration n'est pas entièrement convaincante peut constituer une réserve mesurée ou une critique sévère, selon la situation d'énonciation. Dans un compte rendu diplomatique, la négation partielle ménage parfois une sortie honorable à l'interlocuteur. Elle ne permet pourtant pas au lecteur extérieur de quantifier le désaccord. À l'inverse, l'expression on ne saurait accepter formule souvent un refus plus ferme que son apparente conditionnalité ne le laisse croire. L'analyse doit donc articuler la portée de la négation, les conventions du genre et les rapports entre participants. Elle évitera deux réductions symétriques : lire tout énoncé atténué au pied de la lettre, ou lui attribuer systématiquement une intention ironique. Pour reformuler sans trahir, on peut rendre explicite le degré d'engagement observable tout en signalant ce que le contexte ne permet pas de trancher. Cette prudence est une précision, non une indécision.",
+  "listening_script": "Dire qu'une démonstration n'est pas entièrement convaincante peut constituer une réserve mesurée ou une critique sévère, selon la situation d'énonciation. Dans un compte rendu diplomatique, la négation partielle ménage parfois une sortie honorable à l'interlocuteur. Elle ne permet pourtant pas au lecteur extérieur de quantifier le désaccord. À l'inverse, l'expression on ne saurait accepter formule souvent un refus plus ferme que son apparente conditionnalité ne le laisse croire. L'analyse doit donc articuler la portée de la négation, les conventions du genre et les rapports entre participants. Elle évitera deux réductions symétriques : lire tout énoncé atténué au pied de la lettre, ou lui attribuer systématiquement une intention ironique. Pour reformuler sans trahir, on peut rendre explicite le degré d'engagement observable tout en signalant ce que le contexte ne permet pas de trancher. Cette prudence est une précision, non une indécision.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Pourquoi ne peut-on pas quantifier automatiquement le désaccord ?",
+      "answer": "La force pragmatique dépend du genre et de la situation.",
+      "explanation": "语用强度没有固定的词面百分比。"
+    },
+    {
+      "prompt": "Réécrivez Il n'est pas exclu que le projet échoue sans renforcer la certitude.",
+      "answer": "Le projet pourrait échouer ; cette possibilité reste ouverte.",
+      "explanation": "保持可能性，不能改成必然失败。"
+    }
+  ],
+  "pronunciation": "accent expressif。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Comparez deux formulations",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

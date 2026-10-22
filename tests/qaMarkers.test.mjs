@@ -10,6 +10,8 @@ test('French corrigé is detected while manuscript status remains independent',(
 });
 test('QA dashboard must not identify all marker hits as editorial approval',()=>{
  assert.match(ui,/qa_status!=='approved'/);
- assert.match(ui,/机器结构检查不能替代人工/);
+ assert.match(ui,/待人工审校/);
+ assert.match(ui,/检测到答案标记/);
+ assert.match(ui,/qa_status/);
  assert.match(ui,/refreshVersion/);
 });

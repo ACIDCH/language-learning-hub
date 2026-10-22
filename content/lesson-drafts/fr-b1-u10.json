@@ -1,0 +1,78 @@
+{
+  "id": "fr-b1-u10",
+  "title": "Écrire et échanger",
+  "language": "fr",
+  "level": "B1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Write structured correspondence and proposals",
+  "prerequisite": "fr-b1-u09",
+  "context": "书面回应邻居投诉，确认事实并提出修复办法。",
+  "grammar": "过去事件可用 passé composé，未来承诺用 futur；条件式可提出协商方案。先承认对方体验，再区分可确认事实和待核实细节。正式称呼与结尾应一致。",
+  "common_mistake": "道歉信不应靠‘你太敏感’否定对方感受，也不要承认自己无法确认的事实。",
+  "vocabulary": [
+    [
+      "une gêne",
+      "困扰"
+    ],
+    [
+      "présenter ses excuses",
+      "致歉"
+    ],
+    [
+      "convenir de",
+      "商定"
+    ],
+    [
+      "prévenir",
+      "提前通知"
+    ],
+    [
+      "une solution",
+      "办法"
+    ],
+    [
+      "à l'avenir",
+      "以后"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Madame, j'ai bien reçu votre message concernant le bruit de samedi soir.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Nous avons déplacé des meubles et je comprends que cela ait pu vous déranger.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Je vous présente mes excuses pour cette gêne.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Je ne peux pas confirmer l'origine des bruits signalés après minuit, car nous étions déjà partis.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Madame, j'ai bien reçu votre message concernant le bruit de samedi soir. Nous avons déplacé des meubles et je comprends que cela ait pu vous déranger. Je vous présente mes excuses pour cette gêne. Je ne peux pas confirmer l'origine des bruits signalés après minuit, car nous étions déjà partis. À l'avenir, je vous préviendrai avant les travaux prévus chez moi. Nous pourrions également convenir d'horaires acceptables pour les tâches bruyantes. Je vous remercie d'avoir pris le temps de m'écrire.",
+  "listening_script": "Madame, j'ai bien reçu votre message concernant le bruit de samedi soir. Nous avons déplacé des meubles et je comprends que cela ait pu vous déranger. Je vous présente mes excuses pour cette gêne. Je ne peux pas confirmer l'origine des bruits signalés après minuit, car nous étions déjà partis. À l'avenir, je vous préviendrai avant les travaux prévus chez moi. Nous pourrions également convenir d'horaires acceptables pour les tâches bruyantes. Je vous remercie d'avoir pris le temps de m'écrire.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quelle partie du signalement n'est pas confirmée ?",
+      "answer": "Les bruits après minuit.",
+      "explanation": "作者致歉但没有把未知来源的噪音也当作已确认事实。"
+    },
+    {
+      "prompt": "Quelle phrase propose une négociation ?",
+      "answer": "Nous pourrions également convenir d'horaires acceptables.",
+      "explanation": "pourrions 表达可讨论方案，而非单方面命令。"
+    }
+  ],
+  "pronunciation": "livraison orale professionnelle。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Écrivez une proposition structurée",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

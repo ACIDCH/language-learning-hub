@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-listening-u04",
+  "title": "Map and process descriptions",
+  "language": "en",
+  "level": "B1-B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply map and process descriptions in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-listening-u03",
+  "context": "根据口头说明绘制研究场地示意图，区分路径与建筑用途。",
+  "grammar": "位置表达 beside/opposite/beyond 有不同参照关系。面对地图须先确定入口方向，再追踪 turn left/right；被动式 is stored 指物品处理状态，而不是地点移动。",
+  "common_mistake": "把 past the office 理解成进办公室会改变路线。",
+  "vocabulary": [
+    [
+      "entrance",
+      "入口"
+    ],
+    [
+      "opposite",
+      "对面"
+    ],
+    [
+      "beyond",
+      "在更远处"
+    ],
+    [
+      "storage",
+      "储存"
+    ],
+    [
+      "pathway",
+      "小路"
+    ],
+    [
+      "specimen",
+      "标本"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Enter the research garden through the southern gate.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The office is immediately on your left, opposite a small pond.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Walk past the office and follow the path north towards the greenhouse.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The seed store stands just beyond the greenhouse, on the same side of the path.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Enter the research garden through the southern gate. The office is immediately on your left, opposite a small pond. Walk past the office and follow the path north towards the greenhouse. The seed store stands just beyond the greenhouse, on the same side of the path. Visitors should leave collected specimens at the reception desk rather than taking them directly into storage. Staff label each specimen before it is moved to the controlled room. This keeps the public route separate from the handling process.",
+  "listening_script": "Enter the research garden through the southern gate. The office is immediately on your left, opposite a small pond. Walk past the office and follow the path north towards the greenhouse. The seed store stands just beyond the greenhouse, on the same side of the path. Visitors should leave collected specimens at the reception desk rather than taking them directly into storage. Staff label each specimen before it is moved to the controlled room. This keeps the public route separate from the handling process.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Where is the seed store relative to the greenhouse ?",
+      "answer": "Just beyond it, on the same side of the path.",
+      "explanation": "beyond 表示沿行进方向更远，不能说 opposite。"
+    },
+    {
+      "prompt": "Where should visitors leave specimens ?",
+      "answer": "At the reception desk.",
+      "explanation": "储存最终地点不等于访客交接地点。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating map and process descriptions",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

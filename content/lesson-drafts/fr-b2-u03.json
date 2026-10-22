@@ -1,0 +1,78 @@
+{
+  "id": "fr-b2-u03",
+  "title": "Analyser l'actualité",
+  "language": "fr",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Summarize and evaluate news sources",
+  "prerequisite": "fr-b2-u02",
+  "context": "比较媒体对一项调查的报道，识别标题与证据的距离。",
+  "grammar": "条件式 journalistique 可标记未经最终确认的信息：la mesure aurait…；它不等于事实证明。连接 attribution、méthode、résultat，保留调查范围和日期。",
+  "common_mistake": "相关性不能自动改写为因果，标题也不替代方法说明。",
+  "vocabulary": [
+    [
+      "un échantillon",
+      "样本"
+    ],
+    [
+      "une enquête",
+      "调查"
+    ],
+    [
+      "un biais",
+      "偏差"
+    ],
+    [
+      "une corrélation",
+      "相关"
+    ],
+    [
+      "attribuer",
+      "归因"
+    ],
+    [
+      "un résultat",
+      "结果"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Un titre affirme que les jardins partagés rendent les habitants plus heureux.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "L'enquête citée montre en réalité une association entre la participation à ces jardins et un indicateur de satisfaction.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Elle repose sur des réponses volontaires recueillies dans trois quartiers.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Les personnes déjà motivées par la vie collective peuvent être surreprésentées.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Un titre affirme que les jardins partagés rendent les habitants plus heureux. L'enquête citée montre en réalité une association entre la participation à ces jardins et un indicateur de satisfaction. Elle repose sur des réponses volontaires recueillies dans trois quartiers. Les personnes déjà motivées par la vie collective peuvent être surreprésentées. Selon les chercheurs, une comparaison sur plusieurs années serait nécessaire pour examiner un éventuel effet causal. Le journaliste mentionne cette réserve, mais seulement en fin d'article. Une lecture critique doit donc relier le titre au protocole plutôt que retenir sa formulation la plus spectaculaire.",
+  "listening_script": "Un titre affirme que les jardins partagés rendent les habitants plus heureux. L'enquête citée montre en réalité une association entre la participation à ces jardins et un indicateur de satisfaction. Elle repose sur des réponses volontaires recueillies dans trois quartiers. Les personnes déjà motivées par la vie collective peuvent être surreprésentées. Selon les chercheurs, une comparaison sur plusieurs années serait nécessaire pour examiner un éventuel effet causal. Le journaliste mentionne cette réserve, mais seulement en fin d'article. Une lecture critique doit donc relier le titre au protocole plutôt que retenir sa formulation la plus spectaculaire.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quel biais est possible ?",
+      "answer": "L'autosélection de personnes déjà motivées par la vie collective.",
+      "explanation": "自愿答题可能使样本与总体不同。"
+    },
+    {
+      "prompt": "L'étude prouve-t-elle la causalité ?",
+      "answer": "Non, elle établit une association dans cet échantillon.",
+      "explanation": "文本明确需要进一步长期比较。"
+    }
+  ],
+  "pronunciation": "mise en relief prosodique。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Comparez deux reportages",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

@@ -1,0 +1,5 @@
+{
+  "commit": "952afac",
+  "flow": "specialty -> course -> reload",
+  "answer": "La réponse est conservée entre le cours et le thème."
+}

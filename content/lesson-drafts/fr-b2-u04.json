@@ -1,0 +1,78 @@
+{
+  "id": "fr-b2-u04",
+  "title": "Hypothèses passées",
+  "language": "fr",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Discuss past alternatives and regret",
+  "prerequisite": "fr-b2-u03",
+  "context": "回顾项目失败，表达过去未实现的条件及后果而不虚构确定性。",
+  "grammar": "si + plus-que-parfait 配 conditionnel passé：Si nous avions testé…, nous aurions repéré…。表示过去反事实；aurions pu 保留可能性，比 aurions évité 更谨慎。",
+  "common_mistake": "事后提出可能改进不证明它一定能完全避免结果。",
+  "vocabulary": [
+    [
+      "anticiper",
+      "预先考虑"
+    ],
+    [
+      "une défaillance",
+      "故障"
+    ],
+    [
+      "un essai",
+      "测试"
+    ],
+    [
+      "repérer",
+      "发现"
+    ],
+    [
+      "un scénario",
+      "情景"
+    ],
+    [
+      "un imprévu",
+      "意外"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Si l'équipe avait testé le formulaire sur un téléphone ancien, elle aurait probablement repéré le problème d'affichage.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le lancement a eu lieu avant cette vérification, car le calendrier était déjà annoncé.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Plusieurs usagers n'ont donc pas pu terminer leur inscription.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Un délai supplémentaire aurait pu réduire ce risque, sans garantir l'absence de tout incident.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Si l'équipe avait testé le formulaire sur un téléphone ancien, elle aurait probablement repéré le problème d'affichage. Le lancement a eu lieu avant cette vérification, car le calendrier était déjà annoncé. Plusieurs usagers n'ont donc pas pu terminer leur inscription. Un délai supplémentaire aurait pu réduire ce risque, sans garantir l'absence de tout incident. Il aurait également fallu prévoir une solution de secours accessible. Le bilan ne consiste pas à chercher une personne à blâmer, mais à identifier les décisions modifiables. Pour la prochaine version, l'équipe documentera les appareils testés et les limites restantes.",
+  "listening_script": "Si l'équipe avait testé le formulaire sur un téléphone ancien, elle aurait probablement repéré le problème d'affichage. Le lancement a eu lieu avant cette vérification, car le calendrier était déjà annoncé. Plusieurs usagers n'ont donc pas pu terminer leur inscription. Un délai supplémentaire aurait pu réduire ce risque, sans garantir l'absence de tout incident. Il aurait également fallu prévoir une solution de secours accessible. Le bilan ne consiste pas à chercher une personne à blâmer, mais à identifier les décisions modifiables. Pour la prochaine version, l'équipe documentera les appareils testés et les limites restantes.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Pourquoi aurions pu serait-il plus prudent que aurions évité ?",
+      "answer": "Il exprime une possibilité plutôt qu'une certitude contrefactuelle.",
+      "explanation": "没有实际发生的替代方案无法直接观察验证。"
+    },
+    {
+      "prompt": "补全：Si nous avions testé, nous ___ le défaut. (repérer)",
+      "answer": "aurions repéré",
+      "explanation": "过去反事实的结果用条件式过去时。"
+    }
+  ],
+  "pronunciation": "enchaînement des formes composées。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Expliquez un choix passé",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

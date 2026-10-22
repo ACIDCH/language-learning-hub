@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-reading-u04",
+  "title": "True False Not Given: evidence and scope",
+  "language": "en",
+  "level": "B1-B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply true false not given: evidence and scope in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-reading-u03",
+  "context": "对照句子范围判断 True、False、Not Given，练习不以常识填补文本。",
+  "grammar": "True 需原文支持，False 需原文矛盾，Not Given 是缺少足够信息。some 不等于 all；earlier 不等于 earliest。先圈量词、时间和比较范围，再找证据。",
+  "common_mistake": "未提到费用不等于免费；未证明说法不等于说法为假。",
+  "vocabulary": [
+    [
+      "evidence",
+      "证据"
+    ],
+    [
+      "scope",
+      "范围"
+    ],
+    [
+      "contradict",
+      "矛盾"
+    ],
+    [
+      "volunteer",
+      "志愿者"
+    ],
+    [
+      "funding",
+      "经费"
+    ],
+    [
+      "participant",
+      "参与者"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "A pilot reading club began in three libraries in 2024.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Two of the libraries offered evening meetings, while the third met only on Saturday mornings.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Participants could borrow the discussion book from the library.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The organisers collected written feedback at the end of each month.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "A pilot reading club began in three libraries in 2024. Two of the libraries offered evening meetings, while the third met only on Saturday mornings. Participants could borrow the discussion book from the library. The organisers collected written feedback at the end of each month. They reported that some members wanted longer sessions. The report did not describe the programme's funding or compare the three libraries' costs.",
+  "listening_script": "A pilot reading club began in three libraries in 2024. Two of the libraries offered evening meetings, while the third met only on Saturday mornings. Participants could borrow the discussion book from the library. The organisers collected written feedback at the end of each month. They reported that some members wanted longer sessions. The report did not describe the programme's funding or compare the three libraries' costs.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "All three libraries held evening meetings. True, False or Not Given ?",
+      "answer": "False.",
+      "explanation": "第三家仅周六上午，直接反驳 all。"
+    },
+    {
+      "prompt": "The club received government funding. True, False or Not Given ?",
+      "answer": "Not Given.",
+      "explanation": "原文明说未描述经费，不能从公共图书馆性质推断。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating true false not given: evidence and scope",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

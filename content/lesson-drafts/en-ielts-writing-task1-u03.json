@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-writing-task1-u03",
+  "title": "Comparisons in charts and tables",
+  "language": "en",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply comparisons in charts and tables in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-writing-task1-u02",
+  "context": "比较自编表格：虚构 A/B/C 校区自行车使用率分别为 40/25/35%，公交为 30/50/20%。其余方式未列出。",
+  "grammar": "比较须保持对象与指标一致。whereas 连接对照；twice as high as 表示倍数，不是 two times higher 的含糊表达。不同类别比例之和不必等于 100，除非题面说明覆盖所有类别。",
+  "common_mistake": "不能把两种交通方式的部分表格当成完整出行分布。",
+  "vocabulary": [
+    [
+      "proportion",
+      "比例"
+    ],
+    [
+      "campus",
+      "校区"
+    ],
+    [
+      "commute",
+      "通勤"
+    ],
+    [
+      "whereas",
+      "而"
+    ],
+    [
+      "exceed",
+      "超过"
+    ],
+    [
+      "percentage point",
+      "百分点"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Bus use was highest at campus B in the invented table.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Half of its commuters used buses, compared with a quarter who cycled.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Campus A showed the opposite ordering, with cycling at 40% and buses at 30%.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "At campus C, the gap was fifteen percentage points in favour of cycling.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Bus use was highest at campus B in the invented table. Half of its commuters used buses, compared with a quarter who cycled. Campus A showed the opposite ordering, with cycling at 40% and buses at 30%. At campus C, the gap was fifteen percentage points in favour of cycling. These figures cover only two transport categories. A report can compare the listed modes but cannot identify the missing categories without further information. The overview should emphasise the contrast between B and the other campuses.",
+  "listening_script": "Bus use was highest at campus B in the invented table. Half of its commuters used buses, compared with a quarter who cycled. Campus A showed the opposite ordering, with cycling at 40% and buses at 30%. At campus C, the gap was fifteen percentage points in favour of cycling. These figures cover only two transport categories. A report can compare the listed modes but cannot identify the missing categories without further information. The overview should emphasise the contrast between B and the other campuses.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "At B, how does bus use compare with cycling ?",
+      "answer": "It is twice as high: 50% versus 25%.",
+      "explanation": "倍数基于相同指标，两者差 25 个百分点。"
+    },
+    {
+      "prompt": "What is the gap at C ?",
+      "answer": "15 percentage points.",
+      "explanation": "35%−20%=15 个百分点，不是简单写增加 15%。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating comparisons in charts and tables",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

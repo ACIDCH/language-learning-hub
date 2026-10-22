@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-reading-u06",
+  "title": "Inference, hedging and author attitude",
+  "language": "en",
+  "level": "B1-B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply inference, hedging and author attitude in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-reading-u05",
+  "context": "从作者的限定词判断推断强度，区别谨慎解释与已证实因果。",
+  "grammar": "may、appears to、is consistent with 限定承诺程度。推断必须同时符合文本信息且不过度具体。consistent with 说明相容，不排除其他解释。",
+  "common_mistake": "‘数据与假设相容’不能改写为‘数据排除了所有替代解释’。",
+  "vocabulary": [
+    [
+      "tentative",
+      "暂定的"
+    ],
+    [
+      "compatible",
+      "相容的"
+    ],
+    [
+      "causal",
+      "因果的"
+    ],
+    [
+      "plausible",
+      "合理可能的"
+    ],
+    [
+      "account for",
+      "解释"
+    ],
+    [
+      "replicate",
+      "重复验证"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Plants beside the busy road developed smaller leaves in this small observational study.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The pattern is consistent with a response to environmental stress.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "However, the researchers did not isolate pollution from differences in soil or water availability.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "They therefore describe their explanation as tentative.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Plants beside the busy road developed smaller leaves in this small observational study. The pattern is consistent with a response to environmental stress. However, the researchers did not isolate pollution from differences in soil or water availability. They therefore describe their explanation as tentative. A controlled comparison could help assess which factor accounts for the pattern. Until then, the study provides a reason to investigate further rather than proof of a single causal mechanism.",
+  "listening_script": "Plants beside the busy road developed smaller leaves in this small observational study. The pattern is consistent with a response to environmental stress. However, the researchers did not isolate pollution from differences in soil or water availability. They therefore describe their explanation as tentative. A controlled comparison could help assess which factor accounts for the pattern. Until then, the study provides a reason to investigate further rather than proof of a single causal mechanism.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Does the author regard pollution as the proven cause ?",
+      "answer": "No, the explanation is tentative and other factors remain.",
+      "explanation": "限定词和未隔离因素共同决定结论力度。"
+    },
+    {
+      "prompt": "What is a justified next step ?",
+      "answer": "A controlled comparison separating possible factors.",
+      "explanation": "原文提出的下一步与当前方法局限直接对应。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating inference, hedging and author attitude",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

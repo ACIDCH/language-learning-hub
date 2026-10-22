@@ -1,0 +1,78 @@
+{
+  "id": "fr-c1-u06",
+  "title": "Exposé expert",
+  "language": "fr",
+  "level": "C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Explain complex ideas to varied audiences",
+  "prerequisite": "fr-c1-u05",
+  "context": "向跨专业听众说明研究结论，明确已知、推断和未解决问题。",
+  "grammar": "exposer 不是堆术语：先定义概念，再说明方法与适用范围。ce que nous pouvons affirmer / ce qui reste ouvert 形成认识边界。条件式与情态词必须与证据等级相符。",
+  "common_mistake": "解释简洁不能通过删去重要限制来实现。",
+  "vocabulary": [
+    [
+      "un protocole",
+      "研究方案"
+    ],
+    [
+      "une incertitude",
+      "不确定性"
+    ],
+    [
+      "robuste",
+      "稳健的"
+    ],
+    [
+      "extrapoler",
+      "外推"
+    ],
+    [
+      "un paramètre",
+      "参数"
+    ],
+    [
+      "reproductible",
+      "可复现的"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Notre étude porte sur un système expérimental de tri, testé dans deux bâtiments seulement.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le protocole compare les erreurs avant et après une modification de l'affichage.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Les résultats suggèrent une amélioration dans les conditions observées, mais le dispositif ne permet pas d'isoler tous les effets de l'accompagnement humain.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Ce que nous pouvons affirmer, c'est que la combinaison mise en place a coïncidé avec moins d'erreurs.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Notre étude porte sur un système expérimental de tri, testé dans deux bâtiments seulement. Le protocole compare les erreurs avant et après une modification de l'affichage. Les résultats suggèrent une amélioration dans les conditions observées, mais le dispositif ne permet pas d'isoler tous les effets de l'accompagnement humain. Ce que nous pouvons affirmer, c'est que la combinaison mise en place a coïncidé avec moins d'erreurs. Ce qui reste ouvert concerne sa stabilité dans le temps et son transfert à d'autres lieux. Une présentation honnête ne transforme pas ces questions en défauts accessoires. Elle les utilise pour définir l'étape suivante : répéter le test, documenter le contexte et mesurer séparément les interventions. L'enjeu n'est pas de diminuer la valeur du résultat, mais d'empêcher une généralisation que le protocole ne soutient pas.",
+  "listening_script": "Notre étude porte sur un système expérimental de tri, testé dans deux bâtiments seulement. Le protocole compare les erreurs avant et après une modification de l'affichage. Les résultats suggèrent une amélioration dans les conditions observées, mais le dispositif ne permet pas d'isoler tous les effets de l'accompagnement humain. Ce que nous pouvons affirmer, c'est que la combinaison mise en place a coïncidé avec moins d'erreurs. Ce qui reste ouvert concerne sa stabilité dans le temps et son transfert à d'autres lieux. Une présentation honnête ne transforme pas ces questions en défauts accessoires. Elle les utilise pour définir l'étape suivante : répéter le test, documenter le contexte et mesurer séparément les interventions. L'enjeu n'est pas de diminuer la valeur du résultat, mais d'empêcher une généralisation que le protocole ne soutient pas.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Peut-on isoler l'effet de l'affichage seul ?",
+      "answer": "Non, l'accompagnement humain n'est pas entièrement isolé.",
+      "explanation": "改前改后比较仍可能含多个共同变化。"
+    },
+    {
+      "prompt": "Quelle différence entre observer et extrapoler ?",
+      "answer": "Observer concerne les cas testés ; extrapoler étend la conclusion à d'autres contextes.",
+      "explanation": "区分结果范围与外推主张。"
+    }
+  ],
+  "pronunciation": "rythme et articulation。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Présentez un exposé expert",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

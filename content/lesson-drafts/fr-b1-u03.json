@@ -1,0 +1,78 @@
+{
+  "id": "fr-b1-u03",
+  "title": "Projeter et imaginer",
+  "language": "fr",
+  "level": "B1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Discuss possible and hypothetical plans",
+  "prerequisite": "fr-b1-u02",
+  "context": "设想如果预算增加，社区项目会怎样改进。",
+  "grammar": "si + imparfait 配 conditionnel présent 表达假设：Si nous avions…, nous créerions…。条件式词干常与将来时相同，词尾取 imparfait。现实可能性与假设距离要在文中一致。",
+  "common_mistake": "不要写 Si nous aurions；条件式不放在此类 si 从句里。",
+  "vocabulary": [
+    [
+      "un budget",
+      "预算"
+    ],
+    [
+      "un projet",
+      "项目"
+    ],
+    [
+      "aménager",
+      "布置"
+    ],
+    [
+      "un espace",
+      "空间"
+    ],
+    [
+      "à condition de",
+      "在……条件下"
+    ],
+    [
+      "une priorité",
+      "优先项"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Si notre association disposait d'un local plus grand, elle ouvrirait un atelier de réparation.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Les habitants pourraient y apporter des objets au lieu de les jeter.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Nous inviterions des bénévoles capables d'expliquer les gestes simples.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Cependant, il faudrait prévoir une assurance et des outils adaptés.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Si notre association disposait d'un local plus grand, elle ouvrirait un atelier de réparation. Les habitants pourraient y apporter des objets au lieu de les jeter. Nous inviterions des bénévoles capables d'expliquer les gestes simples. Cependant, il faudrait prévoir une assurance et des outils adaptés. Le matériel dangereux resterait sous la responsabilité d'une personne formée. Sans financement supplémentaire, nous commencerions par une séance mensuelle dans la salle actuelle. Cette première expérience nous aiderait à préciser les besoins réels.",
+  "listening_script": "Si notre association disposait d'un local plus grand, elle ouvrirait un atelier de réparation. Les habitants pourraient y apporter des objets au lieu de les jeter. Nous inviterions des bénévoles capables d'expliquer les gestes simples. Cependant, il faudrait prévoir une assurance et des outils adaptés. Le matériel dangereux resterait sous la responsabilité d'une personne formée. Sans financement supplémentaire, nous commencerions par une séance mensuelle dans la salle actuelle. Cette première expérience nous aiderait à préciser les besoins réels.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quelle solution est possible sans financement supplémentaire ?",
+      "answer": "Une séance mensuelle dans la salle actuelle.",
+      "explanation": "宏大设想与当前可行方案需要分开。"
+    },
+    {
+      "prompt": "补全：Si nous avions un local, nous ___ un atelier. (ouvrir)",
+      "answer": "ouvririons",
+      "explanation": "si + imparfait 的结果使用条件式。"
+    }
+  ],
+  "pronunciation": "conditionnel / futur contrastes。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Décrivez un projet hypothétique",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

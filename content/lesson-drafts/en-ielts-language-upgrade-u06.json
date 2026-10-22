@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-language-upgrade-u06",
+  "title": "Nominalisation and concision",
+  "language": "en",
+  "level": "B2-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply nominalisation and concision in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-language-upgrade-u05",
+  "context": "压缩冗长句，同时保留责任主体和因果关系。",
+  "grammar": "名词化可把前句动作作为后句主题，如 The team revised…→This revision…。但堆叠 the implementation of the improvement of 会模糊动作。比较两种形式，选最能表达信息层级的一种。",
+  "common_mistake": "简洁不等于删掉负责人或限制条件。",
+  "vocabulary": [
+    [
+      "nominalisation",
+      "名词化"
+    ],
+    [
+      "concision",
+      "简洁"
+    ],
+    [
+      "implementation",
+      "实施"
+    ],
+    [
+      "revision",
+      "修订"
+    ],
+    [
+      "agent",
+      "动作执行者"
+    ],
+    [
+      "clarity",
+      "清晰"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "The initial sentence stated that the implementation of a revision of the form was undertaken by the team.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "A clearer version says that the team revised the form.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The active version restores the agent and the action without losing information.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "In the next sentence, however, the noun revision can usefully refer back to that completed change.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "The initial sentence stated that the implementation of a revision of the form was undertaken by the team. A clearer version says that the team revised the form. The active version restores the agent and the action without losing information. In the next sentence, however, the noun revision can usefully refer back to that completed change. This revision reduced the number of compulsory fields. Nominalisation is therefore a tool for organising information, not an automatic sign of academic quality.",
+  "listening_script": "The initial sentence stated that the implementation of a revision of the form was undertaken by the team. A clearer version says that the team revised the form. The active version restores the agent and the action without losing information. In the next sentence, however, the noun revision can usefully refer back to that completed change. This revision reduced the number of compulsory fields. Nominalisation is therefore a tool for organising information, not an automatic sign of academic quality.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Rewrite The implementation of the change was carried out by staff.",
+      "answer": "Staff implemented the change.",
+      "explanation": "保留施事与动作，减少不必要名词层次。"
+    },
+    {
+      "prompt": "When is revision useful as a noun ?",
+      "answer": "When it refers back to an already introduced change.",
+      "explanation": "名词化可以建立信息衔接。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating nominalisation and concision",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

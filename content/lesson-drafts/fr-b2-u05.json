@@ -1,0 +1,78 @@
+{
+  "id": "fr-b2-u05",
+  "title": "Explication scientifique",
+  "language": "fr",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Explain complex process accurately",
+  "prerequisite": "fr-b2-u04",
+  "context": "向非专业读者解释城市热岛的机制，并区分示意与实测。",
+  "grammar": "被动式适合突出过程对象：la chaleur est stockée。ce qui 可承接整句结果；causer、favoriser、être associé à 的因果强度不同。机制解释需要前后连贯且保留条件。",
+  "common_mistake": "单一温度对比不能独自证明某一种材料是全部温差的原因。",
+  "vocabulary": [
+    [
+      "absorber",
+      "吸收"
+    ],
+    [
+      "restituer",
+      "释放"
+    ],
+    [
+      "une surface",
+      "表面"
+    ],
+    [
+      "la végétation",
+      "植被"
+    ],
+    [
+      "un mécanisme",
+      "机制"
+    ],
+    [
+      "un relevé",
+      "观测记录"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "En journée, certaines surfaces urbaines absorbent une partie du rayonnement solaire.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "La chaleur stockée peut être restituée après le coucher du soleil.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "La végétation modifie aussi les échanges d'eau et d'énergie, ce qui peut contribuer à rafraîchir un espace.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Ces mécanismes n'expliquent toutefois pas chaque écart de température observé.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "En journée, certaines surfaces urbaines absorbent une partie du rayonnement solaire. La chaleur stockée peut être restituée après le coucher du soleil. La végétation modifie aussi les échanges d'eau et d'énergie, ce qui peut contribuer à rafraîchir un espace. Ces mécanismes n'expliquent toutefois pas chaque écart de température observé. Le vent, l'humidité et la forme des rues interviennent également. Pour comparer deux sites, il faut donc harmoniser les heures et les conditions des relevés. Un schéma simplifié aide à comprendre le processus, mais il ne remplace pas les mesures locales.",
+  "listening_script": "En journée, certaines surfaces urbaines absorbent une partie du rayonnement solaire. La chaleur stockée peut être restituée après le coucher du soleil. La végétation modifie aussi les échanges d'eau et d'énergie, ce qui peut contribuer à rafraîchir un espace. Ces mécanismes n'expliquent toutefois pas chaque écart de température observé. Le vent, l'humidité et la forme des rues interviennent également. Pour comparer deux sites, il faut donc harmoniser les heures et les conditions des relevés. Un schéma simplifié aide à comprendre le processus, mais il ne remplace pas les mesures locales.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Pourquoi harmoniser les conditions de mesure ?",
+      "answer": "Pour éviter de confondre l'effet du site avec celui de l'heure ou de la météo.",
+      "explanation": "可比性是解释差异的前提。"
+    },
+    {
+      "prompt": "Transformez Certaines surfaces stockent la chaleur au passif.",
+      "answer": "La chaleur est stockée par certaines surfaces.",
+      "explanation": "被动式保持时态和施事信息。"
+    }
+  ],
+  "pronunciation": "découpage en groupes。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Présentez un processus scientifique",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "fr-c2-u08",
+  "title": "Projet de synthèse",
+  "language": "fr",
+  "level": "C2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Develop a self-directed integrated portfolio",
+  "prerequisite": "fr-c2-u07",
+  "context": "完成综合项目：为同一议题提交摘要、论证和面向公众的口头说明。",
+  "grammar": "不同体裁共用事实核心但承担不同任务：résumé 忠实压缩，discussion 检验理由，présentation 调整解释顺序。用来源矩阵标出每条主张的出处、限定和异议，再进行跨体裁改写。",
+  "common_mistake": "综合项目不应把自己的建议放进来源摘要却不标注。",
+  "vocabulary": [
+    [
+      "une traçabilité",
+      "可追溯性"
+    ],
+    [
+      "un arbitrage",
+      "权衡"
+    ],
+    [
+      "une restitution",
+      "成果说明"
+    ],
+    [
+      "une convergence",
+      "一致"
+    ],
+    [
+      "une réserve",
+      "保留"
+    ],
+    [
+      "un destinataire",
+      "受众"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Le dossier final réunit deux textes argumentatifs originaux, un tableau fictif et une note de méthode.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Leur sujet commun est l'ouverture prolongée d'un service public, mais leurs objets ne se recouvrent pas entièrement.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le tableau décrit des coûts supposés, tandis que les textes discutent l'accès et les conditions de travail.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Avant de rédiger, l'auteur construit une matrice qui associe chaque affirmation à sa source et à ses limites.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Le dossier final réunit deux textes argumentatifs originaux, un tableau fictif et une note de méthode. Leur sujet commun est l'ouverture prolongée d'un service public, mais leurs objets ne se recouvrent pas entièrement. Le tableau décrit des coûts supposés, tandis que les textes discutent l'accès et les conditions de travail. Avant de rédiger, l'auteur construit une matrice qui associe chaque affirmation à sa source et à ses limites. Il produit ensuite un résumé sans recommandation personnelle, puis une discussion où ses propres critères sont explicités. Pour l'exposé oral, il choisit un exemple concret sans laisser entendre qu'il provient d'une enquête réelle. Enfin, il relit les trois productions afin de vérifier qu'aucune réserve essentielle n'a disparu au cours de la reformulation. La cohérence du projet tient à cette continuité critique, et non à la répétition mot pour mot d'un même paragraphe.",
+  "listening_script": "Le dossier final réunit deux textes argumentatifs originaux, un tableau fictif et une note de méthode. Leur sujet commun est l'ouverture prolongée d'un service public, mais leurs objets ne se recouvrent pas entièrement. Le tableau décrit des coûts supposés, tandis que les textes discutent l'accès et les conditions de travail. Avant de rédiger, l'auteur construit une matrice qui associe chaque affirmation à sa source et à ses limites. Il produit ensuite un résumé sans recommandation personnelle, puis une discussion où ses propres critères sont explicités. Pour l'exposé oral, il choisit un exemple concret sans laisser entendre qu'il provient d'une enquête réelle. Enfin, il relit les trois productions afin de vérifier qu'aucune réserve essentielle n'a disparu au cours de la reformulation. La cohérence du projet tient à cette continuité critique, et non à la répétition mot pour mot d'un même paragraphe.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Où placer les critères personnels ?",
+      "answer": "Dans la discussion, en les présentant comme tels.",
+      "explanation": "摘要中不得不加说明地植入个人建议。"
+    },
+    {
+      "prompt": "Quel contrôle final traverse les trois productions ?",
+      "answer": "Vérifier que les réserves essentielles et l'attribution des sources sont conservées.",
+      "explanation": "改写体裁不能改变证据状态。"
+    }
+  ],
+  "pronunciation": "expression professionnelle。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "以 B2-U10 的两段原创材料和自编预算表为起点，写 150 词来源摘要、250 词有条件的建议，再准备三分钟口头说明。明确哪些数字为练习假设；附一张主张—出处—限制对照表。",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

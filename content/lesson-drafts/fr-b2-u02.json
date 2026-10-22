@@ -1,0 +1,78 @@
+{
+  "id": "fr-b2-u02",
+  "title": "Débattre et répondre",
+  "language": "fr",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Respond to counterarguments fluently",
+  "prerequisite": "fr-b2-u01",
+  "context": "在辩论中回应远程办公的支持意见，保留双方共同目标。",
+  "grammar": "certes…mais 承认局部合理性后限定结论；encore faut-il que + subjonctif 提出必要条件。回应须针对对方实际主张，避免把‘部分岗位’夸大成‘所有岗位’再反驳。",
+  "common_mistake": "反驳稻草人式绝对命题不能回应对方有条件的主张。",
+  "vocabulary": [
+    [
+      "une objection",
+      "反对意见"
+    ],
+    [
+      "la souplesse",
+      "灵活性"
+    ],
+    [
+      "un poste",
+      "岗位"
+    ],
+    [
+      "coordonner",
+      "协调"
+    ],
+    [
+      "certes",
+      "诚然"
+    ],
+    [
+      "un compromis",
+      "折中"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Certes, le télétravail offre une souplesse appréciable pour les tâches qui exigent de la concentration.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Il serait pourtant excessif d'en conclure que la présence commune n'a plus aucune utilité.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Une nouvelle recrue peut avoir besoin d'échanges spontanés pour comprendre les habitudes de l'équipe.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "À cette objection, les défenseurs du télétravail répondent que ces échanges peuvent être organisés en ligne.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Certes, le télétravail offre une souplesse appréciable pour les tâches qui exigent de la concentration. Il serait pourtant excessif d'en conclure que la présence commune n'a plus aucune utilité. Une nouvelle recrue peut avoir besoin d'échanges spontanés pour comprendre les habitudes de l'équipe. À cette objection, les défenseurs du télétravail répondent que ces échanges peuvent être organisés en ligne. Encore faut-il que le temps consacré à l'accompagnement soit reconnu comme du travail. Un compromis consisterait à choisir les jours de présence en fonction des activités, plutôt qu'à imposer une règle uniforme. Le critère serait alors la qualité de la coopération, et non le nombre d'heures visibles au bureau.",
+  "listening_script": "Certes, le télétravail offre une souplesse appréciable pour les tâches qui exigent de la concentration. Il serait pourtant excessif d'en conclure que la présence commune n'a plus aucune utilité. Une nouvelle recrue peut avoir besoin d'échanges spontanés pour comprendre les habitudes de l'équipe. À cette objection, les défenseurs du télétravail répondent que ces échanges peuvent être organisés en ligne. Encore faut-il que le temps consacré à l'accompagnement soit reconnu comme du travail. Un compromis consisterait à choisir les jours de présence en fonction des activités, plutôt qu'à imposer une règle uniforme. Le critère serait alors la qualité de la coopération, et non le nombre d'heures visibles au bureau.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quel critère final est proposé ?",
+      "answer": "La qualité de la coopération.",
+      "explanation": "结尾把评价标准从在场时数转向协作质量。"
+    },
+    {
+      "prompt": "Que fait certes dans le premier argument ?",
+      "answer": "Il concède un avantage avant d'en limiter la portée.",
+      "explanation": "不是反讽，也不是取消随后提出的保留意见。"
+    }
+  ],
+  "pronunciation": "gestion des tours de parole。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Animez un débat",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

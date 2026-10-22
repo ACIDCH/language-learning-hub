@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-listening-u05",
+  "title": "Detail and distractor awareness",
+  "language": "en",
+  "level": "B1-B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply detail and distractor awareness in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-listening-u04",
+  "context": "听预约对话中的修正信息，避免被早先提到的数字误导。",
+  "grammar": "actually、rather、I meant 常引入自我修正。记录最终确认值，同时保留信息所属类别；日期、房号、价钱不能因数字相似而混淆。",
+  "common_mistake": "不能总把最后一个数字当答案；必须确认它回答题目所问的类别。",
+  "vocabulary": [
+    [
+      "reservation",
+      "预约"
+    ],
+    [
+      "available",
+      "可用的"
+    ],
+    [
+      "amend",
+      "修改"
+    ],
+    [
+      "deposit",
+      "订金"
+    ],
+    [
+      "confirm",
+      "确认"
+    ],
+    [
+      "instead",
+      "改为"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "I originally requested room sixteen for the training session.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Actually, we now need room sixty because more staff will attend.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The date remains the fourteenth of May, not the sixteenth.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The receptionist has confirmed that the larger room is available that afternoon.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "I originally requested room sixteen for the training session. Actually, we now need room sixty because more staff will attend. The date remains the fourteenth of May, not the sixteenth. The receptionist has confirmed that the larger room is available that afternoon. We must pay a deposit of thirty pounds by Friday. The remaining fee will be calculated after the equipment list is finalised. Please update the room number on the invitation without changing the date.",
+  "listening_script": "I originally requested room sixteen for the training session. Actually, we now need room sixty because more staff will attend. The date remains the fourteenth of May, not the sixteenth. The receptionist has confirmed that the larger room is available that afternoon. We must pay a deposit of thirty pounds by Friday. The remaining fee will be calculated after the equipment list is finalised. Please update the room number on the invitation without changing the date.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What room is finally requested ?",
+      "answer": "Room sixty.",
+      "explanation": "sixteen 是被修正的旧房号。"
+    },
+    {
+      "prompt": "Should the date on the invitation change ?",
+      "answer": "No, it remains 14 May.",
+      "explanation": "日期得到明确保留，不能被房号修正干扰。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating detail and distractor awareness",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

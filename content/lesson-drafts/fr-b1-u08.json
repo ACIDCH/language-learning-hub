@@ -1,0 +1,78 @@
+{
+  "id": "fr-b1-u08",
+  "title": "Culture et identité",
+  "language": "fr",
+  "level": "B1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Explain cultural observations and preferences",
+  "prerequisite": "fr-b1-u07",
+  "context": "谈论多语言家庭中的文化经验，避免将个人经验概括成民族本质。",
+  "grammar": "dont 替代由 de 引出的补语：la langue dont je parle。ce qui/ce que 指整件事或未指明的内容。用 dans ma famille 限定经验，比泛称 tous les… 更准确。",
+  "common_mistake": "不要在 dont 后重复它已经代替的 de 补语。",
+  "vocabulary": [
+    [
+      "un héritage",
+      "传承"
+    ],
+    [
+      "appartenir",
+      "属于"
+    ],
+    [
+      "une langue",
+      "语言"
+    ],
+    [
+      "transmettre",
+      "传递"
+    ],
+    [
+      "un parcours",
+      "经历"
+    ],
+    [
+      "une identité",
+      "身份认同"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Dans ma famille, deux langues accompagnent les repas et les fêtes.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "La langue dont ma grand-mère se sert pour raconter son enfance n'est pas celle que j'utilise au travail.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Cette différence ne m'oblige pas à choisir une seule identité.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Elle me rappelle plutôt que les habitudes changent selon les situations.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Dans ma famille, deux langues accompagnent les repas et les fêtes. La langue dont ma grand-mère se sert pour raconter son enfance n'est pas celle que j'utilise au travail. Cette différence ne m'oblige pas à choisir une seule identité. Elle me rappelle plutôt que les habitudes changent selon les situations. Ce qui compte pour moi, c'est de comprendre les histoires transmises, même lorsque je cherche mes mots. Mon frère vit cette expérience autrement. Son parcours montre qu'une même famille ne produit pas des identités identiques.",
+  "listening_script": "Dans ma famille, deux langues accompagnent les repas et les fêtes. La langue dont ma grand-mère se sert pour raconter son enfance n'est pas celle que j'utilise au travail. Cette différence ne m'oblige pas à choisir une seule identité. Elle me rappelle plutôt que les habitudes changent selon les situations. Ce qui compte pour moi, c'est de comprendre les histoires transmises, même lorsque je cherche mes mots. Mon frère vit cette expérience autrement. Son parcours montre qu'une même famille ne produit pas des identités identiques.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Le frère a-t-il exactement la même expérience ?",
+      "answer": "Non, il la vit autrement.",
+      "explanation": "作者明确拒绝同一家庭必然具有相同身份体验。"
+    },
+    {
+      "prompt": "Dans la langue dont elle se sert, quel groupe dont remplace-t-il ?",
+      "answer": "de cette langue",
+      "explanation": "se servir de 的 de 补语由 dont 代替。"
+    }
+  ],
+  "pronunciation": "rythme des longues propositions。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Présentez une tradition",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

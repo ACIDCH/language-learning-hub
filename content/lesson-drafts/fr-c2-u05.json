@@ -1,0 +1,78 @@
+{
+  "id": "fr-c2-u05",
+  "title": "Négociation subtile",
+  "language": "fr",
+  "level": "C2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Navigate nuanced disagreement",
+  "prerequisite": "fr-c2-u04",
+  "context": "在合作谈判中保留核心要求，提供可交换条件。",
+  "grammar": "pour autant que + subjonctif、à moins que + subjonctif 限定接受条件。区分立场（想要什么）与利益（为什么需要）；让步需要可检验的对价，避免含糊承诺。",
+  "common_mistake": "‘原则上同意’不能代替对范围、日期和责任的共同理解。",
+  "vocabulary": [
+    [
+      "une concession",
+      "让步"
+    ],
+    [
+      "une contrepartie",
+      "对价"
+    ],
+    [
+      "une clause",
+      "条款"
+    ],
+    [
+      "une marge de manœuvre",
+      "回旋余地"
+    ],
+    [
+      "un intérêt",
+      "利益"
+    ],
+    [
+      "un engagement",
+      "承诺"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Nous pourrions accepter un calendrier plus resserré, pour autant que le périmètre de la première livraison soit stabilisé.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Notre réserve ne porte pas sur l'objectif commun, mais sur l'impossibilité de garantir simultanément un délai fixe et des ajouts indéfinis.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "De votre côté, la visibilité budgétaire semble constituer l'enjeu principal.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Il serait donc envisageable de distinguer un socle ferme et des options chiffrées séparément.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Nous pourrions accepter un calendrier plus resserré, pour autant que le périmètre de la première livraison soit stabilisé. Notre réserve ne porte pas sur l'objectif commun, mais sur l'impossibilité de garantir simultanément un délai fixe et des ajouts indéfinis. De votre côté, la visibilité budgétaire semble constituer l'enjeu principal. Il serait donc envisageable de distinguer un socle ferme et des options chiffrées séparément. Cette proposition ne transfère pas automatiquement tout risque au partenaire : elle rend discutables les conséquences de chaque modification. Avant d'entériner l'accord, il conviendrait de vérifier que les termes première livraison et validation désignent les mêmes opérations pour les deux équipes. Une concession mal définie peut donner l'impression d'un compromis tout en préparant le conflit suivant.",
+  "listening_script": "Nous pourrions accepter un calendrier plus resserré, pour autant que le périmètre de la première livraison soit stabilisé. Notre réserve ne porte pas sur l'objectif commun, mais sur l'impossibilité de garantir simultanément un délai fixe et des ajouts indéfinis. De votre côté, la visibilité budgétaire semble constituer l'enjeu principal. Il serait donc envisageable de distinguer un socle ferme et des options chiffrées séparément. Cette proposition ne transfère pas automatiquement tout risque au partenaire : elle rend discutables les conséquences de chaque modification. Avant d'entériner l'accord, il conviendrait de vérifier que les termes première livraison et validation désignent les mêmes opérations pour les deux équipes. Une concession mal définie peut donner l'impression d'un compromis tout en préparant le conflit suivant.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quelle contrepartie accompagne le délai resserré ?",
+      "answer": "La stabilisation du périmètre de la première livraison.",
+      "explanation": "让步和条件必须作为一组理解。"
+    },
+    {
+      "prompt": "Pourquoi définir validation ?",
+      "answer": "Les parties peuvent attribuer des obligations différentes au même mot.",
+      "explanation": "词语共用不保证合同操作含义相同。"
+    }
+  ],
+  "pronunciation": "gestion prosodique。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Menez une négociation",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

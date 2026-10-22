@@ -17,7 +17,7 @@ export default function LearningPath({client,session,courses,onChoose}:{
      if(!alive)return;
      if(error){setNote('个人进度暂时无法读取：'+error.message);return;}
      setProgress((data||[]) as RoadmapProgress[]);
-     setNote('已读取个人进度；本页面只标记你自己确认完成的课程。');
+     setNote('');
    });
   return ()=>{alive=false;};
  },[client,session.user.id]);
@@ -28,7 +28,7 @@ export default function LearningPath({client,session,courses,onChoose}:{
  const summary=planNext(current,progress);
  return <section className="cloud-reader" aria-label="语言学习路径">
   <h3>我的语言学习路线</h3>
-  <p className="cloud-disclaimer">按照“发音与拼写 → 核心词汇 → 常用短句 → 段落 → 长难句 → 写作与真实运用”组织学习建议。该路径只是导航，不会冒充教学审校或自动标记完成。</p>
+
   <ol className="learning-ladder">
     {LEARNING_LADDER.map(step=><li key={step.label}>
       <strong>{step.label}</strong><span>{step.detail}</span>
@@ -51,12 +51,10 @@ export default function LearningPath({client,session,courses,onChoose}:{
       </select>
     </label>}
   </div>
-  {language==='en'&&<p className="cloud-disclaimer" role="note">
-    注意：现有 48 节英语课程主要覆盖 IELTS 与 B1–C1 技能，并没有完整的零基础字母、基础音标及 A0–A2 英语课程。学习系统不能把它们误标为英语零基础课程。
-  </p>}
+
   <div className="path-progress">
     <strong>当前路径完成 {summary.completed} / {summary.total}</strong>
-    <span>{note}</span>
+    {note&&<span role="status">{note}</span>}
   </div>
   {summary.next&&<button type="button" onClick={()=>onChoose(summary.next!.id)}>
     继续下一课：{summary.next.title} →

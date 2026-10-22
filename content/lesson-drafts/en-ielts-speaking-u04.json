@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-speaking-u04",
+  "title": "Describing experiences and events",
+  "language": "en",
+  "level": "B1-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply describing experiences and events in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-speaking-u03",
+  "context": "描述一次活动体验，用具体感官与行动支撑评价。",
+  "grammar": "形容词应有可观察依据：welcoming 可由有人主动解释流程支持。used to 与 was used to 不同；前者讲过去习惯，后者讲已经习惯某事。",
+  "common_mistake": "把所有活动都描述成 amazing/beautiful 会削弱细节。",
+  "vocabulary": [
+    [
+      "atmosphere",
+      "氛围"
+    ],
+    [
+      "welcoming",
+      "友好的"
+    ],
+    [
+      "demonstrate",
+      "示范"
+    ],
+    [
+      "participate",
+      "参加"
+    ],
+    [
+      "hesitate",
+      "犹豫"
+    ],
+    [
+      "impression",
+      "印象"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "The workshop took place in a small community studio.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "I hesitated at the door because everyone seemed to know where the tools were kept.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "A volunteer noticed and showed me how to prepare a piece of clay.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "That simple gesture made the atmosphere feel welcoming.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "The workshop took place in a small community studio. I hesitated at the door because everyone seemed to know where the tools were kept. A volunteer noticed and showed me how to prepare a piece of clay. That simple gesture made the atmosphere feel welcoming. During the session, we compared our uneven bowls and laughed at the different shapes. I left with an object that was far from professional but entirely my own. The strongest impression was the freedom to make mistakes without feeling judged.",
+  "listening_script": "The workshop took place in a small community studio. I hesitated at the door because everyone seemed to know where the tools were kept. A volunteer noticed and showed me how to prepare a piece of clay. That simple gesture made the atmosphere feel welcoming. During the session, we compared our uneven bowls and laughed at the different shapes. I left with an object that was far from professional but entirely my own. The strongest impression was the freedom to make mistakes without feeling judged.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What supports the word welcoming ?",
+      "answer": "A volunteer noticed the hesitation and explained the first step.",
+      "explanation": "评价由具体行动支持。"
+    },
+    {
+      "prompt": "Does far from professional mean professionally made ?",
+      "answer": "No, it means the opposite: it was not professional in quality.",
+      "explanation": "识别短语意义，不能只抓 professional。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating describing experiences and events",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

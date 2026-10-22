@@ -1,0 +1,11 @@
+{
+  "revision": "3399974",
+  "normalized_lf_sha256": {
+    "public/learning-assets/manifest.json": "48482630e295ff1fe3abcf0bad1eaad20045ab97d831215a21e0970fd6deb641",
+    "src/foundationEnglish.ts": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70",
+    "src/foundationFrench.ts": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572",
+    "src/foundationEnglishBridge.ts": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57",
+    "src/foundationFrenchBridge.ts": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9",
+    "config/curriculum/units.v2.json": "6751db1256d54c020067831d3e46491a309f0d5859dadb78fc95b299bc27badb"
+  }
+}

@@ -1,0 +1,42 @@
+# Intended for an owner-provisioned ARM64 Oracle Cloud Always Free A1 VM,
+# or any equivalent Linux host with >= 2 vCPU / 6 GB usable RAM.
+# Run: cd speech_service && docker compose --env-file .env -f docker-compose.free.yml up -d --build
+services:
+  speech:
+    build:
+      context: ..
+      dockerfile: speech_service/Dockerfile.cloud
+    restart: unless-stopped
+    environment:
+      SUPABASE_URL: ${SUPABASE_URL:?Set SUPABASE_URL}
+      SUPABASE_PUBLISHABLE_KEY: ${SUPABASE_PUBLISHABLE_KEY:?Set SUPABASE_PUBLISHABLE_KEY}
+      LLH_SPEECH_ORIGINS: ${LLH_SPEECH_ORIGINS:?Set allowed site origins}
+      LLH_SPEECH_THREADS: "2"
+      PORT: "7860"
+    expose:
+      - "7860"
+    mem_limit: 7g
+    cpus: 2.0
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://127.0.0.1:7860/health', timeout=10)"]
+      interval: 30s
+      timeout: 15s
+      retries: 3
+      start_period: 120s
+  proxy:
+    image: caddy:2.10.2-alpine
+    restart: unless-stopped
+    depends_on:
+      - speech
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      SPEECH_HOST: ${SPEECH_HOST:?Set a real DNS hostname that resolves to this VM}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - speech_caddy_data:/data
+      - speech_caddy_config:/config
+volumes:
+  speech_caddy_data:
+  speech_caddy_config:

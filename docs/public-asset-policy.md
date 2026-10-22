@@ -24,6 +24,18 @@ The course author/owner approved publishing non-personal original sample lessons
 
 ## Mandatory verification before adding a public file
 
+### V4.4 PR #50 original-draft preview — owner-approved, deployment pending
+
+The 101 `original_draft` entries are project-authored teaching drafts, not human-reviewed textbooks. Their common policy is `content/v44-draft-publication.json`; each ID, source path, SHA-256 and version remains in `content/v44-main-index.json`. Earlier sample-lesson approval does not authorize broader textbook publication.
+
+**The repository owner explicitly approved public preview for these 101 original drafts on 2026-10-19, recorded in [PR #50 owner consent](https://github.com/ACIDCH/language-learning-hub/pull/50#issuecomment-6258714322).** The approval covers viewing and learning from the marked drafts as *public preview*, not teaching-quality approval, formal textbook release, redistribution, relicensing, or any third-party textbook. `teaching_review=pending` and `formal_release=not_approved` therefore remain unchanged.
+
+**No merge or production deployment was approved.** `production_deployment=pending_final_acceptance` remains a separate build gate until the owner explicitly authorizes site deployment after final acceptance. `src/v44Publication.ts` and Vite require both recorded public-preview consent and separate production-deployment authorization for a production build (`CF_PAGES_BRANCH=main` or `LLH_DEPLOY_TARGET=production`). Local/CI/PR review builds remain available.
+
+This is deployment process control, **not confidentiality or DRM**: GitHub JSON sources, history and earlier branch previews were publicly accessible before approval. Keep PR #50 open and unmerged; do not deploy unless the owner separately approves. Formal release would still require its own review and publication procedure.
+
+## Per-file public asset verification
+
 1. Confirm the **individual audio/text file's** copyright status. Free-to-access, open-source software, and educational use do **not** automatically confer redistribution rights. Check for any third-party components, performances, translations, images and sublicensing restrictions.
 2. Prefer the file's original source and an explicit license or public-domain notice. Do not take materials from unofficial textbook PDF/MP3 mirrors.
 3. Confirm both **redistribution** and any proposed alteration/format conversion rights. CC BY requires author/source/license attribution and modification notice. CC BY-SA may require ShareAlike licensing for derivatives; CC BY-NC / ND and ambiguously licensed content require separate evaluation and default to Drive/external link.

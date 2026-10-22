@@ -1,0 +1,6875 @@
+{
+  "schema": 1,
+  "baseline": "b7e98ac",
+  "counts": {
+    "main": 108,
+    "foundation": 48,
+    "specialties": 125
+  },
+  "courses": [
+    {
+      "id": "en-ielts-listening-u01",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-B2",
+      "target": "Apply academic lecture structure and signposting in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-signposts",
+          "type": "grammar"
+        },
+        {
+          "id": "en-lecture-terms",
+          "type": "vocabulary"
+        },
+        {
+          "id": "en-contrast",
+          "type": "grammar"
+        },
+        {
+          "id": "en-modals",
+          "type": "grammar"
+        },
+        {
+          "id": "en-signpost-vocab",
+          "type": "vocabulary"
+        },
+        {
+          "id": "en-evidence-vocab",
+          "type": "vocabulary"
+        },
+        {
+          "id": "en-study-vocab",
+          "type": "vocabulary"
+        },
+        {
+          "id": "en-lecture-hedging",
+          "type": "grammar"
+        },
+        {
+          "id": "en-academic-collocations",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 90,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-listening-u01.json"
+      ],
+      "chinese": "lesson_notes_present_coverage_requires_review",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-listening-u02",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-B2",
+      "target": "Apply identifying speaker stance and purpose in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-reported-speech-listening",
+          "type": "grammar"
+        },
+        {
+          "id": "en-stance-lexicon-listening",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 87,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 372,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-listening-u02.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-listening-u03",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-B2",
+      "target": "Apply paraphrase in speech and note-taking in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-listening-paraphrase-scope",
+          "type": "grammar"
+        },
+        {
+          "id": "en-listening-note-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 87,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 372,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-listening-u03.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-listening-u04",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-B2",
+      "target": "Apply map and process descriptions in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-listening-u04-route-reference-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-listening-u04-site-process-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 84,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 385,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-listening-u04.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-listening-u05",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-B2",
+      "target": "Apply detail and distractor awareness in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-listening-u05-correction-scope-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-listening-u05-booking-revision-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 76,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 400,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-listening-u05.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-listening-u06",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-B2",
+      "target": "Apply information completion with context in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-listening-u06-word-class-completion-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-listening-u06-lab-record-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 74,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 378,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-listening-u06.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-listening-u07",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-B2",
+      "target": "Apply multiple speakers and argument development in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-u07-dialogue-reference-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-u07-method-negotiation-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 82,
+      "reception": {
+        "source": "src/nextBilingualReception.ts",
+        "paragraphs": 4,
+        "words": 396,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-listening-u07.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-listening-u08",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-B2",
+      "target": "Apply synthesis from extended academic audio in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-u08-evidence-hedging-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-u08-memory-synthesis-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 109,
+      "reception": {
+        "source": "src/nextBilingualReception.ts",
+        "paragraphs": 4,
+        "words": 400,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-listening-u08.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-reading-u01",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-B2",
+      "target": "Apply skimming research-based articles in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-academic-passive",
+          "type": "grammar"
+        },
+        {
+          "id": "en-reading-u01-learning-evidence-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "source_manuscript",
+      "readingWords": null,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "en-ielts-reading-u01"
+      ],
+      "chinese": "lesson_notes_present_coverage_requires_review",
+      "audio": "missing_audio",
+      "exercises": null,
+      "gaps": [
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-reading-u02",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-B2",
+      "target": "Apply locating detailed evidence efficiently in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-reading-evidence-scope-u02",
+          "type": "grammar"
+        },
+        {
+          "id": "en-reading-research-evidence-lexicon-u02",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "source_manuscript",
+      "readingWords": null,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "en-ielts-reading-u02-v1"
+      ],
+      "chinese": "lesson_notes_present_coverage_requires_review",
+      "audio": "missing_audio",
+      "exercises": null,
+      "gaps": [
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-reading-u03",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-B2",
+      "target": "Apply matching headings by paragraph function in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-relative-clauses",
+          "type": "grammar"
+        },
+        {
+          "id": "en-ielts-heading-paragraph-function-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 91,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 430,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-reading-u03.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-reading-u04",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-B2",
+      "target": "Apply true false not given: evidence and scope in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-reading-evidence-lexicon",
+          "type": "vocabulary"
+        },
+        {
+          "id": "en-ielts-tfng-scope-grammar-u04",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 67,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 435,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-reading-u04.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-reading-u05",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-B2",
+      "target": "Apply paraphrase and lexical cohesion in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-reading-u05-reference-logic",
+          "type": "grammar"
+        },
+        {
+          "id": "en-reading-u05-retrofit-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 77,
+      "reception": {
+        "source": "src/ieltsReadingU05U08Reception.ts",
+        "paragraphs": 4,
+        "words": 419,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-reading-u05.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-reading-u06",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-B2",
+      "target": "Apply inference, hedging and author attitude in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-reading-u06-hedging-inference",
+          "type": "grammar"
+        },
+        {
+          "id": "en-reading-u06-science-caution-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 74,
+      "reception": {
+        "source": "src/ieltsReadingU05U08Reception.ts",
+        "paragraphs": 4,
+        "words": 407,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-reading-u06.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-reading-u07",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-B2",
+      "target": "Apply matching information across sections in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-reading-u07-information-matching-logic",
+          "type": "grammar"
+        },
+        {
+          "id": "en-reading-u07-survey-method-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 81,
+      "reception": {
+        "source": "src/ieltsReadingU05U08Reception.ts",
+        "paragraphs": 4,
+        "words": 429,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-reading-u07.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-reading-u08",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-B2",
+      "target": "Apply critical synthesis of two academic passages in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-reading-u08-two-source-synthesis",
+          "type": "grammar"
+        },
+        {
+          "id": "en-reading-u08-access-equity-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 98,
+      "reception": {
+        "source": "src/ieltsReadingU05U08Reception.ts",
+        "paragraphs": 4,
+        "words": 458,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-reading-u08.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-writing-task1-u01",
+      "kind": "main",
+      "language": "en",
+      "level": "B2",
+      "target": "Apply selecting key features and overview in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-task1-u01-overview-evidence-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task1-u01-unit-precision-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "source_manuscript",
+      "readingWords": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 494,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "en-ielts-writing-task1-u01"
+      ],
+      "chinese": "lesson_notes_present_coverage_requires_review",
+      "audio": "missing_audio",
+      "exercises": null,
+      "gaps": [
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-writing-task1-u02",
+      "kind": "main",
+      "language": "en",
+      "level": "B2",
+      "target": "Apply reporting trends accurately in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-task1-trend-lexicon",
+          "type": "vocabulary"
+        },
+        {
+          "id": "en-task1-u02-trend-scope-grammar",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 77,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 495,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-writing-task1-u02.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-writing-task1-u03",
+      "kind": "main",
+      "language": "en",
+      "level": "B2",
+      "target": "Apply comparisons in charts and tables in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-task1-u03-comparison-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task1-u03-comparison-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 85,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 440,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": "en-chart-comparison",
+      "sources": [
+        "content/lesson-drafts/en-ielts-writing-task1-u03.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-writing-task1-u04",
+      "kind": "main",
+      "language": "en",
+      "level": "B2",
+      "target": "Apply proportions and multi-series graphs in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-task1-u04-shares-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task1-u04-allocation-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 77,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 461,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-writing-task1-u04.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-writing-task1-u05",
+      "kind": "main",
+      "language": "en",
+      "level": "B2",
+      "target": "Apply processes and passive constructions in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-process-report-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task1-u05-recycling-process-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 76,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 518,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": "en-process-report-grammar",
+      "sources": [
+        "content/lesson-drafts/en-ielts-writing-task1-u05.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-writing-task1-u06",
+      "kind": "main",
+      "language": "en",
+      "level": "B2",
+      "target": "Apply map and spatial change reports in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-map-change-lexicon",
+          "type": "vocabulary"
+        },
+        {
+          "id": "en-task1-u06-map-reference-grammar",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 78,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 523,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": "en-map-change-lexicon",
+      "sources": [
+        "content/lesson-drafts/en-ielts-writing-task1-u06.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-writing-task1-u07",
+      "kind": "main",
+      "language": "en",
+      "level": "B2",
+      "target": "Apply cohesion without memorised templates in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-task1-u07-cohesion-scope-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task1-u07-borrowing-cohesion-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 81,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 485,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-writing-task1-u07.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-writing-task1-u08",
+      "kind": "main",
+      "language": "en",
+      "level": "B2",
+      "target": "Apply editing accuracy, overview and precision in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-task1-u08-revision-scope-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task1-u08-precision-editing-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 92,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 500,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-writing-task1-u08.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-writing-task2-u01",
+      "kind": "main",
+      "language": "en",
+      "level": "B2-C1",
+      "target": "Apply question analysis and thesis in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-task2-u01-question-thesis-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task2-u01-online-learning-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "source_manuscript",
+      "readingWords": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 531,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "en-ielts-writing-task2-u01"
+      ],
+      "chinese": "lesson_notes_present_coverage_requires_review",
+      "audio": "missing_audio",
+      "exercises": null,
+      "gaps": [
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-writing-task2-u02",
+      "kind": "main",
+      "language": "en",
+      "level": "B2-C1",
+      "target": "Apply reasons, explanation and examples in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-task2-reason-evidence-vocab",
+          "type": "vocabulary"
+        },
+        {
+          "id": "en-task2-u02-reasoning-chain-grammar",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 87,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 492,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-writing-task2-u02.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-writing-task2-u03",
+      "kind": "main",
+      "language": "en",
+      "level": "B2-C1",
+      "target": "Apply argument and counterargument in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-task2-contrast-cohesion",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task2-u03-fair-rebuttal-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 84,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 477,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-writing-task2-u03.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-writing-task2-u04",
+      "kind": "main",
+      "language": "en",
+      "level": "B2-C1",
+      "target": "Apply discussion of two views in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-task2-u04-discussion-stance-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task2-u04-curriculum-judgement-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 95,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 519,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-writing-task2-u04.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-writing-task2-u05",
+      "kind": "main",
+      "language": "en",
+      "level": "B2-C1",
+      "target": "Apply advantages and disadvantages in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-task2-u05-outweigh-conditions-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task2-u05-public-access-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 104,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 488,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-writing-task2-u05.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-writing-task2-u06",
+      "kind": "main",
+      "language": "en",
+      "level": "B2-C1",
+      "target": "Apply causes, problems and solutions in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-task2-u06-cause-mechanism-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task2-u06-solution-evaluation-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 99,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 508,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-writing-task2-u06.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-writing-task2-u07",
+      "kind": "main",
+      "language": "en",
+      "level": "B2-C1",
+      "target": "Apply coherence and referencing in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-task2-u07-reference-causality-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task2-u07-access-coherence-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 92,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 501,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-writing-task2-u07.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-writing-task2-u08",
+      "kind": "main",
+      "language": "en",
+      "level": "B2-C1",
+      "target": "Apply editing claims, hedging and register in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-task2-u08-hedging-scope-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task2-u08-register-precision-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 89,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 503,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-writing-task2-u08.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-speaking-u01",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-C1",
+      "target": "Apply developing nuanced opinions in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 84,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-speaking-u01.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-speaking-u02",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-C1",
+      "target": "Apply extending answers without fillers in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 79,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-speaking-u02.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-speaking-u03",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-C1",
+      "target": "Apply narrative for sustained speech in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 83,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-speaking-u03.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-speaking-u04",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-C1",
+      "target": "Apply describing experiences and events in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 85,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-speaking-u04.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-speaking-u05",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-C1",
+      "target": "Apply explaining comparisons and causes in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 86,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-speaking-u05.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-speaking-u06",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-C1",
+      "target": "Apply abstract questions and evaluation in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 84,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-speaking-u06.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-speaking-u07",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-C1",
+      "target": "Apply connected speech and intonation in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 82,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-speaking-u07.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-speaking-u08",
+      "kind": "main",
+      "language": "en",
+      "level": "B1-C1",
+      "target": "Apply long-form discussion and self-correction in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 88,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-speaking-u08.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-language-upgrade-u01",
+      "kind": "main",
+      "language": "en",
+      "level": "B2-C1",
+      "target": "Apply clause complexity and accuracy in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "en-conditionals",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 81,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-language-upgrade-u01.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-language-upgrade-u02",
+      "kind": "main",
+      "language": "en",
+      "level": "B2-C1",
+      "target": "Apply tense/aspect for evidence in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 75,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-language-upgrade-u02.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-language-upgrade-u03",
+      "kind": "main",
+      "language": "en",
+      "level": "B2-C1",
+      "target": "Apply academic collocation and word families in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 73,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-language-upgrade-u03.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-language-upgrade-u04",
+      "kind": "main",
+      "language": "en",
+      "level": "B2-C1",
+      "target": "Apply paraphrase and meaning boundaries in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 80,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-language-upgrade-u04.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-language-upgrade-u05",
+      "kind": "main",
+      "language": "en",
+      "level": "B2-C1",
+      "target": "Apply hedging, stance and inference in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 74,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-language-upgrade-u05.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-language-upgrade-u06",
+      "kind": "main",
+      "language": "en",
+      "level": "B2-C1",
+      "target": "Apply nominalisation and concision in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 79,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-language-upgrade-u06.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-language-upgrade-u07",
+      "kind": "main",
+      "language": "en",
+      "level": "B2-C1",
+      "target": "Apply reference and cohesive progression in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 85,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-language-upgrade-u07.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-ielts-language-upgrade-u08",
+      "kind": "main",
+      "language": "en",
+      "level": "B2-C1",
+      "target": "Apply personalised error correction through authentic drafts in an original academic-English context and explain reasoning in coherent English",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 94,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/en-ielts-language-upgrade-u08.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a1-u01",
+      "kind": "main",
+      "language": "fr",
+      "level": "A1",
+      "target": "Greet and introduce yourself",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-etre",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-greetings",
+          "type": "vocabulary"
+        },
+        {
+          "id": "fr-campus-vocab",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "source_manuscript",
+      "readingWords": null,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "fr-a1-u01"
+      ],
+      "chinese": "lesson_notes_present_coverage_requires_review",
+      "audio": "missing_audio",
+      "exercises": null,
+      "gaps": [
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a1-u02",
+      "kind": "main",
+      "language": "fr",
+      "level": "A1",
+      "target": "State languages, countries and nationalities",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-countries-languages-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "source_manuscript",
+      "readingWords": null,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "fr-a1-u02"
+      ],
+      "chinese": "lesson_notes_present_coverage_requires_review",
+      "audio": "missing_audio",
+      "exercises": null,
+      "gaps": [
+        "full_grammar_specialty",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a1-u03",
+      "kind": "main",
+      "language": "fr",
+      "level": "A1",
+      "target": "Introduce family and close friends",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-avoir",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-family",
+          "type": "vocabulary"
+        },
+        {
+          "id": "fr-possessive-determiners-a1",
+          "type": "grammar"
+        }
+      ],
+      "body": "source_manuscript",
+      "readingWords": null,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "fr-a1-u03"
+      ],
+      "chinese": "lesson_notes_present_coverage_requires_review",
+      "audio": "missing_audio",
+      "exercises": null,
+      "gaps": [
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a1-u04",
+      "kind": "main",
+      "language": "fr",
+      "level": "A1",
+      "target": "Name objects and describe the classroom",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-articles",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-objects",
+          "type": "vocabulary"
+        },
+        {
+          "id": "fr-room",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 51,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a1-u04.json"
+      ],
+      "chinese": "lesson_notes_present_coverage_requires_review",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a1-u05",
+      "kind": "main",
+      "language": "fr",
+      "level": "A1",
+      "target": "Describe daily habits",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-er",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-routines-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 51,
+      "reception": {
+        "source": "src/frA1RoutinesDirectionsReception.ts",
+        "paragraphs": 4,
+        "words": 277,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a1-u05.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a1-u06",
+      "kind": "main",
+      "language": "fr",
+      "level": "A1",
+      "target": "Ask questions and request clarification",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-questions-a1",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-a1-clarification-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 52,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 236,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a1-u06.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a1-u07",
+      "kind": "main",
+      "language": "fr",
+      "level": "A1",
+      "target": "Express likes and leisure preferences",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-a1-leisure-verbs",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-a1-leisure-choice-vocabulary",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 53,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 266,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a1-u07.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a1-u08",
+      "kind": "main",
+      "language": "fr",
+      "level": "A1",
+      "target": "Order and ask about food",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-a1-market-quantities-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-a1-market-service-vocabulary",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 57,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 293,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a1-u08.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a1-u09",
+      "kind": "main",
+      "language": "fr",
+      "level": "A1",
+      "target": "Ask and give simple directions",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-directions-lexicon",
+          "type": "vocabulary"
+        },
+        {
+          "id": "fr-imperative-directions-a1",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 49,
+      "reception": {
+        "source": "src/frA1RoutinesDirectionsReception.ts",
+        "paragraphs": 4,
+        "words": 299,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a1-u09.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a1-u10",
+      "kind": "main",
+      "language": "fr",
+      "level": "A1",
+      "target": "Describe home and environment",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-adjective-agreement-a1",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-a1-shared-home-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 49,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 279,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a1-u10.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a1-u11",
+      "kind": "main",
+      "language": "fr",
+      "level": "A1",
+      "target": "Describe near future actions",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-futur-proche-a1",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-a1-near-future-planning-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 58,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 284,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a1-u11.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a1-u12",
+      "kind": "main",
+      "language": "fr",
+      "level": "A1",
+      "target": "Talk briefly about a completed action",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-a1-first-past-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-a1-yesterday-journey-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 56,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 333,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a1-u12.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a2-u01",
+      "kind": "main",
+      "language": "fr",
+      "level": "A2",
+      "target": "Tell a coherent account of completed events",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-articles-partitive",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-passe-compose",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-food-vocab",
+          "type": "vocabulary"
+        },
+        {
+          "id": "fr-past-events-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 74,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a2-u01.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a2-u02",
+      "kind": "main",
+      "language": "fr",
+      "level": "A2",
+      "target": "Describe repeated past states",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-imparfait-a2",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 66,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a2-u02.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a2-u03",
+      "kind": "main",
+      "language": "fr",
+      "level": "A2",
+      "target": "Plan travel and explain directions",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-a2-route-modals-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-a2-station-change-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 73,
+      "reception": {
+        "source": "src/nextBilingualReception.ts",
+        "paragraphs": 4,
+        "words": 308,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a2-u03.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a2-u04",
+      "kind": "main",
+      "language": "fr",
+      "level": "A2",
+      "target": "Talk about people and communicate politely",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-object-pronouns-a2",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 59,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a2-u04.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a2-u05",
+      "kind": "main",
+      "language": "fr",
+      "level": "A2",
+      "target": "Describe symptoms and give advice",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-a2-symptoms-advice-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-a2-appointment-symptoms-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 63,
+      "reception": {
+        "source": "src/nextBilingualReception.ts",
+        "paragraphs": 4,
+        "words": 323,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a2-u05.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a2-u06",
+      "kind": "main",
+      "language": "fr",
+      "level": "A2",
+      "target": "Compare goods and express quantities",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-comparisons-a2",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-shop-services-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 73,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a2-u06.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a2-u07",
+      "kind": "main",
+      "language": "fr",
+      "level": "A2",
+      "target": "Invite, accept, decline and plan",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-futur-simple-a2",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 62,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a2-u07.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a2-u08",
+      "kind": "main",
+      "language": "fr",
+      "level": "A2",
+      "target": "Explain preferences with reasons",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-opinions-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 70,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a2-u08.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a2-u09",
+      "kind": "main",
+      "language": "fr",
+      "level": "A2",
+      "target": "Handle lodging, services and appointments",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 71,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a2-u09.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a2-u10",
+      "kind": "main",
+      "language": "fr",
+      "level": "A2",
+      "target": "Describe work and academic routines",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 72,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a2-u10.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a2-u11",
+      "kind": "main",
+      "language": "fr",
+      "level": "A2",
+      "target": "Summarize a short news item",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-negative-scope-a2",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 72,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a2-u11.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-a2-u12",
+      "kind": "main",
+      "language": "fr",
+      "level": "A2",
+      "target": "Describe experiences and comparisons",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 75,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-a2-u12.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b1-u01",
+      "kind": "main",
+      "language": "fr",
+      "level": "B1",
+      "target": "Narrate events with background and consequence",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-pluperfect-narration-b1",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 89,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b1-u01.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b1-u02",
+      "kind": "main",
+      "language": "fr",
+      "level": "B1",
+      "target": "Build and support opinions",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-b1-argument-lexicon",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 85,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b1-u02.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b1-u03",
+      "kind": "main",
+      "language": "fr",
+      "level": "B1",
+      "target": "Discuss possible and hypothetical plans",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-conditional-hypothesis-b1",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 78,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b1-u03.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b1-u04",
+      "kind": "main",
+      "language": "fr",
+      "level": "B1",
+      "target": "Give nuanced recommendations",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-subjunctive-b1",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 80,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b1-u04.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b1-u05",
+      "kind": "main",
+      "language": "fr",
+      "level": "B1",
+      "target": "Discuss media and social issues",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 83,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b1-u05.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b1-u06",
+      "kind": "main",
+      "language": "fr",
+      "level": "B1",
+      "target": "Explain work decisions",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-relative-pronouns-b1",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 72,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b1-u06.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b1-u07",
+      "kind": "main",
+      "language": "fr",
+      "level": "B1",
+      "target": "Compare past and present situations",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 82,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b1-u07.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b1-u08",
+      "kind": "main",
+      "language": "fr",
+      "level": "B1",
+      "target": "Explain cultural observations and preferences",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 85,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b1-u08.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b1-u09",
+      "kind": "main",
+      "language": "fr",
+      "level": "B1",
+      "target": "Read and report arguments",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 78,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b1-u09.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b1-u10",
+      "kind": "main",
+      "language": "fr",
+      "level": "B1",
+      "target": "Write structured correspondence and proposals",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 80,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b1-u10.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b2-u01",
+      "kind": "main",
+      "language": "fr",
+      "level": "B2",
+      "target": "Develop an extended, balanced argument",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-mood-concession-b2",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 95,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b2-u01.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b2-u02",
+      "kind": "main",
+      "language": "fr",
+      "level": "B2",
+      "target": "Respond to counterarguments fluently",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 108,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b2-u02.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b2-u03",
+      "kind": "main",
+      "language": "fr",
+      "level": "B2",
+      "target": "Summarize and evaluate news sources",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-b2-reported-news-reading",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 95,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 388,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b2-u03.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b2-u04",
+      "kind": "main",
+      "language": "fr",
+      "level": "B2",
+      "target": "Discuss past alternatives and regret",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-past-conditional-regret-b2",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 94,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b2-u04.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b2-u05",
+      "kind": "main",
+      "language": "fr",
+      "level": "B2",
+      "target": "Explain complex process accurately",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 90,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b2-u05.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b2-u06",
+      "kind": "main",
+      "language": "fr",
+      "level": "B2",
+      "target": "Write an organized report",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-b2-formal-argument-writing",
+          "type": "grammar"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 89,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b2-u06.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b2-u07",
+      "kind": "main",
+      "language": "fr",
+      "level": "B2",
+      "target": "Interpret perspectives and rhetorical devices",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 97,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b2-u07.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b2-u08",
+      "kind": "main",
+      "language": "fr",
+      "level": "B2",
+      "target": "Explain evidence and recommend actions",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 92,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b2-u08.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b2-u09",
+      "kind": "main",
+      "language": "fr",
+      "level": "B2",
+      "target": "Negotiate and solve complex communication",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 84,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b2-u09.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-b2-u10",
+      "kind": "main",
+      "language": "fr",
+      "level": "B2",
+      "target": "Integrate several texts into coherent speech",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 91,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-b2-u10.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-c1-u01",
+      "kind": "main",
+      "language": "fr",
+      "level": "C1",
+      "target": "Convey subtle semantic distinctions",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-precise-academic-lexicon-c1",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 122,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-c1-u01.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-c1-u02",
+      "kind": "main",
+      "language": "fr",
+      "level": "C1",
+      "target": "Structure layered arguments",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 125,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-c1-u02.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-c1-u03",
+      "kind": "main",
+      "language": "fr",
+      "level": "C1",
+      "target": "Integrate complex source material",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-c1-cross-source-synthesis",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 137,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-c1-u03.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-c1-u04",
+      "kind": "main",
+      "language": "fr",
+      "level": "C1",
+      "target": "Handle delicate nuanced conversations",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 120,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-c1-u04.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-c1-u05",
+      "kind": "main",
+      "language": "fr",
+      "level": "C1",
+      "target": "Interpret cultural discourse and implication",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 132,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-c1-u05.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-c1-u06",
+      "kind": "main",
+      "language": "fr",
+      "level": "C1",
+      "target": "Explain complex ideas to varied audiences",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 130,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-c1-u06.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-c1-u07",
+      "kind": "main",
+      "language": "fr",
+      "level": "C1",
+      "target": "Assess media framing and credibility",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [
+        {
+          "id": "fr-c1-media-stance-reading",
+          "type": "vocabulary"
+        }
+      ],
+      "body": "authored_body_quality_pending",
+      "readingWords": 120,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 5,
+        "words": 508,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-c1-u07.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-c1-u08",
+      "kind": "main",
+      "language": "fr",
+      "level": "C1",
+      "target": "Produce a coherent formal essay",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 131,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-c1-u08.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-c2-u01",
+      "kind": "main",
+      "language": "fr",
+      "level": "C2",
+      "target": "Choose exact shades of meaning",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 140,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-c2-u01.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-c2-u02",
+      "kind": "main",
+      "language": "fr",
+      "level": "C2",
+      "target": "Adapt speech to complex audiences",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 137,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-c2-u02.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-c2-u03",
+      "kind": "main",
+      "language": "fr",
+      "level": "C2",
+      "target": "Synthesize across genres",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 128,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 438,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-c2-u03.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-c2-u04",
+      "kind": "main",
+      "language": "fr",
+      "level": "C2",
+      "target": "Understand cultural subtext and humor",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 132,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-c2-u04.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-c2-u05",
+      "kind": "main",
+      "language": "fr",
+      "level": "C2",
+      "target": "Navigate nuanced disagreement",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 119,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-c2-u05.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-c2-u06",
+      "kind": "main",
+      "language": "fr",
+      "level": "C2",
+      "target": "Write a polished expert document",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 143,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-c2-u06.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-c2-u07",
+      "kind": "main",
+      "language": "fr",
+      "level": "C2",
+      "target": "Discuss literary voice and perspective",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 133,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-c2-u07.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-c2-u08",
+      "kind": "main",
+      "language": "fr",
+      "level": "C2",
+      "target": "Develop a self-directed integrated portfolio",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 140,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "content/lesson-drafts/fr-c2-u08.json"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "missing_audio",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-01",
+      "kind": "foundation",
+      "language": "en",
+      "level": "Pre-A1",
+      "target": "区分字母名称、拼写与实际语音；能正确拼读名字。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 17,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-02",
+      "kind": "foundation",
+      "language": "en",
+      "level": "Pre-A1",
+      "target": "初步听辨 sit/seat、ship/sheep，理解元音质量而不只是时长。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 21,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-03",
+      "kind": "foundation",
+      "language": "en",
+      "level": "Pre-A1",
+      "target": "识别 /p b/、/t d/ 与 /θ ð/ 的常见区别。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 19,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-04",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A1",
+      "target": "能划分常见音节，找出简单单词的重读位置。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 20,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-05",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A1",
+      "target": "能介绍年龄、电话号码、日期和简单价格。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 20,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-06",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A1",
+      "target": "用 I am、you are、she is 写出完整简单句和问候。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 20,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-07",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A1",
+      "target": "描述身边物品数量及位置。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 18,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-08",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A1",
+      "target": "说明每天常做的事并询问习惯。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 19,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-09",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A1",
+      "target": "能询问他人的日常习惯并回答。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 22,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-10",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A2",
+      "target": "用 in/on/at 和 and/but/because 组合多个事实。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 25,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-11",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A2",
+      "target": "区分过去事实、现在习惯与明确的未来计划。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 31,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-12",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A2",
+      "target": "将主题句、例子和结论组织成一段可理解文字。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 46,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-13",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A1→A2",
+      "target": "询问时间、地点、原因及日常安排，并根据回答选择正确疑问词。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 41,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-14",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A1→A2",
+      "target": "清楚说明习惯性活动与正在进行的动作。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 37,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-15",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A2",
+      "target": "按发生时间描述昨天完成的日常事情。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 38,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-16",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A2",
+      "target": "用 went、saw、bought、had 讲述一段真实或虚构的过去经历。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 39,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-17",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A2",
+      "target": "区分已有计划、临时决定以及有根据的预测。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 43,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-18",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A2",
+      "target": "使用 some、any、much、many 询问商品及数量。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 36,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-19",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A2",
+      "target": "比较两种商品或地点，并给出选择理由。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 44,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-20",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A2",
+      "target": "区分 can、have to、must、should 的表达力度与情境。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 34,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-21",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A2",
+      "target": "用有序的方位说明帮助他人到达地点。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 47,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-22",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A2",
+      "target": "使用 have/has + 过去分词谈经历，并和具体过去时间区分。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 44,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-23",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A2",
+      "target": "写一个有中心、有支持细节和结论的短段落。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 46,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "en-fnd-24",
+      "kind": "foundation",
+      "language": "en",
+      "level": "A2",
+      "target": "完成结构完整的简短个人邮件并修订句法和表达。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 42,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-01",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "Pre-A1",
+      "target": "认识法语字母名称、重音符号及拼写方式，不把书写符号误当成独立字母。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 23,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-02",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "Pre-A1",
+      "target": "初步听辨 /i/、/u/、/y/，理解法语元音与拼写的关系。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 27,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-03",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "Pre-A1",
+      "target": "认识三个重要法语鼻化元音及典型拼写，避免一律读成元音加 n。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 27,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-04",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "Pre-A1",
+      "target": "理解部分词末辅音不发音及基本的 liaison 现象。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 26,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-05",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A1",
+      "target": "区别 tu 和 vous，能进行基础见面与告别对话。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 27,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-06",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A1",
+      "target": "正确识别数字 0–30，能询问年龄和简单价格。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 22,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-07",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A1",
+      "target": "使用最常见的两组动词变位描述身份、状态和拥有物。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 18,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-08",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A1",
+      "target": "能够使用 un/une、le/la/les 与名词基本搭配。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 18,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-09",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A1",
+      "target": "用 parler、travailler、étudier 描述简单习惯。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 18,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-10",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A1",
+      "target": "能用 ne...pas 否定句子，并以 intonation 或 est-ce que 提问。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 28,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-11",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A1",
+      "target": "正确使用 du/de la/de l’ 及简单的购物对话。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 21,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-12",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A1–A2",
+      "target": "把自我介绍、日常活动、基础过去与计划组合成一段真实可用的文字。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 28,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-13",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A1→A2",
+      "target": "能提问并用 ne…pas、ne…jamais 描述否定习惯。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 43,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-14",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A2",
+      "target": "用 passé composé 描述完成的过去活动。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 40,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-15",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A2",
+      "target": "正确表达 aller、venir、arriver 等常见动词的过去时。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 35,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-16",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A2",
+      "target": "初步区分背景、习惯和完成事件中的 imparfait 与 passé composé。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 33,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-17",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A2",
+      "target": "介绍马上要做的事和下周计划。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 35,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-18",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A2",
+      "target": "用 futur simple 表达将来决定、预测或正式安排。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 34,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-19",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A2",
+      "target": "减少重复名词，正确使用 le、la、les、lui、leur。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 34,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-20",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A2",
+      "target": "询问价格和数量，用 du、de la、de l’、des 购买食品。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 35,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-21",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A2",
+      "target": "有理有据地比较交通、住所或学习环境。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 36,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-22",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A2",
+      "target": "表达现实可行的条件与相应计划。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 33,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-23",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A2",
+      "target": "写出有中心主题、有例子和连接关系的短段落。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 34,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "fr-fnd-24",
+      "kind": "foundation",
+      "language": "fr",
+      "level": "A2",
+      "target": "整合过去、现在及未来的表达，完成一封结构清晰的私人邮件。",
+      "stages": [
+        "情境",
+        "语法",
+        "词汇",
+        "听读",
+        "表达"
+      ],
+      "specialties": [],
+      "body": "authored_body_quality_pending",
+      "readingWords": 49,
+      "reception": null,
+      "visualWorkshop": null,
+      "sources": [
+        "src/foundationCurriculum.ts"
+      ],
+      "chinese": "partial_glosses_full_mapping_pending",
+      "audio": "device_tts_only",
+      "exercises": 2,
+      "gaps": [
+        "full_grammar_specialty",
+        "full_vocabulary_specialty",
+        "complete_chinese_mapping",
+        "natural_audio_alignment",
+        "independent_semantic_review"
+      ],
+      "priority": "P2-followup",
+      "verification": {
+        "structure": "checked",
+        "semanticQA": "pending",
+        "audioVerified": false,
+        "publishable": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "fr-a1-u08",
+  "title": "Au café et au marché",
+  "language": "fr",
+  "level": "A1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Order and ask about food",
+  "prerequisite": "fr-a1-u07",
+  "context": "在市场购买蔬菜并在咖啡馆礼貌点单。",
+  "grammar": "不特定数量用 du、de la、de l'；可数复数用 des。数量表达后用 de：un kilo de tomates。Je voudrais 是礼貌请求的固定入门表达。否定数量通常改用 de：Je ne prends pas de sucre。",
+  "common_mistake": "une bouteille de l'eau 不能直接替代 une bouteille d'eau 这个数量搭配。",
+  "vocabulary": [
+    [
+      "du pain",
+      "面包"
+    ],
+    [
+      "une pomme",
+      "苹果"
+    ],
+    [
+      "un kilo",
+      "一公斤"
+    ],
+    [
+      "une bouteille",
+      "一瓶"
+    ],
+    [
+      "combien",
+      "多少"
+    ],
+    [
+      "la monnaie",
+      "零钱"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Bonjour, je voudrais un kilo de pommes.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Elles coûtent trois euros le kilo.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Je prends aussi du pain et une bouteille d'eau.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Au café voisin, je commande un thé sans sucre.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Bonjour, je voudrais un kilo de pommes. Elles coûtent trois euros le kilo. Je prends aussi du pain et une bouteille d'eau. Au café voisin, je commande un thé sans sucre. Le serveur apporte la tasse et une petite cuillère. Je paie cinq euros pour le thé et le pain. Je remercie le serveur avant de partir.",
+  "listening_script": "Bonjour, je voudrais un kilo de pommes. Elles coûtent trois euros le kilo. Je prends aussi du pain et une bouteille d'eau. Au café voisin, je commande un thé sans sucre. Le serveur apporte la tasse et une petite cuillère. Je paie cinq euros pour le thé et le pain. Je remercie le serveur avant de partir.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Combien coûtent les pommes ?",
+      "answer": "Trois euros le kilo.",
+      "explanation": "五欧元对应后文茶与面包，不能作为苹果价格。"
+    },
+    {
+      "prompt": "补全：deux bouteilles ___ eau.",
+      "answer": "d'",
+      "explanation": "数量名词后用 de，元音前省音为 d'。"
+    }
+  ],
+  "pronunciation": "voyelles ouvertes/fermées。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Commandez un déjeuner",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

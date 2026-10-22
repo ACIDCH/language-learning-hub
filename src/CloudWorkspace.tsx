@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
-import { createClient, type Session } from '@supabase/supabase-js';
+import { type Session } from '@supabase/supabase-js';
 import './cloud.css';
-import { cloudPublicDefaults } from './cloudPublicDefaults';
+import {cloudClient,apiBase} from './v44Connection';
+import {isCloudWorkspaceConfigured} from './previewWorker';
 import BackupImporter from './BackupImporter';
+import DriveLibrary from './DriveLibrary';
 import LessonReader from './LessonReader';
 import AudioVault from './AudioVault';
+import AudioCoverage from './AudioCoverage';
 import AITutor from './AITutor';
 import SpeechPractice from './SpeechPractice';
 import CourseAudit from './CourseAudit';
@@ -25,11 +28,9 @@ type State = { stage?: number; notes?: string; completed?: boolean; [key: string
 type Progress = { course_id: string; state: State; updated_at: string };
 type PrivateLesson = { course_id: string; content_body: string; source_version: string; qa_status: string; updated_at: string };
 type AudioAsset = { asset_id:string;filename:string;duration_seconds:number;source_kind:string;decoded:boolean;exact_text:boolean;listened:boolean;audio_verified:boolean };
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL?.trim() || cloudPublicDefaults.supabaseUrl;
-const publicKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY?.trim() || cloudPublicDefaults.supabasePublishableKey;
-const apiBase = (import.meta.env.VITE_WORKER_API_URL?.trim() || cloudPublicDefaults.workerApiUrl).replace(/\/$/, '');
-const configured = Boolean(supabaseUrl && publicKey && /^https:\/\//.test(apiBase));
-const client = configured ? createClient(supabaseUrl, publicKey) : null;
+// Preview uses same-origin /api; an absolute HTTPS Worker is not required.
+const configured = isCloudWorkspaceConfigured(Boolean(cloudClient),apiBase);
+const client = configured ? cloudClient : null;
 const stages = ['情境', '语法', '词汇', '听读', '发音', '表达'];
 const draftKey = (uid: string,courseId: string) => 'llh-cloud-draft-v1:' + uid + ':' + courseId;
 
@@ -43,9 +44,8 @@ async function worker<T>(path: string, token?: string, init: RequestInit = {}): 
   return value as T;
 }
 
-export default function CloudWorkspace() {
+export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{initialPanel?:'learn'|'path'|'foundation'|'audio'|'speech'|'review'|'resources'|'ai';initialCourse?:string}) {
   const [session, setSession] = useState<Session | null>(null);
-  const [recoveryMode,setRecoveryMode] = useState(false);
   const [catalog, setCatalog] = useState<Course[]>([]);
   const [selected, setSelected] = useState('');
   const [state, setState] = useState<State>({});
@@ -57,9 +57,11 @@ export default function CloudWorkspace() {
   const [courseQuery,setCourseQuery]=useState('');
   const [status, setStatus] = useState('正在连接…');
   const [busy, setBusy] = useState(false);
-  const [activePanel,setActivePanel] = useState<'learn'|'path'|'foundation'|'audio'|'speech'|'review'|'resources'|'ai'>('learn');
+  const [activePanel,setActivePanel] = useState<'learn'|'path'|'foundation'|'audio'|'speech'|'review'|'resources'|'ai'>(initialPanel);
   const [overviewVersion,setOverviewVersion] = useState(0);
   const [progressReadyKey,setProgressReadyKey] = useState('');
+  const [progressReadError,setProgressReadError] = useState(false);
+  const [progressRetry,setProgressRetry] = useState(0);
   const selectedRef=useRef('');
   const progressKey=session?session.user.id+':'+selected:'';
   const progressReady=Boolean(selected&&progressReadyKey===progressKey);
@@ -74,12 +76,9 @@ export default function CloudWorkspace() {
     let alive = true;
     const auth = client;
     void auth.auth.getSession().then(({data}) => {if (alive) setSession(data.session);});
-    const {data:listener} = auth.auth.onAuthStateChange((event,next) => {
-      setSession(next);
-      if(event==='PASSWORD_RECOVERY')setRecoveryMode(true);
-    });
+    const {data:listener} = auth.auth.onAuthStateChange((_event,next) => {setSession(next);});
     void worker<{courses:Course[]}>('/v1/courses')
-      .then(({courses}) => {if (alive) {setCatalog(courses); chooseCourse(courses[0]?.id || ''); setStatus('课程索引已加载。');}})
+      .then(({courses}) => {if (alive) {setCatalog(courses); chooseCourse(courses.some(c=>c.id===initialCourse)?initialCourse:courses[0]?.id || ''); setStatus('课程索引已加载。');}})
       .catch(e => {if (alive) setStatus('云端索引暂不可用：' + e.message);});
     return () => {alive = false; listener.subscription.unsubscribe();};
   }, []);
@@ -88,6 +87,7 @@ export default function CloudWorkspace() {
     if (!session || !selected) {setState({});setProgressReadyKey('');return;}
     let alive = true;
     setProgressReadyKey('');
+    setProgressReadError(false);
     setState({});
     setStatus('正在读取云端进度…');
     void worker<{progress:Progress|null}>('/v1/progress/' + encodeURIComponent(selected),session.access_token)
@@ -106,22 +106,24 @@ export default function CloudWorkspace() {
       })
       .catch(e => {
         if (!alive) return;
+        setProgressReadError(true);
         try {
           const cached = localStorage.getItem(draftKey(session.user.id,selected));
           if (cached) {
             const draft = JSON.parse(cached) as {state?:State};
             if (draft?.state) {
               setState(draft.state);
-              setProgressReadyKey(session.user.id+':'+selected);
-              setStatus('远端读取失败，已保留本机未同步草稿：' + e.message);
+              // A local draft is NOT proof that the remote state was loaded.
+              // Block writes until the current remote version can be read.
+              setStatus('云端读取失败，已保留本机草稿（只读）；为防止覆盖已有进度，暂不允许保存：' + e.message);
               return;
             }
           }
         } catch { /* Local cache unavailable. */ }
-        setStatus('读取失败：' + e.message);
+        setStatus('读取失败，已禁止覆盖保存：' + e.message);
       });
     return () => {alive=false;};
-  },[session,selected]);
+  },[session,selected,progressRetry]);
 
   useEffect(() => {
     if (!session || !selected) {
@@ -211,20 +213,14 @@ export default function CloudWorkspace() {
   }
   return <main className="cloud-workspace">
     <header className="cloud-head">
-      <div><p className="cloud-kicker">LANGUAGE HUB / CLOUD</p><h1>云端学习进度</h1>
-        <p>108 课云端学习、私人音频与进度记录。Google Drive 保留课程和音频原件。</p></div>
-      <a href="/" className="cloud-return">返回公开课程 →</a>
+      <div><p className="cloud-kicker">MY LEARNING</p><h1>学习工作区</h1></div>
+      <a href="/" className="cloud-return">返回课程 →</a>
     </header>
     {!configured ? <section className="cloud-panel" role="status">
-      <h2>尚未启用云端连接</h2>
-      <p>前端仍可阅读公开课程。云端同步将在 Cloudflare Pages 的公开连接配置和 Worker 服务验证通过后开放。</p>
-      <p>无需在浏览器中粘贴任何数据库管理密钥。</p>
+      <h2>尚未启用云端连接</h2><p>请检查云端连接。</p>
     </section> : <>
-      <p role="status" className="cloud-status">{status}</p>
-      {!session || recoveryMode ? <AccountAccess client={client!}
-        recoveryMode={recoveryMode}
-        onRecoveryComplete={()=>setRecoveryMode(false)}
-        onNotify={setStatus}/> : <section className="cloud-panel">
+      {session&&status&&<p role="status" className="cloud-status">{status}</p>}
+      {!session ? <AccountAccess client={client!} onNotify={setStatus}/> : <section className="cloud-panel">
         <div className="cloud-flex"><h2>课程进度与笔记</h2>
           <button type="button" onClick={()=>{void client?.auth.signOut();setState({});setProgressReadyKey('');}}>退出账户</button></div>
         <p className="cloud-account">已登录：{session.user.email}</p>
@@ -249,7 +245,7 @@ export default function CloudWorkspace() {
         <nav className="cloud-panel-tabs" aria-label="学习系统模块">
           {([
             ['learn','课程学习'],['path','学习路径'],['foundation','零基础补充'],['audio','课程音频'],['speech','跟读练习'],
-            ['review','质量审校'],['resources','资源管理'],['ai','AI 教师（稍后）']
+            ['review','质量审校'],['resources','资源管理'],['ai','AI 教师']
           ] as const).map(([id,label])=>
             <button type="button" key={id} onClick={()=>setActivePanel(id)}
               aria-current={activePanel===id?'page':undefined}
@@ -261,8 +257,9 @@ export default function CloudWorkspace() {
           <section className="cloud-reader" aria-label="本课学习进度与笔记">
             <h3>本课进度与笔记</h3>
             {!progressReady&&<p role="status" className="cloud-disclaimer">
-              正在读取此课程的进度，期间编辑和保存暂时锁定，避免混入另一门课程的笔记。
+              {progressReadError?'云端进度读取失败，当前保留的本机草稿为只读；为避免覆盖已有数据，编辑与保存已锁定。':'正在读取此课程的进度，期间编辑和保存暂时锁定。'}
             </p>}
+            {progressReadError&&<button type="button" onClick={()=>setProgressRetry(x=>x+1)}>重新读取本课云端进度</button>}
             <fieldset className="cloud-stages" disabled={!progressReady||busy}>
               <legend>当前学习环节</legend>
               {stages.map((label,i)=><label key={label}><input type="radio"
@@ -285,8 +282,6 @@ export default function CloudWorkspace() {
             <h3>我的课程正文</h3>
             <p role="status" className="cloud-disclaimer">{lessonStatus}</p>
             {currentLesson&&<>
-              <p className="cloud-disclaimer">来源版本：{currentLesson.source_version} ·
-                状态：{currentLesson.qa_status==='approved'?'正文已审核':'草稿/待核验'}</p>
               <CourseGuide courseId={selected} disabled={!progressReady||busy}
                 check={(state.practiceChecklist&&typeof state.practiceChecklist==='object'&&
                   !Array.isArray(state.practiceChecklist)?state.practiceChecklist:{}) as PracticeCheck}
@@ -302,14 +297,16 @@ export default function CloudWorkspace() {
         {activePanel==='foundation'&&<FoundationStudio client={client!} session={session}
           onOpenCourses={()=>setActivePanel('learn')}/>}
         {activePanel==='audio'&&<>
+          <AudioCoverage client={client!} session={session} courseId={selected}/>
           <AudioVault client={client!} session={session}
             courseId={selected} assets={audioAssets} status={audioStatus}/>
+          <DriveLibrary key={'drive-audio-'+selected} client={client!} session={session} courseId={selected} mode="audio"/>
           <ReferenceAudio lessonId={selected}/>
         </>}
         {activePanel==='speech'&&<>
           <SpeechPractice key={selected} lessonText={currentLesson?.content_body||''}
-            language={catalog.find(c=>c.id===selected)?.language||'fr'} accessToken={session.access_token}/>
-          <p className="cloud-disclaimer"><a href="/speech-lab#ipa-studio">打开 IPA 全文音标阅读室：粘贴任意英语或法语文章，实时查看音标</a></p>
+            language={catalog.find(c=>c.id===selected)?.language||'fr'} session={session}
+            accessToken={session.access_token} variant="standalone"/><a href="/speech-lab#ipa-studio">全文 IPA 工具 →</a>
         </>}
         {activePanel==='review'&&<>
           <StageCoverage client={client!} session={session} onSelect={chooseCourse}/>
@@ -319,16 +316,15 @@ export default function CloudWorkspace() {
             session={session} courseId={currentLesson.course_id}
             qaStatus={currentLesson.qa_status}
             onUpdated={()=>setImportNonce(n=>n+1)}/>}
-          <p className="cloud-disclaimer">课程内容结构检查与真正的教学审校是两个不同环节。</p>
         </>}
         {activePanel==='resources'&&<>
+          <DriveLibrary key={'drive-resources-'+selected} client={client!} session={session} courseId={selected} mode="resources"/>
           <ReferenceIndex client={client!} session={session}/>
           <BackupImporter client={client!} session={session}
             knownIds={catalog.map(c=>c.id)} onImported={()=>setImportNonce(n=>n+1)}/>
         </>}
         {activePanel==='ai'&&<section className="cloud-reader">
-          <h3>AI 教师 · 最后阶段</h3>
-          <p className="cloud-disclaimer">按照当前开发计划，暂不进行 AI 模型联调，也不会自动发起付费模型请求。</p>
+          <h3>AI 教师</h3>
           <details>
             <summary>展开现有 AI 实验模块（手动启用）</summary>
             <AITutor key={'ai-'+selected} session={session} apiBase={apiBase}

@@ -7,6 +7,8 @@ const cfg=readFileSync(resolve('src/cloudPublicDefaults.ts'),'utf8');
 const cloud=readFileSync(resolve('src/CloudWorkspace.tsx'),'utf8');
 const workerConfig=readFileSync(resolve('cloudflare/learning-api/wrangler.jsonc'),'utf8');
 const account=readFileSync(resolve('src/AccountAccess.tsx'),'utf8');
+const connection=readFileSync(resolve('src/v44Connection.ts'),'utf8');
+const preview=readFileSync(resolve('src/previewWorker.ts'),'utf8');
 
 test('public client configuration is explicit and uses public-only credentials',()=>{
   assert.match(cfg,/https:\/\/szukmwvyyvjajdjoltzy\.supabase\.co/);
@@ -16,9 +18,14 @@ test('public client configuration is explicit and uses public-only credentials',
   assert.doesNotMatch(cfg,/private[_-]?key\s*[:=]/i);
 });
 test('Cloudflare environment overrides continue to work',()=>{
-  assert.match(cloud,/VITE_SUPABASE_URL\?\.trim\(\) \|\| cloudPublicDefaults\.supabaseUrl/);
-  assert.match(cloud,/VITE_SUPABASE_PUBLISHABLE_KEY\?\.trim\(\) \|\| cloudPublicDefaults\.supabasePublishableKey/);
-  assert.match(cloud,/VITE_WORKER_API_URL\?\.trim\(\) \|\| cloudPublicDefaults\.workerApiUrl/);
+  assert.match(connection,/VITE_SUPABASE_URL\?\.trim\(\)\|\|cloudPublicDefaults\.supabaseUrl/);
+  assert.match(connection,/VITE_SUPABASE_PUBLISHABLE_KEY\?\.trim\(\)\|\|cloudPublicDefaults\.supabasePublishableKey/);
+  assert.match(connection,/VITE_WORKER_API_URL\?\.trim\(\)\|\|cloudPublicDefaults\.workerApiUrl/);
+  assert.match(cloud,/import \{cloudClient,apiBase\} from '\.\/v44Connection'/);
+  assert.match(cloud,/isCloudWorkspaceConfigured\(Boolean\(cloudClient\),apiBase\)/);
+  assert.match(preview,/apiBase===PREVIEW_API_BASE/);
+  assert.ok(preview.includes('https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev'));
+  assert.ok(preview.includes("PREVIEW_API_BASE='/api'"));
 });
 test('cloud progress still routes to authenticated Worker endpoints',()=>{
   assert.match(cloud,/Authorization: 'Bearer ' \+ token/);
@@ -35,5 +42,6 @@ test('Worker Wrangler source-of-truth preserves same public project settings',()
     assert.ok(workerConfig.includes(value));
   }
   assert.match(workerConfig,/"FRONTEND_ORIGIN": "https:\/\/language-learning-hub\.pages\.dev"/);
+  assert.ok(workerConfig.includes('https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev'));
   assert.doesNotMatch(workerConfig,/sb_secret_|eyJhbGci/);
 });

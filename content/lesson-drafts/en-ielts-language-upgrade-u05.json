@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-language-upgrade-u05",
+  "title": "Hedging, stance and inference",
+  "language": "en",
+  "level": "B2-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply hedging, stance and inference in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-language-upgrade-u04",
+  "context": "为研究解读选择适量限定语，既明确判断又保留证据边界。",
+  "grammar": "epistemic may/could 表示认识上的可能，不是许可或能力。apparently 表表面信息，arguably 提出可争论判断。hedging 应指出不确定的具体位置，而不是给所有词都加 perhaps。",
+  "common_mistake": "‘It might possibly perhaps…’多重堆叠通常不如一个明确限定。",
+  "vocabulary": [
+    [
+      "tentative",
+      "暂定的"
+    ],
+    [
+      "plausible",
+      "合理可能的"
+    ],
+    [
+      "indicate",
+      "显示"
+    ],
+    [
+      "suggest",
+      "提示"
+    ],
+    [
+      "arguably",
+      "可以认为"
+    ],
+    [
+      "uncertainty",
+      "不确定性"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "The lower error rate suggests that the revised instructions may be easier to follow.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "However, the participants also received more time to complete the task.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The improvement could therefore reflect either change or their combination.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "It is reasonable to favour the revision provisionally, while testing the timing effect separately.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "The lower error rate suggests that the revised instructions may be easier to follow. However, the participants also received more time to complete the task. The improvement could therefore reflect either change or their combination. It is reasonable to favour the revision provisionally, while testing the timing effect separately. This position is cautious without being empty. It states what the evidence supports, identifies an alternative explanation and proposes a way to reduce the uncertainty.",
+  "listening_script": "The lower error rate suggests that the revised instructions may be easier to follow. However, the participants also received more time to complete the task. The improvement could therefore reflect either change or their combination. It is reasonable to favour the revision provisionally, while testing the timing effect separately. This position is cautious without being empty. It states what the evidence supports, identifies an alternative explanation and proposes a way to reduce the uncertainty.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What alternative explanation is identified ?",
+      "answer": "Participants received more time.",
+      "explanation": "同一实验同时改变两项因素。"
+    },
+    {
+      "prompt": "Why is the conclusion not simply indecisive ?",
+      "answer": "It favours a provisional action and specifies the remaining test.",
+      "explanation": "限定与行动建议可以并存。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating hedging, stance and inference",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

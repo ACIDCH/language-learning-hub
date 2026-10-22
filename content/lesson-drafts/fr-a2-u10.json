@@ -1,0 +1,78 @@
+{
+  "id": "fr-a2-u10",
+  "title": "Études et travail",
+  "language": "fr",
+  "level": "A2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Describe work and academic routines",
+  "prerequisite": "fr-a2-u09",
+  "context": "介绍学习和工作经历，为实习申请写一段真实说明。",
+  "grammar": "depuis 常表达持续至今的活动并用现在时；pendant 说明持续时长但不自动表示仍在继续。pour + 不定式表达学习目的；savoir + 不定式表示掌握技能。",
+  "common_mistake": "不要仅因 depuis 两年前开始就一律使用过去时；仍持续的状态常用现在时。",
+  "vocabulary": [
+    [
+      "un stage",
+      "实习"
+    ],
+    [
+      "une compétence",
+      "技能"
+    ],
+    [
+      "une équipe",
+      "团队"
+    ],
+    [
+      "un entretien",
+      "面试"
+    ],
+    [
+      "apprendre",
+      "学习"
+    ],
+    [
+      "une candidature",
+      "申请"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "J'étudie la gestion depuis deux ans.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "L'été dernier, j'ai travaillé pendant six semaines dans une petite entreprise.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "J'ai appris à préparer des tableaux et à répondre aux messages des clients.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Maintenant, je cherche un stage dans une équipe internationale.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "J'étudie la gestion depuis deux ans. L'été dernier, j'ai travaillé pendant six semaines dans une petite entreprise. J'ai appris à préparer des tableaux et à répondre aux messages des clients. Maintenant, je cherche un stage dans une équipe internationale. Je sais utiliser les outils de bureautique, mais je veux améliorer mon français professionnel. Je joins un exemple de travail à ma candidature. Pendant l'entretien, je souhaite expliquer ce que j'ai réellement fait.",
+  "listening_script": "J'étudie la gestion depuis deux ans. L'été dernier, j'ai travaillé pendant six semaines dans une petite entreprise. J'ai appris à préparer des tableaux et à répondre aux messages des clients. Maintenant, je cherche un stage dans une équipe internationale. Je sais utiliser les outils de bureautique, mais je veux améliorer mon français professionnel. Je joins un exemple de travail à ma candidature. Pendant l'entretien, je souhaite expliquer ce que j'ai réellement fait.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Travaille-t-il encore dans la petite entreprise ?",
+      "answer": "Le texte ne le dit pas ; il décrit un travail de six semaines l'été dernier.",
+      "explanation": "pendant 限定过去经历，不证明现在仍在那里工作。"
+    },
+    {
+      "prompt": "补全：J'étudie ici ___ deux ans.",
+      "answer": "depuis",
+      "explanation": "仍在持续的学习用 depuis 表示从过去到现在的长度。"
+    }
+  ],
+  "pronunciation": "liaison dans phrases longues。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Présentez votre parcours",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

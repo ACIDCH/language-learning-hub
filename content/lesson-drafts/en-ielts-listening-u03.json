@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-listening-u03",
+  "title": "Paraphrase in speech and note-taking",
+  "language": "en",
+  "level": "B1-B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply paraphrase in speech and note-taking in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-listening-u02",
+  "context": "将讲座中的长表达改写成简明笔记，保持含义边界。",
+  "grammar": "paraphrase 需保留主体、比较对象、时态和限定词。a modest decline 可记作 slight fall，但不能写 collapse。笔记缩写可以省语法词，复述成完整句时应恢复逻辑关系。",
+  "common_mistake": "up to thirty 不等于 exactly thirty；省掉限定词会改变数据。",
+  "vocabulary": [
+    [
+      "decline",
+      "下降"
+    ],
+    [
+      "modest",
+      "小幅的"
+    ],
+    [
+      "attendance",
+      "出席人数"
+    ],
+    [
+      "up to",
+      "最多"
+    ],
+    [
+      "roughly",
+      "大约"
+    ],
+    [
+      "replacement",
+      "替代"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Attendance at the evening workshop showed a modest decline after the room changed.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "This does not mean that learners lost interest in the subject.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Several participants reported that the new venue required an additional bus journey.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The organiser is considering an online replacement for one session each month.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Attendance at the evening workshop showed a modest decline after the room changed. This does not mean that learners lost interest in the subject. Several participants reported that the new venue required an additional bus journey. The organiser is considering an online replacement for one session each month. Up to thirty people could join it, although the usual group is smaller. In your notes, keep the distinction between the maximum capacity and the number normally attending. Otherwise, a short summary may sound precise while misrepresenting the evidence.",
+  "listening_script": "Attendance at the evening workshop showed a modest decline after the room changed. This does not mean that learners lost interest in the subject. Several participants reported that the new venue required an additional bus journey. The organiser is considering an online replacement for one session each month. Up to thirty people could join it, although the usual group is smaller. In your notes, keep the distinction between the maximum capacity and the number normally attending. Otherwise, a short summary may sound precise while misrepresenting the evidence.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Paraphrase a modest decline without strengthening it.",
+      "answer": "A slight fall.",
+      "explanation": "不能换为 dramatic collapse，程度必须保存。"
+    },
+    {
+      "prompt": "Does thirty describe normal attendance ?",
+      "answer": "No, it is the maximum proposed online capacity.",
+      "explanation": "capacity 与实际人数不同。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating paraphrase in speech and note-taking",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

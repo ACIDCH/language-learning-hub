@@ -1,0 +1,78 @@
+{
+  "id": "fr-c2-u02",
+  "title": "Registres et publics",
+  "language": "fr",
+  "level": "C2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Adapt speech to complex audiences",
+  "prerequisite": "fr-c2-u01",
+  "context": "将研究结论分别改写给专业评审与普通公众，同时保持信息强度。",
+  "grammar": "语域转换改变术语密度、解释顺序与人际距离，不改变结论证据。定义先行、具体例子与主动语态可降低负担；仍需保留范围限定和不确定性。",
+  "common_mistake": "向大众解释不能以‘已证明有效’替换‘在此样本中出现相关’。",
+  "vocabulary": [
+    [
+      "la vulgarisation",
+      "科普"
+    ],
+    [
+      "un destinataire",
+      "受众"
+    ],
+    [
+      "une reformulation",
+      "重述"
+    ],
+    [
+      "la technicité",
+      "技术复杂度"
+    ],
+    [
+      "un invariant",
+      "不变量"
+    ],
+    [
+      "la fidélité",
+      "忠实度"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "À un comité scientifique, on pourra présenter une association ajustée dont l'interprétation demeure sensible à plusieurs variables non observées.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Devant un public plus large, la même idée demandera sans doute une progression différente.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "On expliquera d'abord que deux phénomènes varient ensemble, puis que cette observation ne suffit pas à montrer que l'un provoque l'autre.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le vocabulaire change, mais la réserve doit rester.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "À un comité scientifique, on pourra présenter une association ajustée dont l'interprétation demeure sensible à plusieurs variables non observées. Devant un public plus large, la même idée demandera sans doute une progression différente. On expliquera d'abord que deux phénomènes varient ensemble, puis que cette observation ne suffit pas à montrer que l'un provoque l'autre. Le vocabulaire change, mais la réserve doit rester. Une métaphore peut éclairer le mécanisme supposé à condition de ne pas devenir une preuve de ce mécanisme. Le rédacteur doit ainsi identifier un noyau d'information invariant : population étudiée, résultat, méthode et limites. Il pourra ensuite modifier exemples, rythme et degré d'explicitation. La réussite de la reformulation se juge moins à la disparition des termes spécialisés qu'à la possibilité, pour le destinataire, de comprendre ce qui est établi et ce qui ne l'est pas.",
+  "listening_script": "À un comité scientifique, on pourra présenter une association ajustée dont l'interprétation demeure sensible à plusieurs variables non observées. Devant un public plus large, la même idée demandera sans doute une progression différente. On expliquera d'abord que deux phénomènes varient ensemble, puis que cette observation ne suffit pas à montrer que l'un provoque l'autre. Le vocabulaire change, mais la réserve doit rester. Une métaphore peut éclairer le mécanisme supposé à condition de ne pas devenir une preuve de ce mécanisme. Le rédacteur doit ainsi identifier un noyau d'information invariant : population étudiée, résultat, méthode et limites. Il pourra ensuite modifier exemples, rythme et degré d'explicitation. La réussite de la reformulation se juge moins à la disparition des termes spécialisés qu'à la possibilité, pour le destinataire, de comprendre ce qui est établi et ce qui ne l'est pas.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quels éléments doivent rester invariants ?",
+      "answer": "Population, résultat, méthode et limites.",
+      "explanation": "降低专业术语密度不能删除证据边界。"
+    },
+    {
+      "prompt": "Une métaphore peut-elle servir de preuve ?",
+      "answer": "Non, elle illustre un mécanisme sans le valider.",
+      "explanation": "解释工具与证明材料的功能不同。"
+    }
+  ],
+  "pronunciation": "prosodie sociolinguistique。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Adaptez un exposé",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

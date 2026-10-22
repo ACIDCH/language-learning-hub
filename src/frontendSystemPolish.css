@@ -1,0 +1,208 @@
+/* Whole-app visual unification for legacy cloud, Drive, audio, AI, account and foundation. */
+.v44 .legacy-modules,.v44 .legacy-modules .cloud-workspace,
+.v44 .cloud-workspace,.v44 .cloud-workspace .cloud-panel,
+.v44 .cloud-workspace .cloud-reader,.v44 .settings-content,
+.v44 .account-access,.v44 .ipa-studio,.v44 .speaking-lab-page{min-width:0;max-width:100%}
+.v44 .legacy-modules{overflow-wrap:anywhere}
+.v44 .legacy-modules .cloud-workspace{margin:0;padding:0;background:transparent;color:var(--text);
+ font:inherit;line-height:1.65;width:100%}
+.v44 .cloud-workspace .cloud-panel,
+.v44 .cloud-workspace .cloud-reader,
+.v44 .cloud-workspace .foundation-lesson,
+.v44 .account-access,.v44 .connection-diagnostics{
+ color:var(--text);background:var(--pane);border:1px solid var(--border);
+ box-shadow:var(--shadow);border-radius:14px}
+.v44 .cloud-workspace .cloud-panel{padding:clamp(13px,1.75vw,22px)}
+.v44 .cloud-workspace .cloud-reader{padding:clamp(13px,1.7vw,22px);margin:12px 0}
+.v44 .cloud-workspace .cloud-status{background:var(--paneSoft);color:var(--textMuted);
+ border:1px solid var(--border);padding:10px 13px;font-size:12px}
+.v44 .cloud-workspace .cloud-account,
+.v44 .cloud-workspace .cloud-disclaimer,
+.v44 .cloud-workspace .cloud-head p{color:var(--textMuted)}
+.v44 .cloud-workspace .cloud-panel h2,
+.v44 .cloud-workspace .cloud-reader h3,
+.v44 .cloud-workspace .foundation-lesson h4,
+.v44 .cloud-workspace .foundation-lesson h5,
+.v44 .cloud-workspace .foundation-lesson li{color:var(--text)}
+.v44 .cloud-workspace .cloud-kicker,
+.v44 .cloud-workspace .cloud-return,
+.v44 .cloud-workspace a{color:var(--accent)}
+.v44 .cloud-workspace label{color:var(--text);min-width:0}
+.v44 .cloud-workspace input:not([type=radio]):not([type=checkbox]):not([type=range]):not([type=file]),
+.v44 .cloud-workspace select,.v44 .cloud-workspace textarea{
+ max-width:100%;min-width:0;background:var(--pane);color:var(--text);
+ border:1px solid var(--border);border-radius:9px}
+.v44 .cloud-workspace button,
+.v44 .cloud-workspace .cloud-panel-tabs button,
+.v44 .cloud-workspace .foundation-filters button,
+.v44 .cloud-workspace .foundation-menu button,
+.v44 .cloud-workspace .foundation-stage-tabs button,
+.v44 .cloud-workspace .qa-rows button,
+.v44 .cloud-workspace .cloud-course-results button{
+ background:var(--paneSoft);color:var(--text);border:1px solid var(--border);
+ border-radius:9px;line-height:1.45}
+.v44 .cloud-workspace button:hover:not(:disabled){border-color:var(--accent);background:var(--accentTint)}
+.v44 .cloud-workspace .foundation-filters button.foundation-current,
+.v44 .cloud-workspace .foundation-menu button.foundation-current,
+.v44 .cloud-workspace .foundation-stage-tabs button[aria-current=step],
+.v44 .cloud-workspace .lesson-stages button.stage-active,
+.v44 .cloud-workspace .cloud-panel-tabs button.panel-active{
+ background:var(--accentTint);border-color:var(--accent);color:var(--accent);font-weight:700}
+.v44 .cloud-workspace .lesson-stages button,.v44 .cloud-workspace .lesson-controls button,
+.v44 .cloud-workspace .cloud-course-results button,.v44 .cloud-workspace .ref-counts button,
+.v44 .cloud-workspace .account-actions button,.v44 .cloud-workspace .path-units button{
+ background:var(--paneSoft);color:var(--text);border-color:var(--border)}
+.v44 .cloud-workspace .foundation-example,
+.v44 .cloud-workspace .foundation-words th,
+.v44 .cloud-workspace .foundation-words td{border-color:var(--border)}
+.v44 .cloud-workspace .foundation-lesson header p,
+.v44 .cloud-workspace .foundation-filters>span,
+.v44 .cloud-workspace .foundation-words{color:var(--textMuted)}
+.v44 .cloud-workspace .foundation-menu button{min-width:0;text-align:left}
+.v44 .cloud-workspace .foundation-menu button strong{color:inherit}
+.v44 .cloud-workspace .foundation-menu button small{font-weight:500}
+.v44 .cloud-workspace .foundation-reading-text,
+.v44 .cloud-workspace .foundation-lesson details,
+.v44 .cloud-workspace .course-study-guide{background:var(--paneSoft);border-color:var(--border);color:var(--text)}
+.v44 .cloud-workspace .foundation-answer-ok{background:var(--accentTint);color:var(--text)}
+.v44 .cloud-workspace .foundation-answer-review{background:var(--paneSoft);color:var(--text)}
+.v44 .cloud-workspace .cloud-manuscript,
+.v44 .cloud-workspace .lesson-paper,
+.v44 .cloud-workspace pre{
+ max-width:100%;min-width:0;background:var(--pane);color:var(--text);
+ border-color:var(--border);white-space:pre-wrap;overflow-wrap:anywhere}
+.v44 .cloud-workspace .cloud-panel-tabs{display:flex;gap:6px;overflow-x:auto;max-width:100%;
+ scrollbar-width:thin;padding-bottom:8px;margin:13px 0}
+.v44 .cloud-workspace .cloud-panel-tabs button{white-space:nowrap;flex:0 0 auto;padding:9px 12px}
+.v44 .cloud-workspace .cloud-flex{display:flex;gap:9px;align-items:center;flex-wrap:wrap;
+ justify-content:flex-start;border-bottom:1px solid var(--border);padding:8px 0;min-width:0}
+.v44 .cloud-workspace .cloud-flex>span,.v44 .cloud-workspace .cloud-flex>strong{
+ min-width:0;overflow-wrap:anywhere;flex:1 1 180px}
+.v44 .cloud-workspace .cloud-flex button{min-height:34px;flex:0 1 auto}
+.v44 .cloud-workspace .cloud-fields{width:100%;max-width:100%;gap:10px}
+.v44 .cloud-workspace .cloud-fields>label{max-width:700px}
+.v44 .cloud-workspace .audio-player{min-width:0}
+.v44 .cloud-workspace audio,.v44 .cloud-workspace video{width:100%;max-width:100%}
+.v44 .cloud-workspace iframe{display:block;max-width:100%;width:100%;
+ min-height:420px;height:min(72dvh,850px);border:1px solid var(--border);border-radius:9px}
+.v44 .cloud-workspace .cloud-ai-result{background:var(--paneSoft);color:var(--text);border-color:var(--border)}
+.v44 .cloud-workspace .cloud-stages{border-color:var(--border);grid-template-columns:repeat(3,minmax(0,1fr))}
+.v44 .connection-diagnostics{padding:12px 14px;margin:12px 0}
+.v44 .connection-diagnostics summary{font-size:13px;font-weight:650;color:var(--text)}
+.v44 .connection-diagnostics ul{margin:12px 0;padding:0;list-style:none;display:grid;gap:7px}
+.v44 .connection-diagnostics li{background:var(--paneSoft);border-radius:8px;
+ font-size:12px;padding:10px 12px;line-height:1.6;overflow-wrap:anywhere}
+.v44 .connection-diagnostics button{margin-top:8px}
+.v44 .account-access{max-width:530px;padding:clamp(14px,2vw,24px)}
+.v44 .account-access h2{font-size:20px;margin:0 0 17px}
+.v44 .cloud-workspace .cloud-reader .cloud-fields>p{margin:8px 0}
+.v44 .settings-page{width:100%}
+.v44 .settings-page>.page-tab-row{margin:10px 0 14px}
+.v44 .settings-content>h2{margin-top:0}
+.v44 .settings-content .account-access{box-shadow:none}
+.v44 .speaking-lab-columns,.v44 .speaking-lab-library,
+.v44 .speaking-workbench,.v44 .speaking-workbench-result{min-width:0}
+.v44 .speaking-lab-library{padding:clamp(13px,2vw,22px)}
+.v44 .speaking-lab-sentences button{color:var(--text)}
+@media(max-width:800px){
+ .v44 .cloud-workspace .cloud-stages{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .v44 .cloud-workspace .cloud-flex button{flex:1 1 120px}
+}
+@media(max-width:550px){
+ .v44 .cloud-workspace .cloud-panel,.v44 .cloud-workspace .cloud-reader{padding:12px}
+ .v44 .cloud-workspace .foundation-lesson{padding:12px}
+ .v44 .cloud-workspace .cloud-stages{grid-template-columns:minmax(0,1fr)}
+ .v44 .cloud-workspace .cloud-flex{align-items:stretch}
+ .v44 .cloud-workspace .cloud-flex>span{flex-basis:100%}
+ .v44 .cloud-workspace .cloud-flex button{flex:1 1 45%;white-space:normal}
+ .v44 .cloud-workspace iframe{min-height:320px;height:60dvh}
+ .v44 .settings-page .page-tab-row{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px}
+ .v44 .settings-page .page-tab-row .segment{white-space:nowrap;flex:0 0 auto}
+ .v44 .speaking-lab-library{padding:12px}
+}
+
+/* Lean responsive presentation for roadmap, progress and nested legacy panels. */
+.v44 .learning-overview .learning-summary{gap:9px}
+.v44 .learning-overview .learning-summary>div{min-width:0}
+.v44 .learning-continue{border-radius:11px;padding:12px 14px}
+.v44 .learning-ladder{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:15px 0}
+.v44 .learning-ladder li{min-width:0;padding:13px;border:1px solid var(--border);
+ border-radius:11px;background:var(--paneSoft)}
+.v44 .learning-ladder li strong,.v44 .learning-ladder li span{display:block;overflow-wrap:anywhere}
+.v44 .learning-ladder li span{font-size:12px;line-height:1.5;color:var(--textMuted);margin-top:5px}
+.v44 .path-progress{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap}
+.v44 .path-units{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.v44 .path-units button{min-width:0;padding:13px;text-align:left;overflow-wrap:anywhere}
+.v44 .catalog-toolbar,.v44 .catalog-layout,.v44 .course-list,.v44 .course-card-copy{min-width:0}
+.v44 .catalog-layout .course-big{align-items:center}
+@media(max-width:830px){
+ .v44 .learning-ladder{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .v44 .path-units{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:520px){.v44 .learning-ladder{grid-template-columns:minmax(0,1fr)}}
+
+/* Screenshot-driven fixes: compact unauthenticated panel and one practice heading. */
+.v44 .cloud-workspace>.account-access{
+ width:min(100%,540px)!important;max-width:540px!important;
+ margin:clamp(18px,3vw,36px) auto!important;
+ padding:clamp(18px,2.4vw,28px)!important;
+}
+.v44 .cloud-workspace>.account-access .cloud-fields{max-width:100%}
+.v44 .cloud-workspace>.account-access input{width:100%;max-width:100%}
+.v44 .cloud-workspace>.account-access button[type=submit]{width:100%}
+.v44 .speaking-workbench-heading{justify-content:flex-end;min-height:32px}
+.v44 .speaking-workbench-heading label{max-width:100%}
+.v44 .speaking-workbench-target{margin-top:0}
+.v44 .ai-provider-note{font-size:12px;color:var(--textMuted);line-height:1.5;margin:6px 0}
+.v44 .ai-inline-status:empty{display:none}
+.v44 .drive-setup-help{background:var(--paneSoft);border:1px solid var(--border);
+ border-radius:9px;padding:10px 12px;font-size:12px}
+.v44 .reference-source-note{font-size:12px;color:var(--textMuted)}
+.v44 .reference-source-note>summary{cursor:pointer;color:var(--accent)}
+.v44 .reference-count{color:var(--textMuted);font-size:12px;margin:8px 0 13px}
+@media(max-width:650px){.v44 .cloud-workspace>.account-access{margin:12px 0!important}}
+
+/* Mobile speaking: horizontal compact sentence picker keeps the actual recorder above the fold. */
+@media(max-width:650px){
+ .v44 .speaking-lab-columns{display:flex;flex-direction:column;gap:12px}
+ .v44 .speaking-lab-columns>.speaking-lab-library,
+ .v44 .speaking-lab-columns>.speaking-workbench{width:100%;max-width:100%}
+ .v44 .speaking-lab-library{padding:12px}
+ .v44 .speaking-lab-library-head{padding:9px 11px}
+ .v44 .speaking-lab-library-head h2{font-size:15px;margin:6px 0 0}
+ .v44 .speaking-lab-library h3{font-size:12px;margin:10px 0 8px}
+ .v44 .speaking-lab-sentences{
+  display:flex;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;
+  scroll-snap-type:x proximity;scrollbar-width:thin;padding:0 0 6px;
+ }
+ .v44 .speaking-lab-sentences button{
+  flex:0 0 clamp(190px,64vw,245px);
+  min-height:67px;scroll-snap-align:start;
+  padding:9px 10px;font-size:12px;
+ }
+ .v44 .speaking-lab-sentences button>span:first-child{width:27px;height:27px}
+ .v44 .speaking-lab-sentences small{margin-top:2px}
+ .v44 .speaking-workbench{padding:12px;gap:11px}
+ .v44 .speaking-workbench-target{padding:10px}
+}
+
+/* Mobile course search: keep track filters one compact horizontal row, not a tall
+   multi-row button cloud that pushes the first lesson below the fold. */
+@media(max-width:750px){
+ .v44 .catalog-filter{
+  display:flex!important;align-items:center;flex-wrap:nowrap!important;
+  gap:7px;overflow-x:auto;overflow-y:hidden;
+  scrollbar-width:thin;overscroll-behavior-x:contain;
+  width:100%;max-width:100%;min-height:55px;
+  padding:10px!important;border-radius:12px;
+ }
+ .v44 .catalog-filter h2{display:none!important}
+ .v44 .catalog-filter .filter-option{
+  flex:0 0 auto;width:auto;min-width:max-content;
+  padding:9px 12px!important;margin:0!important;
+  white-space:nowrap;border-radius:9px;
+ }
+ .v44 .catalog-layout{gap:9px}
+ .v44 .catalog-toolbar{margin:2px 0 11px}
+ .v44 .catalog-layout .subhead{margin:4px 0 10px}
+}

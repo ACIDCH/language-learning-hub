@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-writing-task2-u05",
+  "title": "Advantages and disadvantages",
+  "language": "en",
+  "level": "B2-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply advantages and disadvantages in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-writing-task2-u04",
+  "context": "比较远程公共服务的优缺点，说明何时收益超过成本。",
+  "grammar": "outweigh 需要评价标准：覆盖人数、严重程度、持续时间，而不是数优点有几个。while 可让步；provided that 引入判断成立的保障。",
+  "common_mistake": "三个小优点不必然大于一个严重缺点，不能机械计数。",
+  "vocabulary": [
+    [
+      "convenience",
+      "便利"
+    ],
+    [
+      "exclusion",
+      "排斥"
+    ],
+    [
+      "accessibility",
+      "可及性"
+    ],
+    [
+      "safeguard",
+      "保障"
+    ],
+    [
+      "outweigh",
+      "超过"
+    ],
+    [
+      "retain",
+      "保留"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Moving routine services online can reduce travel and waiting time.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "For people who live far from an office, this convenience may be substantial.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Yet a digital-only system can exclude users without reliable access or the confidence to complete complex forms.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The seriousness of that exclusion matters more than the number of minor efficiencies listed in support of the system.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Moving routine services online can reduce travel and waiting time. For people who live far from an office, this convenience may be substantial. Yet a digital-only system can exclude users without reliable access or the confidence to complete complex forms. The seriousness of that exclusion matters more than the number of minor efficiencies listed in support of the system. In my view, the benefits can outweigh the drawbacks if assisted and non-digital routes remain available. Retaining these alternatives has a cost, but it protects access to essential services. The judgement is therefore conditional rather than a claim that technology is beneficial in every form.",
+  "listening_script": "Moving routine services online can reduce travel and waiting time. For people who live far from an office, this convenience may be substantial. Yet a digital-only system can exclude users without reliable access or the confidence to complete complex forms. The seriousness of that exclusion matters more than the number of minor efficiencies listed in support of the system. In my view, the benefits can outweigh the drawbacks if assisted and non-digital routes remain available. Retaining these alternatives has a cost, but it protects access to essential services. The judgement is therefore conditional rather than a claim that technology is beneficial in every form.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What condition supports the positive judgement ?",
+      "answer": "Assisted and non-digital routes remain available.",
+      "explanation": "保障措施是结论成立条件，不是无关补充。"
+    },
+    {
+      "prompt": "Why not count advantages and disadvantages ?",
+      "answer": "Their significance differs in scale and severity.",
+      "explanation": "权衡需要解释影响而非列表长度。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating advantages and disadvantages",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}
