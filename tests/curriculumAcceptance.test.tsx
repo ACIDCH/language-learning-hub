@@ -248,3 +248,31 @@ it('keeps inline-heading source prose in all five original IELTS Reading U01 lea
  expect(outline.stages[3].body).toContain('Universities increasingly combine');
  expect(STUDY_STAGES).toEqual([0,1,2,3,5]);
 });
+
+it('keeps IELTS Listening U04–U06 evidence and bilingual listening distinct from official audio',()=>{
+ for(const id of ['en-ielts-listening-u04','en-ielts-listening-u05','en-ielts-listening-u06']){
+  const u=RECEPTION_LESSONS[id];
+  expect(u,id).toBeDefined();
+  expect(u.language).toBe('en');
+  expect(u.paragraphs.map(p=>p.id)).toEqual(['P1','P2','P3','P4']);
+  expect(u.paragraphs.every(p=>p.target.trim().split(/\\s+/u).length>=80&&p.zh.length>=120),id).toBe(true);
+  expect(u.paragraphs.map(p=>p.target).join(' ').trim().split(/\\s+/u).length,id).toBeGreaterThan(350);
+  expect(u.questions).toHaveLength(4);
+  expect(u.questions.every(q=>q.answer.length>15&&q.why.length>35&&q.evidence.length>0&&q.evidence.every(e=>['P1','P2','P3','P4'].includes(e))),id).toBe(true);
+  expect(u.languageNotes.length,id).toBeGreaterThanOrEqual(4);
+  expect(u.model.split(/\\s+/u).length,id).toBeGreaterThanOrEqual(90);
+  expect(u.modelZh.length,id).toBeGreaterThan(150);
+  expect(index.find(x=>x.id===id)?.audio_status).toBe('missing_audio');
+ }
+ const map=RECEPTION_LESSONS['en-ielts-listening-u04'];
+ expect(map.questions[1].answer).toContain('same side');
+ expect(map.questions[2].answer).toContain('reception desk');
+ const booking=RECEPTION_LESSONS['en-ielts-listening-u05'];
+ expect(booking.questions[0].answer).toContain('60');
+ expect(booking.questions[1].answer).toContain('14 May');
+ expect(booking.questions[2].answer).toContain('£30');
+ const lab=RECEPTION_LESSONS['en-ielts-listening-u06'];
+ expect(lab.questions[0].answer).toBe('container');
+ expect(lab.questions[1].answer).toContain('collection date');
+ expect(lab.questions[3].answer).toContain('method');
+});
