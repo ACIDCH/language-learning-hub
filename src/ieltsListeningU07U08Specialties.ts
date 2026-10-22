@@ -57,13 +57,13 @@ export const IELTS_LISTENING_U07_U08_SPECIALTIES:SpecialtyLesson[]=[
  objective:'区别 propose、feasible、recruit、constraint、scope、revise、volunteer、follow-up interview，并在学术讨论中自然使用搭配。',
  sections:[
  sec('01 proposal 和 proposal revision','propose 是提出建议，revise 是在反馈后修订；两者不能同义替换。原稿先由 Maya 提议五十次访谈，随后经过讨论改成问卷加六次跟进访谈。','propose a plan / revise a proposal / reach agreement',[
- e('Maya proposes interviewing fifty residents.','玛雅提议访谈五十名居民。','初始动作。'),
+ e('Maya proposes interviewing fifty residents.','玛雅提议访谈五十名居民。','标出玛雅最初的研究提议；这不是最终采用的人数。'),
  e('They revise the research proposal.','他们修订研究方案。','保留最初与最终的变化。'),
- e('They reach an agreement on a mixed design.','他们就混合研究设计达成一致。','最终共识。')
+ e('They reach an agreement on a mixed design.','他们就混合研究设计达成一致。','两人经过讨论形成共同方案；区别于各自最早的提议。')
  ],'proposal 与 result 的区别很关键：研究计划尚未执行，不能将建议改写成已发现的规律。',
  table('协商词义',[['a proposal','一项提案','尚未实施'],['a constraint','一项约束条件','不等于彻底禁止'],['feasible','可行的','须考虑工作量和时间'],['revise the plan','修订方案','不是已经实施研究']],'学术讨论先确认行动处于什么阶段。')),
  sec('02 feasible 不等于 accurate','feasible 主要指资源、时间与工作量允许实施；accurate 是准确。里昂认为五十次访谈或许有研究价值，但 deadline 使其执行困难；这不是在断言访谈本身不准确。','a feasible design / meet a deadline / time constraints',[
- e('Fifty interviews may not be feasible before the deadline.','截止前完成五十次访谈可能不可行。','可行性约束。'),
+ e('Fifty interviews may not be feasible before the deadline.','截止前完成五十次访谈可能不可行。','feasible 指期限与工作量下能否完成，并非研究准确性。'),
  e('The interviews could still provide useful detail.','访谈仍可能提供有用细节。','研究价值与执行条件分离。'),
  e('A shorter questionnaire may be more manageable.','短问卷可能更容易安排。','方案权衡，而非质量保证。')
  ],'不能因为执行困难就推断受访者不诚实、访谈数据错误或某种方法永远低效。'),
@@ -114,14 +114,14 @@ export const IELTS_LISTENING_U07_U08_SPECIALTIES:SpecialtyLesson[]=[
  e('Rereading can still clarify an unclear point.','重读仍可能澄清不明白的地方。','并非全面否定重读。')
  ],'作者反对的是以熟悉感代替学习质量的单一指标，不是在说任何重读都无效。'),
  sec('03 rather than 连接推荐选择','rather than judge progress by rereading fluency 描述作者建议采用什么判断方式。结合全文，重点是 recall + feedback + varied use，而非单纯增加学习次数。保持 than 两侧对象的逻辑层级。','combine X, Y and Z rather than rely on W',[
- e('Use recall, feedback and varied practice.','结合回忆、反馈和多样化练习。','建议机制。'),
+ e('Use recall, feedback and varied practice.','结合回忆、反馈和多样化练习。','把主动回忆、核对反馈与多样化练习作为组合建议。'),
  e('Do not judge progress by rereading fluency alone.','不要仅凭重读流畅感判断进步。','alone 限定否定范围。'),
- e('Practise in contexts different from the original exercise.','在不同于原练习的情境中练习。','用于检验知识迁移。')
+ e('Practise in contexts different from the original exercise.','在不同于原练习的情境中练习。','用于检验在原练习之外的新情境中正确应用知识才是迁移。')
  ],'rather than rely only on rereading 不能省略 only，省略会把“不要只依赖”变成“完全不要重读”。'),
  sec('04 although 维护建议中的例外与限制','although the best interval depends on material and goals 让段落同时提出建议和限制；课堂演示只是说明流程，不代表单一时间表获得跨群体验证。摘要需保留这一限定，而不能摘取一句“spacing helps”后忽略例外。','may help, although ... / a demonstration rather than proof',[
  e('Spacing may help, although the best interval varies.','间隔可能有帮助，但最佳间隔会变化。','正面作用与限定并存。'),
  e('A classroom demonstration illustrates a routine.','课堂示例展示一套流程。','展示不等于验证。'),
- e('No universal schedule is established in the text.','课文没有确立普遍适用的时间表。','不猜测天数。')
+ e('No universal schedule is established in the text.','课文没有确立普遍适用的时间表。','文本未规定对所有材料适用的统一时间间隔。')
  ],'只有计划、示范和主张的课文不能升格为证明所有学习者有效的临床或教育实验。')
  ],
  questions:[
@@ -151,23 +151,23 @@ export const IELTS_LISTENING_U07_U08_SPECIALTIES:SpecialtyLesson[]=[
  sec('01 exposure 与 familiarity 只是输入与感受','exposure 是接触材料，familiarity 是熟悉感；二者不能直接证明 independent recall。第一段讨论重读时的流畅，并明确不要以此代表灵活学习能力。','repeated exposure / feel familiar / recall without prompts',[
  e('Repeated exposure can make a passage familiar.','反复接触会使段落变熟悉。','输入次数与主观感受。'),
  e('Familiarity is not proof of independent recall.','熟悉感不是独立回忆能力的证明。','不能以感受代替能力。'),
- e('Learners may struggle without prompts.','没有提示时学习者仍可能难以作答。','条件限制。')
+ e('Learners may struggle without prompts.','没有提示时学习者仍可能难以作答。','没有原文提示时仍可能无法解释，熟悉感不代表掌握。')
  ],'recognise 认出不等于 recall 回忆；题目问未看原文能否解释时，不能以阅读流畅作答。',
  table('学习证据四层',[['exposure','接触材料','仅有输入'],['familiarity','熟悉感','不等于理解'],['retrieval','主动提取','检验离开提示能否想起'],['transfer','迁移运用','检验新情境中的使用']],'按从接触到迁移的层次整理，而不是把四者译作“复习”。')),
  sec('02 retrieval 需要 feedback','retrieval practice 是先凭记忆作答、再检查原文；feedback 包括找出遗漏和纠正错误。只记得答案的感觉不够，若错误没有被纠正，后续练习可能重复同样的误解。','retrieve from memory / check the source / correct errors',[
- e('Close the notes and retrieve the answer.','合上笔记，凭记忆提取答案。','先产出。'),
- e('Reopen the source and check the explanation.','重新打开原文并核对解释。','再核对。'),
+ e('Close the notes and retrieve the answer.','合上笔记，凭记忆提取答案。','retrieval 要求先合上笔记主动从记忆中形成答案。'),
+ e('Reopen the source and check the explanation.','重新打开原文并核对解释。','回看原始材料核对遗漏与错误，构成反馈闭环。'),
  e('Feedback helps identify mistakes.','反馈帮助发现错误。','不保证每次练习都完全正确。')
  ],'retrieval 不是无反馈重复默写；原讲座强调 check mistakes，因此核对是学习闭环的一部分。'),
  sec('03 spacing 与 retention 相关但非定律','spacing 是把练习分散在不同时间；retention 是对信息的保持。讲座只表示分散练习可能有帮助，合适间隔受内容和目标影响，没有统一天数或提升率。','space attempts across days / support retention / the best interval varies',[
  e('We space retrieval attempts across several days.','我们把提取练习分散到几天内。','举例，不是必须固定几天。'),
- e('Spacing may support retention.','间隔练习可能帮助保持记忆。','可能性表述。'),
- e('A suitable interval depends on the goal.','合适的间隔取决于目标。','不普遍指定。')
+ e('Spacing may support retention.','间隔练习可能帮助保持记忆。','may 只表达有帮助的可能性，不是已验证的必然效果。'),
+ e('A suitable interval depends on the goal.','合适的间隔取决于目标。','复习间隔要结合具体学习材料和训练目标选择。')
  ],'绝不能凭 across several days 推导必须恰好相隔三天，也不能生成没有来源的记忆提升百分比。'),
  sec('04 transfer 检验语境变化后是否能用','transfer 指知识迁移到新的应用场景，而不是重复同一套提示。varied practice 表多样化使用，context 是具体情境。讲座最终建议 recall、feedback 与 varied use 结合。','apply knowledge in new contexts / varied use / flexible learning',[
- e('Apply the concept in a different context.','把概念用于不同的情境。','知识迁移。'),
+ e('Apply the concept in a different context.','把概念用于不同的情境。','在原练习之外的新情境中正确应用知识才是迁移。'),
  e('Varied practice tests flexible use.','多样化练习检验灵活应用。','不同于原题重复。'),
- e('The lecture recommends recall, feedback and transfer together.','讲座建议同时结合回忆、反馈和迁移。','综合结论。')
+ e('The lecture recommends recall, feedback and transfer together.','讲座建议同时结合回忆、反馈和迁移。','作者强调三种方法互补，而非单纯依赖重读流畅感。')
  ],'做很多道几乎一样的题不必然等于 transfer；需验证在情境变化后概念是否仍准确。')
  ],
  questions:[
