@@ -158,7 +158,7 @@ export const IELTS_TASK1_U07_U08_SPECIALTIES:SpecialtyLesson[]=[
  E('First, verify the three reported values.','首先核验三个报告值。','20、30、40 各属不同观测点。'),
  E('The source gives exact values rather than estimates.','原稿给出准确数值，而非估计值。','不凭空加入约数。'),
  E('An approximation cannot rescue the wrong statement.','使用近似措辞不能挽救错误陈述。','20→30 不接近翻倍。')
- ],'approximately doubled 不应作为 20→30 的替代说法；数字和比较基准先于修辞。'),
+ ],'approximately doubled 不应作为 20→30 的替代说法；数字和比较基准先于修辞。',
  T('编辑词汇核验表',[['verify 20,30,40','核对 20、30、40','均为周访问量'],['double: 20→40','翻倍：20 到 40','跨首尾'],['50% rise: 20→30','增长 50%：20 到 30','第二年不是翻倍'],['cause unknown','原因未知','没有广告数据']],'词汇条目必须绑定其可支持的判断。')),
  S('02 overview / detail：两层不同功能','overview 提炼整体方向与突出特征；detail 提供具体数值对比。全程上升应写在 overview，第二年高 50%、第三年翻倍可放入 detail。若只是堆砌连接词而无论证，会削弱可读性。',
  'overall trend / supporting comparison / detail paragraph',[
