@@ -7,15 +7,15 @@ export const VISUAL_EXERCISES={
  'en-chart-comparison':{kind:'chart',title:'借阅渠道占比 · 原创统计图与数据表'},
  'en-process-report-grammar':{
   kind:'process',title:'废纸制成纸张 · 六阶段原创流程',
-  items:['Used paper collected','Paper sorted','Mixed with water','Pulp cleaned','Pressed into sheets','Dried and packed']
+  items:['Used paper collected','Paper sorted','Mixed into pulp','Particles removed; pulp spread','Water pressed out; sheet dried','Dried paper cut for reuse']
  },
  'en-map-change-lexicon':{
-  kind:'map',title:'学习场地规划变化 · 原创前后地图',
+  kind:'map',title:'公共广场规划变化 · 与 Task 1 U06 原稿一致的前后地图',
   sites:{
-   north:{before:'Library',after:'Library',change:'unchanged'},
-   east:{before:'Garden',after:'Study rooms',change:'replaced'},
-   west:{before:'Car park',after:'Car park (extended westwards)',change:'extended'},
-   centre:{before:'Footpath',after:'Footpath',change:'unchanged'}
+   north:{before:'Car park',after:'Garden',change:'replaced'},
+   east:{before:'Library',after:'Library',change:'unchanged'},
+   west:{before:'Café',after:'Café (extended westwards)',change:'extended'},
+   centre:{before:'No southern footpath',after:'New southern footpath',change:'added along south'}
   }
  }
 } as const;
@@ -38,7 +38,7 @@ function BorrowingChart(){
 function ProcessDiagram(){
  const steps=VISUAL_EXERCISES['en-process-report-grammar'].items;
  return <svg className="task1-process-diagram" viewBox="0 0 780 410" role="img"
-  aria-label="原创流程图，六步顺序：收集废纸，分类，加水搅拌，清洁纸浆，压成纸张，干燥并包装">
+  aria-label="原创流程图，六步顺序：收集废纸，分类，加水制浆，去除杂质并铺展，压出水分并干燥，裁切后再利用">
   <defs><marker id="task1-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="currentColor"/></marker></defs>
   {steps.map((label,i)=>{
    const top=i<3;
@@ -60,16 +60,16 @@ function ProcessDiagram(){
 function SiteMap({after}:{after:boolean}){
  const data=VISUAL_EXERCISES['en-map-change-lexicon'].sites;
  return <svg viewBox="0 0 450 360" className="task1-site-map" role="img"
-  aria-label={after?'新地图：北侧图书馆不变，东侧学习室取代花园，西侧停车场向西扩建，中央步道不变':'旧地图：北侧图书馆，东侧花园，西侧停车场，中央步道'}>
+  aria-label={after?'新地图：北侧停车场改为花园，东侧图书馆不变，西侧咖啡馆向西扩建，南侧新增步道':'旧地图：北侧停车场，东侧图书馆，西侧咖啡馆，南侧没有步道'}>
   <rect x="20" y="22" width="410" height="316" rx="10" className="task1-site-boundary"/>
   <text x="224" y="17" className="task1-map-north">N ↑</text>
   <rect x="156" y="45" width="140" height="75" rx="8" className="task1-site-building"/>
   <text x="226" y="87" className="task1-map-label" textAnchor="middle">{after?data.north.after:data.north.before}</text>
-  <path d="M20 170 H430" className="task1-site-path"/>
-  <text x="225" y="160" textAnchor="middle" className="task1-map-secondary">{after?data.centre.after:data.centre.before} · unchanged</text>
+  {after&&<path d="M20 320 H430" className="task1-site-path"/>}
+  <text x="225" y="309" textAnchor="middle" className="task1-map-secondary">{after?data.centre.after:data.centre.before}</text>
   <rect x={after?27:65} y="206" width={after?162:124} height="91" rx="8" className="task1-site-carpark"/>
-  <text x={after?108:127} y="246" textAnchor="middle" className="task1-map-label">{data.west.before}</text>
-  {after&&<text x="108" y="272" textAnchor="middle" className="task1-map-secondary">Extended west ←</text>}
+  <text x={after?108:127} y="246" textAnchor="middle" className="task1-map-label">{after?'Café (extended)':data.west.before}</text>
+  {after&&<text x="108" y="272" textAnchor="middle" className="task1-map-secondary">Extended café west ←</text>}
   <rect x="269" y="206" width="132" height="91" rx="8" className={after?'task1-site-building':'task1-site-garden'}/>
   <text x="335" y="249" textAnchor="middle" className="task1-map-label">{after?data.east.after:data.east.before}</text>
  </svg>;
