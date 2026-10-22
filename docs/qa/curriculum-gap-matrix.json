@@ -4,7 +4,7 @@
   "counts": {
     "main": 108,
     "foundation": 48,
-    "specialties": 90
+    "specialties": 98
   },
   "courses": [
     {
@@ -363,10 +363,27 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "en-u07-dialogue-reference-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-u07-method-negotiation-lexicon",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 82,
-      "reception": null,
+      "reception": {
+        "source": "src/nextBilingualReception.ts",
+        "paragraphs": 4,
+        "words": 396,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-listening-u07.json"
@@ -375,8 +392,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -402,10 +417,27 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "en-u08-evidence-hedging-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-u08-memory-synthesis-lexicon",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 109,
-      "reception": null,
+      "reception": {
+        "source": "src/nextBilingualReception.ts",
+        "paragraphs": 4,
+        "words": 400,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-listening-u08.json"
@@ -414,8 +446,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -2843,10 +2873,27 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "fr-a2-route-modals-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-a2-station-change-lexicon",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 73,
-      "reception": null,
+      "reception": {
+        "source": "src/nextBilingualReception.ts",
+        "paragraphs": 4,
+        "words": 308,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-a2-u03.json"
@@ -2855,8 +2902,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -2925,10 +2970,27 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "fr-a2-symptoms-advice-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-a2-appointment-symptoms-lexicon",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 63,
-      "reception": null,
+      "reception": {
+        "source": "src/nextBilingualReception.ts",
+        "paragraphs": 4,
+        "words": 323,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-a2-u05.json"
@@ -2937,8 +2999,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
