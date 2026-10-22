@@ -95,3 +95,17 @@ it('does not expose original drafting boilerplate as student teaching content',(
  expect(student).toContain('Nous devons partir à onze heures et changer de quai à Orléans.');
  expect(student).toContain('Notre billet reste valable pour ce nouveau trajet.');
 });
+
+
+it('student-facing Task2 U01 retains the real source exercise but strips existing-original authoring status and sample label',()=>{
+ const source=readFileSync('public/learning-assets/en-ielts-writing-task2-u01.txt','utf8');
+ const student=learnerFacingText(source);
+ expect(source).toContain('原创完整样课 v0.1');
+ expect(source).toContain('状态：供教学审核');
+ expect(student).not.toContain('原创完整样课 v0.1');
+ expect(student).not.toContain('状态：供教学审核');
+ expect(student).not.toContain('音频状态：没有绑定具体合法媒体');
+ expect(student).toContain('Some universities offer more courses online rather than in traditional classrooms.');
+ expect(student).toContain('does not guarantee effective learning');
+ expect(student).toContain('For students who live far from campus');
+});
