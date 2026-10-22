@@ -83,6 +83,10 @@ try{
    ['frPluperfectB1','/?page=specialties&type=grammar&language=fr&topic=fr-pluperfect-narration-b1','.specialty-grammar-table'],
    ['frPastConditionalB2','/?page=specialties&type=grammar&language=fr&topic=fr-past-conditional-regret-b2','.specialty-grammar-table'],
    ['enTask1Process','/?page=specialties&type=grammar&language=en&topic=en-process-report-grammar','.specialty-grammar-table'],
+   ['task1U03Grammar','/?page=specialties&type=grammar&language=en&topic=en-task1-u03-comparison-grammar','.specialty-grammar-table'],
+   ['task1U03Vocabulary','/?page=specialties&type=vocabulary&language=en&topic=en-task1-u03-comparison-lexicon','.specialty-grammar-table'],
+   ['task1U04Grammar','/?page=specialties&type=grammar&language=en&topic=en-task1-u04-shares-grammar','.specialty-grammar-table'],
+   ['task1U04Vocabulary','/?page=specialties&type=vocabulary&language=en&topic=en-task1-u04-allocation-lexicon','.specialty-grammar-table'],
    ['enTask1Map','/?page=specialties&type=vocabulary&language=en&topic=en-map-change-lexicon','.specialty-grammar-table'],
    ['frDELF','/?page=specialties&type=grammar&language=fr&topic=fr-b2-formal-argument-writing','.specialty-grammar-table'],
    ['frDALF','/?page=specialties&type=vocabulary&language=fr&topic=fr-c1-cross-source-synthesis','.specialty-grammar-table'],
@@ -143,6 +147,8 @@ try{
    ['enListeningU06Integrated','/?course=en-ielts-listening-u06&tab=read','.curriculum-stage'],
    ['enDebateIntegrated','/?course=en-ielts-listening-u07&tab=read','.curriculum-stage'],
    ['enSynthesisIntegrated','/?course=en-ielts-listening-u08&tab=read','.curriculum-stage'],
+   ['task1U03Integrated','/?course=en-ielts-writing-task1-u03&tab=read','.curriculum-stage'],
+   ['task1U04Integrated','/?course=en-ielts-writing-task1-u04&tab=read','.curriculum-stage'],
    ['frRouteIntegrated','/?course=fr-a2-u03&tab=read','.curriculum-stage'],
    ['frHealthIntegrated','/?course=fr-a2-u05&tab=read','.curriculum-stage'],
    ['frHomeIntegrated','/?course=fr-a1-u10&tab=read','.curriculum-stage'],
@@ -183,6 +189,23 @@ try{
     const evidence=await js("(function(){const p=[...document.querySelectorAll('.reception-study > article.reception-paragraph')];return {paragraphs:p.length,chinese:p.filter(x=>x.textContent.length>100).length,overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-innerWidth}})()");
     if(evidence.paragraphs!==4||evidence.chinese!==4||evidence.overflow>5)
      problems.push(size+' '+name+' bilingual reception unavailable '+JSON.stringify(evidence));
+   }
+   if(['task1U03Grammar','task1U03Vocabulary','task1U04Grammar','task1U04Vocabulary'].includes(name)){
+    const metrics=await js("({chapters:document.querySelectorAll('.specialty-chapter').length,questions:document.querySelectorAll('.specialty-question').length,rows:document.querySelectorAll('.specialty-grammar-table tbody tr').length})");
+    if(metrics.chapters!==4||metrics.questions!==4||metrics.rows<4)problems.push(size+' '+name+' incomplete Task1 specialty '+JSON.stringify(metrics));
+   }
+   if(['task1U03Integrated','task1U04Integrated'].includes(name)){
+    await js("document.querySelectorAll('.course-study-switcher button')[1]?.click()");
+    await wait(()=>js("document.querySelectorAll('.course-specialty-question').length===4"),name+' mapped grammar');
+    await js("document.querySelectorAll('.course-study-switcher button')[3]?.click()");
+    await wait(()=>js("document.querySelectorAll('.reception-study > article.reception-paragraph').length===4"),name+' bilingual paragraphs');
+    const metric=await js("({paragraphs:document.querySelectorAll('.reception-study > article.reception-paragraph').length})");
+    if(metric.paragraphs!==4)problems.push(size+' '+name+' missing full bilingual Task1 reading '+JSON.stringify(metric));
+    if(name==='task1U03Integrated'){
+     await js("document.querySelectorAll('.course-study-switcher button')[4]?.click()");
+     await wait(()=>js("!!document.querySelector('.task1-workshop')"),name+' independent figure');
+     if(!await js("document.querySelector('.task1-workshop')?.textContent.includes('两套数据')"))problems.push(size+' '+name+' failed to distinguish source manuscript and exercise chart');
+    }
    }
    if(['enReadingU01Integrated','enReadingU02Integrated'].includes(name)){
     const integrated=await js("(function(){return {topic:!!document.querySelector('.course-specialty-topic'),source:!!document.querySelector('.course-enrichment details'),questions:document.querySelectorAll('.course-specialty-question').length}})()");
