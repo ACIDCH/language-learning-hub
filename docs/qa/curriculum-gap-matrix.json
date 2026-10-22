@@ -4,7 +4,7 @@
   "counts": {
     "main": 108,
     "foundation": 48,
-    "specialties": 102
+    "specialties": 105
   },
   "courses": [
     {
@@ -885,10 +885,27 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "en-task1-u01-overview-evidence-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "en-task1-u01-unit-precision-lexicon",
+          "type": "vocabulary"
+        }
+      ],
       "body": "source_manuscript",
       "readingWords": null,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 494,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "en-ielts-writing-task1-u01"
@@ -897,8 +914,6 @@
       "audio": "missing_audio",
       "exercises": null,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "natural_audio_alignment",
         "independent_semantic_review"
       ],
@@ -927,11 +942,23 @@
         {
           "id": "en-task1-trend-lexicon",
           "type": "vocabulary"
+        },
+        {
+          "id": "en-task1-u02-trend-scope-grammar",
+          "type": "grammar"
         }
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 77,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "paragraphs": 4,
+        "words": 495,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-writing-task1-u02.json"
@@ -940,7 +967,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
