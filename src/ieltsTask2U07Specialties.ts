@@ -76,7 +76,7 @@ export const IELTS_TASK2_U07_SPECIALTIES:SpecialtyLesson[]=[
  E('Reducing charges may improve access.','降低收费可能改善参与机会。','讨论入门条件。'),
  E('Some pupils could then participate more easily.','部分学生之后可能更容易参加。','保留可能性。'),
  E('No change in examination results is documented.','原稿没有记载考试成绩变化。','禁止无证据结果。')
- ],'不能把可能有更多人参加直接变成“学生音乐成绩显著提高”。'),
+ ],'不能把可能有更多人参加直接变成“学生音乐成绩显著提高”；源文没有任何成绩测量。'),
  S('03 address 与 eliminate 的力度差别','address a barrier 是针对障碍采取措施；eliminate all barriers 则是消除所有障碍。源稿只允许说取消租赁费 addresses the fee restriction，不允许声称它消除教师和场地约束。','address this fee-related barrier / not eliminate all constraints',[
  E('Waiving the hire fee addresses one barrier.','免除租赁费针对其中一项障碍。','作用对象明确。'),
  E('Teacher capacity remains a different problem.','教师供给仍是另一个问题。','措施无直接作用。'),
