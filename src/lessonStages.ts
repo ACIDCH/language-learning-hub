@@ -19,7 +19,15 @@ export function splitLessonStages(text:string):LessonOutline {
   const stages=found.map((match,i)=>{
     const first=(match.index??0)+match[0].length;
     const last=i+1<found.length?(found[i+1].index??normalized.length):normalized.length;
-    return {index:i,symbol:SYMBOLS[i],heading:match[2].trim(),body:normalized.slice(first,last).trim()};
+    // Some licensed/original manuscripts put the first sentence after the stage heading
+    // on the same line (e.g. "① Context 情境：..."). Keep that sentence as lesson
+    // content; otherwise the source can be incorrectly classified as unstructured.
+    const headingLine=match[2].trim();
+    const divider=headingLine.search(/[：:]/u);
+    const heading=divider<0?headingLine:headingLine.slice(0,divider).trim();
+    const inline=divider<0?'':headingLine.slice(divider+1).trim();
+    const trailing=normalized.slice(first,last).trim();
+    return {index:i,symbol:SYMBOLS[i],heading,body:[inline,trailing].filter(Boolean).join('\\n')};
   });
   if(stages.some(s=>s.body.length===0)){
     return {preamble:'',stages:[{index:0,symbol:'',heading:'原始课程全文',body:normalized}],structured:false};
