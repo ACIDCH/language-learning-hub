@@ -11,9 +11,9 @@ export const IELTS_TASK2_U08_RECEPTION:Record<string,ReceptionLesson>={
  ],
  questions:[
  {prompt:'What is the effect of “inevitably” in the original claim?',answer:'It asserts a universal, unavoidable destructive outcome without relevant evidence.',evidence:['P1'],why:'P1 指出 inevitably 排除例外，而原文没有定义友谊质量或提供能证明普遍因果的数据。'},
- {prompt:'What mechanism does the narrowed claim actually describe?',answer:'Some usage patterns may displace time for face-to-face interaction.',evidence:['P2'],why:'P2 从笼统的摧毁友谊转向某些行为可能挤占线下相处时间这一具体机制。'},
- {prompt:'Does recognising a possible online benefit cancel the revised concern?',answer:'No. Long-distance relationship support and reduced in-person time concern different contexts.',evidence:['P3'],why:'P3 明确指出线上维系远方联系与部分使用习惯挤占线下时间可以并存。'},
- {prompt:'What should be checked before polishing formal register?',answer:'The scope of claims, definitions, available evidence and the mechanisms linking ideas.',evidence:['P4'],why:'P4 要求先核实证据与逻辑，再调整语言复杂度，防止用高级词掩盖论证缺陷。'}
+ {prompt:'What mechanism does the narrowed claim actually describe?',answer:'Some usage patterns may displace time for face-to-face interaction.',evidence:['P2'],why:'P2 从“必然摧毁友谊”的笼统断言，转向某些使用行为可能挤占面对面交流时间的具体机制，范围和因果力度都受到限制。'},
+ {prompt:'Does recognising a possible online benefit cancel the revised concern?',answer:'No. Long-distance relationship support and reduced in-person time concern different contexts.',evidence:['P3'],why:'P3 明确指出线上交流维系远方关系，与部分使用习惯可能挤占线下相处时间并不矛盾，因为二者涉及不同情境。'},
+ {prompt:'What should be checked before polishing formal register?',answer:'The scope of claims, definitions, available evidence and the mechanisms linking ideas.',evidence:['P4'],why:'P4 要求先核实主张范围、关键概念、证据与逻辑，再调整语言复杂度，防止用看似高级的措辞掩盖没有论据的缺陷。'}
  ],
  languageNotes:[
  {target:'inevitably destroys genuine friendship',zh:'未定义“真正的友谊”，并且毫无例外地断言普遍因果，力度过强。'},
