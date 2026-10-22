@@ -111,6 +111,7 @@ try{
    ['enSurveyVocab','/?page=specialties&type=vocabulary&language=en&topic=en-reading-u07-survey-method-lexicon','.specialty-grammar-table'],
    ['enSynthesisGrammar','/?page=specialties&type=grammar&language=en&topic=en-reading-u08-two-source-synthesis','.specialty-grammar-table'],
    ['enAccessVocab','/?page=specialties&type=vocabulary&language=en&topic=en-reading-u08-access-equity-lexicon','.specialty-grammar-table'],
+   ['enLearningEvidenceVocab','/?page=specialties&type=vocabulary&language=en&topic=en-reading-u01-learning-evidence-lexicon','.specialty-grammar-table'],
    ['frCourseIntegrated','/?course=fr-b1-u01&tab=read','.curriculum-stage'],
    ['enCourseIntegrated','/?course=en-ielts-writing-task1-u06&tab=read','.curriculum-stage'],
    ['delfCourseIntegrated','/?course=fr-b2-u06&tab=read','.curriculum-stage'],
@@ -122,6 +123,7 @@ try{
    ['frA1LeisureIntegrated','/?course=fr-a1-u07&tab=read','.curriculum-stage'],
    ['frA1MarketIntegrated','/?course=fr-a1-u08&tab=read','.curriculum-stage'],
    ['enReadingU02Integrated','/?course=en-ielts-reading-u02&tab=read','.lesson-reader'],
+   ['enReadingU01Integrated','/?course=en-ielts-reading-u01&tab=read','.lesson-reader'],
    ['frHomeIntegrated','/?course=fr-a1-u10&tab=read','.curriculum-stage'],
    ['frFutureIntegrated','/?course=fr-a1-u11&tab=read','.curriculum-stage'],
    ['enHeadingsIntegrated','/?course=en-ielts-reading-u03&tab=read','.curriculum-stage'],
@@ -161,7 +163,7 @@ try{
     if(evidence.paragraphs!==4||evidence.chinese!==4||evidence.overflow>5)
      problems.push(size+' '+name+' bilingual reception unavailable '+JSON.stringify(evidence));
    }
-   if(name==='enReadingU02Integrated'){
+   if(['enReadingU01Integrated','enReadingU02Integrated'].includes(name)){
     await js("document.querySelectorAll('.course-study-switcher button')[2]?.click()");
     await wait(()=>js("!!document.querySelector('.course-specialty-topic')"),'original-source vocabulary directly integrated');
     const stats=await js("(function(){return {lessons:document.querySelectorAll('.course-specialty-topic').length,source:!!document.querySelector('.course-enrichment details'),questions:document.querySelectorAll('.course-specialty-question').length}})()");
@@ -185,7 +187,7 @@ try{
     const study=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
     writeFileSync(output+'/'+size+'-'+name+'-reading.png',Buffer.from(study.data,'base64'));
    }
-    if(['specialtyGrammar','specialtyVocabulary','frenchVerbs','frImparfait','frFuture','frDaily','enTask1','enRelative','frPossessive','frSimpleFuture','frComparison','frShop','enReported','enStance','frConditionalB1','frRelativesB1','frMoodB2','frLexiconC1','enArgumentTask2','frPluperfectB1','frPastConditionalB2','enTask1Process','enTask1Map','frDELF','frDALF','frB2News','frC1Media','frA1Leisure','frA1Clarification','enListenScope','enListenLexicon','frLeisureVocab','frMarketGrammar','frMarketVocabulary','enReadingScope','enReadingLexicon','frHomeLexicon','frFutureLexicon','enHeadingsLexicon','frPastGrammar','frPastVocab','enReadingTFNG','enReferenceGrammar','enRetrofitVocab','enHedgingGrammar','enScienceVocab','enMatchingGrammar','enSurveyVocab','enSynthesisGrammar','enAccessVocab'].includes(name)){
+    if(['specialtyGrammar','specialtyVocabulary','frenchVerbs','frImparfait','frFuture','frDaily','enTask1','enRelative','frPossessive','frSimpleFuture','frComparison','frShop','enReported','enStance','frConditionalB1','frRelativesB1','frMoodB2','frLexiconC1','enArgumentTask2','frPluperfectB1','frPastConditionalB2','enTask1Process','enTask1Map','frDELF','frDALF','frB2News','frC1Media','frA1Leisure','frA1Clarification','enListenScope','enListenLexicon','frLeisureVocab','frMarketGrammar','frMarketVocabulary','enReadingScope','enReadingLexicon','frHomeLexicon','frFutureLexicon','enHeadingsLexicon','frPastGrammar','frPastVocab','enReadingTFNG','enReferenceGrammar','enRetrofitVocab','enHedgingGrammar','enScienceVocab','enMatchingGrammar','enSurveyVocab','enSynthesisGrammar','enAccessVocab','enLearningEvidenceVocab'].includes(name)){
      const quality=await js("(function(){const unit=document.querySelector('.specialty-textbook');return {chapters:unit?.querySelectorAll('.specialty-chapter').length||0,chars:(unit?.innerText||'').length,back:!!unit?.querySelector('.specialty-course-link'),overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-innerWidth};})()");
      if(quality.chapters<3||quality.chars<600||!quality.back||quality.overflow>5)
       problems.push(size+' '+name+' empty or overflowing chapter: '+JSON.stringify(quality));
@@ -232,7 +234,7 @@ try{
       problems.push(size+' DELF structure and model table missing '+JSON.stringify(geom));
      if(name==='frDALF'&&geom.tableRows!==4)
       problems.push(size+' DALF input matrix missing '+JSON.stringify(geom));
-     if(['frB2News','frC1Media','frA1Leisure','frA1Clarification','enListenScope','enListenLexicon','frLeisureVocab','frMarketGrammar','frMarketVocabulary','enReadingScope','enReadingLexicon','frHomeLexicon','frFutureLexicon','enHeadingsLexicon','frPastGrammar','frPastVocab','enReadingTFNG','enReferenceGrammar','enRetrofitVocab','enHedgingGrammar','enScienceVocab','enMatchingGrammar','enSurveyVocab','enSynthesisGrammar','enAccessVocab'].includes(name)&&geom.tableRows!==(name==='frPastGrammar'?8:4))
+     if(['frB2News','frC1Media','frA1Leisure','frA1Clarification','enListenScope','enListenLexicon','frLeisureVocab','frMarketGrammar','frMarketVocabulary','enReadingScope','enReadingLexicon','frHomeLexicon','frFutureLexicon','enHeadingsLexicon','frPastGrammar','frPastVocab','enReadingTFNG','enReferenceGrammar','enRetrofitVocab','enHedgingGrammar','enScienceVocab','enMatchingGrammar','enSurveyVocab','enSynthesisGrammar','enAccessVocab','enLearningEvidenceVocab'].includes(name)&&geom.tableRows!==(name==='frPastGrammar'?8:4))
       problems.push(size+' '+name+' expected complete instructional table rows '+JSON.stringify({expected:name==='frPastGrammar'?8:4,...geom}));
      if(name==='enTask1Process'){
       const count=await js("document.querySelectorAll('.task1-flow-step').length");
