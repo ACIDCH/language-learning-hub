@@ -27,7 +27,7 @@ export function splitLessonStages(text:string):LessonOutline {
     const heading=divider<0?headingLine:headingLine.slice(0,divider).trim();
     const inline=divider<0?'':headingLine.slice(divider+1).trim();
     const trailing=normalized.slice(first,last).trim();
-    return {index:i,symbol:SYMBOLS[i],heading,body:[inline,trailing].filter(Boolean).join('\\n')};
+    return {index:i,symbol:SYMBOLS[i],heading,body:[inline,trailing].filter(Boolean).join('\n')};
   });
   if(stages.some(s=>s.body.length===0)){
     return {preamble:'',stages:[{index:0,symbol:'',heading:'原始课程全文',body:normalized}],structured:false};
