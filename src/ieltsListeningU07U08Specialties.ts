@@ -22,7 +22,7 @@ export const IELTS_LISTENING_U07_U08_SPECIALTIES:SpecialtyLesson[]=[
  e('That limitation does not make interviews unnecessary.','这一限制并不表示访谈没有必要。','that 回指问卷的固定答案问题。')
  ],'若不记录当下说话者及提议对象，this approach 容易被误认成最初的五十次访谈。'),
  sec('03 eventually agree 表示最终协商结果','eventually / finally / they agree to 将对话从提议推进到暂定共识。最终方案是较广泛问卷加六名志愿者访谈；问卷对象的精确人数没有给出，不能将 six 误分配给问卷部分。','they eventually agree to + verb / survey + six interviews',[
- e('They eventually agree to survey a larger group.','他们最终同意先调查更广泛的群体。','l arger 未给人数。'),
+ e('They eventually agree to survey a larger group.','他们最终同意先调查更广泛的群体。','larger 未给人数。'),
  e('They will interview six volunteers afterwards.','之后将访谈六名志愿者。','six 仅修饰访谈对象。'),
  e('The interviews will explore issues raised by the survey.','访谈将追问问卷发现的问题。','用途不是机械重复问卷。')
  ],'50 指最初拟访谈人数，six 指最终拟访谈人数，larger group 不能无证据补成某个具体样本量。'),
