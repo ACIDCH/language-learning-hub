@@ -518,5 +518,43 @@ it('audits all authored paragraph-level Chinese links and preserves independent 
   if(indexed.has(courseId))expect(index.find(x=>x.id===courseId)?.audio_status,courseId+' audio remains unverified').toBe('missing_audio');
   checked++;
  }
- expect(checked).toBeGreaterThanOrEqual(38);
+ expect(checked).toBeGreaterThanOrEqual(41);
+});
+
+
+it('Task 2 U06–U08 full bilingual argument lessons follow original cause, reference and hedging evidence',()=>{
+ const cases=[
+  ['en-ielts-writing-task2-u06',508,'congestion','stagger','拥堵'],
+  ['en-ielts-writing-task2-u07',501,'instrument hire','tuition','租赁费'],
+  ['en-ielts-writing-task2-u08',503,'inevitably','face-to-face','友谊']
+ ] as const;
+ for(const [course,wordCount,sourceTerm,evidenceTerm,zhTerm] of cases){
+  const draft=JSON.parse(readFileSync('content/lesson-drafts/'+course+'.json','utf8'));
+  const lesson=RECEPTION_LESSONS[course];
+  expect(lesson,course).toBeDefined();
+  expect(lesson.language).toBe('en');
+  expect(lesson.paragraphs.map(x=>x.id)).toEqual(['P1','P2','P3','P4']);
+  expect(lesson.paragraphs.map(x=>x.target).join(' ').trim().split(/\s+/u).length,course).toBe(wordCount);
+  expect(lesson.paragraphs.every(x=>x.target.trim().split(/\s+/u).length>=110&&x.zh.length>=185),course).toBe(true);
+  expect(lesson.paragraphs.map(x=>x.target).join(' ').toLowerCase(),course).toContain(sourceTerm);
+  expect(lesson.paragraphs.map(x=>x.target).join(' ').toLowerCase(),course).toContain(evidenceTerm);
+  expect(lesson.paragraphs.map(x=>x.zh).join(' '),course).toContain(zhTerm);
+  expect(lesson.questions,course).toHaveLength(4);
+  expect(lesson.questions.every(q=>q.why.length>=40&&q.evidence.length>0&&q.evidence.every(e=>lesson.paragraphs.some(p=>p.id===e))),course).toBe(true);
+  expect(lesson.languageNotes,course).toHaveLength(4);
+  expect(lesson.model.trim().split(/\s+/u).length,course).toBeGreaterThanOrEqual(250);
+  expect(lesson.modelZh.length,course).toBeGreaterThanOrEqual(500);
+  expect(lesson.references).toContain('content/lesson-drafts/'+course+'.json');
+  expect(draft.content_status).toBe('original_draft');
+  expect(index.find(x=>x.id===course)?.audio_status).toBe('missing_audio');
+ }
+ const congestion=RECEPTION_LESSONS['en-ielts-writing-task2-u06'];
+ expect(congestion.questions[1].answer).toContain('Schools and employers');
+ expect(congestion.questions[2].answer).toContain('No.');
+ const school=RECEPTION_LESSONS['en-ielts-writing-task2-u07'];
+ expect(school.questions[0].answer).toContain('tuition');
+ expect(school.questions[1].answer).toContain('not shortages');
+ const social=RECEPTION_LESSONS['en-ielts-writing-task2-u08'];
+ expect(social.questions[0].answer).toContain('universal');
+ expect(social.questions[2].answer).toContain('No.');
 });
