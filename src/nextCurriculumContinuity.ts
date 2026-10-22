@@ -116,65 +116,74 @@ export const NEXT_CURRICULUM_CONTINUITY:SpecialtyLesson[]=[
  referenceUrls:['https://www.laits.utexas.edu/tex/gr/tac3.html','https://www.laits.utexas.edu/tex/gr/tap9.html'],
  sourceNote:'对应 fr-b2-u04 过去假设和后悔，源规则以 Tex si clauses + plus-que-parfait 为准。'
 },
+
 {
  id:'en-process-report-grammar',type:'grammar',language:'en',level:'B2',unitLink:'en-ielts-writing-task1-u05',
- title:'IELTS Task 1 流程写作：阶段、被动语态和顺序',subtitle:'依据实际给定的工序解释变化，不推测原因和数字',
- prerequisite:'了解一般现在时、过去时、被动语态与 Task 1 overview 的功能。',
- objective:'识别输入、阶段、最终产出，使用被动语态和清楚的时序描述流程，并区分原创可核对图示与官方考试图示。',
+ title:'IELTS 流程写作：一般现在时被动语态与阶段顺序',subtitle:'六阶段从废纸收集到干燥后裁切再利用',
+ prerequisite:'掌握 be + past participle，认识一般现在时及 before/after/once。',
+ objective:'将原课程中的收集、分类、制浆、去杂质和铺展、压干、裁切六组动作逐一写成有顺序的流程段落，不增加包装环节。',
  sections:[
- sec('01 先辨认流程的起点、终点和主要阶段',
- '流程图写作必须先依据图中真实信息确定开始、转化过程及最后产出。循环流程与线性流程写法不同；流程没有数字或温度标注时，不可擅自增加具体数据。',
- 'input → stages → output / cycle',[
- ex('The process begins with the collection of used paper.','该流程从回收废纸开始。','只交代起点。'),
- ex('The material is then sorted and cleaned.','随后材料得到分类和清洁。','两个连续环节。'),
- ex('Finally, new sheets are produced.','最后制成新的纸张。','明确产出。')
- ],'不能仅凭常识把“在150℃加热”或“经过五小时”加入没有这些标注的图示。',
- {title:'本课原创流程图的六阶段数据',columns:['阶段','图示可提供的信息'],rows:[['1','used paper is collected'],['2','paper is sorted'],['3','paper is mixed with water'],['4','pulp is cleaned'],['5','pulp is pressed into sheets'],['6','sheets are dried and packed']],note:'本表与本课原创 SVG 流程图一致，二者均非 IELTS 官方试卷。正式考试只依据考题给出的图示作答。'}),
- sec('02 描述动作时，被动语态突出材料的处理过程',
- '工业处理流程中，如果图示重点是材料如何变化，而不是谁执行操作，常用 be + 过去分词。一般性的流程可用一般现在时；对于特定历史改造图则应按题目时态选择。',
- 'is collected / is sorted / is pressed / is dried',[
- ex('The used paper is collected from several locations.','废纸从几个地点被收集。','一般现在被动，突显材料。'),
- ex('It is mixed with water to form pulp.','它与水混合形成纸浆。','is mixed 是被动处理，to form 表示结果目的。'),
- ex('The sheets are dried before they are packed.','纸张先干燥再包装。','before 保持先后顺序。')
- ],'is drying 和 is dried 含义不同：前者是进行体，后者是被动结构。不要把所有 -ing 都当过去分词。'),
- sec('03 顺序词只用于真实的阶段关系',
- 'initially、next、subsequently、once、finally 等帮助读者理解先后，但不等于每句都必须添加一个连接副词。若两个操作并行或存在分支，需要根据图示清楚解释，而不能捏造线性关系。',
- 'initially → next → once… → finally',[
- ex('Initially, the material is sorted according to type.','最初材料按类别分类。','initially 开始流程叙述。'),
- ex('Once the pulp has been cleaned, it is pressed into sheets.','纸浆清洁后，被压制成纸张。','once 表示上一阶段完成后再进入下一阶段。'),
- ex('The finished sheets are then dried and packed.','成型纸张随后干燥并包装。','then 连接最后两步。')
- ],'firstly、secondly、thirdly 不必重复堆积；缺少工序信息时，连接词再多也无法弥补 Task Achievement。'),
- sec('04 overview 只概括可见总体，不复写每步',
- 'Task 1 overview 应突出流程总类型、主要变换与起终点，而不是提前把全部细节复述一次。对有清楚阶段的流程，一般可在两个细节段落介绍早期和后期。当前练习使用六阶段数据绘制的原创 SVG 流程图，属于真正的看图语言训练，但不是官方图示试题。',
- 'introduction → overview → early stages → later stages',[
- ex('Overall, the six-stage process transforms used paper into packaged sheets.','总体上，这一六阶段流程将废纸转化为包装好的纸张。','总览对照练习明确的六个阶段。'),
- ex('The initial stages involve collecting and preparing the paper.','初期阶段包括收集和准备纸张。','归纳第一部分。'),
- ex('The final stages concern forming, drying and packing the sheets.','最后几个阶段涉及成型、干燥和包装。','归纳后一部分。')
- ],'不能写这个流程“减少污染、节省成本”，除非提供的材料支持这种结论。')
+ sec('01 流程 overview 先描述起点、材料转化和终点',
+ '流程图 overview 要写出输入材料、主要变化与最后产出，而不是一口气列出六个动词。原始稿始于从指定回收箱收集废纸，终于干燥的纸张被裁切以供再利用。图是示意并非完整工业说明。',
+ 'The process begins with ... / ends when the dried sheet is cut',[
+ ex('The process begins with used paper collected from bins.','流程始于从回收箱收集废纸。','概述起点，不添加车辆运输或工人信息。'),
+ ex('The paper is converted into pulp before being formed into sheets.','纸张先制成纸浆，再成形为纸张。','保留核心材料状态变化。'),
+ ex('The dry sheet is finally cut for reuse.','干燥的纸张最后被裁切以供再利用。','原稿明确的终点是裁切，不是包装。')
+ ],'不能把初稿另一张图的 dried and packed 当作本课终点，原始文字没有包装工序。',
+ {title:'原始课文与六步图完全一致的阶段表',columns:['阶段','源稿明确动作'],rows:[
+ ['1','Used paper is collected from designated bins'],
+ ['2','Collected paper is sorted to remove unsuitable material'],
+ ['3','Selected paper is mixed with water to form pulp'],
+ ['4','Unwanted particles are removed; pulp is spread thin'],
+ ['5','Water is pressed out; the sheet is dried'],
+ ['6','Dried material is cut for reuse']
+ ],note:'这是一份原创简化流程，与原稿和课堂 SVG 六阶段完全一致，并非 IELTS 官方试卷；没有包装环节。'}),
+ sec('02 一般现在时被动把处理对象放到主语位置',
+ '机械流程着重说明材料发生什么变化，使用 is/are + past participle。is collected、is sorted、is mixed、are removed 中的 be 与主语数一致。只有当原图明确指出操作人员时才需要补上 by + 施事者。',
+ 'paper is collected / particles are removed / mixture is spread',[
+ ex('Used paper is sorted after collection.','废纸收集后经过分类。','is sorted 是一般现在时被动。'),
+ ex('Selected paper is mixed with water to form pulp.','选出的纸张与水混合形成纸浆。','叙述材料变化而非操作人员。'),
+ ex('Unwanted particles are removed before forming the sheet.','纸张成形前先去除不需要的颗粒。','particles 复数对应 are。')
+ ],'不能用 is sorting 表示纸张“正在分类自己”，也不能写 particles is removed 造成主谓数错误。'),
+ sec('03 after、before 与 once 要对应真实前后顺序',
+ 'before/after 可以连接完整从句，也可连接 -ing 短语；但必须保证隐含主语不会导致动作错位。正确顺序为先分类、加水形成纸浆、去杂质并铺展，再压出水分并干燥。',
+ 'After unwanted particles are removed, the pulp is spread into a thin layer',[
+ ex('After the paper is sorted, it is mixed with water.','纸张分类后与水混合。','after 从句具有主语和被动谓语。'),
+ ex('Once particles have been removed, the pulp is spread into a thin layer.','去除杂质后，把纸浆铺成薄层。','once 强调前一步完成。'),
+ ex('Before the dry material is cut, the sheet is pressed and dried.','干燥材料裁切之前，薄纸层先经过压制和干燥。','before 限定先压干、再裁切。')
+ ],'After cleaned the pulp 既缺少清晰主语，也不符合标准从句或 -ing 结构；应写 After the pulp is cleaned。'),
+ sec('04 阶段分组不是调换步骤，也不应造参数',
+ '描述全图时可把前半段分成收集、分类和制浆，后半段分成去杂质成形、压干与裁切。分组帮助读者理解材料变化，但不能把包装、温度、时长或产量等未报告事项作为图示事实。',
+ 'first / after that / once / finally / cut for reuse',[
+ ex('First, the paper is collected and sorted.','首先收集废纸并将其分类。','整合连续的准备阶段。'),
+ ex('The mixture is then cleaned and spread into a thin layer.','然后去除混合物中的杂质并铺成薄层。','保留去杂质与铺展顺序。'),
+ ex('Finally, the dried sheet is cut for reuse.','最后将干燥纸张裁切以供再利用。','与原稿终点严格一致。')
+ ],'不能因了解现实工厂操作就给图示加上机器型号、回收产量或包装步骤。')
  ],
  questions:[
- {question:'将 Workers sort the paper. 改为被动句。',answer:'The paper is sorted.',why:'一般现在时被动 is + 过去分词 sorted。'},
- {question:'本课流程第 3 步是什么？',answer:'The paper is mixed with water.',why:'根据本课原创图中清楚标注的第三阶段回答。'},
- {question:'图示没有标温度时能否写 heated to 150°C？',answer:'不能。',why:'Task 1 的说明必须以给定视觉信息为准，不能增加未经标注的数值。'},
- {question:'修正：After cleaned the pulp, it pressed into sheets.',answer:'After the pulp is cleaned, it is pressed into sheets.',why:'after 后补完整从句，pressed 的被动结构需要 is。'}
+ {question:'将 Workers sort the used paper 改为一般现在时被动。',answer:'The used paper is sorted.',why:'单数不可数 paper 对应 is sorted；未指定操作人员时不必添加 by workers。'},
+ {question:'去杂质与铺成薄层哪一步在前？',answer:'Unwanted particles are removed before the pulp is spread.',why:'原稿先清理混合物，再铺展形成薄层，必须保留工序顺序。'},
+ {question:'改正 After cleaned the pulp, it pressed into sheets。',answer:'After the pulp has been cleaned and spread, water is pressed out and the sheet is dried.',why:'after 后用完整从句且要区分浆料铺展与后续压出水分的动作。'},
+ {question:'本课的最后一步是干燥包装还是裁切再利用？',answer:'The dried material is cut for reuse. Packing is not in the source.',why:'原始 U05 草稿以 cut for reuse 为终点；不能将其他版本图示里的包装误当成已提供事实。'}
  ],
- output:'教材练习：观察本课六步原创流程图，写一篇 150–180 词的英文说明，包含 overview、完整先后次序和正确的被动语态。该图非 IELTS 官方试卷。',
+ output:'根据原稿匹配的六阶段 SVG 流程，撰写 150–180 词英文 Task 1 报告并附完整中文，包括 overview、一般现在时被动、合理分组及未知参数限制。',
  modelParagraphStarts:[0,1,3,7],
  model:[
- ex('The sequence describes how used paper is transformed into sheets ready for packaging through six main stages.','这组步骤描述废纸如何经过六个主要阶段转化为可包装的纸张。','引言概括对象。'),
- ex('Overall, the procedure starts with collecting discarded paper and ends with drying and packing the newly formed sheets.','总体上，流程从收集废纸开始，以新制纸张的干燥和包装结束。','overview 交代起点与终点。'),
- ex('The earlier steps concentrate on selecting and preparing the material, whereas the later ones turn the prepared pulp into finished paper.','前期步骤侧重筛选和准备材料，后期则将准备好的纸浆制成成品纸。','对照两阶段功能。'),
- ex('First, used paper is collected and transferred to the sorting stage.','首先收集废纸并送至分类阶段。','按第一步描述操作。'),
- ex('At this point, the paper is sorted before it moves on to the next part of the sequence.','此时废纸先分类，然后进入下一步骤。','复述第二阶段但不添加未给细节。'),
- ex('The sorted paper is subsequently mixed with water to create pulp.','分类后的废纸随后与水混合形成纸浆。','第三阶段。'),
- ex('Once this mixture has been prepared, the pulp is cleaned.','混合物准备好后，纸浆得到清洁。','第四阶段。'),
- ex('The cleaned material is then pressed into sheets, which are the main product of the process.','清洁后的材料随后被压成纸张，即这一流程的主要产品。','第五阶段的产出。'),
- ex('Finally, these sheets are dried and packed, completing the series of operations described here.','最后纸张干燥并包装，完成所描述的一系列操作。','第六阶段与结尾。'),
- ex('As a whole, the material passes from the initial collection and sorting phases through preparation and pressing before the final drying and packing stage.','整体而言，材料从收集和分类阶段经过准备与压制，最终进入干燥与包装阶段。','对流程进行综合归纳而不添加图外设备或数据。')
+ ex('The diagram presents a simplified six-stage process for transforming collected used paper into sheets that can be reused.','该图展示废纸经过六个简化阶段成为可再利用纸张的过程。','引言交代简化流程的性质。'),
+ ex('Overall, the procedure starts with paper collected from designated bins and finishes when dried sheets are cut for reuse.','总体上，流程始于从指定箱中收集废纸，终于干燥纸张被裁切再利用。','概述起点与源稿终点。'),
+ ex('Between these stages, the material is sorted, converted into pulp, cleaned, shaped, pressed and dried before its final cutting.','其间材料经分类、制浆、去杂质、成形、压制和干燥，最后才裁切。','概括核心材料变化，步骤连贯。'),
+ ex('First, waste paper is gathered from the collection bins before it is sorted to exclude material unsuitable for the intended product.','首先，从回收箱收集废纸，然后分类以去掉不适用于目标产品的材料。','起初两步有明确顺序。'),
+ ex('The selected paper is then mixed with water, producing pulp rather than a finished dry sheet.','随后将选中的纸张与水混合，得到纸浆而非干燥成品。','第三步：加水制浆。'),
+ ex('After unwanted particles are removed, the prepared mixture is spread evenly into a thin layer for the next stage.','去除不需要的颗粒后，将处理好的混合物均匀铺成薄层，进入下一阶段。','第四步：去杂质后铺展。'),
+ ex('This layer is subsequently pressed to remove water, and the sheet is dried after the pressing stage.','随后对薄层压制以排出水分，再将压制后的纸张干燥。','第五步：压水、干燥。'),
+ ex('Finally, the dry sheet is cut into material ready for reuse, completing the sequence shown in the diagram.','最后将干燥纸张裁切为可再利用的材料，完成图示流程。','第六步：裁切终点。'),
+ ex('The image provides the order of the operations but does not specify processing temperatures, duration, equipment or quantities.','图像给出了操作先后，但没有说明温度、时长、设备或产量。','坚持来源边界。'),
+ ex('Accordingly, the description reports the material changes without inventing further industrial steps such as packaging the final product.','因此报告只描述材料变化，不会编造如最终产品包装之类的附加工序。','避免越界增补。')
  ],
- referenceUrls:['https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-writing','https://ielts.org/take-a-test/preparation-resources/writing-test-resources'],
- sourceNote:'对应 en-ielts-writing-task1-u05 的过程与被动语态。IELTS 官方规定 Academic Task 1 150 词以上，练习配有由原创阶段数据绘制的 SVG 图示，并非官方试卷图。'
+ referenceUrls:['https://ielts.org/take-a-test/preparation-resources/writing-test-resources','https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-writing'],
+ sourceNote:'已将旧版 dried and packed 语料修订成原始 U05 草稿的 cut for reuse；与六步 SVG、中文及题目答案一致。'
 },
+
 
 {
  id:'en-map-change-lexicon',type:'vocabulary',language:'en',level:'B2',unitLink:'en-ielts-writing-task1-u06',
