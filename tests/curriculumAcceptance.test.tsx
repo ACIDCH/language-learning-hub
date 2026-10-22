@@ -394,3 +394,39 @@ it('Task1 U05 and U06 source narratives, parallel Chinese and visual diagrams re
  expect(RECEPTION_LESSONS['en-ielts-writing-task1-u06'].questions[0].answer).toContain('garden');
  expect(RECEPTION_LESSONS['en-ielts-writing-task1-u05'].questions[2].answer).toContain('not packed');
 });
+
+
+it('Task1 U07/U08 retain exact source shares and weekly units across 4 full bilingual lessons and answers',()=>{
+ for(const [id,expectedWords] of [['en-ielts-writing-task1-u07',485],['en-ielts-writing-task1-u08',500]] as const){
+  const lesson=RECEPTION_LESSONS[id];
+  expect(lesson,id).toBeDefined();
+  expect(lesson.language).toBe('en');
+  expect(lesson.paragraphs.map(p=>p.id)).toEqual(['P1','P2','P3','P4']);
+  expect(lesson.paragraphs.map(p=>p.target).join(' ').trim().split(/\s+/u).length,id).toBe(expectedWords);
+  expect(lesson.paragraphs.every(p=>p.target.length>=620&&p.zh.length>=175),id).toBe(true);
+  expect(lesson.questions,id).toHaveLength(4);
+  expect(lesson.questions.every(q=>q.why.length>=40&&q.evidence.length>=1&&q.evidence.every(e=>lesson.paragraphs.some(p=>p.id===e))),id).toBe(true);
+  expect(lesson.languageNotes.length,id).toBeGreaterThanOrEqual(4);
+  expect(lesson.model.trim().split(/\s+/u).length,id).toBeGreaterThanOrEqual(150);
+  expect(lesson.modelZh.length,id).toBeGreaterThan(200);
+  expect(index.find(x=>x.id===id)?.audio_status).toBe('missing_audio');
+ }
+ const u7=RECEPTION_LESSONS['en-ielts-writing-task1-u07'];
+ const source7=JSON.parse(readFileSync('content/lesson-drafts/en-ielts-writing-task1-u07.json','utf8'));
+ expect(source7.context).toContain('10→30%');
+ expect(source7.context).toContain('80→60%');
+ expect(source7.context).toContain('10→10%');
+ expect(u7.questions[0].answer).toContain('80%');
+ expect(u7.questions[0].answer).toContain('30%');
+ expect(u7.questions[1].answer).toContain('60%');
+ expect(u7.questions[3].answer).toContain('No');
+ expect(u7.paragraphs[2].zh).toContain('购买');
+ const u8=RECEPTION_LESSONS['en-ielts-writing-task1-u08'];
+ const source8=JSON.parse(readFileSync('content/lesson-drafts/en-ielts-writing-task1-u08.json','utf8'));
+ expect(source8.context).toContain('范围与单位');
+ expect(source8.reading).toContain('20, 30 and 40');
+ expect(u8.questions[0].answer).toContain('50%');
+ expect(u8.questions[1].answer).toContain('40');
+ expect(u8.questions[2].answer).toContain('no evidence');
+ expect(u8.paragraphs[0].zh).toContain('每周访问');
+});
