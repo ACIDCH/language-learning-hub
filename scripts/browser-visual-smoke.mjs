@@ -83,6 +83,9 @@ try{
    ['frPluperfectB1','/?page=specialties&type=grammar&language=fr&topic=fr-pluperfect-narration-b1','.specialty-grammar-table'],
    ['frPastConditionalB2','/?page=specialties&type=grammar&language=fr&topic=fr-past-conditional-regret-b2','.specialty-grammar-table'],
    ['enTask1Process','/?page=specialties&type=grammar&language=en&topic=en-process-report-grammar','.specialty-grammar-table'],
+   ['task1U01Grammar','/?page=specialties&type=grammar&language=en&topic=en-task1-u01-overview-evidence-grammar','.specialty-grammar-table'],
+   ['task1U01Vocabulary','/?page=specialties&type=vocabulary&language=en&topic=en-task1-u01-unit-precision-lexicon','.specialty-grammar-table'],
+   ['task1U02Grammar','/?page=specialties&type=grammar&language=en&topic=en-task1-u02-trend-scope-grammar','.specialty-grammar-table'],
    ['task1U03Grammar','/?page=specialties&type=grammar&language=en&topic=en-task1-u03-comparison-grammar','.specialty-grammar-table'],
    ['task1U03Vocabulary','/?page=specialties&type=vocabulary&language=en&topic=en-task1-u03-comparison-lexicon','.specialty-grammar-table'],
    ['task1U04Grammar','/?page=specialties&type=grammar&language=en&topic=en-task1-u04-shares-grammar','.specialty-grammar-table'],
@@ -147,6 +150,8 @@ try{
    ['enListeningU06Integrated','/?course=en-ielts-listening-u06&tab=read','.curriculum-stage'],
    ['enDebateIntegrated','/?course=en-ielts-listening-u07&tab=read','.curriculum-stage'],
    ['enSynthesisIntegrated','/?course=en-ielts-listening-u08&tab=read','.curriculum-stage'],
+   ['task1U01Integrated','/?course=en-ielts-writing-task1-u01&tab=read','.lesson-reader'],
+   ['task1U02Integrated','/?course=en-ielts-writing-task1-u02&tab=read','.curriculum-stage'],
    ['task1U03Integrated','/?course=en-ielts-writing-task1-u03&tab=read','.curriculum-stage'],
    ['task1U04Integrated','/?course=en-ielts-writing-task1-u04&tab=read','.curriculum-stage'],
    ['frRouteIntegrated','/?course=fr-a2-u03&tab=read','.curriculum-stage'],
@@ -206,6 +211,21 @@ try{
      await wait(()=>js("!!document.querySelector('.task1-workshop')"),name+' independent figure');
      if(!await js("document.querySelector('.task1-workshop')?.textContent.includes('两套数据')"))problems.push(size+' '+name+' failed to distinguish source manuscript and exercise chart');
     }
+   }
+   if(['task1U01Grammar','task1U01Vocabulary','task1U02Grammar'].includes(name)){
+    const metric=await js("({chapters:document.querySelectorAll('.specialty-chapter').length,questions:document.querySelectorAll('.specialty-question').length,rows:document.querySelectorAll('.specialty-grammar-table tbody tr').length})");
+    if(metric.chapters!==4||metric.questions!==4||metric.rows<4)problems.push(size+' '+name+' missing authored U01–U02 teaching '+JSON.stringify(metric));
+   }
+   if(['task1U01Integrated','task1U02Integrated'].includes(name)){
+    const nav=name==='task1U01Integrated'?'.lesson-stages button':'.course-study-switcher button';
+    await js("document.querySelectorAll("+JSON.stringify(nav)+")[1]?.click()");
+    await wait(()=>js("document.querySelectorAll('.course-specialty-question').length===4"),name+' integrated grammar');
+    await js("document.querySelectorAll("+JSON.stringify(nav)+")[2]?.click()");
+    await wait(()=>js("!!document.querySelector('.course-specialty-topic')"),name+' integrated vocabulary');
+    await js("document.querySelectorAll("+JSON.stringify(nav)+")[3]?.click()");
+    await wait(()=>js("document.querySelectorAll('.reception-study > article.reception-paragraph').length===4"),name+' bilingual reading');
+    const metric=await js("({paragraphs:document.querySelectorAll('.reception-study > article.reception-paragraph').length,source:!!document.querySelector('.course-enrichment details')})");
+    if(metric.paragraphs!==4||name==='task1U01Integrated'&&!metric.source)problems.push(size+' '+name+' original manuscripts not retained '+JSON.stringify(metric));
    }
    if(['enReadingU01Integrated','enReadingU02Integrated'].includes(name)){
     const integrated=await js("(function(){return {topic:!!document.querySelector('.course-specialty-topic'),source:!!document.querySelector('.course-enrichment details'),questions:document.querySelectorAll('.course-specialty-question').length}})()");
