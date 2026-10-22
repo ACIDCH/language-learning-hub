@@ -217,7 +217,8 @@ try{
     if(metric.chapters!==4||metric.questions!==4||metric.rows<4)problems.push(size+' '+name+' missing authored U01–U02 teaching '+JSON.stringify(metric));
    }
    if(['task1U01Integrated','task1U02Integrated'].includes(name)){
-    const nav=name==='task1U01Integrated'?'.lesson-stages button':'.course-study-switcher button';
+    // CourseReader owns the visible nav; LessonReader hides its internal duplicate.
+    const nav='.course-study-switcher button';
     await js("document.querySelectorAll("+JSON.stringify(nav)+")[1]?.click()");
     await wait(()=>js("document.querySelectorAll('.course-specialty-question').length===4"),name+' integrated grammar');
     await js("document.querySelectorAll("+JSON.stringify(nav)+")[2]?.click()");
