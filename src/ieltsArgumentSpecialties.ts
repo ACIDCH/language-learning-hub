@@ -52,6 +52,8 @@ export const IELTS_ARGUMENT_SPECIALTIES:SpecialtyLesson[]=[
  e('Although online access can reduce travel time, it does not necessarily provide a suitable environment for sustained concentration.','尽管线上资源可减少通勤时间，却不一定能提供适合长时间集中注意力的环境。','although 引出让步，not necessarily 限定。'),
  e('Some students have noisy homes, whereas others need facilities for group projects.','部分学生家中嘈杂，而其他学生需要小组项目设施。','whereas 对照两种需要。'),
  e('Despite these different circumstances, an effective funding policy need not treat the two options as mutually exclusive.','尽管情况不同，有效的拨款政策不必将两种方案视为互斥。','despite 后是名词短语。'),
+ e('This concession recognises the genuine convenience of remote access without assuming that home study meets every learning need.','这一让步承认远程获取资料的实际便利，但不假设在家学习能满足所有学习需求。','区分承认优点与无限扩大结论。'),
+ e('A combined approach could be evaluated by measuring room usage and access to digital resources separately.','可以通过分别观察学习室使用情况和数字资源可达性来评估组合方案。','让建议与所讨论的两类需求直接对应。'),
  e('Universities could allocate resources according to demonstrated demand rather than assuming that one solution will serve every learner equally well.','大学可以根据实际得到证实的需求分配资源，而不是假设同一方案能同样满足所有学习者。','结论回应两种资源的适用边界。')
  ],
  referenceUrls:['https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/contrasting-ideas-although-despite-others','https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-writing'],
