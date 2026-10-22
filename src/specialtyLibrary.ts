@@ -21,6 +21,8 @@ import {IELTS_READING_GRAMMAR_U05_U08} from './ieltsReadingGrammarU05U08';
 import {IELTS_READING_LEXICON_U05_U08} from './ieltsReadingLexiconU05U08';
 import {IELTS_READING_U01_PLATFORM_VOCAB} from './ieltsReadingU01PlatformVocabulary';
 import {IELTS_LISTENING_U04_U06_SPECIALTIES} from './ieltsListeningU04U06Specialties';
+import {FR_A2_REPAIR_SPECIALTIES} from './frA2NextRepairSpecialties';
+import {IELTS_LISTENING_U07_U08_SPECIALTIES} from './ieltsListeningU07U08Specialties';
 
 export type SpecialtyKind='grammar'|'vocabulary';
 export type SpecialtyLanguage='fr'|'en';
@@ -344,7 +346,9 @@ export const SPECIALTY_LESSONS:SpecialtyLesson[]=[
  ...IELTS_READING_GRAMMAR_U05_U08,
  ...IELTS_READING_LEXICON_U05_U08,
  ...IELTS_READING_U01_PLATFORM_VOCAB,
- ...IELTS_LISTENING_U04_U06_SPECIALTIES
+ ...IELTS_LISTENING_U04_U06_SPECIALTIES,
+ ...FR_A2_REPAIR_SPECIALTIES,
+ ...IELTS_LISTENING_U07_U08_SPECIALTIES
 ];
 export function specialtyRoute(type:SpecialtyKind,language?:string,topic?:string,returnTo?:string){
  const params=new URLSearchParams({page:'specialties',type});
