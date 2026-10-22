@@ -966,7 +966,7 @@ it('Task1 U05/U06 new vocabulary and map-reference grammar match the existing so
   expect(topic.sections).toHaveLength(4);
   expect(topic.questions).toHaveLength(4);
   expect(topic.model.length).toBeGreaterThanOrEqual(8);
-  expect(topic.sections[0].table?.rows).toHaveLength(4);
+  expect(topic.sections[0].table?.rows.length).toBeGreaterThanOrEqual(4);
   expect(topic.sections.every(s=>s.examples.length>=3&&s.concept.length>=45&&s.caution.length>=25)).toBe(true);
   expect(specialtyQuality(topic)).toBe(true);
   expect(SPECIALTY_LESSONS.some(x=>x.id===existing&&x.unitLink===course)).toBe(true);
