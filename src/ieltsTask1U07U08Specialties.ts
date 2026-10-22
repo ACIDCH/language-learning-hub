@@ -42,12 +42,12 @@ export const IELTS_TASK1_U07_U08_SPECIALTIES:SpecialtyLesson[]=[
  ],
  output:'围绕两个端点写完整英文 Task 1 数据报告，形成 overview、对照变化、稳定项和证据边界。每段附中文，不编造年份与绝对借阅量。',
  model:[
- E('The figures compare borrowing shares in two fictional distributions.','数字比较两组虚构借阅份额。','范围。'),
- E('Paper, digital and other loans account for all three categories.','纸本、线上和其他借阅构成三类。','分类。'),
- E('Overall, paper remained dominant despite losing share.','总体上，纸本份额虽下降但依旧占主导。','概述。'),
+ E('The figures compare borrowing shares in two fictional distributions.','数字比较两组虚构借阅份额。','本句限定为两组相对份额，不涉及实际借阅总次数。'),
+ E('Paper, digital and other loans account for all three categories.','纸本、线上和其他借阅构成三类。','保留纸本、数字及其他三种借阅类别的对应关系。'),
+ E('Overall, paper remained dominant despite losing share.','总体上，纸本份额虽下降但依旧占主导。','概述指出纸本份额下降但排名仍是最大。'),
  E('Digital borrowing gained share over the period shown.','线上借阅在所示比较中增加份额。','不造年份。'),
- E('Paper loans declined from 80% to 60%.','纸本借阅从 80% 降至 60%。','证据。'),
- E('In contrast, digital borrowing grew from 10% to 30%.','相比之下，线上借阅从 10% 升至 30%。','反向。'),
+ E('Paper loans declined from 80% to 60%.','纸本借阅从 80% 降至 60%。','数据对应纸本从80%到60%，减少20个百分点。'),
+ E('In contrast, digital borrowing grew from 10% to 30%.','相比之下，线上借阅从 10% 升至 30%。','线上借阅沿相反方向增加20个百分点。'),
  E('The other category remained unchanged at 10%.','其他类别稳定在 10%。','稳定项。'),
  E('The figures do not reveal borrowing totals or causes.','数据未说明借阅总量及变化原因。','未知范围。')
  ],referenceUrls:[REF],sourceNote:'两组端点百分比严格来自 content/lesson-drafts/en-ielts-writing-task1-u07.json，未假定任何实际年份。'
@@ -89,13 +89,13 @@ export const IELTS_TASK1_U07_U08_SPECIALTIES:SpecialtyLesson[]=[
  ],
  output:'写八句双语图表叙述，准确使用 borrowing、dominant、stable、distribution、contrast 与 percentage points；另写完整报告并注明未报告的总量。',
  model:[
- E('The table describes three borrowing categories.','表格描述三种借阅类别。','类别。'),
- E('Paper loans were initially dominant at 80%.','纸本借阅起初以 80% 占主导。','起点。'),
- E('Their share later declined to 60%.','随后其份额降至 60%。','终点。'),
- E('Digital borrowing rose from 10% to 30%.','数字借阅由 10% 增至 30%。','变化。'),
+ E('The table describes three borrowing categories.','表格描述三种借阅类别。','先明确统计表里仅有三种借阅类别。'),
+ E('Paper loans were initially dominant at 80%.','纸本借阅起初以 80% 占主导。','起始组纸本份额确实为80%，不可混淆终值。'),
+ E('Their share later declined to 60%.','随后其份额降至 60%。','第二组纸本份额下降为60%，但依旧最大。'),
+ E('Digital borrowing rose from 10% to 30%.','数字借阅由 10% 增至 30%。','数字借阅由10%增加到30%，强调份额而非总数。'),
  E('This shift concerns shares, not known numbers of loans.','这项变化涉及份额，并不是已知借阅次数。','统计边界。'),
  E('The other category stayed stable at 10%.','其他类别维持 10%。','不变项。'),
- E('Paper remained the largest despite its decline.','纸本虽下降但仍是最大类别。','排名。'),
+ E('Paper remained the largest despite its decline.','纸本虽下降但仍是最大类别。','纸本终点60%仍高于另外两类。'),
  E('Borrowing should not be misreported as purchasing.','借阅不能误写成购买。','词义一致。')
  ],referenceUrls:[REF],sourceNote:'与 Task 1 U07 自编三类别比例原稿一一对应，学习借阅语言而非购买语言。'
 },
@@ -139,8 +139,8 @@ export const IELTS_TASK1_U07_U08_SPECIALTIES:SpecialtyLesson[]=[
  output:'对三句错误报告逐项修订，给出真实起点、基期和英文原因说明；最终写不少于150词的双语 Task1报告，避免推断未列年份和广告原因。',
  model:[
  E('The series reports weekly visits across three successive years.','序列列出连续三个年份的周访问量。','统计指标。'),
- E('The observations are 20, 30 and 40, respectively.','三个观测值依次为 20、30 和 40。','顺序。'),
- E('Overall, visits increased in both intervals.','总体上，两个区间的访问量都增长。','趋势。'),
+ E('The observations are 20, 30 and 40, respectively.','三个观测值依次为 20、30 和 40。','三个值按观测先后分别对应20、30与40次。'),
+ E('Overall, visits increased in both intervals.','总体上，两个区间的访问量都增长。','三个观测值逐步上升，两个已知区间均增长。'),
  E('The second figure was 50% higher than the first.','第二个值比第一个高 50%。','正确百分比。'),
  E('The final value was exactly double the starting one.','终值正好是起始值两倍。','40÷20=2。'),
  E('The table does not identify precise calendar years.','表格未标出具体公历年份。','时间范围。'),
@@ -187,14 +187,14 @@ export const IELTS_TASK1_U07_U08_SPECIALTIES:SpecialtyLesson[]=[
  ],
  output:'写一份双语修改清单：至少识别三个正确陈述、两处错误原因及修订方法，并完成至少150词完整数据报告。',
  model:[
- E('The task is to verify a short report against its source.','任务是根据来源核对一份短报告。','目标。'),
- E('The source lists weekly visits of 20, 30 and 40.','源表列出周访问量 20、30 和 40。','数字。'),
+ E('The task is to verify a short report against its source.','任务是根据来源核对一份短报告。','编辑的第一步是对照原稿核查错误陈述。'),
+ E('The source lists weekly visits of 20, 30 and 40.','源表列出周访问量 20、30 和 40。','保持每周访问次数这一统计口径，不改写成年访问量。'),
  E('The overview should identify an increase throughout.','概述应指出全程上涨。','总体特征。'),
  E('The second figure was 50% higher than the first.','第二个值比第一个高 50%。','正确幅度。'),
  E('The final figure was exactly double the first.','最终值恰好是起点两倍。','正确基期。'),
  E('The exact calendar years are not specified.','具体公历年份未指定。','时间边界。'),
  E('Advertising is not documented as a cause.','没有材料证实广告是原因。','不得归因。'),
- E('A precise report keeps these distinctions clear.','精准报告应保留这些差异。','总结。')
+ E('A precise report keeps these distinctions clear.','精准报告应保留这些差异。','归纳核查基期、时间范围和因果解释的顺序。')
  ],referenceUrls:[REF],sourceNote:'使用 U08 原始编辑练习的 20→30→40 与广告错误句，不伪造其它统计。'
 }
 ];
