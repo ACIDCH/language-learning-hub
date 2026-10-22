@@ -122,7 +122,7 @@ export const IELTS_TASK1_U07_U08_SPECIALTIES:SpecialtyLesson[]=[
  E('Weekly visits increased in both intervals.','每周访问量在两个区间中都上升。','20→30 和 30→40。'),
  E('The figures do not show why attendance rose.','这些数字没有说明访问量为什么增加。','来源只给测量值。'),
  E('An advertising campaign cannot be inferred from the table.','不能从这张表推断存在广告活动。','广告因果没有任何来源支持。')
- ],'不能将同步上升当成广告或其他干预造成的因果效应。'),
+ ],'不能将同步上升当成广告或其他干预造成的因果效应；本课没有任何广告投入或实验对照数据。'),
  S('04 修订顺序：数据→概述→范围→语法','最有效的修改先核实每个数值、时间与单位，再检查 overview 是否抓住全程增加。之后核查翻倍只在第三年成立、没有因果信息，最后才修改句法和用词。',
  'verify figures → write overview → check comparisons → edit wording',[
  E('Overall, the weekly figure rose in both reported intervals.','总体上，周访问量在两个已列区间均上升。','无须提供具体年份。'),
