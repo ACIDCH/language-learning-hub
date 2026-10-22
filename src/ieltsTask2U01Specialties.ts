@@ -81,7 +81,7 @@ export const IELTS_TASK2_U01_SPECIALTIES:SpecialtyLesson[]=[
  E('A weak internet connection may interrupt online study.','不稳定的网络可能打断线上学习。','是可能发生的限制。'),
  E('Not all students have equally reliable access.','不是所有学生都拥有同样可靠的连接。','避免绝对化。'),
  E('A blended design could reduce reliance on a single channel.','混合教学可减少对单一渠道的依赖。','有条件建议，不是实施结果。')
- ],'不能凭空编造校园网络覆盖百分比或所有线上学习者的使用习惯。'),
+ ],'不能凭空编造校园网络覆盖百分比或所有线上学习者的使用习惯；本课没有相关实地数据。'),
  S('04 outweigh、undermine 和 facilitate 要有明确对象','outweigh 是比较重要性，undermine 是削弱，facilitate 是促进。原题要求作者说明哪项更重要，因此使用这些动词时必须解释判断标准，如减少实际参加障碍与保证必要互动。','the benefit may outweigh a drawback / delayed support can undermine engagement',[
  E('Flexibility may outweigh some difficulties for working students.','对工作中的学生，灵活性可能比某些困难更重要。','有明确受益群体。'),
  E('Lack of feedback can undermine continued participation.','缺乏反馈可能削弱持续参与。','指出受影响对象。'),
