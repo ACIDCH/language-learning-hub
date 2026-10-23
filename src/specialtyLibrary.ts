@@ -1,4 +1,5 @@
 import {FRENCH_ARTICLES,STUDY_SPACES} from './curatedCurriculum';
+import {SPEAKING_SPECIALTIES} from './speakingSpecialties';
 import {EXPANDED_SPECIALTIES} from './expandedSpecialties';
 import {FRENCH_GRAMMAR_EXPANSION} from './frenchGrammarExpansion';
 import {FRENCH_PATH_GRAMMAR} from './frenchPathGrammar';
@@ -329,6 +330,7 @@ const hand:SpecialtyLesson[]=[
  referenceUrls:['https://learnenglish.britishcouncil.org/free-resources/vocabulary/b1-b2'],sourceNote:'与现有学习空间讲座的场景衔接，词汇句子为本项目重新编写。'}
 ];
 export const SPECIALTY_LESSONS:SpecialtyLesson[]=[
+ ...SPEAKING_SPECIALTIES,
  fromCurated('grammar',FRENCH_ARTICLES,'fr-articles','法语冠词与存在句','不定冠词、定冠词、否定及 c’est / il y a','fr-a1-u04','A1',[F+'det4.html',F+'det2.html',F+'virr3.html']),
  fromCurated('grammar',STUDY_SPACES,'en-signposts','学术讲座结构标记与语气','从 signposting 到 evidence strength','en-ielts-listening-u01','B2',[BC,EVP]),
  fromCurated('vocabulary',FRENCH_ARTICLES,'fr-objects','生活物品名词与冠词组合','10 个空间物品语块与否定形式','fr-a1-u04','A1',[F+'det4.html']),

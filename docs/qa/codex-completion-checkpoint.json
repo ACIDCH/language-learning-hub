@@ -1,8 +1,17 @@
 {
   "schema": 1,
   "baseline_head": "e98c6a2892e0ce3e451bf4249cb99bb6005c18a1",
-  "current_head": "e98c6a2892e0ce3e451bf4249cb99bb6005c18a1",
-  "completed_ids": [],
+  "current_head": "44cfc88f6f23044d5b13dce0f5ac2691679fd97b",
+  "completed_ids": [
+    "en-ielts-speaking-u01",
+    "en-ielts-speaking-u02",
+    "en-ielts-speaking-u03",
+    "en-ielts-speaking-u04",
+    "en-ielts-speaking-u05",
+    "en-ielts-speaking-u06",
+    "en-ielts-speaking-u07",
+    "en-ielts-speaking-u08"
+  ],
   "remaining_ids": [
     "en-ielts-listening-u01",
     "en-ielts-listening-u02",
@@ -36,14 +45,6 @@
     "en-ielts-writing-task2-u06",
     "en-ielts-writing-task2-u07",
     "en-ielts-writing-task2-u08",
-    "en-ielts-speaking-u01",
-    "en-ielts-speaking-u02",
-    "en-ielts-speaking-u03",
-    "en-ielts-speaking-u04",
-    "en-ielts-speaking-u05",
-    "en-ielts-speaking-u06",
-    "en-ielts-speaking-u07",
-    "en-ielts-speaking-u08",
     "en-ielts-language-upgrade-u01",
     "en-ielts-language-upgrade-u02",
     "en-ielts-language-upgrade-u03",
@@ -220,6 +221,11 @@
       "command": "vitest curriculumInteractions + curriculumAcceptance",
       "result": "30 passed after expanding short dialogue explanations; original 8 paragraphs unchanged",
       "scope": "8 original models, 24 followup paragraphs, 32 questions, full Chinese"
+    },
+    {
+      "command": "typecheck; specialtyLibrary + nextCurriculumBatch; speakingCurriculum",
+      "result": "typecheck passed; 70 + 3 passed",
+      "fix": "historical registry snapshots updated to actual 141 topics (73 grammar, 68 vocabulary); no content assertions relaxed"
     }
   ],
   "source_provenance": [
@@ -232,6 +238,54 @@
       "path": "C:\\Users\\20397\\Downloads\\LANGUAGE_HUB_PR50_CODEX_ONE_SHOT_HANDOFF_2026-10-23.md",
       "sha256": "647306563f8b00f92bb232bb17543807567375856dd04daacdbb3f628c100b82",
       "read": "complete"
+    },
+    {
+      "path": "content\\lesson-drafts\\en-ielts-speaking-u01.json",
+      "sha256": "934e8ef34f24a82826a36ccfc7e2e244b5c50b9d3e9cc6a78c9c019b11976c6d",
+      "read": "full reading, context, grammar, vocabulary, questions",
+      "retained": true
+    },
+    {
+      "path": "content\\lesson-drafts\\en-ielts-speaking-u02.json",
+      "sha256": "d8446e462c479242890931e05323d0480eb3e6223a4bbb332b0cc8994d6ad1cd",
+      "read": "full reading, context, grammar, vocabulary, questions",
+      "retained": true
+    },
+    {
+      "path": "content\\lesson-drafts\\en-ielts-speaking-u03.json",
+      "sha256": "11769065755a8760e5596f128b6811e5bb3d191366bbf4d49a801215ca3a1709",
+      "read": "full reading, context, grammar, vocabulary, questions",
+      "retained": true
+    },
+    {
+      "path": "content\\lesson-drafts\\en-ielts-speaking-u04.json",
+      "sha256": "2a4c32af07247c6cd45acba4855f028258178d18baac487e96276af5111d9e9e",
+      "read": "full reading, context, grammar, vocabulary, questions",
+      "retained": true
+    },
+    {
+      "path": "content\\lesson-drafts\\en-ielts-speaking-u05.json",
+      "sha256": "9b62795c444cfa7698bfef6e6dd732fa8114b37be47c6b6f5c34c39b8124b46d",
+      "read": "full reading, context, grammar, vocabulary, questions",
+      "retained": true
+    },
+    {
+      "path": "content\\lesson-drafts\\en-ielts-speaking-u06.json",
+      "sha256": "1157243faf442fdab372a1949222af9faa68d28d9afe1d20da6eafb92ff926f7",
+      "read": "full reading, context, grammar, vocabulary, questions",
+      "retained": true
+    },
+    {
+      "path": "content\\lesson-drafts\\en-ielts-speaking-u07.json",
+      "sha256": "d6cdb78cd72175ce5e22a03b337a0eb4d105f5b8663880d8155a216ceceaefa8",
+      "read": "full reading, context, grammar, vocabulary, questions",
+      "retained": true
+    },
+    {
+      "path": "content\\lesson-drafts\\en-ielts-speaking-u08.json",
+      "sha256": "f5d4d0601a6cf0ea7ccb359b831add60a9873d71ffb1511c91ee1f1df6e4cc56",
+      "read": "full reading, context, grammar, vocabulary, questions",
+      "retained": true
     }
   ],
   "blocked_external_checks": [
@@ -239,7 +293,7 @@
     "Authorized account sign-in on two physical devices",
     "Audio transcript, timing and license verification"
   ],
-  "last_successful_group": "speaking_8_reception_source_and_followups",
+  "last_successful_group": "speaking_8_full_teaching_tracks",
   "status": "in_progress",
   "partial_work": {
     "foundation_ids": [
@@ -322,5 +376,6 @@
       "en-ielts-speaking-u07",
       "en-ielts-speaking-u08"
     ]
-  }
+  },
+  "completion_definition": "Implemented source-linked bilingual reception, grammar/vocabulary and output; does not imply independent semantic QA, audio certification or private-manuscript equivalence"
 }
