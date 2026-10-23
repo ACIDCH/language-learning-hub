@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "baseline_head": "e98c6a2892e0ce3e451bf4249cb99bb6005c18a1",
-  "current_head": "82f90542015c3aa7018c3be885cefe39efd61cd4",
+  "current_head": "ebe5d35b949029b262b005bcb93a3f25fc188796",
   "completed_ids": [
     "en-ielts-speaking-u01",
     "en-ielts-speaking-u02",
@@ -245,6 +245,11 @@
         "updated actual registry counts 170/87/83 and preserved original path assertions"
       ],
       "scope": "ten original source texts unchanged; 12 authored specialties; no semantic/audio certification"
+    },
+    {
+      "group": "b1_reception",
+      "result": "32 targeted tests passed",
+      "scope": "10 verbatim P1 originals and models; bilingual extensions, evidence questions and explicit conditional/attribution boundaries. Knowledge pairs remain incomplete."
     }
   ],
   "source_provenance": [
@@ -360,7 +365,7 @@
     "Authorized account sign-in on two physical devices",
     "Audio transcript, timing and license verification"
   ],
-  "last_successful_group": "a2_ten_source_receptions_and_twelve_knowledge_tracks",
+  "last_successful_group": "b1_ten_receptions_knowledge_pending",
   "status": "in_progress",
   "partial_work": {
     "foundation_ids": [
@@ -442,6 +447,18 @@
       "en-ielts-speaking-u06",
       "en-ielts-speaking-u07",
       "en-ielts-speaking-u08"
+    ],
+    "b1_reception_added": [
+      "fr-b1-u01",
+      "fr-b1-u02",
+      "fr-b1-u03",
+      "fr-b1-u04",
+      "fr-b1-u05",
+      "fr-b1-u06",
+      "fr-b1-u07",
+      "fr-b1-u08",
+      "fr-b1-u09",
+      "fr-b1-u10"
     ]
   },
   "completion_definition": "Implemented source-linked bilingual reception, grammar/vocabulary and output; does not imply independent semantic QA, audio certification or private-manuscript equivalence"
