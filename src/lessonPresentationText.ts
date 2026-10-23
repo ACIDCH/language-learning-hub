@@ -1,4 +1,5 @@
 import {splitLessonStages,STUDY_STAGES} from './lessonStages';
+import {projectSourceErrata} from './editorialCorrections';
 
 /** Learner-facing projection only. The raw manuscript, backups and source registry are unchanged. */
 const ADMIN_LINE=[
@@ -28,9 +29,9 @@ function isAdministrativeLine(line:string):boolean{
   (/^(?:原创完整样课|版权声明|审校状态)\s*[:：]/u.test(clean))||
   (/^(?:课程资源|课程权利与来源)\s*[:：]/u.test(clean));
 }
-/** Removes authoring/release metadata; never rewrites normal lesson sentences or exercises. */
+/** Removes authoring metadata and projects only exact registered errata; keeps raw sources intact. */
 export function learnerFacingText(text:string):string{
- const canonical=text.replace(/\r\n?/gu,'\n');
+ const canonical=projectSourceErrata(text.replace(/\r\n?/gu,'\n'));
  const lines:string[]=[];
  let skippingSources=false;
  for(const sourceLine of canonical.split('\n')){

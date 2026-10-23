@@ -20,9 +20,9 @@ e('Liam vient de Wellington.','利亚姆来自惠灵顿。','venir de + 城市�
 e('Il habite maintenant à Lyon.','他现在住在里昂。','现在居住地不等于来源地。'),
 e('Elle vient du Canada.','她来自加拿大。','de + le Canada 缩合为 du。')
 ],'venir en France 在特定语境可意为“来到法国”，但表达“来自法国”通常应说 venir de France；方向不同。'),
-s('03 国籍形容词的性数与大小写','être + 国籍形容词时，形容词根据主语性数变化并常用小写：il est français / elle est française；复数 il(s) sont canadiens、elles sont canadiennes。国籍作为指人的名词时大写用法不同：un Français；语言名 français 小写。',
+s('03 国籍形容词的性数与大小写','être + 国籍形容词时，形容词根据主语性数变化并常用小写：il est français / elle est française；复数 ils sont canadiens、elles sont canadiennes。国籍作为指人的名词时大写用法不同：un Français；语言名 français 小写。',
 'il est français / elle est française / je parle français',[
-e('Nora est néo-zélandaise.','诺拉是新西兰人（女性）。','女形容词应与主语配合。'),
+e('Lucie est française.','露西是法国人（女性）。','原稿明确 Lucie 的国籍；不能从 Nora 在新西兰读书推断其国籍。'),
 e('Paul est français.','保罗是法国人。','男形容词 français 保留。'),
 e('Elle est canadienne et elle parle français.','她是加拿大人，并且说法语。','身份形容词与语言名称角色不同。')
 ],'不要把 Je suis France 当成国籍介绍，也不要随意把语言名写成 Français 来替代形容词。',

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "baseline_head": "e98c6a2892e0ce3e451bf4249cb99bb6005c18a1",
-  "current_head": "ebf3abe4ea06dd9b03a6ab4da47610d644544e1b",
+  "current_head": "ef6ce22b30c4217224e1285dce84f60e188a0f48",
   "completed_ids": [
     "en-ielts-speaking-u01",
     "en-ielts-speaking-u02",
@@ -18,7 +18,11 @@
     "en-ielts-language-upgrade-u05",
     "en-ielts-language-upgrade-u06",
     "en-ielts-language-upgrade-u07",
-    "en-ielts-language-upgrade-u08"
+    "en-ielts-language-upgrade-u08",
+    "fr-a1-u01",
+    "fr-a1-u02",
+    "fr-a1-u03",
+    "fr-a1-u04"
   ],
   "remaining_ids": [
     "en-ielts-listening-u01",
@@ -53,10 +57,6 @@
     "en-ielts-writing-task2-u06",
     "en-ielts-writing-task2-u07",
     "en-ielts-writing-task2-u08",
-    "fr-a1-u01",
-    "fr-a1-u02",
-    "fr-a1-u03",
-    "fr-a1-u04",
     "fr-a1-u05",
     "fr-a1-u06",
     "fr-a1-u07",
@@ -231,6 +231,11 @@
       "command": "typecheck; specialtyLibrary + nextCurriculumBatch + curriculumAcceptance; upgradeCurriculum + curriculumInteractions",
       "result": "typecheck passed; 89 + 14 passed",
       "scope": "157 topics (81 grammar/76 vocabulary), 61 main reception + 48 foundation source blocks; all English main IDs have reception and paired knowledge tracks"
+    },
+    {
+      "group": "a1_first_four",
+      "result": "66 targeted tests passed after correcting expected learning-path order",
+      "scope": "source-bound names/relationships/locations, three exact errata projections, specialty registry; no human/audio approval"
     }
   ],
   "source_provenance": [
@@ -346,7 +351,7 @@
     "Authorized account sign-in on two physical devices",
     "Audio transcript, timing and license verification"
   ],
-  "last_successful_group": "upgrade_8_full_teaching_tracks",
+  "last_successful_group": "a1_first_four_and_registered_country_grammar",
   "status": "in_progress",
   "partial_work": {
     "foundation_ids": [
