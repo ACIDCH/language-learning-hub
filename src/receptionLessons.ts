@@ -2,6 +2,7 @@ import {IELTS_READING_SOURCE_U02} from './ieltsReadingSourceU02';
 import {SPEAKING_RECEPTION} from './speakingReception';
 import {UPGRADE_RECEPTION} from './upgradeReception';
 import {FR_A1_FIRST_RECEPTION} from './frA1FirstReception';
+import {FR_A2_SOURCE_RECEPTION} from './frA2SourceReception';
 import {IELTS_LISTENING_U04_U06_RECEPTION} from './ieltsListeningU04U06Reception';
 import {IELTS_SOURCE_RECEPTION} from './ieltsSourceReception';
 import {NEXT_BILINGUAL_RECEPTION} from './nextBilingualReception';
@@ -23,6 +24,7 @@ export const RECEPTION_LESSONS:Record<string,ReceptionLesson>={
  ...SPEAKING_RECEPTION,
  ...UPGRADE_RECEPTION,
  ...FR_A1_FIRST_RECEPTION,
+ ...FR_A2_SOURCE_RECEPTION,
  ...IELTS_SOURCE_RECEPTION,
  ...IELTS_READING_SOURCE_U02,
  ...IELTS_LISTENING_U04_U06_RECEPTION,

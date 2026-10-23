@@ -4,7 +4,7 @@
   "counts": {
     "main": 108,
     "foundation": 48,
-    "specialties": 158
+    "specialties": 170
   },
   "courses": [
     {
@@ -3375,7 +3375,16 @@
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 74,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 298,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-a2-u01.json"
@@ -3411,13 +3420,26 @@
       ],
       "specialties": [
         {
+          "id": "fr-a2-u02-vocabulary",
+          "type": "vocabulary"
+        },
+        {
           "id": "fr-imparfait-a2",
           "type": "grammar"
         }
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 66,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 279,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-a2-u02.json"
@@ -3426,7 +3448,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -3509,13 +3530,26 @@
       ],
       "specialties": [
         {
+          "id": "fr-a2-u04-vocabulary",
+          "type": "vocabulary"
+        },
+        {
           "id": "fr-object-pronouns-a2",
           "type": "grammar"
         }
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 59,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 278,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-a2-u04.json"
@@ -3524,7 +3558,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -3617,7 +3650,16 @@
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 73,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 301,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-a2-u06.json"
@@ -3653,13 +3695,26 @@
       ],
       "specialties": [
         {
+          "id": "fr-a2-u07-vocabulary",
+          "type": "vocabulary"
+        },
+        {
           "id": "fr-futur-simple-a2",
           "type": "grammar"
         }
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 62,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 277,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-a2-u07.json"
@@ -3668,7 +3723,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -3696,13 +3750,26 @@
       ],
       "specialties": [
         {
+          "id": "fr-a2-u08-grammar",
+          "type": "grammar"
+        },
+        {
           "id": "fr-opinions-lexicon",
           "type": "vocabulary"
         }
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 70,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 294,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-a2-u08.json"
@@ -3711,7 +3778,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -3737,10 +3803,28 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "fr-a2-u09-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-a2-u09-vocabulary",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 71,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 297,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-a2-u09.json"
@@ -3749,8 +3833,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -3776,10 +3858,28 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "fr-a2-u10-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-a2-u10-vocabulary",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 72,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 303,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-a2-u10.json"
@@ -3788,8 +3888,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -3817,13 +3915,30 @@
       ],
       "specialties": [
         {
+          "id": "fr-a2-u11-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-a2-u11-vocabulary",
+          "type": "vocabulary"
+        },
+        {
           "id": "fr-negative-scope-a2",
           "type": "grammar"
         }
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 72,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 302,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-a2-u11.json"
@@ -3832,7 +3947,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -3858,10 +3972,28 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "fr-a2-u12-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-a2-u12-vocabulary",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 75,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 301,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-a2-u12.json"
@@ -3870,8 +4002,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"

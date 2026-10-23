@@ -1,6 +1,7 @@
 import {FRENCH_ARTICLES,STUDY_SPACES} from './curatedCurriculum';
 import {SPEAKING_SPECIALTIES} from './speakingSpecialties';
 import {UPGRADE_SPECIALTIES} from './upgradeSpecialties';
+import {FR_A2_KNOWLEDGE} from './frA2KnowledgeSpecialties';
 import {FR_A1_COUNTRIES_GRAMMAR} from './frA1CountriesGrammar';
 import {EXPANDED_SPECIALTIES} from './expandedSpecialties';
 import {FRENCH_GRAMMAR_EXPANSION} from './frenchGrammarExpansion';
@@ -334,6 +335,7 @@ const hand:SpecialtyLesson[]=[
 export const SPECIALTY_LESSONS:SpecialtyLesson[]=[
  ...SPEAKING_SPECIALTIES,
  ...UPGRADE_SPECIALTIES,
+ ...FR_A2_KNOWLEDGE,
  ...FR_A1_COUNTRIES_GRAMMAR,
  fromCurated('grammar',FRENCH_ARTICLES,'fr-articles','法语冠词与存在句','不定冠词、定冠词、否定及 c’est / il y a','fr-a1-u04','A1',[F+'det4.html',F+'det2.html',F+'virr3.html']),
  fromCurated('grammar',STUDY_SPACES,'en-signposts','学术讲座结构标记与语气','从 signposting 到 evidence strength','en-ielts-listening-u01','B2',[BC,EVP]),
