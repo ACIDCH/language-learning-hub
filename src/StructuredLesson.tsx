@@ -1,6 +1,8 @@
 import Task1WritingWorkshop,{TASK1_WORKSHOPS} from './Task1WritingWorkshop';
 import ReceptionStudy from './ReceptionStudy';
 import {RECEPTION_LESSONS} from './receptionLessons';
+import {FOUNDATION_RECEPTION} from './foundationReception';
+import {FOUNDATION_CHINESE} from './foundationChinese';
 import {useStudyResponses} from './studyResponses';
 import {useState} from 'react';
 import type {LessonContent,Course,LessonDraft} from './v44Courses';
@@ -22,6 +24,8 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
  const setOwnText=(value:string)=>saved.set('writing',value);
  const [shown,setShown]=useState<Record<number,boolean>>({});
  const draft=content.draft,unit=content.foundation;
+ const chinese=unit?FOUNDATION_CHINESE[unit.id]:undefined;
+ const reception=RECEPTION_LESSONS[course.id]||FOUNDATION_RECEPTION[course.id];
  const extension=LESSON_EXTENSIONS[course.id];
  if(!draft&&!unit)return null;
  const active=visibleStudyStage(stage);
@@ -55,6 +59,7 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
      {draft?.prerequisite&&<p className="curriculum-prerequisite">前置课程：{draft.prerequisite}</p>}
      {extension&&<section className="curriculum-editorial"><h3>本课的学习重点</h3><p>{extension.rationale}</p></section>}
      <section><h3>情境示例</h3><blockquote>{examples[0]}</blockquote>
+       {chinese&&<p lang="zh-Hans">{chinese.examples[0]}</p>}
        <button type="button" onClick={()=>play(examples[0])}>听例句</button></section>
    </div>}
    {active===1&&(integratedGrammar?<CourseSpecialtyStage courseId={course.id} kind="grammar" rate={ttsRate} onSaveOutput={onSaveOutput}/>:<div className="curriculum-stack">
@@ -64,6 +69,7 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
      <section><h3>例句与应用</h3>{examples.map((example,i)=>
       <div className="curriculum-example" key={i}><span className="microtag">例句 {i+1}</span>
        <p lang={course.language}>{example}</p>
+       {chinese&&<p lang="zh-Hans">{chinese.examples[i]}</p>}
        <button type="button" onClick={()=>play(example)}>播放</button>
        {exampleVocabulary(example,vocabulary).length>0&&<div className="curriculum-example-gloss"
        aria-label="例句词汇中文对照">{exampleVocabulary(example,vocabulary).map(row=>
@@ -83,18 +89,19 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
      <section><h3>词语在句子中的作用</h3>
       {examples.slice(0,3).map((ex,i)=><div key={i} className="curriculum-example">
         <p lang={course.language}>{ex}</p>
+        {chinese&&<p lang="zh-Hans">{chinese.examples[i]}</p>}
         {exampleVocabulary(ex,vocabulary).length>0&&<div className="curriculum-example-gloss">
         {exampleVocabulary(ex,vocabulary).map(item=><span key={item}>{item}</span>)}</div>}
       </div>)}</section>
    </div>)}
    {active===3&&<div className="curriculum-stack">
-     {RECEPTION_LESSONS[course.id]&&<ReceptionStudy courseId={course.id} rate={ttsRate}/>}
-     <details open={!RECEPTION_LESSONS[course.id]}><summary>本课基础听读与练习</summary>
+     {reception&&<ReceptionStudy courseId={course.id} rate={ttsRate}/>}
+     <details open={!reception}><summary>本课基础听读与练习</summary>
      <section><h3>听力</h3><div className="curriculum-actions"><button type="button" onClick={()=>play(listening)}>播放听力</button>
       <button type="button" onClick={()=>setExpanded(v=>!v)} aria-expanded={expanded}>{expanded?'隐藏文本':'显示文本'}</button></div>
-      {expanded&&<div className="curriculum-transcript" lang={course.language}>{listening}</div>}</section>
+      {expanded&&<><div className="curriculum-transcript" lang={course.language}>{listening}</div>{chinese&&<p lang="zh-Hans">{chinese.listening}</p>}</>}</section>
      <section><h3>阅读材料</h3><div className="curriculum-reading" lang={course.language}>
-      {reading}</div></section>
+      {reading}</div>{chinese&&<p lang="zh-Hans">{chinese.reading}</p>}</section>
      {extension&&<section className="curriculum-editorial"><h3>{extension.modelTitle}</h3>
        <pre className="curriculum-model">{extension.model}</pre>
        <p>{extension.exercise}</p></section>}

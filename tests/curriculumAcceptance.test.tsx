@@ -9,6 +9,7 @@ import {CHINESE_LESSON_NOTES} from '../src/bilingualTeachingNotes';
 import {ENGLISH_ORIGINAL_BILINGUAL} from '../src/bilingualOriginalEnglish';
 import index from '../content/v44-main-index.json';
 import {RECEPTION_LESSONS} from '../src/receptionLessons';
+import {FOUNDATION_RECEPTION} from '../src/foundationReception';
 import {TASK1_WORKSHOPS} from '../src/Task1WritingWorkshop';
 
 it('maintains an ID-exact 108 + 48 gap matrix, never equating structure with approval',()=>{
@@ -17,12 +18,13 @@ it('maintains an ID-exact 108 + 48 gap matrix, never equating structure with app
   const body=entry?.draft_path?JSON.parse(readFileSync(entry.draft_path,'utf8')):FOUNDATION_UNITS.find(x=>x.id===c.id);
   const topics=SPECIALTY_LESSONS.filter(x=>x.unitLink===c.id);
   const bilingual=!!(CHINESE_LESSON_NOTES[c.id]||ENGLISH_ORIGINAL_BILINGUAL[c.id]);
+  const reception=RECEPTION_LESSONS[c.id]||FOUNDATION_RECEPTION[c.id];
   return {id:c.id,kind:c.kind,language:c.language,level:c.level,target:c.goal,
    stages:['情境','语法','词汇','听读','表达'],specialties:topics.map(x=>({id:x.id,type:x.type})),
    body:entry?.public_sources.length?'source_manuscript':body?'authored_body_quality_pending':'missing',
    readingWords:body?.reading?.trim().split(/\s+/u).length??null,
-   reception:RECEPTION_LESSONS[c.id]?{source:'src/receptionLessons.ts',paragraphs:RECEPTION_LESSONS[c.id].paragraphs.length,
-    words:RECEPTION_LESSONS[c.id].paragraphs.map(p=>p.target).join(' ').trim().split(/\s+/u).length,chinese:'all_paragraphs',questions:RECEPTION_LESSONS[c.id].questions.length,audio:'segmented_device_tts_only',editorial:'author_checked_not_independent_QA'}:null,
+   reception:reception?{source:c.kind==='foundation'?'src/foundationReception.ts':'src/receptionLessons.ts',format:c.kind==='foundation'?'progressive_source_blocks':'continuous_passage',paragraphs:reception.paragraphs.length,
+    words:reception.paragraphs.map(p=>p.target).join(' ').trim().split(/\s+/u).length,chinese:'all_paragraphs',questions:reception.questions.length,audio:'segmented_device_tts_only',editorial:'author_checked_not_independent_QA'}:null,
    visualWorkshop:TASK1_WORKSHOPS[c.id]||null,
    sources:entry?[...(entry.public_sources||[]),...(entry.draft_path?[entry.draft_path]:[])]:['src/foundationCurriculum.ts'],
    chinese:bilingual?'lesson_notes_present_coverage_requires_review':'partial_glosses_full_mapping_pending',

@@ -1,9 +1,10 @@
 import {useEffect,useRef,useState} from 'react';
 import {RECEPTION_LESSONS} from './receptionLessons';
+import {FOUNDATION_RECEPTION} from './foundationReception';
 import {useStudyResponses} from './studyResponses';
 
 export default function ReceptionStudy({courseId,rate}:{courseId:string;rate:number}){
- const unit=RECEPTION_LESSONS[courseId];
+ const unit=RECEPTION_LESSONS[courseId]||FOUNDATION_RECEPTION[courseId];
  const saved=useStudyResponses(courseId+':reception');
  const [current,setCurrent]=useState(0),[speed,setSpeed]=useState(rate),[status,setStatus]=useState('未播放');
  const [playing,setPlaying]=useState(false),[paused,setPaused]=useState(false);
@@ -25,7 +26,7 @@ export default function ReceptionStudy({courseId,rate}:{courseId:string;rate:num
  return <section className="reception-study" aria-label="逐段双语听读">
   <h3>{unit.title}</h3><p>{unit.genre}。设备合成语音（TTS），非自然人录音。</p>
   <div className="reception-controls">
-   <label>朗读速度 <select value={speed} onChange={e=>{stop();setSpeed(Number(e.target.value));setStatus('速度已更新，请播放所选段落。');}}>{[.65,.85,1,1.15].map(x=><option key={x} value={x}>{x}×</option>)}</select></label>
+   <label>朗读速度 <select value={speed} onChange={e=>{stop();setSpeed(Number(e.target.value));setStatus('速度已更新，请播放所选段落。');}}>{[...new Set([.65,.85,1,1.15,speed])].sort((a,b)=>a-b).map(x=><option key={x} value={x}>{x}×</option>)}</select></label>
    <button type="button" onClick={()=>play(current)}>播放 / 回听本段</button>
    <button type="button" disabled={!playing} onClick={()=>{if(paused)window.speechSynthesis.resume();else window.speechSynthesis.pause();setPaused(!paused);setStatus(paused?'继续朗读':'已请求暂停；设备支持程度可能不同。');}}>{paused?'继续':'暂停'}</button>
    <button type="button" disabled={!playing} onClick={()=>{stop();setStatus('已停止');}}>停止</button>
