@@ -215,6 +215,11 @@
       "command": "vitest sourceReception + curriculumInteractions + curriculumAcceptance",
       "result": "33 cases: 2 word-depth failures fixed; 14 affected cases rerun passed; matrix test passed",
       "fix": "tree lecture expands logical comparison without invented measurement; original Reading U01/U02 checked byte-for-byte instead of padding source text"
+    },
+    {
+      "command": "vitest curriculumInteractions + curriculumAcceptance",
+      "result": "30 passed after expanding short dialogue explanations; original 8 paragraphs unchanged",
+      "scope": "8 original models, 24 followup paragraphs, 32 questions, full Chinese"
     }
   ],
   "source_provenance": [
@@ -234,7 +239,7 @@
     "Authorized account sign-in on two physical devices",
     "Audio transcript, timing and license verification"
   ],
-  "last_successful_group": "ielts_listening_u01_reading_u01_u02",
+  "last_successful_group": "speaking_8_reception_source_and_followups",
   "status": "in_progress",
   "partial_work": {
     "foundation_ids": [
@@ -306,6 +311,16 @@
       "en-ielts-listening-u01",
       "en-ielts-reading-u01",
       "en-ielts-reading-u02"
+    ],
+    "speaking_reception_added": [
+      "en-ielts-speaking-u01",
+      "en-ielts-speaking-u02",
+      "en-ielts-speaking-u03",
+      "en-ielts-speaking-u04",
+      "en-ielts-speaking-u05",
+      "en-ielts-speaking-u06",
+      "en-ielts-speaking-u07",
+      "en-ielts-speaking-u08"
     ]
   }
 }

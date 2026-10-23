@@ -64,7 +64,7 @@
         "source": "src/receptionLessons.ts",
         "format": "continuous_passage",
         "paragraphs": 4,
-        "words": 318,
+        "words": 352,
         "chinese": "all_paragraphs",
         "questions": 4,
         "audio": "segmented_device_tts_only",
@@ -1806,7 +1806,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 84,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 358,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-speaking-u01.json"
@@ -1845,7 +1854,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 79,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 354,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-speaking-u02.json"
@@ -1884,7 +1902,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 83,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 353,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-speaking-u03.json"
@@ -1923,7 +1950,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 85,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 353,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-speaking-u04.json"
@@ -1962,7 +1998,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 86,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 355,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-speaking-u05.json"
@@ -2001,7 +2046,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 84,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 358,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-speaking-u06.json"
@@ -2040,7 +2094,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 82,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 356,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-speaking-u07.json"
@@ -2079,7 +2142,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 88,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 364,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-speaking-u08.json"

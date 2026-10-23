@@ -1,4 +1,5 @@
 import {IELTS_READING_SOURCE_U02} from './ieltsReadingSourceU02';
+import {SPEAKING_RECEPTION} from './speakingReception';
 import {IELTS_LISTENING_U04_U06_RECEPTION} from './ieltsListeningU04U06Reception';
 import {IELTS_SOURCE_RECEPTION} from './ieltsSourceReception';
 import {NEXT_BILINGUAL_RECEPTION} from './nextBilingualReception';
@@ -17,6 +18,7 @@ export type ReceptionLesson={title:string;language:'fr'|'en';genre:string;paragr
  questions:{prompt:string;answer:string;evidence:string[];why:string}[];languageNotes:{target:string;zh:string}[];task:string;model:string;modelZh:string;references:string[]};
 /** Original teaching scenarios. Names, institutions and events below are fictional, not reported research. */
 export const RECEPTION_LESSONS:Record<string,ReceptionLesson>={
+ ...SPEAKING_RECEPTION,
  ...IELTS_SOURCE_RECEPTION,
  ...IELTS_READING_SOURCE_U02,
  ...IELTS_LISTENING_U04_U06_RECEPTION,
