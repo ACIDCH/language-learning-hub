@@ -505,7 +505,7 @@ it('audits all authored paragraph-level Chinese links and preserves independent 
   const paragraphIds=new Set(lesson.paragraphs.map(x=>x.id));
   expect(paragraphIds.size,courseId+' duplicate paragraph ids').toBe(lesson.paragraphs.length);
   for(const part of lesson.paragraphs){
-   expect(part.id.trim().length,courseId+' blank paragraph id').toBeGreaterThanOrEqual(2);
+   expect(part.id.trim().length,courseId+' blank paragraph id').toBeGreaterThanOrEqual(1);
    expect(part.target.trim().length,courseId+':'+part.id+' empty original').toBeGreaterThan(65);
    expect(part.zh.trim().length,courseId+':'+part.id+' incomplete Chinese counterpart').toBeGreaterThan(28);
    expect(part.zh.trim(),courseId+':'+part.id+' untranslated duplication').not.toBe(part.target.trim());

@@ -60,7 +60,16 @@
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 90,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 318,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/en-ielts-listening-u01.json"
@@ -107,6 +116,7 @@
       "readingWords": 87,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 372,
         "chinese": "all_paragraphs",
@@ -161,6 +171,7 @@
       "readingWords": 87,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 372,
         "chinese": "all_paragraphs",
@@ -215,6 +226,7 @@
       "readingWords": 84,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 385,
         "chinese": "all_paragraphs",
@@ -269,6 +281,7 @@
       "readingWords": 76,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 400,
         "chinese": "all_paragraphs",
@@ -323,6 +336,7 @@
       "readingWords": 74,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 378,
         "chinese": "all_paragraphs",
@@ -376,7 +390,8 @@
       "body": "authored_body_quality_pending",
       "readingWords": 82,
       "reception": {
-        "source": "src/nextBilingualReception.ts",
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 396,
         "chinese": "all_paragraphs",
@@ -430,7 +445,8 @@
       "body": "authored_body_quality_pending",
       "readingWords": 109,
       "reception": {
-        "source": "src/nextBilingualReception.ts",
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 400,
         "chinese": "all_paragraphs",
@@ -483,7 +499,16 @@
       ],
       "body": "source_manuscript",
       "readingWords": null,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 269,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "en-ielts-reading-u01"
@@ -528,7 +553,16 @@
       ],
       "body": "source_manuscript",
       "readingWords": null,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 6,
+        "words": 536,
+        "chinese": "all_paragraphs",
+        "questions": 6,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "en-ielts-reading-u02-v1"
@@ -575,6 +609,7 @@
       "readingWords": 91,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 430,
         "chinese": "all_paragraphs",
@@ -629,6 +664,7 @@
       "readingWords": 67,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 435,
         "chinese": "all_paragraphs",
@@ -682,7 +718,8 @@
       "body": "authored_body_quality_pending",
       "readingWords": 77,
       "reception": {
-        "source": "src/ieltsReadingU05U08Reception.ts",
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 419,
         "chinese": "all_paragraphs",
@@ -736,7 +773,8 @@
       "body": "authored_body_quality_pending",
       "readingWords": 74,
       "reception": {
-        "source": "src/ieltsReadingU05U08Reception.ts",
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 407,
         "chinese": "all_paragraphs",
@@ -790,7 +828,8 @@
       "body": "authored_body_quality_pending",
       "readingWords": 81,
       "reception": {
-        "source": "src/ieltsReadingU05U08Reception.ts",
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 429,
         "chinese": "all_paragraphs",
@@ -844,7 +883,8 @@
       "body": "authored_body_quality_pending",
       "readingWords": 98,
       "reception": {
-        "source": "src/ieltsReadingU05U08Reception.ts",
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 458,
         "chinese": "all_paragraphs",
@@ -899,6 +939,7 @@
       "readingWords": null,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 494,
         "chinese": "all_paragraphs",
@@ -952,6 +993,7 @@
       "readingWords": 77,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 495,
         "chinese": "all_paragraphs",
@@ -1006,6 +1048,7 @@
       "readingWords": 85,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 440,
         "chinese": "all_paragraphs",
@@ -1060,6 +1103,7 @@
       "readingWords": 77,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 461,
         "chinese": "all_paragraphs",
@@ -1114,6 +1158,7 @@
       "readingWords": 76,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 518,
         "chinese": "all_paragraphs",
@@ -1168,6 +1213,7 @@
       "readingWords": 78,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 523,
         "chinese": "all_paragraphs",
@@ -1222,6 +1268,7 @@
       "readingWords": 81,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 485,
         "chinese": "all_paragraphs",
@@ -1276,6 +1323,7 @@
       "readingWords": 92,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 500,
         "chinese": "all_paragraphs",
@@ -1330,6 +1378,7 @@
       "readingWords": null,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 531,
         "chinese": "all_paragraphs",
@@ -1383,6 +1432,7 @@
       "readingWords": 87,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 492,
         "chinese": "all_paragraphs",
@@ -1437,6 +1487,7 @@
       "readingWords": 84,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 477,
         "chinese": "all_paragraphs",
@@ -1491,6 +1542,7 @@
       "readingWords": 95,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 519,
         "chinese": "all_paragraphs",
@@ -1545,6 +1597,7 @@
       "readingWords": 104,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 488,
         "chinese": "all_paragraphs",
@@ -1599,6 +1652,7 @@
       "readingWords": 99,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 508,
         "chinese": "all_paragraphs",
@@ -1653,6 +1707,7 @@
       "readingWords": 92,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 501,
         "chinese": "all_paragraphs",
@@ -1707,6 +1762,7 @@
       "readingWords": 89,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 503,
         "chinese": "all_paragraphs",
@@ -2577,7 +2633,8 @@
       "body": "authored_body_quality_pending",
       "readingWords": 51,
       "reception": {
-        "source": "src/frA1RoutinesDirectionsReception.ts",
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 277,
         "chinese": "all_paragraphs",
@@ -2632,6 +2689,7 @@
       "readingWords": 52,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 236,
         "chinese": "all_paragraphs",
@@ -2686,6 +2744,7 @@
       "readingWords": 53,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 266,
         "chinese": "all_paragraphs",
@@ -2740,6 +2799,7 @@
       "readingWords": 57,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 293,
         "chinese": "all_paragraphs",
@@ -2793,7 +2853,8 @@
       "body": "authored_body_quality_pending",
       "readingWords": 49,
       "reception": {
-        "source": "src/frA1RoutinesDirectionsReception.ts",
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 299,
         "chinese": "all_paragraphs",
@@ -2848,6 +2909,7 @@
       "readingWords": 49,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 279,
         "chinese": "all_paragraphs",
@@ -2902,6 +2964,7 @@
       "readingWords": 58,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 284,
         "chinese": "all_paragraphs",
@@ -2956,8 +3019,9 @@
       "readingWords": 56,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
-        "words": 333,
+        "words": 330,
         "chinese": "all_paragraphs",
         "questions": 4,
         "audio": "segmented_device_tts_only",
@@ -3106,9 +3170,10 @@
       "body": "authored_body_quality_pending",
       "readingWords": 73,
       "reception": {
-        "source": "src/nextBilingualReception.ts",
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
-        "words": 308,
+        "words": 309,
         "chinese": "all_paragraphs",
         "questions": 4,
         "audio": "segmented_device_tts_only",
@@ -3203,7 +3268,8 @@
       "body": "authored_body_quality_pending",
       "readingWords": 63,
       "reception": {
-        "source": "src/nextBilingualReception.ts",
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 323,
         "chinese": "all_paragraphs",
@@ -4038,6 +4104,7 @@
       "readingWords": 95,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 388,
         "chinese": "all_paragraphs",
@@ -4612,6 +4679,7 @@
       "readingWords": 120,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 5,
         "words": 508,
         "chinese": "all_paragraphs",
@@ -4775,6 +4843,7 @@
       "readingWords": 128,
       "reception": {
         "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
         "paragraphs": 4,
         "words": 438,
         "chinese": "all_paragraphs",
@@ -5015,7 +5084,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 17,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 44,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5054,7 +5132,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 21,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 44,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5093,7 +5180,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 19,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 45,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5132,7 +5228,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 20,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 42,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5171,7 +5276,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 20,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 48,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5210,7 +5324,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 20,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 48,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5249,7 +5372,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 18,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 48,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5288,7 +5420,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 19,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 47,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5327,7 +5468,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 22,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 54,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5366,7 +5516,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 25,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 59,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5405,7 +5564,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 31,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 64,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5444,7 +5612,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 46,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 81,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5483,7 +5660,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 41,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 76,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5522,7 +5708,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 37,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 71,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5561,7 +5756,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 38,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 75,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5600,7 +5804,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 39,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 74,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5639,7 +5852,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 43,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 83,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5678,7 +5900,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 36,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 69,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5717,7 +5948,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 44,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 86,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5756,7 +5996,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 34,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 74,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5795,7 +6044,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 47,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 84,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5834,7 +6092,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 44,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 78,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5873,7 +6140,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 46,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 85,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5912,7 +6188,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 42,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 82,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5951,7 +6236,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 23,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 44,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -5990,7 +6284,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 27,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 48,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6029,7 +6332,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 27,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 47,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6068,7 +6380,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 26,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 44,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6107,7 +6428,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 27,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 51,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6146,7 +6476,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 22,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 45,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6185,7 +6524,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 18,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 44,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6224,7 +6572,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 18,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 42,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6263,7 +6620,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 18,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 38,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6302,7 +6668,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 28,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 57,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6341,7 +6716,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 21,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 49,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6380,7 +6764,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 28,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 59,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6419,7 +6812,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 43,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 78,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6458,7 +6860,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 40,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 69,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6497,7 +6908,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 35,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 69,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6536,7 +6956,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 33,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 64,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6575,7 +7004,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 35,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 66,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6614,7 +7052,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 34,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 61,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6653,7 +7100,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 34,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 72,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6692,7 +7148,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 35,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 71,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6731,7 +7196,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 36,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 70,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6770,7 +7244,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 33,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 68,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6809,7 +7292,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 34,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 72,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"
@@ -6848,7 +7340,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 49,
-      "reception": null,
+      "reception": {
+        "source": "src/foundationReception.ts",
+        "format": "progressive_source_blocks",
+        "paragraphs": 4,
+        "words": 85,
+        "chinese": "all_paragraphs",
+        "questions": 2,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "src/foundationCurriculum.ts"

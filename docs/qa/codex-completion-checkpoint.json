@@ -210,6 +210,11 @@
       "command": "npm run check; vitest foundationMapping.test.tsx",
       "result": "typecheck passed; 6 tests passed",
       "scope": "48 source-preserving translations, four progressive blocks, 4 rendered course cases; no semantic certification"
+    },
+    {
+      "command": "vitest sourceReception + curriculumInteractions + curriculumAcceptance",
+      "result": "33 cases: 2 word-depth failures fixed; 14 affected cases rerun passed; matrix test passed",
+      "fix": "tree lecture expands logical comparison without invented measurement; original Reading U01/U02 checked byte-for-byte instead of padding source text"
     }
   ],
   "source_provenance": [
@@ -229,7 +234,7 @@
     "Authorized account sign-in on two physical devices",
     "Audio transcript, timing and license verification"
   ],
-  "last_successful_group": "foundation_48_source_translation_and_progressive_adapter",
+  "last_successful_group": "ielts_listening_u01_reading_u01_u02",
   "status": "in_progress",
   "partial_work": {
     "foundation_ids": [
@@ -296,6 +301,11 @@
       "personal output exemplars",
       "independent translation review",
       "full-source question translations"
+    ],
+    "main_reception_added": [
+      "en-ielts-listening-u01",
+      "en-ielts-reading-u01",
+      "en-ielts-reading-u02"
     ]
   }
 }
