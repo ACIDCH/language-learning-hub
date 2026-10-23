@@ -1,5 +1,6 @@
 import {FRENCH_ARTICLES,STUDY_SPACES} from './curatedCurriculum';
 import {SPEAKING_SPECIALTIES} from './speakingSpecialties';
+import {UPGRADE_SPECIALTIES} from './upgradeSpecialties';
 import {EXPANDED_SPECIALTIES} from './expandedSpecialties';
 import {FRENCH_GRAMMAR_EXPANSION} from './frenchGrammarExpansion';
 import {FRENCH_PATH_GRAMMAR} from './frenchPathGrammar';
@@ -242,7 +243,7 @@ const hand:SpecialtyLesson[]=[
  output:'用四句英语总结一项观察：研究问题、观察方法、可能性与局限各一句，并保留谨慎语气。',model:[
  pair('The speaker asks whether usage may improve learning.','讲者提出使用情况是否可能改善学习的问题。','问题性质。'),pair('The figures show occupancy, not academic achievement.','数据衡量的是占用情况，而非学业成绩。','证据界限。')],
  referenceUrls:[BC+'/modals-deductions-about-present'],sourceNote:'以原有英语讲座专题中的 evidence strength 与 modality 说明为核心，并外部交叉参考情态动词用法。'},
- {id:'en-conditionals',type:'grammar',language:'en',level:'B1',title:'条件句：真实条件与假设结果',subtitle:'从 if + present 到 if + past 的意义变化',unitLink:'en-ielts-language-upgrade-u01',prerequisite:'掌握一般现在时、过去式和 will。',objective:'能区分真实可能条件与假设条件，避免 If I will… 的常见误用。',
+ {id:'en-conditionals',type:'grammar',language:'en',level:'B1',title:'条件句：真实条件与假设结果',subtitle:'跨情境迁移：从 if + present 到 if + past，不作为学生座位原文的事实证据',unitLink:'en-ielts-language-upgrade-u01',prerequisite:'掌握一般现在时、过去式和 will。',objective:'能区分真实可能条件与假设条件，避免 If I will… 的常见误用。',
  sections:[
  section('01 第一条件句：现实中可能发生','当条件有实际可能发生时，英语常使用 if + 一般现在时，主句用 will / can / may 表达结果或可能性。时间指向未来并不意味着 if 从句必须用 will。','If + present simple, will/can/may + base verb',[
  pair('If the library opens early, I will study there.','如果图书馆早开门，我就在那里学习。','if 从句用 opens，主句 will study。'),pair('If we collect better data, we may reach a clearer conclusion.','如果收集更好的数据，我们可能得出更明确的结论。','主句 may 保留可能性。')],'入门规则中不要写 If the library will open early；但 will 在 if 从句中有特殊意愿含义时另当别论。'),
@@ -331,6 +332,7 @@ const hand:SpecialtyLesson[]=[
 ];
 export const SPECIALTY_LESSONS:SpecialtyLesson[]=[
  ...SPEAKING_SPECIALTIES,
+ ...UPGRADE_SPECIALTIES,
  fromCurated('grammar',FRENCH_ARTICLES,'fr-articles','法语冠词与存在句','不定冠词、定冠词、否定及 c’est / il y a','fr-a1-u04','A1',[F+'det4.html',F+'det2.html',F+'virr3.html']),
  fromCurated('grammar',STUDY_SPACES,'en-signposts','学术讲座结构标记与语气','从 signposting 到 evidence strength','en-ielts-listening-u01','B2',[BC,EVP]),
  fromCurated('vocabulary',FRENCH_ARTICLES,'fr-objects','生活物品名词与冠词组合','10 个空间物品语块与否定形式','fr-a1-u04','A1',[F+'det4.html']),

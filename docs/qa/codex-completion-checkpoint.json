@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "baseline_head": "e98c6a2892e0ce3e451bf4249cb99bb6005c18a1",
-  "current_head": "44cfc88f6f23044d5b13dce0f5ac2691679fd97b",
+  "current_head": "ebf3abe4ea06dd9b03a6ab4da47610d644544e1b",
   "completed_ids": [
     "en-ielts-speaking-u01",
     "en-ielts-speaking-u02",
@@ -10,7 +10,15 @@
     "en-ielts-speaking-u05",
     "en-ielts-speaking-u06",
     "en-ielts-speaking-u07",
-    "en-ielts-speaking-u08"
+    "en-ielts-speaking-u08",
+    "en-ielts-language-upgrade-u01",
+    "en-ielts-language-upgrade-u02",
+    "en-ielts-language-upgrade-u03",
+    "en-ielts-language-upgrade-u04",
+    "en-ielts-language-upgrade-u05",
+    "en-ielts-language-upgrade-u06",
+    "en-ielts-language-upgrade-u07",
+    "en-ielts-language-upgrade-u08"
   ],
   "remaining_ids": [
     "en-ielts-listening-u01",
@@ -45,14 +53,6 @@
     "en-ielts-writing-task2-u06",
     "en-ielts-writing-task2-u07",
     "en-ielts-writing-task2-u08",
-    "en-ielts-language-upgrade-u01",
-    "en-ielts-language-upgrade-u02",
-    "en-ielts-language-upgrade-u03",
-    "en-ielts-language-upgrade-u04",
-    "en-ielts-language-upgrade-u05",
-    "en-ielts-language-upgrade-u06",
-    "en-ielts-language-upgrade-u07",
-    "en-ielts-language-upgrade-u08",
     "fr-a1-u01",
     "fr-a1-u02",
     "fr-a1-u03",
@@ -226,6 +226,11 @@
       "command": "typecheck; specialtyLibrary + nextCurriculumBatch; speakingCurriculum",
       "result": "typecheck passed; 70 + 3 passed",
       "fix": "historical registry snapshots updated to actual 141 topics (73 grammar, 68 vocabulary); no content assertions relaxed"
+    },
+    {
+      "command": "typecheck; specialtyLibrary + nextCurriculumBatch + curriculumAcceptance; upgradeCurriculum + curriculumInteractions",
+      "result": "typecheck passed; 89 + 14 passed",
+      "scope": "157 topics (81 grammar/76 vocabulary), 61 main reception + 48 foundation source blocks; all English main IDs have reception and paired knowledge tracks"
     }
   ],
   "source_provenance": [
@@ -286,6 +291,54 @@
       "sha256": "f5d4d0601a6cf0ea7ccb359b831add60a9873d71ffb1511c91ee1f1df6e4cc56",
       "read": "full reading, context, grammar, vocabulary, questions",
       "retained": true
+    },
+    {
+      "path": "content\\lesson-drafts\\en-ielts-language-upgrade-u01.json",
+      "sha256": "609efc3400b0d08046f01c1071588cf0a731dc818f6a0342d27d4877dea9b3d7",
+      "read": "reading, context, grammar, vocabulary, questions",
+      "retained": true
+    },
+    {
+      "path": "content\\lesson-drafts\\en-ielts-language-upgrade-u02.json",
+      "sha256": "9e68a1a70483e2f26e9edbac5b0fa5a3090d07ce27fa406612bfe8ce7692a255",
+      "read": "reading, context, grammar, vocabulary, questions",
+      "retained": true
+    },
+    {
+      "path": "content\\lesson-drafts\\en-ielts-language-upgrade-u03.json",
+      "sha256": "4da181eca0d26f037f161f5c0bdedb75f0c5ba938cb76c81439d2d130f64da8f",
+      "read": "reading, context, grammar, vocabulary, questions",
+      "retained": true
+    },
+    {
+      "path": "content\\lesson-drafts\\en-ielts-language-upgrade-u04.json",
+      "sha256": "00aef25901cb2db6acb18babcfea068c3a73061982f5a3e62da2e04d173f8986",
+      "read": "reading, context, grammar, vocabulary, questions",
+      "retained": true
+    },
+    {
+      "path": "content\\lesson-drafts\\en-ielts-language-upgrade-u05.json",
+      "sha256": "c317ca7dfcfeeb21c163660b309c7705c16868a9d26f902575d04dfe449dc472",
+      "read": "reading, context, grammar, vocabulary, questions",
+      "retained": true
+    },
+    {
+      "path": "content\\lesson-drafts\\en-ielts-language-upgrade-u06.json",
+      "sha256": "af6e09bcedf80c9a13a7981e8488508a2c41a1b8b458830cd0b19cacc66e3078",
+      "read": "reading, context, grammar, vocabulary, questions",
+      "retained": true
+    },
+    {
+      "path": "content\\lesson-drafts\\en-ielts-language-upgrade-u07.json",
+      "sha256": "0b6a99a5fcdf30b3ddd463ad45a87f1af45e36722594eae39b58c7a7e1e514b0",
+      "read": "reading, context, grammar, vocabulary, questions",
+      "retained": true
+    },
+    {
+      "path": "content\\lesson-drafts\\en-ielts-language-upgrade-u08.json",
+      "sha256": "2c143c08ae43d45ffb3d355e0c8c7685a3e88e8497efe9e534a9f89f8d26ca91",
+      "read": "reading, context, grammar, vocabulary, questions",
+      "retained": true
     }
   ],
   "blocked_external_checks": [
@@ -293,7 +346,7 @@
     "Authorized account sign-in on two physical devices",
     "Audio transcript, timing and license verification"
   ],
-  "last_successful_group": "speaking_8_full_teaching_tracks",
+  "last_successful_group": "upgrade_8_full_teaching_tracks",
   "status": "in_progress",
   "partial_work": {
     "foundation_ids": [
