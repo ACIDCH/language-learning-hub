@@ -5530,7 +5530,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 140,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 442,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-c2-u01.json"
@@ -5569,7 +5578,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 137,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 449,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-c2-u02.json"
@@ -5656,7 +5674,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 132,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 419,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-c2-u04.json"
@@ -5695,7 +5722,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 119,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 417,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-c2-u05.json"
@@ -5734,7 +5770,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 143,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 455,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-c2-u06.json"
@@ -5773,7 +5818,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 133,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 427,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-c2-u07.json"
@@ -5812,7 +5866,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 140,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 450,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-c2-u08.json"

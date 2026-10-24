@@ -6,6 +6,7 @@ import {FR_A2_SOURCE_RECEPTION} from './frA2SourceReception';
 import {FR_B1_SOURCE_RECEPTION} from './frB1SourceReception';
 import {FR_B2_SOURCE_RECEPTION} from './frB2SourceReception';
 import {FR_C1_SOURCE_RECEPTION} from './frC1SourceReception';
+import {FR_C2_SOURCE_RECEPTION} from './frC2SourceReception';
 import {IELTS_LISTENING_U04_U06_RECEPTION} from './ieltsListeningU04U06Reception';
 import {IELTS_SOURCE_RECEPTION} from './ieltsSourceReception';
 import {NEXT_BILINGUAL_RECEPTION} from './nextBilingualReception';
@@ -31,6 +32,7 @@ export const RECEPTION_LESSONS:Record<string,ReceptionLesson>={
  ...FR_B1_SOURCE_RECEPTION,
  ...FR_B2_SOURCE_RECEPTION,
  ...FR_C1_SOURCE_RECEPTION,
+ ...FR_C2_SOURCE_RECEPTION,
  ...IELTS_SOURCE_RECEPTION,
  ...IELTS_READING_SOURCE_U02,
  ...IELTS_LISTENING_U04_U06_RECEPTION,
