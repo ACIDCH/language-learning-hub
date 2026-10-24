@@ -291,6 +291,17 @@
       "result": "84 focused tests passed; TypeScript passed",
       "scope": "327 specialties:164 grammar/163 vocabulary; exact source questions, vocabulary and reading preserved. Eight output word ranges checked. No independent semantic/audio approval.",
       "fixed": "ambiguous une livre and echo-question distractors explained; original sources retained"
+    },
+    {
+      "group": "foundation_cloud_capacity",
+      "result": "55 targeted tests passed",
+      "live_read_only_evidence": {
+        "constraint": "pg_column_size(answers)<4096",
+        "synthetic_sample_bytes": 31605,
+        "proposed_256KiB_predicate": true
+      },
+      "pending": "Apply reviewed migration after approval; no live DDL or learner row writes performed",
+      "scope": "mocked long UTF-8 save/remount, old-schema rejection retains local draft, stale save cannot mutate new course status; not real account acceptance"
     }
   ],
   "source_provenance": [
@@ -404,9 +415,10 @@
   "blocked_external_checks": [
     "Independent human semantic review",
     "Authorized account sign-in on two physical devices",
-    "Audio transcript, timing and license verification"
+    "Audio transcript, timing and license verification",
+    "Reviewed foundation capacity migration not applied to live database (PR-only scope)"
   ],
-  "last_successful_group": "foundation_48_learning_chain",
+  "last_successful_group": "foundation_long_answer_sync",
   "status": "in_progress",
   "partial_work": {
     "foundation_ids": [
