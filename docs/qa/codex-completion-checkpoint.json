@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "baseline_head": "e98c6a2892e0ce3e451bf4249cb99bb6005c18a1",
-  "current_head": "9b666da58570a44de40066ef1fdbc8627c177418",
+  "current_head": "e8fbd482f543d71f759f97a3efe42b2341259b09",
   "completed_ids": [
     "en-ielts-speaking-u01",
     "en-ielts-speaking-u02",
@@ -42,7 +42,17 @@
     "fr-b1-u07",
     "fr-b1-u08",
     "fr-b1-u09",
-    "fr-b1-u10"
+    "fr-b1-u10",
+    "fr-b2-u01",
+    "fr-b2-u02",
+    "fr-b2-u03",
+    "fr-b2-u04",
+    "fr-b2-u05",
+    "fr-b2-u06",
+    "fr-b2-u07",
+    "fr-b2-u08",
+    "fr-b2-u09",
+    "fr-b2-u10"
   ],
   "remaining_ids": [
     "en-ielts-listening-u01",
@@ -87,16 +97,6 @@
     "fr-a1-u12",
     "fr-a2-u03",
     "fr-a2-u05",
-    "fr-b2-u01",
-    "fr-b2-u02",
-    "fr-b2-u03",
-    "fr-b2-u04",
-    "fr-b2-u05",
-    "fr-b2-u06",
-    "fr-b2-u07",
-    "fr-b2-u08",
-    "fr-b2-u09",
-    "fr-b2-u10",
     "fr-c1-u01",
     "fr-c1-u02",
     "fr-c1-u03",
@@ -260,6 +260,11 @@
       "group": "b2_reception",
       "result": "32 targeted tests passed",
       "scope": "nine source originals and models unchanged; conditional/source/date boundaries tested; knowledge tracks pending"
+    },
+    {
+      "group": "b2_knowledge",
+      "result": "66 targeted tests passed after replacing stale missing-U08 and B1-to-C1 assertions; 26 other tests passed in preceding run; TypeScript passed",
+      "scope": "202 specialties: 100 grammar, 102 vocabulary; Valmont and garden survey kept distinct; no human/audio approval"
     }
   ],
   "source_provenance": [
@@ -375,7 +380,7 @@
     "Authorized account sign-in on two physical devices",
     "Audio transcript, timing and license verification"
   ],
-  "last_successful_group": "b2_nine_receptions_knowledge_pending",
+  "last_successful_group": "b2_all_ten_knowledge_pairs",
   "status": "in_progress",
   "partial_work": {
     "foundation_ids": [

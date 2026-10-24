@@ -16,9 +16,9 @@ const cases=[
 it('keeps 156 course identities and new eight topics unique and correctly mapped',()=>{
  const ids=new Set(SPECIALTY_LESSONS.map(u=>u.id));
  expect(ids.size).toBe(SPECIALTY_LESSONS.length);
- expect(SPECIALTY_LESSONS).toHaveLength(186);
- expect(SPECIALTY_LESSONS.filter(u=>u.type==='grammar')).toHaveLength(94);
- expect(SPECIALTY_LESSONS.filter(u=>u.type==='vocabulary')).toHaveLength(92);
+ expect(SPECIALTY_LESSONS).toHaveLength(202);
+ expect(SPECIALTY_LESSONS.filter(u=>u.type==='grammar')).toHaveLength(100);
+ expect(SPECIALTY_LESSONS.filter(u=>u.type==='vocabulary')).toHaveLength(102);
  for(const [course] of cases){
   expect(linkedSpecialties('grammar',course)).toHaveLength(1);
   expect(linkedSpecialties('vocabulary',course)).toHaveLength(1);
