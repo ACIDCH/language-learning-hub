@@ -8,7 +8,7 @@ import {speakIpaText} from './IpaText';
 import Task1VisualEvidence from './Task1VisualEvidence';
 import {orderedSpecialties,adjacentSpecialties,pairedSpecialties} from './specialtyLearningPath';
 
-const LEVELS=['A1','A2','B1','B2','C1'] as const;
+const LEVELS=['A1','A2','B1','B2','C1','C2'] as const;
 function NotesPractice({unit}:{unit:SpecialtyLesson}){
  const saved=useStudyResponses(unit.id);
  const [reveal,setReveal]=useState<Record<number,boolean>>({});

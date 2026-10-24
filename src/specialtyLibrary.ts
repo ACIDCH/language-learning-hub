@@ -5,6 +5,7 @@ import {FR_A2_KNOWLEDGE} from './frA2KnowledgeSpecialties';
 import {FR_B1_KNOWLEDGE} from './frB1KnowledgeSpecialties';
 import {FR_B2_KNOWLEDGE} from './frB2KnowledgeSpecialties';
 import {FR_C1_KNOWLEDGE} from './frC1KnowledgeSpecialties';
+import {FR_C2_KNOWLEDGE} from './frC2KnowledgeSpecialties';
 import {FR_A1_COUNTRIES_GRAMMAR} from './frA1CountriesGrammar';
 import {EXPANDED_SPECIALTIES} from './expandedSpecialties';
 import {FRENCH_GRAMMAR_EXPANSION} from './frenchGrammarExpansion';
@@ -42,7 +43,7 @@ import {IELTS_TASK2_U01_SPECIALTIES} from './ieltsTask2U01Specialties';
 
 export type SpecialtyKind='grammar'|'vocabulary';
 export type SpecialtyLanguage='fr'|'en';
-export type SpecialtyLevel='A1'|'A2'|'B1'|'B2'|'C1';
+export type SpecialtyLevel='A1'|'A2'|'B1'|'B2'|'C1'|'C2';
 export type LearningExample={target:string;zh:string;analysis:string};
 export type LearningTable={title:string;columns:string[];rows:string[][];note:string};
 export type LearningSection={title:string;concept:string;pattern:string;examples:LearningExample[];caution:string;table?:LearningTable};
@@ -342,6 +343,7 @@ export const SPECIALTY_LESSONS:SpecialtyLesson[]=[
  ...FR_B1_KNOWLEDGE,
  ...FR_B2_KNOWLEDGE,
  ...FR_C1_KNOWLEDGE,
+ ...FR_C2_KNOWLEDGE,
  ...FR_A1_COUNTRIES_GRAMMAR,
  fromCurated('grammar',FRENCH_ARTICLES,'fr-articles','法语冠词与存在句','不定冠词、定冠词、否定及 c’est / il y a','fr-a1-u04','A1',[F+'det4.html',F+'det2.html',F+'virr3.html']),
  fromCurated('grammar',STUDY_SPACES,'en-signposts','学术讲座结构标记与语气','从 signposting 到 evidence strength','en-ielts-listening-u01','B2',[BC,EVP]),

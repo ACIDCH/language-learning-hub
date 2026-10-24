@@ -4,7 +4,7 @@
   "counts": {
     "main": 108,
     "foundation": 48,
-    "specialties": 215
+    "specialties": 231
   },
   "courses": [
     {
@@ -5571,7 +5571,16 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "fr-c2-u01-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-c2-u01-vocabulary",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 140,
       "reception": {
@@ -5592,8 +5601,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -5619,7 +5626,16 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "fr-c2-u02-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-c2-u02-vocabulary",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 137,
       "reception": {
@@ -5640,8 +5656,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -5667,7 +5681,16 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "fr-c2-u03-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-c2-u03-vocabulary",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 128,
       "reception": {
@@ -5688,8 +5711,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -5715,7 +5736,16 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "fr-c2-u04-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-c2-u04-vocabulary",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 132,
       "reception": {
@@ -5736,8 +5766,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -5763,7 +5791,16 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "fr-c2-u05-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-c2-u05-vocabulary",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 119,
       "reception": {
@@ -5784,8 +5821,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -5811,7 +5846,16 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "fr-c2-u06-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-c2-u06-vocabulary",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 143,
       "reception": {
@@ -5832,8 +5876,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -5859,7 +5901,16 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "fr-c2-u07-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-c2-u07-vocabulary",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 133,
       "reception": {
@@ -5880,8 +5931,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"
@@ -5907,7 +5956,16 @@
         "听读",
         "表达"
       ],
-      "specialties": [],
+      "specialties": [
+        {
+          "id": "fr-c2-u08-grammar",
+          "type": "grammar"
+        },
+        {
+          "id": "fr-c2-u08-vocabulary",
+          "type": "vocabulary"
+        }
+      ],
       "body": "authored_body_quality_pending",
       "readingWords": 140,
       "reception": {
@@ -5928,8 +5986,6 @@
       "audio": "missing_audio",
       "exercises": 2,
       "gaps": [
-        "full_grammar_specialty",
-        "full_vocabulary_specialty",
         "complete_chinese_mapping",
         "natural_audio_alignment",
         "independent_semantic_review"

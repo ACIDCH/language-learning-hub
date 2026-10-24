@@ -2,6 +2,18 @@ import {it,expect} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {FR_C2_SOURCE_RECEPTION} from '../src/frC2SourceReception';
 import {RECEPTION_LESSONS} from '../src/receptionLessons';
+import {linkedSpecialties,specialtyQuality} from '../src/specialtyLibrary';
+it('provides complete C2 pairs without mixing literary and administrative evidence',()=>{
+ for(let n=1;n<=8;n++) for(const type of ['grammar','vocabulary'] as const){
+  const id='fr-c2-u'+String(n).padStart(2,'0'),units=linkedSpecialties(type,id);
+  expect(units.length,id+type).toBeGreaterThanOrEqual(1);expect(units.every(specialtyQuality),id+type).toBe(true);
+ }
+ const old=RECEPTION_LESSONS['fr-c2-u03'];
+ expect(old.paragraphs.map(p=>p.id)).toEqual(['A1','A2','B1','B2']);
+ expect(old.paragraphs[2].target).toContain('Ma sœur');
+ expect(old.paragraphs[2].zh).not.toMatch(/姐姐|妹妹/);
+ expect(linkedSpecialties('grammar','fr-c2-u03')[0].sourceNote).toContain('A1/A2/B1/B2');
+});
 it('preserves seven C2 original texts and leaves existing literary paragraph keys intact',()=>{
  expect(Object.keys(FR_C2_SOURCE_RECEPTION).sort()).toEqual(['01','02','04','05','06','07','08'].map(n=>'fr-c2-u'+n));
  for(const [id,r] of Object.entries(FR_C2_SOURCE_RECEPTION)){

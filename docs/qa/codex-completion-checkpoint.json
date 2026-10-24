@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "baseline_head": "e98c6a2892e0ce3e451bf4249cb99bb6005c18a1",
-  "current_head": "03630f60b175191f2611f17f4eef0fc4343e9765",
+  "current_head": "ebd658f6527b45411aa7241bd63bbc27e28c9624",
   "completed_ids": [
     "en-ielts-speaking-u01",
     "en-ielts-speaking-u02",
@@ -60,7 +60,15 @@
     "fr-c1-u05",
     "fr-c1-u06",
     "fr-c1-u07",
-    "fr-c1-u08"
+    "fr-c1-u08",
+    "fr-c2-u01",
+    "fr-c2-u02",
+    "fr-c2-u03",
+    "fr-c2-u04",
+    "fr-c2-u05",
+    "fr-c2-u06",
+    "fr-c2-u07",
+    "fr-c2-u08"
   ],
   "remaining_ids": [
     "en-ielts-listening-u01",
@@ -105,14 +113,6 @@
     "fr-a1-u12",
     "fr-a2-u03",
     "fr-a2-u05",
-    "fr-c2-u01",
-    "fr-c2-u02",
-    "fr-c2-u03",
-    "fr-c2-u04",
-    "fr-c2-u05",
-    "fr-c2-u06",
-    "fr-c2-u07",
-    "fr-c2-u08",
     "en-fnd-01",
     "en-fnd-02",
     "en-fnd-03",
@@ -280,6 +280,11 @@
       "group": "c1_knowledge",
       "result": "66 focused tests passed after extending the explicit progression list; 26 other tests passed; TypeScript passed",
       "scope": "215 specialties: 108 grammar, 107 vocabulary; all eight C1 mapped; retain Riveclaire case; no human/audio approval"
+    },
+    {
+      "group": "c2_knowledge",
+      "result": "92 targeted tests passed; then 67 including new C2 filter/navigation test passed; TypeScript passed after extending C2 level",
+      "scope": "231 specialties: 116 grammar,115 vocabulary. Corrected unsupported older-sister translation while preserving original French and A1/A2/B1/B2 keys. No human/audio approval."
     }
   ],
   "source_provenance": [
@@ -395,7 +400,7 @@
     "Authorized account sign-in on two physical devices",
     "Audio transcript, timing and license verification"
   ],
-  "last_successful_group": "c1_all_eight_knowledge_pairs",
+  "last_successful_group": "all_main_reception_and_knowledge_pairs",
   "status": "in_progress",
   "partial_work": {
     "foundation_ids": [
