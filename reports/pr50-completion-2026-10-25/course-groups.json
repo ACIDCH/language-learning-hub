@@ -1,0 +1,128 @@
+{
+  "en-ielts-listening": {
+    "units": 8,
+    "grammar": 8,
+    "vocabulary": 8,
+    "reception": 8,
+    "sourceChinese": 8,
+    "humanApproved": 0,
+    "audioVerified": 0
+  },
+  "en-ielts-reading": {
+    "units": 8,
+    "grammar": 8,
+    "vocabulary": 8,
+    "reception": 8,
+    "sourceChinese": 8,
+    "humanApproved": 0,
+    "audioVerified": 0
+  },
+  "en-ielts-writing-task1": {
+    "units": 8,
+    "grammar": 8,
+    "vocabulary": 8,
+    "reception": 8,
+    "sourceChinese": 8,
+    "humanApproved": 0,
+    "audioVerified": 0
+  },
+  "en-ielts-writing-task2": {
+    "units": 8,
+    "grammar": 8,
+    "vocabulary": 8,
+    "reception": 8,
+    "sourceChinese": 8,
+    "humanApproved": 0,
+    "audioVerified": 0
+  },
+  "en-ielts-speaking": {
+    "units": 8,
+    "grammar": 8,
+    "vocabulary": 8,
+    "reception": 8,
+    "sourceChinese": 8,
+    "humanApproved": 0,
+    "audioVerified": 0
+  },
+  "en-ielts-language-upgrade": {
+    "units": 8,
+    "grammar": 8,
+    "vocabulary": 8,
+    "reception": 8,
+    "sourceChinese": 8,
+    "humanApproved": 0,
+    "audioVerified": 0
+  },
+  "fr-a1": {
+    "units": 12,
+    "grammar": 12,
+    "vocabulary": 12,
+    "reception": 12,
+    "sourceChinese": 12,
+    "humanApproved": 0,
+    "audioVerified": 0
+  },
+  "fr-a2": {
+    "units": 12,
+    "grammar": 12,
+    "vocabulary": 12,
+    "reception": 12,
+    "sourceChinese": 12,
+    "humanApproved": 0,
+    "audioVerified": 0
+  },
+  "fr-b1": {
+    "units": 10,
+    "grammar": 10,
+    "vocabulary": 10,
+    "reception": 10,
+    "sourceChinese": 10,
+    "humanApproved": 0,
+    "audioVerified": 0
+  },
+  "fr-b2": {
+    "units": 10,
+    "grammar": 10,
+    "vocabulary": 10,
+    "reception": 10,
+    "sourceChinese": 10,
+    "humanApproved": 0,
+    "audioVerified": 0
+  },
+  "fr-c1": {
+    "units": 8,
+    "grammar": 8,
+    "vocabulary": 8,
+    "reception": 8,
+    "sourceChinese": 8,
+    "humanApproved": 0,
+    "audioVerified": 0
+  },
+  "fr-c2": {
+    "units": 8,
+    "grammar": 8,
+    "vocabulary": 8,
+    "reception": 8,
+    "sourceChinese": 8,
+    "humanApproved": 0,
+    "audioVerified": 0
+  },
+  "en-fnd": {
+    "units": 24,
+    "grammar": 24,
+    "vocabulary": 24,
+    "reception": 24,
+    "sourceChinese": 24,
+    "humanApproved": 0,
+    "audioVerified": 0
+  },
+  "fr-fnd": {
+    "units": 24,
+    "grammar": 24,
+    "vocabulary": 24,
+    "reception": 24,
+    "sourceChinese": 24,
+    "humanApproved": 0,
+    "audioVerified": 0
+  }
+}

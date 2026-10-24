@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "baseline_head": "e98c6a2892e0ce3e451bf4249cb99bb6005c18a1",
-  "current_head": "50d855d871a532a611c8426cb2d44cf19626c38b",
+  "current_head": "139ca597aa92e14bd984548f7b76a6c3beb4a968",
   "completed_ids": [
     "en-ielts-listening-u01",
     "en-ielts-listening-u02",
@@ -307,6 +307,15 @@
       "result": "passed",
       "tests": 52,
       "scope": "101 original paragraphs/listening + 202 original questions exact bindings; private source isolation; structured teaching"
+    },
+    {
+      "group": "final_local",
+      "result": "passed",
+      "v44": 243,
+      "speech": 45,
+      "cloud_probe": 3,
+      "build": "passed",
+      "source_preservation": "156 course payloads; 19 public assets and 4 foundation files unchanged"
     }
   ],
   "source_provenance": {
@@ -1446,7 +1455,7 @@
     "Reviewed foundation capacity migration not applied to live database (PR-only scope)"
   ],
   "last_successful_group": "source_translation_and_private_audio_integration",
-  "status": "final_validation_pending",
+  "status": "ci_validation_pending",
   "partial_work": {
     "foundation_ids": [
       "en-fnd-01",
@@ -1575,8 +1584,7 @@
   },
   "completion_definition": "Implemented source-linked bilingual reception, grammar/vocabulary and output; does not imply independent semantic QA, audio certification or private-manuscript equivalence",
   "remaining_work": [
-    "Final HEAD CI and Linux browser smoke",
-    "Consolidated evidence report",
-    "Independent human semantics/audio and two-device account acceptance remain external"
+    "Final HEAD Linux Chromium startup/page acceptance and CI",
+    "PR consolidated delivery record"
   ]
 }

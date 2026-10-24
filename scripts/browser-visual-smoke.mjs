@@ -9,7 +9,10 @@ const binary=[process.env.CHROME_BIN,'/usr/bin/google-chrome','/usr/bin/google-c
 if(!binary)throw Error('Chrome unavailable on CI runner');
 const chrome=spawn(binary,['--headless=new','--no-sandbox','--disable-gpu','--disable-dev-shm-usage',
  '--remote-allow-origins=*','--remote-debugging-port='+port,
- '--user-data-dir=/tmp/llh-visual-'+process.pid,'about:blank'],{stdio:'ignore'});
+ '--user-data-dir=/tmp/llh-visual-'+process.pid,'about:blank'],{stdio:['ignore','ignore','pipe']});
+let chromeDiagnostic='';
+chrome.stderr.on('data',chunk=>{chromeDiagnostic=(chromeDiagnostic+chunk.toString()).slice(-16000);});
+chrome.on('error',error=>{chromeDiagnostic+='\nSpawn failed: '+error.message;});
 process.on('exit',()=>chrome.kill());
 const wait=async(fn,description,timeout=25000)=>{
  const started=Date.now();
@@ -544,5 +547,5 @@ try{
  console.log('Checked '+checked+' route/viewport combinations; issues: '+problems.length);
  for(const issue of problems)console.error(issue);
  if(problems.length)process.exitCode=1;
-}catch(e){console.error(e);process.exitCode=1;
+}catch(e){console.error(e);writeFileSync(output+'/browser-startup.txt','binary='+binary+'\nexit='+chrome.exitCode+'\n'+chromeDiagnostic);console.error(chromeDiagnostic);process.exitCode=1;
 }finally{try{ws?.close();}catch{}chrome.kill('SIGTERM');}

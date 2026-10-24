@@ -22,6 +22,8 @@ jobs:
         run: npm ci --no-fund
       - name: Verify public-only cloud connection contract
         run: node --test tests/cloud-config.test.mjs
+      - name: Check read-only cross-device evidence probe without real credentials
+        run: node --experimental-strip-types --test tests/cloudRoundtripProbe.test.mjs
       - name: Validate Supabase Auth email templates without sending mail
         run: node --test tests/emailTemplates.test.mjs
       - name: Test same-origin Pages review API route

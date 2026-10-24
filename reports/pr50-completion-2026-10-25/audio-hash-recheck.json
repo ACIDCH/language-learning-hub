@@ -1,0 +1,223 @@
+{
+  "checked_at": "2026-10-24",
+  "prior_report": "reports/audio-all-archives.json",
+  "rows": [
+    {
+      "archive": "pho_00.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "8078621a105ddd8b379df4aa83ad511821df7081918e5e922b8281cc817189fa",
+      "valid_tracks": 1
+    },
+    {
+      "archive": "pho_01.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "36c24d92c90ab4232f3f4cdb3e1d5586b50f431c49cfcd070cb87f501bb43521",
+      "valid_tracks": 7
+    },
+    {
+      "archive": "pho_02.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "59e48fc2562537437f7f123e837ba5023e970f6025d84e9aec41e8ab2478e903",
+      "valid_tracks": 8
+    },
+    {
+      "archive": "pho_03.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "31c9cb766df7554013a27a19355d060e1fdeb2447f80478e2cdae69e3ce28db9",
+      "valid_tracks": 9
+    },
+    {
+      "archive": "pho_04.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "400689cd008ed859e9ea0c6b25df6ec0157e7ad7b78fe6ce64f72c236274e74d",
+      "valid_tracks": 3
+    },
+    {
+      "archive": "pho_05.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "529e4baeeb09d02e01552eba45f080c1cb160a48792512739d3eb3d8f4ce6d3c",
+      "valid_tracks": 4
+    },
+    {
+      "archive": "pho_06.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "78c5c298134da737d3dfad6f5f3f41e5c9a9aa480190ed1d8c710d9b623daf54",
+      "valid_tracks": 3
+    },
+    {
+      "archive": "pho_07.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "add69f820860823bce09b1e1fec3e3122d69a32e5c31ac95ae31a5bb8ecbe518",
+      "valid_tracks": 4
+    },
+    {
+      "archive": "pho_08.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "3143d65565bb79622214866f0a62ac19b5f88909d05bf48f337066de102bbb2f",
+      "valid_tracks": 9
+    },
+    {
+      "archive": "pho_09.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "53df378ed64b1b79c48cbc90f3d12ee25ddc1a448315ec5417a1695dd5966c7c",
+      "valid_tracks": 7
+    },
+    {
+      "archive": "pho_10.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "7c44a27c5c083dd9e92d5064bf9d212fa39e48312300d29c441478fa94ca02ad",
+      "valid_tracks": 7
+    },
+    {
+      "archive": "pho_11.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "39a113abcb5f547ccb4b7b7a4ba54e4161ead3e21e27a471e89b3879b60f0e26",
+      "valid_tracks": 5
+    },
+    {
+      "archive": "pho_12.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "376cff42e101cf56ef0809db60f5046041033d1f3d004565d128a3beef04208d",
+      "valid_tracks": 12
+    },
+    {
+      "archive": "pho_13.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "de8f60893fcc68f4593808bf7303ec25075e0755642b7738b1d45cb5ada67884",
+      "valid_tracks": 4
+    },
+    {
+      "archive": "voc_00.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "b971d67799cf98513d4ebcfcea399e0206003bf799422563448c824eaa8f83e8",
+      "valid_tracks": 4
+    },
+    {
+      "archive": "voc_01.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "8cd10ca522f5a5b567c13f87eb2d27eff536f457cd712a4b4348554b6e341955",
+      "valid_tracks": 6
+    },
+    {
+      "archive": "voc_02.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "1c6e6b7d82aa1895fd46ca6f0ff94dd540410ab1ef1f096edd760e7351ee3c66",
+      "valid_tracks": 10
+    },
+    {
+      "archive": "voc_03.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "0d840b8a15216b867ab0206a69aad4bfd8d46b59c5633246e459ed47b3530f8e",
+      "valid_tracks": 9
+    },
+    {
+      "archive": "voc_04.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "2d256607a2640674c9e81bc6a7f66a6bfb2c2de136a19b004aa5dc049ee1d27f",
+      "valid_tracks": 6
+    },
+    {
+      "archive": "voc_05.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "8152141ef7ce804b86a7beb430bc53520f13653693bb19ae32030c19a2b26aad",
+      "valid_tracks": 13
+    },
+    {
+      "archive": "voc_06.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "cbad26520ade438eca0e5ff0e66655440d600bd306f615be7b92bcc0c146dc72",
+      "valid_tracks": 7
+    },
+    {
+      "archive": "voc_07.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "0c02c430aa99037e5a8b172a8bfda561c55f5e0662d18fe7fcbcc41ebbf91487",
+      "valid_tracks": 4
+    },
+    {
+      "archive": "voc_08.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "b85cfbadf5328a145a9fb471a84035da48434bc14ca885d7893168cbbe195c98",
+      "valid_tracks": 14
+    },
+    {
+      "archive": "voc_09.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "23bc6184d436be335618d3362bdbec599420771b932b6d5514361391e08cd65d",
+      "valid_tracks": 8
+    },
+    {
+      "archive": "voc_10.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "fd88782cba4090b53895f8a63d05fece730b3789ddc1948026dab969ba720df6",
+      "valid_tracks": 8
+    },
+    {
+      "archive": "voc_11.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "aea7f17f3ba20573340c170c133b6860f17afb09fa9d0e34ea3362a0ce97e2c1",
+      "valid_tracks": 4
+    },
+    {
+      "archive": "voc_12.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "f49a3a8f4ac3a62a579ef3c18b0c234d0786b726e4f4ee57c9f188b524415be1",
+      "valid_tracks": 4
+    },
+    {
+      "archive": "voc_13.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "3e6d35128445df44daabde56dfb23cc49d2a246f38c071c22baeb46a9a6bf3f6",
+      "valid_tracks": 7
+    },
+    {
+      "archive": "Inspire-A1-official-audio-part-01.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "fdc8c67e714b43e0ef9e5ab060390767b96e780b07e4f19e14f1291ae4bc5b78",
+      "valid_tracks": 61
+    },
+    {
+      "archive": "Inspire-A1-official-audio-part-02.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "060e3a9f608409e6fe9f711bfda26753ba7c8fbbfb372ddb07e8042fc4af7389",
+      "valid_tracks": 79
+    },
+    {
+      "archive": "Inspire-A1-official-audio-part-03.zip",
+      "present": true,
+      "sha256_matches_prior_full_decode": true,
+      "sha256": "86692c9529028431c632a33a69d3986e10c642ea35bebe42955ecce49413f2bd",
+      "valid_tracks": 26
+    }
+  ]
+}

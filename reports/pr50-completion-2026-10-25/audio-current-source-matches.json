@@ -1,0 +1,170 @@
+[
+  {
+    "asset_id": "fr-a1-u01-dialogue",
+    "transcript_sha256": "f0068dd499815f1dbfb8c0c026fa9d640e3c80e246459671ee11aa957f9d42e8",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u01-reading",
+    "transcript_sha256": "0b8d58dc332c8d6ab228cf2c2ca6382bf7ac61ee03fdd3f1462c6d1fc0427630",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u02-dialogue",
+    "transcript_sha256": "209942578d26caaf70446599dc3f66770ccd60d9350d4ff57ff5c2473c185c91",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u02-reading",
+    "transcript_sha256": "6646c5c16c7975d1a5aed1b9496498abc87014c9df2b0551767476f0f51bd17d",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u03-dialogue",
+    "transcript_sha256": "b6f30921d5e34bc5604783944817a7867e3e1b2bbd52446a97eaf7bb705e2b8b",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u03-reading",
+    "transcript_sha256": "04c0e744f08de587bb726175119f46b366b166bb5f9d73f46455fc6054120500",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u04-dialogue",
+    "transcript_sha256": "763a3354e7132b121016eb70d3c1aff22ea22942c7037b42eac37212eacd31ad",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u04-reading",
+    "transcript_sha256": "27330268e9ae7156bbec67c5fd0e3ceb1ce7e1e98fe7d979f9f9fddd816c71c8",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u05-dialogue",
+    "transcript_sha256": "7a61cfd54952c83448f4cdbb66148c2edad4d11e59e9e3805e9780b82ea59c5a",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u05-reading",
+    "transcript_sha256": "01e9e99ad8157e0a22433ca9d5ae1ad15f7f18ea136c7967c423575a2d45c358",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u06-dialogue",
+    "transcript_sha256": "fc3832dd5419ad0436e96d2ab7fc5be2541a8016a77a2b35deef79149fbe5b67",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u06-reading",
+    "transcript_sha256": "8e01220d191327adcb95f940a0e0a9ef6f48f812b7f6d0eb6ea6a63d452e0f8c",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u07-dialogue",
+    "transcript_sha256": "fccd5e782fe1d69fa8a5d6835a8d49952e812d0c9125fa039beac6c06673fc0f",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u07-reading",
+    "transcript_sha256": "d97ff1c7521e534fda98c7b7008295729142634c3362f9f037998d60082f9b54",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u08-dialogue",
+    "transcript_sha256": "16e570f6a7f7242a6a66f329be9554c99de17b53615cf231313a92798c2d1179",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u08-reading",
+    "transcript_sha256": "e1f43c6346b89f78776cb947d09391cc7216c9a5c02f6a4f9e9157b40528b0cb",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u09-dialogue",
+    "transcript_sha256": "a23e91c38e496b0f998fa4a189c6c5e91fd2381d42c816d427ec092199f29ed5",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u09-reading",
+    "transcript_sha256": "2ddcfa43d0d761b491672a7ebbfdea61949221baafa26c8266d5852ebc41d632",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u10-dialogue",
+    "transcript_sha256": "e924833768d1ff442e5fc5cefb3947507ccd8185e341e3cf72c808a49e57703a",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u10-reading",
+    "transcript_sha256": "b20b63672560db820c9d7fea3d43fa37baec112f3cd812760f7528fc1f2cd2b7",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u11-dialogue",
+    "transcript_sha256": "327b25a9e1c6117773ab3a0365685d5895440041be0b9049a38beedd97f672a7",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u11-reading",
+    "transcript_sha256": "06f3e5e4fc16fdd337c11a1e9fa3e12aa66dcfdcc9e68327bacfcb07cd057465",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u12-dialogue",
+    "transcript_sha256": "4f920ba3db22486184122d9e8d220115e7852639b1590554bee0f68e05141da5",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  },
+  {
+    "asset_id": "fr-a1-u12-reading",
+    "transcript_sha256": "5f1dfffabeb364a373ac8921597cdb7522f16311a4b7392cb25696b4666a025e",
+    "matching_current_paragraph_ids": [],
+    "synthetic": true,
+    "human_listen_through_passed": false
+  }
+]
