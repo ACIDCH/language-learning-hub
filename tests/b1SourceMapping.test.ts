@@ -2,7 +2,15 @@ import {describe,it,expect} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {FR_B1_SOURCE_RECEPTION} from '../src/frB1SourceReception';
 import {RECEPTION_LESSONS} from '../src/receptionLessons';
+import {linkedSpecialties,specialtyQuality} from '../src/specialtyLibrary';
 describe('B1 source and evidence continuity',()=>{
+ it('connects each B1 source to both complete knowledge tracks',()=>{
+  for(const id of Object.keys(FR_B1_SOURCE_RECEPTION)) for(const type of ['grammar','vocabulary'] as const){
+   const units=linkedSpecialties(type,id);
+   expect(units.length,id+type).toBeGreaterThanOrEqual(1);
+   expect(units.every(specialtyQuality),id+type).toBe(true);
+  }
+ });
  it('registers ten distinct continuations without modifying the original paragraph or model',()=>{
   expect(Object.keys(FR_B1_SOURCE_RECEPTION).sort()).toEqual(Array.from({length:10},(_,i)=>'fr-b1-u'+String(i+1).padStart(2,'0')));
   for(const [id,r] of Object.entries(FR_B1_SOURCE_RECEPTION)){
