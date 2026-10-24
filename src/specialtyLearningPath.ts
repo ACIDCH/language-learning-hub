@@ -15,7 +15,7 @@ const PATH_ORDER:Record<SpecialtyLanguage,Record<SpecialtyKind,string[]>>={
    'en-evidence-vocab','en-reading-u01-learning-evidence-lexicon','en-reading-research-evidence-lexicon-u02','en-ielts-heading-paragraph-function-lexicon','en-reading-u05-retrofit-lexicon','en-reading-u06-science-caution-lexicon','en-reading-u07-survey-method-lexicon','en-reading-u08-access-equity-lexicon','en-academic-collocations','en-map-change-lexicon','en-reading-evidence-lexicon','en-task2-u01-online-learning-lexicon','en-task2-reason-evidence-vocab','en-task2-u03-fair-rebuttal-lexicon','en-task2-u04-curriculum-judgement-lexicon','en-task2-u05-public-access-lexicon','en-task2-u06-solution-evaluation-lexicon','en-task2-u07-access-coherence-lexicon','en-task2-u08-register-precision-lexicon']
  }
 };
-const LEVEL_RANK:Record<string,number>={A1:0,A2:1,B1:2,B2:3,C1:4,C2:5};
+const LEVEL_RANK:Record<string,number>={'Pre-A1':-1,A1:0,A2:1,B1:2,B2:3,C1:4,C2:5};
 /** Order follows authored prerequisite progression inside each language/type; CEFR remains a level label, not a formal certification. */
 export function orderedSpecialties(units:SpecialtyLesson[]):SpecialtyLesson[]{
  return [...units].sort((a,b)=>{
@@ -23,6 +23,9 @@ export function orderedSpecialties(units:SpecialtyLesson[]):SpecialtyLesson[]{
   if(a.type!==b.type)return a.type==='grammar'?-1:1;
   const l=(LEVEL_RANK[a.level]??99)-(LEVEL_RANK[b.level]??99);
   if(l)return l;
+  const af=a.unitLink.includes('-fnd-'),bf=b.unitLink.includes('-fnd-');
+  if(af!==bf)return af?-1:1;
+  if(af&&bf)return a.unitLink.localeCompare(b.unitLink);
   const order=PATH_ORDER[a.language][a.type];
   const x=order.indexOf(a.id),y=order.indexOf(b.id);
   if(x!==y)return (x===-1?999:x)-(y===-1?999:y);

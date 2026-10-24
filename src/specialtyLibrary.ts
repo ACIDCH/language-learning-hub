@@ -6,6 +6,7 @@ import {FR_B1_KNOWLEDGE} from './frB1KnowledgeSpecialties';
 import {FR_B2_KNOWLEDGE} from './frB2KnowledgeSpecialties';
 import {FR_C1_KNOWLEDGE} from './frC1KnowledgeSpecialties';
 import {FR_C2_KNOWLEDGE} from './frC2KnowledgeSpecialties';
+import {FOUNDATION_SPECIALTIES} from './foundationKnowledgeSpecialties';
 import {FR_A1_COUNTRIES_GRAMMAR} from './frA1CountriesGrammar';
 import {EXPANDED_SPECIALTIES} from './expandedSpecialties';
 import {FRENCH_GRAMMAR_EXPANSION} from './frenchGrammarExpansion';
@@ -43,7 +44,7 @@ import {IELTS_TASK2_U01_SPECIALTIES} from './ieltsTask2U01Specialties';
 
 export type SpecialtyKind='grammar'|'vocabulary';
 export type SpecialtyLanguage='fr'|'en';
-export type SpecialtyLevel='A1'|'A2'|'B1'|'B2'|'C1'|'C2';
+export type SpecialtyLevel='Pre-A1'|'A1'|'A2'|'B1'|'B2'|'C1'|'C2';
 export type LearningExample={target:string;zh:string;analysis:string};
 export type LearningTable={title:string;columns:string[];rows:string[][];note:string};
 export type LearningSection={title:string;concept:string;pattern:string;examples:LearningExample[];caution:string;table?:LearningTable};
@@ -337,6 +338,7 @@ const hand:SpecialtyLesson[]=[
  referenceUrls:['https://learnenglish.britishcouncil.org/free-resources/vocabulary/b1-b2'],sourceNote:'与现有学习空间讲座的场景衔接，词汇句子为本项目重新编写。'}
 ];
 export const SPECIALTY_LESSONS:SpecialtyLesson[]=[
+ ...FOUNDATION_SPECIALTIES,
  ...SPEAKING_SPECIALTIES,
  ...UPGRADE_SPECIALTIES,
  ...FR_A2_KNOWLEDGE,

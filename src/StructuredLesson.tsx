@@ -3,6 +3,8 @@ import ReceptionStudy from './ReceptionStudy';
 import {RECEPTION_LESSONS} from './receptionLessons';
 import {FOUNDATION_RECEPTION} from './foundationReception';
 import {FOUNDATION_CHINESE} from './foundationChinese';
+import {FOUNDATION_OUTPUT_MODELS} from './foundationOutputModels';
+import {FOUNDATION_QUESTION_CHINESE} from './foundationQuestionChinese';
 import {useStudyResponses} from './studyResponses';
 import {useState} from 'react';
 import type {LessonContent,Course,LessonDraft} from './v44Courses';
@@ -25,6 +27,8 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
  const [shown,setShown]=useState<Record<number,boolean>>({});
  const draft=content.draft,unit=content.foundation;
  const chinese=unit?FOUNDATION_CHINESE[unit.id]:undefined;
+ const outputModel=unit?FOUNDATION_OUTPUT_MODELS[unit.id]:undefined;
+ const questionChinese=unit?FOUNDATION_QUESTION_CHINESE[unit.id]:undefined;
  const reception=RECEPTION_LESSONS[course.id]||FOUNDATION_RECEPTION[course.id];
  const extension=LESSON_EXTENSIONS[course.id];
  if(!draft&&!unit)return null;
@@ -107,11 +111,15 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
        <p>{extension.exercise}</p></section>}
      <section><h3>理解检查</h3>{lessonQuestions.map((q,i)=>
       <div className="curriculum-question" key={i}><label htmlFor={'question-'+course.id+'-'+i}>{i+1}. {q.prompt}</label>
+       {questionChinese&&questionChinese[i].prompt!==q.prompt&&<p lang="zh-Hans">{questionChinese[i].prompt}</p>}
+       {unit&&<ol type="A">{unit.questions[i].choices.map((choice,j)=><li key={j} lang={course.language}>{choice}</li>)}</ol>}
        <textarea id={'question-'+course.id+'-'+i} rows={2} disabled={!saved.ready} value={saved.get('answer-'+i)}
         onChange={e=>saved.set('answer-'+i,e.target.value)}/>
        <button type="button" aria-expanded={!!shown[i]} onClick={()=>setShown(p=>({...p,[i]:!p[i]}))}>
         {shown[i]?'收起参考答案':'核对参考答案'}</button>
-       {shown[i]&&<div className="curriculum-answer"><strong>参考答案</strong><p>{q.answer}</p><p>{q.explanation}</p></div>}
+       {shown[i]&&<div className="curriculum-answer"><strong>参考答案</strong><p>{q.answer}</p><p>{q.explanation}</p>
+        {questionChinese&&<><h4>各选项中文说明</h4><ol type="A">{questionChinese[i].choices.map((choice,j)=><li key={j} lang="zh-Hans">{choice}</li>)}</ol></>}
+       </div>}
       </div>)}</section>
      </details>
    </div>}
@@ -130,6 +138,13 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
       </label>
       {onSaveOutput&&<button disabled={!ownText.trim()} type="button"
        onClick={()=>onSaveOutput(ownText)}>加入本课笔记</button>}</section>
+     {outputModel&&<details><summary>查看本课完整表达示范与中文对照</summary>
+       <p>独立原创示范，人物和安排为练习设定；请完成自己的答案后对照。</p>
+       <pre className="curriculum-model" lang={course.language}>{outputModel.target}</pre>
+       <pre className="curriculum-model" lang="zh-Hans">{outputModel.zh}</pre>
+       <h4>逐项核对</h4><p>{outputModel.check}</p>
+       <button type="button" onClick={()=>play(outputModel.target)}>朗读表达示范</button>
+     </details>}
      <section><h3>自我检查</h3><ul className="curriculum-checklist">
        <li>是否完成题目要求并表达清楚？</li>
        <li>所用信息是否有本课原文或实例支持？</li>
@@ -141,7 +156,7 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
        {isDraft&&draft!.self_review&&!draft!.self_review.startsWith('核对任务是否回答完整')&&<details><summary>额外自查说明</summary><p>{draft!.self_review}</p></details>}</section>
      </details>
    </div>}
-   {!(active===5&&TASK1_WORKSHOPS[course.id])&&!(active===3&&RECEPTION_LESSONS[course.id])&&!(active===1&&integratedGrammar)&&!(active===2&&integratedVocabulary)&&<BilingualTeaching key={course.id+'-'+active} courseId={course.id} stage={active} content={content}/>}
+   {!(active===5&&(TASK1_WORKSHOPS[course.id]||outputModel))&&!(active===3&&reception)&&!(active===1&&integratedGrammar)&&!(active===2&&integratedVocabulary)&&<BilingualTeaching key={course.id+'-'+active} courseId={course.id} stage={active} content={content}/>}
   </article>
   <div className="curriculum-navigation">
    <button type="button" disabled={position===0} onClick={()=>onChangeStage(moveStudyStage(active,-1))}>← 上一部分</button>
