@@ -1,8 +1,40 @@
 {
   "schema": 1,
   "baseline_head": "e98c6a2892e0ce3e451bf4249cb99bb6005c18a1",
-  "current_head": "dcb2703558dba241c161aed0776d6311c0b8f550",
+  "current_head": "50d855d871a532a611c8426cb2d44cf19626c38b",
   "completed_ids": [
+    "en-ielts-listening-u01",
+    "en-ielts-listening-u02",
+    "en-ielts-listening-u03",
+    "en-ielts-listening-u04",
+    "en-ielts-listening-u05",
+    "en-ielts-listening-u06",
+    "en-ielts-listening-u07",
+    "en-ielts-listening-u08",
+    "en-ielts-reading-u01",
+    "en-ielts-reading-u02",
+    "en-ielts-reading-u03",
+    "en-ielts-reading-u04",
+    "en-ielts-reading-u05",
+    "en-ielts-reading-u06",
+    "en-ielts-reading-u07",
+    "en-ielts-reading-u08",
+    "en-ielts-writing-task1-u01",
+    "en-ielts-writing-task1-u02",
+    "en-ielts-writing-task1-u03",
+    "en-ielts-writing-task1-u04",
+    "en-ielts-writing-task1-u05",
+    "en-ielts-writing-task1-u06",
+    "en-ielts-writing-task1-u07",
+    "en-ielts-writing-task1-u08",
+    "en-ielts-writing-task2-u01",
+    "en-ielts-writing-task2-u02",
+    "en-ielts-writing-task2-u03",
+    "en-ielts-writing-task2-u04",
+    "en-ielts-writing-task2-u05",
+    "en-ielts-writing-task2-u06",
+    "en-ielts-writing-task2-u07",
+    "en-ielts-writing-task2-u08",
     "en-ielts-speaking-u01",
     "en-ielts-speaking-u02",
     "en-ielts-speaking-u03",
@@ -23,9 +55,19 @@
     "fr-a1-u02",
     "fr-a1-u03",
     "fr-a1-u04",
+    "fr-a1-u05",
+    "fr-a1-u06",
+    "fr-a1-u07",
+    "fr-a1-u08",
+    "fr-a1-u09",
+    "fr-a1-u10",
+    "fr-a1-u11",
+    "fr-a1-u12",
     "fr-a2-u01",
     "fr-a2-u02",
+    "fr-a2-u03",
     "fr-a2-u04",
+    "fr-a2-u05",
     "fr-a2-u06",
     "fr-a2-u07",
     "fr-a2-u08",
@@ -118,50 +160,7 @@
     "fr-fnd-23",
     "fr-fnd-24"
   ],
-  "remaining_ids": [
-    "en-ielts-listening-u01",
-    "en-ielts-listening-u02",
-    "en-ielts-listening-u03",
-    "en-ielts-listening-u04",
-    "en-ielts-listening-u05",
-    "en-ielts-listening-u06",
-    "en-ielts-listening-u07",
-    "en-ielts-listening-u08",
-    "en-ielts-reading-u01",
-    "en-ielts-reading-u02",
-    "en-ielts-reading-u03",
-    "en-ielts-reading-u04",
-    "en-ielts-reading-u05",
-    "en-ielts-reading-u06",
-    "en-ielts-reading-u07",
-    "en-ielts-reading-u08",
-    "en-ielts-writing-task1-u01",
-    "en-ielts-writing-task1-u02",
-    "en-ielts-writing-task1-u03",
-    "en-ielts-writing-task1-u04",
-    "en-ielts-writing-task1-u05",
-    "en-ielts-writing-task1-u06",
-    "en-ielts-writing-task1-u07",
-    "en-ielts-writing-task1-u08",
-    "en-ielts-writing-task2-u01",
-    "en-ielts-writing-task2-u02",
-    "en-ielts-writing-task2-u03",
-    "en-ielts-writing-task2-u04",
-    "en-ielts-writing-task2-u05",
-    "en-ielts-writing-task2-u06",
-    "en-ielts-writing-task2-u07",
-    "en-ielts-writing-task2-u08",
-    "fr-a1-u05",
-    "fr-a1-u06",
-    "fr-a1-u07",
-    "fr-a1-u08",
-    "fr-a1-u09",
-    "fr-a1-u10",
-    "fr-a1-u11",
-    "fr-a1-u12",
-    "fr-a2-u03",
-    "fr-a2-u05"
-  ],
+  "remaining_ids": [],
   "retained_reception_ids": [
     "en-ielts-listening-u02",
     "en-ielts-listening-u03",
@@ -302,124 +301,1152 @@
       },
       "pending": "Apply reviewed migration after approval; no live DDL or learner row writes performed",
       "scope": "mocked long UTF-8 save/remount, old-schema rejection retains local draft, stale save cannot mutate new course status; not real account acceptance"
+    },
+    {
+      "group": "original_source_chinese",
+      "result": "passed",
+      "tests": 52,
+      "scope": "101 original paragraphs/listening + 202 original questions exact bindings; private source isolation; structured teaching"
     }
   ],
-  "source_provenance": [
-    {
-      "path": "C:\\Users\\20397\\Downloads\\CODEX_ONE_SHOT_START_PROMPT_LANGUAGE_HUB_2026-10-23.txt",
-      "sha256": "1dbfe25571f7e99d7f15a6b34d217ded321b7101c8fbeb41750c78c72bd28a60",
-      "read": "complete"
-    },
-    {
-      "path": "C:\\Users\\20397\\Downloads\\LANGUAGE_HUB_PR50_CODEX_ONE_SHOT_HANDOFF_2026-10-23.md",
-      "sha256": "647306563f8b00f92bb232bb17543807567375856dd04daacdbb3f628c100b82",
-      "read": "complete"
-    },
-    {
-      "path": "content\\lesson-drafts\\en-ielts-speaking-u01.json",
-      "sha256": "934e8ef34f24a82826a36ccfc7e2e244b5c50b9d3e9cc6a78c9c019b11976c6d",
-      "read": "full reading, context, grammar, vocabulary, questions",
-      "retained": true
-    },
-    {
-      "path": "content\\lesson-drafts\\en-ielts-speaking-u02.json",
-      "sha256": "d8446e462c479242890931e05323d0480eb3e6223a4bbb332b0cc8994d6ad1cd",
-      "read": "full reading, context, grammar, vocabulary, questions",
-      "retained": true
-    },
-    {
-      "path": "content\\lesson-drafts\\en-ielts-speaking-u03.json",
-      "sha256": "11769065755a8760e5596f128b6811e5bb3d191366bbf4d49a801215ca3a1709",
-      "read": "full reading, context, grammar, vocabulary, questions",
-      "retained": true
-    },
-    {
-      "path": "content\\lesson-drafts\\en-ielts-speaking-u04.json",
-      "sha256": "2a4c32af07247c6cd45acba4855f028258178d18baac487e96276af5111d9e9e",
-      "read": "full reading, context, grammar, vocabulary, questions",
-      "retained": true
-    },
-    {
-      "path": "content\\lesson-drafts\\en-ielts-speaking-u05.json",
-      "sha256": "9b62795c444cfa7698bfef6e6dd732fa8114b37be47c6b6f5c34c39b8124b46d",
-      "read": "full reading, context, grammar, vocabulary, questions",
-      "retained": true
-    },
-    {
-      "path": "content\\lesson-drafts\\en-ielts-speaking-u06.json",
-      "sha256": "1157243faf442fdab372a1949222af9faa68d28d9afe1d20da6eafb92ff926f7",
-      "read": "full reading, context, grammar, vocabulary, questions",
-      "retained": true
-    },
-    {
-      "path": "content\\lesson-drafts\\en-ielts-speaking-u07.json",
-      "sha256": "d6cdb78cd72175ce5e22a03b337a0eb4d105f5b8663880d8155a216ceceaefa8",
-      "read": "full reading, context, grammar, vocabulary, questions",
-      "retained": true
-    },
-    {
-      "path": "content\\lesson-drafts\\en-ielts-speaking-u08.json",
-      "sha256": "f5d4d0601a6cf0ea7ccb359b831add60a9873d71ffb1511c91ee1f1df6e4cc56",
-      "read": "full reading, context, grammar, vocabulary, questions",
-      "retained": true
-    },
-    {
-      "path": "content\\lesson-drafts\\en-ielts-language-upgrade-u01.json",
-      "sha256": "609efc3400b0d08046f01c1071588cf0a731dc818f6a0342d27d4877dea9b3d7",
-      "read": "reading, context, grammar, vocabulary, questions",
-      "retained": true
-    },
-    {
-      "path": "content\\lesson-drafts\\en-ielts-language-upgrade-u02.json",
-      "sha256": "9e68a1a70483e2f26e9edbac5b0fa5a3090d07ce27fa406612bfe8ce7692a255",
-      "read": "reading, context, grammar, vocabulary, questions",
-      "retained": true
-    },
-    {
-      "path": "content\\lesson-drafts\\en-ielts-language-upgrade-u03.json",
-      "sha256": "4da181eca0d26f037f161f5c0bdedb75f0c5ba938cb76c81439d2d130f64da8f",
-      "read": "reading, context, grammar, vocabulary, questions",
-      "retained": true
-    },
-    {
-      "path": "content\\lesson-drafts\\en-ielts-language-upgrade-u04.json",
-      "sha256": "00aef25901cb2db6acb18babcfea068c3a73061982f5a3e62da2e04d173f8986",
-      "read": "reading, context, grammar, vocabulary, questions",
-      "retained": true
-    },
-    {
-      "path": "content\\lesson-drafts\\en-ielts-language-upgrade-u05.json",
-      "sha256": "c317ca7dfcfeeb21c163660b309c7705c16868a9d26f902575d04dfe449dc472",
-      "read": "reading, context, grammar, vocabulary, questions",
-      "retained": true
-    },
-    {
-      "path": "content\\lesson-drafts\\en-ielts-language-upgrade-u06.json",
-      "sha256": "af6e09bcedf80c9a13a7981e8488508a2c41a1b8b458830cd0b19cacc66e3078",
-      "read": "reading, context, grammar, vocabulary, questions",
-      "retained": true
-    },
-    {
-      "path": "content\\lesson-drafts\\en-ielts-language-upgrade-u07.json",
-      "sha256": "0b6a99a5fcdf30b3ddd463ad45a87f1af45e36722594eae39b58c7a7e1e514b0",
-      "read": "reading, context, grammar, vocabulary, questions",
-      "retained": true
-    },
-    {
-      "path": "content\\lesson-drafts\\en-ielts-language-upgrade-u08.json",
-      "sha256": "2c143c08ae43d45ffb3d355e0c8c7685a3e88e8497efe9e534a9f89f8d26ca91",
-      "read": "reading, context, grammar, vocabulary, questions",
-      "retained": true
-    }
-  ],
+  "source_provenance": {
+    "en-ielts-listening-u01": [
+      {
+        "path": "content/lesson-drafts/en-ielts-listening-u01.json",
+        "sha256": "8d2fa7c5e5dddcda81d457dff75d935e9089774ae345b3e49db1c85e932ae52c"
+      }
+    ],
+    "en-ielts-listening-u02": [
+      {
+        "path": "content/lesson-drafts/en-ielts-listening-u02.json",
+        "sha256": "7de152d57fa9795cccdc55a683114c637a32532e0a8ab40b47764611d435e1a3"
+      }
+    ],
+    "en-ielts-listening-u03": [
+      {
+        "path": "content/lesson-drafts/en-ielts-listening-u03.json",
+        "sha256": "0eeb06fe732fe987fb46c8377c311ef5c630aec23a6527d2a52de6655a93185a"
+      }
+    ],
+    "en-ielts-listening-u04": [
+      {
+        "path": "content/lesson-drafts/en-ielts-listening-u04.json",
+        "sha256": "388d969e3c55e8e52d497fd8d3edb979df7f9b0b4f2871bcaa6e96363f4438cc"
+      }
+    ],
+    "en-ielts-listening-u05": [
+      {
+        "path": "content/lesson-drafts/en-ielts-listening-u05.json",
+        "sha256": "d3a66603573081ff6ea23ef6cb1760a468fa9e6fc9ff25f56b73fc3ae09392ea"
+      }
+    ],
+    "en-ielts-listening-u06": [
+      {
+        "path": "content/lesson-drafts/en-ielts-listening-u06.json",
+        "sha256": "24eb05dccdb94180e6c38586cf03b907b86597d871bc20e6ac3ec77491469080"
+      }
+    ],
+    "en-ielts-listening-u07": [
+      {
+        "path": "content/lesson-drafts/en-ielts-listening-u07.json",
+        "sha256": "84ba5eab5154f449183649aaae6ccce0c02495e04d6aa611d140aa5a38e099ce"
+      }
+    ],
+    "en-ielts-listening-u08": [
+      {
+        "path": "content/lesson-drafts/en-ielts-listening-u08.json",
+        "sha256": "dde89b9641feb04d5f467665c5feeaa736473e210f7116d5884a89ac1440b3c5"
+      }
+    ],
+    "en-ielts-reading-u01": [
+      {
+        "path": "public/learning-assets/en-ielts-reading-u01.txt",
+        "sha256": "1dc7b0cfe6f73cad5df6438500d0c5d833ce9e7dccf1e87ca2c80612d325db38"
+      }
+    ],
+    "en-ielts-reading-u02": [
+      {
+        "path": "public/learning-assets/en-ielts-reading-u02-v1.txt",
+        "sha256": "d46916bbd3ba1a58ef30c7efc0eb161bcfdb7addc2fced5fb951d6089cbe336b"
+      }
+    ],
+    "en-ielts-reading-u03": [
+      {
+        "path": "content/lesson-drafts/en-ielts-reading-u03.json",
+        "sha256": "77ea6560b68ba902736abaf205e807f190a841fbc7d30533c05d01ce276956e8"
+      }
+    ],
+    "en-ielts-reading-u04": [
+      {
+        "path": "content/lesson-drafts/en-ielts-reading-u04.json",
+        "sha256": "f1caba7d62b977966ad3b30beaccbd4a02ce584c311833370edb55d585057fac"
+      }
+    ],
+    "en-ielts-reading-u05": [
+      {
+        "path": "content/lesson-drafts/en-ielts-reading-u05.json",
+        "sha256": "3a28a948f02c5f0f6efe7db90a412143bd3a92bb507e0743e74aaaa5d12bad6c"
+      }
+    ],
+    "en-ielts-reading-u06": [
+      {
+        "path": "content/lesson-drafts/en-ielts-reading-u06.json",
+        "sha256": "317dbf3f407ae944bbc3d41db02b55c57c2a3069c8507d0f5ef3e261a12140c6"
+      }
+    ],
+    "en-ielts-reading-u07": [
+      {
+        "path": "content/lesson-drafts/en-ielts-reading-u07.json",
+        "sha256": "e2d9a802e8be4e49352fbe2032cad4a610f8732dd737df67985895eac035608b"
+      }
+    ],
+    "en-ielts-reading-u08": [
+      {
+        "path": "content/lesson-drafts/en-ielts-reading-u08.json",
+        "sha256": "5e5802c17ada321625b9d9d6e6562f2c557670ee28587d07245930762286ebac"
+      }
+    ],
+    "en-ielts-writing-task1-u01": [
+      {
+        "path": "public/learning-assets/en-ielts-writing-task1-u01.txt",
+        "sha256": "35fbe78017aecd9431de87e2244d4e06979ebab1c97294121192e50a990bae82"
+      }
+    ],
+    "en-ielts-writing-task1-u02": [
+      {
+        "path": "content/lesson-drafts/en-ielts-writing-task1-u02.json",
+        "sha256": "02806578c0182d020f9c80e2b98a3085eae0f49681e6ddb69fc665da9581878f"
+      }
+    ],
+    "en-ielts-writing-task1-u03": [
+      {
+        "path": "content/lesson-drafts/en-ielts-writing-task1-u03.json",
+        "sha256": "bd13c079347884098185b594239cb5353e26d6ce304d23cf7ed9c32d6060f9b4"
+      }
+    ],
+    "en-ielts-writing-task1-u04": [
+      {
+        "path": "content/lesson-drafts/en-ielts-writing-task1-u04.json",
+        "sha256": "a8e24c2374a19b59643a93f9447bc42da867f9a1e386a9093e291e9a1436cafa"
+      }
+    ],
+    "en-ielts-writing-task1-u05": [
+      {
+        "path": "content/lesson-drafts/en-ielts-writing-task1-u05.json",
+        "sha256": "5f10bf807eb2735b26b8d401f76cd6446232e60df5438a3b419fb9b9c23c09b5"
+      }
+    ],
+    "en-ielts-writing-task1-u06": [
+      {
+        "path": "content/lesson-drafts/en-ielts-writing-task1-u06.json",
+        "sha256": "cf377faa7ec3f266c11cd30195a84a0defa18cccf40e196715c7f8863e81b148"
+      }
+    ],
+    "en-ielts-writing-task1-u07": [
+      {
+        "path": "content/lesson-drafts/en-ielts-writing-task1-u07.json",
+        "sha256": "f7a4a306f8ad82013bf14eaea1f9ada9e5f8f6231fcc0df8334d2ebea1f0ec3a"
+      }
+    ],
+    "en-ielts-writing-task1-u08": [
+      {
+        "path": "content/lesson-drafts/en-ielts-writing-task1-u08.json",
+        "sha256": "2c2e035157c4e122cbc8509d858c22f78a53d29b949d67cb926000ad3084a69c"
+      }
+    ],
+    "en-ielts-writing-task2-u01": [
+      {
+        "path": "public/learning-assets/en-ielts-writing-task2-u01.txt",
+        "sha256": "955245038345b63824275a82c61da24b319274173707b7894b4f4e3aac7608b4"
+      }
+    ],
+    "en-ielts-writing-task2-u02": [
+      {
+        "path": "content/lesson-drafts/en-ielts-writing-task2-u02.json",
+        "sha256": "3500302293874a4221c7c3f5697dd6252cab5ea944e61f3d7b5f131f8820f366"
+      }
+    ],
+    "en-ielts-writing-task2-u03": [
+      {
+        "path": "content/lesson-drafts/en-ielts-writing-task2-u03.json",
+        "sha256": "118ac2bc7d26006917c6d29f1340481a0303fb5ef37f7752eda0868bb39425ae"
+      }
+    ],
+    "en-ielts-writing-task2-u04": [
+      {
+        "path": "content/lesson-drafts/en-ielts-writing-task2-u04.json",
+        "sha256": "efecf5573c0a02cc87a47e4fc472a7224cb6a63612c0c4b832f4fa4e0985b478"
+      }
+    ],
+    "en-ielts-writing-task2-u05": [
+      {
+        "path": "content/lesson-drafts/en-ielts-writing-task2-u05.json",
+        "sha256": "b6f9cfb5285effa811b5c7986bb303448fcc86a4084c89ac277fdcb16e606da8"
+      }
+    ],
+    "en-ielts-writing-task2-u06": [
+      {
+        "path": "content/lesson-drafts/en-ielts-writing-task2-u06.json",
+        "sha256": "bbce2a1e7f9656dec2ea97764a5388358529fc403598b9ff1d2415ae7243015e"
+      }
+    ],
+    "en-ielts-writing-task2-u07": [
+      {
+        "path": "content/lesson-drafts/en-ielts-writing-task2-u07.json",
+        "sha256": "66f07c4c243d83ff8b0221b23ed9072fff33645074657a9be4a2ce5002f94ff6"
+      }
+    ],
+    "en-ielts-writing-task2-u08": [
+      {
+        "path": "content/lesson-drafts/en-ielts-writing-task2-u08.json",
+        "sha256": "6717e6c56e6961eadfb629bb1830c9295d2cbc3573f8e75b4603e8f66291edf1"
+      }
+    ],
+    "en-ielts-speaking-u01": [
+      {
+        "path": "content/lesson-drafts/en-ielts-speaking-u01.json",
+        "sha256": "934e8ef34f24a82826a36ccfc7e2e244b5c50b9d3e9cc6a78c9c019b11976c6d"
+      }
+    ],
+    "en-ielts-speaking-u02": [
+      {
+        "path": "content/lesson-drafts/en-ielts-speaking-u02.json",
+        "sha256": "d8446e462c479242890931e05323d0480eb3e6223a4bbb332b0cc8994d6ad1cd"
+      }
+    ],
+    "en-ielts-speaking-u03": [
+      {
+        "path": "content/lesson-drafts/en-ielts-speaking-u03.json",
+        "sha256": "11769065755a8760e5596f128b6811e5bb3d191366bbf4d49a801215ca3a1709"
+      }
+    ],
+    "en-ielts-speaking-u04": [
+      {
+        "path": "content/lesson-drafts/en-ielts-speaking-u04.json",
+        "sha256": "2a4c32af07247c6cd45acba4855f028258178d18baac487e96276af5111d9e9e"
+      }
+    ],
+    "en-ielts-speaking-u05": [
+      {
+        "path": "content/lesson-drafts/en-ielts-speaking-u05.json",
+        "sha256": "9b62795c444cfa7698bfef6e6dd732fa8114b37be47c6b6f5c34c39b8124b46d"
+      }
+    ],
+    "en-ielts-speaking-u06": [
+      {
+        "path": "content/lesson-drafts/en-ielts-speaking-u06.json",
+        "sha256": "1157243faf442fdab372a1949222af9faa68d28d9afe1d20da6eafb92ff926f7"
+      }
+    ],
+    "en-ielts-speaking-u07": [
+      {
+        "path": "content/lesson-drafts/en-ielts-speaking-u07.json",
+        "sha256": "d6cdb78cd72175ce5e22a03b337a0eb4d105f5b8663880d8155a216ceceaefa8"
+      }
+    ],
+    "en-ielts-speaking-u08": [
+      {
+        "path": "content/lesson-drafts/en-ielts-speaking-u08.json",
+        "sha256": "f5d4d0601a6cf0ea7ccb359b831add60a9873d71ffb1511c91ee1f1df6e4cc56"
+      }
+    ],
+    "en-ielts-language-upgrade-u01": [
+      {
+        "path": "content/lesson-drafts/en-ielts-language-upgrade-u01.json",
+        "sha256": "609efc3400b0d08046f01c1071588cf0a731dc818f6a0342d27d4877dea9b3d7"
+      }
+    ],
+    "en-ielts-language-upgrade-u02": [
+      {
+        "path": "content/lesson-drafts/en-ielts-language-upgrade-u02.json",
+        "sha256": "9e68a1a70483e2f26e9edbac5b0fa5a3090d07ce27fa406612bfe8ce7692a255"
+      }
+    ],
+    "en-ielts-language-upgrade-u03": [
+      {
+        "path": "content/lesson-drafts/en-ielts-language-upgrade-u03.json",
+        "sha256": "4da181eca0d26f037f161f5c0bdedb75f0c5ba938cb76c81439d2d130f64da8f"
+      }
+    ],
+    "en-ielts-language-upgrade-u04": [
+      {
+        "path": "content/lesson-drafts/en-ielts-language-upgrade-u04.json",
+        "sha256": "00aef25901cb2db6acb18babcfea068c3a73061982f5a3e62da2e04d173f8986"
+      }
+    ],
+    "en-ielts-language-upgrade-u05": [
+      {
+        "path": "content/lesson-drafts/en-ielts-language-upgrade-u05.json",
+        "sha256": "c317ca7dfcfeeb21c163660b309c7705c16868a9d26f902575d04dfe449dc472"
+      }
+    ],
+    "en-ielts-language-upgrade-u06": [
+      {
+        "path": "content/lesson-drafts/en-ielts-language-upgrade-u06.json",
+        "sha256": "af6e09bcedf80c9a13a7981e8488508a2c41a1b8b458830cd0b19cacc66e3078"
+      }
+    ],
+    "en-ielts-language-upgrade-u07": [
+      {
+        "path": "content/lesson-drafts/en-ielts-language-upgrade-u07.json",
+        "sha256": "0b6a99a5fcdf30b3ddd463ad45a87f1af45e36722594eae39b58c7a7e1e514b0"
+      }
+    ],
+    "en-ielts-language-upgrade-u08": [
+      {
+        "path": "content/lesson-drafts/en-ielts-language-upgrade-u08.json",
+        "sha256": "2c143c08ae43d45ffb3d355e0c8c7685a3e88e8497efe9e534a9f89f8d26ca91"
+      }
+    ],
+    "fr-a1-u01": [
+      {
+        "path": "public/learning-assets/fr-a1-u01.txt",
+        "sha256": "d7352d3ea6e54a9d0518c0e07e57e87fcd4293e8923e4718bf4eb3eeaefe4c5c"
+      }
+    ],
+    "fr-a1-u02": [
+      {
+        "path": "public/learning-assets/fr-a1-u02.txt",
+        "sha256": "0b81741713138f4c0398d1e96385ddb11c994f4c3dc38dac78e37c17440e5587"
+      }
+    ],
+    "fr-a1-u03": [
+      {
+        "path": "public/learning-assets/fr-a1-u03.txt",
+        "sha256": "095799336fe947fb9be76053a06e1b2471c2b8c860ef4a45ccb9322d3ee7243a"
+      }
+    ],
+    "fr-a1-u04": [
+      {
+        "path": "content/lesson-drafts/fr-a1-u04.json",
+        "sha256": "a195a4b89c062283e6a07c3bcf4a6a15f056589ee0e2ac7031b1abeccb7462ec"
+      }
+    ],
+    "fr-a1-u05": [
+      {
+        "path": "content/lesson-drafts/fr-a1-u05.json",
+        "sha256": "91fe21d65c9df0f393de41f379b1c1123763be3ed5bfcc656e30520a7484fccc"
+      }
+    ],
+    "fr-a1-u06": [
+      {
+        "path": "content/lesson-drafts/fr-a1-u06.json",
+        "sha256": "91860aabed57a7ebcb5f74b0a6ae38c415f2b366e33f2a740e063003b7f4196a"
+      }
+    ],
+    "fr-a1-u07": [
+      {
+        "path": "content/lesson-drafts/fr-a1-u07.json",
+        "sha256": "6993974bfa166dbec9fce24712178e048a2a28b37efe7aedf5ad103ba8fe490f"
+      }
+    ],
+    "fr-a1-u08": [
+      {
+        "path": "content/lesson-drafts/fr-a1-u08.json",
+        "sha256": "ad5574fc7c6e3cbbba3cef63c146c982c5df5741e30c00b65c7792d6638f223b"
+      }
+    ],
+    "fr-a1-u09": [
+      {
+        "path": "content/lesson-drafts/fr-a1-u09.json",
+        "sha256": "ae5e2b09dc6670001624bbf3f10eae9e2e706f9613aa66517d140f06ecbce2d4"
+      }
+    ],
+    "fr-a1-u10": [
+      {
+        "path": "content/lesson-drafts/fr-a1-u10.json",
+        "sha256": "0af816f3d77be4c185dcec43ff6e5e767477f643c1d654009623e5165622a08f"
+      }
+    ],
+    "fr-a1-u11": [
+      {
+        "path": "content/lesson-drafts/fr-a1-u11.json",
+        "sha256": "99af21e8b1a4a8c1acd310a8d926ab72275544a5c06c07075dd3f2987e57db07"
+      }
+    ],
+    "fr-a1-u12": [
+      {
+        "path": "content/lesson-drafts/fr-a1-u12.json",
+        "sha256": "8e8afbaf4e1eab000aaf9983c20f0b7d7c27393f8d3b101d20ec4a5d936eed49"
+      }
+    ],
+    "fr-a2-u01": [
+      {
+        "path": "content/lesson-drafts/fr-a2-u01.json",
+        "sha256": "ed281b21c00f5a9e00099a333ed68280e7e3903ef9b482a544218fd02452b5aa"
+      }
+    ],
+    "fr-a2-u02": [
+      {
+        "path": "content/lesson-drafts/fr-a2-u02.json",
+        "sha256": "9f0bbb4a78ca205b77e5bc38f941906d09e53bc5c2f2b39688ac6f9e5bff985d"
+      }
+    ],
+    "fr-a2-u03": [
+      {
+        "path": "content/lesson-drafts/fr-a2-u03.json",
+        "sha256": "b2be0a8daea415718cd123e10668e24da76c42c243b977cdd7970c773b691d37"
+      }
+    ],
+    "fr-a2-u04": [
+      {
+        "path": "content/lesson-drafts/fr-a2-u04.json",
+        "sha256": "2468807e83b23ee7a659ddb4748903e857355721ac411450aa1bd90855d1a5de"
+      }
+    ],
+    "fr-a2-u05": [
+      {
+        "path": "content/lesson-drafts/fr-a2-u05.json",
+        "sha256": "ae18d8f22b32dd09a50abdfb48de9b36f96aeee0de74ad9b75212bee819fee39"
+      }
+    ],
+    "fr-a2-u06": [
+      {
+        "path": "content/lesson-drafts/fr-a2-u06.json",
+        "sha256": "453ad0a7fe373c25696285157a712996ff667c7bcbb08a2e91ad9d7a797ecb9d"
+      }
+    ],
+    "fr-a2-u07": [
+      {
+        "path": "content/lesson-drafts/fr-a2-u07.json",
+        "sha256": "98610f49585c27f8f5e3ee022919ca105a2b9eec549f719f2301bdd9e3c3f1dd"
+      }
+    ],
+    "fr-a2-u08": [
+      {
+        "path": "content/lesson-drafts/fr-a2-u08.json",
+        "sha256": "b44a02632cc556e140b6d21a9f3b55b83e69f200aa6f6ee4a4f82810695ff79f"
+      }
+    ],
+    "fr-a2-u09": [
+      {
+        "path": "content/lesson-drafts/fr-a2-u09.json",
+        "sha256": "db207d59fffba2ca4978794c05f9d4865e171fc7352964a5703417bd0dcb2f29"
+      }
+    ],
+    "fr-a2-u10": [
+      {
+        "path": "content/lesson-drafts/fr-a2-u10.json",
+        "sha256": "b326a0912b650b1811693992c315135b1d7dc47cefa91db9b2c43a6a6ae4b9f3"
+      }
+    ],
+    "fr-a2-u11": [
+      {
+        "path": "content/lesson-drafts/fr-a2-u11.json",
+        "sha256": "f9df555b91b639575bc39f3ef504b18dd660882b7b48c15d38a1b353f66c640e"
+      }
+    ],
+    "fr-a2-u12": [
+      {
+        "path": "content/lesson-drafts/fr-a2-u12.json",
+        "sha256": "6094b9fe061227a9a3d896d20fceee65841e503b5c6c652a7abb4cba683e4bce"
+      }
+    ],
+    "fr-b1-u01": [
+      {
+        "path": "content/lesson-drafts/fr-b1-u01.json",
+        "sha256": "f5b9d362f5cf9f80a363ee701542ce414b521e28cd6a446be3df5e31c7ced807"
+      }
+    ],
+    "fr-b1-u02": [
+      {
+        "path": "content/lesson-drafts/fr-b1-u02.json",
+        "sha256": "3b02e89caab30fafb8e275d52f028ef7ae2b7e83f46cfc672709182badde5e5e"
+      }
+    ],
+    "fr-b1-u03": [
+      {
+        "path": "content/lesson-drafts/fr-b1-u03.json",
+        "sha256": "c3ce3ea33ca65f28bd6d13dce0e35f68ec97684bc00eed96b07b173e3bf83fd6"
+      }
+    ],
+    "fr-b1-u04": [
+      {
+        "path": "content/lesson-drafts/fr-b1-u04.json",
+        "sha256": "b9a7ba433f31b723a1312553925844893641a0303a8a747ed51d439512340bd0"
+      }
+    ],
+    "fr-b1-u05": [
+      {
+        "path": "content/lesson-drafts/fr-b1-u05.json",
+        "sha256": "64deadc8c126050078f9ba170abc4774dc9fa1efd660942c1e9df3c834d03820"
+      }
+    ],
+    "fr-b1-u06": [
+      {
+        "path": "content/lesson-drafts/fr-b1-u06.json",
+        "sha256": "baef253dff1dc7ed3254457e06f1acdc0d1fc7d4ceb85cb8c0a611a848b6a4f9"
+      }
+    ],
+    "fr-b1-u07": [
+      {
+        "path": "content/lesson-drafts/fr-b1-u07.json",
+        "sha256": "11367a5489aa7cf988e3977ccf1bf785e45b764a7c366a344e0e28294b229f2e"
+      }
+    ],
+    "fr-b1-u08": [
+      {
+        "path": "content/lesson-drafts/fr-b1-u08.json",
+        "sha256": "473f516f6590c693e46b7a60749f55dd41cae9c3c42f22522370ddafa0261213"
+      }
+    ],
+    "fr-b1-u09": [
+      {
+        "path": "content/lesson-drafts/fr-b1-u09.json",
+        "sha256": "30b75a63d71b3fdaa5867e8ff438af5465bd8e2ae24dd5b05b792d36f7bace53"
+      }
+    ],
+    "fr-b1-u10": [
+      {
+        "path": "content/lesson-drafts/fr-b1-u10.json",
+        "sha256": "80ff68dfd19adf9185da6a8f4211cce932b16e8c38ce9122bae2ba225fa3f4b6"
+      }
+    ],
+    "fr-b2-u01": [
+      {
+        "path": "content/lesson-drafts/fr-b2-u01.json",
+        "sha256": "9fb249954ef4e291c53cae004d7937defa96d9d33423ddf6894feeabce35f664"
+      }
+    ],
+    "fr-b2-u02": [
+      {
+        "path": "content/lesson-drafts/fr-b2-u02.json",
+        "sha256": "ac53bf8a97d065fee193fc5a3a5127dc19f32dbe6e5f9dd0c8915a2fb90bca8c"
+      }
+    ],
+    "fr-b2-u03": [
+      {
+        "path": "content/lesson-drafts/fr-b2-u03.json",
+        "sha256": "f78c43b7f84a3378bfb7338557900ef48d3483e7e99668f37974b016cb2a7062"
+      }
+    ],
+    "fr-b2-u04": [
+      {
+        "path": "content/lesson-drafts/fr-b2-u04.json",
+        "sha256": "a7d7c245319540a2b620b38ced7946ba9e19a05dddb800a56572616e2bb559b0"
+      }
+    ],
+    "fr-b2-u05": [
+      {
+        "path": "content/lesson-drafts/fr-b2-u05.json",
+        "sha256": "b69d66537915cb75087346d0d7622241f8e0e16d8fd2144f115f20fba260bef8"
+      }
+    ],
+    "fr-b2-u06": [
+      {
+        "path": "content/lesson-drafts/fr-b2-u06.json",
+        "sha256": "9a85c2bef4849cd9a522dc53b53011c3f8fad0a99e99769c7a4be0b82fdc1ef3"
+      }
+    ],
+    "fr-b2-u07": [
+      {
+        "path": "content/lesson-drafts/fr-b2-u07.json",
+        "sha256": "36ef2fd670dbd3cfda88aac2acdf9810f1dab42d23c2ecfb476f0956b21127c4"
+      }
+    ],
+    "fr-b2-u08": [
+      {
+        "path": "content/lesson-drafts/fr-b2-u08.json",
+        "sha256": "345d11bb3e8d1fd24b076f3a0568de95e45ab9075881abdf1d6908c8743672d9"
+      }
+    ],
+    "fr-b2-u09": [
+      {
+        "path": "content/lesson-drafts/fr-b2-u09.json",
+        "sha256": "16f3012c47c6891b749cec54f6138d8b8b6bb48be5535a1097034f2a86138aa1"
+      }
+    ],
+    "fr-b2-u10": [
+      {
+        "path": "content/lesson-drafts/fr-b2-u10.json",
+        "sha256": "e109c662b8aaa175fd1ed8e65c00ad44313991d5cb959bb1e12453a1851d6c25"
+      }
+    ],
+    "fr-c1-u01": [
+      {
+        "path": "content/lesson-drafts/fr-c1-u01.json",
+        "sha256": "8042a68a090d8b770891ae90c04e4908e583652f9c6563ffa4b9bd7c4b200c98"
+      }
+    ],
+    "fr-c1-u02": [
+      {
+        "path": "content/lesson-drafts/fr-c1-u02.json",
+        "sha256": "94b817a0a4bb1bda61713831a15066d5dbed50c780a70432b0e7862df7615469"
+      }
+    ],
+    "fr-c1-u03": [
+      {
+        "path": "content/lesson-drafts/fr-c1-u03.json",
+        "sha256": "997f849db786536fc4aeea03259ba3341cc56a895a1ef10b9eb5ce2096a9d6df"
+      }
+    ],
+    "fr-c1-u04": [
+      {
+        "path": "content/lesson-drafts/fr-c1-u04.json",
+        "sha256": "6e72efbbaba4638abe3a62c309b846fad3d6b8c4992e9e1c336051d1c8edddc8"
+      }
+    ],
+    "fr-c1-u05": [
+      {
+        "path": "content/lesson-drafts/fr-c1-u05.json",
+        "sha256": "d692e97d80b35845b8f74be68cf015d55fbd25aaca76d596ae1d3f649b2da1d2"
+      }
+    ],
+    "fr-c1-u06": [
+      {
+        "path": "content/lesson-drafts/fr-c1-u06.json",
+        "sha256": "3790a00f872e11d7482264a9753b0ee55fd15f24fb0b137a6a446f4f10c4972f"
+      }
+    ],
+    "fr-c1-u07": [
+      {
+        "path": "content/lesson-drafts/fr-c1-u07.json",
+        "sha256": "bf65fe8249934f13c9dcdfde67bc60ad4158294e1e48a8c1f95f7064806ea749"
+      }
+    ],
+    "fr-c1-u08": [
+      {
+        "path": "content/lesson-drafts/fr-c1-u08.json",
+        "sha256": "0d2a703ba5e385c62653a07928595522fbb79d6c1520ecba22dfda1fc226f09f"
+      }
+    ],
+    "fr-c2-u01": [
+      {
+        "path": "content/lesson-drafts/fr-c2-u01.json",
+        "sha256": "9d728ba192784294db6d6101ca7f6794d412afcf1224f1a361fed6fa6bdca969"
+      }
+    ],
+    "fr-c2-u02": [
+      {
+        "path": "content/lesson-drafts/fr-c2-u02.json",
+        "sha256": "60de34b71828ee98bb508e53547dbd8f8b61dbf36a6edb7601f3788a68731c1b"
+      }
+    ],
+    "fr-c2-u03": [
+      {
+        "path": "content/lesson-drafts/fr-c2-u03.json",
+        "sha256": "464b4ffc546ed2dc8034ec5f99812476124e476bab527b626355a1019f92abab"
+      }
+    ],
+    "fr-c2-u04": [
+      {
+        "path": "content/lesson-drafts/fr-c2-u04.json",
+        "sha256": "25aebbd44fbaaf71d96eff6fb8b85b98870265529e4eeed33d8a32d56fe2f788"
+      }
+    ],
+    "fr-c2-u05": [
+      {
+        "path": "content/lesson-drafts/fr-c2-u05.json",
+        "sha256": "102963ae613626f46ec06ac581301c674978f2190fff169b09bdf624f1aad64c"
+      }
+    ],
+    "fr-c2-u06": [
+      {
+        "path": "content/lesson-drafts/fr-c2-u06.json",
+        "sha256": "2076f16f8abf6aef0521538b4b648d85267f4d056efd9c9078f028b1a8c9f13a"
+      }
+    ],
+    "fr-c2-u07": [
+      {
+        "path": "content/lesson-drafts/fr-c2-u07.json",
+        "sha256": "3bcbe04dfc3cc4716f280f3e8689b7b9b5b79916420091603c6ce6010fc15089"
+      }
+    ],
+    "fr-c2-u08": [
+      {
+        "path": "content/lesson-drafts/fr-c2-u08.json",
+        "sha256": "afb7b9c21962ecefe04ee77e4ed732019bf92ad549dcc55b65659e06eedfca2b"
+      }
+    ],
+    "en-fnd-01": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-02": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-03": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-04": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-05": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-06": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-07": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-08": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-09": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-10": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-11": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-12": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-13": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-14": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-15": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-16": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-17": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-18": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-19": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-20": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-21": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-22": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-23": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "en-fnd-24": [
+      {
+        "path": "src/foundationEnglish.ts",
+        "sha256": "4e1e3ec8fdff6cb0b81c80a9d99d7f3f898ee88773f91560b3942012d015af70"
+      },
+      {
+        "path": "src/foundationEnglishBridge.ts",
+        "sha256": "8dfa95e6b846c20ac6279e4478002e80b79afb44d27199459d5f84774c803b57"
+      }
+    ],
+    "fr-fnd-01": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-02": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-03": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-04": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-05": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-06": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-07": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-08": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-09": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-10": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-11": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-12": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-13": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-14": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-15": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-16": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-17": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-18": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-19": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-20": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-21": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-22": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-23": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ],
+    "fr-fnd-24": [
+      {
+        "path": "src/foundationFrench.ts",
+        "sha256": "c16b2ee36f7168a3a6f2c1e5e3b7353e0e06912e6841bf4bc0d05e5966a3d572"
+      },
+      {
+        "path": "src/foundationFrenchBridge.ts",
+        "sha256": "8c98c5da71def8d21263be5a23b0a52669838cf9ad80f7c9cbaadf7fb774cfc9"
+      }
+    ]
+  },
   "blocked_external_checks": [
     "Independent human semantic review",
     "Authorized account sign-in on two physical devices",
     "Audio transcript, timing and license verification",
     "Reviewed foundation capacity migration not applied to live database (PR-only scope)"
   ],
-  "last_successful_group": "foundation_long_answer_sync",
-  "status": "in_progress",
+  "last_successful_group": "source_translation_and_private_audio_integration",
+  "status": "final_validation_pending",
   "partial_work": {
     "foundation_ids": [
       "en-fnd-01",
@@ -486,7 +1513,6 @@
     ],
     "remaining": [
       "independent translation review",
-      "whole-site main-course source mapping review",
       "audio alignment and rights",
       "real device cloud acceptance"
     ],
@@ -547,5 +1573,10 @@
       "fr-c2-u08"
     ]
   },
-  "completion_definition": "Implemented source-linked bilingual reception, grammar/vocabulary and output; does not imply independent semantic QA, audio certification or private-manuscript equivalence"
+  "completion_definition": "Implemented source-linked bilingual reception, grammar/vocabulary and output; does not imply independent semantic QA, audio certification or private-manuscript equivalence",
+  "remaining_work": [
+    "Final HEAD CI and Linux browser smoke",
+    "Consolidated evidence report",
+    "Independent human semantics/audio and two-device account acceptance remain external"
+  ]
 }

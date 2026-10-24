@@ -31,7 +31,7 @@ export default function LessonReader({text,courseId,content,privateSource=false,
   (showAll?sections.map(s=>s.heading+'\n'+s.body).join('\n\n'):sections[selected]?.body||''):text;
  const kind=current===1?'grammar':current===2?'vocabulary':null;
  const topic=Boolean(!privateSource&&kind&&linkedSpecialties(kind,courseId).length>0);
- const enrich=!showAll&&(topic||current===3&&RECEPTION_LESSONS[courseId]||current===5&&TASK1_WORKSHOPS[courseId]);
+ const enrich=!privateSource&&!showAll&&(topic||current===3&&RECEPTION_LESSONS[courseId]||current===5&&TASK1_WORKSHOPS[courseId]);
  return <div className="lesson-reader">
   {lesson.structured&&!hideTabs&&<nav className="lesson-stages" aria-label="课程五个学习环节">
    {sections.map((part,index)=><button key={part.index} type="button"
@@ -64,6 +64,11 @@ export default function LessonReader({text,courseId,content,privateSource=false,
        {!showAll&&current===3&&<BilingualTeaching key={courseId+'-'+current}
         courseId={courseId} stage={current} content={content} privateSource={privateSource} sourceText={text} onSaveOutput={onSaveOutput}/>}</>}</>}
   </article>
+  {privateSource&&!showAll&&(current===3&&RECEPTION_LESSONS[courseId]||current===5&&TASK1_WORKSHOPS[courseId])&&
+   <details className="private-public-supplement"><summary>同课目标的公共补充练习</summary>
+    <p>以下为独立原创补充材料，其段落、数据和答案不作为上方私人原稿的对应翻译或证据。</p>
+    {current===3?<ReceptionStudy courseId={courseId} rate={ttsRate}/>:<Task1WritingWorkshop courseId={courseId}/>}
+   </details>}
   {lesson.structured&&<div className="lesson-controls">
    {!showAll&&<button disabled={selected===0} onClick={()=>onChangeStage(moveStudyStage(current,-1))}>← 上一部分</button>}
    <button className="lesson-toggle" onClick={()=>setShowAll(v=>!v)}>

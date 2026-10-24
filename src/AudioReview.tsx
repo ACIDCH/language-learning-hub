@@ -11,13 +11,13 @@ export default function AudioReview({client,session,assetId}:{
  const [loaded,setLoaded]=useState(false);
  const [status,setStatus]=useState('');
  useEffect(()=>{
-  let alive=true;setState(EMPTY);setLoaded(false);
+  let alive=true;setState(EMPTY);setLoaded(false);setStatus('');
   void client.from('audio_editorial_reviews').select('*')
    .eq('user_id',session.user.id).eq('asset_id',assetId).maybeSingle()
    .then(({data,error})=>{
      if(!alive)return;
-     setLoaded(true);
      if(error){setStatus('读取审核记录失败：'+error.message);return;}
+     setLoaded(true);
      if(data)setState({listened:!!data.listened,text_matched:!!data.text_matched,
        clarity_ok:!!data.clarity_ok,reviewer_notes:data.reviewer_notes||''});
    });
@@ -41,7 +41,7 @@ export default function AudioReview({client,session,assetId}:{
    <div className="review-checklist">
     {[
       {key:'listened',label:'已完整试听，无播放损坏'},
-      {key:'text_matched',label:'录音内容与课程目标文本一致'},
+      {key:'text_matched',label:'录音内容与其原版目标文本一致'},
       {key:'clarity_ok',label:'语速、清晰度与语言发音可用于学习'}
     ].map(x=><label key={x.key}>
       <input disabled={!loaded} type="checkbox"

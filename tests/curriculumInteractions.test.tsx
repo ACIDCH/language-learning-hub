@@ -88,7 +88,9 @@ it('handles paragraph replay, pause/resume, rate changes, stale events, errors a
 
 it('keeps private manuscripts while providing the same mapped listening and writing supplements',()=>{
  const {rerender}=render(<LessonReader courseId="fr-c1-u07" privateSource text="Private source remains intact." stage={3} onChangeStage={()=>{}}/>);
+ fireEvent.click(screen.getByText('同课目标的公共补充练习'));
  expect(screen.getByRole('region',{name:'逐段双语听读'})).toBeTruthy();
+ expect(screen.getByText(/不作为上方私人原稿的对应翻译或证据/)).toBeTruthy();
  expect(screen.getByText('Private source remains intact.')).toBeTruthy();
  rerender(<LessonReader courseId="en-ielts-writing-task1-u03" privateSource text="Private chart practice remains intact." stage={5} onChangeStage={()=>{}}/>);
  expect(screen.getByRole('region',{name:'完整图示写作练习'})).toBeTruthy();

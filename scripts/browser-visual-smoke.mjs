@@ -501,7 +501,7 @@ try{
   writeFileSync(output+'/desktop-'+theme+'-lesson.png',Buffer.from(shot.data,'base64'));
  }
  const acceptance=[];
- const representatives=[['fr-a1-u01',1],['fr-a2-u03',1],['fr-b2-u03',3],['fr-c1-u07',3],['fr-c2-u03',3],['en-ielts-listening-u02',3],['en-ielts-writing-task1-u03',4],['en-ielts-writing-task2-u01',1]];
+ const representatives=[['en-fnd-01',1],['en-fnd-24',4],['fr-fnd-01',3],['fr-fnd-24',4],['fr-c2-u08',3],['en-ielts-speaking-u08',3],['fr-a1-u01',1],['fr-a2-u03',1],['fr-b2-u03',3],['fr-c1-u07',3],['fr-c2-u03',3],['en-ielts-listening-u02',3],['en-ielts-writing-task1-u03',4],['en-ielts-writing-task2-u01',1]];
  for(const width of [390,768,1440,1920]){
   await call('Emulation.setDeviceMetricsOverride',{width,height:1000,deviceScaleFactor:1,mobile:width<600});
   for(const [id,stage] of representatives){

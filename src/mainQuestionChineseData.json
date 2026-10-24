@@ -1,0 +1,1062 @@
+{
+  "en-ielts-language-upgrade-u01": {
+    "1": {
+      "sourcePrompt": "Combine Some students needed help. They attended the workshop. without claiming all students needed help.",
+      "sourceAnswer": "The students who needed help attended the workshop.",
+      "prompt": "合并“有些学生需要帮助。他们参加了工作坊”，不要误称所有学生都需要帮助。",
+      "answer": "那些需要帮助的学生参加了工作坊。"
+    }
+  },
+  "en-ielts-language-upgrade-u02": {
+    "1": {
+      "sourcePrompt": "What does has expanded connect ?",
+      "sourceAnswer": "Work since the earlier study with the team's current scope.",
+      "prompt": "has expanded 连接了哪两个时间层面？",
+      "answer": "从较早研究以来开展的工作，与团队目前的工作范围。"
+    }
+  },
+  "en-ielts-language-upgrade-u03": {
+    "1": {
+      "sourcePrompt": "Correct They made a research.",
+      "sourceAnswer": "They conducted research. / They carried out a study.",
+      "prompt": "改正 They made a research。",
+      "answer": "他们开展了研究。／他们进行了一项研究。"
+    }
+  },
+  "en-ielts-language-upgrade-u04": {
+    "1": {
+      "sourcePrompt": "Does linked to necessarily mean caused by ?",
+      "sourceAnswer": "No, association alone does not establish causation.",
+      "prompt": "linked to 是否必然表示 caused by？",
+      "answer": "不是，仅有关联不能确立因果关系。"
+    }
+  },
+  "en-ielts-language-upgrade-u05": {
+    "1": {
+      "sourcePrompt": "Why is the conclusion not simply indecisive ?",
+      "sourceAnswer": "It favours a provisional action and specifies the remaining test.",
+      "prompt": "为什么结论并非单纯犹豫不决？",
+      "answer": "它倾向于采取一项暂行措施，并明确了还要做的检验。"
+    }
+  },
+  "en-ielts-language-upgrade-u06": {
+    "1": {
+      "sourcePrompt": "When is revision useful as a noun ?",
+      "sourceAnswer": "When it refers back to an already introduced change.",
+      "prompt": "什么时候使用名词 revision 有助于表达？",
+      "answer": "当它回指前面已经介绍的一项修改时。"
+    }
+  },
+  "en-ielts-language-upgrade-u07": {
+    "1": {
+      "sourcePrompt": "How can the ambiguous they sentence be repaired ?",
+      "sourceAnswer": "Name the actor: after the planning team changed the plan.",
+      "prompt": "如何修正 they 指代不清的句子？",
+      "answer": "明确行为主体：在规划团队修改方案之后。"
+    }
+  },
+  "en-ielts-language-upgrade-u08": {
+    "1": {
+      "sourcePrompt": "Must every more formal synonym be accepted ?",
+      "sourceAnswer": "No, it must preserve the intended meaning and suit the context.",
+      "prompt": "是否应接受所有听起来更正式的近义词替换？",
+      "answer": "不应；替换词必须保留原意，并适合上下文。"
+    }
+  },
+  "en-ielts-listening-u01": {
+    "0": {
+      "sourcePrompt": "What change of emphasis follows however ?",
+      "sourceAnswer": "From potential shade benefits to conditions needed for them.",
+      "prompt": "however 之后，论述重点发生了什么变化？",
+      "answer": "从树荫可能带来的益处，转向实现这些益处所需的条件。"
+    },
+    "1": {
+      "sourcePrompt": "Which measure is proposed at the end ?",
+      "sourceAnswer": "Tree survival rates.",
+      "prompt": "结尾建议使用哪项衡量指标？",
+      "answer": "树木成活率。"
+    }
+  },
+  "en-ielts-listening-u02": {
+    "0": {
+      "sourcePrompt": "Is the speaker's attitude unconditional support ?",
+      "sourceAnswer": "No, it is conditional acceptance with reservations.",
+      "prompt": "说话者是否无条件支持这一方案？",
+      "answer": "不是，而是有所保留、有条件地接受。"
+    },
+    "1": {
+      "sourcePrompt": "What is the purpose of the talk ?",
+      "sourceAnswer": "To evaluate layouts against the activities they support.",
+      "prompt": "这段讲话的目的是什么？",
+      "answer": "根据空间布局所支持的活动来评价布局。"
+    }
+  },
+  "en-ielts-listening-u03": {
+    "0": {
+      "sourcePrompt": "Paraphrase a modest decline without strengthening it.",
+      "sourceAnswer": "A slight fall.",
+      "prompt": "在不加强程度的前提下，改写 a modest decline。",
+      "answer": "小幅下降。"
+    },
+    "1": {
+      "sourcePrompt": "Does thirty describe normal attendance ?",
+      "sourceAnswer": "No, it is the maximum proposed online capacity.",
+      "prompt": "thirty 指的是通常的出席人数吗？",
+      "answer": "不是，它是拟议的线上参与人数上限。"
+    }
+  },
+  "en-ielts-listening-u04": {
+    "0": {
+      "sourcePrompt": "Where is the seed store relative to the greenhouse ?",
+      "sourceAnswer": "Just beyond it, on the same side of the path.",
+      "prompt": "种子库相对于温室在哪里？",
+      "answer": "就在越过温室的位置，与温室在小路的同一侧。"
+    },
+    "1": {
+      "sourcePrompt": "Where should visitors leave specimens ?",
+      "sourceAnswer": "At the reception desk.",
+      "prompt": "访客应该把标本放在哪里？",
+      "answer": "接待处。"
+    }
+  },
+  "en-ielts-listening-u05": {
+    "0": {
+      "sourcePrompt": "What room is finally requested ?",
+      "sourceAnswer": "Room sixty.",
+      "prompt": "最终申请的是哪间房？",
+      "answer": "六十号房间。"
+    },
+    "1": {
+      "sourcePrompt": "Should the date on the invitation change ?",
+      "sourceAnswer": "No, it remains 14 May.",
+      "prompt": "邀请函上的日期需要改吗？",
+      "answer": "不需要，仍是五月十四日。"
+    }
+  },
+  "en-ielts-listening-u06": {
+    "0": {
+      "sourcePrompt": "Complete with ONE WORD: Place each sample in a clean ___.",
+      "sourceAnswer": "container",
+      "prompt": "仅填一个词：把每个样品放进一个干净的___中。",
+      "answer": "容器（container）。"
+    },
+    "1": {
+      "sourcePrompt": "What two items belong on the label ?",
+      "sourceAnswer": "Location and collection date.",
+      "prompt": "标签上应写哪两项信息？",
+      "answer": "采集地点和采集日期。"
+    }
+  },
+  "en-ielts-listening-u07": {
+    "0": {
+      "sourcePrompt": "What is Leon's initial concern ?",
+      "sourceAnswer": "The feasibility of fifty interviews before the deadline.",
+      "prompt": "Leon 最初担心什么？",
+      "answer": "能否在截止日期前完成五十次访谈。"
+    },
+    "1": {
+      "sourcePrompt": "How does the final design differ from Maya's first proposal ?",
+      "sourceAnswer": "It uses a survey plus six follow-up interviews rather than fifty interviews.",
+      "prompt": "最终设计与 Maya 的最初提议有什么不同？",
+      "answer": "采用问卷调查加六次后续访谈，而不是五十次访谈。"
+    }
+  },
+  "en-ielts-listening-u08": {
+    "0": {
+      "sourcePrompt": "Summarise the central recommendation in one sentence.",
+      "sourceAnswer": "Combine recall, feedback and varied use rather than relying only on rereading.",
+      "prompt": "用一句话概括核心建议。",
+      "answer": "结合回忆、反馈和多样化运用，而不要只依赖反复阅读。"
+    },
+    "1": {
+      "sourcePrompt": "Is one spacing interval recommended for every task ?",
+      "sourceAnswer": "No, it depends on the material and goal.",
+      "prompt": "是否建议每项任务都采用同一个间隔时间？",
+      "answer": "不是，间隔取决于材料和目标。"
+    }
+  },
+  "en-ielts-reading-u03": {
+    "0": {
+      "sourcePrompt": "Choose the better heading: A secure solution for every crop / Why one conservation method is insufficient.",
+      "sourceAnswer": "Why one conservation method is insufficient.",
+      "prompt": "选择更合适的标题：“适用于每种作物的可靠方案”／“为什么单一保护方法不够”。",
+      "answer": "为什么单一保护方法不够。"
+    },
+    "1": {
+      "sourcePrompt": "Which sentence prevents an overly negative interpretation ?",
+      "sourceAnswer": "These practical limits do not make seed banks useless.",
+      "prompt": "哪句话避免了过度消极的理解？",
+      "answer": "这些实际限制并不意味着种子库毫无用处。"
+    }
+  },
+  "en-ielts-reading-u04": {
+    "0": {
+      "sourcePrompt": "All three libraries held evening meetings. True, False or Not Given ?",
+      "sourceAnswer": "False.",
+      "prompt": "三家图书馆都举办了晚间会议。判断：正确、错误或未提及。",
+      "answer": "错误。"
+    },
+    "1": {
+      "sourcePrompt": "The club received government funding. True, False or Not Given ?",
+      "sourceAnswer": "Not Given.",
+      "prompt": "该俱乐部获得了政府资助。判断：正确、错误或未提及。",
+      "answer": "未提及。"
+    }
+  },
+  "en-ielts-reading-u05": {
+    "0": {
+      "sourcePrompt": "What does this intervention refer to ?",
+      "sourceAnswer": "Grants for insulation in older homes.",
+      "prompt": "this intervention 指什么？",
+      "answer": "为老旧住宅加装隔热设施提供的补助。"
+    },
+    "1": {
+      "sourcePrompt": "Are decorative repairs covered ?",
+      "sourceAnswer": "No, they remain the owner's responsibility.",
+      "prompt": "装饰性修缮是否在补助范围内？",
+      "answer": "不在，仍由房主负责。"
+    }
+  },
+  "en-ielts-reading-u06": {
+    "0": {
+      "sourcePrompt": "Does the author regard pollution as the proven cause ?",
+      "sourceAnswer": "No, the explanation is tentative and other factors remain.",
+      "prompt": "作者是否认为污染已经被证实是原因？",
+      "answer": "不是，这只是暂定解释，仍有其他因素需要考虑。"
+    },
+    "1": {
+      "sourcePrompt": "What is a justified next step ?",
+      "sourceAnswer": "A controlled comparison separating possible factors.",
+      "prompt": "合理的下一步是什么？",
+      "answer": "进行能区分潜在影响因素的对照比较。"
+    }
+  },
+  "en-ielts-reading-u07": {
+    "0": {
+      "sourcePrompt": "Which section identifies a limitation in recruitment ?",
+      "sourceAnswer": "Section B.",
+      "prompt": "哪一部分指出了招募方式的局限？",
+      "answer": "B 部分。"
+    },
+    "1": {
+      "sourcePrompt": "Where is a methodological recommendation located ?",
+      "sourceAnswer": "Section C.",
+      "prompt": "方法方面的建议位于哪一部分？",
+      "answer": "C 部分。"
+    }
+  },
+  "en-ielts-reading-u08": {
+    "0": {
+      "sourcePrompt": "Why are the passages not necessarily contradictory ?",
+      "sourceAnswer": "An average gain can coexist with limited benefits for one group.",
+      "prompt": "为什么这两段文字不一定互相矛盾？",
+      "answer": "平均收益与某一群体收益有限，可以同时存在。"
+    },
+    "1": {
+      "sourcePrompt": "Can the interviews establish the district-wide frequency of the barrier ?",
+      "sourceAnswer": "No, the passage says further data are needed.",
+      "prompt": "这些访谈能否确定该障碍在全区出现的频率？",
+      "answer": "不能，文中指出还需要更多数据。"
+    }
+  },
+  "en-ielts-speaking-u01": {
+    "1": {
+      "sourcePrompt": "Identify a phrase that qualifies the initial answer.",
+      "sourceAnswer": "That said, the best place depends on the task.",
+      "prompt": "找出一句对最初回答作出限定的话。",
+      "answer": "话虽如此，最佳地点取决于具体任务。"
+    }
+  },
+  "en-ielts-speaking-u02": {
+    "1": {
+      "sourcePrompt": "How does the final sentence extend rather than repeat ?",
+      "sourceAnswer": "It describes a change in confidence after the experience.",
+      "prompt": "最后一句如何深化回答，而非重复前文？",
+      "answer": "它描述了这次经历之后信心的变化。"
+    }
+  },
+  "en-ielts-speaking-u03": {
+    "1": {
+      "sourcePrompt": "What gives the story a concluding point ?",
+      "sourceAnswer": "The reflection on unexpected help.",
+      "prompt": "什么使这个故事有了收束点？",
+      "answer": "对意外获得帮助的反思。"
+    }
+  },
+  "en-ielts-speaking-u04": {
+    "1": {
+      "sourcePrompt": "Does far from professional mean professionally made ?",
+      "sourceAnswer": "No, it means the opposite: it was not professional in quality.",
+      "prompt": "far from professional 是否表示由专业人士制作？",
+      "answer": "不是，含义相反：其质量并不专业。"
+    }
+  },
+  "en-ielts-speaking-u05": {
+    "1": {
+      "sourcePrompt": "Give a shared comparison dimension in the response.",
+      "sourceAnswer": "Predictability of the same commute.",
+      "prompt": "指出回答中共同使用的一个比较维度。",
+      "answer": "同一段通勤路程的可预期程度。"
+    }
+  },
+  "en-ielts-speaking-u06": {
+    "1": {
+      "sourcePrompt": "Why use may in one consequence may be ?",
+      "sourceAnswer": "The effect is possible and context-dependent rather than universal.",
+      "prompt": "one consequence may be 为什么用 may？",
+      "answer": "这一影响只是可能发生，并取决于具体情况，而非普遍如此。"
+    }
+  },
+  "en-ielts-speaking-u07": {
+    "1": {
+      "sourcePrompt": "Can identical transcripts prove identical intonation ?",
+      "sourceAnswer": "No, transcription does not reliably represent intonation.",
+      "prompt": "文字转写相同，能否证明语调也相同？",
+      "answer": "不能，文字转写无法可靠呈现语调。"
+    }
+  },
+  "en-ielts-speaking-u08": {
+    "1": {
+      "sourcePrompt": "Why does the correction help coherence ?",
+      "sourceAnswer": "It makes the intended claim explicit without restarting the whole answer.",
+      "prompt": "为什么这处纠正有助于连贯表达？",
+      "answer": "它明确了原本想表达的意思，无须从头重说整个回答。"
+    }
+  },
+  "en-ielts-writing-task1-u02": {
+    "0": {
+      "sourcePrompt": "What is the overall increase ?",
+      "sourceAnswer": "600 visits, or 50% of the initial figure.",
+      "prompt": "总体增加了多少？",
+      "answer": "增加六百人次，即初始数值的百分之五十。"
+    },
+    "1": {
+      "sourcePrompt": "Correct Visits rose by 1,800 in 2023 using the preceding year's value.",
+      "sourceAnswer": "Visits rose by 300 to 1,800 in 2023.",
+      "prompt": "根据上一年的数值，改正“二〇二三年访问量增加了一千八百”。",
+      "answer": "二〇二三年访问量增加三百，达到一千八百。"
+    }
+  },
+  "en-ielts-writing-task1-u03": {
+    "0": {
+      "sourcePrompt": "At B, how does bus use compare with cycling ?",
+      "sourceAnswer": "It is twice as high: 50% versus 25%.",
+      "prompt": "在 B 地点，公交使用率与骑行相比如何？",
+      "answer": "前者是后者的两倍：百分之五十对百分之二十五。"
+    },
+    "1": {
+      "sourcePrompt": "What is the gap at C ?",
+      "sourceAnswer": "15 percentage points.",
+      "prompt": "C 地点的差距是多少？",
+      "answer": "十五个百分点。"
+    }
+  },
+  "en-ielts-writing-task1-u04": {
+    "0": {
+      "sourcePrompt": "Can we conclude that teaching received less money ?",
+      "sourceAnswer": "No, the total budgets are unknown.",
+      "prompt": "能否断定教学实际获得的资金减少了？",
+      "answer": "不能，因为不知道预算总额。"
+    },
+    "1": {
+      "sourcePrompt": "How much did research's share rise ?",
+      "sourceAnswer": "10 percentage points; about 33.3% relative to its original share.",
+      "prompt": "研究经费占比上升了多少？",
+      "answer": "十个百分点；相对于原占比约增长百分之三十三点三。"
+    }
+  },
+  "en-ielts-writing-task1-u05": {
+    "0": {
+      "sourcePrompt": "What happens after the mixture is spread ?",
+      "sourceAnswer": "Water is pressed out and the sheet is dried.",
+      "prompt": "混合物铺开之后发生什么？",
+      "answer": "压出水分，然后将纸页干燥。"
+    },
+    "1": {
+      "sourcePrompt": "Rewrite Workers sort the paper in the passive.",
+      "sourceAnswer": "The paper is sorted by workers.",
+      "prompt": "将“工人对纸张进行分类”改为被动语态。",
+      "answer": "纸张由工人进行分类。"
+    }
+  },
+  "en-ielts-writing-task1-u06": {
+    "0": {
+      "sourcePrompt": "Which building remained unchanged ?",
+      "sourceAnswer": "The library.",
+      "prompt": "哪座建筑没有变化？",
+      "answer": "图书馆。"
+    },
+    "1": {
+      "sourcePrompt": "Rewrite The garden replaced the car park with the old feature as subject.",
+      "sourceAnswer": "The car park was replaced by the garden.",
+      "prompt": "将“花园取代了停车场”改写，以原有设施为主语。",
+      "answer": "停车场被花园取代。"
+    }
+  },
+  "en-ielts-writing-task1-u07": {
+    "0": {
+      "sourcePrompt": "What does this shift refer to ?",
+      "sourceAnswer": "The redistribution from paper towards digital borrowing.",
+      "prompt": "this shift 指什么？",
+      "answer": "借阅占比由纸质向数字形式转移。"
+    },
+    "1": {
+      "sourcePrompt": "Did digital borrowing become the largest category ?",
+      "sourceAnswer": "No, paper remained at 60%, above digital's 30%.",
+      "prompt": "数字借阅是否成为了最大的类别？",
+      "answer": "没有，纸质借阅仍占百分之六十，高于数字借阅的百分之三十。"
+    }
+  },
+  "en-ielts-writing-task1-u08": {
+    "0": {
+      "sourcePrompt": "When did visits double relative to the first year ?",
+      "sourceAnswer": "In the third year, when they reached 40.",
+      "prompt": "哪一年访问量达到第一年的两倍？",
+      "answer": "第三年，达到四十。"
+    },
+    "1": {
+      "sourcePrompt": "Why remove the advertising explanation ?",
+      "sourceAnswer": "The table gives no evidence of a cause.",
+      "prompt": "为什么应删去广告带来增长的解释？",
+      "answer": "表格没有提供有关原因的证据。"
+    }
+  },
+  "en-ielts-writing-task2-u02": {
+    "0": {
+      "sourcePrompt": "Which sentence supplies a mechanism rather than restating the claim ?",
+      "sourceAnswer": "A shared place gives people a reason to remain nearby.",
+      "prompt": "哪句话提供了作用机制，而不只是重复观点？",
+      "answer": "共享场所给人们一个留在附近的理由。"
+    },
+    "1": {
+      "sourcePrompt": "Is the courtyard an observed research result ?",
+      "sourceAnswer": "No, it is explicitly hypothetical.",
+      "prompt": "庭院的例子是实际观察到的研究结果吗？",
+      "answer": "不是，文中明确将其设为假想例子。"
+    }
+  },
+  "en-ielts-writing-task2-u03": {
+    "0": {
+      "sourcePrompt": "What advantage is conceded ?",
+      "sourceAnswer": "More consistent comparison through common tasks.",
+      "prompt": "作者承认了哪项优点？",
+      "answer": "通过共同任务，可以进行更加一致的比较。"
+    },
+    "1": {
+      "sourcePrompt": "Does the rebuttal demand abolition ?",
+      "sourceAnswer": "No, it proposes complementary evidence.",
+      "prompt": "反驳是否主张废除这种做法？",
+      "answer": "不是，它建议增加互补的证据。"
+    }
+  },
+  "en-ielts-writing-task2-u04": {
+    "0": {
+      "sourcePrompt": "What shared concern links the two views ?",
+      "sourceAnswer": "Preparing students for their futures.",
+      "prompt": "两种观点都关心什么？",
+      "answer": "帮助学生为未来做好准备。"
+    },
+    "1": {
+      "sourcePrompt": "What is the writer's position ?",
+      "sourceAnswer": "Combine specialised practice with transferable reasoning, with balance varying by programme.",
+      "prompt": "作者的立场是什么？",
+      "answer": "结合专业实践与可迁移的推理能力，具体比重因课程项目而异。"
+    }
+  },
+  "en-ielts-writing-task2-u05": {
+    "0": {
+      "sourcePrompt": "What condition supports the positive judgement ?",
+      "sourceAnswer": "Assisted and non-digital routes remain available.",
+      "prompt": "积极评价以什么条件为前提？",
+      "answer": "仍然保留有人协助的办理方式和非数字渠道。"
+    },
+    "1": {
+      "sourcePrompt": "Why not count advantages and disadvantages ?",
+      "sourceAnswer": "Their significance differs in scale and severity.",
+      "prompt": "为什么不能简单清点利弊的数量？",
+      "answer": "各项利弊的影响范围和严重程度不同。"
+    }
+  },
+  "en-ielts-writing-task2-u06": {
+    "0": {
+      "sourcePrompt": "Which cause do staggered start times target ?",
+      "sourceAnswer": "Many people travelling at the same time.",
+      "prompt": "错峰开始时间针对哪项原因？",
+      "answer": "大量人员在同一时间出行。"
+    },
+    "1": {
+      "sourcePrompt": "What should accompany a proposed solution ?",
+      "sourceAnswer": "Its target mechanism, responsible actors and an evaluation method.",
+      "prompt": "提出解决办法时，还应说明什么？",
+      "answer": "它针对的机制、负责实施的主体，以及评估方法。"
+    }
+  },
+  "en-ielts-writing-task2-u07": {
+    "0": {
+      "sourcePrompt": "What does this charge refer to ?",
+      "sourceAnswer": "The instrument hire fee.",
+      "prompt": "this charge 指什么？",
+      "answer": "乐器租用费。"
+    },
+    "1": {
+      "sourcePrompt": "Would removing it solve every access problem ?",
+      "sourceAnswer": "No, teachers and rehearsal space may remain constraints.",
+      "prompt": "取消这项费用能解决所有参与障碍吗？",
+      "answer": "不能，师资和排练场地仍可能构成限制。"
+    }
+  },
+  "en-ielts-writing-task2-u08": {
+    "0": {
+      "sourcePrompt": "Which word makes the initial claim absolute ?",
+      "sourceAnswer": "Inevitably.",
+      "prompt": "哪个词使最初的论断变得绝对？",
+      "answer": "Inevitably，意为“不可避免地”。"
+    },
+    "1": {
+      "sourcePrompt": "Why is the revised claim more precise ?",
+      "sourceAnswer": "It specifies some patterns, a possible effect and a mechanism.",
+      "prompt": "为什么修改后的论断更精确？",
+      "answer": "它限定了某些使用模式，说明了可能的影响及其机制。"
+    }
+  },
+  "fr-a1-u04": {
+    "0": {
+      "sourcePrompt": "Où est le sac ?",
+      "sourceAnswer": "Sous la chaise.",
+      "prompt": "包在哪里？",
+      "answer": "椅子下面。"
+    },
+    "1": {
+      "sourcePrompt": "补全：Il y a ___ chaise et ___ cahiers.",
+      "sourceAnswer": "une ; des",
+      "prompt": "补全：有一把椅子和一些练习本。",
+      "answer": "une 用于一把椅子；des 用于一些练习本。"
+    }
+  },
+  "fr-a1-u05": {
+    "0": {
+      "sourcePrompt": "À quelle heure commence le travail ?",
+      "sourceAnswer": "À neuf heures.",
+      "prompt": "工作几点开始？",
+      "answer": "九点。"
+    },
+    "1": {
+      "sourcePrompt": "将 Je prépare les tables 改为 nous 主语。",
+      "sourceAnswer": "Nous préparons les tables.",
+      "prompt": "把“我准备餐桌”改成以“我们”为主语。",
+      "answer": "我们准备餐桌。"
+    }
+  },
+  "fr-a1-u06": {
+    "0": {
+      "sourcePrompt": "Le cours commence-t-il à dix heures ?",
+      "sourceAnswer": "Non, à dix heures et demie.",
+      "prompt": "课程十点开始吗？",
+      "answer": "不是，十点半开始。"
+    },
+    "1": {
+      "sourcePrompt": "选择询问地点的词：___ est l'escalier ?",
+      "sourceAnswer": "Où",
+      "prompt": "选择询问地点的词：楼梯在哪里？",
+      "answer": "Où，意为“哪里”。"
+    }
+  },
+  "fr-a1-u07": {
+    "0": {
+      "sourcePrompt": "Pourquoi choisissent-ils un film aujourd'hui ?",
+      "sourceAnswer": "Parce qu'il pleut.",
+      "prompt": "他们今天为什么选择看电影？",
+      "answer": "因为下雨。"
+    },
+    "1": {
+      "sourcePrompt": "改错：J'aime de nager.",
+      "sourceAnswer": "J'aime nager.",
+      "prompt": "改正“我喜欢游泳”中的多余介词。",
+      "answer": "我喜欢游泳（aimer 后直接接不定式）。"
+    }
+  },
+  "fr-a1-u08": {
+    "0": {
+      "sourcePrompt": "Combien coûtent les pommes ?",
+      "sourceAnswer": "Trois euros le kilo.",
+      "prompt": "苹果多少钱？",
+      "answer": "每公斤三欧元。"
+    },
+    "1": {
+      "sourcePrompt": "补全：deux bouteilles ___ eau.",
+      "sourceAnswer": "d'",
+      "prompt": "补全“两瓶水”。",
+      "answer": "d'；de 在以元音开头的 eau 前省音。"
+    }
+  },
+  "fr-a1-u09": {
+    "0": {
+      "sourcePrompt": "Où faut-il tourner à gauche ?",
+      "sourceAnswer": "Au premier feu.",
+      "prompt": "应该在哪里左转？",
+      "answer": "第一个红绿灯处。"
+    },
+    "1": {
+      "sourcePrompt": "改为指令：Vous traversez la place.",
+      "sourceAnswer": "Traversez la place.",
+      "prompt": "把“你们穿过广场”改成指令。",
+      "answer": "穿过广场。"
+    }
+  },
+  "fr-a1-u10": {
+    "0": {
+      "sourcePrompt": "Que fait chacun après le repas ?",
+      "sourceAnswer": "Chacun range son assiette.",
+      "prompt": "饭后每个人做什么？",
+      "answer": "每个人收好自己的盘子。"
+    },
+    "1": {
+      "sourcePrompt": "补全：On ___ le dîner. (préparer)",
+      "sourceAnswer": "prépare",
+      "prompt": "补全“我们准备晚饭”。",
+      "answer": "prépare；on 后动词用第三人称单数。"
+    }
+  },
+  "fr-a1-u11": {
+    "0": {
+      "sourcePrompt": "Où est le rendez-vous ?",
+      "sourceAnswer": "Devant la gare.",
+      "prompt": "约在哪里见面？",
+      "answer": "火车站前。"
+    },
+    "1": {
+      "sourcePrompt": "改错：Nous allons préparons le repas.",
+      "sourceAnswer": "Nous allons préparer le repas.",
+      "prompt": "改正“我们将准备饭菜”的近将来表达。",
+      "answer": "我们将准备饭菜。"
+    }
+  },
+  "fr-a1-u12": {
+    "0": {
+      "sourcePrompt": "À quelle heure sont-ils rentrés ?",
+      "sourceAnswer": "À cinq heures.",
+      "prompt": "他们几点回来的？",
+      "answer": "五点。"
+    },
+    "1": {
+      "sourcePrompt": "女性说话者补全：Je suis ___ au musée. (aller)",
+      "sourceAnswer": "allée",
+      "prompt": "女性说话者补全“我去了博物馆”。",
+      "answer": "allée；这里过去分词与女性主语配合。"
+    }
+  },
+  "fr-a2-u01": {
+    "1": {
+      "sourcePrompt": "补全：Elles ont ___ deux lits. (réserver)",
+      "sourceAnswer": "réservé",
+      "prompt": "补全“她们预订了两张床位”。",
+      "answer": "réservé；本句用 avoir，过去分词不随主语变为阴性复数。"
+    }
+  },
+  "fr-a2-u02": {
+    "1": {
+      "sourcePrompt": "写出 nous prenons 对应的 je 未完成过去时。",
+      "sourceAnswer": "je prenais",
+      "prompt": "写出 prenons 对应的 je 未完成过去时。",
+      "answer": "je prenais，表示我当时在拿／过去常拿，具体意义取决于上下文。"
+    }
+  },
+  "fr-a2-u03": {
+    "0": {
+      "sourcePrompt": "Faut-il acheter un nouveau billet pour le trajet proposé ?",
+      "sourceAnswer": "Non, le billet reste valable.",
+      "prompt": "建议的行程需要另买一张票吗？",
+      "answer": "不需要，原票仍然有效。"
+    },
+    "1": {
+      "sourcePrompt": "补全：Nous devons ___ de quai. (changer)",
+      "sourceAnswer": "changer",
+      "prompt": "补全“我们必须换站台”。",
+      "answer": "changer；devoir 后接不定式。"
+    }
+  },
+  "fr-a2-u04": {
+    "1": {
+      "sourcePrompt": "将 J'écris à Nora 改用代词。",
+      "sourceAnswer": "Je lui écris.",
+      "prompt": "把“我给 Nora 写信”改为使用代词。",
+      "answer": "我给她写信（lui 替代 à Nora）。"
+    }
+  },
+  "fr-a2-u05": {
+    "0": {
+      "sourcePrompt": "La secrétaire explique-t-elle la cause du problème ?",
+      "sourceAnswer": "Non, elle ne donne pas de diagnostic.",
+      "prompt": "接待员解释了问题的原因吗？",
+      "answer": "没有，她没有作出诊断。"
+    },
+    "1": {
+      "sourcePrompt": "补全：J'ai mal ___ dos.",
+      "sourceAnswer": "au",
+      "prompt": "补全“我背痛”。",
+      "answer": "au；à 与 le 合并。"
+    }
+  },
+  "fr-a2-u06": {
+    "1": {
+      "sourcePrompt": "改错：C'est un plus meilleur sac.",
+      "sourceAnswer": "C'est un meilleur sac.",
+      "prompt": "改正“这是一个更好的包”中的重复比较级。",
+      "answer": "这是一个更好的包。"
+    }
+  },
+  "fr-a2-u07": {
+    "1": {
+      "sourcePrompt": "改错：Si tu viendras, apporte du pain.",
+      "sourceAnswer": "Si tu viens, apporte du pain.",
+      "prompt": "改正条件句“如果你来，请带面包”。",
+      "answer": "如果你来，请带面包（这里 si 后用现在时）。"
+    }
+  },
+  "fr-a2-u08": {
+    "1": {
+      "sourcePrompt": "连接两句：Les étudiants travaillent le jour. Ils viennent le soir.",
+      "sourceAnswer": "Les étudiants travaillent le jour, donc ils viennent le soir.",
+      "prompt": "连接“学生白天工作。他们晚上来”。",
+      "answer": "学生白天工作，所以他们晚上来。"
+    }
+  },
+  "fr-a2-u09": {
+    "1": {
+      "sourcePrompt": "改错：Il faut remplissez le formulaire.",
+      "sourceAnswer": "Il faut remplir le formulaire.",
+      "prompt": "改正“必须填写表格”中的动词形式。",
+      "answer": "必须填写表格。"
+    }
+  },
+  "fr-a2-u10": {
+    "1": {
+      "sourcePrompt": "补全：J'étudie ici ___ deux ans.",
+      "sourceAnswer": "depuis",
+      "prompt": "补全“我在这里学习两年了”，且现在仍在学习。",
+      "answer": "depuis，表示从过去延续到现在。"
+    }
+  },
+  "fr-a2-u11": {
+    "1": {
+      "sourcePrompt": "Quel mot indique une source ?",
+      "sourceAnswer": "Selon.",
+      "prompt": "哪个词表示信息来源？",
+      "answer": "Selon，意为“根据／据……所述”。"
+    }
+  },
+  "fr-a2-u12": {
+    "1": {
+      "sourcePrompt": "补全：L'association ___ organise la fête.",
+      "sourceAnswer": "qui",
+      "prompt": "补全“组织聚会的那个协会”。",
+      "answer": "qui，在关系从句中作主语。"
+    }
+  },
+  "fr-b1-u01": {
+    "1": {
+      "sourcePrompt": "Pourquoi roulions est-il à l'imparfait ?",
+      "sourceAnswer": "Il présente l'action en cours quand la panne survient.",
+      "prompt": "为什么 roulions 使用未完成过去时？",
+      "answer": "它呈现故障发生时正在进行的动作。"
+    }
+  },
+  "fr-b1-u02": {
+    "1": {
+      "sourcePrompt": "La baisse des ventes est-elle établie ?",
+      "sourceAnswer": "Non, le texte précise qu'elle n'est pas prouvée.",
+      "prompt": "销售下降是否已经得到证实？",
+      "answer": "没有，文中明确说尚未证实。"
+    }
+  },
+  "fr-b1-u03": {
+    "1": {
+      "sourcePrompt": "补全：Si nous avions un local, nous ___ un atelier. (ouvrir)",
+      "sourceAnswer": "ouvririons",
+      "prompt": "补全“如果我们有场地，我们就会开办一个工作坊”。",
+      "answer": "ouvririons，条件式现在时。"
+    }
+  },
+  "fr-b1-u04": {
+    "1": {
+      "sourcePrompt": "补全：Il faut que chacun ___ un badge. (porter)",
+      "sourceAnswer": "porte",
+      "prompt": "补全“每个人都必须佩戴徽章”。",
+      "answer": "porte，在 il faut que 后使用虚拟式。"
+    }
+  },
+  "fr-b1-u05": {
+    "1": {
+      "sourcePrompt": "Pourquoi demander une source ?",
+      "sourceAnswer": "Pour permettre la vérification des annonces.",
+      "prompt": "为什么要求注明来源？",
+      "answer": "让公告中的说法可以被核实。"
+    }
+  },
+  "fr-b1-u06": {
+    "1": {
+      "sourcePrompt": "Relevez une formule de demande atténuée.",
+      "sourceAnswer": "Serait-il possible de… ?",
+      "prompt": "找出一种语气较委婉的请求表达。",
+      "answer": "是否可以……？"
+    }
+  },
+  "fr-b1-u07": {
+    "1": {
+      "sourcePrompt": "Exprimez que les commerces ne restent plus ouverts.",
+      "sourceAnswer": "Plusieurs commerces ne sont plus ouverts.",
+      "prompt": "表达这些商店已不再营业。",
+      "answer": "好几家商店已经不再营业。"
+    }
+  },
+  "fr-b1-u08": {
+    "1": {
+      "sourcePrompt": "Dans la langue dont elle se sert, quel groupe dont remplace-t-il ?",
+      "sourceAnswer": "de cette langue",
+      "prompt": "在 la langue dont elle se sert 中，dont 替代什么词组？",
+      "answer": "de cette langue，即 se servir de 中由 de 引出的“这种语言”。"
+    }
+  },
+  "fr-b1-u09": {
+    "1": {
+      "sourcePrompt": "Quel connecteur introduit la limite ?",
+      "sourceAnswer": "Toutefois.",
+      "prompt": "哪个连接词引出限制？",
+      "answer": "Toutefois，意为“然而／不过”。"
+    }
+  },
+  "fr-b1-u10": {
+    "1": {
+      "sourcePrompt": "Quelle phrase propose une négociation ?",
+      "sourceAnswer": "Nous pourrions également convenir d'horaires acceptables.",
+      "prompt": "哪句话提出了协商？",
+      "answer": "我们也可以商定大家能接受的时间。"
+    }
+  },
+  "fr-b2-u01": {
+    "1": {
+      "sourcePrompt": "Quel mode emploie-t-on après bien que dans cette phrase ?",
+      "sourceAnswer": "disposent est ici une forme de subjonctif présent, identique à l'indicatif pour ils.",
+      "prompt": "这句话中，bien que 后使用什么语式？",
+      "answer": "disposent 在这里是虚拟式现在时；其形式恰好与 ils 的直陈式形式相同。"
+    }
+  },
+  "fr-b2-u02": {
+    "1": {
+      "sourcePrompt": "Que fait certes dans le premier argument ?",
+      "sourceAnswer": "Il concède un avantage avant d'en limiter la portée.",
+      "prompt": "第一个论点中的 certes 起什么作用？",
+      "answer": "先承认一项优点，然后限定其适用范围。"
+    }
+  },
+  "fr-b2-u03": {
+    "0": {
+      "sourcePrompt": "Quel biais est possible ?",
+      "sourceAnswer": "L'autosélection de personnes déjà motivées par la vie collective.",
+      "prompt": "可能存在哪种偏差？",
+      "answer": "本来就热衷集体生活的人自行选择参与所产生的偏差。"
+    },
+    "1": {
+      "sourcePrompt": "L'étude prouve-t-elle la causalité ?",
+      "sourceAnswer": "Non, elle établit une association dans cet échantillon.",
+      "prompt": "这项研究是否证明了因果关系？",
+      "answer": "没有，它只确定了这个样本中的关联。"
+    }
+  },
+  "fr-b2-u04": {
+    "1": {
+      "sourcePrompt": "补全：Si nous avions testé, nous ___ le défaut. (repérer)",
+      "sourceAnswer": "aurions repéré",
+      "prompt": "补全“如果我们当时测试过，就会发现这个缺陷”。",
+      "answer": "aurions repéré，条件式过去时。"
+    }
+  },
+  "fr-b2-u05": {
+    "1": {
+      "sourcePrompt": "Transformez Certaines surfaces stockent la chaleur au passif.",
+      "sourceAnswer": "La chaleur est stockée par certaines surfaces.",
+      "prompt": "把“某些表面储存热量”改为被动语态。",
+      "answer": "热量被某些表面储存。"
+    }
+  },
+  "fr-b2-u06": {
+    "1": {
+      "sourcePrompt": "Quelle formule marque une limite de temps ?",
+      "sourceAnswer": "d'ici vendredi",
+      "prompt": "哪个词组表示时间期限？",
+      "answer": "d'ici vendredi，意为“不晚于星期五／星期五之前”。"
+    }
+  },
+  "fr-b2-u07": {
+    "1": {
+      "sourcePrompt": "Reformulez malgré les horaires difficiles avec bien que.",
+      "sourceAnswer": "Bien que les horaires soient difficiles, certains visiteurs viennent.",
+      "prompt": "用 bien que 改写“尽管时间安排不方便”。",
+      "answer": "虽然时间安排不方便，一些访客还是会来。"
+    }
+  },
+  "fr-b2-u08": {
+    "1": {
+      "sourcePrompt": "La solution moins chère est-elle forcément la meilleure ?",
+      "sourceAnswer": "Non, d'autres critères interviennent.",
+      "prompt": "较便宜的方案一定最好吗？",
+      "answer": "不一定，还要考虑其他标准。"
+    }
+  },
+  "fr-b2-u09": {
+    "1": {
+      "sourcePrompt": "改错：Précisez quand aura-t-elle lieu.",
+      "sourceAnswer": "Précisez quand elle aura lieu.",
+      "prompt": "改正间接疑问句“请说明活动什么时候举行”。",
+      "answer": "请说明活动什么时候举行（间接疑问句不使用主谓倒装）。"
+    }
+  },
+  "fr-b2-u10": {
+    "1": {
+      "sourcePrompt": "À qui attribuer l'essai limité ?",
+      "sourceAnswer": "Au second document.",
+      "prompt": "有限范围试行这一说法应归于哪个来源？",
+      "answer": "第二份文献。"
+    }
+  },
+  "fr-c1-u01": {
+    "1": {
+      "sourcePrompt": "Réécrivez Les données démontrent la réussite en conservant l'incertitude.",
+      "sourceAnswer": "Les données suggèrent une amélioration, à confirmer par d'autres observations.",
+      "prompt": "改写“数据证明成功”，保留不确定性。",
+      "answer": "数据提示情况有所改善，还需要其他观察加以确认。"
+    }
+  },
+  "fr-c1-u02": {
+    "1": {
+      "sourcePrompt": "Le gain de temps constitue-t-il une prémisse normative suffisante ?",
+      "sourceAnswer": "Non, il faut aussi justifier les effets et les garanties acceptables.",
+      "prompt": "节省时间是否足以构成规范性前提？",
+      "answer": "不足，还需要论证哪些影响和保障措施可以接受。"
+    }
+  },
+  "fr-c1-u03": {
+    "1": {
+      "sourcePrompt": "Quelle étape permettrait une meilleure comparaison ?",
+      "sourceAnswer": "Désagréger l'enquête et harmoniser les catégories.",
+      "prompt": "哪一步有助于作出更好的比较？",
+      "answer": "将调查结果分组细分，并统一类别口径。"
+    }
+  },
+  "fr-c1-u04": {
+    "1": {
+      "sourcePrompt": "Pourquoi soient après sous réserve que ?",
+      "sourceAnswer": "Cette locution introduit une condition avec le subjonctif.",
+      "prompt": "为什么 sous réserve que 后使用 soient？",
+      "answer": "这个词组引出条件，后接虚拟式。"
+    }
+  },
+  "fr-c1-u05": {
+    "1": {
+      "sourcePrompt": "Quelle lecture inverse le texte refuse-t-il aussi ?",
+      "sourceAnswer": "Toute reconversion serait un effacement.",
+      "prompt": "文章也拒绝了哪一种相反的理解？",
+      "answer": "把任何改造利用都视为对历史的抹除。"
+    }
+  },
+  "fr-c1-u06": {
+    "1": {
+      "sourcePrompt": "Quelle différence entre observer et extrapoler ?",
+      "sourceAnswer": "Observer concerne les cas testés ; extrapoler étend la conclusion à d'autres contextes.",
+      "prompt": "观察与外推有什么区别？",
+      "answer": "观察针对已经测试的案例；外推则将结论扩展到其他情境。"
+    }
+  },
+  "fr-c1-u07": {
+    "0": {
+      "sourcePrompt": "Quel présupposé introduit enfin ?",
+      "sourceAnswer": "L'idée que le refus était attendu auparavant.",
+      "prompt": "enfin 引入了什么预设？",
+      "answer": "此前人们一直期待拒绝发生。"
+    },
+    "1": {
+      "sourcePrompt": "Une citation exacte garantit-elle un cadrage neutre ?",
+      "sourceAnswer": "Non, l'emplacement et le contexte influencent sa portée.",
+      "prompt": "引用准确就能保证叙述框架中立吗？",
+      "answer": "不能，引用的位置和上下文都会影响其作用范围。"
+    }
+  },
+  "fr-c1-u08": {
+    "1": {
+      "sourcePrompt": "Corrigez Ayant consulté les usagers, la décision est prise.",
+      "sourceAnswer": "Ayant consulté les usagers, l'équipe prend sa décision.",
+      "prompt": "改正分词短语主语悬空的句子“征求用户意见后，决定作出了”。",
+      "answer": "征求用户意见后，团队作出决定。"
+    }
+  },
+  "fr-c2-u01": {
+    "1": {
+      "sourcePrompt": "Réécrivez Il n'est pas exclu que le projet échoue sans renforcer la certitude.",
+      "sourceAnswer": "Le projet pourrait échouer ; cette possibilité reste ouverte.",
+      "prompt": "改写“不排除项目失败的可能”，不要增强确定性。",
+      "answer": "项目可能失败；这种可能性仍然存在。"
+    }
+  },
+  "fr-c2-u02": {
+    "1": {
+      "sourcePrompt": "Une métaphore peut-elle servir de preuve ?",
+      "sourceAnswer": "Non, elle illustre un mécanisme sans le valider.",
+      "prompt": "隐喻能作为证据吗？",
+      "answer": "不能，它可以说明一种机制，但不能验证该机制。"
+    }
+  },
+  "fr-c2-u03": {
+    "0": {
+      "sourcePrompt": "Pourquoi la formule répétée change-t-elle de valeur ?",
+      "sourceAnswer": "Les situations de protection et d'attente modifient son interprétation.",
+      "prompt": "为什么反复出现的同一措辞含义会变化？",
+      "answer": "处于保护和等待的不同情境，会改变对它的理解。"
+    },
+    "1": {
+      "sourcePrompt": "Quelle preuve manquerait pour une filiation historique ?",
+      "sourceAnswer": "Des documents établissant la relation entre les textes et leurs auteurs.",
+      "prompt": "要证明历史上的承继关系，还缺什么证据？",
+      "answer": "能够确立这些文本及其作者之间关系的文献。"
+    }
+  },
+  "fr-c2-u04": {
+    "1": {
+      "sourcePrompt": "Distinguez effet et intention dans cet exemple.",
+      "sourceAnswer": "Le groupe peut conclure la réunion sans qu'on puisse prouver que c'était l'intention de la participante.",
+      "prompt": "区分这个例子中的效果和意图。",
+      "answer": "团队可能因此结束会议，但不能据此证明这就是那位参与者的意图。"
+    }
+  },
+  "fr-c2-u05": {
+    "1": {
+      "sourcePrompt": "Pourquoi définir validation ?",
+      "sourceAnswer": "Les parties peuvent attribuer des obligations différentes au même mot.",
+      "prompt": "为什么需要界定 validation 的意思？",
+      "answer": "各方可能对同一个词赋予不同的义务。"
+    }
+  },
+  "fr-c2-u06": {
+    "1": {
+      "sourcePrompt": "Pourquoi compter les messages ne suffit-il pas ?",
+      "sourceAnswer": "Le volume ne renseigne pas à lui seul sur la répartition et la reconnaissance de la parole.",
+      "prompt": "为什么只统计消息数量不够？",
+      "answer": "数量本身无法说明发言机会如何分配、发言是否得到认可。"
+    }
+  },
+  "fr-c2-u07": {
+    "1": {
+      "sourcePrompt": "Peut-on affirmer que la tasse symbolise un deuil ?",
+      "sourceAnswer": "Non, c'est une hypothèse qui nécessiterait d'autres indices.",
+      "prompt": "能否断言杯子象征丧亲之痛？",
+      "answer": "不能，这只是一个还需要其他线索支持的假设。"
+    }
+  },
+  "fr-c2-u08": {
+    "1": {
+      "sourcePrompt": "Quel contrôle final traverse les trois productions ?",
+      "sourceAnswer": "Vérifier que les réserves essentielles et l'attribution des sources sont conservées.",
+      "prompt": "三种产出都需要进行哪项最终检查？",
+      "answer": "核实关键保留条件及来源归属是否得到保留。"
+    }
+  }
+}

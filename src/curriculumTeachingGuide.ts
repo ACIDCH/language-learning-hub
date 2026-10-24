@@ -27,7 +27,7 @@ export function outputGuide(course:Course,content:LessonContent):OutputGuide{
   steps:['先快速阅读确定主题：'+context,'标出关键转折、因果或限定表达','写下主旨判断与相应原文句','解释为什么其他可能答案不够准确'],
   criteria:[...common,'依据整段含义而非重复关键词作答','证据必须来自本课阅读材料']};
  if(course.id.includes('writing-task1'))return{
-  task:'依据本课材料写一段约 120—150 词的客观说明，包含总览、关键变化和必要细节。',
+  task:'依据本课材料写至少 150 词的客观说明，包含总览、关键变化和必要细节。',
   steps:['先确定材料中总体趋势或过程：'+context,'总览中只表达整体特征','主体比较两到三个真正重要的数据点或步骤','逐一核对数字、单位、时态和比较关系'],
   criteria:[...common,'不要编造题目未提供的原因','区分数值终点和变化幅度']};
  if(course.id.includes('writing-task2'))return{

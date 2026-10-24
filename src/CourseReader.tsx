@@ -18,6 +18,7 @@ import {useCourseProgress} from './useCourseProgress';
 import {splitLessonStages,STUDY_STAGES,STUDY_TITLES,visibleStudyStage} from './lessonStages';
 import {learnerFacingText} from './lessonPresentationText';
 import {linkedSpecialties,specialtyRoute} from './specialtyLibrary';
+import AudioVault,{type AudioAsset} from './AudioVault';
 export function selectedOriginal(scope:HTMLElement,selection:Selection|null):TextSelection|null{
  if(!selection||selection.isCollapsed||!selection.rangeCount)return null;
  const range=selection.getRangeAt(0);
@@ -33,6 +34,15 @@ export default function CourseReader({course,session,preferences,tab,navigate,on
  const scope=useRef<HTMLDivElement>(null);
  const stageNav=useRef<HTMLElement>(null);
  const progress=useCourseProgress(course,session);
+ const [audioOpen,setAudioOpen]=useState(false),[audioAssets,setAudioAssets]=useState<AudioAsset[]>([]),[audioStatus,setAudioStatus]=useState('');
+ useEffect(()=>{
+  if(!audioOpen||!session||!/^fr-a1-u\d{2}$/.test(course.id))return;
+  const controller=new AbortController();let current=true;setAudioAssets([]);setAudioStatus('正在读取本课原版音频索引…');
+  void cloudRequest<{assets:AudioAsset[]}>('/v1/audio-index/'+course.id,session.access_token,{signal:controller.signal})
+   .then(({assets})=>{if(current){setAudioAssets(assets);setAudioStatus('音频索引不代表与当前扩展课文逐段匹配。');}})
+   .catch(e=>{if(current)setAudioStatus('音频索引读取失败：'+(e instanceof Error?e.message:String(e)));});
+  return()=>{current=false;controller.abort();};
+ },[audioOpen,course.id,session?.access_token]);
  const text=privateBody||content?.text||'';
  useEffect(()=>{
   let alive=true;const abort=new AbortController();
@@ -129,6 +139,10 @@ export default function CourseReader({course,session,preferences,tab,navigate,on
  <LessonReader text={text} content={content} privateSource={!!privateBody} language={course.language} courseId={course.id}
  stage={Number(progress.state.stage)||0} onChangeStage={stage=>progress.change({stage})} onSaveOutput={appendNote}
  defaultIpa={preferences.ipa} ttsRate={preferences.ttsRate} hideTabs={hasStudyStages}/>}</div></StudyResponseContext.Provider>}
+ {session&&cloudClient&&/^fr-a1-u\d{2}$/.test(course.id)&&<details className="source-appendix" onToggle={e=>setAudioOpen(e.currentTarget.open)}>
+  <summary>本课原版私人练习音频</summary>
+  {audioOpen&&<AudioVault key={course.id} client={cloudClient} session={session} courseId={course.id} assets={audioAssets} status={audioStatus}/>}
+ </details>}
  {privateBody&&content&&<details className="source-appendix"><summary>备用课文</summary><LessonBody text={learnerFacingText(content.text)}/></details>}
  {content?.appendices.map((a,i)=><details key={i} className="source-appendix"><summary>{a.title}</summary><LessonBody text={learnerFacingText(a.text)}/></details>)}
  {(privateBody||(!content?.draft&&!content?.foundation))&&<section className="exercise-block"><h2>练习与核对</h2>{questions?questions.map((q,i)=><fieldset key={q.prompt}><legend>{i+1}. {q.prompt}</legend>{q.choices.map((choice,n)=><label key={n}><input type="radio" name={'q'+i} checked={progress.state.answers?.[String(i)]===n} disabled={!progress.ready} onChange={()=>progress.change({answers:{[String(i)]:n},completed:false})}/>{choice}</label>)}{Number.isInteger(progress.state.answers?.[String(i)])&&<p>{progress.state.answers?.[String(i)]===q.answer?'回答正确。':'再核对一次。'}参考答案：{q.choices[q.answer]}。{q.explanation}</p>}</fieldset>):content?.draft?.questions.map((q,i)=><details key={i}><summary>{i+1}. {q.prompt}</summary><p>参考答案：{q.answer}</p><p>解析：{q.explanation}</p></details>)||<p>本课练习见正文。</p>}</section>}

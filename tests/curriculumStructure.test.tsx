@@ -1,5 +1,5 @@
 import React from 'react';
-import {cleanup,fireEvent,render,screen} from '@testing-library/react';
+import {cleanup,fireEvent,render,screen,within} from '@testing-library/react';
 import {afterEach,describe,it,expect,vi} from 'vitest';
 import english from '../content/lesson-drafts/en-ielts-listening-u01.json';
 import french from '../content/lesson-drafts/fr-a1-u04.json';
@@ -46,10 +46,11 @@ describe('semantic curriculum without broken full-page IPA',()=>{
  it('reveals accurate sourced answer only after learner chooses to check',()=>{
   const {container}=render(<StructuredLesson content={data} course={course} stage={3}
    onChangeStage={vi.fn()} onOpenSpeech={vi.fn()} ttsRate={.85}/>);
-  expect(container.querySelectorAll('.curriculum-question')).toHaveLength(english.questions.length);
+  const original=screen.getByText('本课基础听读与练习').closest('details')!;
+  expect(original.querySelectorAll('.curriculum-question')).toHaveLength(english.questions.length);
   expect(screen.queryByText(english.questions[0].answer)).toBeNull();
   fireEvent.change(screen.getByLabelText('1. '+english.questions[0].prompt),{target:{value:'conditions needed for shade'}});
-  fireEvent.click(screen.getAllByRole('button',{name:'核对参考答案'})[0]);
+  fireEvent.click(within(original).getAllByRole('button',{name:'核对参考答案'})[0]);
   expect(screen.getByText(english.questions[0].answer)).toBeTruthy();
   expect(screen.getByText(english.questions[0].explanation)).toBeTruthy();
  });
@@ -73,8 +74,9 @@ describe('semantic curriculum without broken full-page IPA',()=>{
   const content:LessonContent={text:foundationText(u),sources:[],appendices:[],vocabulary:u.vocab,foundation:u};
   const view=render(<StructuredLesson content={content} course={c} stage={1}
     onChangeStage={vi.fn()} onOpenSpeech={vi.fn()} ttsRate={.85}/>);
-  expect(view.container.querySelectorAll('.curriculum-concepts li')).toHaveLength(3);
-  expect(view.container.querySelectorAll('.curriculum-example')).toHaveLength(3);
+  expect(view.container.querySelectorAll('.course-specialty-chapters button')).toHaveLength(3);
+  expect(view.container.querySelectorAll('.course-specialty-pair')).toHaveLength(2);
+  expect(view.container.textContent).toContain(u.questions[0].prompt);
  });
  it('provides source-grounded aligned Chinese teaching for seven original language units',()=>{
   const ids=['fr-a1-u01','fr-a1-u02','fr-a1-u03','en-ielts-reading-u01',
@@ -333,7 +335,7 @@ describe('fully mapped main-course grammar and vocabulary are directly teachable
   expect(container.querySelectorAll('.curriculum-tabs button')).toHaveLength(5);
  });
  it('keeps ordinary source content on courses without an exact unit mapping',()=>{
-  const c=COURSES.find(x=>x.id==='fr-b2-u08')!;
+  const c={...COURSES.find(x=>x.id==='fr-b2-u08')!,id:'test-unmapped-course'};
   expect(linkedSpecialties('grammar',c.id)).toHaveLength(0);
   const courseData={...data,draft:{...data.draft!,id:c.id}} as LessonContent;
   const {container}=render(<StructuredLesson content={courseData} course={c}

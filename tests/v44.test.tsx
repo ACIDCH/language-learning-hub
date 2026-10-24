@@ -1,3 +1,4 @@
+import AudioReview from '../src/AudioReview';
 import React from 'react';
 import {afterEach,beforeEach,describe,it,expect,vi} from 'vitest';
 import {act,cleanup,fireEvent,render,screen,waitFor,within} from '@testing-library/react';
@@ -75,6 +76,14 @@ describe('V4.4 integration contracts',()=>{
   await waitFor(()=>expect(screen.getByText(/尚未确认音频可解码或已经发声/)).toBeTruthy());
   const audio=document.querySelector('audio')!;
   expect(audio).toBeTruthy();
+  fireEvent.change(screen.getByLabelText('私人音频播放速度'),{target:{value:'0.75'}});
+  expect(audio.playbackRate).toBe(.75);
+  fireEvent.click(screen.getByRole('button',{name:'整首循环 关闭'}));
+  expect(audio.loop).toBe(true);
+  audio.currentTime=3;
+  fireEvent.click(screen.getByRole('button',{name:'回到开头'}));
+  expect(audio.currentTime).toBe(0);
+  expect(screen.getByText(/不是当前扩展听读全文的配音/)).toBeTruthy();
   fireEvent.canPlay(audio);
   expect(screen.getByText('可以播放')).toBeTruthy();
   fireEvent.playing(audio);
@@ -361,4 +370,16 @@ describe('V4.4 integration contracts',()=>{
   act(()=>{history.pushState({},'',catalogRoute('fr','A1'));window.dispatchEvent(new PopStateEvent('popstate'));});expect(screen.getByRole('heading',{name:'课程目录'})).toBeTruthy();
   act(()=>{history.replaceState({},'',courseRoute(course));window.dispatchEvent(new PopStateEvent('popstate'));});expect((await screen.findByLabelText('学习笔记') as HTMLTextAreaElement).value).toBe('retain this note');
  });
+});
+
+
+it('does not overwrite an audio review after a failed read',async()=>{
+ const upsert=vi.fn();
+ const maybeSingle=vi.fn().mockResolvedValue({data:null,error:{message:'read unavailable'}});
+ const client={from:()=>({select:()=>({eq:()=>({eq:()=>({maybeSingle})})}),upsert})} as unknown as SupabaseClient;
+ render(<AudioReview client={client} session={session} assetId="fr-a1-u01-dialogue"/>);
+ await waitFor(()=>expect(screen.getByRole('status').textContent).toContain('读取审核记录失败'));
+ expect((screen.getByRole('button',{name:'保存音频审核记录'}) as HTMLButtonElement).disabled).toBe(true);
+ fireEvent.click(screen.getByRole('button',{name:'保存音频审核记录'}));
+ expect(upsert).not.toHaveBeenCalled();
 });

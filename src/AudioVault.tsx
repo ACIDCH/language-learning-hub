@@ -4,9 +4,9 @@ import {hashAudio,unpackA1Audio} from './audioZip';
 import AudioReview from './AudioReview';
 import {audioNames} from './resourceInventory';
 
-type Asset={asset_id:string;filename:string;duration_seconds:number;source_kind:string;
+export type AudioAsset={asset_id:string;filename:string;duration_seconds:number;source_kind:string;
  decoded:boolean;exact_text:boolean;listened:boolean;audio_verified:boolean};
-type Props={client:SupabaseClient;session:Session;courseId:string;assets:Asset[];status:string};
+type Props={client:SupabaseClient;session:Session;courseId:string;assets:AudioAsset[];status:string};
 const BUCKET='lesson-audio-private';
 export default function AudioVault({client,session,courseId,assets,status}:Props){
  const [zip,setZip]=useState<File|null>(null);
@@ -19,6 +19,8 @@ export default function AudioVault({client,session,courseId,assets,status}:Props
  const [vaultMessage,setVaultMessage]=useState('正在检查私人音频存储…');
  const [vaultRefresh,setVaultRefresh]=useState(0);
  const playRequest=useRef(0);
+ const player=useRef<HTMLAudioElement>(null);
+ const [speed,setSpeed]=useState(1),[loop,setLoop]=useState(false);
  useEffect(()=>{
   let active=true;
   setUploadedNames(null);setVaultMessage('正在检查已上传的音频…');
@@ -36,11 +38,12 @@ export default function AudioVault({client,session,courseId,assets,status}:Props
  useEffect(()=>{
    playRequest.current++;
    setPlayUrl('');setPlayId('');setPlayNote('');
+   setLoop(false);
    return ()=>{playRequest.current++;};
  },[courseId,session.user.id]);
- async function play(asset:Asset){
+ async function play(asset:AudioAsset){
   const ticket=++playRequest.current;
-  setPlayUrl('');setPlayId('');setPlayNote('正在检查私人文件…');
+  setPlayUrl('');setPlayId('');setLoop(false);setPlayNote('正在检查私人文件…');
   const path=session.user.id+'/'+asset.asset_id+'.mp3';
   const {data,error}=await client.storage.from(BUCKET).createSignedUrl(path,15*60);
   if(ticket!==playRequest.current)return;
@@ -110,13 +113,20 @@ export default function AudioVault({client,session,courseId,assets,status}:Props
    </ul>:
    <p className="cloud-disclaimer">本课暂无关联音频。</p>}
   {playUrl&&<div className="audio-player"><p>{playId}</p>
-    <audio key={playUrl} controls preload="none" src={playUrl}
+    <p>原版课文的合成练习音频（TTS），不是当前扩展听读全文的配音；须按原版文本核对。</p>
+    <audio ref={player} key={playUrl} controls preload="none" src={playUrl} loop={loop}
+      onLoadedMetadata={()=>{if(player.current)player.current.playbackRate=speed;}}
       onCanPlay={()=>setPlayNote('可以播放')}
       onPlaying={()=>setPlayNote('播放中')}
       onError={()=>setPlayNote('此文件的真实播放失败：可能是链接失效、网络阻断或格式不受支持。请重新点击「检查并播放」获取新链接。')}
       onStalled={()=>setPlayNote('音频加载停滞，请检查网络；尚不能认定播放成功。')}>
       浏览器不支持音频播放
     </audio>
+    <div className="audio-controls"><label>私人音频播放速度 <select value={speed} onChange={e=>{
+      const next=Number(e.target.value);setSpeed(next);if(player.current)player.current.playbackRate=next;
+    }}>{[.75,.85,1,1.25].map(value=><option key={value} value={value}>{value}×</option>)}</select></label>
+    <button type="button" aria-pressed={loop} onClick={()=>setLoop(value=>!value)}>整首循环 {loop?'开启':'关闭'}</button>
+    <button type="button" onClick={()=>{if(player.current)player.current.currentTime=0;}}>回到开头</button></div>
     <AudioReview key={playId} client={client} session={session} assetId={playId}/>
   </div>}
   {playNote&&<p role="status" className="cloud-disclaimer">{playNote}</p>}

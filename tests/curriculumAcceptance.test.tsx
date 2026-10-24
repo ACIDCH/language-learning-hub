@@ -1,3 +1,9 @@
+import {createHash} from 'node:crypto';
+import {mainOriginalChinese} from '../src/mainOriginalChinese';
+import {FOUNDATION_CHINESE} from '../src/foundationChinese';
+import {FOUNDATION_QUESTION_CHINESE} from '../src/foundationQuestionChinese';
+import {FOUNDATION_OUTPUT_MODELS} from '../src/foundationOutputModels';
+import {mainQuestionChinese} from '../src/mainQuestionChinese';
 import {VISUAL_EXERCISES} from '../src/Task1VisualEvidence';
 import {expect,it} from 'vitest';
 import {splitLessonStages,STUDY_STAGES} from '../src/lessonStages';
@@ -17,9 +23,19 @@ it('maintains an ID-exact 108 + 48 gap matrix, never equating structure with app
   const entry=index.find(x=>x.id===c.id);
   const body=entry?.draft_path?JSON.parse(readFileSync(entry.draft_path,'utf8')):FOUNDATION_UNITS.find(x=>x.id===c.id);
   const topics=SPECIALTY_LESSONS.filter(x=>x.unitLink===c.id);
-  const bilingual=!!(CHINESE_LESSON_NOTES[c.id]||ENGLISH_ORIGINAL_BILINGUAL[c.id]);
+  const legacyNotes=!!(CHINESE_LESSON_NOTES[c.id]||ENGLISH_ORIGINAL_BILINGUAL[c.id]);
+  const originalMapping=entry?.draft_path?{
+   reading:!!mainOriginalChinese(c.id,body.reading),listening:!!mainOriginalChinese(c.id,body.listening_script),
+   questions:mainQuestionChinese(body).filter(Boolean).length,totalQuestions:body.questions.length
+  }:null;
+  const foundationMapping=c.kind==='foundation'?!!(FOUNDATION_CHINESE[c.id]&&FOUNDATION_QUESTION_CHINESE[c.id]&&FOUNDATION_OUTPUT_MODELS[c.id]):false;
+  const bilingual=foundationMapping||legacyNotes||!!(originalMapping?.reading&&originalMapping.listening&&originalMapping.questions===originalMapping.totalQuestions);
   const reception=RECEPTION_LESSONS[c.id]||FOUNDATION_RECEPTION[c.id];
+  const sourcePaths=entry?.draft_path?[entry.draft_path]:entry?.public_sources.length?entry.public_sources.map(id=>'public/learning-assets/'+id+'.txt'):c.kind==='foundation'?['src/foundationEnglish.ts','src/foundationEnglishBridge.ts','src/foundationFrench.ts','src/foundationFrenchBridge.ts'].filter(path=>path.includes(c.language==='en'?'English':'French')):[];
+  const sourceHashes=sourcePaths.map(path=>({path,sha256:createHash('sha256').update(readFileSync(path)).digest('hex')}));
   return {id:c.id,kind:c.kind,language:c.language,level:c.level,target:c.goal,
+   sourceHashes,progress:{scope:'owner/course',courseId:c.id,store:c.kind==='foundation'?'foundation_progress.answers.__learning':'/v1/progress/'+c.id},
+   evidence:reception?{paragraphs:reception.paragraphs.map(p=>({id:p.id,targetSha256:createHash('sha256').update(p.target).digest('hex'),chineseSha256:createHash('sha256').update(p.zh).digest('hex')})),questions:reception.questions.map((q,i)=>({index:i,paragraphIds:q.evidence})),modelChinesePresent:!!reception.modelZh,audioSegments:[],audioStatus:'no_verified_source_aligned_recording'}:null,
    stages:['情境','语法','词汇','听读','表达'],specialties:topics.map(x=>({id:x.id,type:x.type})),
    body:entry?.public_sources.length?'source_manuscript':body?'authored_body_quality_pending':'missing',
    readingWords:body?.reading?.trim().split(/\s+/u).length??null,
@@ -27,7 +43,7 @@ it('maintains an ID-exact 108 + 48 gap matrix, never equating structure with app
     words:reception.paragraphs.map(p=>p.target).join(' ').trim().split(/\s+/u).length,chinese:'all_paragraphs',questions:reception.questions.length,audio:'segmented_device_tts_only',editorial:'author_checked_not_independent_QA'}:null,
    visualWorkshop:TASK1_WORKSHOPS[c.id]||null,
    sources:entry?[...(entry.public_sources||[]),...(entry.draft_path?[entry.draft_path]:[])]:['src/foundationCurriculum.ts'],
-   chinese:bilingual?'lesson_notes_present_coverage_requires_review':'partial_glosses_full_mapping_pending',
+   chinese:{originalMapping,foundationMapping,legacyNotes,coverage:bilingual?'source_blocks_questions_and_teaching_present_semantic_review_pending':'mapping_incomplete',sentenceLevelIndependentReview:false},
    audio:entry?.audio_status||'device_tts_only',exercises:body?.questions?.length??null,
    gaps:[...(!topics.some(x=>x.type==='grammar')?['full_grammar_specialty']:[]),...(!topics.some(x=>x.type==='vocabulary')?['full_vocabulary_specialty']:[]),
     ...(!bilingual?['complete_chinese_mapping']:[]),'natural_audio_alignment','independent_semantic_review'],
@@ -39,7 +55,7 @@ it('maintains an ID-exact 108 + 48 gap matrix, never equating structure with app
  expect(new Set(rows.map(x=>x.id)).size).toBe(156);
  expect(SPECIALTY_LESSONS.every(x=>rows.some(c=>c.id===x.unitLink))).toBe(true);
  mkdirSync('docs/qa',{recursive:true});
- writeFileSync('docs/qa/curriculum-gap-matrix.json',JSON.stringify({schema:1,baseline:'b7e98ac',counts:{main:108,foundation:48,specialties:SPECIALTY_LESSONS.length},courses:rows},null,2)+'\n');
+ writeFileSync('docs/qa/curriculum-gap-matrix.json',JSON.stringify({schema:2,baseline:'e98c6a2',counts:{main:rows.filter(x=>x.kind==='main').length,foundation:rows.filter(x=>x.kind==='foundation').length,specialties:SPECIALTY_LESSONS.length,sourceChineseMapped:rows.filter(x=>x.chinese.coverage==='source_blocks_questions_and_teaching_present_semantic_review_pending').length,grammarMapped:rows.filter(x=>x.specialties.some(s=>s.type==='grammar')).length,vocabularyMapped:rows.filter(x=>x.specialties.some(s=>s.type==='vocabulary')).length,bilingualReception:rows.filter(x=>x.reception).length,semanticQAApproved:rows.filter(x=>x.verification.semanticQA!=='pending').length,audioVerified:rows.filter(x=>x.verification.audioVerified).length,publishable:rows.filter(x=>x.verification.publishable).length},courses:rows},null,2)+'\n');
 });
 
 
@@ -585,4 +601,37 @@ it('Task2 U01 follows the actual pre-existing 9k-character original online-unive
  expect(lesson.references).toContain('public/learning-assets/en-ielts-writing-task2-u01.txt');
  expect(index.find(x=>x.id===course)?.audio_status).toBe('missing_audio');
  expect(index.find(x=>x.id===course)?.content_status).toBe('existing_original');
+});
+
+
+it('binds Chinese prompts and answers to all 202 retained original draft questions',()=>{
+ let count=0;
+ for(const row of index.filter(x=>x.draft_path)){
+  const draft=JSON.parse(readFileSync(row.draft_path!,'utf8'));
+  const translated=mainQuestionChinese(draft);
+  expect(translated).toHaveLength(draft.questions.length);
+  translated.forEach((q,i)=>{
+   expect(q,row.id+' question '+i).toBeDefined();
+   expect(q!.prompt).toMatch(/[\u3400-\u9fff]/u);
+   expect(q!.answer).toMatch(/[\u3400-\u9fff]/u);
+   count++;
+  });
+  const changed={...draft,questions:draft.questions.map((q:any)=>({...q,prompt:'Changed '+q.prompt}))};
+  expect(mainQuestionChinese(changed).every(q=>q===undefined)).toBe(true);
+ }
+ expect(count).toBe(202);
+});
+
+
+it('provides exact full-paragraph Chinese bindings for retained reading and listening, without translating changed sources',()=>{
+ const drafts=index.filter(x=>x.draft_path).map(x=>JSON.parse(readFileSync(x.draft_path!,'utf8')));
+ expect(drafts).toHaveLength(101);
+ for(const d of drafts){
+  for(const source of [d.reading,d.listening_script]){
+   expect(mainOriginalChinese(d.id,source),d.id).toMatch(/[\u3400-\u9fff]/u);
+   expect(mainOriginalChinese(d.id,source+' changed')).toBeUndefined();
+  }
+ }
+ expect(mainOriginalChinese('fr-a1-u11',drafts.find(x=>x.id==='fr-a1-u11').reading)).not.toMatch(/姐姐|妹妹/);
+ expect(mainOriginalChinese('en-ielts-writing-task1-u04',drafts.find(x=>x.id==='en-ielts-writing-task1-u04').reading)).toContain('十个百分点');
 });
