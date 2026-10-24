@@ -5139,7 +5139,16 @@
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 122,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 427,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-c1-u01.json"
@@ -5177,7 +5186,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 125,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 424,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-c1-u02.json"
@@ -5221,7 +5239,16 @@
       ],
       "body": "authored_body_quality_pending",
       "readingWords": 137,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 432,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-c1-u03.json"
@@ -5259,7 +5286,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 120,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 418,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-c1-u04.json"
@@ -5298,7 +5334,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 132,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 435,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-c1-u05.json"
@@ -5337,7 +5382,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 130,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 431,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-c1-u06.json"
@@ -5428,7 +5482,16 @@
       "specialties": [],
       "body": "authored_body_quality_pending",
       "readingWords": 131,
-      "reception": null,
+      "reception": {
+        "source": "src/receptionLessons.ts",
+        "format": "continuous_passage",
+        "paragraphs": 4,
+        "words": 432,
+        "chinese": "all_paragraphs",
+        "questions": 4,
+        "audio": "segmented_device_tts_only",
+        "editorial": "author_checked_not_independent_QA"
+      },
       "visualWorkshop": null,
       "sources": [
         "content/lesson-drafts/fr-c1-u08.json"

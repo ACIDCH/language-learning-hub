@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "baseline_head": "e98c6a2892e0ce3e451bf4249cb99bb6005c18a1",
-  "current_head": "e8fbd482f543d71f759f97a3efe42b2341259b09",
+  "current_head": "9378e7fa037996f39a3078fab6b5838e0712b260",
   "completed_ids": [
     "en-ielts-speaking-u01",
     "en-ielts-speaking-u02",
@@ -265,6 +265,11 @@
       "group": "b2_knowledge",
       "result": "66 targeted tests passed after replacing stale missing-U08 and B1-to-C1 assertions; 26 other tests passed in preceding run; TypeScript passed",
       "scope": "202 specialties: 100 grammar, 102 vocabulary; Valmont and garden survey kept distinct; no human/audio approval"
+    },
+    {
+      "group": "c1_reception",
+      "result": "32 targeted tests passed",
+      "scope": "seven source originals unchanged; alternate explanations, aggregation, missing month and constructed research bounds verified; knowledge tracks pending"
     }
   ],
   "source_provenance": [
@@ -380,7 +385,7 @@
     "Authorized account sign-in on two physical devices",
     "Audio transcript, timing and license verification"
   ],
-  "last_successful_group": "b2_all_ten_knowledge_pairs",
+  "last_successful_group": "c1_seven_receptions_knowledge_pending",
   "status": "in_progress",
   "partial_work": {
     "foundation_ids": [
@@ -485,6 +490,15 @@
       "fr-b2-u08",
       "fr-b2-u09",
       "fr-b2-u10"
+    ],
+    "c1_reception_added": [
+      "fr-c1-u01",
+      "fr-c1-u02",
+      "fr-c1-u03",
+      "fr-c1-u04",
+      "fr-c1-u05",
+      "fr-c1-u06",
+      "fr-c1-u08"
     ]
   },
   "completion_definition": "Implemented source-linked bilingual reception, grammar/vocabulary and output; does not imply independent semantic QA, audio certification or private-manuscript equivalence"
