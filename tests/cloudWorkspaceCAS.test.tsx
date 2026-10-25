@@ -109,3 +109,24 @@ it('does not silently merge a newer local workspace draft over an existing cloud
  expect(localStorage.getItem(key)).toBeNull();
  expect(putRequests).toHaveLength(0);
 });
+
+
+it('an Auth token refresh for the same user does not discard unsaved workspace notes',async()=>{
+ render(<CloudWorkspace initialPanel="learn"/>);
+ const editor=await screen.findByRole('textbox',{name:'学习笔记'}) as HTMLTextAreaElement;
+ await waitFor(()=>expect(editor.disabled).toBe(false));
+ fireEvent.change(editor,{target:{value:'preserve while login token refreshes'}});
+ const id='llh-cloud-draft-v1:'+session.user.id+':fr-a1-u01';
+ expect(localStorage.getItem(id)).toContain('preserve while login token refreshes');
+ const before=(fetch as any).mock.calls.filter(([url]:[string])=>url==='/api/v1/progress/fr-a1-u01').length;
+ await act(async()=>{authChange?.('TOKEN_REFRESHED',{...session,access_token:'refreshed.jwt.token'});});
+ expect((screen.getByRole('textbox',{name:'学习笔记'}) as HTMLTextAreaElement).value).toBe('preserve while login token refreshes');
+ expect((screen.getByRole('textbox',{name:'学习笔记'}) as HTMLTextAreaElement).disabled).toBe(false);
+ expect(localStorage.getItem(id)).toContain('preserve while login token refreshes');
+ const after=(fetch as any).mock.calls.filter(([url]:[string])=>url==='/api/v1/progress/fr-a1-u01').length;
+ expect(after).toBe(before);
+ fireEvent.click(screen.getByRole('button',{name:'保存到 Supabase'}));
+ await waitFor(()=>expect(putRequests).toHaveLength(1));
+ expect(putRequests[0].state.notes).toBe('preserve while login token refreshes');
+ expect((fetch as any).mock.calls.findLast(([url,init]:[string,RequestInit])=>url==='/api/v1/progress/fr-a1-u01'&&init.method==='PUT')[1].headers.Authorization).toBe('Bearer refreshed.jwt.token');
+});
