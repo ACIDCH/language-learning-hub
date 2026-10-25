@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {summarizeProgress,findLastCourse} from '../src/learningProgress.ts';
+import {summarizeProgress,findLastCourse,foundationProgressRows} from '../src/learningProgress.ts';
 const catalog=[
  {id:'fr-a1-u01',language:'fr',level:'A1',title:'Bonjour'},
  {id:'fr-a1-u02',language:'fr',level:'A1',title:'Introductions'},
@@ -32,4 +32,29 @@ test('empty accounts show no invented prior lesson',()=>{
  const r=summarizeProgress(catalog,[]);
  assert.deepEqual(r,{saved:0,completed:0,englishSaved:0,frenchSaved:0,
    lastCourseId:null,lastSavedAt:null});
+});
+
+
+test('foundation rows count alongside main courses without inventing completion and continue the latest known unit',()=>{
+ const all=[...catalog,
+  {id:'fr-fnd-24',language:'fr',level:'A2',title:'Français bridge 24'},
+  {id:'en-fnd-01',language:'en',level:'A0',title:'Alphabet'}];
+ const foundation=foundationProgressRows([
+  {lesson_id:'fr-fnd-24',notes:'French progress',completed:true,updated_at:'2026-10-25T10:00:00Z'},
+  {lesson_id:'en-fnd-01',completed:false,updated_at:'2026-10-24T10:00:00Z'},
+  {lesson_id:'not-a-foundation-unit',completed:true,updated_at:'2026-10-26T10:00:00Z'}
+ ]);
+ assert.equal(foundation.length,2);
+ assert.deepEqual(foundation[0],{
+  course_id:'fr-fnd-24',state:{completed:true},updated_at:'2026-10-25T10:00:00Z'
+ });
+ const total=summarizeProgress(all,[
+  {course_id:'en-ielts-reading-u01',state:{completed:true},updated_at:'2026-10-23T10:00:00Z'},
+  ...foundation
+ ]);
+ assert.equal(total.saved,3);
+ assert.equal(total.completed,2);
+ assert.equal(total.frenchSaved,1);
+ assert.equal(total.englishSaved,2);
+ assert.equal(total.lastCourseId,'fr-fnd-24');
 });
