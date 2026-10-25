@@ -19,7 +19,7 @@ const notes:Record<string,[string,string][] >={
  '04':[['some respondents ≠ all workers','部分受访者不等于所有工作者。'],['lower stress ≠ no stress','压力较低不等于完全没有压力。'],['associated with ≠ caused by','相关不等于因果，改写必须保留关系力度。']],
  '05':[['suggests that… may…','提示……可能……。指出哪项推论不确定，而不是机械堆限定词。'],['favour provisionally','暂时倾向采用，允许后续证据改变判断。'],['could reflect either change','可能反映任一变化；这里 could 表可能而非过去能力。']],
  '06':[['The team revised the form.','团队修订了表格。主动版保留执行者与动作。'],['This revision reduced compulsory fields.','这次修订减少必填项。名词化回指已介绍的动作。'],['Changes happened.','发生了变化。虽然短，却丢失了原稿中的具体主体和对象。']],
- '07':[['after the planning team revised the proposal','规划团队修订提案之后；明示执行者去除 they 的歧义。'],['This change addressed one concern.','这项改变回应了一项顾虑，不是所有问题。'],['It did not resolve maintenance funding.','它没有解决养护资金问题；保留原文的效果范围。']],
+ '07':[['after the planning team revised the proposal','规划团队修订提案之后；明示执行者去除 they 的歧义。'],['This change addressed one concern.','这项改变回应了一项顾虑，不是所有问题。注意 earlier consultation 与修订后又征询居民分属不同时间；原稿没有说明早先咨询的细节。'],['It did not resolve maintenance funding.','它没有解决养护资金问题；保留原文的效果范围。']],
  '08':[['The number of visitors has increased.','数量这一中心词为单数，使用 has。'],['A number of visitors have arrived.','若干访客已经到达。a number of 表若干，采用复数一致。'],['Required correction / optional style choice','必要纠错与可选风格建议分开；形式正确不验证事实。']],
 };
 export const UPGRADE_RECEPTION:Record<string,ReceptionLesson>=Object.fromEntries(Object.entries(UPGRADE_ADDITIONS).map(([n,a])=>{
