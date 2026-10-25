@@ -1,7 +1,7 @@
 import {describe,expect,it} from 'vitest';
 import {cleanup,fireEvent,render,screen} from '@testing-library/react';
 import {audioCoverage} from '../src/AudioCoverage';
-import ReferenceAudio from '../src/ReferenceAudio';
+import {ReferenceAudio} from '../src/ReferenceAudio';
 
 describe('honest audio coverage',()=>{
  const index=[
@@ -56,6 +56,7 @@ describe('course-specific reference audio controls',()=>{
   expect(screen.getByRole('alert')).toBeTruthy();
 
   rerender(<ReferenceAudio lessonId="fr-a1-u02"/>);
+  expect(container.querySelector('audio')).not.toBe(media);
   const fresh=screen.getByRole('button',{name:/片段循环/});
   expect(fresh.getAttribute('aria-pressed')).toBe('false');
   expect(fresh.hasAttribute('disabled')).toBe(true);
