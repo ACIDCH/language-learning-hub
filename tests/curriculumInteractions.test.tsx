@@ -12,6 +12,7 @@ import CourseSpecialtyStage from '../src/CourseSpecialtyStage';
 import ReceptionStudy from '../src/ReceptionStudy';
 import {RECEPTION_LESSONS} from '../src/receptionLessons';
 import {parallelEvidence} from '../src/bilingualEvidence';
+import {selectDeviceVoice} from '../src/ttsVoice';
 import Task1WritingWorkshop,{TASK1_WORKSHOPS} from '../src/Task1WritingWorkshop';
 import {BORROWING_CHART,CHART_MODEL} from '../src/task1ChartData';
 import {numericEvidenceChecks,task1Evidence,wordCount} from '../src/Task1Feedback';
@@ -209,4 +210,25 @@ it('applies a restored cross-device speech-rate preference to an already-mounted
  expect((screen.getByRole('combobox',{name:'朗读速度'}) as HTMLSelectElement).value).toBe('1.15');
  fireEvent.click(screen.getByRole('button',{name:'播放 / 回听本段'}));
  expect(voices[0].rate).toBe(1.15);
+});
+
+
+it('prefers an appropriate French/English device voice and warns instead of silently trusting a wrong-language voice',()=>{
+ const fr={lang:'fr-FR',localService:true,name:'Test French'} as SpeechSynthesisVoice;
+ const frCa={lang:'fr-CA',localService:false,name:'Test French Canada'} as SpeechSynthesisVoice;
+ const en={lang:'en-GB',localService:true,name:'Test English'} as SpeechSynthesisVoice;
+ expect(selectDeviceVoice([en,frCa,fr],'fr')).toBe(fr);
+ expect(selectDeviceVoice([fr,en],'en')).toBe(en);
+ expect(selectDeviceVoice([en],'fr')).toBeNull();
+ expect(selectDeviceVoice([],'fr')).toBeNull();
+ const utterances:any[]=[];
+ vi.stubGlobal('speechSynthesis',{getVoices:()=>[en],speak:vi.fn(x=>utterances.push(x)),cancel:vi.fn(),pause:vi.fn(),resume:vi.fn()});
+ vi.stubGlobal('SpeechSynthesisUtterance',class {voice:any=null;lang='';rate=1;constructor(public text:string){}});
+ const page=render(<ReceptionStudy courseId="fr-a1-u05" rate={.85}/>);
+ fireEvent.click(screen.getByRole('button',{name:'朗读 P1'}));
+ expect(utterances).toHaveLength(1);
+ expect(utterances[0].voice).toBeNull();
+ expect(utterances[0].lang).toBe('fr-FR');
+ expect(screen.getByRole('status').textContent).toContain('未发现匹配语言');
+ page.unmount();
 });
