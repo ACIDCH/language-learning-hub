@@ -98,5 +98,19 @@
     "independent teacher review",
     "owner actual listening"
   ],
-  "auditNote": "This is only a targeted error register. Do not use its 5 findings to raise approved course counts."
+  "auditNote": "This is only a targeted error register. Do not use its 5 findings to raise approved course counts.",
+  "interactionFindings": [
+    {
+      "id": "LLH-AUDIO-REF-RESET-01",
+      "scope": "reference_audio_12_mapped_vocabulary_lessons",
+      "file": "src/ReferenceAudio.tsx",
+      "kind": "cross_lesson_state_leak",
+      "before": "A/B clip start/end, active loop and load error could persist when reusing the reference audio component for another lesson",
+      "after": "Reset start/end/loop/failed when lessonId changes; clear prior load error after next recording loads metadata",
+      "verification": "tests/audioCoverage.test.tsx",
+      "status": "regression_added_manual_playback_pending",
+      "manualPlaybackChecked": false,
+      "fullLessonRecordingApproved": false
+    }
+  ]
 }
