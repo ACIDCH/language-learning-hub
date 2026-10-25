@@ -26,7 +26,7 @@ it('shows both progress tables, all 156 known lessons and a real route to the la
  render(<LearningOverview client={client} session={session} courses={main} savedVersion={0} onContinue={vi.fn()}/>);
  await waitFor(()=>expect(screen.getByText('已开始课程 / 156')).toBeTruthy());
  expect(screen.getByText('标记已完成').previousElementSibling?.textContent).toBe('2');
- expect(screen.getByText(/继续上次学习/).textContent).toContain('24');
+ expect(screen.getByText(/继续上次学习/).textContent).toContain(COURSES.find(c=>c.id==='fr-fnd-24')!.title);
  const link=screen.getByRole('link',{name:'继续学习'}) as HTMLAnchorElement;
  expect(link.getAttribute('href')).toBe('/?course=fr-fnd-24&tab=read');
  expect(from).toHaveBeenCalledWith('learning_progress');
