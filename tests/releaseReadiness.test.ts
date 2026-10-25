@@ -70,6 +70,7 @@ it('exposes an actionable release:report and blocks release:check rather than si
  expect(report.status).toBe(0);
  const result=JSON.parse(report.stdout);
  expect(result.ready).toBe(false);
+ expect(result.quality.sourceIntegrity).toBe(true);
  expect(result.blockers).toContain('Independent human semantic and Chinese paragraph review: 0/156');
  const blocked=spawnSync(process.execPath,['scripts/release-readiness.mjs','--require-ready'],{encoding:'utf8'});
  expect(blocked.status).toBe(1);
@@ -184,4 +185,15 @@ it('rechecks physical source-manuscript and public-asset SHA-256 fingerprints be
  const mismatched=verifyReleaseSources(changed);
  expect(mismatched.ok).toBe(false);
  expect(mismatched.mismatches[0]).toMatchObject({courseId:changed.courses[0].id,reason:'source_hash_changed'});
+});
+
+
+it('resolves source fingerprints when launch preflight is called from the Worker directory',()=>{
+ const processResult=spawnSync(process.execPath,['../../scripts/release-source-integrity.mjs','--json'],{
+  cwd:'cloudflare/learning-api',encoding:'utf8'
+ });
+ expect(processResult.status).toBe(0);
+ expect(JSON.parse(processResult.stdout)).toMatchObject({
+  ok:true,verifiedRawSources:108,derivedFoundationUnitHashes:96
+ });
 });
