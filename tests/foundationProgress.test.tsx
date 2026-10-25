@@ -97,7 +97,7 @@ it('does not silently discard an unsynced local answer when a different device s
   notes:'cloud latest note',completed:true,updated_at:'2026-10-24T10:00:00.000Z'
  },error:null});
  render(<Probe/>);
- await screen.findByText(/云端记录比本机未同步草稿更新/);
+ await screen.findByText(/云端记录与本机未同步草稿同时存在/);
  expect((screen.getByLabelText('answer') as HTMLTextAreaElement).value).toBe('本机未同步答案');
  expect((screen.getByLabelText('answer') as HTMLTextAreaElement).disabled).toBe(true);
  expect((screen.getByText('save') as HTMLButtonElement).disabled).toBe(true);
@@ -119,7 +119,7 @@ it('permits an explicit choice to retain the local unsynced draft and merges unr
   notes:'cloud note',completed:true,updated_at:'2026-10-24T10:00:00.000Z'
  },error:null});
  render(<Probe/>);
- await screen.findByText(/云端记录比本机未同步草稿更新/);
+ await screen.findByText(/云端记录与本机未同步草稿同时存在/);
  fireEvent.click(screen.getByText('local draft'));
  expect((screen.getByLabelText('answer') as HTMLTextAreaElement).value).toBe('本机继续编辑');
  const draft=JSON.parse(localStorage.getItem(key)!);
@@ -150,7 +150,7 @@ it('rejects an out-of-date foundation update after another device changed the ro
  expect(localStorage.getItem(key)).toContain('pending local text');
  expect(mocks.write).toHaveBeenCalledTimes(1);
  fireEvent.click(screen.getByText('retry'));
- await screen.findByText(/云端记录比本机未同步草稿更新/);
+ await screen.findByText(/云端记录与本机未同步草稿同时存在/);
  expect((screen.getByText('save') as HTMLButtonElement).disabled).toBe(true);
  fireEvent.click(screen.getByText('local draft'));
  fireEvent.click(screen.getByText('save'));
