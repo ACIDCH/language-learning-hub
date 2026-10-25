@@ -2,7 +2,7 @@
 
 本轮没有取得两个独立实机上的本人登录会话。以下步骤和只读探针已准备好；不能用本地 mock、数据库存在或 API 读取代替登录验收。不在聊天中发送密码或访问令牌。
 
-预览：<https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev/>。必须先确认 PR 最新提交对应的 Pages 检查成功。数据库长答案迁移 `20261024095927_expand_foundation_learning_answers.sql` 仅随 PR 提交，尚未应用；迁移审批前可验证短答案，长答案云端仍可能被旧限制拒绝，本机草稿会保留。
+预览：<https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev/>。必须先确认 PR 最新提交对应的 Pages 检查成功。数据库长答案扩容迁移 `20261024095927_expand_foundation_learning_answers.sql` 已在 2026-10-25 获得本人批准并应用于生产（现场迁移版本 `20261025041935`）；实测约束为 256 KiB，前端仍保留 192 KiB 预算。真正跨设备长答案保存与恢复仍必须实测，不能把迁移成功视作浏览器实测通过。
 
 1. 设备 A 本人登录。在 `en-ielts-reading-u01` 和 `fr-fnd-24` 各记录原有笔记与表达答案，作为恢复备份。不要删除原有内容。
 2. 在两课的笔记和表达答案末尾追加同一个唯一标记，例如 `llh-pr50-20261025-owner-check`；点击「保存到 Supabase」，确认出现保存成功，而不是仅保存本机。
