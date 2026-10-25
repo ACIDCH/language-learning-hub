@@ -282,10 +282,10 @@ describe('V4.4 integration contracts',()=>{
   expect(merged).toEqual({stage:2,notes:'kept',answers:{'9':1,'0':2},practiceChecklist:{read:true}});
  });
  it('round-trips the existing main-course endpoint without deleting older progress fields',async()=>{
-  request.mockResolvedValueOnce({progress:{state:{notes:'old',practiceChecklist:{read:true}},updated_at:'2026-10-17'}}).mockResolvedValueOnce({saved:true});
+  request.mockResolvedValueOnce({progress:{state:{notes:'old',practiceChecklist:{read:true}},updated_at:'2026-10-17T00:00:00.000Z'}}).mockResolvedValueOnce({saved:true,progress:{updated_at:'2026-10-25T00:00:00.000Z'}});
   function Probe(){const p=useCourseProgress(COURSES[0],session);return <><button disabled={!p.ready} onClick={()=>p.change({notes:'edited'})}>edit</button><button onClick={()=>void p.save()}>save</button><p>{p.status}</p></>;}
   render(<Probe/>);await waitFor(()=>expect((screen.getByText('edit') as HTMLButtonElement).disabled).toBe(false));fireEvent.click(screen.getByText('edit'));fireEvent.click(screen.getByText('save'));
-  await waitFor(()=>expect(request).toHaveBeenCalledTimes(2));const body=JSON.parse(request.mock.calls[1][2].body);expect(body.state).toEqual({notes:'edited',practiceChecklist:{read:true}});expect(request.mock.calls[1][2].method).toBe('PUT');
+  await waitFor(()=>expect(request).toHaveBeenCalledTimes(2));const body=JSON.parse(request.mock.calls[1][2].body);expect(body.state).toEqual({notes:'edited',practiceChecklist:{read:true}});expect(body.expectedUpdatedAt).toBe('2026-10-17T00:00:00.000Z');expect(request.mock.calls[1][2].method).toBe('PUT');
  });
  it('does not enable overwrite when remote progress failed to load',async()=>{
   request.mockRejectedValue(new Error('offline'));
