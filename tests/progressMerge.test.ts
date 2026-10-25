@@ -1,6 +1,7 @@
 import {expect,it} from 'vitest';
 import {mergeProgressDraft} from '../src/progressMerge';
 import {mergeLearningState} from '../src/useCourseProgress';
+import {nextProgressTimestamp} from '../src/progressVersion';
 
 it('preserves independent remote answers, completed practice and local edits when reconciling two-device drafts',()=>{
  const cloud={
@@ -38,4 +39,12 @@ it('never coerces arrays or explicitly empty records into inferred progress',()=
  const result=mergeProgressDraft(existing,{mediaIds:[],answers:{}});
  expect(result.mediaIds).toEqual([]);
  expect(result.answers).toEqual({'0':3});
+});
+
+
+it('strictly advances the foundation version within the same millisecond and when the local clock is behind',()=>{
+ const base='2026-10-25T10:12:03.456Z';
+ expect(nextProgressTimestamp(base,Date.parse(base))).toBe('2026-10-25T10:12:03.457Z');
+ expect(nextProgressTimestamp(base,Date.parse(base)-2000)).toBe('2026-10-25T10:12:03.457Z');
+ expect(nextProgressTimestamp(null,Date.parse(base))).toBe(base);
 });
