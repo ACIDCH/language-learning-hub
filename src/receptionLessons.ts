@@ -170,32 +170,32 @@ export const RECEPTION_LESSONS:Record<string,ReceptionLesson>={
  ],
  "questions": [
   {
-   "prompt": "Which phrase best preserves the reported attendance change: a slight fall or a dramatic collapse? Identify the evidence paragraph.",
-   "answer": "A slight fall (P1).",
+   "prompt": "Which phrase best preserves the reported attendance change: a slight fall or a dramatic collapse? Identify the evidence paragraph. / 用 slight fall 还是 dramatic collapse 更准确地转述出席人数变化？指出依据段落。",
+   "answer": "A slight fall (P1). / 小幅下降，证据见 P1。",
    "evidence": [
     "P1"
    ],
    "why": "P1 explicitly says modest and not dramatic; collapse overstates the change."
   },
   {
-   "prompt": "What additional travel difficulty did some participants report, and was it proved to affect every member?",
-   "answer": "An additional bus journey; no, only several individuals reported it.",
+   "prompt": "What additional travel difficulty did some participants report, and was it proved to affect every member? / 部分参加者报告了哪项额外出行困难？是否证明每位成员都受影响？",
+   "answer": "An additional bus journey; no, only several individuals reported it. / 需要额外乘坐一段公交；没有，只是几位受访者这样报告。",
    "evidence": [
     "P2"
    ],
    "why": "Several participants is not the full population. The passage provides no representative count."
   },
   {
-   "prompt": "What does up to thirty refer to? Has the monthly online replacement been approved?",
-   "answer": "Maximum proposed online capacity; no, approval is pending.",
+   "prompt": "What does up to thirty refer to? Has the monthly online replacement been approved? / up to thirty 指什么？每月一次的线上替代方案已经批准了吗？",
+   "answer": "Maximum proposed online capacity; no, approval is pending. / 是拟议线上平台的最多容量；没有，仍待批准。",
    "evidence": [
     "P3"
    ],
    "why": "P3 distinguishes maximum capacity from usual attendance and a proposed option from a confirmed change."
   },
   {
-   "prompt": "Which two categories should the notes separate, and why would thirty normally attend online be inaccurate?",
-   "answer": "Observed information and proposed changes; thirty is capacity, no online attendance has yet been observed.",
+   "prompt": "Which two categories should the notes separate, and why would thirty normally attend online be inaccurate? / 笔记应区分哪两类信息？为什么说“平常有三十人线上出席”不准确？",
+   "answer": "Observed information and proposed changes; thirty is capacity, no online attendance has yet been observed. / 应区分已观察到的信息和拟议变化；三十只是容量上限，线上活动尚未举行，没有实际出席记录。",
    "evidence": [
     "P3",
     "P4"
