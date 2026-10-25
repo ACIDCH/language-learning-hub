@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import data from '../config/assets/lesson-audio.json';
 import './audio.css';
 
@@ -8,6 +8,13 @@ export function ReferenceAudio({ lessonId }: { lessonId: string }) {
   const [start, setStart] = useState<number | null>(null);
   const [end, setEnd] = useState<number | null>(null);
   const [loop, setLoop] = useState(false);
+  // A/B points and load errors belong to the selected recording, not the reusable panel.
+  useEffect(() => {
+    setFailed(false);
+    setStart(null);
+    setEnd(null);
+    setLoop(false);
+  }, [lessonId]);
   const item = data.mappings.find(x => x.lesson_id === lessonId);
   if (!item) return null;
   const validLoop = start !== null && end !== null && end > start + 0.2;
@@ -16,7 +23,7 @@ export function ReferenceAudio({ lessonId }: { lessonId: string }) {
     <p>Français interactif · 第 {item.official_chapter} 章 · {Math.round(item.duration_seconds)} 秒</p>
     
     <audio ref={audio} controls preload="none" src={item.source_url}
-      onError={() => setFailed(true)}
+      onError={() => setFailed(true)} onLoadedMetadata={() => setFailed(false)}
       onTimeUpdate={() => { if (loop && validLoop && audio.current && audio.current.currentTime >= end!) audio.current.currentTime = start!; }} />
     {failed && <p role="alert">音频暂不可用，请打开下方官方资源。课程正文仍可阅读。</p>}
     <div className="audio-controls">
