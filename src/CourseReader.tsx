@@ -136,7 +136,7 @@ function CourseReaderView({course,session,preferences,tab,navigate,onFontChange}
     </details>;
   })}
  </div>
- <div className="reader-top"><button onClick={()=>setToolStatus(speakIpaText(text,course.language,preferences.ttsRate)?'正在朗读':'此设备无法朗读。')}>朗读原文</button><button onClick={()=>window.speechSynthesis?.cancel()}>停止朗读</button></div>
+ <div className="reader-top"><button onClick={()=>setToolStatus(speakIpaText(text,course.language,preferences.ttsRate)?'正在使用设备 TTS 朗读；这不是教材真人录音。':'此设备无法朗读，请继续使用文字学习。')}>设备 TTS 朗读原文</button><button onClick={()=>window.speechSynthesis?.cancel()}>停止朗读</button><small>系统合成语音，非教材真人录音；完整速度、暂停与循环控制位于听读环节。</small></div>
  {tab==='speech'?<SpeechPractice language={course.language} lessonText={text} session={session} accessToken={session?.access_token} variant="standalone"/>:
  tab==='ipa'?<div ref={scope} className="reader-selection-scope"><IpaStudyPane key={course.id} text={text} language={course.language}/></div>:
  <StudyResponseContext.Provider value={{values:progress.state.studyResponses||{},change:studyResponses=>progress.change({studyResponses}),ready:progress.ready}}><div ref={scope} className="reader-selection-scope">{!privateBody&&(content?.draft||content?.foundation)?

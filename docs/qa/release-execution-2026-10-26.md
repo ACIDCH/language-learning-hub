@@ -18,6 +18,7 @@ Preview checked: `https://feat-v44-full-ui-curriculum.language-learning-hub.page
 - English `en-ielts-listening-u01` opened. Context and grammar stages rendered bilingual teaching, four grammar specialties, five vocabulary specialties, exercises and local guest notes.
 - French `fr-a1-u01` opened. The A1 context rendered French/Chinese sentence mapping and its five-stage navigation.
 - Legacy deep link `/speech-lab#ipa-studio` resolved to the full-text IPA tool. The supplied French passage generated visible per-word reference IPA.
+- Course-level speech is explicitly labelled `设备 TTS` / non-natural recording. Paragraph listening provides rate, pause/resume, stop, next-paragraph and opt-in paragraph-loop controls; switching courses cancels speech and clears loop state.
 - Preview Pages root, fixed Pages build, Worker `/health`, and Worker `/v1/status` returned HTTP 200. Worker reported the integration stage and configured catalog/progress modules.
 
 These are real preview browser checks, but they do not establish microphone quality, audible TTS quality, authenticated private data restoration, real provider inference, or two-device acceptance.

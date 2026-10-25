@@ -79,12 +79,16 @@ it('handles paragraph replay, pause/resume, rate changes, stale events, errors a
  fireEvent.click(screen.getByRole('button',{name:'朗读 P1'}));expect(voices[0].lang).toBe('fr-FR');
  fireEvent.click(screen.getByRole('button',{name:'暂停'}));expect(synth.pause).toHaveBeenCalled();
  fireEvent.click(screen.getByRole('button',{name:'继续'}));expect(synth.resume).toHaveBeenCalled();
- fireEvent.click(screen.getByRole('button',{name:'下一段'}));expect(voices[1].text).toBe(RECEPTION_LESSONS['fr-b2-u03'].paragraphs[1].target);
+ fireEvent.click(screen.getByRole('button',{name:'本段循环 关闭'}));
+ expect(screen.getByRole('button',{name:'本段循环 开启'}).getAttribute('aria-pressed')).toBe('true');
+ act(()=>voices[0].onend());expect(voices[1].text).toBe(RECEPTION_LESSONS['fr-b2-u03'].paragraphs[0].target);
+ fireEvent.click(screen.getByRole('button',{name:'本段循环 开启'}));
+ fireEvent.click(screen.getByRole('button',{name:'下一段'}));expect(voices[2].text).toBe(RECEPTION_LESSONS['fr-b2-u03'].paragraphs[1].target);
  fireEvent.change(screen.getByRole('combobox'),{target:{value:'1.15'}});
- fireEvent.click(screen.getByRole('button',{name:'播放 / 回听本段'}));expect(voices[2].rate).toBe(1.15);
+ fireEvent.click(screen.getByRole('button',{name:'播放 / 回听本段'}));expect(voices[3].rate).toBe(1.15);
  fireEvent.click(screen.getByRole('button',{name:'停止'}));voices[0].onend();expect(screen.getByRole('status').textContent).toBe('已停止');
  fireEvent.click(screen.getByRole('button',{name:'朗读 P1'}));
- act(()=>voices[3].onerror());expect(screen.getByRole('status').textContent).toContain('失败');
+ act(()=>voices[4].onerror());expect(screen.getByRole('status').textContent).toContain('失败');
  page.unmount();expect(synth.cancel.mock.calls.length).toBeGreaterThan(4);
 });
 

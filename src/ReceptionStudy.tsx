@@ -9,14 +9,14 @@ export default function ReceptionStudy({courseId,rate}:{courseId:string;rate:num
  const unit=RECEPTION_LESSONS[courseId]||FOUNDATION_RECEPTION[courseId];
  const saved=useStudyResponses(courseId+':reception');
  const [current,setCurrent]=useState(0),[speed,setSpeed]=useState(rate),[status,setStatus]=useState('未播放');
- const [playing,setPlaying]=useState(false),[paused,setPaused]=useState(false);
+ const [playing,setPlaying]=useState(false),[paused,setPaused]=useState(false),[loop,setLoop]=useState(false);
  // A restored account preference can change after the reader has already mounted.
  useEffect(()=>{setSpeed(rate);},[rate]);
- const token=useRef(0),utterance=useRef<SpeechSynthesisUtterance|null>(null),startup=useRef<ReturnType<typeof setTimeout>|undefined>(undefined);
+ const token=useRef(0),utterance=useRef<SpeechSynthesisUtterance|null>(null),startup=useRef<ReturnType<typeof setTimeout>|undefined>(undefined),loopRef=useRef(false);
  function stop(){token.current++;clearTimeout(startup.current);window.speechSynthesis?.cancel();utterance.current=null;setPlaying(false);setPaused(false);}
  useEffect(()=>()=>{token.current++;clearTimeout(startup.current);window.speechSynthesis?.cancel();},[courseId]);
  // Keep the audio position tied to the course, not to the component instance.
- useEffect(()=>{setCurrent(0);setStatus('未播放');setPlaying(false);setPaused(false);},[courseId]);
+ useEffect(()=>{setCurrent(0);setStatus('未播放');setPlaying(false);setPaused(false);setLoop(false);loopRef.current=false;},[courseId]);
  if(!unit)return null;
  const safeIndex=Math.min(Math.max(current,0),Math.max(0,unit.paragraphs.length-1));
  function play(index:number){
@@ -41,7 +41,7 @@ export default function ReceptionStudy({courseId,rate}:{courseId:string;rate:num
   const voiceWarning=voices.length===0?'（设备尚未提供语音列表，朗读语言需实际试听核对）':'';
   utterance.current=u;
   u.onstart=()=>{if(run===token.current){clearTimeout(startup.current);setPlaying(true);setStatus('正在朗读 '+unit.paragraphs[index].id+voiceWarning);}};
-  u.onend=()=>{if(run===token.current){clearTimeout(startup.current);setPlaying(false);setPaused(false);setStatus('本段朗读结束，可回听或选择下一段。');}};
+  u.onend=()=>{if(run===token.current){clearTimeout(startup.current);if(loopRef.current)play(index);else{setPlaying(false);setPaused(false);setStatus('本段朗读结束，可回听或选择下一段。');}}};
   u.onerror=()=>{if(run===token.current){clearTimeout(startup.current);setPlaying(false);setPaused(false);setStatus('设备朗读失败，请检查系统语音或稍后重试；仍可阅读双语原文。');}};
   try{setPlaying(true);setStatus('正在准备设备语音…'+voiceWarning);startup.current=setTimeout(()=>{if(run===token.current){stop();setStatus('设备语音未能启动，请检查系统是否安装相应语言语音；可继续阅读双语原文。');}},8000);window.speechSynthesis.speak(u);}catch{clearTimeout(startup.current);setPlaying(false);setStatus('设备朗读无法启动，请使用双语原文。');}
  }
@@ -52,6 +52,7 @@ export default function ReceptionStudy({courseId,rate}:{courseId:string;rate:num
    <button type="button" onClick={()=>play(safeIndex)} disabled={!unit.paragraphs.length}>播放 / 回听本段</button>
    <button type="button" disabled={!playing} onClick={()=>{if(paused)window.speechSynthesis.resume();else window.speechSynthesis.pause();setPaused(!paused);setStatus(paused?'继续朗读':'已请求暂停；设备支持程度可能不同。');}}>{paused?'继续':'暂停'}</button>
    <button type="button" disabled={!playing} onClick={()=>{stop();setStatus('已停止');}}>停止</button>
+   <button type="button" aria-pressed={loop} onClick={()=>{const next=!loop;loopRef.current=next;setLoop(next);setStatus(next?'本段循环已开启。':'本段循环已关闭。');}}>本段循环 {loop?'开启':'关闭'}</button>
    <button type="button" disabled={safeIndex>=unit.paragraphs.length-1} onClick={()=>play(safeIndex+1)}>下一段</button>
   </div><p role="status">{status}</p>
   {unit.paragraphs.map((p,i)=><article className="reception-paragraph" key={p.id} aria-current={safeIndex===i?'true':undefined}>
