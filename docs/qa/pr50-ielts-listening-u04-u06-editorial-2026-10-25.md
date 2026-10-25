@@ -18,3 +18,15 @@
 - 改动后 GitHub Actions 的**新 HEAD** 实际结论应以 Checks 为准，不能引用上一 HEAD 的 8/8 通过作为新提交的验收结果。
 
 **下一步接续点：** 优先按相同方式对 Listening U01–U08 剩余段落和 Reading U01–U08 逐段检查数字、条件、对照中文、问题答案与源证据；再进入 Writing Task 1/2 的可视数字单位和范文字数。逐项记录真实缺陷，不因为此次几个修补提高 156 课人工批准数。
+
+
+## 同轮追加：IELTS Writing Task 1 U05 / U07
+
+| 课程 / 位置 | 原文依据 | 修复前的教学风险 | 精确改动 |
+| --- | --- | --- | --- |
+| en-ielts-writing-task1-u07 / P3 | 仅提供两组借阅**份额**，没有借阅总次数 | 示例英文 “Paper borrowing declined, while digital borrowing increased” 及中译会将**占比变化**误导成**借阅绝对量变化**，与本课 P1/P4 的数据局限相矛盾 | 英文改为 “The paper-borrowing share declined, while the digital-borrowing share increased”；中译改成“纸本借阅占比下降，而数字借阅占比上升”；不修改原始统计数据 |
+| en-ielts-writing-task1-u05 / P3 | 原始废纸处理流程将 pressing（压出水分）与 drying（干燥）分开 | 六阶段概述中的“压干”把两个处理动作混成一个词，不利于 Task 1 工序顺序训练 | 改为“压出水分并干燥”，保留完整六阶段分组，最终步骤仍为“裁切再利用” |
+
+- 同步更新了矩阵中 U07 P3 的英文、中文哈希，以及 U05 P3 的中文哈希；所有正式验收批准数不变。
+- `tests/sourceReception.test.ts` 新增 U07 份额≠借阅总次数以及 U05 压水、干燥的证据检查。
+- 本轮共涉及 **5 个课程 ID**（Listening 3 + Writing Task 1 2）；这是对指定事实点的作者级纠错，不是五节课程的完整教师审校。
