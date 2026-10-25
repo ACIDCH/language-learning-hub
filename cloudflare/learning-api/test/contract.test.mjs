@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {handle} from '../src/index.mjs';
+import {handle,nextProgressTimestamp} from '../src/index.mjs';
 
 const origin = 'https://language-learning-hub.pages.dev';
 const previewOrigin = 'https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev';
@@ -269,4 +269,28 @@ test('unversioned legacy progress PUT is rejected without changing the database'
  assert.equal(r.status,428);
  assert.equal((await r.json()).error,'progress_version_required');
  assert.equal(writes,0);
+});
+
+
+test('rapid consecutive progress writes always advance the CAS version beyond the remote marker',()=>{
+ const prior='2026-10-25T10:12:03.456Z';
+ assert.equal(nextProgressTimestamp(prior,Date.parse(prior)),'2026-10-25T10:12:03.457Z');
+ assert.equal(nextProgressTimestamp(prior,Date.parse(prior)-3000),'2026-10-25T10:12:03.457Z');
+ assert.equal(nextProgressTimestamp(prior,Date.parse(prior)+4000),'2026-10-25T10:12:07.456Z');
+});
+test('conditional progress PATCH sets a new timestamp strictly greater than the previous revision',async()=>{
+ const original='2026-10-25T10:12:03.456Z';
+ const fetcher=async(url,opts)=>{
+  if(url.endsWith('/auth/v1/user'))return respond({id:'version-owner'});
+  assert.equal(opts.method,'PATCH');
+  const body=JSON.parse(opts.body);
+  assert.ok(Date.parse(body.updated_at)>Date.parse(original));
+  return respond([{state:body.state,updated_at:body.updated_at}]);
+ };
+ const r=await handle(req('/v1/progress/fr-a1-u01',{method:'PUT',
+  headers:{Authorization:'Bearer abc.def.ghi','Content-Type':'application/json',Origin:origin},
+  body:JSON.stringify({state:{stage:3},expectedUpdatedAt:original})
+ }),cfg,fetcher);
+ assert.equal(r.status,200);
+ assert.ok(Date.parse((await r.json()).progress.updated_at)>Date.parse(original));
 });
