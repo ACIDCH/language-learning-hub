@@ -173,16 +173,37 @@ export async function handle(request, env = {}, fetchFn = fetch) {
         return output({error:'invalid_progress_payload'},400,cors);
       }
       const body = {user_id:uid,course_id:courseId,state:json.state,updated_at:new Date().toISOString()};
-      const result = await upstream(fetchFn,
-        config.origin+'/rest/v1/learning_progress?on_conflict=user_id%2Ccourse_id', {
-          method:'POST',
-          headers:{...headers,'Content-Type':'application/json',
-            Prefer:'resolution=merge-duplicates,return=representation'},
-          body:JSON.stringify(body)
-        });
-      if (!result.ok || !Array.isArray(result.data) || !result.data.length) {
-        return output({error:'progress_write_failed'},502,cors);
+      const hasVersion = Object.prototype.hasOwnProperty.call(json,'expectedUpdatedAt');
+      if (hasVersion && json.expectedUpdatedAt!==null &&
+          (typeof json.expectedUpdatedAt!=='string'||!Number.isFinite(Date.parse(json.expectedUpdatedAt)))) {
+        return output({error:'invalid_progress_version'},400,cors);
       }
+      // Version-aware clients use conditional writes so another device's newer
+      // row can never be silently replaced. Legacy writes remain compatible.
+      let endpoint=config.origin+'/rest/v1/learning_progress?on_conflict=user_id%2Ccourse_id';
+      let method='POST',prefer='resolution=merge-duplicates,return=representation',payload=body;
+      if(hasVersion){
+        if(json.expectedUpdatedAt===null){
+          endpoint=config.origin+'/rest/v1/learning_progress';
+          prefer='return=representation'; // initial INSERT: unique-key race yields 409
+        }else{
+          method='PATCH';prefer='return=representation';
+          const filter=new URLSearchParams({
+            user_id:'eq.'+uid,course_id:'eq.'+courseId,
+            updated_at:'eq.'+json.expectedUpdatedAt
+          });
+          endpoint=config.origin+'/rest/v1/learning_progress?'+filter;
+          payload={state:json.state,updated_at:body.updated_at};
+        }
+      }
+      const result=await upstream(fetchFn,endpoint,{
+        method,headers:{...headers,'Content-Type':'application/json',Prefer:prefer},
+        body:JSON.stringify(payload)
+      });
+      if(hasVersion&&(result.status===409||(result.ok&&Array.isArray(result.data)&&!result.data.length)))
+        return output({error:'progress_conflict'},409,cors);
+      if(!result.ok||!Array.isArray(result.data)||!result.data.length)
+        return output({error:'progress_write_failed'},502,cors);
       return output({saved:true,progress:result.data[0]},200,cors);
     }
     // Optional no-Key check: test Cloudflare -> OpenRouter transport separately.
