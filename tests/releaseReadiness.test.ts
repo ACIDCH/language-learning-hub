@@ -142,3 +142,31 @@ it('keeps invalid, stale and duplicate signoffs visible in the work queue',()=>{
  complete.courseReviews.push(complete.courseReviews[0]);
  expect(buildReviewQueue(matrix,complete).counts.course_semantics).toBe(156);
 });
+
+
+it('allows a separately verified device-TTS release mode without claiming unmatched natural audio is verified',()=>{
+ const manifest=fullyReviewed();
+ manifest.audioReviews=[];
+ manifest.audioDeliveryMode='device_tts';
+ let result=assessReleaseReadiness(matrix,manifest);
+ expect(result.ready).toBe(false);
+ expect(result.quality.signedAudio).toBe(0);
+ expect(result.blockers.join(' ')).toContain('Device TTS-only audio acceptance');
+ manifest.ttsAcceptance={
+  ...approve,passed:true,englishVoiceTested:true,frenchVoiceTested:true,
+  desktopTested:true,mobileTested:true,fallbackTested:true,sourceAudioClaimsDisabled:true
+ };
+ result=assessReleaseReadiness(matrix,manifest);
+ expect(result.ready).toBe(true);
+ expect(result.quality.signedAudio).toBe(0);
+ expect(result.quality.audioMode).toBe('device_tts');
+ expect(result.quality.ttsAccepted).toBe(true);
+ manifest.ttsAcceptance.frenchVoiceTested=false;
+ expect(assessReleaseReadiness(matrix,manifest).ready).toBe(false);
+ manifest.ttsAcceptance.frenchVoiceTested=true;
+ manifest.ttsAcceptance.sourceAudioClaimsDisabled=false;
+ expect(assessReleaseReadiness(matrix,manifest).ready).toBe(false);
+ manifest.ttsAcceptance.sourceAudioClaimsDisabled=true;
+ manifest.courseReviews[0].paragraphs[0].targetSha256='0'.repeat(64);
+ expect(assessReleaseReadiness(matrix,manifest).ready).toBe(false);
+});
