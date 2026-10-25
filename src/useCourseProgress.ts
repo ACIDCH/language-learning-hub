@@ -4,10 +4,10 @@ import {cloudClient,cloudRequest} from './v44Connection';
 import type {Course} from './v44Courses';
 import {mergeProgressDraft} from './progressMerge';
 import {nextProgressTimestamp} from './progressVersion';
-export type LearningState={stage?:number;notes?:string;completed?:boolean;answers?:Record<string,number>;studyResponses?:Record<string,string>;[key:string]:unknown};
+export type LearningState={stage?:number;notes?:string;completed?:boolean;answers?:Record<string,number>;studyResponses?:Record<string,string>;practiceChecklist?:Record<string,boolean>;[key:string]:unknown};
 export function mergeLearningState(old:LearningState,patch:Partial<LearningState>){return mergeProgressDraft(old,patch);}
 // The existing JSONB answers column carries a namespaced envelope; numeric answers stay intact.
-export function packFoundationState(state:LearningState){return {...state.answers,__learning:{stage:state.stage,studyResponses:state.studyResponses}};}
+export function packFoundationState(state:LearningState){return {...state.answers,__learning:{stage:state.stage,studyResponses:state.studyResponses,practiceChecklist:state.practiceChecklist}};}
 // Leave headroom for JSONB text spacing; the database enforces the final 256 KiB cap.
 export const FOUNDATION_ANSWERS_BUDGET=192*1024;
 export function validateFoundationState(state:LearningState){
@@ -20,12 +20,13 @@ function progressError(error:unknown){
  return message.includes('foundation_progress_answers_check')?
   '基础课程云端容量约束拒绝了本次保存；请检查 PR #50 的容量迁移是否已应用。完整草稿仍在本机。':message;
 }
-export function unpackFoundationState(answers:Record<string,unknown>|null):Pick<LearningState,'answers'|'stage'|'studyResponses'>{
+export function unpackFoundationState(answers:Record<string,unknown>|null):Pick<LearningState,'answers'|'stage'|'studyResponses'|'practiceChecklist'>{
  const {__learning,...rest}=answers||{};
  const extra=__learning&&typeof __learning==='object'?__learning as LearningState:{};
  return {answers:Object.fromEntries(Object.entries(rest).filter(([,v])=>typeof v==='number')) as Record<string,number>,
   stage:typeof extra.stage==='number'?extra.stage:0,
-  studyResponses:extra.studyResponses&&typeof extra.studyResponses==='object'?Object.fromEntries(Object.entries(extra.studyResponses).filter(([,v])=>typeof v==='string')):{}};
+  studyResponses:extra.studyResponses&&typeof extra.studyResponses==='object'&&!Array.isArray(extra.studyResponses)?Object.fromEntries(Object.entries(extra.studyResponses).filter(([,v])=>typeof v==='string')):{},
+  practiceChecklist:extra.practiceChecklist&&typeof extra.practiceChecklist==='object'&&!Array.isArray(extra.practiceChecklist)?Object.fromEntries(Object.entries(extra.practiceChecklist).filter(([,v])=>typeof v==='boolean')):{}};
 }
 export function useCourseProgress(course:Course,session:Session|null){
  const key=course.kind==='main'&&session?'llh-cloud-draft-v1:'+session.user.id+':'+course.id:'llh-v44-draft:'+ (session?.user.id||'guest')+':'+course.id;
