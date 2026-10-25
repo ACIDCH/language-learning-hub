@@ -283,12 +283,12 @@ it('keeps French A1 routine and directions questions grounded in the original ei
 });
 
 
-it('matches the machine-readable editorial ledger to all 132 actually displayed bilingual evidence question pairs',()=>{
+it('matches the machine-readable editorial ledger to all 156 actually displayed bilingual evidence question pairs',()=>{
  const audit=JSON.parse(readFileSync('docs/qa/pr50-editorial-findings-2026-10-25.json','utf8'));
  const coverage=audit.bilingualQuestionCoverage;
- expect(coverage.questionsAddedChinese).toBe(132);
- expect(coverage.unitsCovered).toBe(33);
- expect(coverage.units.map((u:{questions:number})=>u.questions).reduce((a:number,b:number)=>a+b,0)).toBe(132);
+ expect(coverage.questionsAddedChinese).toBe(156);
+ expect(coverage.unitsCovered).toBe(39);
+ expect(coverage.units.map((u:{questions:number})=>u.questions).reduce((a:number,b:number)=>a+b,0)).toBe(156);
  const ids=new Set<string>();
  let checked=0;
  for(const group of coverage.units){
@@ -310,10 +310,40 @@ it('matches the machine-readable editorial ledger to all 132 actually displayed 
    }
   }
  }
- expect(ids.size).toBe(33);
- expect(checked).toBe(132);
+ expect(ids.size).toBe(39);
+ expect(checked).toBe(156);
  expect(audit.counts.courseSemanticQAApproved).toBe(0);
  expect(audit.counts.audioVerified).toBe(0);
  expect(audit.counts.publishable).toBe(0);
  expect(coverage.independentQAApproved).toBe(0);
+});
+
+
+it('teaches A1 U06–U12 source-based French and Chinese answers as actual parallel languages',()=>{
+ const numbers=['06','07','08','10','11','12'];
+ const originals=[
+  ['À dix heures et demie ; à midi.','Au deuxième étage ; Amir pensait','Madame Martin.',"Il n'a pas bien entendu"],
+  ['Léa aime nager','Parce qu’il pleut beaucoup','À quinze heures','Après le film'],
+  ['Les pommes coûtent trois euros','Une bouteille d’eau','Elle demande un thé sans sucre','Le serveur apporte du thé'],
+  ['Le salon donne sur un jardin','Chacun range sa propre assiette','Près de la porte','Léa travaille souvent'],
+  ['Devant la gare, à neuf heures','Un petit pique-nique','Il va peut-être pleuvoir','elle n’a pas encore répondu'],
+  ['Une narratrice et son frère','Dans le jardin du musée','Son frère ; à cinq heures','Elle regarde les photos']
+ ];
+ for(const [i,n] of numbers.entries()){
+  const id='fr-a1-u'+n,lesson=RECEPTION_LESSONS[id];
+  expect(lesson.questions,id).toHaveLength(4);
+  for(const [qIndex,q] of lesson.questions.entries()){
+   const promptSeparator=q.prompt.lastIndexOf(' / '),answerSeparator=q.answer.lastIndexOf(' / ');
+   expect(promptSeparator,id+' French question '+qIndex).toBeGreaterThan(0);
+   expect(answerSeparator,id+' French answer '+qIndex).toBeGreaterThan(0);
+   const frQuestion=q.prompt.slice(0,promptSeparator),cnQuestion=q.prompt.slice(promptSeparator+3);
+   const frAnswer=q.answer.slice(0,answerSeparator),cnAnswer=q.answer.slice(answerSeparator+3);
+   expect(/[A-Za-zÀ-ÿ]/u.test(frQuestion),id+' original-language question '+qIndex).toBe(true);
+   expect(/[\p{Script=Han}]/u.test(cnQuestion),id+' Chinese question '+qIndex).toBe(true);
+   expect(frAnswer,id+' preserved French answer '+qIndex).toContain(originals[i][qIndex]);
+   expect(/[\p{Script=Han}]/u.test(cnAnswer),id+' Chinese answer '+qIndex).toBe(true);
+   expect(q.evidence.length,id+' evidence '+qIndex).toBeGreaterThan(0);
+   expect(q.evidence.every(p=>lesson.paragraphs.some(v=>v.id===p)),id+' paragraph anchors '+qIndex).toBe(true);
+  }
+ }
 });
