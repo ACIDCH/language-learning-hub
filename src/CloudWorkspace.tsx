@@ -21,6 +21,7 @@ import FoundationStudio from './FoundationStudio';
 import CourseGuide from './CourseGuide.tsx';
 import StageCoverage from './StageCoverage';
 import type {PracticeCheck} from './courseGuide';
+import {mergeProgressDraft} from './progressMerge';
 
 type Course = { id: string; language: string; level: string; track: string | null;
   title: string; unit: number; text_complete: boolean; audio_verified: boolean; publishable: boolean };
@@ -113,7 +114,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
           setStatus('云端与本机未同步草稿不同步；请选择版本，未确认前禁止保存。');
           return;
         }
-        setState(useDraft ? {...(progress?.state||{}),...draft!.state} : (progress?.state || {}));
+        setState(useDraft ? mergeProgressDraft(progress?.state||{},draft!.state) : (progress?.state || {}));
         setProgressReadyKey(session.user.id+':'+selected);
         setStatus(useDraft ? '已恢复本机未同步草稿，点击保存后才会写入云端。' : '云端进度已读取。');
       })
@@ -198,7 +199,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
   }
   function resolveProgressConflict(choice:'cloud'|'local'){
     if(!session||!selected||!progressConflict)return;
-    const next=choice==='cloud'?progressConflict.remote:{...progressConflict.remote,...progressConflict.local};
+    const next=choice==='cloud'?progressConflict.remote:mergeProgressDraft(progressConflict.remote,progressConflict.local);
     setState(next);setProgressConflict(null);forceProgressConflict.current=false;
     if(choice==='cloud'){
       try{localStorage.removeItem(draftKey(session.user.id,selected));}catch{}
