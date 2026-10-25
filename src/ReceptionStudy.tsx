@@ -29,8 +29,16 @@ export default function ReceptionStudy({courseId,rate}:{courseId:string;rate:num
   u.lang=unit.language==='fr'?'fr-FR':'en-GB';u.rate=speed;
   const voices=window.speechSynthesis.getVoices?.()||[];
   const matchedVoice=selectDeviceVoice(voices,unit.language);
+  // If the platform enumerates voices but none speaks the study language,
+  // don't feed a French exercise into a known English-only default voice.
+  // When voices are not enumerated yet, request the target locale explicitly.
+  if(voices.length>0&&!matchedVoice){
+   setPlaying(false);setPaused(false);
+   setStatus('未发现'+(unit.language==='fr'?'法语':'英语')+'系统语音，已停止朗读以避免错误发音。可继续阅读双语原文，或先安装对应语言语音。');
+   return;
+  }
   if(matchedVoice)u.voice=matchedVoice;
-  const voiceWarning=voices.length>0&&!matchedVoice?'（未发现匹配语言的系统语音，读音可能不准确）':'';
+  const voiceWarning=voices.length===0?'（设备尚未提供语音列表，朗读语言需实际试听核对）':'';
   utterance.current=u;
   u.onstart=()=>{if(run===token.current){clearTimeout(startup.current);setPlaying(true);setStatus('正在朗读 '+unit.paragraphs[index].id+voiceWarning);}};
   u.onend=()=>{if(run===token.current){clearTimeout(startup.current);setPlaying(false);setPaused(false);setStatus('本段朗读结束，可回听或选择下一段。');}};
