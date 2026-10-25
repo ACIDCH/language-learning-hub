@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "check": "tsc --noEmit",
     "release:report": "node scripts/release-readiness.mjs",
-    "release:check": "node scripts/release-readiness.mjs --require-ready"
+    "release:check": "node scripts/release-readiness.mjs --require-ready",
+    "release:queue": "node scripts/review-queue.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.110.0",
