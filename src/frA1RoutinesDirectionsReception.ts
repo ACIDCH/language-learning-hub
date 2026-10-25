@@ -10,10 +10,10 @@ paragraphs:[
 {id:'P4',target:"Le vendredi, je termine plus tôt. Après le travail, je marche dans le parc près de la bibliothèque. Je regarde les arbres et je profite du calme. Le samedi, je ne travaille pas à la bibliothèque. Je peux alors revoir les notes de français de la semaine. Mon programme est simple : le matin, je travaille à neuf heures ; à midi, je déjeune ; le soir, j’étudie. Mais le vendredi, je finis plus tôt.",zh:'星期五我下班更早。工作结束后，我去图书馆附近的公园散步，看看树木，享受安静。星期六我不在图书馆工作，可以复习这一周的法语笔记。我的安排很简单：上午九点上班，中午吃饭，晚上学法语。但星期五我会早些结束工作。'}
 ],
 questions:[
-{prompt:'À quelle heure Lucie commence-t-elle à travailler ?',answer:'À neuf heures.',evidence:['P1'],why:'P1 明确工作从上午九点开始；同事稍早到达不改变 Lucie 的上班时刻。'},
-{prompt:'Que font Lucie et sa collègue après le déjeuner ?',answer:'Elles préparent les tables et rangent les livres.',evidence:['P2'],why:'P2 将中午午餐与下午为学生整理桌子、书籍区分，后者才是饭后的工作。'},
-{prompt:'Où Lucie étudie-t-elle le français ?',answer:'Chez elle, le soir.',evidence:['P3'],why:'P3 明示回家后在晚上学法语，不是把图书馆里的工作时间称为个人学习时间。'},
-{prompt:'Quel jour termine-t-elle plus tôt et que fait-elle ?',answer:'Le vendredi, elle termine plus tôt et marche dans le parc.',evidence:['P4'],why:'P4 把周五提前下班与之后去公园散步连起来，不代表她每天都提前结束工作。'}
+{prompt:'À quelle heure Lucie commence-t-elle à travailler ? / 露西几点开始上班？',answer:'À neuf heures. / 上午九点。',evidence:['P1'],why:'P1 明确工作从上午九点开始；同事稍早到达不改变 Lucie 的上班时刻。'},
+{prompt:'Que font Lucie et sa collègue après le déjeuner ? / 午饭后，露西和同事做什么？',answer:'Elles préparent les tables et rangent les livres. / 她们为学生整理桌子并摆放书籍。',evidence:['P2'],why:'P2 将中午午餐与下午为学生整理桌子、书籍区分，后者才是饭后的工作。'},
+{prompt:'Où Lucie étudie-t-elle le français ? / 露西在哪里学习法语？',answer:'Chez elle, le soir. / 在家里，晚上学习。',evidence:['P3'],why:'P3 明示回家后在晚上学法语，不是把图书馆里的工作时间称为个人学习时间。'},
+{prompt:'Quel jour termine-t-elle plus tôt et que fait-elle ? / 她哪一天较早结束工作，之后做什么？',answer:'Le vendredi, elle termine plus tôt et marche dans le parc. / 星期五；她提前下班，去公园散步。',evidence:['P4'],why:'P4 把周五提前下班与之后去公园散步连起来，不代表她每天都提前结束工作。'}
 ],
 languageNotes:[
 {target:'je travaille / nous travaillons / ils travaillent',zh:'-er 动词按主语选择现在时词尾；复数词尾书写与实际发音不总相同。'},
@@ -34,10 +34,10 @@ paragraphs:[
 {id:'P4',target:"À pied, le trajet depuis la gare prend environ dix minutes. Nora et son amie arrivent devant la bibliothèque. Nora résume le chemin pour le retenir : « Sortez de la gare, allez tout droit, tournez à gauche au premier feu, puis traversez la petite place. La bibliothèque est en face du musée. » Son amie ajoute : « Et son entrée est entre la pharmacie et le café. » Elles entrent dans la bibliothèque et commencent à étudier.",zh:'从车站步行到图书馆大约需要十分钟。诺拉和朋友到达门前。为了记住路线，诺拉把说明重述一遍：“走出车站，一直走，在第一个交通灯左转，然后穿过小广场。图书馆就在博物馆对面。”她的朋友补充：“入口在药房与咖啡馆之间。”两人走进图书馆，开始学习。'}
 ],
 questions:[
-{prompt:'Que faut-il faire immédiatement après la sortie de la gare ?',answer:'Allez tout droit.',evidence:['P1'],why:'P1 要求出站后直走，左转应发生在第一个红绿灯处，不能把这两个动作颠倒。'},
-{prompt:'Où faut-il tourner à gauche ?',answer:'Au premier feu.',evidence:['P2'],why:'P2 明确在第一个交通灯左转，朋友误问右转被纠正，方向不可互换。'},
-{prompt:'Où se trouve la bibliothèque par rapport au musée ?',answer:'Elle est en face du musée.',evidence:['P3'],why:'P3 使用 en face de 表正对面，不能改为在博物馆内部或紧邻同一侧。'},
-{prompt:'Quelles boutiques entourent l’entrée et combien de temps prend le trajet ?',answer:'Une pharmacie et un café ; environ dix minutes à pied.',evidence:['P3','P4'],why:'P3 给出入口两边的药房和咖啡馆，P4 明示从车站步行大约十分钟。'}
+{prompt:'Que faut-il faire immédiatement après la sortie de la gare ? / 从火车站出来后应该立刻做什么？',answer:'Allez tout droit. / 一直向前走。',evidence:['P1'],why:'P1 要求出站后直走，左转应发生在第一个红绿灯处，不能把这两个动作颠倒。'},
+{prompt:'Où faut-il tourner à gauche ? / 在哪里左转？',answer:'Au premier feu. / 在第一个交通灯处。',evidence:['P2'],why:'P2 明确在第一个交通灯左转，朋友误问右转被纠正，方向不可互换。'},
+{prompt:'Où se trouve la bibliothèque par rapport au musée ? / 图书馆相对博物馆在哪里？',answer:'Elle est en face du musée. / 图书馆位于博物馆正对面。',evidence:['P3'],why:'P3 使用 en face de 表正对面，不能改为在博物馆内部或紧邻同一侧。'},
+{prompt:'Quelles boutiques entourent l’entrée et combien de temps prend le trajet ? / 入口位于哪两家店铺之间？从车站步行大约需要多久？',answer:'Une pharmacie et un café ; environ dix minutes à pied. / 在药房和咖啡馆之间；步行大约十分钟。',evidence:['P3','P4'],why:'P3 给出入口两边的药房和咖啡馆，P4 明示从车站步行大约十分钟。'}
 ],
 languageNotes:[
 {target:'Sortez / allez / tournez / traversez',zh:'vous 命令式不保留主语 vous，用于向不熟悉的人提供礼貌路线指示。'},
