@@ -1,3 +1,4 @@
+import {FR_A2_KNOWLEDGE} from '../src/frA2KnowledgeSpecialties';
 import {FR_A2_GRAMMAR,FR_A2_VOCABULARY} from '../src/frA2Knowledge';
 import {it,expect} from 'vitest';
 import {readFileSync} from 'node:fs';
@@ -148,4 +149,20 @@ it('keeps French A2 examples faithful about clock times, being together and seek
  expect(internship.zh).toContain('正在寻找');
  expect(internship.zh).toContain('加入国际团队实习');
  expect(internship.zh).not.toContain('我在国际团队寻找实习');
+});
+
+
+it('uses unit-specific original-source language notes instead of generic sample commentary across twelve A2 specialties',()=>{
+ expect(FR_A2_KNOWLEDGE).toHaveLength(12);
+ for(const u of FR_A2_KNOWLEDGE){
+  expect(u.model,u.id).toHaveLength(2);
+  expect(u.model[0].analysis,u.id).toContain('原稿事实与措辞');
+  expect(u.model[1].analysis,u.id).toContain('项目原创后续情境');
+  for(const [i,sample] of u.model.entries()){
+   expect(sample.analysis,u.id+' '+i).toContain('对照语言点');
+   expect(sample.analysis.length,u.id+' '+i).toBeGreaterThan(35);
+   expect(sample.analysis,u.id).not.toContain('保留原稿信息与顺序的完整表达示范');
+   expect(sample.analysis,u.id).not.toContain('练习词句功能与信息范围');
+  }
+ }
 });
