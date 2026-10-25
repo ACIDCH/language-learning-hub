@@ -94,3 +94,18 @@ it('a previous account\'s slow cloud save never replaces the new account\'s curr
  expect((screen.getByRole('textbox',{name:'学习笔记'}) as HTMLTextAreaElement).value).toBe('other-device-saved');
  expect(localStorage.getItem('llh-cloud-draft-v1:separate-account-B:fr-a1-u01')).toBeNull();
 });
+
+
+it('does not silently merge a newer local workspace draft over an existing cloud record',async()=>{
+ const key='llh-cloud-draft-v1:'+session.user.id+':fr-a1-u01';
+ localStorage.setItem(key,JSON.stringify({editedAt:'2026-10-26T10:00:00.000Z',state:{notes:'newer offline change'}}));
+ render(<CloudWorkspace initialPanel="learn"/>);
+ const choices=await screen.findByRole('group',{name:'云端与本机未同步草稿冲突'});
+ expect(choices).toBeTruthy();
+ expect((screen.getByRole('textbox',{name:'学习笔记'}) as HTMLTextAreaElement).value).toBe('newer offline change');
+ expect(screen.getByRole('button',{name:'保存到 Supabase'}).hasAttribute('disabled')).toBe(true);
+ fireEvent.click(screen.getByRole('button',{name:'使用云端进度'}));
+ expect((screen.getByRole('textbox',{name:'学习笔记'}) as HTMLTextAreaElement).value).toBe('cloud old');
+ expect(localStorage.getItem(key)).toBeNull();
+ expect(putRequests).toHaveLength(0);
+});
