@@ -2,6 +2,7 @@ import {expect,it} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {spawnSync} from 'node:child_process';
 import {assessReleaseReadiness} from '../scripts/release-readiness.mjs';
+import {requiresProductionEvidence} from '../scripts/enforce-release-build.mjs';
 
 const matrix=JSON.parse(readFileSync('docs/qa/curriculum-gap-matrix.json','utf8'));
 const signoffs=JSON.parse(readFileSync('config/release/evidence.json','utf8'));
@@ -71,4 +72,21 @@ it('exposes an actionable release:report and blocks release:check rather than si
  const blocked=spawnSync(process.execPath,['scripts/release-readiness.mjs','--require-ready'],{encoding:'utf8'});
  expect(blocked.status).toBe(1);
  expect(blocked.stdout).toContain('Release readiness: BLOCKED');
+});
+
+
+it('guards Cloudflare main-branch builds while keeping pull-request preview builds testable',()=>{
+ expect(requiresProductionEvidence({CF_PAGES_BRANCH:'feat/v44-full-ui-curriculum-one-shot'})).toBe(false);
+ expect(requiresProductionEvidence({CF_PAGES_BRANCH:'main'})).toBe(true);
+ expect(requiresProductionEvidence({LLH_DEPLOY_TARGET:'production'})).toBe(true);
+ const prod=spawnSync(process.execPath,['scripts/enforce-release-build.mjs'],{
+  encoding:'utf8',env:{...process.env,CF_PAGES_BRANCH:'main',LLH_DEPLOY_TARGET:''}
+ });
+ expect(prod.status).toBe(1);
+ expect(prod.stdout).toContain('Release readiness: BLOCKED');
+ expect(prod.stderr).toContain('Production build stopped');
+ const preview=spawnSync(process.execPath,['scripts/enforce-release-build.mjs'],{
+  encoding:'utf8',env:{...process.env,CF_PAGES_BRANCH:'feat/v44-full-ui-curriculum-one-shot',LLH_DEPLOY_TARGET:''}
+ });
+ expect(preview.status).toBe(0);
 });
