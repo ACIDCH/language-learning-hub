@@ -4,8 +4,8 @@
   "reviewType": "author_assisted_source_anchored_correction",
   "independentTeacherApproval": false,
   "counts": {
-    "courseIdsTouched": 5,
-    "findingsClosed": 5,
+    "courseIdsTouched": 6,
+    "findingsClosed": 6,
     "courseSemanticQAApproved": 0,
     "audioVerified": 0,
     "publishable": 0
@@ -87,6 +87,22 @@
       "before": "Paper borrowing declined, while digital borrowing increased / 纸本借阅下降，而数字借阅上升",
       "after": "The paper-borrowing share declined, while the digital-borrowing share increased / 纸本借阅占比下降，而数字借阅占比上升",
       "verification": "tests/sourceReception.test.ts",
+      "status": "author_corrected_independent_review_pending"
+    },
+    {
+      "id": "LLH-FR-A2-U05-01",
+      "courseId": "fr-a2-u05",
+      "severity": "medium",
+      "file": "src/nextBilingualReception.ts",
+      "locations": [
+        "P2.target",
+        "P2.zh"
+      ],
+      "sourceQuote": "Il note l'heure du rendez-vous pour ne pas l'oublier",
+      "issue": "原始稿明确 Paul 记录具体预约时间，但 P2 扩展用模糊‘记录收到的信息’遮蔽了病人知道时间与读者不知道具体几点的区分",
+      "before": "Paul note les informations reçues pour ne pas les oublier. / 保罗把收到的信息记下来，以免忘记",
+      "after": "Paul note l’heure du rendez-vous communiquée par la secrétaire pour ne pas l’oublier. / 保罗记下秘书告诉他的预约时间，读者仍不知道具体几点",
+      "verification": "tests/nextCurriculumBatch.test.tsx",
       "status": "author_corrected_independent_review_pending"
     }
   ],
