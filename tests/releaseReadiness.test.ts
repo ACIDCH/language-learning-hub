@@ -90,3 +90,20 @@ it('guards Cloudflare main-branch builds while keeping pull-request preview buil
  });
  expect(preview.status).toBe(0);
 });
+
+
+it('blocks Worker deployments even when invoked in the Cloudflare subdirectory without Pages branch variables',()=>{
+ const worker=spawnSync(process.execPath,['../../scripts/deploy-worker.mjs'],{
+  cwd:'cloudflare/learning-api',encoding:'utf8',
+  env:{...process.env,CF_PAGES_BRANCH:'',LLH_DEPLOY_TARGET:''}
+ });
+ expect(worker.status).toBe(1);
+ expect(worker.stdout).toContain('Release readiness: BLOCKED');
+ expect(worker.stderr).toContain('Worker deployment BLOCKED');
+ expect(worker.stderr).not.toContain('ENOENT');
+ const read=spawnSync(process.execPath,['../../scripts/release-readiness.mjs','--json'],{
+  cwd:'cloudflare/learning-api',encoding:'utf8'
+ });
+ expect(read.status).toBe(0);
+ expect(JSON.parse(read.stdout).quality.inventory).toBe(true);
+});
