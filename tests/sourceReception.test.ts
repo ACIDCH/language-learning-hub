@@ -33,3 +33,30 @@ it('extends the tree lecture without replacing may with measured success',()=>{
  expect(lesson.model).toContain('does not give a measured temperature change');
  expect(lesson.paragraphs.map(p=>p.target).join(' ').split(/\s+/).length).toBeGreaterThan(350);
 });
+
+
+it('IELTS Listening U04–U06 preserves route scope, Friday-inclusive deadline and pending results',()=>{
+ const route=RECEPTION_LESSONS['en-ielts-listening-u04'];
+ expect(route.paragraphs[0].target).toContain('the entrance used by visitors today');
+ expect(route.paragraphs[0].zh).toContain('这是今天供访客入园的入口');
+ expect(route.paragraphs[0].zh).not.toContain('访客都从这里入园');
+ expect(route.questions[0].evidence).toEqual(['P1']);
+
+ const booking=RECEPTION_LESSONS['en-ielts-listening-u05'];
+ expect(booking.paragraphs[2].target).toContain('by Friday');
+ expect(booking.paragraphs[3].target).toContain('by Friday');
+ for(const zh of [booking.paragraphs[2].zh,booking.paragraphs[3].zh,booking.modelZh]){
+  expect(zh).toContain('最迟');
+  expect(zh).toContain('周五');
+  expect(zh).not.toContain('周五前');
+ }
+ expect(booking.questions[2].answer).toContain('deposit');
+ expect(booking.questions[2].answer).toContain('not the total');
+
+ const lab=RECEPTION_LESSONS['en-ielts-listening-u06'];
+ expect(lab.paragraphs[3].target).toContain('not yet been measured');
+ expect(lab.paragraphs[3].zh).toContain('不能');
+ expect(lab.languageNotes.find(note=>note.target.includes('measurement method as well as the result'))?.zh).toContain('待测');
+ expect(lab.languageNotes.map(note=>note.zh).join(' ')).not.toContain('两栏都必填');
+ expect(lab.questions[3].evidence).toEqual(['P4']);
+});
