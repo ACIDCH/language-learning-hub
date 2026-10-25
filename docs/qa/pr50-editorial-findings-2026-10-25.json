@@ -4,8 +4,8 @@
   "reviewType": "author_assisted_source_anchored_correction",
   "independentTeacherApproval": false,
   "counts": {
-    "courseIdsTouched": 8,
-    "findingsClosed": 8,
+    "courseIdsTouched": 11,
+    "findingsClosed": 11,
     "courseSemanticQAApproved": 0,
     "audioVerified": 0,
     "publishable": 0
@@ -134,6 +134,51 @@
       "after": "晚间接驳还涉及额外一段行程，每周这样往返并不现实",
       "verification": "tests/sourceReception.test.ts",
       "status": "author_corrected_independent_review_pending"
+    },
+    {
+      "id": "LLH-FR-A2-V-U02-01",
+      "courseId": "fr-a2-u02",
+      "severity": "low",
+      "file": "src/frA2Knowledge.ts",
+      "locations": [
+        "FR_A2_VOCABULARY.02[1].examples[1].zh"
+      ],
+      "sourceQuote": "Je passais du temps avec les enfants du voisinage.",
+      "issue": "原文只表一起度过时间，旧中文‘玩耍’无依据补充活动性质",
+      "before": "我常和邻居家的孩子一起玩耍相处。",
+      "after": "我过去常和街坊邻居家的孩子们待在一起。",
+      "verification": "tests/nextCurriculumBatch.test.tsx",
+      "status": "author_corrected_independent_review_pending"
+    },
+    {
+      "id": "LLH-FR-A2-V-U10-01",
+      "courseId": "fr-a2-u10",
+      "severity": "medium",
+      "file": "src/frA2Knowledge.ts",
+      "locations": [
+        "FR_A2_VOCABULARY.10[0].examples[0].zh"
+      ],
+      "sourceQuote": "Je cherche un stage dans une équipe internationale.",
+      "issue": "chercher un stage 描述申请/寻找；旧译‘我在国际团队寻找实习’容易造成已经处于国际团队的错误理解",
+      "before": "我在国际团队寻找实习。",
+      "after": "我正在寻找加入国际团队实习的机会。",
+      "verification": "tests/nextCurriculumBatch.test.tsx",
+      "status": "author_corrected_independent_review_pending"
+    },
+    {
+      "id": "LLH-FR-A2-G-U11-01",
+      "courseId": "fr-a2-u11",
+      "severity": "low",
+      "file": "src/frA2Knowledge.ts",
+      "locations": [
+        "FR_A2_GRAMMAR.11[1].examples[1].zh"
+      ],
+      "sourceQuote": "La réunion aura lieu mardi à dix-neuf heures.",
+      "issue": "周二十九点的文字连接易被误读为二十九点，须保留周二和十九时边界",
+      "before": "会议将于周二十九点举行。",
+      "after": "会议将于周二晚上七点（19:00）举行。",
+      "verification": "tests/nextCurriculumBatch.test.tsx",
+      "status": "author_corrected_independent_review_pending"
     }
   ],
   "unreviewedScope": [
@@ -172,8 +217,8 @@
   ],
   "bilingualQuestionCoverage": {
     "reviewType": "source_preserving_author_translation_not_independent_editorial_approval",
-    "questionsAddedChinese": 52,
-    "unitsCovered": 13,
+    "questionsAddedChinese": 60,
+    "unitsCovered": 15,
     "units": [
       {
         "group": "IELTS Reading",
@@ -190,13 +235,15 @@
       {
         "group": "IELTS Listening",
         "ids": [
+          "en-ielts-listening-u02",
+          "en-ielts-listening-u03",
           "en-ielts-listening-u04",
           "en-ielts-listening-u05",
           "en-ielts-listening-u06",
           "en-ielts-listening-u07",
           "en-ielts-listening-u08"
         ],
-        "questions": 20
+        "questions": 28
       },
       {
         "group": "French A2",
@@ -213,7 +260,19 @@
     "constraints": [
       "Reading U01/U02 already had Chinese questions and are not counted among the 52 newly translated questions.",
       "English IELTS T/F/NG answer tokens and one-word listening answer remain exact on the English side; the Chinese side is a labelled explanation.",
-      "No course or specialty gains independent teacher QA approval from automatic or author-level translation."
+      "No course or specialty gains independent teacher QA approval from automatic or author-level translation.",
+      "Listening U01 and Reading U01/U02 previously contained bilingual source evidence questions and are not counted in this round's sixty newly translated items."
     ]
+  },
+  "specialtySampleAnalysis": {
+    "updatedUnits": 12,
+    "groups": [
+      "FR_A2_GRAMMAR U08-U12",
+      "FR_A2_VOCABULARY U02/U04/U07/U09-U12"
+    ],
+    "before": "Repeated generic manuscript / continuation commentary",
+    "after": "Source-specific bilingual language notes attached to each of the original and author-extended model examples, with manuscript boundary named",
+    "verification": "tests/nextCurriculumBatch.test.tsx",
+    "independentQAApproved": 0
   }
 }
