@@ -1,3 +1,4 @@
+import {FR_A2_GRAMMAR,FR_A2_VOCABULARY} from '../src/frA2Knowledge';
 import {it,expect} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {SPECIALTY_LESSONS,linkedSpecialties,specialtyQuality} from '../src/specialtyLibrary';
@@ -130,4 +131,21 @@ it('provides source-faithful French/Chinese comprehension prompts for A2 transpo
  }
  expect(RECEPTION_LESSONS['fr-a2-u03'].questions[2].answer).toContain('是否批准未获确认');
  expect(RECEPTION_LESSONS['fr-a2-u05'].questions[2].answer).toContain('课文也没写具体几点');
+});
+
+
+it('keeps French A2 examples faithful about clock times, being together and seeking an internship',()=>{
+ const meeting=FR_A2_GRAMMAR['11'].flatMap(s=>s.examples).find(e=>e.target==='La réunion aura lieu mardi à dix-neuf heures.')!;
+ expect(meeting).toBeDefined();
+ expect(meeting.zh).toContain('周二晚上七点（19:00）');
+ expect(meeting.zh).not.toContain('周二十九点');
+ const neighbours=FR_A2_VOCABULARY['02'].flatMap(s=>s.examples).find(e=>e.target==='Je passais du temps avec les enfants du voisinage.')!;
+ expect(neighbours).toBeDefined();
+ expect(neighbours.zh).toContain('待在一起');
+ expect(neighbours.zh).not.toContain('玩耍');
+ const internship=FR_A2_VOCABULARY['10'].flatMap(s=>s.examples).find(e=>e.target==='Je cherche un stage dans une équipe internationale.')!;
+ expect(internship).toBeDefined();
+ expect(internship.zh).toContain('正在寻找');
+ expect(internship.zh).toContain('加入国际团队实习');
+ expect(internship.zh).not.toContain('我在国际团队寻找实习');
 });
