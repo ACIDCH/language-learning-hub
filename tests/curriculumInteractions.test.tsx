@@ -213,7 +213,7 @@ it('applies a restored cross-device speech-rate preference to an already-mounted
 });
 
 
-it('prefers an appropriate French/English device voice and warns instead of silently trusting a wrong-language voice',()=>{
+it('prefers a matching French/English voice and stops known wrong-language speech',()=>{
  const fr={lang:'fr-FR',localService:true,name:'Test French'} as SpeechSynthesisVoice;
  const frCa={lang:'fr-CA',localService:false,name:'Test French Canada'} as SpeechSynthesisVoice;
  const en={lang:'en-GB',localService:true,name:'Test English'} as SpeechSynthesisVoice;
@@ -226,9 +226,14 @@ it('prefers an appropriate French/English device voice and warns instead of sile
  vi.stubGlobal('SpeechSynthesisUtterance',class {voice:any=null;lang='';rate=1;constructor(public text:string){}});
  const page=render(<ReceptionStudy courseId="fr-a1-u05" rate={.85}/>);
  fireEvent.click(screen.getByRole('button',{name:'朗读 P1'}));
- expect(utterances).toHaveLength(1);
- expect(utterances[0].voice).toBeNull();
- expect(utterances[0].lang).toBe('fr-FR');
- expect(screen.getByRole('status').textContent).toContain('未发现匹配语言');
+ expect(utterances).toHaveLength(0);
+ expect(screen.getByRole('status').textContent).toContain('已停止朗读以避免错误发音');
  page.unmount();
+ vi.stubGlobal('speechSynthesis',{getVoices:()=>[en,fr],speak:vi.fn(x=>utterances.push(x)),cancel:vi.fn(),pause:vi.fn(),resume:vi.fn()});
+ const correct=render(<ReceptionStudy courseId="fr-a1-u05" rate={.85}/>);
+ fireEvent.click(screen.getByRole('button',{name:'朗读 P1'}));
+ expect(utterances).toHaveLength(1);
+ expect(utterances[0].voice).toBe(fr);
+ expect(utterances[0].lang).toBe('fr-FR');
+ correct.unmount();
 });
