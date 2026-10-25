@@ -38,7 +38,7 @@ export function verifyReleaseSources(matrix,reader=readFileSync){
 
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
  const matrix=JSON.parse(readFileSync(new URL('../docs/qa/curriculum-gap-matrix.json',import.meta.url),'utf8'));
- const result=verifyReleaseSources(matrix);
+ const result=verifyReleaseSources(matrix,path=>readFileSync(new URL('../'+path,import.meta.url)));
  if(process.argv.includes('--json'))process.stdout.write(JSON.stringify(result,null,2)+'\n');
  else process.stdout.write('Release source fingerprint check: '+(result.ok?'PASS':'BLOCKED')+
   ' | manuscripts/assets '+result.verifiedRawSources+'/108; unit-derived foundation hashes '+result.derivedFoundationUnitHashes+'/96\n'+
