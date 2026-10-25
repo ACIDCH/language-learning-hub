@@ -1636,7 +1636,7 @@
           {
             "id": "P1",
             "targetSha256": "7716d5bbff229e4edb6e665033e64b3f02e10e38828706a5e8253a9c11020943",
-            "chineseSha256": "def2d61080b556cd352d8a73c8043b02136ea40575de503cb8f8bf97fe5ffef2"
+            "chineseSha256": "35aa3bda1fbd0bbefd16a9512469719d73fdd93b28fd709931c2cf16779bdd65"
           },
           {
             "id": "P2",
@@ -2035,7 +2035,7 @@
           {
             "id": "P3",
             "targetSha256": "65eee228d4ac0ba8d82c0ad63a56c55e259fa9b0d3fe3bea980b7c0c2ab3c289",
-            "chineseSha256": "723d69a0a7b04677c6c547788ef344c30fc70f13c7a32994aff1e05714f47fef"
+            "chineseSha256": "6920b4bfb071a3a98decfd2fff5f319943519a1c097242421acf96ec25265a35"
           },
           {
             "id": "P4",
