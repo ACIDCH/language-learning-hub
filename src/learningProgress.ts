@@ -29,3 +29,19 @@ export function findLastCourse(courses:CourseOverview[],rows:ProgressOverviewRow
  const {lastCourseId}=summarizeProgress(courses,rows);
  return courses.find(c=>c.id===lastCourseId)??null;
 }
+
+
+/** Normalizes the separate foundation_progress table into the same course-id
+ * overview used by main-course learning_progress. The foundation table stores
+ * answers and completion in separate columns, not a state JSONB field.
+ */
+export function foundationProgressRows(rows:unknown):ProgressOverviewRow[]{
+ if(!Array.isArray(rows))return [];
+ return rows.filter(row=>isObject(row)&&typeof row.lesson_id==='string'&&
+  /^(?:en|fr)-fnd-(?:0[1-9]|1\d|2[0-4])$/u.test(row.lesson_id))
+  .map(row=>({
+   course_id:row.lesson_id as string,
+   state:{completed:row.completed===true},
+   updated_at:typeof row.updated_at==='string'?row.updated_at:''
+  }));
+}
