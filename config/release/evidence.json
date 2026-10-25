@@ -5,5 +5,7 @@
   "specialtyReviews": [],
   "audioReviews": [],
   "deviceRestore": null,
-  "browserAcceptance": null
+  "browserAcceptance": null,
+  "audioDeliveryMode": "verified_natural",
+  "ttsAcceptance": null
 }
