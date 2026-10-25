@@ -2,6 +2,7 @@ import {useEffect,useRef,useState} from 'react';
 import {RECEPTION_LESSONS} from './receptionLessons';
 import {FOUNDATION_RECEPTION} from './foundationReception';
 import {useStudyResponses} from './studyResponses';
+import {parallelEvidence} from './bilingualEvidence';
 
 export default function ReceptionStudy({courseId,rate}:{courseId:string;rate:number}){
  const unit=RECEPTION_LESSONS[courseId]||FOUNDATION_RECEPTION[courseId];
@@ -42,11 +43,21 @@ export default function ReceptionStudy({courseId,rate}:{courseId:string;rate:num
    <div className="reception-parallel"><p lang={unit.language}>{p.target}</p><p lang="zh-Hans">{p.zh}</p></div>
   </article>)}
   <section><h4>表达与证据边界</h4>{unit.languageNotes.map(n=><div className="reception-paragraph" key={n.target}><p lang={unit.language}>{n.target}</p><p>{n.zh}</p></div>)}</section>
-  <section><h4>依据原文作答</h4>{unit.questions.map((q,i)=><div className="curriculum-question" key={i}>
-   <label htmlFor={courseId+'-reception-'+i}>{q.prompt}</label>
-   <textarea id={courseId+'-reception-'+i} disabled={!saved.ready} value={saved.get('q'+i)} onChange={e=>saved.set('q'+i,e.target.value)}/>
-   <details><summary>核对答案与段落依据</summary><p>{q.answer}</p><p>依据：{q.evidence.join('、')}。{q.why}</p></details>
-  </div>)}</section>
+  <section><h4>依据原文作答</h4>{unit.questions.map((q,i)=>{
+   const prompt=parallelEvidence(q.prompt),answer=parallelEvidence(q.answer);
+   return <div className="curriculum-question" key={i}>
+    <label htmlFor={courseId+'-reception-'+i}>
+     <span className="evidence-source" lang={prompt.zh?unit.language:/\p{Script=Han}/u.test(prompt.source)?'zh-Hans':unit.language}>{prompt.source}</span>
+     {prompt.zh&&<span className="evidence-translation" lang="zh-Hans">{prompt.zh}</span>}
+    </label>
+    <textarea id={courseId+'-reception-'+i} disabled={!saved.ready} value={saved.get('q'+i)} onChange={e=>saved.set('q'+i,e.target.value)}/>
+    <details><summary>核对答案与段落依据</summary>
+     <div className="evidence-answers"><p lang={answer.zh?unit.language:/\p{Script=Han}/u.test(answer.source)?'zh-Hans':unit.language}>{answer.source}</p>
+      {answer.zh&&<p lang="zh-Hans" className="evidence-translation">{answer.zh}</p>}</div>
+     <p>依据：{q.evidence.join('、')}。{q.why}</p>
+    </details>
+   </div>;
+  })}</section>
   <section><h4>综合表达</h4><p>{unit.task}</p><label>我的听读摘要<textarea disabled={!saved.ready} rows={5} value={saved.get('summary')} onChange={e=>saved.set('summary',e.target.value)}/></label>
    <details><summary>对照摘要示范</summary><div className="reception-parallel"><p lang={unit.language}>{unit.model}</p><p lang="zh-Hans">{unit.modelZh}</p></div></details>
   </section>
