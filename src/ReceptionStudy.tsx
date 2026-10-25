@@ -9,6 +9,8 @@ export default function ReceptionStudy({courseId,rate}:{courseId:string;rate:num
  const saved=useStudyResponses(courseId+':reception');
  const [current,setCurrent]=useState(0),[speed,setSpeed]=useState(rate),[status,setStatus]=useState('未播放');
  const [playing,setPlaying]=useState(false),[paused,setPaused]=useState(false);
+ // A restored account preference can change after the reader has already mounted.
+ useEffect(()=>{setSpeed(rate);},[rate]);
  const token=useRef(0),utterance=useRef<SpeechSynthesisUtterance|null>(null),startup=useRef<ReturnType<typeof setTimeout>|undefined>(undefined);
  function stop(){token.current++;clearTimeout(startup.current);window.speechSynthesis?.cancel();utterance.current=null;setPlaying(false);setPaused(false);}
  useEffect(()=>()=>{token.current++;clearTimeout(startup.current);window.speechSynthesis?.cancel();},[courseId]);
