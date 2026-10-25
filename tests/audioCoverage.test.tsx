@@ -66,3 +66,22 @@ describe('course-specific reference audio controls',()=>{
   cleanup();
  });
 });
+
+
+it('resets playback speed for each independent reference recording and retains rate after media metadata loads',()=>{
+ const {container,rerender}=render(<ReferenceAudio lessonId="fr-a1-u01"/>);
+ const old=container.querySelector('audio')!;
+ const select=screen.getByRole('combobox',{name:'播放速度'}) as HTMLSelectElement;
+ expect(select.value).toBe('1');
+ fireEvent.change(select,{target:{value:'1.25'}});
+ expect(select.value).toBe('1.25');
+ expect(old.playbackRate).toBe(1.25);
+ rerender(<ReferenceAudio lessonId="fr-a1-u02"/>);
+ const newAudio=container.querySelector('audio')!;
+ expect(newAudio).not.toBe(old);
+ const currentSelect=screen.getByRole('combobox',{name:'播放速度'}) as HTMLSelectElement;
+ expect(currentSelect.value).toBe('1');
+ fireEvent.loadedMetadata(newAudio);
+ expect(newAudio.playbackRate).toBe(1);
+ cleanup();
+});
