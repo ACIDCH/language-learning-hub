@@ -647,3 +647,18 @@ it('shows concrete Chinese learning goals without changing original manuscripts'
  expect(COURSES.find(x=>x.id==='en-ielts-writing-task2-u01')!.goal).toContain('250');
  expect(COURSES.find(x=>x.id==='fr-a1-u03')!.goal).toContain('不猜测');
 });
+
+
+it('French A2 U07 identifies source-level pour que subjunctive without conflating it with si-present future conditional',()=>{
+ const source=JSON.parse(readFileSync('content/lesson-drafts/fr-a2-u07.json','utf8'));
+ expect(source.reading).toContain('pour que nous puissions prévoir assez de places');
+ expect(source.grammar).toContain('si + présent');
+ const lesson=RECEPTION_LESSONS['fr-a2-u07'];
+ expect(lesson.paragraphs[0].target).toContain('pour que nous puissions prévoir assez de places');
+ const target=lesson.languageNotes.find(n=>n.target==='pour que nous puissions prévoir assez de places');
+ expect(target).toBeDefined();
+ expect(target?.zh).toContain('虚拟式现在时');
+ expect(target?.zh).toContain('本课 A2 先识别');
+ expect(target?.zh).toContain('B1');
+ expect(lesson.languageNotes.some(n=>n.target.includes('Si le temps est beau'))).toBe(true);
+});
