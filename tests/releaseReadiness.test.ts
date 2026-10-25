@@ -3,6 +3,7 @@ import {readFileSync} from 'node:fs';
 import {spawnSync} from 'node:child_process';
 import {assessReleaseReadiness} from '../scripts/release-readiness.mjs';
 import {buildReviewQueue} from '../scripts/review-queue.mjs';
+import {verifyReleaseSources} from '../scripts/release-source-integrity.mjs';
 import {requiresProductionEvidence} from '../scripts/enforce-release-build.mjs';
 
 const matrix=JSON.parse(readFileSync('docs/qa/curriculum-gap-matrix.json','utf8'));
@@ -169,4 +170,18 @@ it('allows a separately verified device-TTS release mode without claiming unmatc
  manifest.ttsAcceptance.sourceAudioClaimsDisabled=true;
  manifest.courseReviews[0].paragraphs[0].targetSha256='0'.repeat(64);
  expect(assessReleaseReadiness(matrix,manifest).ready).toBe(false);
+});
+
+
+it('rechecks physical source-manuscript and public-asset SHA-256 fingerprints before any production approval',()=>{
+ const report=verifyReleaseSources(matrix);
+ expect(report).toMatchObject({
+  ok:true,verifiedRawSources:108,derivedFoundationUnitHashes:96,mismatches:[]
+ });
+ const changed=JSON.parse(JSON.stringify(matrix));
+ const first=changed.courses[0].sourceHashes[0];
+ first.sha256='0'.repeat(64);
+ const mismatched=verifyReleaseSources(changed);
+ expect(mismatched.ok).toBe(false);
+ expect(mismatched.mismatches[0]).toMatchObject({courseId:changed.courses[0].id,reason:'source_hash_changed'});
 });
