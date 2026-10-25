@@ -2,6 +2,7 @@ import {expect,it} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {spawnSync} from 'node:child_process';
 import {assessReleaseReadiness} from '../scripts/release-readiness.mjs';
+import {buildReviewQueue} from '../scripts/review-queue.mjs';
 import {requiresProductionEvidence} from '../scripts/enforce-release-build.mjs';
 
 const matrix=JSON.parse(readFileSync('docs/qa/curriculum-gap-matrix.json','utf8'));
@@ -119,4 +120,25 @@ it('generates a concrete, source-linked review queue without pretending to appro
  const fr=queue.queue.find((x:{id:string;kind:string})=>x.id==='fr-a1-u06'&&x.kind==='course_semantics');
  expect(fr.paragraphs).toBeGreaterThanOrEqual(4);
  expect(fr.sourcePaths.length).toBeGreaterThan(0);
+});
+
+
+it('keeps invalid, stale and duplicate signoffs visible in the work queue',()=>{
+ const complete=fullyReviewed();
+ expect(buildReviewQueue(matrix,complete).queue).toHaveLength(0);
+ complete.courseReviews[0].paragraphs[0].chineseSha256='0'.repeat(64);
+ complete.audioReviews[0].segments[0].humanListened=false;
+ complete.specialtyReviews[0].reviewer='';
+ complete.deviceRestore.reloginVerified=false;
+ complete.browserAcceptance.mediaChecked=false;
+ const queue=buildReviewQueue(matrix,complete);
+ expect(queue.counts).toMatchObject({
+  course_semantics:1,specialty_semantics:1,audio_alignment:1,
+  deviceAcceptance:true,browserAcceptance:true
+ });
+ expect(queue.queue).toHaveLength(3);
+ expect(queue.queue.some(x=>x.kind==='course_semantics'&&x.id===matrix.courses[0].id)).toBe(true);
+ complete.courseReviews[0].paragraphs[0].chineseSha256=matrix.courses[0].evidence.paragraphs[0].chineseSha256;
+ complete.courseReviews.push(complete.courseReviews[0]);
+ expect(buildReviewQueue(matrix,complete).counts.course_semantics).toBe(156);
 });
