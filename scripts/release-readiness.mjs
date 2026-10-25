@@ -2,19 +2,34 @@ import {readFileSync} from 'node:fs';
 import {pathToFileURL} from 'node:url';
 
 const hash=/^[a-f0-9]{64}$/u;
-const approved=(x)=>x?.status==='approved'&&x?.reviewerRole==='human'&&
+export const approved=(x)=>x?.status==='approved'&&x?.reviewerRole==='human'&&
  typeof x.reviewer==='string'&&x.reviewer.trim().length>=2&&
  typeof x.evidenceRef==='string'&&x.evidenceRef.trim().length>4&&
  /^\d{4}-\d\d-\d\d(?:T|$)/u.test(x.reviewedAt??'');
 const unique=(items,key)=>new Map(items.filter(x=>x&&typeof x[key]==='string').map(x=>[x[key],x]));
 const coherent=(items,key)=>items.length===unique(items,key).size;
-const evidenceMatches=(current,provided)=>
+export const evidenceMatches=(current,provided)=>
  current.length>0&&Array.isArray(provided)&&provided.length===current.length&&
  coherent(provided,'id')&&current.every(p=>{
   const record=provided.find(q=>q.id===p.id);
   return record&&hash.test(p.targetSha256)&&hash.test(p.chineseSha256)&&
    record.targetSha256===p.targetSha256&&record.chineseSha256===p.chineseSha256;
  });
+
+
+export function validAlignedAudio(course,review){
+ const paragraphs=course.evidence?.paragraphs??[];
+ if(!approved(review)||!paragraphs.length||
+  !Array.isArray(review.segments)||review.segments.length!==paragraphs.length||
+  !coherent(review.segments,'id'))return false;
+ return paragraphs.every(p=>{
+  const segment=review.segments.find(s=>s.id===p.id);
+  return segment&&segment.targetSha256===p.targetSha256&&
+   typeof segment.assetRef==='string'&&segment.assetRef.trim().length>8&&
+   typeof segment.rightsRef==='string'&&segment.rightsRef.trim().length>8&&
+   Number.isFinite(segment.durationSeconds)&&segment.durationSeconds>0&&segment.humanListened===true;
+ });
+}
 
 export function assessReleaseReadiness(matrix,signoffs){
  const courses=matrix?.courses??[];
@@ -42,18 +57,7 @@ export function assessReleaseReadiness(matrix,signoffs){
   quality.signedSpecialties=specialties.filter(id=>approved(specialtyMap.get(id))).length;
  }
  if(coherent(humanAudio,'courseId')){
-  quality.signedAudio=courses.filter(c=>{
-   const review=audioMap.get(c.id);
-   if(!approved(review)||!Array.isArray(review.segments)||review.segments.length!==(c.evidence?.paragraphs?.length??0)||
-    !coherent(review.segments,'id'))return false;
-   return (c.evidence?.paragraphs??[]).every(p=>{
-    const segment=review.segments.find(s=>s.id===p.id);
-    return segment&&segment.targetSha256===p.targetSha256&&
-     typeof segment.assetRef==='string'&&segment.assetRef.trim().length>8&&
-     typeof segment.rightsRef==='string'&&segment.rightsRef.trim().length>8&&
-     Number.isFinite(segment.durationSeconds)&&segment.durationSeconds>0&&segment.humanListened===true;
-   });
-  }).length;
+  quality.signedAudio=courses.filter(c=>validAlignedAudio(c,audioMap.get(c.id))).length;
  }
  const device=signoffs?.deviceRestore;
  quality.deviceRestore=approved(device)&&device.passed===true&&device.distinctDevices>=2&&device.reloginVerified===true;
