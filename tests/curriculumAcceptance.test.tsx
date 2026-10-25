@@ -416,7 +416,7 @@ it('Task1 U05 and U06 source narratives, parallel Chinese and visual diagrams re
 
 
 it('Task1 U07/U08 retain exact source shares and weekly units across 4 full bilingual lessons and answers',()=>{
- for(const [id,expectedWords] of [['en-ielts-writing-task1-u07',485],['en-ielts-writing-task1-u08',500]] as const){
+ for(const [id,expectedWords] of [['en-ielts-writing-task1-u07',487],['en-ielts-writing-task1-u08',500]] as const){
   const lesson=RECEPTION_LESSONS[id];
   expect(lesson,id).toBeDefined();
   expect(lesson.language).toBe('en');
