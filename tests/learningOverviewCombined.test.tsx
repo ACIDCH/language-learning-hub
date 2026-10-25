@@ -38,3 +38,25 @@ it('does not present incomplete counts as authoritative when foundation progress
  await screen.findByText(/无法完整读取学习概况：permission denied/);
  expect(screen.queryByRole('link',{name:'继续学习'})).toBeNull();
 });
+
+
+it('does not reveal previous-account learning counts while the newly signed-in account is still loading',async()=>{
+ const from=vi.fn((table:string)=>({
+  select:()=>({eq:(_field:string,userId:string)=>({order:()=>({limit:()=>{
+   if(userId==='overview-new-user')return new Promise(()=>{});
+   return Promise.resolve({
+    data:table==='learning_progress'?mainData:foundationData,error:null
+   });
+  }})})})
+ }));
+ const client={from} as unknown as SupabaseClient;
+ const mainProps={client,courses:main,savedVersion:0,onContinue:vi.fn()};
+ const page=render(<LearningOverview {...mainProps} session={session}/>);
+ const count=()=>screen.getByText('已开始课程 / 156').previousElementSibling?.textContent;
+ await waitFor(()=>expect(count()).toBe('3'));
+ page.rerender(<LearningOverview {...mainProps}
+  session={{user:{id:'overview-new-user'}} as Session}/>);
+ await waitFor(()=>expect(count()).toBe('0'));
+ expect(screen.getByText('正在读取上次学习位置…')).toBeTruthy();
+ expect(screen.queryByRole('link',{name:'继续学习'})).toBeNull();
+});
