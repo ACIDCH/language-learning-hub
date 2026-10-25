@@ -14,7 +14,7 @@ function Probe({course=foundation}:{course?:Course}){
  const p=useCourseProgress(course,session);
  return <><textarea aria-label="answer" disabled={!p.ready} value={p.state.studyResponses?.[course.id+':writing']||''}
   onChange={e=>p.change({studyResponses:{[course.id+':writing']:e.target.value}})}/>
-  <button disabled={!p.ready||p.busy} onClick={()=>void p.save()}>save</button><button disabled={p.ready} onClick={p.retry}>retry</button><p>{p.status}</p></>;
+  <button disabled={!p.ready||p.busy} onClick={()=>void p.save()}>save</button><button disabled={p.ready} onClick={p.retry}>retry</button>{p.conflict&&<><button onClick={()=>p.resolveConflict("cloud")}>cloud version</button><button onClick={()=>p.resolveConflict("local")}>local draft</button></>}<p>{p.status}</p></>;
 }
 beforeEach(()=>{localStorage.clear();mocks.read.mockReset().mockResolvedValue({data:null,error:null});mocks.write.mockReset().mockResolvedValue({error:null});});
 afterEach(cleanup);
@@ -76,4 +76,50 @@ it('recovers from a transient Supabase progress load error only after explicit r
  expect(mocks.read).toHaveBeenCalledTimes(2);
  expect(mocks.write).toHaveBeenCalledTimes(1);
  expect(mocks.write.mock.calls[0][0].answers.__learning.studyResponses['fr-fnd-24:writing']).toBe('重连后才进行保存');
+});
+
+
+it('does not silently discard an unsynced local answer when a different device saved a newer cloud version',async()=>{
+ const key='llh-v44-draft:test-foundation-owner:fr-fnd-24';
+ localStorage.setItem(key,JSON.stringify({editedAt:'2026-10-20T10:00:00.000Z',state:{
+  notes:'local pending note',studyResponses:{'fr-fnd-24:writing':'本机未同步答案'}
+ }}));
+ mocks.read.mockResolvedValue({data:{
+  answers:{__learning:{studyResponses:{'fr-fnd-24:writing':'云端的新答案'}}},
+  notes:'cloud latest note',completed:true,updated_at:'2026-10-24T10:00:00.000Z'
+ },error:null});
+ render(<Probe/>);
+ await screen.findByText(/云端记录比本机未同步草稿更新/);
+ expect((screen.getByLabelText('answer') as HTMLTextAreaElement).value).toBe('本机未同步答案');
+ expect((screen.getByLabelText('answer') as HTMLTextAreaElement).disabled).toBe(true);
+ expect((screen.getByText('save') as HTMLButtonElement).disabled).toBe(true);
+ expect(mocks.write).not.toHaveBeenCalled();
+ fireEvent.click(screen.getByText('cloud version'));
+ expect((screen.getByLabelText('answer') as HTMLTextAreaElement).value).toBe('云端的新答案');
+ expect((screen.getByLabelText('answer') as HTMLTextAreaElement).disabled).toBe(false);
+ expect(localStorage.getItem(key)).toBeNull();
+ expect(mocks.write).not.toHaveBeenCalled();
+});
+
+it('permits an explicit choice to retain the local unsynced draft and merges unrelated cloud answers',async()=>{
+ const key='llh-v44-draft:test-foundation-owner:fr-fnd-24';
+ localStorage.setItem(key,JSON.stringify({editedAt:'2026-10-20T10:00:00.000Z',state:{
+  notes:'local note',studyResponses:{'fr-fnd-24:writing':'本机继续编辑'}
+ }}));
+ mocks.read.mockResolvedValue({data:{
+  answers:{'0':2,__learning:{studyResponses:{'fr-fnd-24:extra':'远端练习'}}},
+  notes:'cloud note',completed:true,updated_at:'2026-10-24T10:00:00.000Z'
+ },error:null});
+ render(<Probe/>);
+ await screen.findByText(/云端记录比本机未同步草稿更新/);
+ fireEvent.click(screen.getByText('local draft'));
+ expect((screen.getByLabelText('answer') as HTMLTextAreaElement).value).toBe('本机继续编辑');
+ const draft=JSON.parse(localStorage.getItem(key)!);
+ expect(draft.state.notes).toBe('local note');
+ expect(draft.state.studyResponses['fr-fnd-24:extra']).toBe('远端练习');
+ fireEvent.click(screen.getByText('save'));
+ await screen.findByText('已保存到 Supabase。');
+ expect(mocks.write.mock.calls[0][0].answers['0']).toBe(2);
+ expect(mocks.write.mock.calls[0][0].answers.__learning.studyResponses['fr-fnd-24:writing']).toBe('本机继续编辑');
+ expect(mocks.write.mock.calls[0][0].answers.__learning.studyResponses['fr-fnd-24:extra']).toBe('远端练习');
 });
