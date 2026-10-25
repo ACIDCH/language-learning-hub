@@ -2,7 +2,7 @@ import {afterEach,beforeEach,expect,it,vi} from 'vitest';
 import {act,cleanup,fireEvent,render,screen,waitFor} from '@testing-library/react';
 import type {Session} from '@supabase/supabase-js';
 import {COURSES,type Course} from '../src/v44Courses';
-import {useCourseProgress,packFoundationState,validateFoundationState} from '../src/useCourseProgress';
+import {useCourseProgress,packFoundationState,unpackFoundationState,validateFoundationState} from '../src/useCourseProgress';
 const mocks=vi.hoisted(()=>({read:vi.fn(),write:vi.fn()}));
 vi.mock('../src/v44Connection',()=>{
  const writeResult=(row:any)=>Promise.resolve(mocks.write(row)).then((value:any)=>value?.error?value:{data:value&&Object.prototype.hasOwnProperty.call(value,'data')?value.data:{updated_at:row.updated_at},error:null});
@@ -176,4 +176,20 @@ it('requires review even when the unsynced device draft appears newer than the c
  fireEvent.click(screen.getByText('local draft'));
  expect((screen.getByLabelText('answer') as HTMLTextAreaElement).disabled).toBe(false);
  expect(mocks.write).not.toHaveBeenCalled();
+});
+
+
+it('round-trips per-lesson practice checklist and exercise answers in foundation cloud envelope',()=>{
+ const original={stage:4,answers:{'0':1,'1':2},studyResponses:{'fr-fnd-24:writing':'短作文'},practiceChecklist:{read:true,listen:false,speak:true},notes:'个人笔记',completed:true};
+ const encoded=packFoundationState(original);
+ expect(encoded.__learning.practiceChecklist).toEqual({read:true,listen:false,speak:true});
+ const restored=unpackFoundationState(encoded);
+ expect(restored).toEqual({
+  answers:{'0':1,'1':2},stage:4,studyResponses:{'fr-fnd-24:writing':'短作文'},
+  practiceChecklist:{read:true,listen:false,speak:true}
+ });
+ expect(unpackFoundationState({'0':3,__learning:{stage:2,studyResponses:{a:'legacy'}}})).toEqual({
+  answers:{'0':3},stage:2,studyResponses:{a:'legacy'},practiceChecklist:{}
+ });
+ expect(unpackFoundationState({__learning:{practiceChecklist:{valid:true,wrong:'maybe',other:1},studyResponses:{a:'ok',b:8}}}).practiceChecklist).toEqual({valid:true});
 });
