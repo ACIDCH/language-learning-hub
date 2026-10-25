@@ -250,11 +250,13 @@ it('A1 U05 and U09 have complete authentic-level daily and directions sequences 
  const routines=RECEPTION_LESSONS['fr-a1-u05'];
  expect(routines.paragraphs[0].target).toContain('à neuf heures');
  expect(routines.paragraphs[1].target).toContain('À midi');
- expect(routines.questions[0].answer).toBe('À neuf heures.');
+ expect(routines.questions[0].answer.split(' / ')[0]).toBe('À neuf heures.');
+ expect(routines.questions[0].answer.split(' / ')[1]).toContain('上午九点');
  const directions=RECEPTION_LESSONS['fr-a1-u09'];
  expect(directions.paragraphs[1].target).toContain('tournez à gauche');
  expect(directions.paragraphs[2].target).toContain('en face du musée');
- expect(directions.questions[1].answer).toBe('Au premier feu.');
+ expect(directions.questions[1].answer.split(' / ')[0]).toBe('Au premier feu.');
+ expect(directions.questions[1].answer.split(' / ')[1]).toContain('第一个交通灯');
 });
 
 it('keeps inline-heading source prose in all five original IELTS Reading U01 learner stages',()=>{
