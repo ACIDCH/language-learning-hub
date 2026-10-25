@@ -107,3 +107,16 @@ it('blocks Worker deployments even when invoked in the Cloudflare subdirectory w
  expect(read.status).toBe(0);
  expect(JSON.parse(read.stdout).quality.inventory).toBe(true);
 });
+
+
+it('generates a concrete, source-linked review queue without pretending to approve a lesson or recording',()=>{
+ const out=spawnSync(process.execPath,['scripts/review-queue.mjs','--json'],{encoding:'utf8'});
+ expect(out.status).toBe(0);
+ const queue=JSON.parse(out.stdout);
+ expect(queue.counts).toMatchObject({course_semantics:156,specialty_semantics:327,audio_alignment:156,deviceAcceptance:true,browserAcceptance:true});
+ expect(queue.queue).toHaveLength(639);
+ expect(queue.queue.every((x:{id:string;courseId:string;checks:string[]})=>x.id&&x.courseId&&x.checks.length>=3)).toBe(true);
+ const fr=queue.queue.find((x:{id:string;kind:string})=>x.id==='fr-a1-u06'&&x.kind==='course_semantics');
+ expect(fr.paragraphs).toBeGreaterThanOrEqual(4);
+ expect(fr.sourcePaths.length).toBeGreaterThan(0);
+});
