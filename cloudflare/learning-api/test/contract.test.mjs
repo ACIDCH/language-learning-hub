@@ -61,7 +61,8 @@ test('a Supabase authenticated write uses server resolved user id and RLS token'
       assert.equal(opts.headers.Authorization,'Bearer abc.def.ghi');
       return respond({id:'supabase-user-123'});
     }
-    assert.ok(url.includes('/rest/v1/learning_progress?on_conflict='));
+    assert.ok(url.includes('/rest/v1/learning_progress'));
+    assert.ok(!url.includes('on_conflict='));
     assert.equal(opts.headers.Authorization,'Bearer abc.def.ghi');
     const b=JSON.parse(opts.body);
     assert.equal(b.user_id,'supabase-user-123');
@@ -72,7 +73,7 @@ test('a Supabase authenticated write uses server resolved user id and RLS token'
   };
   const request=req('/v1/progress/fr-a1-u01',{method:'PUT',
     headers:{Authorization:'Bearer abc.def.ghi','Content-Type':'application/json'},
-    body:JSON.stringify({state:{stage:3},user_id:'attacker-id'})});
+    body:JSON.stringify({state:{stage:3},user_id:'attacker-id',expectedUpdatedAt:null})});
   const r=await handle(request,cfg,fetcher);
   assert.equal(r.status,200);
   assert.equal((await r.json()).saved,true);
@@ -251,4 +252,21 @@ test('versioned main-course save returns new server version after successful con
  }),cfg,fetcher);
  assert.equal(r.status,200);
  assert.equal((await r.json()).progress.updated_at,next);
+});
+
+
+test('unversioned legacy progress PUT is rejected without changing the database',async()=>{
+ let writes=0;
+ const fetcher=async(url)=>{
+  if(url.endsWith('/auth/v1/user'))return respond({id:'owner-id'});
+  writes++;throw Error('An unversioned update must never run');
+ };
+ const r=await handle(req('/v1/progress/fr-a1-u01',{
+  method:'PUT',
+  headers:{Authorization:'Bearer abc.def.ghi','Content-Type':'application/json'},
+  body:JSON.stringify({state:{notes:'could overwrite newer data'}})
+ }),cfg,fetcher);
+ assert.equal(r.status,428);
+ assert.equal((await r.json()).error,'progress_version_required');
+ assert.equal(writes,0);
 });
