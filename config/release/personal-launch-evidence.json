@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "scope": "personal_production_release",
+  "authorizedBy": "repository owner",
+  "audioDeliveryMode": "device_tts",
+  "frontendUrl": "https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev/",
+  "workerUrl": "https://feat-v44-full-ui-curriculum-one-shot-language-hub-api.xilu329.workers.dev",
+  "ownerReports": {
+    "desktopTts": {
+      "reportedAt": "2026-10-26",
+      "englishPassed": true,
+      "frenchPassed": true,
+      "controlsPassed": true,
+      "truthfulDeviceTtsLabelPassed": true,
+      "evidenceRef": "docs/qa/owner-device-tts-cloud-acceptance-2026-10-26.md"
+    },
+    "androidTts": {
+      "reportedAt": "2026-10-26",
+      "englishPassed": true,
+      "frenchPassed": true,
+      "controlsPassed": true,
+      "truthfulDeviceTtsLabelPassed": true,
+      "evidenceRef": "docs/qa/owner-device-tts-cloud-acceptance-2026-10-26.md"
+    },
+    "foundationRestore": {
+      "reportedAt": "2026-10-26",
+      "courseId": "fr-fnd-01",
+      "distinctPhysicalDevices": 2,
+      "saveRestorePassed": true,
+      "reloginPassed": true,
+      "evidenceRef": "docs/qa/owner-device-tts-cloud-acceptance-2026-10-26.md"
+    },
+    "mainCourseRestore": null
+  },
+  "automatedEvidence": {
+    "courseInventory": true,
+    "sourceIntegrity": true,
+    "progressCasConflict": true,
+    "offlineDraftRecovery": true,
+    "accountIsolation": true,
+    "tokenRefreshDraftProtection": true,
+    "noVoiceTextFallback": true,
+    "aiFailureIsolation": true,
+    "publicBundleSecretScan": true,
+    "workerAuthContract": true,
+    "pagesRouteRefresh": true
+  },
+  "security": {
+    "allPublicTablesRlsEnabled": true,
+    "serviceRoleAbsentFromPublicBundle": true,
+    "leakedPasswordProtectionEnabled": false,
+    "evidenceRef": "docs/qa/live-supabase-release-audit-2026-10-26.md"
+  },
+  "deployment": {
+    "frontendReachable": true,
+    "workerHealthy": true,
+    "rollbackRef": "docs/qa/personal-launch-rollback.md"
+  }
+}

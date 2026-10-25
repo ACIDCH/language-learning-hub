@@ -74,6 +74,8 @@ jobs:
         run: npm run build
       - name: Validate all 156 V4.4 content payloads and retained source hashes
         run: node --experimental-strip-types scripts/validate_v44_content.mjs
+      - name: Report independent personal-launch and formal-publication status
+        run: npm run personal:report
       - name: Test V4.4 navigation, account, selection, AI and progress integration
         run: npx vitest run --config vitest.v44.config.ts
       - name: Confirm Cloudflare root-path static bundle and verified public lessons

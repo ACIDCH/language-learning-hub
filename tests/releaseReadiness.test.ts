@@ -4,7 +4,7 @@ import {spawnSync} from 'node:child_process';
 import {assessReleaseReadiness} from '../scripts/release-readiness.mjs';
 import {buildReviewQueue} from '../scripts/review-queue.mjs';
 import {verifyReleaseSources} from '../scripts/release-source-integrity.mjs';
-import {requiresProductionEvidence} from '../scripts/enforce-release-build.mjs';
+import {requiresPersonalEvidence,requiresProductionEvidence} from '../scripts/enforce-release-build.mjs';
 
 const matrix=JSON.parse(readFileSync('docs/qa/curriculum-gap-matrix.json','utf8'));
 const signoffs=JSON.parse(readFileSync('config/release/evidence.json','utf8'));
@@ -92,6 +92,7 @@ it('guards Cloudflare main-branch builds while keeping pull-request preview buil
  expect(requiresProductionEvidence({CF_PAGES_BRANCH:'feat/v44-full-ui-curriculum-one-shot'})).toBe(false);
  expect(requiresProductionEvidence({CF_PAGES_BRANCH:'main'})).toBe(true);
  expect(requiresProductionEvidence({LLH_DEPLOY_TARGET:'production'})).toBe(true);
+ expect(requiresPersonalEvidence({LLH_DEPLOY_TARGET:'personal'})).toBe(true);
  const prod=spawnSync(process.execPath,['scripts/enforce-release-build.mjs'],{
   encoding:'utf8',env:{...process.env,CF_PAGES_BRANCH:'main',LLH_DEPLOY_TARGET:''}
  });
@@ -102,6 +103,12 @@ it('guards Cloudflare main-branch builds while keeping pull-request preview buil
   encoding:'utf8',env:{...process.env,CF_PAGES_BRANCH:'feat/v44-full-ui-curriculum-one-shot',LLH_DEPLOY_TARGET:''}
  });
  expect(preview.status).toBe(0);
+ const personal=spawnSync(process.execPath,['scripts/enforce-release-build.mjs'],{
+  encoding:'utf8',env:{...process.env,CF_PAGES_BRANCH:'feat/v44-full-ui-curriculum-one-shot',LLH_DEPLOY_TARGET:'personal'}
+ });
+ expect(personal.status).toBe(1);
+ expect(personal.stdout).toContain('Personal launch: PERSONAL_LAUNCH_BLOCKED');
+ expect(personal.stderr).toContain('Personal launch build stopped');
 });
 
 
