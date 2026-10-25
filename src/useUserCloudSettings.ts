@@ -33,10 +33,12 @@ export function useUserCloudSettings(session:Session|null,preferences:Preference
  const [loadedFor,setLoadedFor]=useState<string|null>(null);
  const [errorDetail,setErrorDetail]=useState('');
  // Serialize server writes: an older slow request must never overwrite newer preferences.
- const pendingWrites=useRef<Promise<void>>(Promise.resolve());
+ const pendingWrites=useRef<{uid:string|null;queue:Promise<void>}>({uid:null,queue:Promise.resolve()});
  const uid=session?.user.id||null;
  useEffect(()=>{
   let active=true;
+  // A different account must not wait on another account's stalled write.
+  pendingWrites.current={uid,queue:Promise.resolve()};
   setLoadedFor(null);
   if(!uid||!cloudClient){setSync('guest');return;}
   setSync('loading');setErrorDetail('');clear();
@@ -72,6 +74,7 @@ export function useUserCloudSettings(session:Session|null,preferences:Preference
   if(!uid||loadedFor!==uid||!cloudClient)return;
   const settingsClient=cloudClient;
   let active=true;
+  const accountQueue=pendingWrites.current;
   const payload={
    user_id:uid,preferences:cleanPreferences(preferences),
    ai_preferences:publicAiPreferences(config),updated_at:new Date().toISOString()
@@ -79,7 +82,7 @@ export function useUserCloudSettings(session:Session|null,preferences:Preference
   const timer=setTimeout(()=>{
    // Earlier requests are allowed to finish, but a later snapshot is always sent last.
    // A cancelled debounce never starts a write, even while another is in flight.
-   pendingWrites.current=pendingWrites.current.catch(()=>{}).then(async()=>{
+   accountQueue.queue=accountQueue.queue.catch(()=>{}).then(async()=>{
     if(!active)return;
     try{
      const {error}=await settingsClient.from('user_settings').upsert(payload,{onConflict:'user_id'});
