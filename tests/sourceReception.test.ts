@@ -138,10 +138,13 @@ it('preserves IELTS heading choices and T/F/NG grading while showing Chinese equ
   const lesson=RECEPTION_LESSONS[id];
   expect(lesson.questions,id).toHaveLength(4);
   for(const [i,q] of lesson.questions.entries()){
-   const prompt=q.prompt.split(' / '),answer=q.answer.split(' / ');
-   expect(prompt.length,id+' question '+i).toBe(2);
+   const promptBoundary=q.prompt.lastIndexOf(' / ');
+   const questionEnglish=q.prompt.slice(0,promptBoundary),questionChinese=q.prompt.slice(promptBoundary+3);
+   const answer=q.answer.split(' / ');
+   expect(promptBoundary,id+' question separator '+i).toBeGreaterThan(0);
+   expect(questionEnglish.length,id+' original question '+i).toBeGreaterThan(12);
    expect(answer.length,id+' answer '+i).toBe(2);
-   expect(/[\p{Script=Han}]/u.test(prompt[1]),id+' question translation '+i).toBe(true);
+   expect(/[\p{Script=Han}]/u.test(questionChinese),id+' question translation '+i).toBe(true);
    expect(/[\p{Script=Han}]/u.test(answer[1]),id+' answer translation '+i).toBe(true);
    expect(q.evidence.every(p=>lesson.paragraphs.some(x=>x.id===p)),id+' grounded evidence '+i).toBe(true);
   }
