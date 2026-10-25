@@ -37,7 +37,9 @@ it('maintains an ID-exact 108 + 48 gap matrix, never equating structure with app
   return {id:c.id,kind:c.kind,language:c.language,level:c.level,target:c.goal,
    sourceHashes,progress:{scope:'owner/course',courseId:c.id,store:c.kind==='foundation'?'foundation_progress.answers.__learning':'/v1/progress/'+c.id},
    evidence:reception?{paragraphs:reception.paragraphs.map(p=>({id:p.id,targetSha256:createHash('sha256').update(p.target).digest('hex'),chineseSha256:createHash('sha256').update(p.zh).digest('hex')})),questions:reception.questions.map((q,i)=>({index:i,paragraphIds:q.evidence})),modelChinesePresent:!!reception.modelZh,audioSegments:[],audioStatus:'no_verified_source_aligned_recording'}:null,
-   stages:['情境','语法','词汇','听读','表达'],specialties:topics.map(x=>({id:x.id,type:x.type})),
+   stages:['情境','语法','词汇','听读','表达'],specialties:topics.map(x=>({
+    id:x.id,type:x.type,contentSha256:createHash('sha256').update(JSON.stringify(x)).digest('hex')
+   })),
    body:entry?.public_sources.length?'source_manuscript':body?'authored_body_quality_pending':'missing',
    readingWords:body?.reading?.trim().split(/\s+/u).length??null,
    reception:reception?{source:c.kind==='foundation'?'src/foundationReception.ts':'src/receptionLessons.ts',format:c.kind==='foundation'?'progressive_source_blocks':'continuous_passage',paragraphs:reception.paragraphs.length,

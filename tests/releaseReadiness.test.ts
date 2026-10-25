@@ -11,7 +11,7 @@ const signoffs=JSON.parse(readFileSync('config/release/evidence.json','utf8'));
 const approve={status:'approved',reviewerRole:'human',reviewer:'Course reviewer',reviewedAt:'2026-10-25T12:00:00+13:00',evidenceRef:'qa://manual-pass-001'};
 const fullyReviewed=()=>{
  const courses=matrix.courses.map((course:any)=>({...approve,courseId:course.id,paragraphs:course.evidence.paragraphs.map((p:any)=>({...p}))}));
- const specialties=matrix.courses.flatMap((c:any)=>c.specialties).map((u:any)=>({...approve,id:u.id}));
+ const specialties=matrix.courses.flatMap((c:any)=>c.specialties).map((u:any)=>({...approve,id:u.id,contentSha256:u.contentSha256}));
  const audio=matrix.courses.map((c:any)=>({...approve,courseId:c.id,segments:c.evidence.paragraphs.map((p:any)=>({
   id:p.id,targetSha256:p.targetSha256,assetRef:'recordings/'+c.id+'/'+p.id+'.mp3',
   rightsRef:'qa://verified-source-rights',humanListened:true,durationSeconds:20
@@ -38,6 +38,14 @@ it('requires matching original and Chinese paragraph hashes for all 156 human so
  const result=assessReleaseReadiness(matrix,manifest);
  expect(result.ready).toBe(false);
  expect(result.quality.signedCourses).toBe(155);
+});
+it('invalidates a specialty approval when its reviewed teaching content changes',()=>{
+ const manifest=fullyReviewed();
+ const changed=JSON.parse(JSON.stringify(matrix));
+ changed.courses[0].specialties[0].contentSha256='0'.repeat(64);
+ const result=assessReleaseReadiness(changed,manifest);
+ expect(result.ready).toBe(false);
+ expect(result.quality.signedSpecialties).toBe(326);
 });
 it('forbids audio approval with wrong speech text, absent rights, no listening or incomplete paragraph mapping',()=>{
  const manifest=fullyReviewed();

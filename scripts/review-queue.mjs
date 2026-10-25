@@ -1,6 +1,6 @@
 import {readFileSync} from 'node:fs';
 import {pathToFileURL} from 'node:url';
-import {approved,evidenceMatches,validAlignedAudio} from './release-readiness.mjs';
+import {approved,evidenceMatches,specialtyEvidenceMatches,validAlignedAudio} from './release-readiness.mjs';
 
 /** Build a deterministic list of work that still needs real review evidence.
  * This queue is planning metadata, not a substitute for a human QA result.
@@ -22,7 +22,7 @@ export function buildReviewQueue(matrix,evidence){
   if(!(approved(cReviews.get(lesson.id))&&evidenceMatches(lesson.evidence?.paragraphs??[],cReviews.get(lesson.id).paragraphs)))queue.push({kind:'course_semantics',id:lesson.id,...meta,checks:['paragraph target and Chinese meaning','exercise evidence and explanations','teaching sequence and progression']});
   if(!validAlignedAudio(lesson,aReviews.get(lesson.id)))queue.push({kind:'audio_alignment',id:lesson.id,...meta,checks:['authorized recording provenance','source paragraph text hash','P1–P4 alignment and actual listening']});
   for(const specialty of lesson.specialties??[]){
-   if(!approved(sReviews.get(specialty.id)))queue.push({kind:'specialty_semantics',id:specialty.id,...meta,topicType:specialty.type,checks:['grammar and CEFR prerequisite','examples and natural Chinese','practice answers and counterexamples']});
+   if(!specialtyEvidenceMatches(specialty,sReviews.get(specialty.id)))queue.push({kind:'specialty_semantics',id:specialty.id,...meta,topicType:specialty.type,contentSha256:specialty.contentSha256,checks:['grammar and CEFR prerequisite','examples and natural Chinese','practice answers and counterexamples']});
   }
  }
  queue.sort((a,b)=>(priorityScore[a.priority]??5)-(priorityScore[b.priority]??5)||a.courseId.localeCompare(b.courseId)||a.kind.localeCompare(b.kind)||a.id.localeCompare(b.id));

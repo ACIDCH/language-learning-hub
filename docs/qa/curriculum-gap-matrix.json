@@ -94,39 +94,48 @@
       "specialties": [
         {
           "id": "en-signposts",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "aed06e948992763bec93c4fca40b3071a8b8b88d8ff23efee472e8e8fc22881a"
         },
         {
           "id": "en-lecture-terms",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "c74368c0d483c0f797e344ccdc52d61c994bd13b311373fefa50bb63dad390dd"
         },
         {
           "id": "en-contrast",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "d8802cee5262320367ca322c35a50297cd30ddce501cf18292f0a8571d408454"
         },
         {
           "id": "en-modals",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "bec0356fc5f7a83bd17f937046c1e74d7f38eb677e0b11373c4ea25e9defa57a"
         },
         {
           "id": "en-signpost-vocab",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "90dac4eb2a3391f3c1149d8ac2486711e79f39ff926af07a702801602bdccfca"
         },
         {
           "id": "en-evidence-vocab",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "e9778e061eee5d68fa7b3c04356cee3437c983846cc5291e0c383baa2cf8cc73"
         },
         {
           "id": "en-study-vocab",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "4716b08959dc2ab5f6bad0faf23cb42bc8fb1c03813c8306706c57bdf9308bdf"
         },
         {
           "id": "en-lecture-hedging",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "24bbfe80590b095c650ad9b3acefa2f94225bfb7b4cef9b7b60830e2b313fcd8"
         },
         {
           "id": "en-academic-collocations",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "c477fb47a488dbe67660f5b59814021a3f3ebc7c9cd7a9c6ea5d0e3351b538f3"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -252,11 +261,13 @@
       "specialties": [
         {
           "id": "en-reported-speech-listening",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "07a595fb014206beae76e5460384c7122094a994e9c963be53c38ca1a3cf6810"
         },
         {
           "id": "en-stance-lexicon-listening",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "e67771f36a1721f3a529e272de80fcdbc948f2fee8d4f371ec85035bfc003ce0"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -382,11 +393,13 @@
       "specialties": [
         {
           "id": "en-listening-paraphrase-scope",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "670d368b7d7f7ba1901e488c315742540cdcbb592be393b686ae9376c6ccdf27"
         },
         {
           "id": "en-listening-note-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "e3bf360ee30556918e9aa8243d74518e4ce1e78a57d66d0e59f342c96148d176"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -512,11 +525,13 @@
       "specialties": [
         {
           "id": "en-listening-u04-route-reference-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "6bc4fce45595f97d77cb457a1b84463ca389c7c3cbd7f626ebda927083f4daa0"
         },
         {
           "id": "en-listening-u04-site-process-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "b7ecaab826756dbe9530a39035c2a9e0bfc026be396badb29b9e93fa7359ef1a"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -644,11 +659,13 @@
       "specialties": [
         {
           "id": "en-listening-u05-correction-scope-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "f008614acb62f2bfcfd7ac70ca6d9817ad255717d989bc3977fba3858486d74c"
         },
         {
           "id": "en-listening-u05-booking-revision-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "316a0cbc10869886d55a3e77a508799bc6c8af1e955284e6fc56d9a5cfe2fd46"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -773,11 +790,13 @@
       "specialties": [
         {
           "id": "en-listening-u06-word-class-completion-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "b284f4ce0c33502f91a66340d9581b48f92812cc24cc399f9fcd66e1e7618c3a"
         },
         {
           "id": "en-listening-u06-lab-record-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "2f61c6d21325a87165c208142dec4e21751148f366fe5c45c8cf4560ee08f4a2"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -904,11 +923,13 @@
       "specialties": [
         {
           "id": "en-u07-dialogue-reference-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "68c3ab9f5447c5cbb55eebd3ca0409beca89fbd805bb6e7b2c5f27e4d8ca0d00"
         },
         {
           "id": "en-u07-method-negotiation-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "23fbfb948dc004f589284c40119cba366c3afb65852c47abc7cd98c1042d9ec0"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -1034,11 +1055,13 @@
       "specialties": [
         {
           "id": "en-u08-evidence-hedging-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "406183be34550e434448a2b32933977a8856248635eb6d3737e7d69ada4bb22a"
         },
         {
           "id": "en-u08-memory-synthesis-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "6fca92b74aecff9697c5ed5931dfa59278f75d6dd7ae9e54b4122638217f2996"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -1163,11 +1186,13 @@
       "specialties": [
         {
           "id": "en-academic-passive",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "79376e38f1776f1ebb685b36a9c792f97938b4ea3caa7e40f28ac465a43e7e5b"
         },
         {
           "id": "en-reading-u01-learning-evidence-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "f8a3520976f6b3e553b99e31fc6e5de2c9bff6aa0be7fa4732ca0cb9dae0f3ea"
         }
       ],
       "body": "source_manuscript",
@@ -1309,11 +1334,13 @@
       "specialties": [
         {
           "id": "en-reading-evidence-scope-u02",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "8d045405044b7434ecb97c2fc77f9d1517f0eff5ebb8dc802735abc4a78baa82"
         },
         {
           "id": "en-reading-research-evidence-lexicon-u02",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "3ce9610cdcc66b33b1a784d0c7ab69f138473968eba4d0f3b54f208f2a5a2cea"
         }
       ],
       "body": "source_manuscript",
@@ -1433,11 +1460,13 @@
       "specialties": [
         {
           "id": "en-relative-clauses",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "dad19abf9aaafde8ca061ca0ecc93f4af54a3b6d5915990cafe7de5a36b8c397"
         },
         {
           "id": "en-ielts-heading-paragraph-function-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "f251ac9fa6954f68484291264288f5f0a6cba1558c32cb777bd0309b3118da13"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -1565,11 +1594,13 @@
       "specialties": [
         {
           "id": "en-reading-evidence-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "03d23d47d7232d93ef12c39afb8aa9a74439addc4d49385efb74a0f339d6cc90"
         },
         {
           "id": "en-ielts-tfng-scope-grammar-u04",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "8b57d701d57af448da90585fb0050d25d8ae176f32213803a55f8459c454ea2f"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -1694,11 +1725,13 @@
       "specialties": [
         {
           "id": "en-reading-u05-reference-logic",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "fdc3879bc53b7fd2a87358ad97088d8eda1f901ee8b680f76ad2f9bf60f8a6fc"
         },
         {
           "id": "en-reading-u05-retrofit-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "3b4048a2bf830512374af11c8fb48206bddf6d25579242fbc1456a0e8fcf18a4"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -1824,11 +1857,13 @@
       "specialties": [
         {
           "id": "en-reading-u06-hedging-inference",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "d90e8e29f7b7d47c78d79295ee2db769b9f232c2889684b299fdaeaa96b13999"
         },
         {
           "id": "en-reading-u06-science-caution-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "048c70f94f577fbe7c46996cd2bd9256c7afb7354558219bed9b175bb737f3ed"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -1954,11 +1989,13 @@
       "specialties": [
         {
           "id": "en-reading-u07-information-matching-logic",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "aaf936d9f6898b24860758bf4802ebaa0a87b9f956de19440540fa5a4b136887"
         },
         {
           "id": "en-reading-u07-survey-method-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "2f0948c90c438aa7e1691cd79ee56b43db90466872c35c414412a3c367661a81"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -2086,11 +2123,13 @@
       "specialties": [
         {
           "id": "en-reading-u08-two-source-synthesis",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "7248b9cf6d09f2e8067e43b6f271ee313246b1e4a1706d00ed84ac92c9a6ab25"
         },
         {
           "id": "en-reading-u08-access-equity-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "e17140d6e88fe9f8de22187620225ca1585db3e557a8fd6185c6c4e09931e8f6"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -2216,11 +2255,13 @@
       "specialties": [
         {
           "id": "en-task1-u01-overview-evidence-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "9a155d726b02831dfc250a0693f4efc26dbe600cd440ed34faaf2f2e2e5df72b"
         },
         {
           "id": "en-task1-u01-unit-precision-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "5ba089434835bb209ee05a35f0736af8787f470218bbd956565d98607d232b13"
         }
       ],
       "body": "source_manuscript",
@@ -2343,11 +2384,13 @@
       "specialties": [
         {
           "id": "en-task1-trend-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "dd7c209d41b75a2dcadc364e54dd8f26daf6d40129b2b1788e795729f31d85db"
         },
         {
           "id": "en-task1-u02-trend-scope-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "612e26f4feaff2d36e5315cf3a137beaede7839c4c32938b96742b5b501d85e5"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -2473,11 +2516,13 @@
       "specialties": [
         {
           "id": "en-task1-u03-comparison-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "09cd10e26864b22a62aa6e33fcffbb35eef0ff7e3c53fa42f9c13815828d8d70"
         },
         {
           "id": "en-task1-u03-comparison-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "6b1a53a5dc2f16d82d150c33ad608b442705d777b90c2cdf5f4a20a24ae62623"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -2605,11 +2650,13 @@
       "specialties": [
         {
           "id": "en-task1-u04-shares-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "1dbe6e4a96a387aa2b5080e2c904ba355bd7957e43d8bd3080253e0d3520d8b1"
         },
         {
           "id": "en-task1-u04-allocation-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "2401312725fe7ac3f82862416a359cfb597be01fc4d41fcd669827648380c484"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -2735,11 +2782,13 @@
       "specialties": [
         {
           "id": "en-process-report-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "07e05920e10a882f551576f0e33175d0e2756cc3345fa3d41a6374a8517c661d"
         },
         {
           "id": "en-task1-u05-recycling-process-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "041336a7cf9bd911499d7579096af062ab94304caac743cd528c3dd3bcf20536"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -2865,11 +2914,13 @@
       "specialties": [
         {
           "id": "en-map-change-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "85de0e3fa60923c78951c7127fea2a912dc55e6dd83984a18dedd458d1ad250c"
         },
         {
           "id": "en-task1-u06-map-reference-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "ccd9cc00379e10a28957f0ba12ef88386de478dbd997aa1743409217d1908a47"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -2996,11 +3047,13 @@
       "specialties": [
         {
           "id": "en-task1-u07-cohesion-scope-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "ccef930fb32fc811dd28d071dee1793587770b0c2a7c310e72f8c68ed50ed9ac"
         },
         {
           "id": "en-task1-u07-borrowing-cohesion-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "29bbaf82a59ebecf7f73b34211a17b121d02a58d360a205b4d7d261e4666eb86"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -3009,7 +3062,7 @@
         "source": "src/receptionLessons.ts",
         "format": "continuous_passage",
         "paragraphs": 4,
-        "words": 485,
+        "words": 487,
         "chinese": "all_paragraphs",
         "questions": 4,
         "audio": "segmented_device_tts_only",
@@ -3126,11 +3179,13 @@
       "specialties": [
         {
           "id": "en-task1-u08-revision-scope-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "1b53729e6ab05955136f3848dec3929c437d4c6e372b17859811d1ec79da12dd"
         },
         {
           "id": "en-task1-u08-precision-editing-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "1c0586c4ed45bf7b91cd9c42216e846f748c8d9cad832ae5a65b8bf9b4fe8023"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -3256,11 +3311,13 @@
       "specialties": [
         {
           "id": "en-task2-u01-question-thesis-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "8949258384e3ebad4b95818e65c968c7a455dddc01013bb618a4ff3e4e505fc3"
         },
         {
           "id": "en-task2-u01-online-learning-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "80cda792c36b66e1af32cd857a6342c4ce576b23d4bfc94374de50207db4561a"
         }
       ],
       "body": "source_manuscript",
@@ -3381,11 +3438,13 @@
       "specialties": [
         {
           "id": "en-task2-reason-evidence-vocab",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "426ed64bb25f7f1067e414b9afbe9e38902a6bebf86273f084f6e6e2c743fad6"
         },
         {
           "id": "en-task2-u02-reasoning-chain-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "482623412d2ddf421abf10204be6a48900fb23ff0b1471d665cffa4cd265052b"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -3511,11 +3570,13 @@
       "specialties": [
         {
           "id": "en-task2-contrast-cohesion",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "afe4b144ba9d7d92ff0c968d6d68fceab656eca11591906f76428dfb0241dbff"
         },
         {
           "id": "en-task2-u03-fair-rebuttal-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "d1eb08e499402e957b40ca0f1a0dc54060cdf877aa92b59fdaea8239faf55391"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -3641,11 +3702,13 @@
       "specialties": [
         {
           "id": "en-task2-u04-discussion-stance-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "93f70230825e3a8009a10e7e9d6e13bec9591220a88f07f3c62c64a33d117926"
         },
         {
           "id": "en-task2-u04-curriculum-judgement-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "c331dca0b02ee0f7404f9f8bfacce591d86000a42d6fb107f9c698aaac5ad7dc"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -3771,11 +3834,13 @@
       "specialties": [
         {
           "id": "en-task2-u05-outweigh-conditions-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "ef2e5320595adb6bd03de0035e01924fc4f68129afcc00aeaecba8c41ad7a7a3"
         },
         {
           "id": "en-task2-u05-public-access-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "f2dcb5cf4d70ca0d2ba907b1a168b564ab3c4c067df9133145062e651e6ed8b2"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -3900,11 +3965,13 @@
       "specialties": [
         {
           "id": "en-task2-u06-cause-mechanism-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "0500fe0d77cef92e1bb13c84974f3940592928208c5216341b6ff1307fa1a6c6"
         },
         {
           "id": "en-task2-u06-solution-evaluation-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "4ff5cb64ffb05903650f51bc3e1fb09145cc35a974848e262d6459da936c694b"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -4029,11 +4096,13 @@
       "specialties": [
         {
           "id": "en-task2-u07-reference-causality-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "81130b621abc9c31ef4724072b8820bd9bc735de347c3b82e0e417c2e99c48c5"
         },
         {
           "id": "en-task2-u07-access-coherence-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "852572fa789baec604424c34b228a8f814bd3ff6acb4e470e7e957a8a1a4819a"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -4158,11 +4227,13 @@
       "specialties": [
         {
           "id": "en-task2-u08-hedging-scope-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "17f8538c82ac86f156ec68a99b894af2ac4406fc61759bb9ca676f30f7e82d07"
         },
         {
           "id": "en-task2-u08-register-precision-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "bace1f49ada34539b3c2b06b6c7fc5a19fec1f98f5646e63ed4d0b61598355ca"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -4287,11 +4358,13 @@
       "specialties": [
         {
           "id": "en-speaking-u01-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "5315579f32d2a7ae6248d4b9d1235f9e85a145036f6aae418be9f6e214d13a66"
         },
         {
           "id": "en-speaking-u01-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "c535c8743a00de1742237edb88851029ef9226ec60ce809d113659bdab6ca759"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -4416,11 +4489,13 @@
       "specialties": [
         {
           "id": "en-speaking-u02-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "d084cbb864f6462e5d31251b8cbe1f4a55428a5c8ed7130844da525ab54d14fa"
         },
         {
           "id": "en-speaking-u02-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "b1e2e7134dbcf6140c199aba1e84d568c9404d8b3866d52fe60c046578a8c2a6"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -4545,11 +4620,13 @@
       "specialties": [
         {
           "id": "en-speaking-u03-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "8b135e6109aa5b58e6634ec14fb4a56594b15d4b89105fbc6bf5b064168778a0"
         },
         {
           "id": "en-speaking-u03-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "80d5e33b3d1f201af4a3369018f1ad43f10627963129d361ef90288797d71f39"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -4674,11 +4751,13 @@
       "specialties": [
         {
           "id": "en-speaking-u04-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "078367fabaf6ba90002438d69364818eca41ac2d4803cacf099f892e195591d7"
         },
         {
           "id": "en-speaking-u04-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "abaaf8f981911ff74734b72bbdd46b702f825a30dd9d595c917c5a1ed6cd436d"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -4803,11 +4882,13 @@
       "specialties": [
         {
           "id": "en-speaking-u05-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "0eeabf569d577946d5615294b38aa9093e72089b369639b94c73192af0360661"
         },
         {
           "id": "en-speaking-u05-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "9d900567821bee74ca588054f96fd2ad8c82ff01d3876f33313e46a032e12a47"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -4932,11 +5013,13 @@
       "specialties": [
         {
           "id": "en-speaking-u06-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "249ba023d25bfb612bc91cff64f27ff3f3868565e3886f307ab3e11942ec08c1"
         },
         {
           "id": "en-speaking-u06-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "711b423e6ebad37885ef4c9837e85c85acb096391eb6f71035e07d884903d0ad"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -5061,11 +5144,13 @@
       "specialties": [
         {
           "id": "en-speaking-u07-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "4c5a2459e9826c7bc6de8b77bff124177e82995be81aa22760b830fca0949c66"
         },
         {
           "id": "en-speaking-u07-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "4bad368ea02cf5efb93d668cca37b5d055bb5f134413bda25d6639744787da9d"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -5190,11 +5275,13 @@
       "specialties": [
         {
           "id": "en-speaking-u08-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "b84316a35515671282af2f9333ee5332813f66d180d5fe72a3b96c4bcbfe8dfb"
         },
         {
           "id": "en-speaking-u08-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "46ef1ae83f29b2f649fdda86b10fc6406ce21f06c5614ded8f1d8372b1f2ed2e"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -5319,15 +5406,18 @@
       "specialties": [
         {
           "id": "en-upgrade-u01-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "5c16bd9e6d25a2f1ee0edfdf106ef310dfdea3257412b5f63c1c92023b90abbf"
         },
         {
           "id": "en-upgrade-u01-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "b855139b6a32f41bcaf295292dcc1838b5a86323015c6e5aeab9d763ffa540f7"
         },
         {
           "id": "en-conditionals",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "99d86b6d2e8968a39634a5b0e0958b70a3bc70b5bc9a175fb47cf9741d51de03"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -5452,11 +5542,13 @@
       "specialties": [
         {
           "id": "en-upgrade-u02-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "6845aa068667341f792af466b1900042c8ac727297493a66ea3a95912a33519c"
         },
         {
           "id": "en-upgrade-u02-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "fa1ed5850837e885a2d943d8a2a0f8722db49c9fb755daa2c2e84fb1f4eacc79"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -5581,11 +5673,13 @@
       "specialties": [
         {
           "id": "en-upgrade-u03-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "451c7e36a9c70b77990cb12a7c6c040a0932736e85395ce54c882b60e987835f"
         },
         {
           "id": "en-upgrade-u03-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "723d44276a7b73b97f5f8393b98322f9023610078abc3b9a41017e6043fb0e42"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -5710,11 +5804,13 @@
       "specialties": [
         {
           "id": "en-upgrade-u04-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "a17891228380c329e34aba5b9cb0f53e393d81c0a4450fd66240328a4e377a1d"
         },
         {
           "id": "en-upgrade-u04-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "651983363c181d7a502aaa62dd5baaacd45a144f3858f61c567f70fcdc224e57"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -5839,11 +5935,13 @@
       "specialties": [
         {
           "id": "en-upgrade-u05-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "e8344989a8e7924c01e29dcf44a08fdf8026bce9d19c6dd0dda76c8c0b2faecb"
         },
         {
           "id": "en-upgrade-u05-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "5d80a4910ddf5d9adf6e6bf68d6add2d68f94a905f9f0367611c82ea0acddc71"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -5968,11 +6066,13 @@
       "specialties": [
         {
           "id": "en-upgrade-u06-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "e7e27a971af0a6bdf4f858ef0fe9f89e46ab412c044d764124c68b78589bb7c5"
         },
         {
           "id": "en-upgrade-u06-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "afc3adbc40a7ab383e4b572d9166da91f2075cdca46b500fdae0ed21fb3299ba"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -6049,7 +6149,7 @@
           {
             "id": "P3",
             "targetSha256": "495657a5f9b478dbfcfbfaf1ead36bc6364e1502fb02e25756c5afc40888fbc3",
-            "chineseSha256": "62268247de628459d52f21368316b57d326fd68b120050c1d40b3b1eebad89a0"
+            "chineseSha256": "0742060831d8c2367bb19a651d7c600832f7d3738579ffe69dd62fbc6cb0e205"
           },
           {
             "id": "P4",
@@ -6097,11 +6197,13 @@
       "specialties": [
         {
           "id": "en-upgrade-u07-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "52205ac1912d361d4f8b8c4c310e5c3fa14da8ba55c4eea43523d3980b6bd337"
         },
         {
           "id": "en-upgrade-u07-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "512924ae565afb914ec9a9a64765835ced8fc240fedfe058187b2fe033859ac2"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -6226,11 +6328,13 @@
       "specialties": [
         {
           "id": "en-upgrade-u08-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "9346ba421cb02e93c02618000350d7a2032e727aa2e10a5bef22ff69537e751f"
         },
         {
           "id": "en-upgrade-u08-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "329474a2bdfcdc3b72e28110dfbae6a3448b03fb33a224bfb142961f01cfae73"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -6355,15 +6459,18 @@
       "specialties": [
         {
           "id": "fr-etre",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "85f0260347b1da155aa8dd9c119781cf979a81ffe5e9410e66c1eae8917b0896"
         },
         {
           "id": "fr-greetings",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "21f669e403f2c7d0d37c5bc0849bbad1422a3a4ae0a28e47efda5df30ed03805"
         },
         {
           "id": "fr-campus-vocab",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "9d7e333f37fc1b65b2382a9fb535b2dfe89855a0d17bd01f8d4decfc920e4674"
         }
       ],
       "body": "source_manuscript",
@@ -6483,11 +6590,13 @@
       "specialties": [
         {
           "id": "fr-a1-countries-languages-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "3641f30a19184ea93a1273a8191bbd4f4a6596fcb9d89c962dd14348d4ee5371"
         },
         {
           "id": "fr-countries-languages-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "fcbff9256b1c88e601b5db825e0c5c9c16ddf1ce8b2c5492c14c86ea25b4ddb5"
         }
       ],
       "body": "source_manuscript",
@@ -6607,15 +6716,18 @@
       "specialties": [
         {
           "id": "fr-avoir",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "406b09284a12b9cf0e1287b13c0b65efeb9c58e71cc88119056960067cfabba3"
         },
         {
           "id": "fr-family",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "ce12341be854757f9c8fbbd4116be59f2a058b978c99a7b11e600d347f398dab"
         },
         {
           "id": "fr-possessive-determiners-a1",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "1deeabbea6913becfa3d0e71ca0690caa82cf7a078eefb5543cd7591ddb8c96c"
         }
       ],
       "body": "source_manuscript",
@@ -6736,15 +6848,18 @@
       "specialties": [
         {
           "id": "fr-articles",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "c931f81dbfcd898e9501c49ea13cedbac1e997c74416533bceb323e65c0d4c0e"
         },
         {
           "id": "fr-objects",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "569e54356baca29e03e0fedd59250d8f423dd1c2748ad3388b90899c9616047a"
         },
         {
           "id": "fr-room",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "012bdb5737f5519011efa46e37e825afce53a2c2f2150298eda6aefd0804c12d"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -6869,11 +6984,13 @@
       "specialties": [
         {
           "id": "fr-er",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "f8f79d608bf9fade61c8641e1a6d6570e8ab08e0e7799c77f8b3694d7df0ba8f"
         },
         {
           "id": "fr-routines-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "8ee1725b1d28d90280c536ede9c7833eb35a0c0171227f0c344ead9439dbec46"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -7000,11 +7117,13 @@
       "specialties": [
         {
           "id": "fr-questions-a1",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "26b12062ef1e595c929d68ee586f0b40f683fe57a5bea2af0ad48774239e91cd"
         },
         {
           "id": "fr-a1-clarification-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "8f751f51c2d2fb1838a47baa38e1ce96c36341c3ca366379a13f7967894c4d32"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -7129,11 +7248,13 @@
       "specialties": [
         {
           "id": "fr-a1-leisure-verbs",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "09435072331faa9779b355dd18bbaacab29b63137a9fb2c26dbe81cbcb4032d3"
         },
         {
           "id": "fr-a1-leisure-choice-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "14e8c138db2794c44f08ec813fa905e64a70e799ee23ba2202df167a53e1de6e"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -7260,11 +7381,13 @@
       "specialties": [
         {
           "id": "fr-a1-market-quantities-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "7bfd32260dcb6fcc4687ee8fa89d96371b96e02ce3d236972d8bdbe7c16aa137"
         },
         {
           "id": "fr-a1-market-service-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "5d685193fcf59f3d8b1e114d257699300479cb962299cf1930e3963a895a42c1"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -7390,11 +7513,13 @@
       "specialties": [
         {
           "id": "fr-directions-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "592bb3dab9fee70497d8bcdeb1be04486927dbccf57f47860f83edf7b206720b"
         },
         {
           "id": "fr-imperative-directions-a1",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "8e00b966f4086eb8250d79cb2f0869f6e6a2750da67640e0f822c78e19878653"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -7519,11 +7644,13 @@
       "specialties": [
         {
           "id": "fr-adjective-agreement-a1",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "e3aa3e12a010b408c862ae916694e883cb02460abc9fc70710f3bd4aaa8fcd8d"
         },
         {
           "id": "fr-a1-shared-home-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "7885d462d09e2cb1de65ce28736975b6fbded6b5a0f93f179a2be0d5d1883bc7"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -7648,11 +7775,13 @@
       "specialties": [
         {
           "id": "fr-futur-proche-a1",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "382324325bc1ae7450545697ecc4e3069ff68ff89e12a26a11694856b18b9781"
         },
         {
           "id": "fr-a1-near-future-planning-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "d0a90dc14515ab3dfad55733e64ef03cbf39427beb8445827e2c60078ac34f89"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -7777,11 +7906,13 @@
       "specialties": [
         {
           "id": "fr-a1-first-past-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "359fa52f0a7997f494009a6be2454e5b7987ea741a500c5cb168611c665de56e"
         },
         {
           "id": "fr-a1-yesterday-journey-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "d9d925e3330fa21ae510e1ebd9e98814f1b7fed1d7a2b493fe2efec1c4d407d5"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -7906,19 +8037,23 @@
       "specialties": [
         {
           "id": "fr-articles-partitive",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "de987c3049ace1b47a16745d2f841ff4bd4a28b53c65c73112989746b85ea5c1"
         },
         {
           "id": "fr-passe-compose",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "0e30aba7e4a47da381dbae251e7cb23b1a8ddb343c6f9ac16b8cc9fae0101dbc"
         },
         {
           "id": "fr-food-vocab",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "152c8fa148456bb65b06e84230030d28f21bf8bbc06c6607eef5e80412fabcc0"
         },
         {
           "id": "fr-past-events-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "fe6fac80ff4bd1d01d2ee34216bb2d9c1f999d81654734a8636df3fa8f7d80be"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -8043,11 +8178,13 @@
       "specialties": [
         {
           "id": "fr-a2-u02-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "5b57c1d44dcb3cd19cb9933e14568a057dee2ed4ba8e666488463a896531d79a"
         },
         {
           "id": "fr-imparfait-a2",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "27de0a511260219e19d4fe3bcdadbcde8fd8a8d6faf95cd38c4e6ac3cb3c2511"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -8172,11 +8309,13 @@
       "specialties": [
         {
           "id": "fr-a2-route-modals-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "660acf517b559c4a22969515617efedc48d533aa16dd6109629be14e09f59f00"
         },
         {
           "id": "fr-a2-station-change-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "f10dbc02458e5ccc2e99868d5fb2c34fdb1386ce9199108ba3aa99999b9ff512"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -8301,11 +8440,13 @@
       "specialties": [
         {
           "id": "fr-a2-u04-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "2a948143d1bc013909964ccade98d008bc7f76006191b2980ad0d93bbd3ab29d"
         },
         {
           "id": "fr-object-pronouns-a2",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "a868a432fff7386addad5372cc28d9c7423a1484f340246ecb9a0c9644aa301c"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -8430,11 +8571,13 @@
       "specialties": [
         {
           "id": "fr-a2-symptoms-advice-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "445e9c39c8e3b7b7e84880ad66c44ed445a4181b433767f27eaef19c3fd25479"
         },
         {
           "id": "fr-a2-appointment-symptoms-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "d12c35eb8ee67509edd9eb912deff39a715e1cc1bf0e19d86e75fd9543cb8b85"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -8443,7 +8586,7 @@
         "source": "src/receptionLessons.ts",
         "format": "continuous_passage",
         "paragraphs": 4,
-        "words": 323,
+        "words": 326,
         "chinese": "all_paragraphs",
         "questions": 4,
         "audio": "segmented_device_tts_only",
@@ -8559,11 +8702,13 @@
       "specialties": [
         {
           "id": "fr-comparisons-a2",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "a8a74ae4aba7abdb315616a0d1ffaad7b1e066acb80b4b63a369416b09bb6e2e"
         },
         {
           "id": "fr-shop-services-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "012dd92093ea0e550f1e5288924cce16cbed4e126666d3de9dc61378d5b673ba"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -8688,11 +8833,13 @@
       "specialties": [
         {
           "id": "fr-a2-u07-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "f3ae64edd336815e5be7be473339e8a30e48c5695b61693617f9dd1ade9f9167"
         },
         {
           "id": "fr-futur-simple-a2",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "2f79f596b3acb186d89a4603f0b1c0fa166580a0f953ad988c6549b4658599f0"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -8817,11 +8964,13 @@
       "specialties": [
         {
           "id": "fr-a2-u08-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "cc76857f14a67c57d296504aacb0d8e08512cf096f3bd646b6bf92e9c78a7ca0"
         },
         {
           "id": "fr-opinions-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "3dd9f22de9becc0f674dfda7fdd09fde38a794666ebcb9efd0cc8a6d129259a4"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -8946,11 +9095,13 @@
       "specialties": [
         {
           "id": "fr-a2-u09-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "53a88fc5180a61582a36aa0cf049c12610b74f487c3efb437e3d37871e325528"
         },
         {
           "id": "fr-a2-u09-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "17721fd971736e443ff2f6712566bce9b24da5e66582c0e6982eecb4985b4bbc"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -9075,11 +9226,13 @@
       "specialties": [
         {
           "id": "fr-a2-u10-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "f3fbb3c58ce6731fd45781b73406c5f0748282ce1a6b48fb0f112171a1055823"
         },
         {
           "id": "fr-a2-u10-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "bd25bce3b78cafccb2d00d4dbbfdb31d97a2364d5bcb20b93143aa7e6a87698f"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -9204,15 +9357,18 @@
       "specialties": [
         {
           "id": "fr-a2-u11-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "9bb104907afdb022b085baa017fd85e6e3f4c8003bbae19a0f0596b64f94a74d"
         },
         {
           "id": "fr-a2-u11-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "ead2af9497164ef5f1670edf398002c8756e40e0b19ea6da0be19adc342453a3"
         },
         {
           "id": "fr-negative-scope-a2",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "c83a539072741afdb2f6a3cbb111f090c5026b6b90ccb7b393282aff070ad20f"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -9337,11 +9493,13 @@
       "specialties": [
         {
           "id": "fr-a2-u12-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "a7ee0cf48170cd878c0f04c75940a2c8a4b6ef60f36ee0e363ea91e012caf401"
         },
         {
           "id": "fr-a2-u12-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "c67847f4cc4bb49b878c22a6cea4768219001cdbadedf3c68b39fac6511fb6b6"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -9466,11 +9624,13 @@
       "specialties": [
         {
           "id": "fr-b1-u01-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "85ae786a97c01da5c59adfa6e2521898e2beb2535a3128a4ac7648d39df1c5fe"
         },
         {
           "id": "fr-pluperfect-narration-b1",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "98614547dd6d59eb4dc9c5e3322af06ebae2bf01a175f43bee39779b0deda79e"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -9595,11 +9755,13 @@
       "specialties": [
         {
           "id": "fr-b1-u02-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "78606cb4d6146f71a54ffeaccced93b7f847557b8339d2eb9a1cfd1c7a7470bd"
         },
         {
           "id": "fr-b1-argument-lexicon",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "da6721b2ed2ff5cc0ec76397dc83cdaeede52396d74e7a980ef5082da66cc2d0"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -9724,11 +9886,13 @@
       "specialties": [
         {
           "id": "fr-b1-u03-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "4c7ead8c10e396bfdf9dfa0b67f04a8e0fa7410c2e2340658648fe71aa94c6bb"
         },
         {
           "id": "fr-conditional-hypothesis-b1",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "747ff56b91d3193ae89c1725139a44003d4299785f1b6d03125d780f2e095012"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -9853,11 +10017,13 @@
       "specialties": [
         {
           "id": "fr-b1-u04-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "cd8d949c22852adabfcd13ec6494f423cb7bb9a6cdea7f48505779e50433d2f9"
         },
         {
           "id": "fr-subjunctive-b1",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "f70793296bdddcc81bd556f4e5d19ccd1cded482f6488b3b16b8fd0252445223"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -9982,11 +10148,13 @@
       "specialties": [
         {
           "id": "fr-b1-u05-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "5c64086987c6999a7e10e9c9d72c54fe94ad642e57eb88da5f8a10c5d98bcad8"
         },
         {
           "id": "fr-b1-u05-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "b28a37c894b715a5f592f9f0730ffd226ef146a61540e631d46cf89937ce2568"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -10111,15 +10279,18 @@
       "specialties": [
         {
           "id": "fr-b1-u06-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "cffeee426538006f520b000639a433d2c2b261f7c1dc300309a34606cd7c0f44"
         },
         {
           "id": "fr-b1-u06-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "5f8ee9360ecd57de7001176f043e0d3ed658c93f5c17fb87c17aba88f82fb395"
         },
         {
           "id": "fr-relative-pronouns-b1",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "c5bcb6a7c535b1c6f01edcf8851bb79cd5a9337d5973be707d2b8c04159e7c85"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -10244,11 +10415,13 @@
       "specialties": [
         {
           "id": "fr-b1-u07-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "b7d4d103d3266ef9a41ea02574c5dcea717358ba24eaa8888e876bfe8994b0c3"
         },
         {
           "id": "fr-b1-u07-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "f425eda0cb11ce8ccbdd15394cea67c87388121deec870b2ffdd0bf5c3a7dd9a"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -10373,11 +10546,13 @@
       "specialties": [
         {
           "id": "fr-b1-u08-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "7ba910d524a659335b08a6779ffeb1eff72ae1e4e485ad9951923653b62a88de"
         },
         {
           "id": "fr-b1-u08-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "b4afcbbdd11e12174c44e4278bad98bc3df6ae53506b26711b893b1c0b1f75fd"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -10502,11 +10677,13 @@
       "specialties": [
         {
           "id": "fr-b1-u09-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "404ecd8aa8e50c28b0ca613077eb5bd21870b62207b0f348fc5978b94c64c164"
         },
         {
           "id": "fr-b1-u09-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "ae5fdcb899fd7845c154542c44edaed89d32998a44bfaff821082ad8750dcafb"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -10631,11 +10808,13 @@
       "specialties": [
         {
           "id": "fr-b1-u10-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "db7fe9b05fead126fac0624a7cd74043292c71e99854705a8c701f88af22c860"
         },
         {
           "id": "fr-b1-u10-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "84dbc0d8882f4df647e60b63ebf01e3c61f6163b7f2280ca0d8e2f491d47314a"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -10760,11 +10939,13 @@
       "specialties": [
         {
           "id": "fr-b2-u01-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "1e33cc95a9c2e11530976b7bccdba5484895a7b7b4d21f0aa0c77aeab6f7bd58"
         },
         {
           "id": "fr-mood-concession-b2",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "27e7cd5158308d6020c92ee89f3466a06e89aa4edf68f69f709d9093201e6dd5"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -10889,11 +11070,13 @@
       "specialties": [
         {
           "id": "fr-b2-u02-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "366d97a7e221890e75dfe42ac16ef3a41ddff793c89ca7b84f9fdfc67fbc993e"
         },
         {
           "id": "fr-b2-u02-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "d9cdf2dc23f496c17da85cb6b6f6cf3a0a0a4324a764bf358d4dfa4d83252153"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -11018,11 +11201,13 @@
       "specialties": [
         {
           "id": "fr-b2-u03-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "36da4490ac4b89dd26e52ae440920e4a615e58bd3a1ee0252030f864fbf2f19b"
         },
         {
           "id": "fr-b2-reported-news-reading",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "35572a93b9cea613b3023062d60e1e277d9e97eb344667b580fa5fd52ff867b8"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -11147,11 +11332,13 @@
       "specialties": [
         {
           "id": "fr-b2-u04-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "1436989cfab7ab58e90ad471d7b27dca9eefa9e28fbd3da3f18678dc1327df1e"
         },
         {
           "id": "fr-past-conditional-regret-b2",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "945180d904effdf62a1b54e4787bd95aef5caaa858ceb34ba46a705dfc53cbfd"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -11276,11 +11463,13 @@
       "specialties": [
         {
           "id": "fr-b2-u05-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "1dcaec7281f34adcc037b51d591b3422a4b643ad6b0c5561b77fdbc33659bbab"
         },
         {
           "id": "fr-b2-u05-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "2135977db0af3b22b8401f183df6b5c1e10ed7f33148b5646c207db5ad7274d4"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -11405,11 +11594,13 @@
       "specialties": [
         {
           "id": "fr-b2-u06-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "11b46f74696fa5f7a109d524dcff3587405432bd4ed020c8b1a2da11e6632513"
         },
         {
           "id": "fr-b2-formal-argument-writing",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "ba5f9cf1135e5b50ac5d35f16e8c4655ca0fef7c53d80587f8bf471fb736a197"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -11534,11 +11725,13 @@
       "specialties": [
         {
           "id": "fr-b2-u07-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "8ca1b40f0c91d0bb750ea484d72587a7a801f6491f197a18f75724a19b2bebe1"
         },
         {
           "id": "fr-b2-u07-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "8aca9640e493e733766622fb4a2d1502606519fd968ba78b1dc79fde87cc192a"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -11663,11 +11856,13 @@
       "specialties": [
         {
           "id": "fr-b2-u08-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "6bdf2cf0809b20c398dcdeb71f0ed66f739690bb92b8a68ae36f9e26c8a72586"
         },
         {
           "id": "fr-b2-u08-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "4ba3d75c55261bfdc67f847fd82ee8d4872d7ad45885c8b252abbb99760444a7"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -11792,11 +11987,13 @@
       "specialties": [
         {
           "id": "fr-b2-u09-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "9ba4e209837d9edfbd7db1f97904ad21fe72d2a15e8c2a6a0df000acfd0d986a"
         },
         {
           "id": "fr-b2-u09-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "b67457135c1823a1ecca16f0ce44f3e0bc0bdfad22869e2574c7c67f0057c772"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -11921,11 +12118,13 @@
       "specialties": [
         {
           "id": "fr-b2-u10-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "bd23e69ccf34ebd1c6988c3eabb6a09c30d68390d56780875f7e5b3be5d97771"
         },
         {
           "id": "fr-b2-u10-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "333b83e157c8af4acb053b466dd5c9bdb5304f9a5a0345bf4a7d317ec42a33a1"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -12050,11 +12249,13 @@
       "specialties": [
         {
           "id": "fr-c1-u01-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "7ae71e5a928973a27607459f6b0e5ba64e1c73975b54edc536c858c3d11da23c"
         },
         {
           "id": "fr-precise-academic-lexicon-c1",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "81eb282a3f9ef11f73104dda2f214d29783c0a251da8366b5660ff9f71ab138a"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -12179,11 +12380,13 @@
       "specialties": [
         {
           "id": "fr-c1-u02-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "41dfa4e895f92e9fa01a4a3b4c140851caf94fdb834d1c4fab2eb32c185872a7"
         },
         {
           "id": "fr-c1-u02-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "7e6996b4a602e30f68188512ac9f6ad98ff9806d577a005f5ad18afc8fd519ca"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -12308,11 +12511,13 @@
       "specialties": [
         {
           "id": "fr-c1-u03-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "6b25f69e74036db7554e71afac5a32227820cd1b9282f50789174e2abb5a6a5f"
         },
         {
           "id": "fr-c1-cross-source-synthesis",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "304f1d00e3781122b45bb62584f1bad79b0724644a1af7281e3774d585c8ad25"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -12437,11 +12642,13 @@
       "specialties": [
         {
           "id": "fr-c1-u04-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "067515349dd58c3c530b4ca13cf2a86ba7bb568686fa16220b05cc112a312658"
         },
         {
           "id": "fr-c1-u04-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "863687fd4d5221b2b0170fc8ae1c382c96e213653c5a53717e21c55e419a15aa"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -12566,11 +12773,13 @@
       "specialties": [
         {
           "id": "fr-c1-u05-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "2893e3d78470ba5231e3135a701b6da840542c00b8b4c14187a113de09968139"
         },
         {
           "id": "fr-c1-u05-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "9e9a285f70984069e521fbde97c0536ae2253e5ecc297428a50afcb7344450cf"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -12695,11 +12904,13 @@
       "specialties": [
         {
           "id": "fr-c1-u06-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "ba6c5baae44d3eb072003a81606fb9c458e05837c481c4aa09bc707a00ed1835"
         },
         {
           "id": "fr-c1-u06-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "e23b3c1bdbe38245c7642d8e71004fb4555ffee86c3505f5a2ab77bd4d0f9d4a"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -12832,11 +13043,13 @@
       "specialties": [
         {
           "id": "fr-c1-u07-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "bb847fd6cf7749e2c87e5b385dd8ed65f87732c41b50f0bfafbf921770b20539"
         },
         {
           "id": "fr-c1-media-stance-reading",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "a0ba8778de40d49de87cf589d64e72f18079363520ec63fe691f821761ca947c"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -12961,11 +13174,13 @@
       "specialties": [
         {
           "id": "fr-c1-u08-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "d816a87a463f5f5aa808dc3d4f3725b0e94e6f3c35d0a01c2acf7a6427181d0c"
         },
         {
           "id": "fr-c1-u08-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "7f3e36ab43a69253dd7250eaf6c9aba03c33cb6b3b914ec94a4a744d107ef4c2"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -13090,11 +13305,13 @@
       "specialties": [
         {
           "id": "fr-c2-u01-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "7ee614a2841598eaab98a6eae00fa7f156271da9b46c432387bd5070e6e8e297"
         },
         {
           "id": "fr-c2-u01-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "5ac49f1b70677e0de4555fab204bbca040f0f5932be4b3a1e25c077edfe17ff0"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -13219,11 +13436,13 @@
       "specialties": [
         {
           "id": "fr-c2-u02-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "a1324c4af6398acaa6008f51264fe9e9d189e356a58b700111b067d35eac2e9d"
         },
         {
           "id": "fr-c2-u02-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "d74b8066058ad1a781c9c87b4081658b83585e3aecc5232e2984c40dc665445f"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -13351,11 +13570,13 @@
       "specialties": [
         {
           "id": "fr-c2-u03-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "66b20f8a4f67585c218082f7d70172a508e5c6930e266ad4bafa4f6f1164f0a9"
         },
         {
           "id": "fr-c2-u03-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "37439c8d7268f270544fee5b8498703f74a44f0c3030edaa1508821feee7f8e7"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -13480,11 +13701,13 @@
       "specialties": [
         {
           "id": "fr-c2-u04-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "2e5c283646c3848d290c9e0bc2a4910a8becb139d087b5788148a0590c3ba84a"
         },
         {
           "id": "fr-c2-u04-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "48264bbe33eb65979910b69919c8fee89cad15e9751d538f2ac35f60dd8d6b85"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -13609,11 +13832,13 @@
       "specialties": [
         {
           "id": "fr-c2-u05-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "f2aa94982f997d1f2149b0fce02f7a41fea1b0b06051df3dfa050417fc4057f9"
         },
         {
           "id": "fr-c2-u05-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "ef51626a46c118eaa4596b778b40884f2184cea3de0035f68c531442f52a0d64"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -13738,11 +13963,13 @@
       "specialties": [
         {
           "id": "fr-c2-u06-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "bc1cbaae6a297bd5162827483f692686ffd9e3c3f1e390a768e240a45c178666"
         },
         {
           "id": "fr-c2-u06-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "be5555de2cf24c6d253506c87b04c090603852db46d94ec0960ac5018126e9c1"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -13867,11 +14094,13 @@
       "specialties": [
         {
           "id": "fr-c2-u07-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "59c6d25aee502e11ff3fe86f78a8ec1543983f42339f2a9e33e19a401c8521e1"
         },
         {
           "id": "fr-c2-u07-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "ba9cb6491effd59d1873734ded25efbfa18bc7b2e3b7070e39010a856d38b3cf"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -13996,11 +14225,13 @@
       "specialties": [
         {
           "id": "fr-c2-u08-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "39795a3d17b728e439ef7cd901e521ec1bd013b96e5e0758e2e1c40404cd32c3"
         },
         {
           "id": "fr-c2-u08-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "7bfe4210150d78f4a79bc41d13c6a0ecb56e3a9bf2e1837635d6d2e98b1a7726"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -14117,11 +14348,13 @@
       "specialties": [
         {
           "id": "en-fnd-01-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "ed22618d8cbcc354314a7d13c383db2b94a398ad1437c039453103205d63333a"
         },
         {
           "id": "en-fnd-01-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "39c30fcfb9f3dd02691f9f5426d8abdb6f775a9e1260fec97ca6ad26ac6619c7"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -14233,11 +14466,13 @@
       "specialties": [
         {
           "id": "en-fnd-02-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "63d31816c18c390e55669077de25e73d3774be4fdceb6f9daf6cbd0aa924abd6"
         },
         {
           "id": "en-fnd-02-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "125b853894be56074fd9c3416822d1c35e284d422e98f8b04b7aa9c9f74c715d"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -14349,11 +14584,13 @@
       "specialties": [
         {
           "id": "en-fnd-03-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "01060b8ae1f612d0d02061be4adae9d8f6b2d36f6e2370e61b9f13ca2b381ae0"
         },
         {
           "id": "en-fnd-03-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "18b037d1e66fea3c4ad2c8d21de70e1926187ef5d221874a9adb9d3e32d4186d"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -14465,11 +14702,13 @@
       "specialties": [
         {
           "id": "en-fnd-04-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "c0234a5935f85414e75ca4dce101d1b00598227e59202c8765c24d8a5e81a21c"
         },
         {
           "id": "en-fnd-04-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "9f9877355d9cb6f1cc0db5aaaeedbcb673f85af88f724cee0352332b644281b9"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -14581,11 +14820,13 @@
       "specialties": [
         {
           "id": "en-fnd-05-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "e689ea10ff414dff3cddfbaec17e00219f27ae8debefcdbd04274d5417758410"
         },
         {
           "id": "en-fnd-05-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "4071cba7c7b8524cd982ad6d999b6d1bebbbad7cb92bddd9ab5eab395b1780e0"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -14697,11 +14938,13 @@
       "specialties": [
         {
           "id": "en-fnd-06-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "85ecded2d2de93c38b203581f453de6600139a871f6581436db2a4aba01c614c"
         },
         {
           "id": "en-fnd-06-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "6ef304976af7a810fbad98a573a6c1f11a3c31686e5bfc81a210661574621bb3"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -14813,11 +15056,13 @@
       "specialties": [
         {
           "id": "en-fnd-07-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "2ac9f603e30e298f92fe746c0ba054fe020e55cdcc384946c60e06b159b2f7aa"
         },
         {
           "id": "en-fnd-07-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "706728150fabf9eb77d3b1481a9498e161aeff170a1b2c9a8cae1e25ae1e4701"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -14929,11 +15174,13 @@
       "specialties": [
         {
           "id": "en-fnd-08-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "ca20dfe5b773bc3f6b7c60d098acfdd505aceb4515dc92ca61899c1246d1d015"
         },
         {
           "id": "en-fnd-08-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "f3fff616af2628873f52d29e60bddd0a44e1816e7e246c365c4eb71cd9664123"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -15045,11 +15292,13 @@
       "specialties": [
         {
           "id": "en-fnd-09-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "5126d97a0171c6a82a3b62a09f998d1ca2e8f69af798c8edd1295ed16944f103"
         },
         {
           "id": "en-fnd-09-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "e9b5a1c4c00c4e983cc59898f8f65380d1da2ab4ffa6d5d0d0ed9d8c27318f55"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -15161,11 +15410,13 @@
       "specialties": [
         {
           "id": "en-fnd-10-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "d6aaaaa499cf8524dddce3930994b7565bea320f9e4c03eb34e9c0ee8ddb4879"
         },
         {
           "id": "en-fnd-10-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "1ff7f0f10cd53489e5bb47c0053f754460e7e8d2e5a084c77c969e27bb91f9eb"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -15277,11 +15528,13 @@
       "specialties": [
         {
           "id": "en-fnd-11-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "9ba1938d2835323fc450424917aa837f13ba39559fcc3bad3aabefdd6c028c93"
         },
         {
           "id": "en-fnd-11-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "c8f81ce08b99bc42d9bfec5ae832a409111e36a8d9e7fb65536a7abe6862c65a"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -15393,11 +15646,13 @@
       "specialties": [
         {
           "id": "en-fnd-12-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "946548a31df6b1d39ff3c978f17a0e2c473bdc0bc880d62e7030e9f60ce80ab2"
         },
         {
           "id": "en-fnd-12-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "1b782a2c0f2b9382a8e7238348da9eff402a4b1de96bd0413243090486920315"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -15509,11 +15764,13 @@
       "specialties": [
         {
           "id": "en-fnd-13-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "56e127ae2d56264d9bba1656ee08b79675a6abe4c9a32228a31afaa3a859d3d3"
         },
         {
           "id": "en-fnd-13-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "2ecd2224a1bea4c1da67133ff7c4cb51f46ec3a7b10514111d9700ff6a09690e"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -15625,11 +15882,13 @@
       "specialties": [
         {
           "id": "en-fnd-14-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "5544e526a69d191ee640d76851a7d5c7dc2dc615bd262be67de0cd866236db51"
         },
         {
           "id": "en-fnd-14-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "4a8cc4abe23c333ddee1cc5c86a33ecaffaf382e3d7ce206c12e2ea13b20a336"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -15741,11 +16000,13 @@
       "specialties": [
         {
           "id": "en-fnd-15-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "4cd4479eab01b33135d5f2e2ef9b15080177ad9ee10a79a2f85bbba07990fb29"
         },
         {
           "id": "en-fnd-15-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "ac60b66a6f40f4a2c4060b71385852e05ad49b665883f17655f7d4a649c2c39f"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -15857,11 +16118,13 @@
       "specialties": [
         {
           "id": "en-fnd-16-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "ea6b4340a6d23f781b34752bde8a00847a8d214850866cac35148d7096c8767d"
         },
         {
           "id": "en-fnd-16-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "264de317f11b280a9b7b846170fa9e9f7f9c75ec27cb230b8ef1134494c127bd"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -15973,11 +16236,13 @@
       "specialties": [
         {
           "id": "en-fnd-17-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "d0898ae3263062f5949b50c56a73ce22420878b82d0c2d966e1cecd643ff7f00"
         },
         {
           "id": "en-fnd-17-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "890e8499486f06463d0cacdc6a9dc26ee365866a5dc206fef06ee766eae2ec5b"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -16089,11 +16354,13 @@
       "specialties": [
         {
           "id": "en-fnd-18-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "15a18884c2534b2248832e6ca2f2485e55c2d2f04a467e6c6b6728eba752344d"
         },
         {
           "id": "en-fnd-18-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "c1c533a8ba2673db77cec8595e6b0f6b52dfebc3d9bdf2823cc8ae8a019ff2fd"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -16205,11 +16472,13 @@
       "specialties": [
         {
           "id": "en-fnd-19-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "32ee006f9f73c1b44af8fc4eeb6757ac2af2499a96faabf2af242d8aa95e80b1"
         },
         {
           "id": "en-fnd-19-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "f2ba0d6fbb8e1777099e5943383940d233c07ade2b993049a94964ffff78cb4e"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -16321,11 +16590,13 @@
       "specialties": [
         {
           "id": "en-fnd-20-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "61fd490b173281597640377aa4c75d8a8bc523f8af34d1625855d48e22b0b934"
         },
         {
           "id": "en-fnd-20-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "0d5af1a1ea2e156d51872f3efe1ca4e00a04e3e31558a15323c282c28389e2ed"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -16437,11 +16708,13 @@
       "specialties": [
         {
           "id": "en-fnd-21-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "8adf0e95cb3387efe092dc2bffb463959b592c505ba40efabe9f194ca398e3d9"
         },
         {
           "id": "en-fnd-21-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "c76c343168de1efe0661a20f4d19e954ae04c2df5b88e40c97d9e1aaccee3ae4"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -16553,11 +16826,13 @@
       "specialties": [
         {
           "id": "en-fnd-22-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "041266b2b339984cc27debe70cf5bd89ed40cac1cb043760799cc2e3b1520897"
         },
         {
           "id": "en-fnd-22-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "926fb4168aa0f2ff3b9693ea1031cadd83c377ae175bd3feb693842554431926"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -16669,11 +16944,13 @@
       "specialties": [
         {
           "id": "en-fnd-23-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "c63f208b9a08be2cd5922f295119938ae70411c12fe6589665a896d0e41ea65a"
         },
         {
           "id": "en-fnd-23-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "2149ccf3873f0a2297394d7fea55ac3161bd9826609e1cf17afcccbc0f8a20b3"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -16785,11 +17062,13 @@
       "specialties": [
         {
           "id": "en-fnd-24-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "df1137d678a563eb28efaae198b6ca2bd9b4848a29df4246540975eeb7a18cdc"
         },
         {
           "id": "en-fnd-24-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "061d86a52f836185be8ab477ea2d56c75d139f68a56a4d5ab9a1c0f183a42348"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -16901,11 +17180,13 @@
       "specialties": [
         {
           "id": "fr-fnd-01-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "6faaa4d92b0c4f218ff937a6d9ea1a742744c1de381486c150beda33f2648d56"
         },
         {
           "id": "fr-fnd-01-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "a56432ce24ddbe83b573341a222f89e86a59cc2475beddddb40b293f8cbd569d"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -17017,11 +17298,13 @@
       "specialties": [
         {
           "id": "fr-fnd-02-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "7f19a34ad05d29be9152760ebc2d9cc2203723a72cf049581fdb0c62013001e4"
         },
         {
           "id": "fr-fnd-02-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "8f6417adaa3af1c838b33693a2fc438067b8be2a5dd1f11e5a410b86bf06d78e"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -17133,11 +17416,13 @@
       "specialties": [
         {
           "id": "fr-fnd-03-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "6691ecde0bc512c2531f94d29f590bc73fc56ea850f557c9ba4a674ea583fd17"
         },
         {
           "id": "fr-fnd-03-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "e4b29d981fbfce36abba4b8f6773d9f8220bbf40ae81a88e2d2eced03af2a922"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -17249,11 +17534,13 @@
       "specialties": [
         {
           "id": "fr-fnd-04-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "e189de24df90d651b4f922f86ccd0889cdccde3f6f43d6b15d460d3d04f1c50e"
         },
         {
           "id": "fr-fnd-04-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "8f57cf4af6cfaca46caaefec5d046a309a57c890d1d828aa81f65036c22d3bc3"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -17365,11 +17652,13 @@
       "specialties": [
         {
           "id": "fr-fnd-05-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "43d09159f30360e8b31449fc336944247e2c037c85a1e4e109c05b444ed36b80"
         },
         {
           "id": "fr-fnd-05-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "fa96cc50f0179b7ad84363852d77058a97515b29965fc6c075e1556f59f28c68"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -17481,11 +17770,13 @@
       "specialties": [
         {
           "id": "fr-fnd-06-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "96b56a4f7ee0201d36c8c8f8eb8a62ecb18771d23f8e2abdbf366ffaef1c6da6"
         },
         {
           "id": "fr-fnd-06-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "8bc96913f9ad011ca3d8d351e3d20fee5ebaae42a6b6177741d9f3a72261f1ac"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -17597,11 +17888,13 @@
       "specialties": [
         {
           "id": "fr-fnd-07-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "66d1bcff86fdce21b8d72bbee1d20320b6316f8cea514e9400f761ea7228894b"
         },
         {
           "id": "fr-fnd-07-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "17f2dbe0d6be9a73e35279946af7fb82f520be8217e9bac4c6904b379039fcb4"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -17713,11 +18006,13 @@
       "specialties": [
         {
           "id": "fr-fnd-08-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "b81a9735fb6ffcdda34458b64e6fa6f251e1162c74b9d757ddaa3d8dceb8bb0d"
         },
         {
           "id": "fr-fnd-08-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "b0720ccd9d443b62fb9d48cef46637bf3c7557fccde56004f46370cdee1edda7"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -17829,11 +18124,13 @@
       "specialties": [
         {
           "id": "fr-fnd-09-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "319f40dd836a09f054abd6ee84a039b3ec2eba93c32af396f67813a9f8c116b8"
         },
         {
           "id": "fr-fnd-09-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "6f82ffe214e6a13444016ab392d4f691c0ec0be52045975d4e04a97f2e851fcd"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -17945,11 +18242,13 @@
       "specialties": [
         {
           "id": "fr-fnd-10-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "3d8e063dde3b6930b0e50682ac094a3afc6fd97da159b3036c3f0344467a0d73"
         },
         {
           "id": "fr-fnd-10-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "46ecaa55b8577070b3044e4a90edb762d05286c0e9fab4ff1df1ac2ed59d2cc2"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -18061,11 +18360,13 @@
       "specialties": [
         {
           "id": "fr-fnd-11-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "21a2d3b26c98cacd030348fc3c2ddcb7d84e1a0d06e3dc8c8452937ab97844d4"
         },
         {
           "id": "fr-fnd-11-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "99b0d24a7fc0beb8c9c5491fd41f2cb2e24f9559909f3567a84dbdcc40d212a1"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -18177,11 +18478,13 @@
       "specialties": [
         {
           "id": "fr-fnd-12-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "8850a9e9b2aab67e835b5c22f1d90c6eb1267205b9bfeeb89476adb6d4a769c8"
         },
         {
           "id": "fr-fnd-12-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "b782e2fc73c94f49a854946632f74391dc0f2f95f5623c68b30dffd47bc09144"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -18293,11 +18596,13 @@
       "specialties": [
         {
           "id": "fr-fnd-13-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "702703e09a09abdbebf65c4a510c14b827c771cd213789e5a455bea1d9139fbe"
         },
         {
           "id": "fr-fnd-13-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "8eb5ab3c22134889ad4d652e920bf7f770efd6a66982412bd7fab19d5bb04d85"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -18409,11 +18714,13 @@
       "specialties": [
         {
           "id": "fr-fnd-14-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "a04af713150ec6f8e72f79d862190e021d5180b751e4b8bc0be8ad006fe892c7"
         },
         {
           "id": "fr-fnd-14-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "1dc8c6fc07ab63dd41737a9386dcd6089e48ad733c98e69777f59ae6de42f1ea"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -18525,11 +18832,13 @@
       "specialties": [
         {
           "id": "fr-fnd-15-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "7ba2a5d67f1bf8064bd227205150d570707ba629a3b7e5ad4464e898bd8c1bcd"
         },
         {
           "id": "fr-fnd-15-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "276d29ff804855ca745c007d95f1e5017888ce027f3a22196d51699ebf0d5068"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -18641,11 +18950,13 @@
       "specialties": [
         {
           "id": "fr-fnd-16-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "fa64d74b2f816a34959fd0b531659085205d7a80ed2bc9c43df5019486c53a6e"
         },
         {
           "id": "fr-fnd-16-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "95d96fc65bde7c762a0384787c04fd710672653f002ff67028cbb1af5e8d7369"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -18757,11 +19068,13 @@
       "specialties": [
         {
           "id": "fr-fnd-17-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "c661b1dc5de6b0618b317de6f69126d094df0ee41388302b3c50d9214da3cc35"
         },
         {
           "id": "fr-fnd-17-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "8cfd209f8ad375ece4372c18304256972e0bd3b502952202a9f16df6bf9adfc6"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -18873,11 +19186,13 @@
       "specialties": [
         {
           "id": "fr-fnd-18-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "a5aa134faffbfc34347575d4d4b1a6b4b67a883925ea8f0f8a0c3da2c8f7e422"
         },
         {
           "id": "fr-fnd-18-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "5f9533dbd0e77ac07bb2facd52a0266676fd8aea6eced1d5afee5895cf38e86b"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -18989,11 +19304,13 @@
       "specialties": [
         {
           "id": "fr-fnd-19-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "f9791f2a6e34f4847921471217b9b38675feca7b33399f09492478e4e97597da"
         },
         {
           "id": "fr-fnd-19-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "c23b186c3057db0ba7719a087a8e8faf58bd2731441e4df37e07cb2faf83fd42"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -19105,11 +19422,13 @@
       "specialties": [
         {
           "id": "fr-fnd-20-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "3cca10fb730f34b5dfbf55f24ef0bf40c63b57e0efc89cb6787bb78d25d23b62"
         },
         {
           "id": "fr-fnd-20-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "fb4877a3a815947aa77db1c5d78577e7b5b388b2846c8831b1f9c3702417aeaf"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -19221,11 +19540,13 @@
       "specialties": [
         {
           "id": "fr-fnd-21-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "b9cabeede775b120bd2021a8c7b53aad7285965dd5155af9a3d0633c27bc4b4d"
         },
         {
           "id": "fr-fnd-21-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "6ddc1254bf76324f5e6680f09bdee6ab24c1ddbf5b6ec7d441a678a883932f45"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -19337,11 +19658,13 @@
       "specialties": [
         {
           "id": "fr-fnd-22-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "d97ae96ea7125226092841d6e8acd3a6c85b43ccd3b3d0371567e16f765b7640"
         },
         {
           "id": "fr-fnd-22-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "dbb65a4ad25bc350158ff117755cb90c2cad8cab8cc3e120abdd11ebf105ead2"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -19453,11 +19776,13 @@
       "specialties": [
         {
           "id": "fr-fnd-23-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "81243b4621b5b7025b3336dd4a06f5c28a03f92f785bea942bc3215366c03c3a"
         },
         {
           "id": "fr-fnd-23-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "1eedb7f7cf4bf6de25e08ba911b8d48e4832248f25bcd94807f08f02e15783c4"
         }
       ],
       "body": "authored_body_quality_pending",
@@ -19569,11 +19894,13 @@
       "specialties": [
         {
           "id": "fr-fnd-24-grammar",
-          "type": "grammar"
+          "type": "grammar",
+          "contentSha256": "8d5f36313c191b619656336b662a01d103210bb7ba1b0b22e91cf767bc898d31"
         },
         {
           "id": "fr-fnd-24-vocabulary",
-          "type": "vocabulary"
+          "type": "vocabulary",
+          "contentSha256": "d7fb8442ecc84d18ed05bbbef24deb2d9cdf109229d9a5ba6c107d80b13e8e67"
         }
       ],
       "body": "authored_body_quality_pending",

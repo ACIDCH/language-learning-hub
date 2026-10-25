@@ -17,6 +17,10 @@ export const evidenceMatches=(current,provided)=>
    record.targetSha256===p.targetSha256&&record.chineseSha256===p.chineseSha256;
  });
 
+export const specialtyEvidenceMatches=(specialty,review)=>
+ approved(review)&&hash.test(specialty?.contentSha256??'')&&
+ review.contentSha256===specialty.contentSha256;
+
 
 export function validAlignedAudio(course,review){
  const paragraphs=course.evidence?.paragraphs??[];
@@ -36,11 +40,12 @@ export function assessReleaseReadiness(matrix,signoffs){
  const audioMode=signoffs?.audioDeliveryMode==='device_tts'?'device_tts':'verified_natural';
  const courses=matrix?.courses??[];
  const ids=courses.map(c=>c.id);
- const specialties=courses.flatMap(c=>c.specialties??[]).map(s=>s.id);
+ const specialties=courses.flatMap(c=>c.specialties??[]);
+ const specialtyIds=specialties.map(s=>s.id);
  const quality={
   inventory:matrix?.counts?.main===108&&matrix?.counts?.foundation===48&&
    courses.length===156&&coherent(courses,'id')&&new Set(ids).size===156&&
-   specialties.length===327&&new Set(specialties).size===327&&
+   specialties.length===327&&new Set(specialtyIds).size===327&&
    matrix?.counts?.bilingualReception===156,
   signedCourses:0,signedSpecialties:0,signedAudio:0,audioMode,ttsAccepted:false,deviceRestore:false,browserAcceptance:false
  };
@@ -56,7 +61,7 @@ export function assessReleaseReadiness(matrix,signoffs){
   }).length;
  }
  if(coherent(humanSpecialties,'id')){
-  quality.signedSpecialties=specialties.filter(id=>approved(specialtyMap.get(id))).length;
+  quality.signedSpecialties=specialties.filter(s=>specialtyEvidenceMatches(s,specialtyMap.get(s.id))).length;
  }
  if(coherent(humanAudio,'courseId')){
   quality.signedAudio=courses.filter(c=>validAlignedAudio(c,audioMap.get(c.id))).length;
