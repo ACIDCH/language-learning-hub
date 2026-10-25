@@ -5,7 +5,7 @@ import {COURSES,type Course} from '../src/v44Courses';
 import {useCourseProgress,packFoundationState,validateFoundationState} from '../src/useCourseProgress';
 const mocks=vi.hoisted(()=>({read:vi.fn(),write:vi.fn()}));
 vi.mock('../src/v44Connection',()=>{
- const writeResult=(row:any)=>Promise.resolve(mocks.write(row)).then((value:any)=>value?.error?value:{data:value?.data??{updated_at:row.updated_at},error:null});
+ const writeResult=(row:any)=>Promise.resolve(mocks.write(row)).then((value:any)=>value?.error?value:{data:value&&Object.prototype.hasOwnProperty.call(value,'data')?value.data:{updated_at:row.updated_at},error:null});
  const writeBuilder=(row:any)=>({
   eq:()=>writeBuilder(row),
   select:()=>({single:()=>writeResult(row),maybeSingle:()=>writeResult(row)})
