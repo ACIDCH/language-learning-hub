@@ -17,7 +17,7 @@
 | 结构可复现 | 156 课／327 专题，源哈希一致 | 已有结构及单测；后续更改仍需回归 |
 | 逐课内容／中译人工核验 | 156/156，按段落目标和中文哈希签署 | **0/156** |
 | 语法与词汇逐专题人工核验 | 327/327，能追溯每条审核证据 | **0/327** |
-| 全文与原音轨逐段对应、许可、试听 | 156/156，P1–P4（部分课为其他段落 ID）逐段有效 | **0/156** |
+| 声音交付（两条严格验收路径择一） | 原文对齐的自然录音 156/156，**或**明确声明 TTS-only 并经英法双语言、桌面手机和缺失语音回退实机验收 | 自然音轨 **0/156**；TTS-only 亦未人工验收 |
 | 真实两设备刷新与重新登录恢复 | 至少两台设备、成绩／习题／设置不串课 | 本轮未独立复验 |
 | 真实桌面及手机课程／媒体验收 | 全链关键页与音频正常，人工录入结果 | 本轮未独立复验 |
 
@@ -43,7 +43,9 @@ npm run release:queue   # 按课时、教学专题、音轨输出未完成审校
 
 每课审核需提供 `courseId`、人类审核者 `reviewer`、`reviewerRole: human`、`status: approved`、时间 `reviewedAt`、实际复核证据定位 `evidenceRef`，及全部段落 `id / targetSha256 / chineseSha256`；源文或中译变化会自动使旧审批无效。
 
-每专题同样使用相应专题 ID 和具备证据的独立人工审核记录。每课正式音轨需列全部段落 ID、目标语音文本哈希、录音资产 `assetRef`、来源授权 `rightsRef`、有效时长 `durationSeconds` 及真实试听 `humanListened: true`；不得拿 MyMemory、Chrome TTS、旧版本练习 MP3 或参考词汇录音冒充现行四段朗读。
+每专题同样使用相应专题 ID 和具备证据的独立人工审核记录。对于**自然录音交付模式**（默认 `audioDeliveryMode: verified_natural`），每课正式音轨需列全部段落 ID、目标语音文本哈希、录音资产 `assetRef`、来源授权 `rightsRef`、有效时长 `durationSeconds` 及真实试听 `humanListened: true`；不得拿 MyMemory、Chrome TTS、旧版本练习 MP3 或参考词汇录音冒充现行四段朗读。
+
+对仅以**浏览器设备合成语音**提供朗读的正式个人学习版本，可改用显式 `audioDeliveryMode: device_tts`，但须提交 `ttsAcceptance` 的真实人工实机记录（常规签核字段之外，须 `passed`、`englishVoiceTested`、`frenchVoiceTested`、`desktopTested`、`mobileTested`、`fallbackTested`、`sourceAudioClaimsDisabled` 均为 `true`）。自然录音仍保持未验证状态；前端必须如实标明“设备 TTS，非原声录音”，缺少本机语音时有可用的文本阅读回退。**仅修改这个模式不会通过发布门禁**：全部课程、专题、设备恢复及浏览器验收条件不变。
 
 双设备与浏览器验收另存真实结果；不要凭自动化通过便人工填入成功或创建虚假证据引用。上述记录没有建立前，`release:check` 明确返回失败。
 
