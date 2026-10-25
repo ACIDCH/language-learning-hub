@@ -28,7 +28,7 @@ it('requires an actual choice in the course UI before editing or saving a locall
  mocked.write.mockResolvedValue({error:null});
  render(<CourseReader course={course} session={session} preferences={DEFAULT_PREFERENCES} tab="read" navigate={vi.fn()}/>);
  await screen.findByRole('group',{name:'云端与本机未同步草稿冲突'});
- expect(screen.getByText(/云端记录比本机未同步草稿更新/)).toBeTruthy();
+ expect(screen.getByText(/云端记录与本机未同步草稿同时存在/)).toBeTruthy();
  expect((screen.getByRole('textbox',{name:'学习笔记'}) as HTMLTextAreaElement).value).toBe('本机私人笔记');
  expect((screen.getByRole('textbox',{name:'学习笔记'}) as HTMLTextAreaElement).disabled).toBe(true);
  expect(screen.getByRole('button',{name:'保存到 Supabase'}).hasAttribute('disabled')).toBe(true);
