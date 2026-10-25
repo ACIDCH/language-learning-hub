@@ -63,6 +63,9 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
   const [progressReadError,setProgressReadError] = useState(false);
   const [progressRetry,setProgressRetry] = useState(0);
   const selectedRef=useRef('');
+  const activeUserRef=useRef(session?.user.id||'');
+  activeUserRef.current=session?.user.id||'';
+  const draftRevisions=useRef<Record<string,number>>({});
   const progressVersion=useRef<string|null>(null);
   const forceProgressConflict=useRef(false);
   const [progressConflict,setProgressConflict]=useState<{local:State;remote:State}|null>(null);
@@ -183,6 +186,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
   function editState(patch: Partial<State>) {
     if(!progressReady)return;
     const next = {...state,...patch};
+    if(session&&selected){const id=draftKey(session.user.id,selected);draftRevisions.current[id]=(draftRevisions.current[id]||0)+1;}
     setState(next);
     if (session && selected) {
       try {
@@ -200,7 +204,9 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
       try{localStorage.removeItem(draftKey(session.user.id,selected));}catch{}
       setStatus('已选择云端进度；本机未同步草稿不再参与此次保存。');
     }else{
-      try{localStorage.setItem(draftKey(session.user.id,selected),JSON.stringify({state:next,editedAt:new Date().toISOString()}));}catch{}
+      const id=draftKey(session.user.id,selected);
+      draftRevisions.current[id]=(draftRevisions.current[id]||0)+1;
+      try{localStorage.setItem(id,JSON.stringify({state:next,editedAt:new Date().toISOString()}));}catch{}
       setStatus('已选择保留本机草稿；请核对后再同步。');
     }
     setProgressReadError(false);
@@ -211,6 +217,8 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
     const courseId=selected;
     const userId=session.user.id;
     const saveState={...state};
+    const draftId=draftKey(userId,courseId);
+    const revisionAtSave=draftRevisions.current[draftId]||0;
     setBusy(true);
     try {
       const result = await worker<{progress:Progress}>('/v1/progress/'+encodeURIComponent(courseId),
@@ -219,18 +227,25 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
           headers:{'Content-Type':'application/json'},
           body:JSON.stringify({state:saveState,expectedUpdatedAt:progressVersion.current})
         });
-      // A delayed response must not replace another course's notes.
-      if(selectedRef.current===courseId&&session?.user.id===userId){
+      // Do not consume or erase a newer draft (or another account's UI state)
+      // when a slow save completes after navigation or another local edit.
+      const sameIdentity=selectedRef.current===courseId&&activeUserRef.current===userId;
+      const sameRevision=(draftRevisions.current[draftId]||0)===revisionAtSave;
+      if(sameIdentity){
         progressVersion.current=result.progress.updated_at;
-        setState(result.progress.state);
-        try {localStorage.removeItem(draftKey(userId,courseId));} catch { /* no local cache */ }
-        setStatus('学习进度已保存：' + new Date(result.progress.updated_at).toLocaleString());
-      } else {
-        try {localStorage.removeItem(draftKey(userId,courseId));} catch { /* no local cache */ }
+        if(sameRevision){
+          setState(result.progress.state);
+          try{localStorage.removeItem(draftId);}catch{}
+          setStatus('学习进度已保存：' + new Date(result.progress.updated_at).toLocaleString());
+        }else{
+          setStatus('上一版本已同步；此后本机修改仍待再次保存。');
+        }
+      }else if(sameRevision){
+        try{localStorage.removeItem(draftId);}catch{}
       }
       setOverviewVersion(n=>n+1);
      } catch(e) {
-      if(selectedRef.current===courseId&&session?.user.id===userId){
+      if(selectedRef.current===courseId&&activeUserRef.current===userId){
         const detail=e instanceof Error?e.message:String(e);
         if(detail==='progress_conflict'||detail==='progress_version_required'){
           forceProgressConflict.current=true;setProgressReadyKey('');setProgressReadError(true);
