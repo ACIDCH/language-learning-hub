@@ -8,12 +8,14 @@ export function ReferenceAudio({ lessonId }: { lessonId: string }) {
   const [start, setStart] = useState<number | null>(null);
   const [end, setEnd] = useState<number | null>(null);
   const [loop, setLoop] = useState(false);
+  const [speed, setSpeed] = useState(1);
   // A/B points and load errors belong to the selected recording, not the reusable panel.
   useEffect(() => {
     setFailed(false);
     setStart(null);
     setEnd(null);
     setLoop(false);
+    setSpeed(1);
   }, [lessonId]);
   const item = data.mappings.find(x => x.lesson_id === lessonId);
   if (!item) return null;
@@ -23,11 +25,11 @@ export function ReferenceAudio({ lessonId }: { lessonId: string }) {
     <p>Français interactif · 第 {item.official_chapter} 章 · {Math.round(item.duration_seconds)} 秒</p>
     
     <audio key={lessonId} ref={audio} controls preload="none" src={item.source_url}
-      onError={() => setFailed(true)} onLoadedMetadata={() => setFailed(false)}
+      onError={() => setFailed(true)} onLoadedMetadata={() => { setFailed(false); if (audio.current) audio.current.playbackRate = speed; }}
       onTimeUpdate={() => { if (loop && validLoop && audio.current && audio.current.currentTime >= end!) audio.current.currentTime = start!; }} />
     {failed && <p role="alert">音频暂不可用，请打开下方官方资源。课程正文仍可阅读。</p>}
     <div className="audio-controls">
-      <label>播放速度 <select defaultValue="1" onChange={e => { if (audio.current) audio.current.playbackRate = Number(e.target.value); }}>
+      <label>播放速度 <select value={speed} onChange={e => { const next = Number(e.target.value); setSpeed(next); if (audio.current) audio.current.playbackRate = next; }}>
         <option value="0.75">0.75×</option><option value="1">1×</option><option value="1.25">1.25×</option>
       </select></label>
       <button onClick={() => { setStart(audio.current?.currentTime ?? 0); setLoop(false); }}>设定 A 点</button>
