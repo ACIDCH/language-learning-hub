@@ -54,12 +54,18 @@ The owner reports **7/7 PASS for French** and **7/7 PASS for English** on a **ph
 
 | Required observation | Outcome |
 | --- | --- |
-| Foundation course note + exercise + completion survives device B reload | NOT TESTED |
-| Same record survives sign-out, sign-in and reload | NOT TESTED |
+| Foundation course note + exercise + completion survives device B reload | USER-REPORTED PASS (Windows Chrome → Android Chrome) |
+| Same record survives sign-out, sign-in and reload | USER-REPORTED PASS (Android Chrome; fr-fnd-01) |
 | Main-course note/answer saves and restores independently | NOT TESTED |
 | Two-device concurrent edit rejected, unsynced draft preserved | NOT TESTED |
 | Explicit cloud/local choice and successful final recovery | NOT TESTED |
 | Different accounts' notes do not cross | NOT TESTED |
+
+## Foundation two-device sync self-report (2026-10-26 NZDT; provisional)
+
+The owner reports **4/4 PASS, no abnormalities** for real-device Supabase foundation-course sync of `fr-fnd-01` between a Windows computer and an Android/Chrome phone. Reported observations: (1) desktop saved successfully to Supabase; (2) the phone loaded the saved test note; (3) phone restored the exercise answer and completion state; (4) the same state survived phone sign-out and sign-in. These are the owner's hands-on observations conveyed in chat; backend logs, screenshots, exact browser versions and tested deployed build SHA have not been independently captured. **Main-course persistence, CAS concurrent edits/409 conflict recovery and cross-account isolation are NOT YET TESTED.** Therefore `deviceRestore` and `browserAcceptance` sign-off remain null in the release manifest.
+
+**Next main-course check:** repeat the same four observations in `en-ielts-listening-u01`, use a distinct note (`SYNC-MAIN-A-01`) and at least one answer, verify foundation-course `fr-fnd-01` remains unchanged. **Then deliberately test concurrent writes** on a non-sensitive test note while preserving both local drafts; do not assume that conflicting edits to the same free-text `notes` field merge automatically. If the remote note and local note are different, copy both strings and manually combine them after selecting a version. No production deployment or bypass of the release gate is authorized.
 
 ## Acceptance/sign-off rules
 
