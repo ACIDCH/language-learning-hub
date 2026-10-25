@@ -36,6 +36,11 @@ export function validAlignedAudio(course,review){
  });
 }
 
+export const validTtsAcceptance=tts=>approved(tts)&&tts.passed===true&&
+ tts.englishVoiceTested===true&&tts.frenchVoiceTested===true&&
+ tts.desktopTested===true&&tts.mobileTested===true&&
+ tts.fallbackTested===true&&tts.sourceAudioClaimsDisabled===true;
+
 export function assessReleaseReadiness(matrix,signoffs){
  const audioMode=signoffs?.audioDeliveryMode==='device_tts'?'device_tts':'verified_natural';
  const courses=matrix?.courses??[];
@@ -67,10 +72,7 @@ export function assessReleaseReadiness(matrix,signoffs){
   quality.signedAudio=courses.filter(c=>validAlignedAudio(c,audioMap.get(c.id))).length;
  }
  const tts=signoffs?.ttsAcceptance;
- quality.ttsAccepted=audioMode==='device_tts'&&approved(tts)&&tts.passed===true&&
-  tts.englishVoiceTested===true&&tts.frenchVoiceTested===true&&
-  tts.desktopTested===true&&tts.mobileTested===true&&
-  tts.fallbackTested===true&&tts.sourceAudioClaimsDisabled===true;
+ quality.ttsAccepted=audioMode==='device_tts'&&validTtsAcceptance(tts);
  const device=signoffs?.deviceRestore;
  quality.deviceRestore=approved(device)&&device.passed===true&&device.distinctDevices>=2&&device.reloginVerified===true;
  const browser=signoffs?.browserAcceptance;

@@ -1,6 +1,6 @@
 import {readFileSync} from 'node:fs';
 import {pathToFileURL} from 'node:url';
-import {approved,evidenceMatches,specialtyEvidenceMatches,validAlignedAudio} from './release-readiness.mjs';
+import {approved,evidenceMatches,specialtyEvidenceMatches,validAlignedAudio,validTtsAcceptance} from './release-readiness.mjs';
 
 /** Build a deterministic list of work that still needs real review evidence.
  * This queue is planning metadata, not a substitute for a human QA result.
@@ -15,12 +15,13 @@ export function buildReviewQueue(matrix,evidence){
  const cReviews=new Map(courseRows.map(r=>[r.courseId,r]));
  const sReviews=new Map(specialtyRows.map(r=>[r.id,r]));
  const aReviews=new Map(audioRows.map(r=>[r.courseId,r]));
+ const audioMode=evidence?.audioDeliveryMode==='device_tts'?'device_tts':'verified_natural';
  const priorityScore={P0:0,P1:1,P2:2,'P2-followup':3,P3:4};
  const queue=[];
  for(const lesson of courses){
   const meta={courseId:lesson.id,language:lesson.language,level:lesson.level,priority:lesson.priority??'P2',paragraphs:lesson.evidence?.paragraphs?.length??0,sourcePaths:(lesson.sourceHashes??[]).map(x=>x.path)};
   if(!(approved(cReviews.get(lesson.id))&&evidenceMatches(lesson.evidence?.paragraphs??[],cReviews.get(lesson.id).paragraphs)))queue.push({kind:'course_semantics',id:lesson.id,...meta,checks:['paragraph target and Chinese meaning','exercise evidence and explanations','teaching sequence and progression']});
-  if(!validAlignedAudio(lesson,aReviews.get(lesson.id)))queue.push({kind:'audio_alignment',id:lesson.id,...meta,checks:['authorized recording provenance','source paragraph text hash','P1–P4 alignment and actual listening']});
+  if(audioMode==='verified_natural'&&!validAlignedAudio(lesson,aReviews.get(lesson.id)))queue.push({kind:'audio_alignment',id:lesson.id,...meta,checks:['authorized recording provenance','source paragraph text hash','P1–P4 alignment and actual listening']});
   for(const specialty of lesson.specialties??[]){
    if(!specialtyEvidenceMatches(specialty,sReviews.get(specialty.id)))queue.push({kind:'specialty_semantics',id:specialty.id,...meta,topicType:specialty.type,contentSha256:specialty.contentSha256,checks:['grammar and CEFR prerequisite','examples and natural Chinese','practice answers and counterexamples']});
   }
@@ -29,6 +30,8 @@ export function buildReviewQueue(matrix,evidence){
  const counts={course_semantics:queue.filter(x=>x.kind==='course_semantics').length,
   specialty_semantics:queue.filter(x=>x.kind==='specialty_semantics').length,
   audio_alignment:queue.filter(x=>x.kind==='audio_alignment').length,
+  audioMode,
+  ttsAcceptance:audioMode==='device_tts'&&!validTtsAcceptance(evidence?.ttsAcceptance),
   deviceAcceptance:!(approved(evidence?.deviceRestore)&&evidence.deviceRestore.passed===true&&evidence.deviceRestore.distinctDevices>=2&&evidence.deviceRestore.reloginVerified===true),
   browserAcceptance:!(approved(evidence?.browserAcceptance)&&evidence.browserAcceptance.passed===true&&evidence.browserAcceptance.desktop===true&&evidence.browserAcceptance.mobile===true&&evidence.browserAcceptance.mediaChecked===true)};
  return {schema:1,warning:'The queue uses the same signed review and source-hash/audio validators as the production gate; it is still not proof of real-world human review authenticity.',counts,queue};

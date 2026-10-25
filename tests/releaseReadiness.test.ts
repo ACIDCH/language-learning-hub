@@ -158,6 +158,9 @@ it('allows a separately verified device-TTS release mode without claiming unmatc
  const manifest=fullyReviewed();
  manifest.audioReviews=[];
  manifest.audioDeliveryMode='device_tts';
+ let queue=buildReviewQueue(matrix,manifest);
+ expect(queue.counts).toMatchObject({audioMode:'device_tts',audio_alignment:0,ttsAcceptance:true});
+ expect(queue.queue.some(x=>x.kind==='audio_alignment')).toBe(false);
  let result=assessReleaseReadiness(matrix,manifest);
  expect(result.ready).toBe(false);
  expect(result.quality.signedAudio).toBe(0);
@@ -167,10 +170,12 @@ it('allows a separately verified device-TTS release mode without claiming unmatc
   desktopTested:true,mobileTested:true,fallbackTested:true,sourceAudioClaimsDisabled:true
  };
  result=assessReleaseReadiness(matrix,manifest);
+ queue=buildReviewQueue(matrix,manifest);
  expect(result.ready).toBe(true);
  expect(result.quality.signedAudio).toBe(0);
  expect(result.quality.audioMode).toBe('device_tts');
  expect(result.quality.ttsAccepted).toBe(true);
+ expect(queue.counts.ttsAcceptance).toBe(false);
  manifest.ttsAcceptance.frenchVoiceTested=false;
  expect(assessReleaseReadiness(matrix,manifest).ready).toBe(false);
  manifest.ttsAcceptance.frenchVoiceTested=true;
