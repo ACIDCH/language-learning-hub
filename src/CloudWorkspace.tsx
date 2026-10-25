@@ -109,7 +109,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
         progressVersion.current=progress?.updated_at||null;
         const useDraft = draft?.state && draft.editedAt &&
           (!progress || new Date(draft.editedAt).getTime() > new Date(progress.updated_at).getTime());
-        if(draft?.state&&progress&&(forceProgressConflict.current||!useDraft)){
+        if(draft?.state&&progress){
           setState(draft.state);setProgressConflict({local:draft.state,remote:progress.state});
           setStatus('云端与本机未同步草稿不同步；请选择版本，未确认前禁止保存。');
           return;
