@@ -71,8 +71,8 @@ export function assessReleaseReadiness(matrix,signoffs){
 }
 
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
- const matrix=JSON.parse(readFileSync('docs/qa/curriculum-gap-matrix.json','utf8'));
- const signoffs=JSON.parse(readFileSync('config/release/evidence.json','utf8'));
+ const matrix=JSON.parse(readFileSync(new URL('../docs/qa/curriculum-gap-matrix.json',import.meta.url),'utf8'));
+ const signoffs=JSON.parse(readFileSync(new URL('../config/release/evidence.json',import.meta.url),'utf8'));
  const report=assessReleaseReadiness(matrix,signoffs);
  if(process.argv.includes('--json'))process.stdout.write(JSON.stringify(report,null,2)+'\n');
  else{
