@@ -22,7 +22,7 @@ export function ReferenceAudio({ lessonId }: { lessonId: string }) {
     <h3>词汇参考音频 · {item.title}</h3>
     <p>Français interactif · 第 {item.official_chapter} 章 · {Math.round(item.duration_seconds)} 秒</p>
     
-    <audio ref={audio} controls preload="none" src={item.source_url}
+    <audio key={lessonId} ref={audio} controls preload="none" src={item.source_url}
       onError={() => setFailed(true)} onLoadedMetadata={() => setFailed(false)}
       onTimeUpdate={() => { if (loop && validLoop && audio.current && audio.current.currentTime >= end!) audio.current.currentTime = start!; }} />
     {failed && <p role="alert">音频暂不可用，请打开下方官方资源。课程正文仍可阅读。</p>}
