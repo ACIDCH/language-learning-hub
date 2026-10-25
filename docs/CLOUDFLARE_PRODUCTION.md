@@ -1,6 +1,6 @@
 # Cloudflare production preparation (React + Worker + Supabase)
 
-**Deployment status:** Source and automated tests are prepared in PR #12. No live Pages or Workers deployment is claimed. The public Pages build has **public original sample lessons** only. The private 108-manuscript Python/SQLite service remains local until the authorized Drive access adapter is complete.
+**Deployment status:** This document began as the older PR #12 cloud integration plan. As of PR #50, React V4.4 has source-linked bilingual courses and Worker/Supabase adapters, but **a production Pages/Worker release has not been verified**. The local Python server remains an archival/development tool and must not become a dependency for the production learning path. Follow the current `docs/qa/production-release-readiness-2026-10-25.md` gates.
 
 ## Architecture and current contract
 
@@ -23,10 +23,10 @@ The owner has already authorized GitHub repository `ACIDCH/language-learning-hub
 - Build command: **`npm run build`**.
 - Output directory: **`dist`**.
 - Root directory: repository root (blank).
-- Initial deployment works as a public-course front end without environment variables. The `/cloud/` route explicitly reports unavailable until API connectivity is configured.
+- Branch previews may build for verification; a production branch build is **intentionally blocked** until both explicit publication authorization and the independent review/audio/device evidence checks pass. A Pages build alone does not prove the Worker/API works. Configure the actual Worker and Supabase endpoints before any production approval.
 - No custom domain, no eu.cc registration, no payment-dependent R2 service.
 
-Cloudflare Pages Git integration installs dependencies, runs the build and deploys `dist` on push to `main`. Avoid the previous design-prototype command `node tools/build_pages_preview.mjs` for the formal React deployment.
+Cloudflare Pages Git integration installs dependencies and runs `npm run build`. The `prebuild` step now checks `CF_PAGES_BRANCH=main` (or `LLH_DEPLOY_TARGET=production`) and runs the source-hash-aligned `release:check` gate. Vite independently checks the existing owner preview/production approvals. **Do not bypass either gate** by changing the build command or by using an old design-prototype deployment. When both gates pass, Pages may deploy `dist` on a permitted main push.
 
 ## Worker: same repo, separate Git-connected Worker
 
