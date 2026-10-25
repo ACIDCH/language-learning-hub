@@ -2,8 +2,9 @@ import {useEffect,useRef,useState} from 'react';
 import type {Session} from '@supabase/supabase-js';
 import {cloudClient,cloudRequest} from './v44Connection';
 import type {Course} from './v44Courses';
+import {mergeProgressDraft} from './progressMerge';
 export type LearningState={stage?:number;notes?:string;completed?:boolean;answers?:Record<string,number>;studyResponses?:Record<string,string>;[key:string]:unknown};
-export function mergeLearningState(old:LearningState,patch:Partial<LearningState>){return {...old,...patch, ...(patch.answers?{answers:{...old.answers,...patch.answers}}:{}),...(patch.studyResponses?{studyResponses:{...old.studyResponses,...patch.studyResponses}}:{})};}
+export function mergeLearningState(old:LearningState,patch:Partial<LearningState>){return mergeProgressDraft(old,patch);}
 // The existing JSONB answers column carries a namespaced envelope; numeric answers stay intact.
 export function packFoundationState(state:LearningState){return {...state.answers,__learning:{stage:state.stage,studyResponses:state.studyResponses}};}
 // Leave headroom for JSONB text spacing; the database enforces the final 256 KiB cap.
