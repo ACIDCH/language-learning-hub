@@ -11,6 +11,7 @@ import {StudyResponseContext} from '../src/studyResponses';
 import CourseSpecialtyStage from '../src/CourseSpecialtyStage';
 import ReceptionStudy from '../src/ReceptionStudy';
 import {RECEPTION_LESSONS} from '../src/receptionLessons';
+import {parallelEvidence} from '../src/bilingualEvidence';
 import Task1WritingWorkshop,{TASK1_WORKSHOPS} from '../src/Task1WritingWorkshop';
 import {BORROWING_CHART,CHART_MODEL} from '../src/task1ChartData';
 import {numericEvidenceChecks,task1Evidence,wordCount} from '../src/Task1Feedback';
@@ -163,4 +164,36 @@ it('resets reading position and cancels stale speech when switching from six par
  fireEvent.click(screen.getByRole('button',{name:'下一段'}));
  expect(voices[6].text).toBe(RECEPTION_LESSONS['en-ielts-listening-u01'].paragraphs[1].target);
  expect(synth.cancel.mock.calls.length).toBeGreaterThanOrEqual(7);
+});
+
+
+it('renders authored bilingual evidence as parallel accessible lines, not slash-delimited source/Chinese text',()=>{
+ const original='TRUE / FALSE / NOT GIVEN — All libraries hosted evening sessions. / 判断正误：所有图书馆都举办晚间讨论。';
+ expect(parallelEvidence(original)).toEqual({
+  source:'TRUE / FALSE / NOT GIVEN — All libraries hosted evening sessions.',
+  zh:'判断正误：所有图书馆都举办晚间讨论。'
+ });
+ expect(parallelEvidence('en face de / 对面')).toEqual({source:'en face de',zh:'对面'});
+ expect(parallelEvidence('À neuf heures.')).toEqual({source:'À neuf heures.',zh:null});
+ expect(parallelEvidence('只按中文提问，不伪造外文')).toEqual({source:'只按中文提问，不伪造外文',zh:null});
+ expect(parallelEvidence('en / à')).toEqual({source:'en / à',zh:null});
+ const id='en-ielts-writing-task1-u01';
+ const page=render(<ReceptionStudy courseId={id} rate={.85}/>);
+ const question=RECEPTION_LESSONS[id].questions[0];
+ const originalQuestion=parallelEvidence(question.prompt),originalAnswer=parallelEvidence(question.answer);
+ const item=page.container.querySelector('.curriculum-question')!;
+ const label=item.querySelector('label')!;
+ expect(label.querySelector('[lang="en"]')?.textContent).toBe(originalQuestion.source);
+ expect(label.querySelector('[lang="zh-Hans"]')?.textContent).toBe(originalQuestion.zh);
+ fireEvent.click(item.querySelector('summary')!);
+ const answers=item.querySelector('.evidence-answers')!;
+ expect(answers.querySelector('p[lang="en"]')?.textContent).toBe(originalAnswer.source);
+ expect(answers.querySelector('p[lang="zh-Hans"]')?.textContent).toBe(originalAnswer.zh);
+ expect(item.querySelector('textarea')?.getAttribute('id')).toBe(id+'-reception-0');
+ expect(item.textContent).toContain('P');
+ page.rerender(<ReceptionStudy courseId="fr-a1-u05" rate={.85}/>);
+ const frQuestion=RECEPTION_LESSONS['fr-a1-u05'].questions[0];
+ const frItem=page.container.querySelector('.curriculum-question')!;
+ expect(frItem.querySelector('label [lang="fr"]')?.textContent).toBe(parallelEvidence(frQuestion.prompt).source);
+ expect(frItem.querySelector('label [lang="zh-Hans"]')?.textContent).toBe(parallelEvidence(frQuestion.prompt).zh);
 });
