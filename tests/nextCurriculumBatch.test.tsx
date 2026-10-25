@@ -74,6 +74,10 @@ it('rejects fact drift from the four immutable original drafts',()=>{
  expect(train.questions[2].answer).toContain('demander un remboursement');
  const health=RECEPTION_LESSONS['fr-a2-u05'];
  expect(health.questions[2].answer).toContain('sans diagnostic');
+ expect(health.paragraphs[1].target).toContain('Paul note l’heure du rendez-vous communiquée');
+ expect(health.paragraphs[1].zh).toContain('保罗记下秘书告诉他的预约时间');
+ expect(health.paragraphs[1].zh).toContain('读者仍不知道具体几点');
+ expect(health.questions[2].answer).toContain('sans diagnostic ni heure exacte précisée');
 });
 
 it('bilingual passages do not claim real speech recordings or independent editorial clearance',()=>{
