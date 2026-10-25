@@ -3,6 +3,7 @@ import type {Session} from '@supabase/supabase-js';
 import {cloudClient,cloudRequest} from './v44Connection';
 import type {Course} from './v44Courses';
 import {mergeProgressDraft} from './progressMerge';
+import {nextProgressTimestamp} from './progressVersion';
 export type LearningState={stage?:number;notes?:string;completed?:boolean;answers?:Record<string,number>;studyResponses?:Record<string,string>;[key:string]:unknown};
 export function mergeLearningState(old:LearningState,patch:Partial<LearningState>){return mergeProgressDraft(old,patch);}
 // The existing JSONB answers column carries a namespaced envelope; numeric answers stay intact.
@@ -97,7 +98,7 @@ export function useCourseProgress(course:Course,session:Session|null){
    let newVersion:string|null=null;
    if(course.kind==='foundation'){
     validateFoundationState(next);
-    const payload={user_id:session.user.id,lesson_id:course.id,answers:packFoundationState(next),notes:next.notes||'',completed:!!next.completed,updated_at:new Date().toISOString()};
+    const payload={user_id:session.user.id,lesson_id:course.id,answers:packFoundationState(next),notes:next.notes||'',completed:!!next.completed,updated_at:nextProgressTimestamp(remoteVersion.current)};
     if(remoteVersion.current){
      const {data,error}=await cloudClient!.from('foundation_progress')
       .update(payload).eq('user_id',session.user.id).eq('lesson_id',course.id)
