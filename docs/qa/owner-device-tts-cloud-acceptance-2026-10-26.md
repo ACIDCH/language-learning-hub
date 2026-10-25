@@ -24,20 +24,24 @@
 
 | Required observation | Desktop | Phone |
 | --- | --- | --- |
-| English pronunciation and correct text | USER-REPORTED PASS (pending device metadata) | NOT TESTED |
-| French pronunciation and correct text | USER-REPORTED PASS (pending device metadata) | NOT TESTED |
-| 0.65× / 1× / 1.15× speed | USER-REPORTED PASS (pending device metadata) | NOT TESTED |
-| Pause, resume, stop | USER-REPORTED PASS (pending device metadata) | NOT TESTED |
-| Next paragraph, opt-in loop, loop off | USER-REPORTED PASS (pending device metadata) | NOT TESTED |
-| Switch courses stops old audio | USER-REPORTED PASS (pending device metadata) | NOT TESTED |
+| English pronunciation and correct text | USER-REPORTED PASS (pending device metadata) | USER-REPORTED PASS (Android Chrome; pending build metadata) |
+| French pronunciation and correct text | USER-REPORTED PASS (pending device metadata) | USER-REPORTED PASS (Android Chrome; pending build metadata) |
+| 0.65× / 1× / 1.15× speed | USER-REPORTED PASS (pending device metadata) | USER-REPORTED PASS (Android Chrome; pending build metadata) |
+| Pause, resume, stop | USER-REPORTED PASS (pending device metadata) | USER-REPORTED PASS (Android Chrome; pending build metadata) |
+| Next paragraph, opt-in loop, loop off | USER-REPORTED PASS (pending device metadata) | USER-REPORTED PASS (Android Chrome; pending build metadata) |
+| Switch courses stops old audio | USER-REPORTED PASS (pending device metadata) | USER-REPORTED PASS (Android Chrome; pending build metadata) |
 | No matching-language voice / text fallback | NOT TESTED | NOT TESTED |
-| TTS-only disclosure, no natural recording claims | USER-REPORTED PASS (pending device metadata) | NOT TESTED |
+| TTS-only disclosure, no natural recording claims | USER-REPORTED PASS (pending device metadata) | USER-REPORTED PASS (Android Chrome; pending build metadata) |
 
 **Voice fallback note:** absence of any missing-voice device means the manual fallback case remains NOT TESTED; automated tests alone cannot establish its real-device result.
 
 ## Desktop self-report (2026-10-26 NZDT; provisional, not signed)
 
 The owner reported **7/7 PASS on real desktop** for English and **7/7 PASS** for French: correct language/text, speed changes, pause/resume, paragraph navigation, loop on/off, stop/course switch and TTS-only label. This is the **owner's observed result conveyed in chat**, not direct tool-observed playback. No defects reported. Desktop operating-system/browser version, exact tested build SHA, media recording and reviewer ID are **not yet recorded**; do not convert this note to a formal `ttsAcceptance` sign-off. Missing-language voice fallback remains NOT TESTED on physical hardware.
+
+## Android/Chrome phone self-report (2026-10-26 NZDT; provisional, not signed)
+
+The owner reports **7/7 PASS for French** and **7/7 PASS for English** on a **physical Android phone using Chrome**. Reported passes cover correct-language spoken text, three speed settings, pause/resume/stop, next-paragraph, opt-in loop on/off, cancelling voice on course switch, and the TTS-only disclosure. The owner reported **no observed issues**. This is owner-reported evidence rather than playback directly inspected by automation; the Android version, Chrome version, exact tested build hash and signed reviewer identity remain unrecorded. The **missing-language voice/text fallback is still NOT TESTED** on a physical device, and no formal `ttsAcceptance` approval is implied. The prior desktop report is unchanged.
 
 ## Track B — signed-in, two-physical-device cloud sync and CAS
 
