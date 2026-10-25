@@ -44,7 +44,7 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
  const result=verifyReleaseSources(matrix,path=>readFileSync(new URL('../'+path,import.meta.url)));
  if(process.argv.includes('--json'))process.stdout.write(JSON.stringify(result,null,2)+'\n');
  else process.stdout.write('Release source fingerprint check: '+(result.ok?'PASS':'BLOCKED')+
-  ' | manuscripts/assets '+result.verifiedRawSources+'/108; foundation source references '+result.verifiedFoundationSourceReferences+'/96 (files '+result.verifiedFoundationSourceFiles+'/4)'\n'+
+  ' | manuscripts/assets '+result.verifiedRawSources+'/108; foundation source references '+result.verifiedFoundationSourceReferences+'/96 (files '+result.verifiedFoundationSourceFiles+'/4)'+'\n'+
   result.mismatches.map(x=>x.courseId+' '+x.path+' '+x.reason).join('\n')+'\n');
  if(!result.ok)process.exitCode=1;
 }
