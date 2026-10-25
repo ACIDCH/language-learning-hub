@@ -158,3 +158,22 @@ it('rejects an out-of-date foundation update after another device changed the ro
  const payload=mocks.write.mock.calls[1][0];
  expect(payload.answers.__learning.studyResponses['fr-fnd-24:writing']).toBe('pending local text');
 });
+
+
+it('requires review even when the unsynced device draft appears newer than the cloud timestamp',async()=>{
+ const key='llh-v44-draft:test-foundation-owner:fr-fnd-24';
+ localStorage.setItem(key,JSON.stringify({editedAt:'2026-10-26T10:00:00.000Z',state:{
+  studyResponses:{'fr-fnd-24:writing':'device made a later edit'}
+ }}));
+ mocks.read.mockResolvedValue({data:{
+  answers:{__learning:{studyResponses:{'fr-fnd-24:writing':'remote exercise response'}}},
+  notes:'remote note',completed:false,updated_at:'2026-10-25T10:00:00.000Z'
+ },error:null});
+ render(<Probe/>);
+ await screen.findByText(/云端记录与本机未同步草稿同时存在/);
+ expect((screen.getByText('save') as HTMLButtonElement).disabled).toBe(true);
+ expect((screen.getByLabelText('answer') as HTMLTextAreaElement).value).toBe('device made a later edit');
+ fireEvent.click(screen.getByText('local draft'));
+ expect((screen.getByLabelText('answer') as HTMLTextAreaElement).disabled).toBe(false);
+ expect(mocks.write).not.toHaveBeenCalled();
+});
