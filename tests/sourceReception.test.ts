@@ -95,3 +95,17 @@ it('provides bilingual IELTS Reading U05–U08 questions and answers without los
  expect(RECEPTION_LESSONS['en-ielts-reading-u06'].questions[1].answer).toContain('not proof of a sole cause');
  expect(RECEPTION_LESSONS['en-ielts-reading-u08'].questions[3].answer).toContain('aggregate gain');
 });
+
+
+it('keeps local-council scope and bus-connection evidence exact in IELTS Reading translations',()=>{
+ const grant=RECEPTION_LESSONS['en-ielts-reading-u05'];
+ expect(grant.paragraphs[0].target).toContain('An imaginary local council');
+ expect(grant.paragraphs[0].zh).toContain('虚构地区的地方议会');
+ expect(grant.paragraphs[0].zh).not.toContain('虚构城市的议会');
+ const access=RECEPTION_LESSONS['en-ielts-reading-u08'];
+ expect(access.paragraphs[2].target).toContain('evening connection involved an additional journey');
+ expect(access.paragraphs[2].zh).toContain('晚间接驳还涉及额外一段行程');
+ expect(access.paragraphs[2].zh).not.toContain('多走一段路');
+ expect(access.questions[2].evidence).toEqual(['P3']);
+ expect(access.questions[3].answer).toContain('aggregate gain');
+});
