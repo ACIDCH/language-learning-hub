@@ -312,7 +312,7 @@ describe('V4.4 integration contracts',()=>{
   expect(localStorage.getItem(key)).toContain('my unsynced text');
   expect(JSON.parse(request.mock.calls[1][2].body).expectedUpdatedAt).toBe(oldVersion);
   fireEvent.click(screen.getByText('retry'));
-  await screen.findByText(/云端记录比本机未同步草稿更新/);
+  await screen.findByText(/云端记录与本机未同步草稿同时存在/);
   expect(screen.getByText('local draft')).toBeTruthy();
   fireEvent.click(screen.getByText('local draft'));
   expect((screen.getByLabelText('notes') as HTMLTextAreaElement).value).toBe('my unsynced text');
