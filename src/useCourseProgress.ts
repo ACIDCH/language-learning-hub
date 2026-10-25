@@ -32,11 +32,12 @@ export function useCourseProgress(course:Course,session:Session|null){
  const [conflict,setConflict]=useState<{local:LearningState;remote:LearningState}|null>(null);
  const stateRef=useRef(state),alive=useRef(true),revision=useRef(0);
  const generation=useRef(0),saving=useRef(false);
+ const remoteVersion=useRef<string|null>(null),saveConflict=useRef(false);
  const readLocal=()=>{try{return JSON.parse(localStorage.getItem(key)||'null') as {state:LearningState;editedAt:string}|null;}catch{return null;}};
  useEffect(()=>{
   let current=true;alive.current=true;generation.current++;saving.current=false;
   setReady(false);setBusy(false);setConflict(null);setStatus('正在读取学习记录…');revision.current=0;
-  stateRef.current={};setState({});
+  stateRef.current={};setState({});remoteVersion.current=null;
   const apply=(s:LearningState)=>{stateRef.current=s;setState(s);setReady(true);};
   const local=readLocal();
   if(!session){apply(local?.state||{});setStatus('访客学习记录仅保存在本机；未同步到云端。');}
@@ -52,8 +53,9 @@ export function useCourseProgress(course:Course,session:Session|null){
      if(progress){remote=progress.state;updated=progress.updated_at;}
     }
     if(!current)return;
+    remoteVersion.current=updated||null;
     const newer=local&&Date.parse(local.editedAt)>Date.parse(updated||'1970-01-01');
-    if(local?.state&&updated&&!newer){
+    if(local?.state&&updated&&(!newer||saveConflict.current)){
      // A newer cloud version must never silently discard a still-unsynced device draft.
      stateRef.current=local.state;setState(local.state);setReady(false);
      setConflict({local:local.state,remote});
@@ -67,6 +69,7 @@ export function useCourseProgress(course:Course,session:Session|null){
  },[course.id,session?.user.id,retryVersion]);
  function resolveConflict(choice:'cloud'|'local'){
   if(!conflict||ready)return;
+  saveConflict.current=false;
   const next=choice==='local'?mergeLearningState(conflict.remote,conflict.local):conflict.remote;
   stateRef.current=next;setState(next);setConflict(null);setReady(true);
   if(choice==='cloud'){
@@ -88,14 +91,42 @@ export function useCourseProgress(course:Course,session:Session|null){
   if(!session||!ready||saving.current)return;
   const next=stateRef.current,version=revision.current,epoch=generation.current;saving.current=true;setBusy(true);
   try{
+   let newVersion:string|null=null;
    if(course.kind==='foundation'){
     validateFoundationState(next);
-    const {error}=await cloudClient!.from('foundation_progress').upsert({user_id:session.user.id,lesson_id:course.id,answers:packFoundationState(next),notes:next.notes||'',completed:!!next.completed,updated_at:new Date().toISOString()},{onConflict:'user_id,lesson_id'});
-    if(error)throw error;
-   }else await cloudRequest('/v1/progress/'+course.id,session.access_token,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({state:next})});
-   if(epoch===generation.current&&version===revision.current){try{localStorage.removeItem(key);}catch{}}
+    const payload={user_id:session.user.id,lesson_id:course.id,answers:packFoundationState(next),notes:next.notes||'',completed:!!next.completed,updated_at:new Date().toISOString()};
+    if(remoteVersion.current){
+     const {data,error}=await cloudClient!.from('foundation_progress')
+      .update(payload).eq('user_id',session.user.id).eq('lesson_id',course.id)
+      .eq('updated_at',remoteVersion.current).select('updated_at').maybeSingle();
+     if(error)throw error;
+     if(!data)throw new Error('progress_conflict');
+     newVersion=data.updated_at;
+    }else{
+     const {data,error}=await cloudClient!.from('foundation_progress').insert(payload).select('updated_at').single();
+     if(error){if(error.code==='23505')throw new Error('progress_conflict');throw error;}
+     newVersion=data?.updated_at||null;
+    }
+   }else{
+    const result=await cloudRequest<{saved:boolean;progress?:{updated_at?:string}}>('/v1/progress/'+course.id,session.access_token,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({state:next,expectedUpdatedAt:remoteVersion.current})});
+    newVersion=result.progress?.updated_at||null;
+   }
+   if(epoch!==generation.current)return;
+   if(!newVersion)throw new Error('progress_version_missing');
+   remoteVersion.current=newVersion;
+   if(version===revision.current){try{localStorage.removeItem(key);}catch{}}
    if(alive.current&&epoch===generation.current)setStatus(version===revision.current?'已保存到 Supabase。':'上一版本已同步；后续修改仍保留本机，需再次保存。');
-  }catch(e){if(alive.current&&epoch===generation.current)setStatus('保存失败，本机草稿保留：'+progressError(e));}
+  }catch(e){
+   if(alive.current&&epoch===generation.current){
+    const detail=progressError(e);
+    if(detail.includes('progress_conflict')){
+     saveConflict.current=true;setReady(false);
+     setStatus('云端进度冲突：另一设备已保存更新，本机草稿仍在。请重新读取云端进度并选择版本。');
+    }else if(detail.includes('progress_version_missing')){
+     setReady(false);setStatus('云端已接收保存但没有返回版本号；请重新读取后再编辑，避免覆盖其他设备。');
+    }else setStatus('保存失败，本机草稿保留：'+detail);
+   }
+  }
   finally{if(epoch===generation.current){saving.current=false;if(alive.current)setBusy(false);}}
  }
  return {state,ready,busy,status,change,save,conflict:!!conflict,resolveConflict,retry:()=>setRetryVersion(n=>n+1)};
