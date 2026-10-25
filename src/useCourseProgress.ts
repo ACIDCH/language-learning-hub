@@ -33,9 +33,11 @@ export function useCourseProgress(course:Course,session:Session|null){
  const stateRef=useRef(state),alive=useRef(true),revision=useRef(0);
  const generation=useRef(0),saving=useRef(false);
  const remoteVersion=useRef<string|null>(null),saveConflict=useRef(false);
+ const progressIdentity=useRef(key);
  const readLocal=()=>{try{return JSON.parse(localStorage.getItem(key)||'null') as {state:LearningState;editedAt:string}|null;}catch{return null;}};
  useEffect(()=>{
   let current=true;alive.current=true;generation.current++;saving.current=false;
+  if(progressIdentity.current!==key){progressIdentity.current=key;saveConflict.current=false;}
   setReady(false);setBusy(false);setConflict(null);setStatus('正在读取学习记录…');revision.current=0;
   stateRef.current={};setState({});remoteVersion.current=null;
   const apply=(s:LearningState)=>{stateRef.current=s;setState(s);setReady(true);};
