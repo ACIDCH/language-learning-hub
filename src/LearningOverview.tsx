@@ -10,7 +10,7 @@ export default function LearningOverview({client,session,courses,savedVersion,on
  const [error,setError]=useState('');
  useEffect(()=>{
   let active=true;
-  setLoading(true);setError('');
+  setLoading(true);setError('');setRows([]);
   void Promise.all([
     client.from('learning_progress')
      .select('course_id,state,updated_at').eq('user_id',session.user.id)
