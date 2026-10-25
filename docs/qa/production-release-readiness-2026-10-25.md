@@ -30,7 +30,10 @@ npm ci
 npm run build
 npm run release:report  # 输出可复核的未完成项；未完成时仍返回 0
 npm run release:check   # 任一发布条件不符合便返回非 0；正式发布须此命令成功
+npm run release:queue   # 按课时、教学专题、音轨输出未完成审校队列；可加 -- --json
 ```
+
+基于现有零份人工签核证据，`release:queue` 当前列出 **639 个按课可追溯审核项**：156 个课程内容、327 个语法词汇专题、156 个逐段音轨；另有双设备恢复和桌面／手机实测两项验收。队列不是已审校证明，源文更改后仍须以 `release:check` 重新校验哈希与签核。正式 Worker 部署使用 `node ../../scripts/deploy-worker.mjs`（在 `cloudflare/learning-api` 目录执行），不得直接运行绕过门禁的 Wrangler 命令。
 
 另有手动触发的 GitHub Actions 工作流 `Production readiness — evidence gate`，不会在门禁失败时执行部署。主发布流程必须在正式合并和生产发布之前调用相同的 `release:check`。
 
