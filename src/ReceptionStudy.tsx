@@ -11,9 +11,14 @@ export default function ReceptionStudy({courseId,rate}:{courseId:string;rate:num
  const token=useRef(0),utterance=useRef<SpeechSynthesisUtterance|null>(null),startup=useRef<ReturnType<typeof setTimeout>|undefined>(undefined);
  function stop(){token.current++;clearTimeout(startup.current);window.speechSynthesis?.cancel();utterance.current=null;setPlaying(false);setPaused(false);}
  useEffect(()=>()=>{token.current++;clearTimeout(startup.current);window.speechSynthesis?.cancel();},[courseId]);
+ // Keep the audio position tied to the course, not to the component instance.
+ useEffect(()=>{setCurrent(0);setStatus('未播放');setPlaying(false);setPaused(false);},[courseId]);
  if(!unit)return null;
+ const safeIndex=Math.min(Math.max(current,0),Math.max(0,unit.paragraphs.length-1));
  function play(index:number){
-  stop();setCurrent(index);
+  stop();
+  if(!unit.paragraphs[index]){setStatus('本课没有可朗读的段落。');return;}
+  setCurrent(index);
   if(!window.speechSynthesis||!window.SpeechSynthesisUtterance){setStatus('此浏览器不支持设备朗读，请使用原文与中文对照阅读。');return;}
   const run=token.current;
   const u=new SpeechSynthesisUtterance(unit.paragraphs[index].target);
@@ -27,12 +32,12 @@ export default function ReceptionStudy({courseId,rate}:{courseId:string;rate:num
   <h3>{unit.title}</h3><p>{unit.genre}。设备合成语音（TTS），非自然人录音。</p>
   <div className="reception-controls">
    <label>朗读速度 <select value={speed} onChange={e=>{stop();setSpeed(Number(e.target.value));setStatus('速度已更新，请播放所选段落。');}}>{[...new Set([.65,.85,1,1.15,speed])].sort((a,b)=>a-b).map(x=><option key={x} value={x}>{x}×</option>)}</select></label>
-   <button type="button" onClick={()=>play(current)}>播放 / 回听本段</button>
+   <button type="button" onClick={()=>play(safeIndex)} disabled={!unit.paragraphs.length}>播放 / 回听本段</button>
    <button type="button" disabled={!playing} onClick={()=>{if(paused)window.speechSynthesis.resume();else window.speechSynthesis.pause();setPaused(!paused);setStatus(paused?'继续朗读':'已请求暂停；设备支持程度可能不同。');}}>{paused?'继续':'暂停'}</button>
    <button type="button" disabled={!playing} onClick={()=>{stop();setStatus('已停止');}}>停止</button>
-   <button type="button" disabled={current===unit.paragraphs.length-1} onClick={()=>play(current+1)}>下一段</button>
+   <button type="button" disabled={safeIndex>=unit.paragraphs.length-1} onClick={()=>play(safeIndex+1)}>下一段</button>
   </div><p role="status">{status}</p>
-  {unit.paragraphs.map((p,i)=><article className="reception-paragraph" key={p.id} aria-current={current===i?'true':undefined}>
+  {unit.paragraphs.map((p,i)=><article className="reception-paragraph" key={p.id} aria-current={safeIndex===i?'true':undefined}>
    <header><h4>{p.id}</h4><button type="button" onClick={()=>play(i)} aria-label={'朗读 '+p.id}>听这一段</button></header>
    <div className="reception-parallel"><p lang={unit.language}>{p.target}</p><p lang="zh-Hans">{p.zh}</p></div>
   </article>)}
