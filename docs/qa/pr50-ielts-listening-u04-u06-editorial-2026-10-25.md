@@ -11,7 +11,7 @@
 
 **教材范围与证据界限**
 
-- 英文正文和题目均未改写；修改集中于四处中文语义单元（U04 一处，U05 三处，U06 一处语法／词汇注释，其中 U05 的同句同时出现在示范中文）。变更的是三节课的局部解释，**不是三节课完整审核通过**。
+- 英文正文和题目均未改写；修改集中于五处中文语义单元（U04 一处，U05 三处，U06 一处语法／词汇注释，其中 U05 的同句同时出现在示范中文）。变更的是三节课的局部解释，**不是三节课完整审核通过**。
 - `docs/qa/curriculum-gap-matrix.json` 中 U04 P1、U05 P3/P4 的 `chineseSha256` 已随实际译文更新；课程 `semanticQAApproved`、`audioVerified` 和 `publishable` 仍为 **0**，并未提高门禁。
 - `tests/sourceReception.test.ts` 添加英语源限定、`by Friday` 中文期限、样品待测值的回归断言。该测试已在现有 `vitest.v44.config.ts` 的 include 列表中。
 - 尚未逐句审完 Listening U01–U08 的全部 P1–P4；未覆盖 Reading、Task 1/2 和 327 专题的完整教师审校。此处没有经过真人音轨试听，不能声明音频验收。
