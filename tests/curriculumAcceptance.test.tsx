@@ -278,7 +278,7 @@ it('keeps IELTS Listening U04–U06 evidence and bilingual listening distinct fr
   expect(u.paragraphs.every(p=>p.target.trim().split(/\s+/u).length>=80&&p.zh.length>=120),id).toBe(true);
   expect(u.paragraphs.map(p=>p.target).join(' ').trim().split(/\s+/u).length,id).toBeGreaterThan(350);
   expect(u.questions).toHaveLength(4);
-  expect(u.questions.every(q=>(q.prompt.includes('ONE WORD')?q.answer==='container':q.answer.length>15)&&q.why.length>35&&q.evidence.length>0&&q.evidence.every(e=>['P1','P2','P3','P4'].includes(e))),id).toBe(true);
+  expect(u.questions.every(q=>(q.prompt.includes('ONE WORD')?q.answer.split(' / ')[0]==='container'&&q.answer.split(' / ').length===2:q.answer.length>15)&&q.why.length>35&&q.evidence.length>0&&q.evidence.every(e=>['P1','P2','P3','P4'].includes(e))),id).toBe(true);
   expect(u.languageNotes.length,id).toBeGreaterThanOrEqual(4);
   expect(u.model.split(/\s+/u).length,id).toBeGreaterThanOrEqual(90);
   expect(u.modelZh.length,id).toBeGreaterThan(150);
@@ -292,7 +292,8 @@ it('keeps IELTS Listening U04–U06 evidence and bilingual listening distinct fr
  expect(booking.questions[1].answer).toContain('14 May');
  expect(booking.questions[2].answer).toContain('£30');
  const lab=RECEPTION_LESSONS['en-ielts-listening-u06'];
- expect(lab.questions[0].answer).toBe('container');
+ expect(lab.questions[0].answer.split(' / ')[0]).toBe('container');
+ expect(lab.questions[0].answer.split(' / ')[1]).toContain('容器');
  expect(lab.questions[1].answer).toContain('collection date');
  expect(lab.questions[3].answer).toContain('method');
 });
