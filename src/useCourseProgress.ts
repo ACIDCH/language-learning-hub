@@ -29,12 +29,13 @@ export function useCourseProgress(course:Course,session:Session|null){
  const key=course.kind==='main'&&session?'llh-cloud-draft-v1:'+session.user.id+':'+course.id:'llh-v44-draft:'+ (session?.user.id||'guest')+':'+course.id;
  const [state,setState]=useState<LearningState>({}),[ready,setReady]=useState(false),[busy,setBusy]=useState(false),[status,setStatus]=useState('正在读取学习记录…');
  const [retryVersion,setRetryVersion]=useState(0);
+ const [conflict,setConflict]=useState<{local:LearningState;remote:LearningState}|null>(null);
  const stateRef=useRef(state),alive=useRef(true),revision=useRef(0);
  const generation=useRef(0),saving=useRef(false);
  const readLocal=()=>{try{return JSON.parse(localStorage.getItem(key)||'null') as {state:LearningState;editedAt:string}|null;}catch{return null;}};
  useEffect(()=>{
   let current=true;alive.current=true;generation.current++;saving.current=false;
-  setReady(false);setBusy(false);setStatus('正在读取学习记录…');revision.current=0;
+  setReady(false);setBusy(false);setConflict(null);setStatus('正在读取学习记录…');revision.current=0;
   stateRef.current={};setState({});
   const apply=(s:LearningState)=>{stateRef.current=s;setState(s);setReady(true);};
   const local=readLocal();
@@ -52,11 +53,31 @@ export function useCourseProgress(course:Course,session:Session|null){
     }
     if(!current)return;
     const newer=local&&Date.parse(local.editedAt)>Date.parse(updated||'1970-01-01');
+    if(local?.state&&updated&&!newer){
+     // A newer cloud version must never silently discard a still-unsynced device draft.
+     stateRef.current=local.state;setState(local.state);setReady(false);
+     setConflict({local:local.state,remote});
+     setStatus('云端记录比本机未同步草稿更新；请选择使用云端记录或保留本机草稿，未选择前不会覆盖保存。');
+     return;
+    }
     apply(newer?mergeLearningState(remote,local.state):remote);setStatus(newer?'已恢复本机未同步修改；点击保存同步。':'云端记录已读取，原有进度键保持不变。');
    }catch(e){if(current){setStatus('云端读取失败，已禁止覆盖保存：'+progressError(e));if(local)setState(local.state);}}
   })();
   return ()=>{current=false;alive.current=false;};
  },[course.id,session?.user.id,retryVersion]);
+ function resolveConflict(choice:'cloud'|'local'){
+  if(!conflict||ready)return;
+  const next=choice==='local'?mergeLearningState(conflict.remote,conflict.local):conflict.remote;
+  stateRef.current=next;setState(next);setConflict(null);setReady(true);
+  if(choice==='cloud'){
+   try{localStorage.removeItem(key);}catch{}
+   setStatus('已选择云端进度；旧本机草稿不再参与保存。');
+  }else{
+   revision.current++;
+   try{localStorage.setItem(key,JSON.stringify({state:next,editedAt:new Date().toISOString()}));}catch{}
+   setStatus('已保留本机草稿并合并云端其他字段；请核对后点击保存同步。');
+  }
+ }
  function change(patch:Partial<LearningState>){
   if(!ready)return;
   const next=mergeLearningState(stateRef.current,patch);stateRef.current=next;setState(next);revision.current++;
@@ -77,5 +98,5 @@ export function useCourseProgress(course:Course,session:Session|null){
   }catch(e){if(alive.current&&epoch===generation.current)setStatus('保存失败，本机草稿保留：'+progressError(e));}
   finally{if(epoch===generation.current){saving.current=false;if(alive.current)setBusy(false);}}
  }
- return {state,ready,busy,status,change,save,retry:()=>setRetryVersion(n=>n+1)};
+ return {state,ready,busy,status,change,save,conflict:!!conflict,resolveConflict,retry:()=>setRetryVersion(n=>n+1)};
 }
