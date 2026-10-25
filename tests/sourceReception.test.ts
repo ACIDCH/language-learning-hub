@@ -75,3 +75,23 @@ it('IELTS Task 1 keeps category shares distinct from loan counts and drying dist
  expect(process.paragraphs[2].zh).toContain('压出水分并干燥');
  expect(process.paragraphs[2].zh).toContain('裁切再利用');
 });
+
+
+it('provides bilingual IELTS Reading U05–U08 questions and answers without losing evidence or English reading skills',()=>{
+ for(const id of ['en-ielts-reading-u05','en-ielts-reading-u06','en-ielts-reading-u07','en-ielts-reading-u08']){
+  const lesson=RECEPTION_LESSONS[id];
+  expect(lesson.questions,id).toHaveLength(4);
+  for(const [i,q] of lesson.questions.entries()){
+   const promptParts=q.prompt.split(' / '),answerParts=q.answer.split(' / ');
+   expect(promptParts.length,id+' question '+i).toBe(2);
+   expect(answerParts.length,id+' answer '+i).toBe(2);
+   expect(/[\p{Script=Han}]/u.test(promptParts[1]),id+' Chinese question '+i).toBe(true);
+   expect(/[\p{Script=Han}]/u.test(answerParts[1]),id+' Chinese answer '+i).toBe(true);
+   expect(q.evidence.length,id+' evidence '+i).toBeGreaterThan(0);
+   expect(q.evidence.every(p=>lesson.paragraphs.some(x=>x.id===p)),id+' linked evidence '+i).toBe(true);
+   expect(q.why.length,id+' evidence explanation '+i).toBeGreaterThan(30);
+  }
+ }
+ expect(RECEPTION_LESSONS['en-ielts-reading-u06'].questions[1].answer).toContain('not proof of a sole cause');
+ expect(RECEPTION_LESSONS['en-ielts-reading-u08'].questions[3].answer).toContain('aggregate gain');
+});
