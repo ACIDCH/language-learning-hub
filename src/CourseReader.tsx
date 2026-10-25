@@ -28,7 +28,14 @@ export function selectedOriginal(scope:HTMLElement,selection:Selection|null):Tex
  if(!text||text.length>2000)return null;
  return {text,context:range.startContainer.parentElement?.closest('.lesson-paragraphs,.curriculum-example,.curriculum-reading,.bilingual-line,.reception-paragraph,.course-specialty-pair,.ipa-text')?.textContent?.slice(0,8500)||text};
 }
-export default function CourseReader({course,session,preferences,tab,navigate,onFontChange}:{course:Course;session:Session|null;preferences:Preferences;tab:string;navigate:(path:string)=>void;onFontChange?:(next:number)=>void}){
+type ReaderProps={course:Course;session:Session|null;preferences:Preferences;tab:string;navigate:(path:string)=>void;onFontChange?:(next:number)=>void};
+/** Isolate transient manuscript/selection/audio state even when a parent reuses the
+ * same React component instance for another course or signed-in account.
+ */
+export default function CourseReader(props:ReaderProps){
+ return <CourseReaderView key={props.course.id+':'+(props.session?.user.id||'guest')} {...props}/>;
+}
+function CourseReaderView({course,session,preferences,tab,navigate,onFontChange}:ReaderProps){
  const [content,setContent]=useState<LessonContent|null>(null),[error,setError]=useState(''),[sourceStatus,setSourceStatus]=useState(''),[privateBody,setPrivateBody]=useState('');
  const [selection,setSelection]=useState<TextSelection|null>(null),[showTools,setShowTools]=useState(false),[toolStatus,setToolStatus]=useState('');
  const scope=useRef<HTMLDivElement>(null);
