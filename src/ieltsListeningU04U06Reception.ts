@@ -12,10 +12,10 @@ export const IELTS_LISTENING_U04_U06_RECEPTION:Record<string,ReceptionLesson>={
  {id:'P4',target:'Before you finish the map and process questions, check the type of information each answer requires. A question about the building beyond the greenhouse needs the name of a place, while a question about where visitors leave specimens needs the reception desk. A process question may ask what staff do before a specimen is moved, in which case the answer is labelling. Nothing in this description tells us that visitors are allowed to enter the controlled room. We also cannot work out exact distances from the spoken instructions. Good note-taking keeps directions, places, people and actions separate.',zh:'完成地图题和流程题之前，请核对每道题所需的信息类型。若题目问温室之后是哪栋建筑，需要填地点名称；若题目问访客在哪里交付标本，答案则是接待台。流程题可能问标本转移前工作人员做什么，此时答案是贴标签。讲解没有说访客可以进入受控室，也无法根据口头说明计算准确距离。高质量的笔记应当把方向、地点、行动主体和动作分开记录。'}
  ],
  questions:[
- {prompt:'Starting at the southern gate, which side is the office on, and what is opposite it?',answer:'The office is immediately on the left; a small pond is opposite it.',evidence:['P1'],why:'P1 同时给出 on your left 和 opposite a pond。左右参照必须以从南门进入后的朝向为准。'},
- {prompt:'What comes after the greenhouse, and how is it placed relative to the path?',answer:'The seed store; it is just beyond the greenhouse on the same side of the path.',evidence:['P2'],why:'P2 明确说明先后次序和 same side；不是温室对面，也没有距离数值。'},
- {prompt:'Where do visitors leave a collected specimen?',answer:'At the reception desk, not in the controlled storage room.',evidence:['P3'],why:'P3 明确要求访客把标本交到接待台；受控储存室是工作人员贴标签后的转移目的地，不能混为访客的交付点。'},
- {prompt:'What happens immediately before staff move a specimen to the controlled room?',answer:'Staff attach a label to the specimen.',evidence:['P3','P4'],why:'P3 和 P4 均写明工作人员先核对信息并贴标签，之后才转移标本；这一处理流程不是访客在花园里的行走路线。'}
+ {prompt:'Starting at the southern gate, which side is the office on, and what is opposite it? / 从南门进入时，办公室在哪一侧？其对面是什么？',answer:'The office is immediately on the left; a small pond is opposite it. / 办公室紧靠左侧；对面是一个小池塘。',evidence:['P1'],why:'P1 同时给出 on your left 和 opposite a pond。左右参照必须以从南门进入后的朝向为准。'},
+ {prompt:'What comes after the greenhouse, and how is it placed relative to the path? / 温室之后是哪栋建筑？它与小路的相对位置如何？',answer:'The seed store; it is just beyond the greenhouse on the same side of the path. / 种子库；位于温室再往前、与温室在道路同一侧。',evidence:['P2'],why:'P2 明确说明先后次序和 same side；不是温室对面，也没有距离数值。'},
+ {prompt:'Where do visitors leave a collected specimen? / 访客应该在哪里交付采集的标本？',answer:'At the reception desk, not in the controlled storage room. / 在接待台，而非受控储存室。',evidence:['P3'],why:'P3 明确要求访客把标本交到接待台；受控储存室是工作人员贴标签后的转移目的地，不能混为访客的交付点。'},
+ {prompt:'What happens immediately before staff move a specimen to the controlled room? / 把标本移至受控室前，工作人员紧接着做什么？',answer:'Staff attach a label to the specimen. / 给标本贴上标签。',evidence:['P3','P4'],why:'P3 和 P4 均写明工作人员先核对信息并贴标签，之后才转移标本；这一处理流程不是访客在花园里的行走路线。'}
  ],
  languageNotes:[
  {target:'through the southern gate / follow the path north',zh:'先确定入口，再按向北的运动方向解释左右，不能以屏幕朝向替代说话人参照。'},
@@ -37,10 +37,10 @@ export const IELTS_LISTENING_U04_U06_RECEPTION:Record<string,ReceptionLesson>={
  {id:'P4',target:'Let me repeat the final instructions to make sure that nothing has been lost during the correction. The booking is for room sixty, on the fourteenth of May, during the afternoon. Room sixteen was the original choice and should be removed from the invitation. A thirty-pound deposit is due by Friday, while the remaining fee cannot be calculated until the equipment list is complete. Only the room number needs changing on the invitation; the date stays as it is. If a listening question asks for the final room, the answer is sixty. If it asks for the date, the answer is the fourteenth, and if it asks for the total price, no final figure has been supplied.',zh:'我再重复一下最终安排，确保信息在修正过程中没有遗漏。预订的是五月十四日下午的六十号房。十六号房只是最初的选择，应从邀请函中删除。三十英镑订金最迟须在周五支付；设备清单完成之前不能计算余款。邀请函只需要改动房号，日期保持不变。听力题若问最终房间，答案是六十；若问日期，答案是十四日；若问总价格，对话尚未提供最终数字。'}
  ],
  questions:[
- {prompt:'What room is now requested, and what was originally requested?',answer:'Room 60 is final; room 16 was the original request.',evidence:['P1','P4'],why:'P1 使用 originally 与 actually 清楚修正房号，P4 再次最终确认。'},
- {prompt:'On what date will the training take place?',answer:'14 May (the fourteenth of May).',evidence:['P2','P4'],why:'P2 明确 remains 14 May, not 16 May；房号改动不影响日期。'},
- {prompt:'What payment is due by Friday, and is it the total charge?',answer:'A £30 deposit is due by Friday; it is not the total charge.',evidence:['P3'],why:'P3 明确把三十英镑列为周五前支付的订金，并说明设备清单确定后才计算余款；总费用尚不能从原文推出。'},
- {prompt:'What has to be changed on the invitation?',answer:'Only the room number, from 16 to 60; the date remains unchanged.',evidence:['P2','P4'],why:'P2、P4 都明确是更新房号而不改日期；不能把“修正”理解为所有字段更新。'}
+ {prompt:'What room is now requested, and what was originally requested? / 现在哪个房间是最终申请？最初申请哪个房间？',answer:'Room 60 is final; room 16 was the original request. / 最终是 60 号房；最初申请的是 16 号房。',evidence:['P1','P4'],why:'P1 使用 originally 与 actually 清楚修正房号，P4 再次最终确认。'},
+ {prompt:'On what date will the training take place? / 培训安排在哪一天？',answer:'14 May (the fourteenth of May). / 5 月 14 日。',evidence:['P2','P4'],why:'P2 明确 remains 14 May, not 16 May；房号改动不影响日期。'},
+ {prompt:'What payment is due by Friday, and is it the total charge? / 最迟周五须支付哪项费用？它是总费用吗？',answer:'A £30 deposit is due by Friday; it is not the total charge. / 最迟周五支付 30 英镑订金；这不是总费用。',evidence:['P3'],why:'P3 明确把三十英镑列为周五前支付的订金，并说明设备清单确定后才计算余款；总费用尚不能从原文推出。'},
+ {prompt:'What has to be changed on the invitation? / 邀请函必须修改什么？',answer:'Only the room number, from 16 to 60; the date remains unchanged. / 只需将房号从 16 改为 60，日期保持不变。',evidence:['P2','P4'],why:'P2、P4 都明确是更新房号而不改日期；不能把“修正”理解为所有字段更新。'}
  ],
  languageNotes:[
  {target:'originally requested / actually, we now need',zh:'分别是旧方案与纠正后的新方案；只更新被说明要更改的字段。'},
@@ -62,10 +62,10 @@ export const IELTS_LISTENING_U04_U06_RECEPTION:Record<string,ReceptionLesson>={
  {id:'P4',target:'Finally, students must complete the record sheet. The sheet has a column for the measurement method and another for the result. A value on its own can be difficult to compare with findings from another study, because the methods used may differ. The report should therefore state the method as well as the result. If the result has not yet been measured, students should not fabricate a value just to fill the second column. For the listening task, remember the entire sequence: a clean container, a label with location and collection date, consistent storage conditions, and two clearly identified columns in the final record.',zh:'最后，学生要填写记录表。表格一栏记录测量方法，另一栏记录结果。单独一个数值可能难以与其他研究比较，因为不同研究采用的方法可能不同。因此，报告应同时说明方法与结果。如果还没有实际测出数值，不能只为了填满第二栏就捏造结果。完成听力任务时，请记住完整流程：干净的容器、记录地点和采集日期的标签、一致的储存条件，以及最终记录表中清楚标识的两栏。'}
  ],
  questions:[
- {prompt:'Complete with ONE WORD: Place each sample in a clean ___.',answer:'container',evidence:['P1'],why:'P1 直接提供 clean container；题干已有 a clean，只需填 container 一个词。'},
- {prompt:'What TWO details must appear on the label?',answer:'The collection location and collection date.',evidence:['P2'],why:'P2 明确要求记录标本原始采集地点与采集日期，用于日后追溯；不能替换为实验室名称或撰写报告的日期。'},
- {prompt:'Why are samples kept under consistent conditions?',answer:'To reduce variation caused by different storage temperatures.',evidence:['P3'],why:'P3 指出一致的保存条件能够减少因存储温度差异产生的变异，却无法消除样品之间原有的水分差别；不意味着测量数值必定一致。'},
- {prompt:'What TWO entries must the record sheet include?',answer:'The measurement method and the result.',evidence:['P4'],why:'P4 明确列出测量方法和结果两栏，两项都属于完整记录；原稿没有提供任何实际测量值，不能为了填写结果栏而编造数字。'}
+ {prompt:'Complete with ONE WORD: Place each sample in a clean ___. / 只填一个英文单词：Place each sample in a clean ___。',answer:'container / container，意为容器；实际填空仅写这个英文单词。',evidence:['P1'],why:'P1 直接提供 clean container；题干已有 a clean，只需填 container 一个词。'},
+ {prompt:'What TWO details must appear on the label? / 标签必须记录哪两项信息？',answer:'The collection location and collection date. / 采集地点与采集日期。',evidence:['P2'],why:'P2 明确要求记录标本原始采集地点与采集日期，用于日后追溯；不能替换为实验室名称或撰写报告的日期。'},
+ {prompt:'Why are samples kept under consistent conditions? / 为什么要在一致条件下保存样品？',answer:'To reduce variation caused by different storage temperatures. / 减少不同储存温度造成的变异。',evidence:['P3'],why:'P3 指出一致的保存条件能够减少因存储温度差异产生的变异，却无法消除样品之间原有的水分差别；不意味着测量数值必定一致。'},
+ {prompt:'What TWO entries must the record sheet include? / 记录表必须包含哪两项？',answer:'The measurement method and the result. / 测量方法与结果；结果尚未测得时应标记待测。',evidence:['P4'],why:'P4 明确列出测量方法和结果两栏，两项都属于完整记录；原稿没有提供任何实际测量值，不能为了填写结果栏而编造数字。'}
  ],
  languageNotes:[
  {target:'a clean container',zh:'题面若已有 a clean，单词填空只能补 container；冠词不重复。'},
