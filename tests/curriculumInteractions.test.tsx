@@ -141,3 +141,26 @@ it('flags unsupported numerical claims in the submitted writing without pretendi
  expect(numericEvidenceChecks('en-process-report-grammar','The pulp is heated to 90°C for 20 minutes.')).toHaveLength(2);
  expect(numericEvidenceChecks('en-map-change-lexicon','The library doubled in size in 2010.')[0]).toContain('2010');
 });
+
+
+it('resets reading position and cancels stale speech when switching from six paragraphs to four',()=>{
+ const voices:any[]=[];
+ const synth={speak:vi.fn((u:any)=>voices.push(u)),cancel:vi.fn(),pause:vi.fn(),resume:vi.fn()};
+ vi.stubGlobal('speechSynthesis',synth);
+ vi.stubGlobal('SpeechSynthesisUtterance',class {constructor(public text:string){}});
+ const page=render(<ReceptionStudy courseId="en-ielts-reading-u02" rate={.85}/>);
+ for(let i=0;i<5;i++)fireEvent.click(screen.getByRole('button',{name:'下一段'}));
+ expect(voices[4].text).toBe(RECEPTION_LESSONS['en-ielts-reading-u02'].paragraphs[5].target);
+ expect(screen.getByRole('button',{name:'下一段'}).hasAttribute('disabled')).toBe(true);
+ page.rerender(<ReceptionStudy courseId="en-ielts-listening-u01" rate={.85}/>);
+ expect(screen.getByRole('status').textContent).toBe('未播放');
+ expect(page.container.querySelectorAll('article[aria-current="true"]')).toHaveLength(1);
+ expect(page.container.querySelector('article[aria-current="true"] h4')?.textContent).toBe('P1');
+ fireEvent.click(screen.getByRole('button',{name:'播放 / 回听本段'}));
+ expect(voices[5].text).toBe(RECEPTION_LESSONS['en-ielts-listening-u01'].paragraphs[0].target);
+ act(()=>{voices[4].onend();});
+ expect(screen.getByRole('status').textContent).not.toContain('朗读结束');
+ fireEvent.click(screen.getByRole('button',{name:'下一段'}));
+ expect(voices[6].text).toBe(RECEPTION_LESSONS['en-ielts-listening-u01'].paragraphs[1].target);
+ expect(synth.cancel.mock.calls.length).toBeGreaterThanOrEqual(7);
+});
