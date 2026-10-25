@@ -29,6 +29,8 @@ it('never treats a structurally complete course catalog as an approved productio
  expect(readiness.quality.signedCourses).toBe(0);
  expect(readiness.quality.signedSpecialties).toBe(0);
  expect(readiness.quality.signedAudio).toBe(0);
+ expect(readiness.quality.audioMode).toBe('device_tts');
+ expect(readiness.quality.ttsAccepted).toBe(false);
  expect(readiness.blockers).toHaveLength(5);
 });
 it('requires matching original and Chinese paragraph hashes for all 156 human source reviews',()=>{
@@ -124,8 +126,8 @@ it('generates a concrete, source-linked review queue without pretending to appro
  const out=spawnSync(process.execPath,['scripts/review-queue.mjs','--json'],{encoding:'utf8'});
  expect(out.status).toBe(0);
  const queue=JSON.parse(out.stdout);
- expect(queue.counts).toMatchObject({course_semantics:156,specialty_semantics:327,audio_alignment:156,deviceAcceptance:true,browserAcceptance:true});
- expect(queue.queue).toHaveLength(639);
+ expect(queue.counts).toMatchObject({course_semantics:156,specialty_semantics:327,audio_alignment:0,audioMode:'device_tts',ttsAcceptance:true,deviceAcceptance:true,browserAcceptance:true});
+ expect(queue.queue).toHaveLength(483);
  expect(queue.queue.every((x:{id:string;courseId:string;checks:string[]})=>x.id&&x.courseId&&x.checks.length>=3)).toBe(true);
  const fr=queue.queue.find((x:{id:string;kind:string})=>x.id==='fr-a1-u06'&&x.kind==='course_semantics');
  expect(fr.paragraphs).toBeGreaterThanOrEqual(4);
