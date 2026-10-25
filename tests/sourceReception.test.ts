@@ -155,3 +155,36 @@ it('preserves IELTS heading choices and T/F/NG grading while showing Chinese equ
  expect(tfng.questions.map(q=>q.answer.split(' / ')[0])).toEqual(['FALSE','TRUE','NOT GIVEN','NOT GIVEN']);
  expect(tfng.questions[2].answer.split(' / ')[1]).toContain('未提及');
 });
+
+
+it('keeps Listening U02–U03 source claims bounded while giving eight complete bilingual evidence answers',()=>{
+ for(const id of ['en-ielts-listening-u02','en-ielts-listening-u03']){
+  const lesson=RECEPTION_LESSONS[id];
+  expect(lesson.questions,id).toHaveLength(4);
+  for(const [i,q] of lesson.questions.entries()){
+   const promptSeparator=q.prompt.lastIndexOf(' / ');
+   const answerSeparator=q.answer.lastIndexOf(' / ');
+   expect(promptSeparator,id+' prompt '+i).toBeGreaterThan(0);
+   expect(answerSeparator,id+' answer '+i).toBeGreaterThan(0);
+   const originalQuestion=q.prompt.slice(0,promptSeparator);
+   const chineseQuestion=q.prompt.slice(promptSeparator+3);
+   const originalAnswer=q.answer.slice(0,answerSeparator);
+   const chineseAnswer=q.answer.slice(answerSeparator+3);
+   expect(originalQuestion.length,id+' original question '+i).toBeGreaterThan(25);
+   expect(originalAnswer.length,id+' original answer '+i).toBeGreaterThan(4);
+   expect(/[\p{Script=Han}]/u.test(chineseQuestion),id+' Chinese prompt '+i).toBe(true);
+   expect(/[\p{Script=Han}]/u.test(chineseAnswer),id+' Chinese answer '+i).toBe(true);
+   expect(q.evidence.length,id+' evidence count '+i).toBeGreaterThan(0);
+   expect(q.evidence.every(e=>lesson.paragraphs.some(p=>p.id===e)),id+' linked evidence '+i).toBe(true);
+  }
+ }
+ const pilot=RECEPTION_LESSONS['en-ielts-listening-u02'];
+ expect(pilot.questions[0].answer).toContain('rather than advocate a permanent service');
+ expect(pilot.questions[2].answer.split(' / ')[0]).toBe('waiting times; alternative journeys; cancelled trips');
+ expect(pilot.questions[3].answer.split(' / ')[0]).toBe('False');
+ const workshop=RECEPTION_LESSONS['en-ielts-listening-u03'];
+ expect(workshop.questions[0].answer.split(' / ')[0]).toBe('A slight fall (P1).');
+ expect(workshop.questions[1].answer).toContain('only several individuals');
+ expect(workshop.questions[2].answer).toContain('approval is pending');
+ expect(workshop.questions[3].answer).toContain('no online attendance has yet been observed');
+});
