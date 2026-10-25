@@ -34,12 +34,10 @@ export function useCourseProgress(course:Course,session:Session|null){
  const [conflict,setConflict]=useState<{local:LearningState;remote:LearningState}|null>(null);
  const stateRef=useRef(state),alive=useRef(true),revision=useRef(0);
  const generation=useRef(0),saving=useRef(false);
- const remoteVersion=useRef<string|null>(null),saveConflict=useRef(false);
- const progressIdentity=useRef(key);
+ const remoteVersion=useRef<string|null>(null);
  const readLocal=()=>{try{return JSON.parse(localStorage.getItem(key)||'null') as {state:LearningState;editedAt:string}|null;}catch{return null;}};
  useEffect(()=>{
   let current=true;alive.current=true;generation.current++;saving.current=false;
-  if(progressIdentity.current!==key){progressIdentity.current=key;saveConflict.current=false;}
   setReady(false);setBusy(false);setConflict(null);setStatus('正在读取学习记录…');revision.current=0;
   stateRef.current={};setState({});remoteVersion.current=null;
   const apply=(s:LearningState)=>{stateRef.current=s;setState(s);setReady(true);};
@@ -73,7 +71,6 @@ export function useCourseProgress(course:Course,session:Session|null){
  },[course.id,session?.user.id,retryVersion]);
  function resolveConflict(choice:'cloud'|'local'){
   if(!conflict||ready)return;
-  saveConflict.current=false;
   const next=choice==='local'?mergeLearningState(conflict.remote,conflict.local):conflict.remote;
   stateRef.current=next;setState(next);setConflict(null);setReady(true);
   if(choice==='cloud'){
@@ -124,7 +121,7 @@ export function useCourseProgress(course:Course,session:Session|null){
    if(alive.current&&epoch===generation.current){
     const detail=progressError(e);
     if(detail.includes('progress_conflict')){
-     saveConflict.current=true;setReady(false);
+     setReady(false);
      setStatus('云端进度冲突：另一设备已保存更新，本机草稿仍在。请重新读取云端进度并选择版本。');
     }else if(detail.includes('progress_version_missing')){
      setReady(false);setStatus('云端已接收保存但没有返回版本号；请重新读取后再编辑，避免覆盖其他设备。');
