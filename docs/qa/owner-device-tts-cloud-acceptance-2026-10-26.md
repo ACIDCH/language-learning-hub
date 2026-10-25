@@ -24,16 +24,20 @@
 
 | Required observation | Desktop | Phone |
 | --- | --- | --- |
-| English pronunciation and correct text | NOT TESTED | NOT TESTED |
-| French pronunciation and correct text | NOT TESTED | NOT TESTED |
-| 0.65× / 1× / 1.15× speed | NOT TESTED | NOT TESTED |
-| Pause, resume, stop | NOT TESTED | NOT TESTED |
-| Next paragraph, opt-in loop, loop off | NOT TESTED | NOT TESTED |
-| Switch courses stops old audio | NOT TESTED | NOT TESTED |
+| English pronunciation and correct text | USER-REPORTED PASS (pending device metadata) | NOT TESTED |
+| French pronunciation and correct text | USER-REPORTED PASS (pending device metadata) | NOT TESTED |
+| 0.65× / 1× / 1.15× speed | USER-REPORTED PASS (pending device metadata) | NOT TESTED |
+| Pause, resume, stop | USER-REPORTED PASS (pending device metadata) | NOT TESTED |
+| Next paragraph, opt-in loop, loop off | USER-REPORTED PASS (pending device metadata) | NOT TESTED |
+| Switch courses stops old audio | USER-REPORTED PASS (pending device metadata) | NOT TESTED |
 | No matching-language voice / text fallback | NOT TESTED | NOT TESTED |
-| TTS-only disclosure, no natural recording claims | NOT TESTED | NOT TESTED |
+| TTS-only disclosure, no natural recording claims | USER-REPORTED PASS (pending device metadata) | NOT TESTED |
 
 **Voice fallback note:** absence of any missing-voice device means the manual fallback case remains NOT TESTED; automated tests alone cannot establish its real-device result.
+
+## Desktop self-report (2026-10-26 NZDT; provisional, not signed)
+
+The owner reported **7/7 PASS on real desktop** for English and **7/7 PASS** for French: correct language/text, speed changes, pause/resume, paragraph navigation, loop on/off, stop/course switch and TTS-only label. This is the **owner's observed result conveyed in chat**, not direct tool-observed playback. No defects reported. Desktop operating-system/browser version, exact tested build SHA, media recording and reviewer ID are **not yet recorded**; do not convert this note to a formal `ttsAcceptance` sign-off. Missing-language voice fallback remains NOT TESTED on physical hardware.
 
 ## Track B — signed-in, two-physical-device cloud sync and CAS
 
