@@ -68,14 +68,13 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
   activeUserRef.current=session?.user.id||'';
   const draftRevisions=useRef<Record<string,number>>({});
   const progressVersion=useRef<string|null>(null);
-  const forceProgressConflict=useRef(false);
   const [progressConflict,setProgressConflict]=useState<{local:State;remote:State}|null>(null);
   const progressKey=session?session.user.id+':'+selected:'';
   const progressReady=Boolean(selected&&progressReadyKey===progressKey);
   const currentLesson=lesson?.course_id===selected?lesson:null;
   function chooseCourse(id:string){
     selectedRef.current=id;
-    progressVersion.current=null;forceProgressConflict.current=false;setProgressConflict(null);
+    progressVersion.current=null;setProgressConflict(null);
     setSelected(id);setState({});setProgressReadyKey('');
   }
 
@@ -200,7 +199,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
   function resolveProgressConflict(choice:'cloud'|'local'){
     if(!session||!selected||!progressConflict)return;
     const next=choice==='cloud'?progressConflict.remote:mergeProgressDraft(progressConflict.remote,progressConflict.local);
-    setState(next);setProgressConflict(null);forceProgressConflict.current=false;
+    setState(next);setProgressConflict(null);
     if(choice==='cloud'){
       try{localStorage.removeItem(draftKey(session.user.id,selected));}catch{}
       setStatus('已选择云端进度；本机未同步草稿不再参与此次保存。');
@@ -249,7 +248,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
       if(selectedRef.current===courseId&&activeUserRef.current===userId){
         const detail=e instanceof Error?e.message:String(e);
         if(detail==='progress_conflict'||detail==='progress_version_required'){
-          forceProgressConflict.current=true;setProgressReadyKey('');setProgressReadError(true);
+          setProgressReadyKey('');setProgressReadError(true);
           setStatus('云端进度发生并发变更，本机草稿已保留；请重新读取并选择版本。');
         }else setStatus('保存失败，请保留本页内容：'+detail);
       }
