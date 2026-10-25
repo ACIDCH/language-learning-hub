@@ -174,7 +174,8 @@ export async function handle(request, env = {}, fetchFn = fetch) {
       }
       const body = {user_id:uid,course_id:courseId,state:json.state,updated_at:new Date().toISOString()};
       const hasVersion = Object.prototype.hasOwnProperty.call(json,'expectedUpdatedAt');
-      if (hasVersion && json.expectedUpdatedAt!==null &&
+      if(!hasVersion)return output({error:'progress_version_required'},428,cors);
+      if (json.expectedUpdatedAt!==null &&
           (typeof json.expectedUpdatedAt!=='string'||!Number.isFinite(Date.parse(json.expectedUpdatedAt)))) {
         return output({error:'invalid_progress_version'},400,cors);
       }
