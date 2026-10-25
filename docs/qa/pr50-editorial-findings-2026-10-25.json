@@ -217,8 +217,8 @@
   ],
   "bilingualQuestionCoverage": {
     "reviewType": "source_preserving_author_translation_not_independent_editorial_approval",
-    "questionsAddedChinese": 124,
-    "unitsCovered": 31,
+    "questionsAddedChinese": 132,
+    "unitsCovered": 33,
     "units": [
       {
         "group": "IELTS Reading",
@@ -280,6 +280,14 @@
           "en-ielts-writing-task1-u08"
         ],
         "questions": 32
+      },
+      {
+        "group": "French A1",
+        "ids": [
+          "fr-a1-u05",
+          "fr-a1-u09"
+        ],
+        "questions": 8
       }
     ],
     "sourceQuestionsPreserved": true,
@@ -292,7 +300,8 @@
       "Listening U01 and Reading U01/U02 previously contained bilingual source evidence questions and are not counted in this round's sixty newly translated items.",
       "IELTS Task 2 bilingual question extensions preserve original English argument claims and evidence paragraph references, but do not imply an IELTS examiner has judged model quality.",
       "IELTS Task 1 numerical bilingual answers distinguish absolute counts from shares, percentage points from percent change, and hypothetical mechanisms from established causal evidence.",
-      "The 124 additions are English-Chinese evidence exercise pairs, not human-certified translations or verification of the full 156 lessons."
+      "The 124 additions are English-Chinese evidence exercise pairs, not human-certified translations or verification of the full 156 lessons.",
+      "A1 U05 and U09 additions preserve complete French answers to time, routine and street-directions questions and add separate Chinese evidence explanations."
     ]
   },
   "specialtySampleAnalysis": {
