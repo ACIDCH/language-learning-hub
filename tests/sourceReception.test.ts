@@ -254,3 +254,30 @@ it('keeps 32 IELTS Task 1 source-based numeric and diagram answers intact when a
  const eight=RECEPTION_LESSONS['en-ielts-writing-task1-u08'];
  expect(eight.questions[0].answer).toContain('50% increase relative to 20');
 });
+
+
+it('keeps French A1 routine and directions questions grounded in the original eight French answers',()=>{
+ for(const id of ['fr-a1-u05','fr-a1-u09']){
+  const unit=RECEPTION_LESSONS[id];
+  expect(unit.questions,id).toHaveLength(4);
+  for(const [i,q] of unit.questions.entries()){
+   const p=q.prompt.lastIndexOf(' / '),a=q.answer.lastIndexOf(' / ');
+   expect(p,id+' French question '+i).toBeGreaterThan(0);
+   expect(a,id+' French answer '+i).toBeGreaterThan(0);
+   expect(q.prompt.slice(0,p).length,id+' original French prompt '+i).toBeGreaterThan(15);
+   expect(q.answer.slice(0,a).length,id+' original French answer '+i).toBeGreaterThan(10);
+   expect(/[\p{Script=Han}]/u.test(q.prompt.slice(p+3)),id+' Chinese prompt '+i).toBe(true);
+   expect(/[\p{Script=Han}]/u.test(q.answer.slice(a+3)),id+' Chinese answer '+i).toBe(true);
+   expect(q.evidence.length,id+' grounded answer '+i).toBeGreaterThan(0);
+   expect(q.evidence.every(e=>unit.paragraphs.some(p=>p.id===e)),id+' paragraph anchors '+i).toBe(true);
+  }
+ }
+ const routine=RECEPTION_LESSONS['fr-a1-u05'];
+ expect(routine.questions[0].answer.split(' / ')[0]).toBe('À neuf heures.');
+ expect(routine.questions[1].answer).toContain('préparent les tables et rangent les livres');
+ expect(routine.questions[3].answer).toContain('Le vendredi');
+ const route=RECEPTION_LESSONS['fr-a1-u09'];
+ expect(route.questions[0].answer.split(' / ')[0]).toBe('Allez tout droit.');
+ expect(route.questions[1].answer.split(' / ')[0]).toBe('Au premier feu.');
+ expect(route.questions[3].answer).toContain('environ dix minutes à pied');
+});
