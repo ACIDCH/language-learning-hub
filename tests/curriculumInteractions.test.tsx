@@ -22,8 +22,8 @@ it('merges opaque old state and answers while round-tripping foundation response
  const old={answers:{'0':1},notes:'keep',legacy:{done:true},studyResponses:{'a':'old'}};
  const next=mergeLearningState(old,{answers:{'1':2},stage:3,studyResponses:{'b':'new'}});
  expect(next).toMatchObject({answers:{'0':1,'1':2},notes:'keep',legacy:{done:true},studyResponses:{a:'old',b:'new'}});
- expect(unpackFoundationState(packFoundationState(next))).toEqual({answers:next.answers,stage:3,studyResponses:next.studyResponses});
- expect(unpackFoundationState({'0':2,__learning:null})).toEqual({answers:{'0':2},stage:0,studyResponses:{}});
+ expect(unpackFoundationState(packFoundationState(next))).toEqual({answers:next.answers,stage:3,studyResponses:next.studyResponses,practiceChecklist:{}});
+ expect(unpackFoundationState({'0':2,__learning:null})).toEqual({answers:{'0':2},stage:0,studyResponses:{},practiceChecklist:{}});
 });
 
 it('restores specialty chapter, answer and writing after component destruction',()=>{
