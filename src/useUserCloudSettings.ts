@@ -1,4 +1,4 @@
-import {useEffect,useState,type Dispatch,type SetStateAction} from 'react';
+import {useEffect,useRef,useState,type Dispatch,type SetStateAction} from 'react';
 import type {Session} from '@supabase/supabase-js';
 import {cloudClient} from './v44Connection';
 import {useAISettings,DEFAULT_MODELS,type AIConfig,type Provider} from './AISettings';
@@ -32,6 +32,8 @@ export function useUserCloudSettings(session:Session|null,preferences:Preference
  const [sync,setSync]=useState<SyncState>('guest');
  const [loadedFor,setLoadedFor]=useState<string|null>(null);
  const [errorDetail,setErrorDetail]=useState('');
+ // Serialize server writes: an older slow request must never overwrite newer preferences.
+ const pendingWrites=useRef<Promise<void>>(Promise.resolve());
  const uid=session?.user.id||null;
  useEffect(()=>{
   let active=true;
@@ -70,14 +72,23 @@ export function useUserCloudSettings(session:Session|null,preferences:Preference
   if(!uid||loadedFor!==uid||!cloudClient)return;
   const settingsClient=cloudClient;
   let active=true;
+  const payload={
+   user_id:uid,preferences:cleanPreferences(preferences),
+   ai_preferences:publicAiPreferences(config),updated_at:new Date().toISOString()
+  };
   const timer=setTimeout(()=>{
-   void settingsClient.from('user_settings').upsert({
-    user_id:uid,preferences:cleanPreferences(preferences),
-    ai_preferences:publicAiPreferences(config),updated_at:new Date().toISOString()
-   },{onConflict:'user_id'}).then(({error})=>{
+   // Earlier requests are allowed to finish, but a later snapshot is always sent last.
+   // A cancelled debounce never starts a write, even while another is in flight.
+   pendingWrites.current=pendingWrites.current.catch(()=>{}).then(async()=>{
     if(!active)return;
-    if(error){setSync('error');setErrorDetail(error.message);}
-    else{setSync('ready');setErrorDetail('');}
+    try{
+     const {error}=await settingsClient.from('user_settings').upsert(payload,{onConflict:'user_id'});
+     if(!active)return;
+     if(error){setSync('error');setErrorDetail(error.message);}
+     else{setSync('ready');setErrorDetail('');}
+    }catch(error){
+     if(active){setSync('error');setErrorDetail(error instanceof Error?error.message:'设置保存失败');}
+    }
    });
   },850);
   return()=>{active=false;clearTimeout(timer);};
