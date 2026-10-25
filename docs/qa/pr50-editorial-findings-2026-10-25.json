@@ -217,8 +217,8 @@
   ],
   "bilingualQuestionCoverage": {
     "reviewType": "source_preserving_author_translation_not_independent_editorial_approval",
-    "questionsAddedChinese": 60,
-    "unitsCovered": 15,
+    "questionsAddedChinese": 92,
+    "unitsCovered": 23,
     "units": [
       {
         "group": "IELTS Reading",
@@ -252,6 +252,20 @@
           "fr-a2-u05"
         ],
         "questions": 8
+      },
+      {
+        "group": "IELTS Writing Task 2",
+        "ids": [
+          "en-ielts-writing-task2-u01",
+          "en-ielts-writing-task2-u02",
+          "en-ielts-writing-task2-u03",
+          "en-ielts-writing-task2-u04",
+          "en-ielts-writing-task2-u05",
+          "en-ielts-writing-task2-u06",
+          "en-ielts-writing-task2-u07",
+          "en-ielts-writing-task2-u08"
+        ],
+        "questions": 32
       }
     ],
     "sourceQuestionsPreserved": true,
@@ -261,7 +275,8 @@
       "Reading U01/U02 already had Chinese questions and are not counted among the 52 newly translated questions.",
       "English IELTS T/F/NG answer tokens and one-word listening answer remain exact on the English side; the Chinese side is a labelled explanation.",
       "No course or specialty gains independent teacher QA approval from automatic or author-level translation.",
-      "Listening U01 and Reading U01/U02 previously contained bilingual source evidence questions and are not counted in this round's sixty newly translated items."
+      "Listening U01 and Reading U01/U02 previously contained bilingual source evidence questions and are not counted in this round's sixty newly translated items.",
+      "IELTS Task 2 bilingual question extensions preserve original English argument claims and evidence paragraph references, but do not imply an IELTS examiner has judged model quality."
     ]
   },
   "specialtySampleAnalysis": {
