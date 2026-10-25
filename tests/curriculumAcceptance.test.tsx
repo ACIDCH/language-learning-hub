@@ -1,3 +1,4 @@
+import {MAIN_COURSE_GOALS} from '../src/mainCourseGoals';
 import {createHash} from 'node:crypto';
 import {mainOriginalChinese} from '../src/mainOriginalChinese';
 import {FOUNDATION_CHINESE} from '../src/foundationChinese';
@@ -634,4 +635,15 @@ it('provides exact full-paragraph Chinese bindings for retained reading and list
  }
  expect(mainOriginalChinese('fr-a1-u11',drafts.find(x=>x.id==='fr-a1-u11').reading)).not.toMatch(/姐姐|妹妹/);
  expect(mainOriginalChinese('en-ielts-writing-task1-u04',drafts.find(x=>x.id==='en-ielts-writing-task1-u04').reading)).toContain('十个百分点');
+});
+
+
+it('shows concrete Chinese learning goals without changing original manuscripts',()=>{
+ const main=COURSES.filter(x=>x.kind==='main');
+ expect(Object.keys(MAIN_COURSE_GOALS).sort()).toEqual(main.map(x=>x.id).sort());
+ expect(new Set(main.map(x=>x.goal)).size).toBe(108);
+ for(const course of COURSES)expect(course.goal,course.id).toMatch(/[\u3400-\u9fff]/u);
+ expect(COURSES.find(x=>x.id==='en-ielts-writing-task1-u01')!.goal).toContain('150');
+ expect(COURSES.find(x=>x.id==='en-ielts-writing-task2-u01')!.goal).toContain('250');
+ expect(COURSES.find(x=>x.id==='fr-a1-u03')!.goal).toContain('不猜测');
 });

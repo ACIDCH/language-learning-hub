@@ -37,7 +37,7 @@ export default function StructuredLesson({content,course,stage,onChangeStage,onS
  if(!draft&&!unit)return null;
  const active=visibleStudyStage(stage);
  const position=STUDY_STAGES.indexOf(active as typeof STUDY_STAGES[number]);
- const goal=draft?.goal||unit!.goal;
+ const goal=course.goal;
  const examples=draft?.examples.map(e=>e.text)||unit!.examples;
  const vocabulary=draft?.vocabulary||unit!.vocab;
  const reading=draft?.reading||unit!.reading;

@@ -19,7 +19,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-B2",
-      "target": "Apply academic lecture structure and signposting in an original academic-English context and explain reasoning in coherent English",
+      "target": "听出学术讲座的开场、转折和总结，区分树木种植目标与养护条件。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-listening-u01.json",
@@ -176,7 +176,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-B2",
-      "target": "Apply identifying speaker stance and purpose in an original academic-English context and explain reasoning in coherent English",
+      "target": "根据限定词和语气判断说话者的立场，分清有条件接受与无条件支持。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-listening-u02.json",
@@ -306,7 +306,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-B2",
-      "target": "Apply paraphrase in speech and note-taking in an original academic-English context and explain reasoning in coherent English",
+      "target": "准确记录口头改写、变化幅度和人数上限，不把容量当成实际出席人数。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-listening-u03.json",
@@ -436,7 +436,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-B2",
-      "target": "Apply map and process descriptions in an original academic-English context and explain reasoning in coherent English",
+      "target": "按参照物和方位追踪路线，区分访客动线与标本处理流程。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-listening-u04.json",
@@ -566,7 +566,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-B2",
-      "target": "Apply detail and distractor awareness in an original academic-English context and explain reasoning in coherent English",
+      "target": "识别说话者对房间号、日期和费用的更正，排除听力干扰信息。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-listening-u05.json",
@@ -698,7 +698,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-B2",
-      "target": "Apply information completion with context in an original academic-English context and explain reasoning in coherent English",
+      "target": "结合语法与上下文完成笔记，保留样品标签和测量方法等关键信息。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-listening-u06.json",
@@ -827,7 +827,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-B2",
-      "target": "Apply multiple speakers and argument development in an original academic-English context and explain reasoning in coherent English",
+      "target": "追踪多人讨论中提议、异议和最终方案的变化，说明折中方案的理由。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-listening-u07.json",
@@ -958,7 +958,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-B2",
-      "target": "Apply synthesis from extended academic audio in an original academic-English context and explain reasoning in coherent English",
+      "target": "整合较长讲座的核心观点、支持说明和适用条件，避免扩大结论。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-listening-u08.json",
@@ -1088,7 +1088,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-B2",
-      "target": "Apply skimming research-based articles in an original academic-English context and explain reasoning in coherent English",
+      "target": "快速识别研究类文章的中心论点与段落功能，再回到原文核对支持证据。",
       "sourceHashes": [
         {
           "path": "public/learning-assets/en-ielts-reading-u01.txt",
@@ -1212,7 +1212,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-B2",
-      "target": "Apply locating detailed evidence efficiently in an original academic-English context and explain reasoning in coherent English",
+      "target": "利用定位词寻找具体证据，准确处理人数、时间、范围和未提及信息。",
       "sourceHashes": [
         {
           "path": "public/learning-assets/en-ielts-reading-u02-v1.txt",
@@ -1358,7 +1358,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-B2",
-      "target": "Apply matching headings by paragraph function in an original academic-English context and explain reasoning in coherent English",
+      "target": "根据段落的整体功能选择标题，不用局部关键词代替主旨。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-reading-u03.json",
@@ -1487,7 +1487,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-B2",
-      "target": "Apply true false not given: evidence and scope in an original academic-English context and explain reasoning in coherent English",
+      "target": "区分原文支持、原文反驳与证据不足，完成 True/False/Not Given 判断。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-reading-u04.json",
@@ -1619,7 +1619,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-B2",
-      "target": "Apply paraphrase and lexical cohesion in an original academic-English context and explain reasoning in coherent English",
+      "target": "识别词汇改写和指代链，追踪措施、范围与不包含的项目。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-reading-u05.json",
@@ -1748,7 +1748,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-B2",
-      "target": "Apply inference, hedging and author attitude in an original academic-English context and explain reasoning in coherent English",
+      "target": "根据缓和词判断推断强度，不把观察关联读成确定因果。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-reading-u06.json",
@@ -1878,7 +1878,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-B2",
-      "target": "Apply matching information across sections in an original academic-English context and explain reasoning in coherent English",
+      "target": "跨段寻找定义、局限和建议，说明答案来自哪一部分。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-reading-u07.json",
@@ -2008,7 +2008,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-B2",
-      "target": "Apply critical synthesis of two academic passages in an original academic-English context and explain reasoning in coherent English",
+      "target": "综合两篇材料的不同视角，区分平均变化、群体差异和待补证据。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-reading-u08.json",
@@ -2140,7 +2140,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2",
-      "target": "Apply selecting key features and overview in an original academic-English context and explain reasoning in coherent English",
+      "target": "从图示中选择关键特征，写出有证据支持的概述和不少于 150 词的报告。",
       "sourceHashes": [
         {
           "path": "public/learning-assets/en-ielts-writing-task1-u01.txt",
@@ -2265,7 +2265,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2",
-      "target": "Apply reporting trends accurately in an original academic-English context and explain reasoning in coherent English",
+      "target": "准确描述下降、回升和总体增幅，区分增加量与最终数值。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-writing-task1-u02.json",
@@ -2397,7 +2397,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2",
-      "target": "Apply comparisons in charts and tables in an original academic-English context and explain reasoning in coherent English",
+      "target": "比较图表中的组别和比例，明确倍数、差值与未提供的信息。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-writing-task1-u03.json",
@@ -2527,7 +2527,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2",
-      "target": "Apply proportions and multi-series graphs in an original academic-English context and explain reasoning in coherent English",
+      "target": "区分占比变化、百分点和实际金额，避免由比例推断预算总额。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-writing-task1-u04.json",
@@ -2659,7 +2659,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2",
-      "target": "Apply processes and passive constructions in an original academic-English context and explain reasoning in coherent English",
+      "target": "按真实步骤描述流程，恰当使用被动语态，不添加图示之外的工序。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-writing-task1-u05.json",
@@ -2789,7 +2789,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2",
-      "target": "Apply map and spatial change reports in an original academic-English context and explain reasoning in coherent English",
+      "target": "以方位和参照物说明地图变化，区分新增、扩建、替代和保留。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-writing-task1-u06.json",
@@ -2919,7 +2919,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2",
-      "target": "Apply cohesion without memorised templates in an original academic-English context and explain reasoning in coherent English",
+      "target": "通过类别、指代和趋势分组保持连贯，不用背诵模板替代准确比较。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-writing-task1-u07.json",
@@ -3050,7 +3050,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2",
-      "target": "Apply editing accuracy, overview and precision in an original academic-English context and explain reasoning in coherent English",
+      "target": "核对概述、数值、单位和因果表述，修改一份材料一致的报告。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-writing-task1-u08.json",
@@ -3180,7 +3180,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2-C1",
-      "target": "Apply question analysis and thesis in an original academic-English context and explain reasoning in coherent English",
+      "target": "拆解题目要求，形成明确立场，并用理由与例证完成不少于 250 词的文章。",
       "sourceHashes": [
         {
           "path": "public/learning-assets/en-ielts-writing-task2-u01.txt",
@@ -3305,7 +3305,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2-C1",
-      "target": "Apply reasons, explanation and examples in an original academic-English context and explain reasoning in coherent English",
+      "target": "展开理由的作用机制，清楚区分教学假想例子与实际研究证据。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-writing-task2-u02.json",
@@ -3435,7 +3435,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2-C1",
-      "target": "Apply argument and counterargument in an original academic-English context and explain reasoning in coherent English",
+      "target": "准确呈现反方的有力论点，再以限定、补充或反驳推进自己的主张。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-writing-task2-u03.json",
@@ -3565,7 +3565,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2-C1",
-      "target": "Apply discussion of two views in an original academic-English context and explain reasoning in coherent English",
+      "target": "比较两种观点的共同关切与分歧，给出有条件、有理由的判断。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-writing-task2-u04.json",
@@ -3695,7 +3695,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2-C1",
-      "target": "Apply advantages and disadvantages in an original academic-English context and explain reasoning in coherent English",
+      "target": "比较利弊的影响范围和严重程度，不以条目多少决定结论。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-writing-task2-u05.json",
@@ -3825,7 +3825,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2-C1",
-      "target": "Apply causes, problems and solutions in an original academic-English context and explain reasoning in coherent English",
+      "target": "将问题原因与措施机制对应，说明实施主体、条件和评估方法。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-writing-task2-u06.json",
@@ -3954,7 +3954,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2-C1",
-      "target": "Apply coherence and referencing in an original academic-English context and explain reasoning in coherent English",
+      "target": "用清晰指代连接问题与回应，使段落逐步推进而非堆砌连接词。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-writing-task2-u07.json",
@@ -4083,7 +4083,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2-C1",
-      "target": "Apply editing claims, hedging and register in an original academic-English context and explain reasoning in coherent English",
+      "target": "修改绝对化论断、含糊概念与不合语域表达，使主张强度与理由一致。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-writing-task2-u08.json",
@@ -4212,7 +4212,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-C1",
-      "target": "Apply developing nuanced opinions in an original academic-English context and explain reasoning in coherent English",
+      "target": "表达有细节的个人观点，再说明例外或适用条件。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-speaking-u01.json",
@@ -4341,7 +4341,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-C1",
-      "target": "Apply extending answers without fillers in an original academic-English context and explain reasoning in coherent English",
+      "target": "用经历、理由和变化展开回答，减少无信息的填充词。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-speaking-u02.json",
@@ -4470,7 +4470,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-C1",
-      "target": "Apply narrative for sustained speech in an original academic-English context and explain reasoning in coherent English",
+      "target": "按背景、事件和反思组织持续叙述，使听者能追踪故事。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-speaking-u03.json",
@@ -4599,7 +4599,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-C1",
-      "target": "Apply describing experiences and events in an original academic-English context and explain reasoning in coherent English",
+      "target": "具体描述经历与感受，区分程度表达和字面含义。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-speaking-u04.json",
@@ -4728,7 +4728,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-C1",
-      "target": "Apply explaining comparisons and causes in an original academic-English context and explain reasoning in coherent English",
+      "target": "选择共同维度比较经历或选择，并说明可能的原因。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-speaking-u05.json",
@@ -4857,7 +4857,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-C1",
-      "target": "Apply abstract questions and evaluation in an original academic-English context and explain reasoning in coherent English",
+      "target": "围绕抽象问题分析后果与条件，避免把可能影响说成普遍规律。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-speaking-u06.json",
@@ -4986,7 +4986,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-C1",
-      "target": "Apply connected speech and intonation in an original academic-English context and explain reasoning in coherent English",
+      "target": "理解重音、语调与连贯表达的关系，不从转写相似度推断发音质量。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-speaking-u07.json",
@@ -5115,7 +5115,7 @@
       "kind": "main",
       "language": "en",
       "level": "B1-C1",
-      "target": "Apply long-form discussion and self-correction in an original academic-English context and explain reasoning in coherent English",
+      "target": "在较长讨论中回应追问、澄清原意并自然自我纠正。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-speaking-u08.json",
@@ -5244,7 +5244,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2-C1",
-      "target": "Apply clause complexity and accuracy in an original academic-English context and explain reasoning in coherent English",
+      "target": "使用关系从句和复合句增加信息，同时保持主语、指代和范围准确。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-language-upgrade-u01.json",
@@ -5377,7 +5377,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2-C1",
-      "target": "Apply tense/aspect for evidence in an original academic-English context and explain reasoning in coherent English",
+      "target": "用时态与体连接既往研究、持续变化和当前证据。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-language-upgrade-u02.json",
@@ -5506,7 +5506,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2-C1",
-      "target": "Apply academic collocation and word families in an original academic-English context and explain reasoning in coherent English",
+      "target": "辨认常见学术搭配与词族，在具体句子中选择自然表达。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-language-upgrade-u03.json",
@@ -5635,7 +5635,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2-C1",
-      "target": "Apply paraphrase and meaning boundaries in an original academic-English context and explain reasoning in coherent English",
+      "target": "在改写时保留因果、范围、程度和语义边界。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-language-upgrade-u04.json",
@@ -5764,7 +5764,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2-C1",
-      "target": "Apply hedging, stance and inference in an original academic-English context and explain reasoning in coherent English",
+      "target": "用限定语表达证据强度，给出可行动且保留不确定性的结论。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-language-upgrade-u05.json",
@@ -5893,7 +5893,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2-C1",
-      "target": "Apply nominalisation and concision in an original academic-English context and explain reasoning in coherent English",
+      "target": "比较名词化与动词表达，选择简洁且行为主体清楚的句式。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-language-upgrade-u06.json",
@@ -6022,7 +6022,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2-C1",
-      "target": "Apply reference and cohesive progression in an original academic-English context and explain reasoning in coherent English",
+      "target": "用明确指代和已知到新信息的顺序推进语篇。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-language-upgrade-u07.json",
@@ -6151,7 +6151,7 @@
       "kind": "main",
       "language": "en",
       "level": "B2-C1",
-      "target": "Apply personalised error correction through authentic drafts in an original academic-English context and explain reasoning in coherent English",
+      "target": "根据自己的原稿定位错误，修订语法、搭配与语域，并解释修改理由。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/en-ielts-language-upgrade-u08.json",
@@ -6280,7 +6280,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A1",
-      "target": "Greet and introduce yourself",
+      "target": "用简单完整句问候、自我介绍，并按交流对象选择礼貌称呼。",
       "sourceHashes": [
         {
           "path": "public/learning-assets/fr-a1-u01.txt",
@@ -6408,7 +6408,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A1",
-      "target": "State languages, countries and nationalities",
+      "target": "介绍语言、国家和国籍，注意介词、冠词及阴阳性变化。",
       "sourceHashes": [
         {
           "path": "public/learning-assets/fr-a1-u02.txt",
@@ -6532,7 +6532,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A1",
-      "target": "Introduce family and close friends",
+      "target": "介绍家人和身边的人，正确使用所属表达，不猜测原文未说明的长幼。",
       "sourceHashes": [
         {
           "path": "public/learning-assets/fr-a1-u03.txt",
@@ -6660,7 +6660,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A1",
-      "target": "Name objects and describe the classroom",
+      "target": "说出房间物品及位置，结合冠词、数量和方位短语描述空间。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a1-u04.json",
@@ -6794,7 +6794,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A1",
-      "target": "Describe daily habits",
+      "target": "用现在时按一天的顺序介绍日常活动。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a1-u05.json",
@@ -6923,7 +6923,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A1",
-      "target": "Ask questions and request clarification",
+      "target": "询问人物、时间和地点，并在没听清时请求澄清。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a1-u06.json",
@@ -7054,7 +7054,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A1",
-      "target": "Express likes and leisure preferences",
+      "target": "表达喜欢与不喜欢，说明简单的休闲选择。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a1-u07.json",
@@ -7183,7 +7183,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A1",
-      "target": "Order and ask about food",
+      "target": "在市场和咖啡馆询价、点单，正确表达数量与部分冠词。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a1-u08.json",
@@ -7314,7 +7314,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A1",
-      "target": "Ask and give simple directions",
+      "target": "以地标和方向说明步行路线，并使用简单指令。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a1-u09.json",
@@ -7444,7 +7444,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A1",
-      "target": "Describe home and environment",
+      "target": "描述住所、共同生活及个人习惯，区分物主形式。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a1-u10.json",
@@ -7573,7 +7573,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A1",
-      "target": "Describe near future actions",
+      "target": "用近将来时介绍计划、约见时间和可能的天气变化。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a1-u11.json",
@@ -7702,7 +7702,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A1",
-      "target": "Talk briefly about a completed action",
+      "target": "用基础复合过去时叙述一次完成的外出，核对助动词与配合。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a1-u12.json",
@@ -7831,7 +7831,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A2",
-      "target": "Tell a coherent account of completed events",
+      "target": "按时间顺序叙述完成的活动，并准确选择复合过去时形式。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a2-u01.json",
@@ -7968,7 +7968,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A2",
-      "target": "Describe repeated past states",
+      "target": "用未完成过去时描写过去习惯和背景。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a2-u02.json",
@@ -8097,7 +8097,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A2",
-      "target": "Plan travel and explain directions",
+      "target": "处理行程变更，说明换乘、车票有效性及可选择的安排。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a2-u03.json",
@@ -8226,7 +8226,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A2",
-      "target": "Talk about people and communicate politely",
+      "target": "用代词减少重复，并写出清楚、礼貌的简短消息。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a2-u04.json",
@@ -8355,7 +8355,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A2",
-      "target": "Describe symptoms and give advice",
+      "target": "说明症状持续时间并预约服务，不把接待信息当作诊断。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a2-u05.json",
@@ -8484,7 +8484,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A2",
-      "target": "Compare goods and express quantities",
+      "target": "比较商品、询问数量和价格，并说明购买选择。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a2-u06.json",
@@ -8613,7 +8613,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A2",
-      "target": "Invite, accept, decline and plan",
+      "target": "提出邀请、接受或婉拒，结合真实条件安排未来活动。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a2-u07.json",
@@ -8742,7 +8742,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A2",
-      "target": "Explain preferences with reasons",
+      "target": "给出个人意见和理由，用因果连接词组织短段。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a2-u08.json",
@@ -8871,7 +8871,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A2",
-      "target": "Handle lodging, services and appointments",
+      "target": "在住宿、预约和服务场景中说明需求与必要步骤。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a2-u09.json",
@@ -9000,7 +9000,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A2",
-      "target": "Describe work and academic routines",
+      "target": "介绍学习或工作经历，区分持续到现在的状态与过去事件。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a2-u10.json",
@@ -9129,7 +9129,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A2",
-      "target": "Summarize a short news item",
+      "target": "概括简短新闻，区分来源陈述与已经证实的事实。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a2-u11.json",
@@ -9262,7 +9262,7 @@
       "kind": "main",
       "language": "fr",
       "level": "A2",
-      "target": "Describe experiences and comparisons",
+      "target": "描述文化和社交经历，用比较与关系从句补充信息。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-a2-u12.json",
@@ -9391,7 +9391,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B1",
-      "target": "Narrate events with background and consequence",
+      "target": "结合事件与背景叙述经历，清楚呈现时间先后及后果。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b1-u01.json",
@@ -9520,7 +9520,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B1",
-      "target": "Build and support opinions",
+      "target": "建立观点并给出理由，区分担忧、推测与已证实的信息。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b1-u02.json",
@@ -9649,7 +9649,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B1",
-      "target": "Discuss possible and hypothetical plans",
+      "target": "用条件句和条件式讨论可行或假想的计划。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b1-u03.json",
@@ -9778,7 +9778,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B1",
-      "target": "Give nuanced recommendations",
+      "target": "区分建议与义务，正确使用非人称结构和基础虚拟式。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b1-u04.json",
@@ -9907,7 +9907,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B1",
-      "target": "Discuss media and social issues",
+      "target": "讨论媒体和社会信息，要求可核查的来源。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b1-u05.json",
@@ -10036,7 +10036,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B1",
-      "target": "Explain work decisions",
+      "target": "说明工作决定，并用委婉表达提出请求。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b1-u06.json",
@@ -10169,7 +10169,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B1",
-      "target": "Compare past and present situations",
+      "target": "比较过去与现在，准确表达仍然、已经不再和变化范围。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b1-u07.json",
@@ -10298,7 +10298,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B1",
-      "target": "Explain cultural observations and preferences",
+      "target": "说明文化观察与个人体验，使用关系代词连接信息。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b1-u08.json",
@@ -10427,7 +10427,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B1",
-      "target": "Read and report arguments",
+      "target": "识别论点、让步和限制，并据此转述他人的论证。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b1-u09.json",
@@ -10556,7 +10556,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B1",
-      "target": "Write structured correspondence and proposals",
+      "target": "写出结构清楚的信件和建议，协商问题而非只表达不满。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b1-u10.json",
@@ -10685,7 +10685,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B2",
-      "target": "Develop an extended, balanced argument",
+      "target": "展开平衡论证，用让步和限制细化主张。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b2-u01.json",
@@ -10814,7 +10814,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B2",
-      "target": "Respond to counterarguments fluently",
+      "target": "回应反方论点，准确处理承认、反驳和适用范围。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b2-u02.json",
@@ -10943,7 +10943,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B2",
-      "target": "Summarize and evaluate news sources",
+      "target": "把新闻标题与研究方法对照，区分样本关联与因果证明。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b2-u03.json",
@@ -11072,7 +11072,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B2",
-      "target": "Discuss past alternatives and regret",
+      "target": "讨论未实现的过去条件与结果，准确运用愈过去时和条件式过去时。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b2-u04.json",
@@ -11201,7 +11201,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B2",
-      "target": "Explain complex process accurately",
+      "target": "清楚解释复杂过程，区分机制描述、可能原因与实证结论。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b2-u05.json",
@@ -11330,7 +11330,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B2",
-      "target": "Write an organized report",
+      "target": "撰写有结构的专业报告或沟通文本，说明期限和行动要求。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b2-u06.json",
@@ -11459,7 +11459,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B2",
-      "target": "Interpret perspectives and rhetorical devices",
+      "target": "分析文化与社会观点中的修辞、让步和语境含义。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b2-u07.json",
@@ -11588,7 +11588,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B2",
-      "target": "Explain evidence and recommend actions",
+      "target": "比较决策标准，根据证据提出有条件的建议。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b2-u08.json",
@@ -11717,7 +11717,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B2",
-      "target": "Negotiate and solve complex communication",
+      "target": "在复杂互动中澄清信息、转述问题并协商解决办法。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b2-u09.json",
@@ -11846,7 +11846,7 @@
       "kind": "main",
       "language": "fr",
       "level": "B2",
-      "target": "Integrate several texts into coherent speech",
+      "target": "综合多份材料准备连贯发言，保留不同来源的立场。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-b2-u10.json",
@@ -11975,7 +11975,7 @@
       "kind": "main",
       "language": "fr",
       "level": "C1",
-      "target": "Convey subtle semantic distinctions",
+      "target": "选择表达精确程度与证据强度的词语，保留必要的不确定性。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-c1-u01.json",
@@ -12104,7 +12104,7 @@
       "kind": "main",
       "language": "fr",
       "level": "C1",
-      "target": "Structure layered arguments",
+      "target": "分析事实前提、价值判断和推论，建立多层次论证。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-c1-u02.json",
@@ -12233,7 +12233,7 @@
       "kind": "main",
       "language": "fr",
       "level": "C1",
-      "target": "Integrate complex source material",
+      "target": "统一比较口径后综合复杂来源，不混淆样本和分类。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-c1-u03.json",
@@ -12362,7 +12362,7 @@
       "kind": "main",
       "language": "fr",
       "level": "C1",
-      "target": "Handle delicate nuanced conversations",
+      "target": "在敏感专业讨论中提出条件、保留意见与可执行回应。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-c1-u04.json",
@@ -12491,7 +12491,7 @@
       "kind": "main",
       "language": "fr",
       "level": "C1",
-      "target": "Interpret cultural discourse and implication",
+      "target": "解释文化论述中的隐含前提，避免把复杂现象归成单一评价。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-c1-u05.json",
@@ -12620,7 +12620,7 @@
       "kind": "main",
       "language": "fr",
       "level": "C1",
-      "target": "Explain complex ideas to varied audiences",
+      "target": "面向不同听众解释专业问题，区分观察结果与外推。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-c1-u06.json",
@@ -12749,7 +12749,7 @@
       "kind": "main",
       "language": "fr",
       "level": "C1",
-      "target": "Assess media framing and credibility",
+      "target": "分析标题、引用顺序和缺席声音如何影响新闻解读。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-c1-u07.json",
@@ -12886,7 +12886,7 @@
       "kind": "main",
       "language": "fr",
       "level": "C1",
-      "target": "Produce a coherent formal essay",
+      "target": "写出衔接严密的正式文章，修正悬空分词和含糊指代。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-c1-u08.json",
@@ -13015,7 +13015,7 @@
       "kind": "main",
       "language": "fr",
       "level": "C2",
-      "target": "Choose exact shades of meaning",
+      "target": "辨析精细语义和模态差异，在改写时保留原命题的确定程度。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-c2-u01.json",
@@ -13144,7 +13144,7 @@
       "kind": "main",
       "language": "fr",
       "level": "C2",
-      "target": "Adapt speech to complex audiences",
+      "target": "根据受众调整语域和比喻，保持概念精确而不把类比当作证据。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-c2-u02.json",
@@ -13273,7 +13273,7 @@
       "kind": "main",
       "language": "fr",
       "level": "C2",
-      "target": "Synthesize across genres",
+      "target": "跨体裁分析互文关系，区分练习构造的呼应与有文献支持的历史承继。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-c2-u03.json",
@@ -13405,7 +13405,7 @@
       "kind": "main",
       "language": "fr",
       "level": "C2",
-      "target": "Understand cultural subtext and humor",
+      "target": "解释言外之意、幽默和互动效果，区分可观察效果与不可确定的意图。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-c2-u04.json",
@@ -13534,7 +13534,7 @@
       "kind": "main",
       "language": "fr",
       "level": "C2",
-      "target": "Navigate nuanced disagreement",
+      "target": "协商隐含分歧，明确关键词对应的权利、义务和条件。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-c2-u05.json",
@@ -13663,7 +13663,7 @@
       "kind": "main",
       "language": "fr",
       "level": "C2",
-      "target": "Write a polished expert document",
+      "target": "撰写结构完整的学术文本，解释数据能支持和不能支持的判断。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-c2-u06.json",
@@ -13792,7 +13792,7 @@
       "kind": "main",
       "language": "fr",
       "level": "C2",
-      "target": "Discuss literary voice and perspective",
+      "target": "分析文学声音与意象，依据上下文比较解释而不预设唯一象征。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-c2-u07.json",
@@ -13921,7 +13921,7 @@
       "kind": "main",
       "language": "fr",
       "level": "C2",
-      "target": "Develop a self-directed integrated portfolio",
+      "target": "整合多种来源与体裁完成项目，保留关键限制及准确的来源归属。",
       "sourceHashes": [
         {
           "path": "content/lesson-drafts/fr-c2-u08.json",

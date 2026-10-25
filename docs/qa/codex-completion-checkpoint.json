@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "baseline_head": "e98c6a2892e0ce3e451bf4249cb99bb6005c18a1",
-  "current_head": "139ca597aa92e14bd984548f7b76a6c3beb4a968",
+  "current_head": "07ddfdc54b9404aa47646c865c85b97a0103ac9b",
   "completed_ids": [
     "en-ielts-listening-u01",
     "en-ielts-listening-u02",
@@ -316,6 +316,19 @@
       "cloud_probe": 3,
       "build": "passed",
       "source_preservation": "156 course payloads; 19 public assets and 4 foundation files unchanged"
+    },
+    {
+      "head": "07ddfdc54b9404aa47646c865c85b97a0103ac9b",
+      "linux_chromium": {
+        "checked": 676,
+        "issues": 0,
+        "run": "https://github.com/ACIDCH/language-learning-hub/actions/runs/40127030327"
+      },
+      "followup": "108 concrete Chinese goals; 10 distinct foundation contrast examples; no duplicate question prompts",
+      "targeted_tests": [
+        94,
+        45
+      ]
     }
   ],
   "source_provenance": {
@@ -1454,7 +1467,7 @@
     "Audio transcript, timing and license verification",
     "Reviewed foundation capacity migration not applied to live database (PR-only scope)"
   ],
-  "last_successful_group": "source_translation_and_private_audio_integration",
+  "last_successful_group": "final_browser_content_polish",
   "status": "ci_validation_pending",
   "partial_work": {
     "foundation_ids": [

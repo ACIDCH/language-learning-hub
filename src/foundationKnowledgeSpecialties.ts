@@ -30,7 +30,7 @@ export const FOUNDATION_SPECIALTIES:SpecialtyLesson[]=FOUNDATION_UNITS.flatMap(u
     ...(type==='vocabulary'&&i===0?{table:{title:'保留本课全部原始词汇',columns:['原词','原释义'],rows:u.vocab,note:'下文结合词块和句子辨析；原词表未被替换。'}}:{}),
    };
   }),
-  questions:u.questions.map((q,i)=>({question:q.prompt+'\n'+questions[i].prompt+'\n'+q.choices.map((c,j)=>'ABC'[j]+'. '+c).join('\n'),
+  questions:u.questions.map((q,i)=>({question:q.prompt+(q.prompt===questions[i].prompt?'':'\n'+questions[i].prompt)+'\n'+q.choices.map((c,j)=>'ABC'[j]+'. '+c).join('\n'),
    answer:q.choices[q.answer]+' — '+questions[i].choices[q.answer],
    why:q.explanation+' '+questions[i].choices.map((c,j)=>'ABC'[j]+'：'+c).join('；')})),
   output:u.production,

@@ -127,3 +127,11 @@ it.each(['en-fnd-01','en-fnd-24','fr-fnd-01','fr-fnd-24'])('renders %s source bl
  expect((answer as HTMLTextAreaElement).value).toBe('我的听读答案');
  expect(screen.getByText('1. '+u.questions[0].prompt)).toBeTruthy();
 });
+
+
+it('adds a distinct context or contrast rather than repeating each source example verbatim',()=>{
+ for(const topic of FOUNDATION_SPECIALTIES){
+  for(const section of topic.sections)expect(new Set(section.examples.map(x=>x.target)).size,topic.id).toBe(section.examples.length);
+  for(const q of topic.questions){const lines=q.question.split('\n');expect(lines[0],topic.id).not.toBe(lines[1]);}
+ }
+});
