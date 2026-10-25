@@ -177,7 +177,7 @@ it('allows a separately verified device-TTS release mode without claiming unmatc
 it('rechecks physical source-manuscript and public-asset SHA-256 fingerprints before any production approval',()=>{
  const report=verifyReleaseSources(matrix);
  expect(report).toMatchObject({
-  ok:true,verifiedRawSources:108,derivedFoundationUnitHashes:96,mismatches:[]
+  ok:true,verifiedRawSources:108,verifiedFoundationSourceReferences:96,verifiedFoundationSourceFiles:4,mismatches:[]
  });
  const changed=JSON.parse(JSON.stringify(matrix));
  const first=changed.courses[0].sourceHashes[0];
@@ -185,6 +185,16 @@ it('rechecks physical source-manuscript and public-asset SHA-256 fingerprints be
  const mismatched=verifyReleaseSources(changed);
  expect(mismatched.ok).toBe(false);
  expect(mismatched.mismatches[0]).toMatchObject({courseId:changed.courses[0].id,reason:'source_hash_changed'});
+ const alteredFoundation=JSON.parse(JSON.stringify(matrix));
+ const foundation=alteredFoundation.courses.find((c:{kind:string})=>c.kind==='foundation');
+ expect(foundation).toBeTruthy();
+ const actualFile=foundation.sourceHashes[0].path;
+ const alteredRaw=verifyReleaseSources(matrix,path=>{
+  const original=readFileSync(path);
+  return path===actualFile?Buffer.concat([original,Buffer.from('// modified foundation grammar\n')]):original;
+ });
+ expect(alteredRaw.ok).toBe(false);
+ expect(alteredRaw.mismatches.some(m=>m.path===actualFile&&m.reason==='source_hash_changed')).toBe(true);
 });
 
 
@@ -194,6 +204,6 @@ it('resolves source fingerprints when launch preflight is called from the Worker
  });
  expect(processResult.status).toBe(0);
  expect(JSON.parse(processResult.stdout)).toMatchObject({
-  ok:true,verifiedRawSources:108,derivedFoundationUnitHashes:96
+  ok:true,verifiedRawSources:108,verifiedFoundationSourceReferences:96,verifiedFoundationSourceFiles:4
  });
 });
