@@ -4,8 +4,8 @@
   "reviewType": "author_assisted_source_anchored_correction",
   "independentTeacherApproval": false,
   "counts": {
-    "courseIdsTouched": 6,
-    "findingsClosed": 6,
+    "courseIdsTouched": 8,
+    "findingsClosed": 8,
     "courseSemanticQAApproved": 0,
     "audioVerified": 0,
     "publishable": 0
@@ -104,6 +104,36 @@
       "after": "Paul note l’heure du rendez-vous communiquée par la secrétaire pour ne pas l’oublier. / 保罗记下秘书告诉他的预约时间，读者仍不知道具体几点",
       "verification": "tests/nextCurriculumBatch.test.tsx",
       "status": "author_corrected_independent_review_pending"
+    },
+    {
+      "id": "LLH-IELTS-R-U05-01",
+      "courseId": "en-ielts-reading-u05",
+      "severity": "low",
+      "file": "src/ieltsReadingU05U08Reception.ts",
+      "locations": [
+        "P1.zh"
+      ],
+      "sourceQuote": "An imaginary local council introduced a programme of grants",
+      "issue": "译文将未说明类型的 local council 特指为城市议会，增加原文未提供的行政管辖范围",
+      "before": "一座虚构城市的议会",
+      "after": "一个虚构地区的地方议会",
+      "verification": "tests/sourceReception.test.ts",
+      "status": "author_corrected_independent_review_pending"
+    },
+    {
+      "id": "LLH-IELTS-R-U08-01",
+      "courseId": "en-ielts-reading-u08",
+      "severity": "medium",
+      "file": "src/ieltsReadingU05U08Reception.ts",
+      "locations": [
+        "P3.zh"
+      ],
+      "sourceQuote": "the evening connection involved an additional journey",
+      "issue": "原英文只说晚间接驳涉及额外行程，旧译文‘多走一段路’无依据地限定为步行",
+      "before": "晚间转乘需要多走一段路，难以每周都这样出行",
+      "after": "晚间接驳还涉及额外一段行程，每周这样往返并不现实",
+      "verification": "tests/sourceReception.test.ts",
+      "status": "author_corrected_independent_review_pending"
     }
   ],
   "unreviewedScope": [
@@ -127,6 +157,56 @@
       "status": "regression_added_manual_playback_pending",
       "manualPlaybackChecked": false,
       "fullLessonRecordingApproved": false
+    },
+    {
+      "id": "LLH-RECEPTION-INDEX-RESET-01",
+      "scope": "six_paragraph_to_four_paragraph_course_switch",
+      "file": "src/ReceptionStudy.tsx",
+      "kind": "out_of_bounds_stale_selection",
+      "before": "Rerendering an existing reading component on a shorter course could carry a stale paragraph index into speech navigation",
+      "after": "Reset selection/status by courseId and clamp/validate paragraph navigation; invalidate stale old speech callbacks",
+      "verification": "tests/curriculumInteractions.test.tsx",
+      "status": "regression_added_CI_confirmation_required",
+      "manualDeviceVerified": false
     }
-  ]
+  ],
+  "bilingualQuestionCoverage": {
+    "reviewType": "source_preserving_author_translation_not_independent_editorial_approval",
+    "questionsAddedChinese": 44,
+    "unitsCovered": 11,
+    "units": [
+      {
+        "group": "IELTS Reading",
+        "ids": [
+          "en-ielts-reading-u05",
+          "en-ielts-reading-u06",
+          "en-ielts-reading-u07",
+          "en-ielts-reading-u08"
+        ],
+        "questions": 16
+      },
+      {
+        "group": "IELTS Listening",
+        "ids": [
+          "en-ielts-listening-u04",
+          "en-ielts-listening-u05",
+          "en-ielts-listening-u06",
+          "en-ielts-listening-u07",
+          "en-ielts-listening-u08"
+        ],
+        "questions": 20
+      },
+      {
+        "group": "French A2",
+        "ids": [
+          "fr-a2-u03",
+          "fr-a2-u05"
+        ],
+        "questions": 8
+      }
+    ],
+    "sourceQuestionsPreserved": true,
+    "independentQAApproved": 0,
+    "full156CoverageClaim": false
+  }
 }
