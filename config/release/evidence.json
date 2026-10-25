@@ -6,6 +6,6 @@
   "audioReviews": [],
   "deviceRestore": null,
   "browserAcceptance": null,
-  "audioDeliveryMode": "verified_natural",
+  "audioDeliveryMode": "device_tts",
   "ttsAcceptance": null
 }
