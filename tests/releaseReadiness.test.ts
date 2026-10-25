@@ -1,5 +1,6 @@
 import {expect,it} from 'vitest';
 import {readFileSync} from 'node:fs';
+import {spawnSync} from 'node:child_process';
 import {assessReleaseReadiness} from '../scripts/release-readiness.mjs';
 
 const matrix=JSON.parse(readFileSync('docs/qa/curriculum-gap-matrix.json','utf8'));
@@ -58,4 +59,16 @@ it('needs separate two-device restoration, actual mobile/desktop media checks an
  const result=assessReleaseReadiness(matrix,manifest);
  expect(result.ready).toBe(false);
  expect(result.quality.signedSpecialties).toBe(0);
+});
+
+
+it('exposes an actionable release:report and blocks release:check rather than silently publishing',()=>{
+ const report=spawnSync(process.execPath,['scripts/release-readiness.mjs','--json'],{encoding:'utf8'});
+ expect(report.status).toBe(0);
+ const result=JSON.parse(report.stdout);
+ expect(result.ready).toBe(false);
+ expect(result.blockers).toContain('Independent human semantic and Chinese paragraph review: 0/156');
+ const blocked=spawnSync(process.execPath,['scripts/release-readiness.mjs','--require-ready'],{encoding:'utf8'});
+ expect(blocked.status).toBe(1);
+ expect(blocked.stdout).toContain('Release readiness: BLOCKED');
 });
