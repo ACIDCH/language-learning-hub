@@ -131,3 +131,24 @@ it('preserves English answer anchors while supplying Chinese prompts and answers
  expect(RECEPTION_LESSONS['en-ielts-listening-u07'].questions[2].answer).toContain('no exact size');
  expect(RECEPTION_LESSONS['en-ielts-listening-u08'].questions[2].answer).toContain('depends on the material');
 });
+
+
+it('preserves IELTS heading choices and T/F/NG grading while showing Chinese equivalents in Reading U03–U04',()=>{
+ for(const id of ['en-ielts-reading-u03','en-ielts-reading-u04']){
+  const lesson=RECEPTION_LESSONS[id];
+  expect(lesson.questions,id).toHaveLength(4);
+  for(const [i,q] of lesson.questions.entries()){
+   const prompt=q.prompt.split(' / '),answer=q.answer.split(' / ');
+   expect(prompt.length,id+' question '+i).toBe(2);
+   expect(answer.length,id+' answer '+i).toBe(2);
+   expect(/[\p{Script=Han}]/u.test(prompt[1]),id+' question translation '+i).toBe(true);
+   expect(/[\p{Script=Han}]/u.test(answer[1]),id+' answer translation '+i).toBe(true);
+   expect(q.evidence.every(p=>lesson.paragraphs.some(x=>x.id===p)),id+' grounded evidence '+i).toBe(true);
+  }
+ }
+ const heading=RECEPTION_LESSONS['en-ielts-reading-u03'];
+ expect(heading.questions.map(q=>q.answer.split(' / ')[0].slice(0,3))).toEqual(['i. ','ii.','iii','iv.']);
+ const tfng=RECEPTION_LESSONS['en-ielts-reading-u04'];
+ expect(tfng.questions.map(q=>q.answer.split(' / ')[0])).toEqual(['FALSE','TRUE','NOT GIVEN','NOT GIVEN']);
+ expect(tfng.questions[2].answer.split(' / ')[1]).toContain('未提及');
+});
