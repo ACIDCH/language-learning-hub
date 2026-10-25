@@ -197,3 +197,16 @@ it('renders authored bilingual evidence as parallel accessible lines, not slash-
  expect(frItem.querySelector('label [lang="fr"]')?.textContent).toBe(parallelEvidence(frQuestion.prompt).source);
  expect(frItem.querySelector('label [lang="zh-Hans"]')?.textContent).toBe(parallelEvidence(frQuestion.prompt).zh);
 });
+
+
+it('applies a restored cross-device speech-rate preference to an already-mounted course reader',()=>{
+ const voices:any[]=[];
+ vi.stubGlobal('speechSynthesis',{speak:vi.fn((x:any)=>voices.push(x)),cancel:vi.fn(),pause:vi.fn(),resume:vi.fn()});
+ vi.stubGlobal('SpeechSynthesisUtterance',class {constructor(public text:string){}});
+ const reader=render(<ReceptionStudy courseId="en-ielts-reading-u02" rate={.85}/>);
+ expect((screen.getByRole('combobox',{name:'朗读速度'}) as HTMLSelectElement).value).toBe('0.85');
+ reader.rerender(<ReceptionStudy courseId="en-ielts-reading-u02" rate={1.15}/>);
+ expect((screen.getByRole('combobox',{name:'朗读速度'}) as HTMLSelectElement).value).toBe('1.15');
+ fireEvent.click(screen.getByRole('button',{name:'播放 / 回听本段'}));
+ expect(voices[0].rate).toBe(1.15);
+});
