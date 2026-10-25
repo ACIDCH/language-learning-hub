@@ -32,6 +32,7 @@ export function validAlignedAudio(course,review){
 }
 
 export function assessReleaseReadiness(matrix,signoffs){
+ const audioMode=signoffs?.audioDeliveryMode==='device_tts'?'device_tts':'verified_natural';
  const courses=matrix?.courses??[];
  const ids=courses.map(c=>c.id);
  const specialties=courses.flatMap(c=>c.specialties??[]).map(s=>s.id);
@@ -40,7 +41,7 @@ export function assessReleaseReadiness(matrix,signoffs){
    courses.length===156&&coherent(courses,'id')&&new Set(ids).size===156&&
    specialties.length===327&&new Set(specialties).size===327&&
    matrix?.counts?.bilingualReception===156,
-  signedCourses:0,signedSpecialties:0,signedAudio:0,deviceRestore:false,browserAcceptance:false
+  signedCourses:0,signedSpecialties:0,signedAudio:0,audioMode,ttsAccepted:false,deviceRestore:false,browserAcceptance:false
  };
  const humanCourses=signoffs?.courseReviews??[];
  const humanSpecialties=signoffs?.specialtyReviews??[];
@@ -59,6 +60,11 @@ export function assessReleaseReadiness(matrix,signoffs){
  if(coherent(humanAudio,'courseId')){
   quality.signedAudio=courses.filter(c=>validAlignedAudio(c,audioMap.get(c.id))).length;
  }
+ const tts=signoffs?.ttsAcceptance;
+ quality.ttsAccepted=audioMode==='device_tts'&&approved(tts)&&tts.passed===true&&
+  tts.englishVoiceTested===true&&tts.frenchVoiceTested===true&&
+  tts.desktopTested===true&&tts.mobileTested===true&&
+  tts.fallbackTested===true&&tts.sourceAudioClaimsDisabled===true;
  const device=signoffs?.deviceRestore;
  quality.deviceRestore=approved(device)&&device.passed===true&&device.distinctDevices>=2&&device.reloginVerified===true;
  const browser=signoffs?.browserAcceptance;
@@ -67,7 +73,8 @@ export function assessReleaseReadiness(matrix,signoffs){
   ...(!quality.inventory?['156 lessons / 327 specialties: source inventory or course mapping inconsistent']:[]),
   ...(quality.signedCourses!==156?['Independent human semantic and Chinese paragraph review: '+quality.signedCourses+'/156']:[]),
   ...(quality.signedSpecialties!==327?['Independent human grammar/vocabulary review: '+quality.signedSpecialties+'/327']:[]),
-  ...(quality.signedAudio!==156?['Source-hash aligned, licensed and human-listened audio: '+quality.signedAudio+'/156']:[]),
+  ...(audioMode==='device_tts'?(!quality.ttsAccepted?['Device TTS-only audio acceptance: real English/French voices, mobile/desktop, no-voice fallback and truthful labelling unverified']:[]):
+    (quality.signedAudio!==156?['Source-hash aligned, licensed and human-listened audio: '+quality.signedAudio+'/156']:[])),
   ...(!quality.deviceRestore?['Two-device saved-answer, refresh and relogin restore: unverified']:[]),
   ...(!quality.browserAcceptance?['Desktop/mobile browser interaction and actual media acceptance: unverified']:[])
  ];
