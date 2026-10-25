@@ -113,3 +113,21 @@ it('student-facing Task2 U01 retains the real source exercise but strips existin
  expect(student).toContain('does not guarantee effective learning');
  expect(student).toContain('For students who live far from campus');
 });
+
+
+it('provides source-faithful French/Chinese comprehension prompts for A2 transport and appointments',()=>{
+ for(const id of ['fr-a2-u03','fr-a2-u05']){
+  const lesson=RECEPTION_LESSONS[id];
+  expect(lesson.questions,id).toHaveLength(4);
+  for(const [i,q] of lesson.questions.entries()){
+   const prompt=q.prompt.split(' / '),answer=q.answer.split(' / ');
+   expect(prompt.length,id+' prompt '+i).toBe(2);
+   expect(answer.length,id+' answer '+i).toBe(2);
+   expect(/[\p{Script=Han}]/u.test(prompt[1]),id+' translated question '+i).toBe(true);
+   expect(/[\p{Script=Han}]/u.test(answer[1]),id+' translated answer '+i).toBe(true);
+   expect(q.evidence.every(p=>lesson.paragraphs.some(x=>x.id===p)),id+' real paragraph evidence '+i).toBe(true);
+  }
+ }
+ expect(RECEPTION_LESSONS['fr-a2-u03'].questions[2].answer).toContain('是否批准未获确认');
+ expect(RECEPTION_LESSONS['fr-a2-u05'].questions[2].answer).toContain('课文也没写具体几点');
+});
