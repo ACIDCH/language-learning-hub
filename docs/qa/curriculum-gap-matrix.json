@@ -453,7 +453,7 @@
           {
             "id": "P1",
             "targetSha256": "b43e616ca6b7a49fa4eb0f9c43707b19dbefef0554dc0337e90a8c350ccdc1b6",
-            "chineseSha256": "d4034b870d1aa83779508626ab0d7d67d2f0692da3aa428e449564c2a86374d6"
+            "chineseSha256": "33cfae410c03b40caa88c0440bc2c0f909ac7b494a230186da8a3d56e462d7ae"
           },
           {
             "id": "P2",
@@ -593,12 +593,12 @@
           {
             "id": "P3",
             "targetSha256": "f4bfcbc41341825f823b8c8bda1bef5da1ca84cedeed835a53b7bd69f0c55e7e",
-            "chineseSha256": "2552ef631a5dd36a1e0dcc3464d76b14e0340014ffe423f300a16eb1c53f0188"
+            "chineseSha256": "b68966c50c973f4190b30f4418082bd073a0dc6175e22fef4167b383e549aa82"
           },
           {
             "id": "P4",
             "targetSha256": "b199558ef9283d0f1de42d3828bb740bdc601659b4feb3eea887663380bd0190",
-            "chineseSha256": "674629421221818b6be34a3e9a950434c6460aa069bf3ae5014e01d4400c445a"
+            "chineseSha256": "c3d8279dd0de71963b55b3f3189af9e338c2882a21e4078ce58787cccfc3e479"
           }
         ],
         "questions": [
