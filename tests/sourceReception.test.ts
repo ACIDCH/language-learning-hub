@@ -188,3 +188,31 @@ it('keeps Listening U02–U03 source claims bounded while giving eight complete 
  expect(workshop.questions[2].answer).toContain('approval is pending');
  expect(workshop.questions[3].answer).toContain('no online attendance has yet been observed');
 });
+
+
+it('renders IELTS Writing Task 2 U01–U08 with 32 independently readable Chinese evidence question pairs',()=>{
+ for(const n of ['01','02','03','04','05','06','07','08']){
+  const id='en-ielts-writing-task2-u'+n,lesson=RECEPTION_LESSONS[id];
+  expect(lesson,id).toBeDefined();
+  expect(lesson.questions,id).toHaveLength(4);
+  for(const [i,q] of lesson.questions.entries()){
+   const p=q.prompt.lastIndexOf(' / '),a=q.answer.lastIndexOf(' / ');
+   expect(p,id+' prompt '+i).toBeGreaterThan(0);
+   expect(a,id+' answer '+i).toBeGreaterThan(0);
+   const enQuestion=q.prompt.slice(0,p),zhQuestion=q.prompt.slice(p+3);
+   const enAnswer=q.answer.slice(0,a),zhAnswer=q.answer.slice(a+3);
+   expect(enQuestion.length,id+' English question '+i).toBeGreaterThan(20);
+   expect(enAnswer.length,id+' English answer '+i).toBeGreaterThan(18);
+   expect(/[\p{Script=Han}]/u.test(zhQuestion),id+' Chinese question '+i).toBe(true);
+   expect(/[\p{Script=Han}]/u.test(zhAnswer),id+' Chinese answer '+i).toBe(true);
+   expect(q.evidence.length,id+' evidence '+i).toBeGreaterThan(0);
+   expect(q.evidence.every(e=>lesson.paragraphs.some(p=>p.id===e)),id+' paragraph anchors '+i).toBe(true);
+   expect(q.why.length,id+' explanatory rationale '+i).toBeGreaterThan(35);
+  }
+ }
+ expect(RECEPTION_LESSONS['en-ielts-writing-task2-u01'].questions[1].answer).toContain('outcomes require separate evidence');
+ expect(RECEPTION_LESSONS['en-ielts-writing-task2-u03'].questions[2].answer).toContain('complements common tests');
+ expect(RECEPTION_LESSONS['en-ielts-writing-task2-u05'].questions[2].answer).toContain('non-digital options');
+ expect(RECEPTION_LESSONS['en-ielts-writing-task2-u07'].questions[0].answer).toContain('music tuition itself is free');
+ expect(RECEPTION_LESSONS['en-ielts-writing-task2-u08'].questions[0].answer).toContain('universal');
+});
