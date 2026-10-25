@@ -1,0 +1,20 @@
+name: Production readiness — evidence gate
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  require-production-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Verify production TypeScript and bundle
+        run: npm run build
+      - name: Require source-grounded human and audio acceptance
+        run: npm run release:check
