@@ -10,6 +10,13 @@ import {requestAi} from './ai.mjs';
 const LIMIT = 20_000;
 const COURSE_ID = /^[A-Za-z0-9][A-Za-z0-9_-]{0,99}$/;
 const LANG = new Set(['en', 'fr']);
+/** Advance a conditional-update version even when consecutive writes occur
+ * in one millisecond (or a device clock is behind the remote timestamp).
+ */
+export function nextProgressTimestamp(previous,now=Date.now()){
+ const prior=previous===null?Number.NaN:Date.parse(previous);
+ return new Date(Math.max(now,Number.isFinite(prior)?prior+1:now)).toISOString();
+}
 
 function output(body, status = 200, cors = {}) {
   return new Response(JSON.stringify(body), {
@@ -172,7 +179,7 @@ export async function handle(request, env = {}, fetchFn = fetch) {
           !json.state || typeof json.state!=='object' || Array.isArray(json.state)) {
         return output({error:'invalid_progress_payload'},400,cors);
       }
-      const body = {user_id:uid,course_id:courseId,state:json.state,updated_at:new Date().toISOString()};
+      const body = {user_id:uid,course_id:courseId,state:json.state,updated_at:nextProgressTimestamp(json.expectedUpdatedAt??null)};
       const hasVersion = Object.prototype.hasOwnProperty.call(json,'expectedUpdatedAt');
       if(!hasVersion)return output({error:'progress_version_required'},428,cors);
       if (json.expectedUpdatedAt!==null &&
