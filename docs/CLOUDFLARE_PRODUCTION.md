@@ -34,7 +34,7 @@ From Cloudflare Workers & Pages, create a **Worker** and connect the same GitHub
 
 - Worker name: `language-hub-api` (must match Wrangler's `name`).
 - Root directory: `cloudflare/learning-api`.
-- Deploy command: `npx wrangler deploy`.
+- Deploy command: **`node ../../scripts/deploy-worker.mjs`**. This wrapper runs `release:check` before invoking Wrangler, even when Cloudflare Workers Git integration does not expose `CF_PAGES_BRANCH`. Do not use bare `npx wrangler deploy` for production because that bypasses the publication evidence gate.
 - Wrangler config: `cloudflare/learning-api/wrangler.jsonc`.
 - **Runtime environment variables** (not GitHub secrets):
   - `SUPABASE_URL`: the public HTTPS project URL of `language-learning-hub`.
