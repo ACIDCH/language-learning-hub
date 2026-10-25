@@ -281,3 +281,39 @@ it('keeps French A1 routine and directions questions grounded in the original ei
  expect(route.questions[1].answer.split(' / ')[0]).toBe('Au premier feu.');
  expect(route.questions[3].answer).toContain('environ dix minutes à pied');
 });
+
+
+it('matches the machine-readable editorial ledger to all 132 actually displayed bilingual evidence question pairs',()=>{
+ const audit=JSON.parse(readFileSync('docs/qa/pr50-editorial-findings-2026-10-25.json','utf8'));
+ const coverage=audit.bilingualQuestionCoverage;
+ expect(coverage.questionsAddedChinese).toBe(132);
+ expect(coverage.unitsCovered).toBe(33);
+ expect(coverage.units.map((u:{questions:number})=>u.questions).reduce((a:number,b:number)=>a+b,0)).toBe(132);
+ const ids=new Set<string>();
+ let checked=0;
+ for(const group of coverage.units){
+  expect(group.questions).toBe(group.ids.length*4);
+  for(const id of group.ids){
+   expect(ids.has(id),'duplicate audited course '+id).toBe(false);
+   ids.add(id);
+   const unit=RECEPTION_LESSONS[id];
+   expect(unit,id).toBeDefined();
+   expect(unit.questions,id).toHaveLength(4);
+   for(const [i,q] of unit.questions.entries()){
+    const p=q.prompt.lastIndexOf(' / '),a=q.answer.lastIndexOf(' / ');
+    expect(p,id+' prompt '+i).toBeGreaterThan(0);
+    expect(a,id+' answer '+i).toBeGreaterThan(0);
+    expect(/[\p{Script=Han}]/u.test(q.prompt.slice(p+3)),id+' Chinese question '+i).toBe(true);
+    expect(/[\p{Script=Han}]/u.test(q.answer.slice(a+3)),id+' Chinese answer '+i).toBe(true);
+    expect(q.evidence.every(e=>unit.paragraphs.some(x=>x.id===e)),id+' grounded paragraph '+i).toBe(true);
+    checked++;
+   }
+  }
+ }
+ expect(ids.size).toBe(33);
+ expect(checked).toBe(132);
+ expect(audit.counts.courseSemanticQAApproved).toBe(0);
+ expect(audit.counts.audioVerified).toBe(0);
+ expect(audit.counts.publishable).toBe(0);
+ expect(coverage.independentQAApproved).toBe(0);
+});
