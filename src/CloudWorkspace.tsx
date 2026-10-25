@@ -136,7 +136,8 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
         setStatus('读取失败，已禁止覆盖保存：' + e.message);
       });
     return () => {alive=false;};
-  },[session,selected,progressRetry]);
+  // Refreshing the same user's JWT must not reset an in-progress course editor.
+  },[session?.user.id,selected,progressRetry]);
 
   useEffect(() => {
     if (!session || !selected) {
