@@ -172,18 +172,20 @@
   ],
   "bilingualQuestionCoverage": {
     "reviewType": "source_preserving_author_translation_not_independent_editorial_approval",
-    "questionsAddedChinese": 44,
-    "unitsCovered": 11,
+    "questionsAddedChinese": 52,
+    "unitsCovered": 13,
     "units": [
       {
         "group": "IELTS Reading",
         "ids": [
+          "en-ielts-reading-u03",
+          "en-ielts-reading-u04",
           "en-ielts-reading-u05",
           "en-ielts-reading-u06",
           "en-ielts-reading-u07",
           "en-ielts-reading-u08"
         ],
-        "questions": 16
+        "questions": 24
       },
       {
         "group": "IELTS Listening",
@@ -207,6 +209,11 @@
     ],
     "sourceQuestionsPreserved": true,
     "independentQAApproved": 0,
-    "full156CoverageClaim": false
+    "full156CoverageClaim": false,
+    "constraints": [
+      "Reading U01/U02 already had Chinese questions and are not counted among the 52 newly translated questions.",
+      "English IELTS T/F/NG answer tokens and one-word listening answer remain exact on the English side; the Chinese side is a labelled explanation.",
+      "No course or specialty gains independent teacher QA approval from automatic or author-level translation."
+    ]
   }
 }
