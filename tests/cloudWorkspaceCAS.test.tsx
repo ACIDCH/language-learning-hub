@@ -1,6 +1,6 @@
 import React from 'react';
 import {afterEach,beforeEach,expect,it,vi} from 'vitest';
-import {cleanup,fireEvent,render,screen,waitFor} from '@testing-library/react';
+import {act,cleanup,fireEvent,render,screen,waitFor} from '@testing-library/react';
 import CloudWorkspace from '../src/CloudWorkspace';
 
 const session={user:{id:'legacy-workspace-owner',email:'existing@example.test'},access_token:'test.jwt.token'};
@@ -12,11 +12,15 @@ vi.mock('../src/v44Connection',()=>({apiBase:'/api',cloudClient:{
 vi.mock('../src/AccountAccess',()=>({default:()=>null}));
 const oldVersion='2026-10-24T09:00:00.000Z',newVersion='2026-10-25T09:00:00.000Z';
 let serverVersion=oldVersion,putRequests:any[]=[];
+let authChange:((event:string,next:any)=>void)|undefined;
+let holdSave=false,resolveSave:((value:Response)=>void)|undefined;
 const response=(value:unknown,status=200)=>new Response(JSON.stringify(value),{status,headers:{'Content-Type':'application/json'}});
 beforeEach(()=>{
- localStorage.clear();putRequests=[];serverVersion=oldVersion;
+ localStorage.clear();putRequests=[];serverVersion=oldVersion;holdSave=false;resolveSave=undefined;authChange=undefined;
  storage.getSession.mockReset().mockResolvedValue({data:{session}});
- storage.onAuthStateChange.mockReset().mockReturnValue({data:{subscription:{unsubscribe:vi.fn()}}});
+ storage.onAuthStateChange.mockReset().mockImplementation((callback:(event:string,next:any)=>void)=>{
+  authChange=callback;return {data:{subscription:{unsubscribe:vi.fn()}}};
+ });
  storage.from.mockReset().mockImplementation(()=>({
   select:()=>({eq:()=>({order:()=>({limit:()=>Promise.resolve({data:[],error:null})})})})
  }));
@@ -26,7 +30,9 @@ beforeEach(()=>{
    if(options.method==='PUT'){
     const data=JSON.parse(String(options.body));putRequests.push(data);
     if(data.expectedUpdatedAt!==serverVersion)return response({error:'progress_conflict'},409);
-    serverVersion=newVersion;return response({saved:true,progress:{state:data.state,updated_at:newVersion}});
+    serverVersion=newVersion;
+    if(holdSave)return new Promise<Response>(resolve=>{resolveSave=resolve;});
+    return response({saved:true,progress:{state:data.state,updated_at:newVersion}});
    }
    return response({progress:{course_id:'fr-a1-u01',state:{notes:serverVersion===oldVersion?'cloud old':'other-device-saved'},updated_at:serverVersion}});
   }
@@ -66,4 +72,25 @@ it('the older CloudWorkspace blocks a stale device and offers explicit local/clo
  fireEvent.click(screen.getByRole('button',{name:'保留本机草稿并核对后同步'}));
  expect((screen.getByRole('textbox',{name:'学习笔记'}) as HTMLTextAreaElement).value).toBe('draft from older device');
  expect((screen.getByRole('button',{name:'保存到 Supabase'}) as HTMLButtonElement).disabled).toBe(false);
+});
+
+
+it('a previous account\'s slow cloud save never replaces the new account\'s current course notes',async()=>{
+ holdSave=true;
+ render(<CloudWorkspace initialPanel="learn"/>);
+ const editor=await screen.findByRole('textbox',{name:'学习笔记'}) as HTMLTextAreaElement;
+ await waitFor(()=>expect(editor.disabled).toBe(false));
+ fireEvent.change(editor,{target:{value:'account A private pending note'}});
+ fireEvent.click(screen.getByRole('button',{name:'保存到 Supabase'}));
+ await waitFor(()=>expect(resolveSave).toBeTypeOf('function'));
+ const other={...session,user:{id:'separate-account-B',email:'second@example.test'}};
+ await act(async()=>{authChange?.('SIGNED_IN',other);});
+ await waitFor(()=>expect(screen.getByText('已登录：second@example.test')).toBeTruthy());
+ // Its progress GET sees a fresh account-scoped record, not the prior PUT response.
+ await waitFor(()=>expect((screen.getByRole('textbox',{name:'学习笔记'}) as HTMLTextAreaElement).value).toBe('other-device-saved'));
+ await act(async()=>{
+  resolveSave!(response({saved:true,progress:{state:{notes:'account A private pending note'},updated_at:newVersion}}));
+ });
+ expect((screen.getByRole('textbox',{name:'学习笔记'}) as HTMLTextAreaElement).value).toBe('other-device-saved');
+ expect(localStorage.getItem('llh-cloud-draft-v1:separate-account-B:fr-a1-u01')).toBeNull();
 });
