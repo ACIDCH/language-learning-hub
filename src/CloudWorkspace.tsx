@@ -63,11 +63,15 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
   const [progressReadError,setProgressReadError] = useState(false);
   const [progressRetry,setProgressRetry] = useState(0);
   const selectedRef=useRef('');
+  const progressVersion=useRef<string|null>(null);
+  const forceProgressConflict=useRef(false);
+  const [progressConflict,setProgressConflict]=useState<{local:State;remote:State}|null>(null);
   const progressKey=session?session.user.id+':'+selected:'';
   const progressReady=Boolean(selected&&progressReadyKey===progressKey);
   const currentLesson=lesson?.course_id===selected?lesson:null;
   function chooseCourse(id:string){
     selectedRef.current=id;
+    progressVersion.current=null;forceProgressConflict.current=false;setProgressConflict(null);
     setSelected(id);setState({});setProgressReadyKey('');
   }
 
@@ -87,7 +91,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
     if (!session || !selected) {setState({});setProgressReadyKey('');return;}
     let alive = true;
     setProgressReadyKey('');
-    setProgressReadError(false);
+    setProgressReadError(false);setProgressConflict(null);
     setState({});
     setStatus('正在读取云端进度…');
     void worker<{progress:Progress|null}>('/v1/progress/' + encodeURIComponent(selected),session.access_token)
@@ -98,9 +102,15 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
           const cached = localStorage.getItem(draftKey(session.user.id,selected));
           if (cached) draft = JSON.parse(cached);
         } catch { /* Storage may be disabled or unavailable. */ }
+        progressVersion.current=progress?.updated_at||null;
         const useDraft = draft?.state && draft.editedAt &&
           (!progress || new Date(draft.editedAt).getTime() > new Date(progress.updated_at).getTime());
-        setState(useDraft ? draft!.state : (progress?.state || {}));
+        if(draft?.state&&progress&&(forceProgressConflict.current||!useDraft)){
+          setState(draft.state);setProgressConflict({local:draft.state,remote:progress.state});
+          setStatus('云端与本机未同步草稿不同步；请选择版本，未确认前禁止保存。');
+          return;
+        }
+        setState(useDraft ? {...(progress?.state||{}),...draft!.state} : (progress?.state || {}));
         setProgressReadyKey(session.user.id+':'+selected);
         setStatus(useDraft ? '已恢复本机未同步草稿，点击保存后才会写入云端。' : '云端进度已读取。');
       })
@@ -182,6 +192,20 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
       } catch { setStatus('浏览器存储不可用，请及时同步并保留当前页面。'); }
     }
   }
+  function resolveProgressConflict(choice:'cloud'|'local'){
+    if(!session||!selected||!progressConflict)return;
+    const next=choice==='cloud'?progressConflict.remote:{...progressConflict.remote,...progressConflict.local};
+    setState(next);setProgressConflict(null);forceProgressConflict.current=false;
+    if(choice==='cloud'){
+      try{localStorage.removeItem(draftKey(session.user.id,selected));}catch{}
+      setStatus('已选择云端进度；本机未同步草稿不再参与此次保存。');
+    }else{
+      try{localStorage.setItem(draftKey(session.user.id,selected),JSON.stringify({state:next,editedAt:new Date().toISOString()}));}catch{}
+      setStatus('已选择保留本机草稿；请核对后再同步。');
+    }
+    setProgressReadError(false);
+    setProgressReadyKey(session.user.id+':'+selected);
+  }
   async function save() {
     if (!session || !selected || busy || !progressReady) return;
     const courseId=selected;
@@ -193,10 +217,11 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
         session.access_token,{
           method:'PUT',
           headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({state:saveState})
+          body:JSON.stringify({state:saveState,expectedUpdatedAt:progressVersion.current})
         });
       // A delayed response must not replace another course's notes.
-      if(selectedRef.current===courseId){
+      if(selectedRef.current===courseId&&session?.user.id===userId){
+        progressVersion.current=result.progress.updated_at;
         setState(result.progress.state);
         try {localStorage.removeItem(draftKey(userId,courseId));} catch { /* no local cache */ }
         setStatus('学习进度已保存：' + new Date(result.progress.updated_at).toLocaleString());
@@ -205,8 +230,12 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
       }
       setOverviewVersion(n=>n+1);
      } catch(e) {
-      if(selectedRef.current===courseId){
-        setStatus('保存失败，请保留本页内容：' + (e instanceof Error ? e.message : String(e)));
+      if(selectedRef.current===courseId&&session?.user.id===userId){
+        const detail=e instanceof Error?e.message:String(e);
+        if(detail==='progress_conflict'||detail==='progress_version_required'){
+          forceProgressConflict.current=true;setProgressReadyKey('');setProgressReadError(true);
+          setStatus('云端进度发生并发变更，本机草稿已保留；请重新读取并选择版本。');
+        }else setStatus('保存失败，请保留本页内容：'+detail);
       }
     }
     finally {setBusy(false);}
@@ -259,7 +288,11 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
             {!progressReady&&<p role="status" className="cloud-disclaimer">
               {progressReadError?'云端进度读取失败，当前保留的本机草稿为只读；为避免覆盖已有数据，编辑与保存已锁定。':'正在读取此课程的进度，期间编辑和保存暂时锁定。'}
             </p>}
-            {progressReadError&&<button type="button" onClick={()=>setProgressRetry(x=>x+1)}>重新读取本课云端进度</button>}
+            {progressConflict&&<div role="group" aria-label="云端与本机未同步草稿冲突">
+              <button type="button" onClick={()=>resolveProgressConflict('cloud')}>使用云端进度</button>
+              <button type="button" onClick={()=>resolveProgressConflict('local')}>保留本机草稿并核对后同步</button>
+            </div>}
+            {progressReadError&&!progressConflict&&<button type="button" onClick={()=>setProgressRetry(x=>x+1)}>重新读取本课云端进度</button>}
             <fieldset className="cloud-stages" disabled={!progressReady||busy}>
               <legend>当前学习环节</legend>
               {stages.map((label,i)=><label key={label}><input type="radio"
