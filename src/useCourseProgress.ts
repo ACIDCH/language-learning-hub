@@ -59,11 +59,11 @@ export function useCourseProgress(course:Course,session:Session|null){
     if(!current)return;
     remoteVersion.current=updated||null;
     const newer=local&&Date.parse(local.editedAt)>Date.parse(updated||'1970-01-01');
-    if(local?.state&&updated&&(!newer||saveConflict.current)){
+    if(local?.state&&updated){
      // A newer cloud version must never silently discard a still-unsynced device draft.
      stateRef.current=local.state;setState(local.state);setReady(false);
      setConflict({local:local.state,remote});
-     setStatus('云端记录比本机未同步草稿更新；请选择使用云端记录或保留本机草稿，未选择前不会覆盖保存。');
+     setStatus('云端记录与本机未同步草稿同时存在；请选择使用云端记录或保留本机草稿，未选择前不会覆盖保存。');
      return;
     }
     apply(newer?mergeLearningState(remote,local.state):remote);setStatus(newer?'已恢复本机未同步修改；点击保存同步。':'云端记录已读取，原有进度键保持不变。');
