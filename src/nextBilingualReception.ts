@@ -62,10 +62,10 @@ export const NEXT_BILINGUAL_RECEPTION:Record<string,ReceptionLesson>={
  {id:'P4',target:'Notre hôtel à Tours est déjà réservé pour ce soir. Nous choisissons donc de partir aujourd’hui avec la correspondance à Orléans. Avant de quitter le guichet, nous vérifions trois choses : l’heure du départ, le changement de quai et la validité de notre billet. Nous ne connaissons pas encore le numéro exact du quai : il faut le lire sur l’écran. Finalement, nous avançons vers les panneaux de départ. Le voyage va être différent, mais notre décision est claire.',zh:'我们在图尔的酒店已经预订了今晚的住宿，所以决定今天按经奥尔良换乘的路线出发。离开窗口前，我们确认三件事：出发时间、需要换站台以及原车票仍然有效。具体站台编号目前还不知道，必须看显示屏。最后，我们走向发车信息牌。路线虽然改变了，但我们的决定已经明确。'}
  ],
  questions:[
- {prompt:'Où faut-il changer de train, et à quelle heure part le trajet proposé ?',answer:'À Orléans ; le départ est à onze heures.',evidence:['P2'],why:'P2 说明在奥尔良换乘，并明确十一点出发；没有提供最终站台编号，不能从常识填入。'},
- {prompt:'Faut-il acheter un nouveau billet pour le trajet proposé ?',answer:'Non, le billet actuel reste valable pour ce trajet.',evidence:['P3'],why:'P3 的 reste valable 只对应工作人员提出的替代路线，不能无限推广为任何改签方式都免费。'},
- {prompt:'Si les voyageurs partent demain, le remboursement est-il déjà accordé ?',answer:'Non. Ils peuvent demander un remboursement ; son acceptation n’est pas confirmée.',evidence:['P3'],why:'pouvoir demander 表示可以申请，非已获批准；不得把条件性可能改写为已经收到退款。'},
- {prompt:'Pourquoi choisissent-ils de voyager aujourd’hui ?',answer:'Parce que leur hôtel à Tours est déjà réservé pour ce soir.',evidence:['P4'],why:'P4 交代今晚的酒店已经订好，这是最终选择当天出行的理由，不能假造额外的费用信息。'}
+ {prompt:'Où faut-il changer de train, et à quelle heure part le trajet proposé ? / 在哪里换车？建议的路线几点出发？',answer:'À Orléans ; le départ est à onze heures. / 在奥尔良换车；十一点出发。',evidence:['P2'],why:'P2 说明在奥尔良换乘，并明确十一点出发；没有提供最终站台编号，不能从常识填入。'},
+ {prompt:'Faut-il acheter un nouveau billet pour le trajet proposé ? / 建议的新路线需要重新购买车票吗？',answer:'Non, le billet actuel reste valable pour ce trajet. / 不需要；原车票对这条路线仍然有效。',evidence:['P3'],why:'P3 的 reste valable 只对应工作人员提出的替代路线，不能无限推广为任何改签方式都免费。'},
+ {prompt:'Si les voyageurs partent demain, le remboursement est-il déjà accordé ? / 如果旅客改到明天出发，退款是否已经获批？',answer:'Non. Ils peuvent demander un remboursement ; son acceptation n’est pas confirmée. / 尚未获批；可以申请退款，但是否批准未获确认。',evidence:['P3'],why:'pouvoir demander 表示可以申请，非已获批准；不得把条件性可能改写为已经收到退款。'},
+ {prompt:'Pourquoi choisissent-ils de voyager aujourd’hui ? / 他们为什么决定今天出发？',answer:'Parce que leur hôtel à Tours est déjà réservé pour ce soir. / 因为他们在图尔的酒店已预订今晚的住宿。',evidence:['P4'],why:'P4 交代今晚的酒店已经订好，这是最终选择当天出行的理由，不能假造额外的费用信息。'}
  ],
  languageNotes:[
  {target:'nous devons changer / nous pouvons demander',zh:'devoir + 不定式是必须；pouvoir + 不定式表示能够或允许。'},
@@ -87,10 +87,10 @@ export const NEXT_BILINGUAL_RECEPTION:Record<string,ReceptionLesson>={
  {id:'P4',target:'Pour parler de ses symptômes, Paul peut dire : « J’ai mal à la tête » ou « Je suis fatigué depuis deux jours ». Pour demander un conseil avec politesse, on peut dire : « Que me conseillez-vous ? » Pour faire une suggestion prudente dans un exercice de langue, on peut utiliser « Vous devriez vous reposer », sans prétendre connaître la cause médicale d’un symptôme. Le but de cette leçon est d’exprimer un état, une durée et une demande de rendez-vous ; ce n’est pas de poser un diagnostic.',zh:'说到身体状况，保罗可以说“我头疼”或“我已经疲惫两天了”。礼貌地请求建议，可以说“您建议我怎么做？”在语言练习中，谨慎提出一般性建议可以用“您应该休息一下”，但不能据此声称了解某种症状的医学原因。本课的目标是描述状态、持续时间和预约请求，而不是进行诊断。'}
  ],
  questions:[
- {prompt:'Depuis combien de temps Paul est-il fatigué ?',answer:'Depuis deux jours.',evidence:['P1'],why:'P1 的 depuis deux jours 搭配现在时 il est fatigué，说明疲惫状态从两天前持续至今。'},
- {prompt:'Quel problème Paul décrit-il, et connaît-il sa cause ?',answer:'Il a mal à la tête et il ne connaît pas la cause.',evidence:['P1'],why:'P1 只描述头疼，明确不知道原因；不能根据症状给出病名或诊断结论。'},
- {prompt:'La secrétaire donne-t-elle un diagnostic ou une heure exacte dans le texte ?',answer:'Non. Elle propose un rendez-vous l’après-midi, sans diagnostic ni heure exacte précisée.',evidence:['P2'],why:'P2 只确认下午的预约提议，没有诊断，也没有可据以填写的具体时刻。'},
- {prompt:'Est-il confirmé que Paul peut quitter son travail plus tôt ?',answer:'Non. Il en fait la demande, mais la réponse n’est pas précisée.',evidence:['P3'],why:'P3 说明他提出提前下班请求，未说明主管同意；请求与许可不是同一事实。'}
+ {prompt:'Depuis combien de temps Paul est-il fatigué ? / Paul 已经疲惫多久？',answer:'Depuis deux jours. / 两天。',evidence:['P1'],why:'P1 的 depuis deux jours 搭配现在时 il est fatigué，说明疲惫状态从两天前持续至今。'},
+ {prompt:'Quel problème Paul décrit-il, et connaît-il sa cause ? / Paul 描述了什么症状？他知道原因吗？',answer:'Il a mal à la tête et il ne connaît pas la cause. / 他头痛，但不知道原因。',evidence:['P1'],why:'P1 只描述头疼，明确不知道原因；不能根据症状给出病名或诊断结论。'},
+ {prompt:'La secrétaire donne-t-elle un diagnostic ou une heure exacte dans le texte ? / 课文是否说明秘书做出诊断或给出确切几点的预约时间？',answer:'Non. Elle propose un rendez-vous l’après-midi, sans diagnostic ni heure exacte précisée. / 没有；秘书提出下午预约，没有诊断，课文也没写具体几点。',evidence:['P2'],why:'P2 只确认下午的预约提议，没有诊断，也没有可据以填写的具体时刻。'},
+ {prompt:'Est-il confirmé que Paul peut quitter son travail plus tôt ? / 是否已经确认 Paul 能提前下班？',answer:'Non. Il en fait la demande, mais la réponse n’est pas précisée. / 没有；他只是提出请求，主管答复尚未说明。',evidence:['P3'],why:'P3 说明他提出提前下班请求，未说明主管同意；请求与许可不是同一事实。'}
  ],
  languageNotes:[
  {target:'avoir mal à la tête / au dos / aux jambes',zh:'à + le → au；à + les → aux；阴性单数 à la 不缩合。'},
