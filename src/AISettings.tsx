@@ -6,6 +6,6 @@ const initial:AIConfig={enabled:false,provider:'openrouter',model:DEFAULT_MODELS
 const Context=createContext<{config:AIConfig;update:(patch:Partial<AIConfig>)=>void;restoreKey:(provider:Provider,key:string)=>void;clear:()=>void}>({config:initial,update:()=>{},restoreKey:()=>{},clear:()=>{}});
 export function AISettingsProvider({children}:{children:ReactNode}){
  const [config,set]=useState(initial);
- return <Context.Provider value={{config,update:patch=>set(c=>({...c,...patch})),restoreKey:(provider,key)=>set(c=>c.provider===provider&&!c.apiKey?{...c,apiKey:key}:c),clear:()=>set({...initial})}}>{children}</Context.Provider>;
+ return <Context.Provider value={{config,update:patch=>set(c=>patch.provider&&patch.provider!==c.provider?{...c,...patch,apiKey:''}:{...c,...patch}),restoreKey:(provider,key)=>set(c=>c.provider===provider&&!c.apiKey?{...c,apiKey:key}:c),clear:()=>set({...initial})}}>{children}</Context.Provider>;
 }
 export const useAISettings=()=>useContext(Context);
