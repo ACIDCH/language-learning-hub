@@ -109,3 +109,25 @@ it('keeps local-council scope and bus-connection evidence exact in IELTS Reading
  expect(access.questions[2].evidence).toEqual(['P3']);
  expect(access.questions[3].answer).toContain('aggregate gain');
 });
+
+
+it('preserves English answer anchors while supplying Chinese prompts and answers in Listening U04–U08',()=>{
+ for(const id of ['en-ielts-listening-u04','en-ielts-listening-u05','en-ielts-listening-u06','en-ielts-listening-u07','en-ielts-listening-u08']){
+  const lesson=RECEPTION_LESSONS[id];
+  expect(lesson.questions,id).toHaveLength(4);
+  for(const [i,q] of lesson.questions.entries()){
+   const prompt=q.prompt.split(' / '),answer=q.answer.split(' / ');
+   expect(prompt.length,id+' prompt '+i).toBe(2);
+   expect(answer.length,id+' answer '+i).toBe(2);
+   expect(/[\p{Script=Han}]/u.test(prompt[1]),id+' prompt Chinese '+i).toBe(true);
+   expect(/[\p{Script=Han}]/u.test(answer[1]),id+' answer Chinese '+i).toBe(true);
+   expect(q.evidence.length,id+' source evidence '+i).toBeGreaterThan(0);
+   expect(q.evidence.every(e=>lesson.paragraphs.some(p=>p.id===e)),id+' paragraph links '+i).toBe(true);
+  }
+ }
+ expect(RECEPTION_LESSONS['en-ielts-listening-u05'].questions[2].answer).toContain('by Friday');
+ expect(RECEPTION_LESSONS['en-ielts-listening-u05'].questions[2].answer).toContain('最迟周五');
+ expect(RECEPTION_LESSONS['en-ielts-listening-u06'].questions[0].answer).toContain('container');
+ expect(RECEPTION_LESSONS['en-ielts-listening-u07'].questions[2].answer).toContain('no exact size');
+ expect(RECEPTION_LESSONS['en-ielts-listening-u08'].questions[2].answer).toContain('depends on the material');
+});
