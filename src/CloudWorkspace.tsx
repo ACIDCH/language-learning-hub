@@ -297,7 +297,7 @@ export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{
               className={activePanel===id?'panel-active':''}>{label}</button>)}
         </nav>
         {activePanel==='learn'&&<>
-          <LearningOverview client={client!} session={session} courses={catalog}
+          <LearningOverview key={session.user.id} client={client!} session={session} courses={catalog}
             savedVersion={overviewVersion} onContinue={chooseCourse}/>
           <section className="cloud-reader" aria-label="本课学习进度与笔记">
             <h3>本课进度与笔记</h3>
