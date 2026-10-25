@@ -14,7 +14,7 @@ function Probe({course=foundation}:{course?:Course}){
  const p=useCourseProgress(course,session);
  return <><textarea aria-label="answer" disabled={!p.ready} value={p.state.studyResponses?.[course.id+':writing']||''}
   onChange={e=>p.change({studyResponses:{[course.id+':writing']:e.target.value}})}/>
-  <button disabled={!p.ready||p.busy} onClick={()=>void p.save()}>save</button><p>{p.status}</p></>;
+  <button disabled={!p.ready||p.busy} onClick={()=>void p.save()}>save</button><button disabled={p.ready} onClick={p.retry}>retry</button><p>{p.status}</p></>;
 }
 beforeEach(()=>{localStorage.clear();mocks.read.mockReset().mockResolvedValue({data:null,error:null});mocks.write.mockReset().mockResolvedValue({error:null});});
 afterEach(cleanup);
@@ -57,4 +57,23 @@ it('validates UTF-8 size and notes without truncating any stored response',()=>{
  expect(()=>validateFoundationState({studyResponses:{writing:'中'.repeat(66000)}})).toThrow('192 KiB');
  expect(()=>validateFoundationState({notes:'字'.repeat(5001)})).toThrow('5000');
  expect(state.studyResponses.writing).toBe(longAnswer);
+});
+
+
+it('recovers from a transient Supabase progress load error only after explicit retry, without blind writes',async()=>{
+ mocks.read.mockRejectedValueOnce(new Error('temporary offline'));
+ mocks.read.mockResolvedValue({data:null,error:null});
+ render(<Probe/>);
+ await screen.findByText(/云端读取失败，已禁止覆盖保存/);
+ expect((screen.getByLabelText('answer') as HTMLTextAreaElement).disabled).toBe(true);
+ expect((screen.getByText('save') as HTMLButtonElement).disabled).toBe(true);
+ expect(mocks.write).not.toHaveBeenCalled();
+ fireEvent.click(screen.getByText('retry'));
+ await waitFor(()=>expect((screen.getByLabelText('answer') as HTMLTextAreaElement).disabled).toBe(false));
+ fireEvent.change(screen.getByLabelText('answer'),{target:{value:'重连后才进行保存'}});
+ fireEvent.click(screen.getByText('save'));
+ await screen.findByText('已保存到 Supabase。');
+ expect(mocks.read).toHaveBeenCalledTimes(2);
+ expect(mocks.write).toHaveBeenCalledTimes(1);
+ expect(mocks.write.mock.calls[0][0].answers.__learning.studyResponses['fr-fnd-24:writing']).toBe('重连后才进行保存');
 });
