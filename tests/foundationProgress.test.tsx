@@ -4,9 +4,17 @@ import type {Session} from '@supabase/supabase-js';
 import {COURSES,type Course} from '../src/v44Courses';
 import {useCourseProgress,packFoundationState,validateFoundationState} from '../src/useCourseProgress';
 const mocks=vi.hoisted(()=>({read:vi.fn(),write:vi.fn()}));
-vi.mock('../src/v44Connection',()=>({cloudRequest:vi.fn(),cloudClient:{from:()=>({
- select:()=>({eq:()=>({eq:()=>({maybeSingle:mocks.read})})}),upsert:mocks.write,
-})}}));
+vi.mock('../src/v44Connection',()=>{
+ const writeResult=(row:any)=>Promise.resolve(mocks.write(row)).then((value:any)=>value?.error?value:{data:value?.data??{updated_at:row.updated_at},error:null});
+ const writeBuilder=(row:any)=>({
+  eq:()=>writeBuilder(row),
+  select:()=>({single:()=>writeResult(row),maybeSingle:()=>writeResult(row)})
+ });
+ return {cloudRequest:vi.fn(),cloudClient:{from:()=>({
+  select:()=>({eq:()=>({eq:()=>({maybeSingle:mocks.read})})}),
+  insert:writeBuilder,update:writeBuilder
+ })}};
+});
 const session={user:{id:'test-foundation-owner'},access_token:'test-only'} as Session;
 const foundation=COURSES.find(x=>x.id==='fr-fnd-24')!;
 const longAnswer='这是完整练习，不应被旧的四千字节限制截断。'.repeat(120);
@@ -122,4 +130,31 @@ it('permits an explicit choice to retain the local unsynced draft and merges unr
  expect(mocks.write.mock.calls[0][0].answers['0']).toBe(2);
  expect(mocks.write.mock.calls[0][0].answers.__learning.studyResponses['fr-fnd-24:writing']).toBe('本机继续编辑');
  expect(mocks.write.mock.calls[0][0].answers.__learning.studyResponses['fr-fnd-24:extra']).toBe('远端练习');
+});
+
+
+it('rejects an out-of-date foundation update after another device changed the row, then requires explicit reread',async()=>{
+ const key='llh-v44-draft:test-foundation-owner:fr-fnd-24';
+ const initial={answers:{__learning:{studyResponses:{'fr-fnd-24:writing':'earlier cloud text'}}},
+  notes:'old',completed:false,updated_at:'2026-10-24T09:00:00.000Z'};
+ const current={...initial,updated_at:'2026-10-25T09:00:00.000Z',
+  notes:'another-device-updated',answers:{__learning:{studyResponses:{'fr-fnd-24:writing':'newer remote'}}}};
+ mocks.read.mockResolvedValueOnce({data:initial,error:null}).mockResolvedValueOnce({data:current,error:null});
+ mocks.write.mockResolvedValueOnce({data:null,error:null}); // zero rows: conditional UPDATE failed
+ render(<Probe/>);
+ await waitFor(()=>expect((screen.getByLabelText('answer') as HTMLTextAreaElement).disabled).toBe(false));
+ fireEvent.change(screen.getByLabelText('answer'),{target:{value:'pending local text'}});
+ fireEvent.click(screen.getByText('save'));
+ await screen.findByText(/云端进度冲突/);
+ expect((screen.getByLabelText('answer') as HTMLTextAreaElement).disabled).toBe(true);
+ expect(localStorage.getItem(key)).toContain('pending local text');
+ expect(mocks.write).toHaveBeenCalledTimes(1);
+ fireEvent.click(screen.getByText('retry'));
+ await screen.findByText(/云端记录比本机未同步草稿更新/);
+ expect((screen.getByText('save') as HTMLButtonElement).disabled).toBe(true);
+ fireEvent.click(screen.getByText('local draft'));
+ fireEvent.click(screen.getByText('save'));
+ await screen.findByText('已保存到 Supabase。');
+ const payload=mocks.write.mock.calls[1][0];
+ expect(payload.answers.__learning.studyResponses['fr-fnd-24:writing']).toBe('pending local text');
 });
