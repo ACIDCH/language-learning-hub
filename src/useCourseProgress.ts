@@ -28,6 +28,7 @@ export function unpackFoundationState(answers:Record<string,unknown>|null):Pick<
 export function useCourseProgress(course:Course,session:Session|null){
  const key=course.kind==='main'&&session?'llh-cloud-draft-v1:'+session.user.id+':'+course.id:'llh-v44-draft:'+ (session?.user.id||'guest')+':'+course.id;
  const [state,setState]=useState<LearningState>({}),[ready,setReady]=useState(false),[busy,setBusy]=useState(false),[status,setStatus]=useState('正在读取学习记录…');
+ const [retryVersion,setRetryVersion]=useState(0);
  const stateRef=useRef(state),alive=useRef(true),revision=useRef(0);
  const generation=useRef(0),saving=useRef(false);
  const readLocal=()=>{try{return JSON.parse(localStorage.getItem(key)||'null') as {state:LearningState;editedAt:string}|null;}catch{return null;}};
@@ -55,7 +56,7 @@ export function useCourseProgress(course:Course,session:Session|null){
    }catch(e){if(current){setStatus('云端读取失败，已禁止覆盖保存：'+progressError(e));if(local)setState(local.state);}}
   })();
   return ()=>{current=false;alive.current=false;};
- },[course.id,session?.user.id]);
+ },[course.id,session?.user.id,retryVersion]);
  function change(patch:Partial<LearningState>){
   if(!ready)return;
   const next=mergeLearningState(stateRef.current,patch);stateRef.current=next;setState(next);revision.current++;
@@ -76,5 +77,5 @@ export function useCourseProgress(course:Course,session:Session|null){
   }catch(e){if(alive.current&&epoch===generation.current)setStatus('保存失败，本机草稿保留：'+progressError(e));}
   finally{if(epoch===generation.current){saving.current=false;if(alive.current)setBusy(false);}}
  }
- return {state,ready,busy,status,change,save};
+ return {state,ready,busy,status,change,save,retry:()=>setRetryVersion(n=>n+1)};
 }
