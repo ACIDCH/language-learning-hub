@@ -191,3 +191,64 @@ test('unmapped audio returns an empty collection, not a playable asset',async()=
    {headers:{Authorization:'Bearer valid.jwt.token'}}),cfg,fetcher);
  assert.deepEqual((await ok.json()).assets,[]);
 });
+
+
+test('versioned progress creates only when missing and conflicts with another device rather than replacing it',async()=>{
+ const calls=[];
+ const fetcher=async(url,opts)=>{
+  if(url.endsWith('/auth/v1/user'))return respond({id:'owner-cas'});
+  calls.push({url,opts});
+  if(opts.method==='POST')return respond({code:'23505',message:'unique violation'},409);
+  throw Error('Unexpected method');
+ };
+ const r=await handle(req('/v1/progress/fr-a1-u01',{method:'PUT',
+  headers:{Authorization:'Bearer abc.def.ghi','Content-Type':'application/json',Origin:origin},
+  body:JSON.stringify({state:{stage:4},expectedUpdatedAt:null})
+ }),cfg,fetcher);
+ assert.equal(r.status,409);
+ assert.equal((await r.json()).error,'progress_conflict');
+ assert.equal(calls.length,1);
+ assert.equal(calls[0].opts.method,'POST');
+ assert.equal(calls[0].opts.headers.Prefer,'return=representation');
+ assert.ok(!calls[0].url.includes('on_conflict'));
+});
+
+test('versioned main-course update uses timestamp-matched PATCH and rejects stale writes',async()=>{
+ const calls=[];
+ const previous='2026-10-25T08:00:00.000Z';
+ const fetcher=async(url,opts)=>{
+  if(url.endsWith('/auth/v1/user'))return respond({id:'owner-cas'});
+  calls.push({url,opts});
+  if(opts.method==='PATCH')return respond([]); // another device already saved
+  throw Error('Unexpected method');
+ };
+ const r=await handle(req('/v1/progress/fr-a1-u01',{method:'PUT',
+  headers:{Authorization:'Bearer abc.def.ghi','Content-Type':'application/json',Origin:origin},
+  body:JSON.stringify({state:{notes:'pending changes'},expectedUpdatedAt:previous})
+ }),cfg,fetcher);
+ assert.equal(r.status,409);
+ assert.equal((await r.json()).error,'progress_conflict');
+ assert.equal(calls.length,1);
+ assert.equal(calls[0].opts.method,'PATCH');
+ const url=new URL(calls[0].url);
+ assert.equal(url.searchParams.get('user_id'),'eq.owner-cas');
+ assert.equal(url.searchParams.get('course_id'),'eq.fr-a1-u01');
+ assert.equal(url.searchParams.get('updated_at'),'eq.'+previous);
+ assert.equal(calls[0].opts.headers.Prefer,'return=representation');
+ assert.deepEqual(JSON.parse(calls[0].opts.body).state,{notes:'pending changes'});
+});
+
+test('versioned main-course save returns new server version after successful conditional update',async()=>{
+ const initial='2026-10-24T08:00:00.000Z',next='2026-10-25T09:00:00.000Z';
+ const fetcher=async(url,opts)=>{
+  if(url.endsWith('/auth/v1/user'))return respond({id:'owner-cas'});
+  assert.equal(opts.method,'PATCH');
+  return respond([{state:{notes:'updated'},updated_at:next}]);
+ };
+ const r=await handle(req('/v1/progress/fr-a1-u01',{method:'PUT',
+  headers:{Authorization:'Bearer abc.def.ghi','Content-Type':'application/json',Origin:origin},
+  body:JSON.stringify({state:{notes:'updated'},expectedUpdatedAt:initial})
+ }),cfg,fetcher);
+ assert.equal(r.status,200);
+ assert.equal((await r.json()).progress.updated_at,next);
+});
