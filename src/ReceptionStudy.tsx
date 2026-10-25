@@ -3,6 +3,7 @@ import {RECEPTION_LESSONS} from './receptionLessons';
 import {FOUNDATION_RECEPTION} from './foundationReception';
 import {useStudyResponses} from './studyResponses';
 import {parallelEvidence} from './bilingualEvidence';
+import {selectDeviceVoice} from './ttsVoice';
 
 export default function ReceptionStudy({courseId,rate}:{courseId:string;rate:number}){
  const unit=RECEPTION_LESSONS[courseId]||FOUNDATION_RECEPTION[courseId];
@@ -25,11 +26,16 @@ export default function ReceptionStudy({courseId,rate}:{courseId:string;rate:num
   if(!window.speechSynthesis||!window.SpeechSynthesisUtterance){setStatus('此浏览器不支持设备朗读，请使用原文与中文对照阅读。');return;}
   const run=token.current;
   const u=new SpeechSynthesisUtterance(unit.paragraphs[index].target);
-  u.lang=unit.language==='fr'?'fr-FR':'en-GB';u.rate=speed;utterance.current=u;
-  u.onstart=()=>{if(run===token.current){clearTimeout(startup.current);setPlaying(true);setStatus('正在朗读 '+unit.paragraphs[index].id);}};
+  u.lang=unit.language==='fr'?'fr-FR':'en-GB';u.rate=speed;
+  const voices=window.speechSynthesis.getVoices?.()||[];
+  const matchedVoice=selectDeviceVoice(voices,unit.language);
+  if(matchedVoice)u.voice=matchedVoice;
+  const voiceWarning=voices.length>0&&!matchedVoice?'（未发现匹配语言的系统语音，读音可能不准确）':'';
+  utterance.current=u;
+  u.onstart=()=>{if(run===token.current){clearTimeout(startup.current);setPlaying(true);setStatus('正在朗读 '+unit.paragraphs[index].id+voiceWarning);}};
   u.onend=()=>{if(run===token.current){clearTimeout(startup.current);setPlaying(false);setPaused(false);setStatus('本段朗读结束，可回听或选择下一段。');}};
   u.onerror=()=>{if(run===token.current){clearTimeout(startup.current);setPlaying(false);setPaused(false);setStatus('设备朗读失败，请检查系统语音或稍后重试；仍可阅读双语原文。');}};
-  try{setPlaying(true);setStatus('正在准备设备语音…');startup.current=setTimeout(()=>{if(run===token.current){stop();setStatus('设备语音未能启动，请检查系统是否安装相应语言语音；可继续阅读双语原文。');}},8000);window.speechSynthesis.speak(u);}catch{clearTimeout(startup.current);setPlaying(false);setStatus('设备朗读无法启动，请使用双语原文。');}
+  try{setPlaying(true);setStatus('正在准备设备语音…'+voiceWarning);startup.current=setTimeout(()=>{if(run===token.current){stop();setStatus('设备语音未能启动，请检查系统是否安装相应语言语音；可继续阅读双语原文。');}},8000);window.speechSynthesis.speak(u);}catch{clearTimeout(startup.current);setPlaying(false);setStatus('设备朗读无法启动，请使用双语原文。');}
  }
  return <section className="reception-study" aria-label="逐段双语听读">
   <h3>{unit.title}</h3><p>{unit.genre}。设备合成语音（TTS），非自然人录音。</p>
