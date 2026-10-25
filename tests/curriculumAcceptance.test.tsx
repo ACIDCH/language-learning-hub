@@ -191,7 +191,8 @@ it('keeps first A1 completed-past and IELTS TRUE/FALSE/NOT GIVEN reading evidenc
  expect(a.paragraphs[2].target.toLowerCase()).toContain('à cinq heures');
  expect(a.paragraphs[3].target).toContain('Aujourd’hui');
  const b=RECEPTION_LESSONS['en-ielts-reading-u04'];
- expect(b.questions.map(q=>q.answer)).toEqual(['FALSE','TRUE','NOT GIVEN','NOT GIVEN']);
+ expect(b.questions.map(q=>q.answer.split(' / ')[0])).toEqual(['FALSE','TRUE','NOT GIVEN','NOT GIVEN']);
+ expect(b.questions.every(q=>q.answer.split(' / ').length===2&&/[\p{Script=Han}]/u.test(q.answer.split(' / ')[1]))).toBe(true);
  expect(b.questions[0].evidence).toContain('P2');
  expect(b.questions[2].evidence).toContain('P4');
  expect(b.paragraphs[3].target).toContain('an absence of funding information');
