@@ -217,8 +217,8 @@
   ],
   "bilingualQuestionCoverage": {
     "reviewType": "source_preserving_author_translation_not_independent_editorial_approval",
-    "questionsAddedChinese": 132,
-    "unitsCovered": 33,
+    "questionsAddedChinese": 156,
+    "unitsCovered": 39,
     "units": [
       {
         "group": "IELTS Reading",
@@ -285,9 +285,15 @@
         "group": "French A1",
         "ids": [
           "fr-a1-u05",
-          "fr-a1-u09"
+          "fr-a1-u09",
+          "fr-a1-u06",
+          "fr-a1-u07",
+          "fr-a1-u08",
+          "fr-a1-u10",
+          "fr-a1-u11",
+          "fr-a1-u12"
         ],
-        "questions": 8
+        "questions": 32
       }
     ],
     "sourceQuestionsPreserved": true,
@@ -301,7 +307,9 @@
       "IELTS Task 2 bilingual question extensions preserve original English argument claims and evidence paragraph references, but do not imply an IELTS examiner has judged model quality.",
       "IELTS Task 1 numerical bilingual answers distinguish absolute counts from shares, percentage points from percent change, and hypothetical mechanisms from established causal evidence.",
       "The 124 additions are English-Chinese evidence exercise pairs, not human-certified translations or verification of the full 156 lessons.",
-      "A1 U05 and U09 additions preserve complete French answers to time, routine and street-directions questions and add separate Chinese evidence explanations."
+      "A1 U05 and U09 additions preserve complete French answers to time, routine and street-directions questions and add separate Chinese evidence explanations.",
+      "A1 U06, U07, U08, U10, U11 and U12 add 24 paired beginner French and Chinese source-evidence questions; original French reference answers and paragraph citations remain unchanged.",
+      "156 newly bilingual exercises across 39 lessons must not be confused with full editorial verification of 156 courses."
     ]
   },
   "specialtySampleAnalysis": {
