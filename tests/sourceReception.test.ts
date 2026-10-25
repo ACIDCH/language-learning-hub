@@ -60,3 +60,18 @@ it('IELTS Listening U04–U06 preserves route scope, Friday-inclusive deadline a
  expect(lab.languageNotes.map(note=>note.zh).join(' ')).not.toContain('两栏都必填');
  expect(lab.questions[3].evidence).toEqual(['P4']);
 });
+
+
+it('IELTS Task 1 keeps category shares distinct from loan counts and drying distinct from pressing',()=>{
+ const shares=RECEPTION_LESSONS['en-ielts-writing-task1-u07'];
+ expect(shares.paragraphs[2].target).toContain('The paper-borrowing share declined, while the digital-borrowing share increased');
+ expect(shares.paragraphs[2].zh).toContain('纸本借阅占比下降，而数字借阅占比上升');
+ expect(shares.paragraphs[3].target).toContain('an increase in a share is not automatically an increase in the number of loans');
+ expect(shares.questions[3].answer).toContain('absolute borrowing totals');
+ expect(shares.modelZh).toContain('无法确定实际借阅总量');
+
+ const process=RECEPTION_LESSONS['en-ielts-writing-task1-u05'];
+ expect(process.paragraphs[2].target).toContain('pressing removes water, whereas drying reduces the remaining moisture');
+ expect(process.paragraphs[2].zh).toContain('压出水分并干燥');
+ expect(process.paragraphs[2].zh).toContain('裁切再利用');
+});
