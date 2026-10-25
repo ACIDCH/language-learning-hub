@@ -1,5 +1,6 @@
 import {readFileSync} from 'node:fs';
 import {pathToFileURL} from 'node:url';
+import {verifyReleaseSources} from './release-source-integrity.mjs';
 
 const hash=/^[a-f0-9]{64}$/u;
 export const approved=(x)=>x?.status==='approved'&&x?.reviewerRole==='human'&&
@@ -85,6 +86,12 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
  const matrix=JSON.parse(readFileSync(new URL('../docs/qa/curriculum-gap-matrix.json',import.meta.url),'utf8'));
  const signoffs=JSON.parse(readFileSync(new URL('../config/release/evidence.json',import.meta.url),'utf8'));
  const report=assessReleaseReadiness(matrix,signoffs);
+ const files=verifyReleaseSources(matrix,path=>readFileSync(new URL('../'+path,import.meta.url)));
+ report.quality.sourceIntegrity=files.ok;
+ if(!files.ok){
+  report.ready=false;report.phase='preview_only';
+  report.blockers.push('Course/source ledger fingerprints do not match actual manuscript/asset files: '+files.mismatches.length+' mismatches');
+ }
  if(process.argv.includes('--json'))process.stdout.write(JSON.stringify(report,null,2)+'\n');
  else{
   process.stdout.write('Release readiness: '+(report.ready?'READY':'BLOCKED')+'\n');
