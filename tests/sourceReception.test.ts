@@ -216,3 +216,41 @@ it('renders IELTS Writing Task 2 U01–U08 with 32 independently readable Chines
  expect(RECEPTION_LESSONS['en-ielts-writing-task2-u07'].questions[0].answer).toContain('music tuition itself is free');
  expect(RECEPTION_LESSONS['en-ielts-writing-task2-u08'].questions[0].answer).toContain('universal');
 });
+
+
+it('keeps 32 IELTS Task 1 source-based numeric and diagram answers intact when adding Chinese counterparts',()=>{
+ const units=Array.from({length:8},(_,i)=>'en-ielts-writing-task1-u'+String(i+1).padStart(2,'0'));
+ for(const id of units){
+  const lesson=RECEPTION_LESSONS[id];
+  expect(lesson,id).toBeDefined();
+  expect(lesson.questions,id).toHaveLength(4);
+  for(const [i,q] of lesson.questions.entries()){
+   const promptBoundary=q.prompt.lastIndexOf(' / '),answerBoundary=q.answer.lastIndexOf(' / ');
+   expect(promptBoundary,id+' prompt '+i).toBeGreaterThan(0);
+   expect(answerBoundary,id+' answer '+i).toBeGreaterThan(0);
+   const question=q.prompt.slice(0,promptBoundary),questionZh=q.prompt.slice(promptBoundary+3);
+   const answer=q.answer.slice(0,answerBoundary),answerZh=q.answer.slice(answerBoundary+3);
+   expect(question.length,id+' original prompt '+i).toBeGreaterThan(15);
+   expect(answer.length,id+' original answer '+i).toBeGreaterThan(15);
+   expect(/[\p{Script=Han}]/u.test(questionZh),id+' Chinese prompt '+i).toBe(true);
+   expect(/[\p{Script=Han}]/u.test(answerZh),id+' Chinese answer '+i).toBe(true);
+   expect(q.evidence.length,id+' source evidence '+i).toBeGreaterThan(0);
+   expect(q.evidence.every(e=>lesson.paragraphs.some(p=>p.id===e)),id+' linked evidence '+i).toBe(true);
+  }
+ }
+ const one=RECEPTION_LESSONS['en-ielts-writing-task1-u01'];
+ expect(one.questions[0].answer).toContain('76 thousand digital loans versus 70 thousand printed loans');
+ expect(one.questions[3].answer).toContain('approximately 1.90 times');
+ const three=RECEPTION_LESSONS['en-ielts-writing-task1-u03'];
+ expect(three.questions[0].answer).toContain('25 percentage points');
+ expect(three.questions[2].answer).toContain('provides no dates');
+ const four=RECEPTION_LESSONS['en-ielts-writing-task1-u04'];
+ expect(four.questions[2].answer).toContain('Approximately 33.3%');
+ expect(four.questions[3].answer).toContain('total budget');
+ const five=RECEPTION_LESSONS['en-ielts-writing-task1-u05'];
+ expect(five.questions[2].answer).toContain('cut for reuse, not packed');
+ const seven=RECEPTION_LESSONS['en-ielts-writing-task1-u07'];
+ expect(seven.questions[3].answer).toContain('absolute borrowing totals');
+ const eight=RECEPTION_LESSONS['en-ielts-writing-task1-u08'];
+ expect(eight.questions[0].answer).toContain('50% increase relative to 20');
+});
