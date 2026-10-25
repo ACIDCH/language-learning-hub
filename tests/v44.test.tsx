@@ -287,6 +287,37 @@ describe('V4.4 integration contracts',()=>{
   render(<Probe/>);await waitFor(()=>expect((screen.getByText('edit') as HTMLButtonElement).disabled).toBe(false));fireEvent.click(screen.getByText('edit'));fireEvent.click(screen.getByText('save'));
   await waitFor(()=>expect(request).toHaveBeenCalledTimes(2));const body=JSON.parse(request.mock.calls[1][2].body);expect(body.state).toEqual({notes:'edited',practiceChecklist:{read:true}});expect(body.expectedUpdatedAt).toBe('2026-10-17T00:00:00.000Z');expect(request.mock.calls[1][2].method).toBe('PUT');
  });
+ it('rejects a stale main-course write after a second device saves and forces an explicit conflict choice',async()=>{
+  const course=COURSES[0];
+  const key='llh-cloud-draft-v1:'+session.user.id+':'+course.id;
+  const oldVersion='2026-10-24T10:00:00.000Z';
+  const newVersion='2026-10-25T10:00:00.000Z';
+  request.mockResolvedValueOnce({progress:{state:{notes:'cloud-old'},updated_at:oldVersion}})
+    .mockRejectedValueOnce(new Error('progress_conflict'))
+    .mockResolvedValueOnce({progress:{state:{notes:'other-device-updated'},updated_at:newVersion}});
+  function Probe(){
+   const p=useCourseProgress(course,session);
+   return <><textarea aria-label="notes" disabled={!p.ready} value={p.state.notes||''} onChange={e=>p.change({notes:e.target.value})}/>
+    <button disabled={!p.ready} onClick={()=>void p.save()}>save</button>
+    <button onClick={p.retry}>retry</button>
+    {p.conflict&&<button onClick={()=>p.resolveConflict('local')}>local draft</button>}
+    <p>{p.status}</p></>;
+  }
+  render(<Probe/>);
+  await waitFor(()=>expect((screen.getByLabelText('notes') as HTMLTextAreaElement).disabled).toBe(false));
+  fireEvent.change(screen.getByLabelText('notes'),{target:{value:'my unsynced text'}});
+  fireEvent.click(screen.getByText('save'));
+  await screen.findByText(/云端进度冲突/);
+  expect((screen.getByLabelText('notes') as HTMLTextAreaElement).disabled).toBe(true);
+  expect(localStorage.getItem(key)).toContain('my unsynced text');
+  expect(JSON.parse(request.mock.calls[1][2].body).expectedUpdatedAt).toBe(oldVersion);
+  fireEvent.click(screen.getByText('retry'));
+  await screen.findByText(/云端记录比本机未同步草稿更新/);
+  expect(screen.getByText('local draft')).toBeTruthy();
+  fireEvent.click(screen.getByText('local draft'));
+  expect((screen.getByLabelText('notes') as HTMLTextAreaElement).value).toBe('my unsynced text');
+  expect(localStorage.getItem(key)).toContain('my unsynced text');
+ });
  it('does not enable overwrite when remote progress failed to load',async()=>{
   request.mockRejectedValue(new Error('offline'));
   function Probe(){const p=useCourseProgress(COURSES[0],session);return <><button disabled={!p.ready} onClick={()=>void p.save()}>save</button><p>{p.status}</p></>;}
