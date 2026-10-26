@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-speaking-u05",
+  "title": "Explaining comparisons and causes",
+  "language": "en",
+  "level": "B1-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply explaining comparisons and causes in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-speaking-u04",
+  "context": "比较两种出行方式，并解释偏好变化的原因。",
+  "grammar": "比较围绕同一维度，如 reliability/cost/flexibility。whereas 对照，because 解释原因，as a result 引出后果；不要把相关经历自动推广为人人如此。",
+  "common_mistake": "‘公交更便宜，自行车是绿色的’若无共同标准，比较可能零散。",
+  "vocabulary": [
+    [
+      "reliable",
+      "可靠的"
+    ],
+    [
+      "flexible",
+      "灵活的"
+    ],
+    [
+      "fare",
+      "票价"
+    ],
+    [
+      "route",
+      "路线"
+    ],
+    [
+      "predictable",
+      "可预测的"
+    ],
+    [
+      "consequence",
+      "后果"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "For my current commute, cycling is more predictable than taking the bus.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The road has a protected cycle lane, whereas the bus often waits in traffic near the station.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "However, the bus is more convenient when I carry heavy equipment.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "My preference changed after I moved closer to work, because the shorter distance made cycling practical.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "For my current commute, cycling is more predictable than taking the bus. The road has a protected cycle lane, whereas the bus often waits in traffic near the station. However, the bus is more convenient when I carry heavy equipment. My preference changed after I moved closer to work, because the shorter distance made cycling practical. Someone living much farther away might reach a different conclusion. The useful comparison is therefore between the options for a particular journey, not between cyclists and bus passengers as groups.",
+  "listening_script": "For my current commute, cycling is more predictable than taking the bus. The road has a protected cycle lane, whereas the bus often waits in traffic near the station. However, the bus is more convenient when I carry heavy equipment. My preference changed after I moved closer to work, because the shorter distance made cycling practical. Someone living much farther away might reach a different conclusion. The useful comparison is therefore between the options for a particular journey, not between cyclists and bus passengers as groups.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Why did the preference change ?",
+      "answer": "The speaker moved closer to work.",
+      "explanation": "个人情境变化是原因，不是所有公交变差。"
+    },
+    {
+      "prompt": "Give a shared comparison dimension in the response.",
+      "answer": "Predictability of the same commute.",
+      "explanation": "同一旅程的可靠性使比较具有共同基准。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating explaining comparisons and causes",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

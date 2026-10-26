@@ -1,0 +1,78 @@
+{
+  "id": "fr-a2-u11",
+  "title": "Actualité quotidienne",
+  "language": "fr",
+  "level": "A2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Summarize a short news item",
+  "prerequisite": "fr-a2-u10",
+  "context": "阅读地方新闻，区分已经发生的事实和未来计划。",
+  "grammar": "新闻简讯可将 passé composé 用于事件、présent 用于当前状况、futur 用于安排。selon + 来源说明信息来自谁，不等于独立核实。关注日期及数量，不把计划当作结果。",
+  "common_mistake": "La ville ouvrira un parc 不是‘公园已经开放’，将来时只说明计划。",
+  "vocabulary": [
+    [
+      "une actualité",
+      "新闻"
+    ],
+    [
+      "annoncer",
+      "宣布"
+    ],
+    [
+      "un chantier",
+      "工地"
+    ],
+    [
+      "ouvrir",
+      "开放"
+    ],
+    [
+      "selon",
+      "据……"
+    ],
+    [
+      "un habitant",
+      "居民"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "La mairie a annoncé hier la création d'un jardin partagé.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le terrain se trouve derrière l'école, mais les travaux ne sont pas terminés.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Selon la mairie, le jardin ouvrira au printemps prochain.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Les habitants peuvent déjà proposer des idées pour son organisation.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "La mairie a annoncé hier la création d'un jardin partagé. Le terrain se trouve derrière l'école, mais les travaux ne sont pas terminés. Selon la mairie, le jardin ouvrira au printemps prochain. Les habitants peuvent déjà proposer des idées pour son organisation. Une réunion aura lieu mardi à dix-neuf heures. Plusieurs voisins souhaitent cultiver des légumes, tandis que d'autres préfèrent planter des fleurs. Aucune décision n'a encore été prise sur cette répartition.",
+  "listening_script": "La mairie a annoncé hier la création d'un jardin partagé. Le terrain se trouve derrière l'école, mais les travaux ne sont pas terminés. Selon la mairie, le jardin ouvrira au printemps prochain. Les habitants peuvent déjà proposer des idées pour son organisation. Une réunion aura lieu mardi à dix-neuf heures. Plusieurs voisins souhaitent cultiver des légumes, tandis que d'autres préfèrent planter des fleurs. Aucune décision n'a encore été prise sur cette répartition.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Le jardin est-il déjà ouvert ?",
+      "answer": "Non, les travaux ne sont pas terminés.",
+      "explanation": "宣布与开放是不同事件，未来日期不能当成已发生事实。"
+    },
+    {
+      "prompt": "Quel mot indique une source ?",
+      "answer": "Selon.",
+      "explanation": "Selon la mairie 将信息归属给市政府。"
+    }
+  ],
+  "pronunciation": "accent de groupe。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Résumez une actualité",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

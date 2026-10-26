@@ -1,0 +1,78 @@
+{
+  "id": "fr-b2-u01",
+  "title": "Argumenter et nuancer",
+  "language": "fr",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Develop an extended, balanced argument",
+  "prerequisite": null,
+  "context": "为城市收费政策写短评，提出有条件的支持。",
+  "grammar": "quoique/bien que 后使用虚拟式，tandis que 常以陈述式建立对比。让步并不取消主论点，而是界定它成立的条件。结论应回应开头提出的评价标准。",
+  "common_mistake": "不能把‘在有替代交通时可行’改写成‘任何收费都公平’。",
+  "vocabulary": [
+    [
+      "une redevance",
+      "收费"
+    ],
+    [
+      "équitable",
+      "公平的"
+    ],
+    [
+      "une alternative",
+      "替代方案"
+    ],
+    [
+      "une contrainte",
+      "限制"
+    ],
+    [
+      "compenser",
+      "补偿"
+    ],
+    [
+      "à défaut de",
+      "缺乏……时"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "La tarification de l'accès au centre pourrait réduire la circulation, sans être pour autant équitable par nature.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Bien que certains ménages disposent d'une voiture par choix, d'autres en dépendent pour des horaires décalés.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Une politique cohérente devrait donc articuler la redevance avec des transports collectifs fiables.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "À défaut d'alternative, la mesure déplacerait simplement le coût vers les personnes les moins flexibles.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "La tarification de l'accès au centre pourrait réduire la circulation, sans être pour autant équitable par nature. Bien que certains ménages disposent d'une voiture par choix, d'autres en dépendent pour des horaires décalés. Une politique cohérente devrait donc articuler la redevance avec des transports collectifs fiables. À défaut d'alternative, la mesure déplacerait simplement le coût vers les personnes les moins flexibles. Cela ne justifie pas son abandon automatique. Une mise en place progressive, accompagnée d'exemptions ciblées et d'une évaluation publique, permettrait de vérifier qui supporte réellement l'effort. L'efficacité écologique et l'équité doivent être examinées conjointement.",
+  "listening_script": "La tarification de l'accès au centre pourrait réduire la circulation, sans être pour autant équitable par nature. Bien que certains ménages disposent d'une voiture par choix, d'autres en dépendent pour des horaires décalés. Une politique cohérente devrait donc articuler la redevance avec des transports collectifs fiables. À défaut d'alternative, la mesure déplacerait simplement le coût vers les personnes les moins flexibles. Cela ne justifie pas son abandon automatique. Une mise en place progressive, accompagnée d'exemptions ciblées et d'une évaluation publique, permettrait de vérifier qui supporte réellement l'effort. L'efficacité écologique et l'équité doivent être examinées conjointement.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "L'auteur rejette-t-il la tarification ?",
+      "answer": "Non, il la soutient sous conditions d'alternatives et d'évaluation.",
+      "explanation": "让步段限制支持条件，不等于完全反对。"
+    },
+    {
+      "prompt": "Quel mode emploie-t-on après bien que dans cette phrase ?",
+      "answer": "disposent est ici une forme de subjonctif présent, identique à l'indicatif pour ils.",
+      "explanation": "虚拟式可能与陈述式同形；不能仅看词尾判断语气。"
+    }
+  ],
+  "pronunciation": "intonation de nuance。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Présentez un débat équilibré",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

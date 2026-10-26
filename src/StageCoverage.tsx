@@ -16,7 +16,7 @@ export default function StageCoverage({client,session,onSelect}:{
     if(!active)return;
     if(error){setStatus('六阶段检查暂时不可用：'+error.message);return;}
     setItems((data||[]) as StageAudit[]);
-    setStatus('这是一套按篇幅优先安排人工审校的启发式检查，不是文章质量成绩。');
+    setStatus('');
    });
   return ()=>{active=false;};
  },[client,session.user.id]);
@@ -24,24 +24,24 @@ export default function StageCoverage({client,session,onSelect}:{
  const flagged=ranked.filter(x=>auditScore(x)>0);
  const visible=showAll?ranked:flagged;
  return <section className="cloud-reader" aria-label="108 课六阶段教学覆盖审校队列">
-  <h3>内容完整性与逐课复核顺序</h3>
-  <p role="status" className="cloud-disclaimer">{status}</p>
+  <h3>课程阶段检查</h3>
+  {status&&<p role="status">{status}</p>}
   <div className="stage-qa-summary">
    <span><strong>{items.length}</strong> 课已检查</span>
    <span><strong>{items.filter(x=>x.stages_in_order).length}</strong> 课标题顺序正常</span>
    <span><strong>{flagged.length}</strong> 课建议优先复核</span>
   </div>
-  <p className="cloud-disclaimer">检查使用每课实际①–⑥段落标题，不把序言中出现的六阶段标记误认为真正的正文。短文本仅提示复核，不表示缺少知识点；长文本也可能存在语法错误或不匹配的练习。</p>
+  
   <label className="stage-audit-toggle">
    <input type="checkbox" checked={showAll} onChange={e=>setShowAll(e.target.checked)}/>
-   显示全部 108 课（默认仅显示需要关注的课程）
+   显示全部课程
   </label>
   <div className="stage-audit-rows">
    {visible.map(item=><article key={item.course_id}>
     <div><strong>{item.course_id}</strong>
      <span>{item.total_chars} 字符 · {item.qa_status==='approved'?'已人工批准':'仍为草稿'}</span>
     </div>
-    <p>{stageReviewReasons(item).length?stageReviewReasons(item).join('；'):'未触发篇幅阈值，仍需完整人工审校'}</p>
+    <p>{stageReviewReasons(item).length?stageReviewReasons(item).join('；'):'未发现需要优先处理的结构问题'}</p>
     <button type="button" onClick={()=>onSelect(item.course_id)}>打开本课开始复核</button>
    </article>)}
   </div>

@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-listening-u06",
+  "title": "Information completion with context",
+  "language": "en",
+  "level": "B1-B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply information completion with context in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-listening-u05",
+  "context": "从学术说明中填写笔记空格，利用语法预测所需词类。",
+  "grammar": "冠词后常需名词，be 后可能需形容词或分词；先预测词类再核对语义。单复数和字数限制都是答案条件，不能为了语义接近忽略拼写和形式。",
+  "common_mistake": "答案框已有 a 时不要再填 a；应按题面所需内容填写。",
+  "vocabulary": [
+    [
+      "sample",
+      "样本"
+    ],
+    [
+      "label",
+      "标签"
+    ],
+    [
+      "moisture",
+      "湿度或水分"
+    ],
+    [
+      "container",
+      "容器"
+    ],
+    [
+      "measurement",
+      "测量"
+    ],
+    [
+      "consistent",
+      "一致的"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Each soil sample should be placed in a clean container.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Attach a label showing the location and collection date.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Before measuring moisture, the laboratory keeps all samples under consistent conditions.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "This reduces variation caused by different storage temperatures.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Each soil sample should be placed in a clean container. Attach a label showing the location and collection date. Before measuring moisture, the laboratory keeps all samples under consistent conditions. This reduces variation caused by different storage temperatures. The final report should state the measurement method as well as the result. A value without its method may be difficult to compare with another study. Students must therefore complete both columns of the record sheet.",
+  "listening_script": "Each soil sample should be placed in a clean container. Attach a label showing the location and collection date. Before measuring moisture, the laboratory keeps all samples under consistent conditions. This reduces variation caused by different storage temperatures. The final report should state the measurement method as well as the result. A value without its method may be difficult to compare with another study. Students must therefore complete both columns of the record sheet.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Complete with ONE WORD: Place each sample in a clean ___.",
+      "answer": "container",
+      "explanation": "a clean 后需要单数可数名词，直接取自第一句。"
+    },
+    {
+      "prompt": "What two items belong on the label ?",
+      "answer": "Location and collection date.",
+      "explanation": "标签要求与最终报告的方法要求不能混淆。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating information completion with context",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "fr-a2-u05",
+  "title": "Santé et conseils",
+  "language": "fr",
+  "level": "A2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Describe symptoms and give advice",
+  "prerequisite": "fr-a2-u04",
+  "context": "描述轻微不适并理解日常建议，不进行医学诊断。",
+  "grammar": "avoir mal à + 身体部位：au dos、à la tête、aux jambes。建议可用 vous devriez + 不定式，比直接命令更缓和。depuis + 时长配现在时可表达仍持续的情况。",
+  "common_mistake": "J'ai mal le dos 不完整，身体疼痛搭配需要 à 和相应冠词缩合。",
+  "vocabulary": [
+    [
+      "la tête",
+      "头"
+    ],
+    [
+      "le dos",
+      "背"
+    ],
+    [
+      "fatigué",
+      "疲惫的"
+    ],
+    [
+      "se reposer",
+      "休息"
+    ],
+    [
+      "un rendez-vous",
+      "预约"
+    ],
+    [
+      "depuis",
+      "自从"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Paul téléphone au cabinet pour prendre rendez-vous.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Il explique qu'il est fatigué depuis deux jours.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Il a mal à la tête, mais il ne connaît pas la cause.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "La secrétaire lui propose un rendez-vous dans l'après-midi.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Paul téléphone au cabinet pour prendre rendez-vous. Il explique qu'il est fatigué depuis deux jours. Il a mal à la tête, mais il ne connaît pas la cause. La secrétaire lui propose un rendez-vous dans l'après-midi. Elle ne donne pas de diagnostic par téléphone. Paul prévient son responsable et demande à rentrer plus tôt. Il note l'heure du rendez-vous pour ne pas l'oublier.",
+  "listening_script": "Paul téléphone au cabinet pour prendre rendez-vous. Il explique qu'il est fatigué depuis deux jours. Il a mal à la tête, mais il ne connaît pas la cause. La secrétaire lui propose un rendez-vous dans l'après-midi. Elle ne donne pas de diagnostic par téléphone. Paul prévient son responsable et demande à rentrer plus tôt. Il note l'heure du rendez-vous pour ne pas l'oublier.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "La secrétaire explique-t-elle la cause du problème ?",
+      "answer": "Non, elle ne donne pas de diagnostic.",
+      "explanation": "理解文本所说的边界，不能补充原文没有的诊断。"
+    },
+    {
+      "prompt": "补全：J'ai mal ___ dos.",
+      "answer": "au",
+      "explanation": "à + le 缩合成 au。"
+    }
+  ],
+  "pronunciation": "voyelles nasales contrastes。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Donnez des conseils de santé",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-writing-task1-u07",
+  "title": "Cohesion without memorised templates",
+  "language": "en",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply cohesion without memorised templates in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-writing-task1-u06",
+  "context": "用有逻辑的分组描述自编数据：线上借阅 10→30%，纸本借阅 80→60%，其他 10→10%。",
+  "grammar": "cohesion 来自信息组织，不是每句添加 moreover。this shift 需有清晰先行内容，while 可合并对照趋势。不要用 complicated synonyms 换掉技术含义稳定的借阅类别。",
+  "common_mistake": "为了避免重复，把 borrowing 改为 purchasing 会改变指标。",
+  "vocabulary": [
+    [
+      "borrowing",
+      "借阅"
+    ],
+    [
+      "digital",
+      "数字的"
+    ],
+    [
+      "shift",
+      "转变"
+    ],
+    [
+      "stable",
+      "稳定的"
+    ],
+    [
+      "contrast",
+      "对比"
+    ],
+    [
+      "cohesion",
+      "衔接"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Paper loans remained the dominant category in the fictional distribution.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Their share fell from 80% to 60%, while digital borrowing rose from 10% to 30%.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The remaining category stayed at 10%.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "This shift therefore involved the two main formats rather than all categories equally.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Paper loans remained the dominant category in the fictional distribution. Their share fell from 80% to 60%, while digital borrowing rose from 10% to 30%. The remaining category stayed at 10%. This shift therefore involved the two main formats rather than all categories equally. Grouping the opposing trends in one sentence makes the comparison visible. A separate sentence can then report the stable category. Repeating the exact category names is preferable to replacing them with terms that imply a different activity.",
+  "listening_script": "Paper loans remained the dominant category in the fictional distribution. Their share fell from 80% to 60%, while digital borrowing rose from 10% to 30%. The remaining category stayed at 10%. This shift therefore involved the two main formats rather than all categories equally. Grouping the opposing trends in one sentence makes the comparison visible. A separate sentence can then report the stable category. Repeating the exact category names is preferable to replacing them with terms that imply a different activity.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What does this shift refer to ?",
+      "answer": "The redistribution from paper towards digital borrowing.",
+      "explanation": "指代前句两种份额变化，不是所有类别增长。"
+    },
+    {
+      "prompt": "Did digital borrowing become the largest category ?",
+      "answer": "No, paper remained at 60%, above digital's 30%.",
+      "explanation": "增长最快不等于规模最大。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating cohesion without memorised templates",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

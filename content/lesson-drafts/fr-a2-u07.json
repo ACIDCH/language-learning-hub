@@ -1,0 +1,78 @@
+{
+  "id": "fr-a2-u07",
+  "title": "Futurs et invitations",
+  "language": "fr",
+  "level": "A2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Invite, accept, decline and plan",
+  "prerequisite": "fr-a2-u06",
+  "context": "提出周末邀请，并说明天气变化时的备选安排。",
+  "grammar": "简单将来时常用不定式词干加 -ai/-as/-a/-ons/-ez/-ont；être 为 ser-，avoir 为 aur-。现实条件句用 si + présent，主句可以 futur：S'il pleut, nous resterons。",
+  "common_mistake": "不要说 S'il pleuvra；这种现实条件的 si 从句不用将来时。",
+  "vocabulary": [
+    [
+      "une invitation",
+      "邀请"
+    ],
+    [
+      "apporter",
+      "带来"
+    ],
+    [
+      "prévoir",
+      "计划"
+    ],
+    [
+      "dehors",
+      "在外面"
+    ],
+    [
+      "à l'intérieur",
+      "在室内"
+    ],
+    [
+      "confirmer",
+      "确认"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Nous organiserons un déjeuner dimanche.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Si le temps est beau, nous mangerons dans le jardin.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Chacun apportera quelque chose à partager.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Julie préparera une salade et Karim achètera du pain.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Nous organiserons un déjeuner dimanche. Si le temps est beau, nous mangerons dans le jardin. Chacun apportera quelque chose à partager. Julie préparera une salade et Karim achètera du pain. S'il pleut, nous installerons la table dans le salon. Les enfants pourront jouer dans la chambre voisine. Merci de confirmer votre présence avant vendredi pour que nous puissions prévoir assez de places.",
+  "listening_script": "Nous organiserons un déjeuner dimanche. Si le temps est beau, nous mangerons dans le jardin. Chacun apportera quelque chose à partager. Julie préparera une salade et Karim achètera du pain. S'il pleut, nous installerons la table dans le salon. Les enfants pourront jouer dans la chambre voisine. Merci de confirmer votre présence avant vendredi pour que nous puissions prévoir assez de places.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Où mangeront-ils s'il pleut ?",
+      "answer": "Dans le salon.",
+      "explanation": "花园是天气好的方案，客厅是雨天方案。"
+    },
+    {
+      "prompt": "改错：Si tu viendras, apporte du pain.",
+      "answer": "Si tu viens, apporte du pain.",
+      "explanation": "现实条件从句用现在时。"
+    }
+  ],
+  "pronunciation": "conditionnel intonation polie。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Invitez un ami à un événement",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

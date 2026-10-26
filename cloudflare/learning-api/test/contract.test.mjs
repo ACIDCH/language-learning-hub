@@ -1,10 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {handle} from '../src/index.mjs';
+import {handle,nextProgressTimestamp} from '../src/index.mjs';
 
 const origin = 'https://language-learning-hub.pages.dev';
+const previewOrigin = 'https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev';
 const cfg = {SUPABASE_URL:'https://db.example.supabase.co',
-  SUPABASE_PUBLISHABLE_KEY:'public-key', FRONTEND_ORIGIN:origin};
+  SUPABASE_PUBLISHABLE_KEY:'public-key', FRONTEND_ORIGIN:origin,PREVIEW_FRONTEND_ORIGIN:previewOrigin};
 const req = (path, options={}) => new Request('https://api.example.workers.dev'+path,options);
 const respond = (value,status=200) => new Response(JSON.stringify(value),
   {status,headers:{'content-type':'application/json'}});
@@ -16,12 +17,20 @@ test('GET /health returns honest integration status and CORS is restricted',asyn
   assert.equal(other.status,403);
   const allowed=await handle(req('/health',{headers:{Origin:origin}}),cfg);
   assert.equal(allowed.headers.get('access-control-allow-origin'),origin);
+  const preview=await handle(req('/v1/status',{headers:{Origin:previewOrigin}}),cfg);
+  assert.equal(preview.status,200);
+  assert.equal(preview.headers.get('access-control-allow-origin'),previewOrigin);
+  const preflight=await handle(req('/v1/progress/fr-a1-u01',{method:'OPTIONS',headers:{Origin:previewOrigin,'Access-Control-Request-Method':'PUT'}}),cfg);
+  assert.equal(preflight.status,204);
+  assert.equal(preflight.headers.get('access-control-allow-origin'),previewOrigin);
+  const spoof=await handle(req('/health',{headers:{Origin:previewOrigin+'.attacker.test'}}),cfg);
+  assert.equal(spoof.status,403);
 });
 test('status explicitly reports what is and is not deployed',async()=>{
   const r=await handle(req('/v1/status'),cfg);
   const d=await r.json();
   assert.equal(d.ready,true);
-  assert.equal(d.modules.ai,'not-connected');
+  assert.equal(d.modules.ai,'manual-opt-in-with-learner-key');
   assert.equal(d.modules.fullText,'owner-scoped-snapshot-adapter');
   const notConfigured=await handle(req('/v1/status'));
   assert.equal((await notConfigured.json()).ready,false);
@@ -52,7 +61,8 @@ test('a Supabase authenticated write uses server resolved user id and RLS token'
       assert.equal(opts.headers.Authorization,'Bearer abc.def.ghi');
       return respond({id:'supabase-user-123'});
     }
-    assert.ok(url.includes('/rest/v1/learning_progress?on_conflict='));
+    assert.ok(url.includes('/rest/v1/learning_progress'));
+    assert.ok(!url.includes('on_conflict='));
     assert.equal(opts.headers.Authorization,'Bearer abc.def.ghi');
     const b=JSON.parse(opts.body);
     assert.equal(b.user_id,'supabase-user-123');
@@ -63,7 +73,7 @@ test('a Supabase authenticated write uses server resolved user id and RLS token'
   };
   const request=req('/v1/progress/fr-a1-u01',{method:'PUT',
     headers:{Authorization:'Bearer abc.def.ghi','Content-Type':'application/json'},
-    body:JSON.stringify({state:{stage:3},user_id:'attacker-id'})});
+    body:JSON.stringify({state:{stage:3},user_id:'attacker-id',expectedUpdatedAt:null})});
   const r=await handle(request,cfg,fetcher);
   assert.equal(r.status,200);
   assert.equal((await r.json()).saved,true);
@@ -181,4 +191,106 @@ test('unmapped audio returns an empty collection, not a playable asset',async()=
  const ok=await handle(req('/v1/audio-index/en-ielts-reading-u01',
    {headers:{Authorization:'Bearer valid.jwt.token'}}),cfg,fetcher);
  assert.deepEqual((await ok.json()).assets,[]);
+});
+
+
+test('versioned progress creates only when missing and conflicts with another device rather than replacing it',async()=>{
+ const calls=[];
+ const fetcher=async(url,opts)=>{
+  if(url.endsWith('/auth/v1/user'))return respond({id:'owner-cas'});
+  calls.push({url,opts});
+  if(opts.method==='POST')return respond({code:'23505',message:'unique violation'},409);
+  throw Error('Unexpected method');
+ };
+ const r=await handle(req('/v1/progress/fr-a1-u01',{method:'PUT',
+  headers:{Authorization:'Bearer abc.def.ghi','Content-Type':'application/json',Origin:origin},
+  body:JSON.stringify({state:{stage:4},expectedUpdatedAt:null})
+ }),cfg,fetcher);
+ assert.equal(r.status,409);
+ assert.equal((await r.json()).error,'progress_conflict');
+ assert.equal(calls.length,1);
+ assert.equal(calls[0].opts.method,'POST');
+ assert.equal(calls[0].opts.headers.Prefer,'return=representation');
+ assert.ok(!calls[0].url.includes('on_conflict'));
+});
+
+test('versioned main-course update uses timestamp-matched PATCH and rejects stale writes',async()=>{
+ const calls=[];
+ const previous='2026-10-25T08:00:00.000Z';
+ const fetcher=async(url,opts)=>{
+  if(url.endsWith('/auth/v1/user'))return respond({id:'owner-cas'});
+  calls.push({url,opts});
+  if(opts.method==='PATCH')return respond([]); // another device already saved
+  throw Error('Unexpected method');
+ };
+ const r=await handle(req('/v1/progress/fr-a1-u01',{method:'PUT',
+  headers:{Authorization:'Bearer abc.def.ghi','Content-Type':'application/json',Origin:origin},
+  body:JSON.stringify({state:{notes:'pending changes'},expectedUpdatedAt:previous})
+ }),cfg,fetcher);
+ assert.equal(r.status,409);
+ assert.equal((await r.json()).error,'progress_conflict');
+ assert.equal(calls.length,1);
+ assert.equal(calls[0].opts.method,'PATCH');
+ const url=new URL(calls[0].url);
+ assert.equal(url.searchParams.get('user_id'),'eq.owner-cas');
+ assert.equal(url.searchParams.get('course_id'),'eq.fr-a1-u01');
+ assert.equal(url.searchParams.get('updated_at'),'eq.'+previous);
+ assert.equal(calls[0].opts.headers.Prefer,'return=representation');
+ assert.deepEqual(JSON.parse(calls[0].opts.body).state,{notes:'pending changes'});
+});
+
+test('versioned main-course save returns new server version after successful conditional update',async()=>{
+ const initial='2026-10-24T08:00:00.000Z',next='2026-10-25T09:00:00.000Z';
+ const fetcher=async(url,opts)=>{
+  if(url.endsWith('/auth/v1/user'))return respond({id:'owner-cas'});
+  assert.equal(opts.method,'PATCH');
+  return respond([{state:{notes:'updated'},updated_at:next}]);
+ };
+ const r=await handle(req('/v1/progress/fr-a1-u01',{method:'PUT',
+  headers:{Authorization:'Bearer abc.def.ghi','Content-Type':'application/json',Origin:origin},
+  body:JSON.stringify({state:{notes:'updated'},expectedUpdatedAt:initial})
+ }),cfg,fetcher);
+ assert.equal(r.status,200);
+ assert.equal((await r.json()).progress.updated_at,next);
+});
+
+
+test('unversioned legacy progress PUT is rejected without changing the database',async()=>{
+ let writes=0;
+ const fetcher=async(url)=>{
+  if(url.endsWith('/auth/v1/user'))return respond({id:'owner-id'});
+  writes++;throw Error('An unversioned update must never run');
+ };
+ const r=await handle(req('/v1/progress/fr-a1-u01',{
+  method:'PUT',
+  headers:{Authorization:'Bearer abc.def.ghi','Content-Type':'application/json'},
+  body:JSON.stringify({state:{notes:'could overwrite newer data'}})
+ }),cfg,fetcher);
+ assert.equal(r.status,428);
+ assert.equal((await r.json()).error,'progress_version_required');
+ assert.equal(writes,0);
+});
+
+
+test('rapid consecutive progress writes always advance the CAS version beyond the remote marker',()=>{
+ const prior='2026-10-25T10:12:03.456Z';
+ assert.equal(nextProgressTimestamp(prior,Date.parse(prior)),'2026-10-25T10:12:03.457Z');
+ assert.equal(nextProgressTimestamp(prior,Date.parse(prior)-3000),'2026-10-25T10:12:03.457Z');
+ assert.equal(nextProgressTimestamp(prior,Date.parse(prior)+4000),'2026-10-25T10:12:07.456Z');
+});
+test('conditional progress PATCH sets a new timestamp strictly greater than the previous revision',async()=>{
+ const original='2026-10-25T10:12:03.456Z';
+ const fetcher=async(url,opts)=>{
+  if(url.endsWith('/auth/v1/user'))return respond({id:'version-owner'});
+  assert.equal(opts.method,'PATCH');
+  const body=JSON.parse(opts.body);
+  assert.ok(Date.parse(body.updated_at)>Date.parse(original));
+  return respond([{state:body.state,updated_at:body.updated_at}]);
+ };
+ const r=await handle(req('/v1/progress/fr-a1-u01',{method:'PUT',
+  headers:{Authorization:'Bearer abc.def.ghi','Content-Type':'application/json',Origin:origin},
+  body:JSON.stringify({state:{stage:3},expectedUpdatedAt:original})
+ }),cfg,fetcher);
+ assert.equal(r.status,200);
+ assert.ok(Date.parse((await r.json()).progress.updated_at)>Date.parse(original));
 });

@@ -1,0 +1,78 @@
+{
+  "id": "fr-b1-u04",
+  "title": "Conseiller et obliger",
+  "language": "fr",
+  "level": "B1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Give nuanced recommendations",
+  "prerequisite": "fr-b1-u03",
+  "context": "给新实习生说明安全规则，分清建议和强制要求。",
+  "grammar": "il faut que + subjonctif 表示必要；il est conseillé de + infinitif 表示建议。主语不变时可用 devoir + infinitif 简化。解释义务时说明目的，避免把个人偏好说成制度。",
+  "common_mistake": "il faut que tu portes 与 il faut porter 都可以，但不能混成 il faut que porter。",
+  "vocabulary": [
+    [
+      "une consigne",
+      "指示"
+    ],
+    [
+      "obligatoire",
+      "强制的"
+    ],
+    [
+      "un badge",
+      "工牌"
+    ],
+    [
+      "signaler",
+      "报告"
+    ],
+    [
+      "veiller à",
+      "注意"
+    ],
+    [
+      "conseiller",
+      "建议"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "À l'entrée de l'atelier, le responsable accueille les stagiaires.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Il faut que chacun porte un badge et des chaussures fermées.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Ces règles permettent d'identifier les visiteurs et de limiter certains risques.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Il est également conseillé de prendre des notes pendant la présentation.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "À l'entrée de l'atelier, le responsable accueille les stagiaires. Il faut que chacun porte un badge et des chaussures fermées. Ces règles permettent d'identifier les visiteurs et de limiter certains risques. Il est également conseillé de prendre des notes pendant la présentation. Cette dernière recommandation n'est pas une obligation. Si un outil semble abîmé, les stagiaires doivent le signaler au lieu d'essayer de le réparer seuls. Le responsable termine en invitant le groupe à poser des questions sur les consignes.",
+  "listening_script": "À l'entrée de l'atelier, le responsable accueille les stagiaires. Il faut que chacun porte un badge et des chaussures fermées. Ces règles permettent d'identifier les visiteurs et de limiter certains risques. Il est également conseillé de prendre des notes pendant la présentation. Cette dernière recommandation n'est pas une obligation. Si un outil semble abîmé, les stagiaires doivent le signaler au lieu d'essayer de le réparer seuls. Le responsable termine en invitant le groupe à poser des questions sur les consignes.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "La prise de notes est-elle obligatoire ?",
+      "answer": "Non, elle est conseillée.",
+      "explanation": "读懂建议与义务的不同强度。"
+    },
+    {
+      "prompt": "补全：Il faut que chacun ___ un badge. (porter)",
+      "answer": "porte",
+      "explanation": "il faut que 后使用虚拟式，porter 在此形式上与现在时相同。"
+    }
+  ],
+  "pronunciation": "subjonctif formes fréquentes。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Conseillez un collègue",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

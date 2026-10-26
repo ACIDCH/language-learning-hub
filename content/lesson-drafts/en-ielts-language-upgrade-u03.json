@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-language-upgrade-u03",
+  "title": "Academic collocation and word families",
+  "language": "en",
+  "level": "B2-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply academic collocation and word families in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-language-upgrade-u02",
+  "context": "学习学术词族与搭配，优先掌握可直接使用的表达组合。",
+  "grammar": "analyse/analysis/analytical 各有句法位置；conduct an analysis、draw a conclusion、pose a question 是常见组合。派生形式不是简单加词尾，注意不可数与可数用法。",
+  "common_mistake": "make a research 通常不自然；用 conduct research 或 carry out a study。",
+  "vocabulary": [
+    [
+      "analysis",
+      "分析"
+    ],
+    [
+      "analyse",
+      "分析（动词）"
+    ],
+    [
+      "analytical",
+      "分析性的"
+    ],
+    [
+      "conduct research",
+      "开展研究"
+    ],
+    [
+      "draw a conclusion",
+      "得出结论"
+    ],
+    [
+      "pose a question",
+      "提出问题"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "The team conducted research into the use of shared workspaces.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Its analysis focused on the tasks people completed rather than the number of desks occupied.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "An analytical approach required clear categories and consistent observation.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The findings raised a question about how collaboration should be measured.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "The team conducted research into the use of shared workspaces. Its analysis focused on the tasks people completed rather than the number of desks occupied. An analytical approach required clear categories and consistent observation. The findings raised a question about how collaboration should be measured. They did not justify drawing a conclusion about every workplace. Learning these expressions as combinations helps writers produce accurate sentences without searching for a different synonym each time.",
+  "listening_script": "The team conducted research into the use of shared workspaces. Its analysis focused on the tasks people completed rather than the number of desks occupied. An analytical approach required clear categories and consistent observation. The findings raised a question about how collaboration should be measured. They did not justify drawing a conclusion about every workplace. Learning these expressions as combinations helps writers produce accurate sentences without searching for a different synonym each time.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Complete: The team conducted an ___ of the observations.",
+      "answer": "analysis",
+      "explanation": "an 后需名词单数；analyse 是动词。"
+    },
+    {
+      "prompt": "Correct They made a research.",
+      "answer": "They conducted research. / They carried out a study.",
+      "explanation": "research 通常不可数，study 可数。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating academic collocation and word families",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

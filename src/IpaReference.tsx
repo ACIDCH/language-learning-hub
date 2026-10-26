@@ -1,3 +1,4 @@
+import {useEffect,useRef} from 'react';
 import {speakIpaText} from './IpaText';
 type Phoneme={symbol:string;example:string;hint:string};
 type Group={name:string;items:Phoneme[]};
@@ -81,11 +82,21 @@ const FR:Group[]=[
 export default function IpaReference({language}:{language:string}){
  const isFrench=language.startsWith('fr');
  const groups=isFrench?FR:EN;
- return <details className="ipa-reference" aria-label={isFrench?'法语 IPA 音标体系':'英语 IPA 音标体系'}>
-  <summary>{isFrench?'法语':'英语'} IPA 音标体系 · 点击示例词听标准设备朗读</summary>
-  <p className="cloud-disclaimer">本表帮助建立「音标 → 发音位置 → 词中读法」的联系；
-   播放按钮使用现有设备 TTS 播放<strong>示例词</strong>，不是让 TTS 猜读 IPA 符号。
-   音标使用广义音位标记，不是每个口音和连读细节都完全一致。</p>
+ const ref=useRef<HTMLDetailsElement>(null);
+ useEffect(()=>{
+  const outside=(event:PointerEvent)=>{
+   if(ref.current?.open&&!ref.current.contains(event.target as Node))ref.current.open=false;
+  };
+  const escape=(event:KeyboardEvent)=>{
+   if(event.key==='Escape'&&ref.current?.open){ref.current.open=false;event.stopPropagation();}
+  };
+  document.addEventListener('pointerdown',outside);
+  document.addEventListener('keydown',escape,true);
+  return ()=>{document.removeEventListener('pointerdown',outside);document.removeEventListener('keydown',escape,true);};
+ },[]);
+ return <details ref={ref} className="ipa-reference" aria-label={isFrench?'法语 IPA 音标体系':'英语 IPA 音标体系'}>
+  <summary>{isFrench?'法语':'英语'}音标表</summary>
+
   {groups.map(group=><section key={group.name}>
    <h5>{group.name}</h5>
    <div className="ipa-reference-grid">
@@ -98,8 +109,6 @@ export default function IpaReference({language}:{language:string}){
     </article>)}
    </div>
   </section>)}
-  <p className="cloud-disclaimer">符号 <strong>ˈ</strong> 表示主重音，<strong>ˌ</strong> 表示次重音，
-   <strong>ː</strong> 表示较长音；法语还要区分连诵（liaison）、省音以及语流中弱读的变化。
-   IPA 词典读音、机器预测的音标和实际说话人的发音是三种不同的证据。</p>
+
  </details>;
 }

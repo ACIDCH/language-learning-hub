@@ -1,6 +1,12 @@
-import {lazy,Suspense,useEffect,useRef,useState} from 'react';
-import {ENGINES,browserResult,lessonPractice,type SpeechEngineId} from './speechEngines';
+import {lazy,Suspense,useCallback,useEffect,useRef,useState} from 'react';
+import BrowserSpeechFeedback,{type BrowserSpeechHandle} from './BrowserSpeechFeedback';
+import type {Session} from '@supabase/supabase-js';
+import AITutor from './AITutor';
+import {apiBase} from './v44Connection';
+import './speakingWorkbench.css';
+import {ENGINES,browserResult,lessonPractice,cloudSpeechEndpoint,type SpeechEngineId} from './speechEngines';
 const LocalPronunciation=lazy(()=>import('./LocalPronunciation'));
+
 import {analyzeTranscript,practiceHint} from './speechCompare';
 import {appendAttempt,learnerCoaching,type RecentAttempt} from './speechCoach';
 import {practiceChunks,addReviewWords,clearReviewedWord,type ReviewWord} from './speechLearningTools';
@@ -31,8 +37,9 @@ const ERRORS:Record<string,string>={
  'aborted':'本次识别已停止。'
 };
 export {analyzeTranscript as compareTranscript} from './speechCompare';
-export default function SpeechPractice({language,lessonText="",initialTarget="",accessToken}:{
- language:string;lessonText?:string;initialTarget?:string;accessToken?:string
+export default function SpeechPractice({language,lessonText="",initialTarget="",accessToken,session=null,variant='classic',showChoices=true}:{
+ language:string;lessonText?:string;initialTarget?:string;accessToken?:string;
+ variant?:'classic'|'standalone'|'selection';showChoices?:boolean;session?:Session|null
 }){
  const [target,setTarget]=useState(initialTarget);
  const [mode,setMode]=useState<SpeechEngineId>('browser-asr');
@@ -41,7 +48,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
  const [heard,setHeard]=useState('');
  const [interim,setInterim]=useState('');
  const [alternatives,setAlternatives]=useState<string[]>([]);
- const [note,setNote]=useState('先听示范，再说完整短句，可重复练习。');
+ const [note,setNote]=useState('');
  const [listening,setListening]=useState(false);
  const [rate,setRate]=useState(0.85);
  const [attempts,setAttempts]=useState(0);
@@ -56,6 +63,9 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
  const [voices,setVoices]=useState<SpeechSynthesisVoice[]>([]);
  const [locale,setLocale]=useState(language==='fr'?'fr-FR':'en-US');
  const engine=useRef<Engine|null>(null);
+ const browserRecorder=useRef<BrowserSpeechHandle|null>(null);
+ const [microphonePhase,setMicrophonePhase]=useState<'idle'|'permission'|'recording'|'processing'>('idle');
+ const handleMicrophonePhase=useCallback((phase:typeof microphonePhase)=>setMicrophonePhase(phase),[]);
  const lang=language==='fr'?'fr':'en';
  useEffect(()=>{
   setLocale(lang==='fr'?'fr-FR':'en-US');setTarget(initialTarget);setHeard('');setAlternatives([]);setListening(false);
@@ -85,7 +95,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
  function updateTarget(next:string){
   const previous=engine.current;engine.current=null;previous?.abort();clearTimeout(watchdog.current);setListening(false);
   setTarget(next);setHeard('');setInterim('');setAlternatives([]);
-  setAttempts(0);setRecent([]);setReturnSentence('');setRevealed(false);setNote('已更新练习句子。');
+  setAttempts(0);setRecent([]);setReturnSentence('');setRevealed(false);setNote('');
  }
  function focusWord(word:string){
   const original=returnSentence||target;
@@ -104,7 +114,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
   utterance.onerror=()=>setNote('语音朗读没有成功，请尝试切换系统声音或浏览器。');
   try{
     window.speechSynthesis.speak(utterance);
-    setNote('正在播放设备语音示范；不同系统的朗读质量可能不同。');
+    setNote('正在播放示范…');
   }catch{setNote('无法播放系统语音示范。');}
  }
  function listen(){
@@ -145,7 +155,7 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
           id:++attemptId.current,target,heard:first,
           match:checked.missing===0&&checked.substituted===0&&checked.extra===0
         }));
-        setNote('识别完成。请查看文字核对与下一步复练建议；这不是发音打分。');
+        setNote('识别完成');
         // A final ASR result is usable immediately. Close the microphone now,
         // rather than waiting for vendor onend (which may be delayed).
         clearTimeout(watchdog.current);
@@ -173,8 +183,8 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
   if(blindMode)setRevealed(false);
   try{
     rec.start();setListening(true);
-    watchdog.current=setTimeout(()=>{if(engine.current===rec){engine.current=null;rec.abort();setListening(false);setInterim('');setNote('识别服务等待超时，请重试；如已部署云端声学服务，也可选择云端模式。');}},20000);
-    setNote('正在监听。部分浏览器将语音发送至其服务商识别；本学习系统不保留音频。');
+    watchdog.current=setTimeout(()=>{if(engine.current===rec){engine.current=null;rec.abort();setListening(false);setInterim('');setNote('识别服务等待超时，请重试；也可直接使用下方浏览器录音分析。');}},20000);
+    setNote('正在识别…');
   }catch{
     engine.current=null;setListening(false);
     setNote('无法启动识别，请检查设备输入和麦克风权限。');
@@ -184,17 +194,79 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
    try{engine.current?.stop();setNote('已停止收音，正在等待最终识别结果…');}
    catch{setListening(false);}
  }
- return <section className="cloud-reader" aria-label="跟读与识别文字练习">
+ function startCombined(){
+   if(!target.trim()){setNote('请先选择单词或句子。');return;}
+   browserRecorder.current?.start();
+   listen();
+  }
+  function stopCombined(){
+   browserRecorder.current?.stop();
+   if(listening)end();
+  }
+  function retryCombined(){
+   browserRecorder.current?.cancel();
+   updateTarget(target);
+  }
+  if(variant!=='classic')return <section className={'speaking-workbench'+(variant==='selection'?' speaking-workbench--selection':'')} aria-label="跟读与识别文字练习">
+   <div className="speaking-workbench-heading">
+
+    <label>发音语言 <select aria-label="语言与口音" value={locale} disabled={listening} onChange={e=>{updateTarget(target);setLocale(e.target.value);setVoiceId('');}}>
+     {(lang==='fr'?['fr-FR','fr-CA']:['en-US','en-GB','en-AU']).map(l=><option key={l} value={l}>{l}</option>)}
+    </select></label>
+   </div>
+   <div className="speaking-workbench-target">
+    <label>选中文本<textarea aria-label="跟读目标文本" value={target} maxLength={400}
+     rows={variant==='selection'?2:3} placeholder={SAMPLE[lang][0]} onChange={e=>updateTarget(e.target.value)}/></label>
+    {variant==='standalone'&&showChoices&&<div className="speaking-workbench-choices" aria-label="常用句子">
+     {(examples.length?examples:SAMPLE[lang]).slice(0,8).map(s=><button type="button" key={s}
+       className={s===target?'chosen':''} onClick={()=>updateTarget(s)}>{s}</button>)}
+    </div>}
+   </div>
+   <div className="speaking-workbench-controls">
+    <button type="button" onClick={()=>speak()} disabled={!target.trim()}>▶ 播放示范</button>
+    <button type="button" className="speaking-primary" disabled={!target.trim()||listening||microphonePhase!=='idle'}
+     onClick={startCombined}>🎙 开始跟读</button>
+    <button type="button" disabled={!listening&&microphonePhase==='idle'} onClick={stopCombined}>■ 停止</button>
+    <button type="button" disabled={listening||microphonePhase==='recording'} onClick={retryCombined}>↻ 重试</button>
+   </div>
+   {note&&<p className="speaking-workbench-status" role="status" aria-live="polite">{note}</p>}
+   <section className="speaking-workbench-result" aria-label="识别与发音分析结果">
+    <div className="speaking-workbench-result-head"><h3>识别与发音分析结果</h3>
+      {report&&<span>文本相似度 <strong>{report.similarity}%</strong></span>}</div>
+    {interim&&<p>识别中：{interim}</p>}
+    {heard&&<div className="speaking-recognition"><b>识别文字</b><p>{heard}</p>
+      {report&&<div className="speech-compare" aria-label="目标词语识别情况">{report.expected.map((word,i)=>
+       <span key={i} className={'speech-token speech-'+word.status}>{word.word}{word.status==='substitution'&&<small>→ {word.heard}</small>}</span>)}</div>}
+    </div>}
+    <BrowserSpeechFeedback ref={browserRecorder} key={target+'-'+lang} target={target} language={lang} embedded onPhaseChange={handleMicrophonePhase}/>
+    {coaching&&<section className="speaking-workbench-coaching" aria-label="纠正与复练建议">
+      <h4>纠正与复练建议</h4><p>{coaching.instruction}</p>
+      {coaching.focusWords.slice(0,5).map(word=><button key={word} onClick={()=>focusWord(word)}>复练 {word}</button>)}
+    </section>}
+   </section>
+   {variant==='standalone'&&<details className="speaking-workbench-ai">
+    <summary>AI 辅助讲解</summary>
+    <AITutor key={target} compact session={session} apiBase={apiBase}
+     courseId="speaking-lab" language={lang} lessonText={target}
+     initialPrompt={'请参考本次英语/法语跟读的文字结果给出简短规则解析与复练建议。目标：'+target+'。识别：'+(heard||'暂无')+'。不要把文字相似度当专业发音评分。'}/>
+   </details>}
+   {variant==='standalone'&&<details className="speaking-workbench-more"><summary>更多练习选项</summary>
+     <label>示范语速 {rate.toFixed(2)}× <input type="range" min=".65" max="1.15" step=".05" value={rate} onChange={e=>setRate(Number(e.target.value))}/></label>
+     <label><input type="checkbox" checked={showIpa} onChange={e=>setShowIpa(e.target.checked)}/>显示参考 IPA</label>
+     {showIpa&&target&&<IpaText text={target} language={locale}/>}
+   </details>}
+  </section>;
+  return <section className="cloud-reader" aria-label="跟读与识别文字练习">
   <h3>听一句、跟读一句、再复练</h3>
-  <p className="cloud-disclaimer">面向日常语言学习：免费浏览器文字识别 + 设备语音示范，无需购买专业发音评分服务。文字差异可供复练，但不代表口音或音素诊断；浏览器识别可能调用厂商服务。本页面不保存录音，也不把转写同步到学习记录。</p>
+  <p className="cloud-disclaimer">面向日常语言学习：浏览器短录音分析 + 免费文字识别 + 设备语音示范，无需购买专业发音评分服务。文字差异可供复练，但不代表口音或音素诊断；浏览器识别可能调用厂商服务。本页面不保存录音，也不把转写同步到学习记录。</p>
   <ol className="speech-learning-steps" aria-label="跟读四步">
    <li>选一个短句</li><li>听设备示范</li><li>开始跟读并查看识别文字</li><li>听错词、再练一次</li>
   </ol>
   <div className="cloud-fields">
     <details className="speech-advanced">
      <summary>识别方式与高级实验功能（默认使用免费浏览器识别）</summary>
-     <label>练习引擎<select aria-label="练习引擎" value={mode} onChange={e=>{updateTarget(target);setMode(e.target.value as SpeechEngineId);}}>{ENGINES.map(x=><option key={x.id} value={x.id} disabled={!x.available||(x.id==='optional-remote-evaluator'&&!accessToken)}>{x.name}</option>)}</select></label>
-     <p className="cloud-disclaimer">本机模式需启动本机模型；云端模式需要学习账号及已部署的云端服务。两者都只提供未校准的练习参考值，默认免费文字跟读不受影响。</p>
+     <label>练习引擎<select aria-label="练习引擎" value={mode} onChange={e=>{updateTarget(target);setMode(e.target.value as SpeechEngineId);}}>{ENGINES.map(x=><option key={x.id} value={x.id} disabled={!x.available||(x.id==='optional-remote-evaluator'&&(!accessToken||!cloudSpeechEndpoint()))}>{x.name}</option>)}</select></label>
+     <p className="cloud-disclaimer">下方浏览器录音分析不需要部署服务；这里保留兼容旧版高级声学模型的可选入口。普通用户无需使用这些模型。</p>
     </details>
     <label>练习长度<select aria-label="练习长度" value={step} onChange={e=>setStep(e.target.value as typeof step)}><option value="word">短词</option><option value="sentence">短句</option><option value="paragraph">段落（声学模式每次不超过 12 秒）</option></select></label>
     {!!examples.length&&!masked&&<div className="speech-presets" aria-label="当前课程练习片段">{examples.map((s,i)=><button key={i} onClick={()=>updateTarget(s)}>{s}</button>)}</div>}
@@ -265,6 +337,9 @@ export default function SpeechPractice({language,lessonText="",initialTarget="",
       }}>清空结果</button>}
     </div>
     <p className="cloud-disclaimer" role="status" aria-live="polite">{note}</p>
+    <Suspense fallback={<p>正在加载本机录音分析工具…</p>}>
+      <BrowserSpeechFeedback target={target} language={lang}/>
+    </Suspense>
     {interim&&<p className="speech-interim">识别中：{interim}</p>}
     {mode!=='browser-asr'&&<Suspense fallback={<p>正在加载录音组件…</p>}>
       <LocalPronunciation target={target} language={lang}

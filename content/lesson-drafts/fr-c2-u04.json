@@ -1,0 +1,78 @@
+{
+  "id": "fr-c2-u04",
+  "title": "Pragmatique avancée",
+  "language": "fr",
+  "level": "C2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Understand cultural subtext and humor",
+  "prerequisite": "fr-c2-u03",
+  "context": "分析会议中的间接言语行为，区分推断与已证实意图。",
+  "grammar": "dire peut accomplir une demande、une objection、une promesse，而不仅陈述事实。合作推论依情境可撤销；‘Il se fait tard’可能是结束建议，也可能只是时间观察。分析须列出替代解释。",
+  "common_mistake": "不要把一次委婉表达固定诊断为讽刺、拒绝或操纵。",
+  "vocabulary": [
+    [
+      "un acte de parole",
+      "言语行为"
+    ],
+    [
+      "une implicature",
+      "会话含义"
+    ],
+    [
+      "une présupposition",
+      "预设"
+    ],
+    [
+      "une inférence",
+      "推断"
+    ],
+    [
+      "révocable",
+      "可撤销的"
+    ],
+    [
+      "la face",
+      "社会面子"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Au terme d'une discussion tendue, une participante remarque que le dernier train part dans vingt minutes.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "L'énoncé décrit un horaire, mais il peut également inviter le groupe à conclure.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Cette interprétation dépend de ce que chacun sait de son trajet et des décisions encore attendues.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Si elle ajoute qu'elle rentrera en voiture, l'inférence initiale devient moins probable.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Au terme d'une discussion tendue, une participante remarque que le dernier train part dans vingt minutes. L'énoncé décrit un horaire, mais il peut également inviter le groupe à conclure. Cette interprétation dépend de ce que chacun sait de son trajet et des décisions encore attendues. Si elle ajoute qu'elle rentrera en voiture, l'inférence initiale devient moins probable. Il importe donc de ne pas confondre le contenu littéral, l'effet produit et l'intention attribuée. Un interlocuteur peut répondre en proposant de suspendre la séance tout en laissant ouverte la possibilité d'une autre lecture. Cette réponse coopérative évite de forcer une demande explicite susceptible de menacer la face de la participante. L'analyse pragmatique reste néanmoins descriptive : elle montre les indices qui rendent une interprétation plausible, sans prétendre accéder directement à l'état mental des locuteurs.",
+  "listening_script": "Au terme d'une discussion tendue, une participante remarque que le dernier train part dans vingt minutes. L'énoncé décrit un horaire, mais il peut également inviter le groupe à conclure. Cette interprétation dépend de ce que chacun sait de son trajet et des décisions encore attendues. Si elle ajoute qu'elle rentrera en voiture, l'inférence initiale devient moins probable. Il importe donc de ne pas confondre le contenu littéral, l'effet produit et l'intention attribuée. Un interlocuteur peut répondre en proposant de suspendre la séance tout en laissant ouverte la possibilité d'une autre lecture. Cette réponse coopérative évite de forcer une demande explicite susceptible de menacer la face de la participante. L'analyse pragmatique reste néanmoins descriptive : elle montre les indices qui rendent une interprétation plausible, sans prétendre accéder directement à l'état mental des locuteurs.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quel ajout affaiblit l'inférence de départ imminent ?",
+      "answer": "Elle rentrera en voiture.",
+      "explanation": "会话推论可被新信息取消。"
+    },
+    {
+      "prompt": "Distinguez effet et intention dans cet exemple.",
+      "answer": "Le groupe peut conclure la réunion sans qu'on puisse prouver que c'était l'intention de la participante.",
+      "explanation": "实际效果不独自证明主观目的。"
+    }
+  ],
+  "pronunciation": "intonation implicite。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Expliquez un échange complexe",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

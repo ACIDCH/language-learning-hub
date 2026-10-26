@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "phase": "pre_release_validation",
+  "courseReviews": [],
+  "specialtyReviews": [],
+  "audioReviews": [],
+  "deviceRestore": null,
+  "browserAcceptance": null,
+  "audioDeliveryMode": "device_tts",
+  "ttsAcceptance": null
+}

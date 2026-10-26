@@ -1,0 +1,336 @@
+{
+  "checked_at": "2026-10-24",
+  "note": "Read-only Drive metadata. Connector did not return requested checksums; cloud identity is size/name only, not byte equivalence.",
+  "rows": [
+    {
+      "name": "pho_13.zip",
+      "bytes": 1813016,
+      "modified_time": "2026-10-15T22:54:17.193Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "pho_12.zip",
+      "bytes": 2461358,
+      "modified_time": "2026-10-15T22:54:09.222Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "pho_11.zip",
+      "bytes": 1937239,
+      "modified_time": "2026-10-15T22:53:59.541Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "pho_10.zip",
+      "bytes": 4593170,
+      "modified_time": "2026-10-15T22:53:51.020Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "pho_09.zip",
+      "bytes": 4190654,
+      "modified_time": "2026-10-15T22:53:39.264Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "pho_08.zip",
+      "bytes": 3033898,
+      "modified_time": "2026-10-15T22:53:26.678Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "pho_07.zip",
+      "bytes": 1832644,
+      "modified_time": "2026-10-15T22:53:17.999Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "pho_06.zip",
+      "bytes": 1702431,
+      "modified_time": "2026-10-15T22:53:09.011Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "pho_05.zip",
+      "bytes": 2137891,
+      "modified_time": "2026-10-15T22:52:21.840Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "pho_04.zip",
+      "bytes": 1373821,
+      "modified_time": "2026-10-15T22:52:13.359Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "pho_03.zip",
+      "bytes": 2604127,
+      "modified_time": "2026-10-15T22:52:05.077Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "pho_02.zip",
+      "bytes": 6184374,
+      "modified_time": "2026-10-15T22:51:55.188Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "pho_01.zip",
+      "bytes": 1067189,
+      "modified_time": "2026-10-15T22:51:46.517Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "pho_00.zip",
+      "bytes": 772814,
+      "modified_time": "2026-10-15T22:51:29.632Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "voc_13.zip",
+      "bytes": 2050446,
+      "modified_time": "2026-10-15T22:57:53.937Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "voc_12.zip",
+      "bytes": 3027803,
+      "modified_time": "2026-10-15T22:57:45.639Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "voc_11.zip",
+      "bytes": 1841855,
+      "modified_time": "2026-10-15T22:57:36.421Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "voc_10.zip",
+      "bytes": 3086100,
+      "modified_time": "2026-10-15T22:57:28.219Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "voc_09.zip",
+      "bytes": 2017556,
+      "modified_time": "2026-10-15T22:57:18.742Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "voc_08.zip",
+      "bytes": 3015763,
+      "modified_time": "2026-10-15T22:57:10.385Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "voc_07.zip",
+      "bytes": 3820907,
+      "modified_time": "2026-10-15T22:57:00.796Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "voc_06.zip",
+      "bytes": 7277435,
+      "modified_time": "2026-10-15T22:56:25.464Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "voc_05.zip",
+      "bytes": 9131039,
+      "modified_time": "2026-10-15T22:56:16.008Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "voc_04.zip",
+      "bytes": 8120219,
+      "modified_time": "2026-10-15T22:56:06.365Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "voc_03.zip",
+      "bytes": 7540407,
+      "modified_time": "2026-10-15T22:55:56.499Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "voc_02.zip",
+      "bytes": 9065819,
+      "modified_time": "2026-10-15T22:55:47.569Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "voc_01.zip",
+      "bytes": 7837059,
+      "modified_time": "2026-10-15T22:55:37.685Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "voc_00.zip",
+      "bytes": 2909965,
+      "modified_time": "2026-10-15T22:55:28.007Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "Inspire-A1-official-audio-part-03.zip",
+      "bytes": 24900413,
+      "modified_time": "2026-10-15T23:03:49.601Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "Inspire-A1-official-audio-part-02.zip",
+      "bytes": 46373919,
+      "modified_time": "2026-10-15T23:03:34.708Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "Inspire-A1-official-audio-part-01.zip",
+      "bytes": 44104888,
+      "modified_time": "2026-10-15T23:03:18.308Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u12-reading.mp3",
+      "bytes": 90191,
+      "modified_time": "2026-10-16T11:07:35.633Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u12-dialogue.mp3",
+      "bytes": 63233,
+      "modified_time": "2026-10-16T11:07:23.655Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u11-reading.mp3",
+      "bytes": 89408,
+      "modified_time": "2026-10-16T11:07:18.200Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u11-dialogue.mp3",
+      "bytes": 64330,
+      "modified_time": "2026-10-16T11:07:11.776Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u10-reading.mp3",
+      "bytes": 90191,
+      "modified_time": "2026-10-16T11:07:06.613Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u10-dialogue.mp3",
+      "bytes": 64487,
+      "modified_time": "2026-10-16T11:07:03.458Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u09-reading.mp3",
+      "bytes": 78280,
+      "modified_time": "2026-10-16T11:07:00.182Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u09-dialogue.mp3",
+      "bytes": 71070,
+      "modified_time": "2026-10-16T11:06:56.808Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u08-reading.mp3",
+      "bytes": 88154,
+      "modified_time": "2026-10-16T11:06:53.327Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u08-dialogue.mp3",
+      "bytes": 76712,
+      "modified_time": "2026-10-16T11:06:50.082Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u07-reading.mp3",
+      "bytes": 77966,
+      "modified_time": "2026-10-16T11:06:46.880Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u07-dialogue.mp3",
+      "bytes": 65271,
+      "modified_time": "2026-10-16T11:06:43.352Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u06-reading.mp3",
+      "bytes": 87684,
+      "modified_time": "2026-10-16T11:06:39.994Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u06-dialogue.mp3",
+      "bytes": 83922,
+      "modified_time": "2026-10-16T11:06:36.717Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u05-reading.mp3",
+      "bytes": 106492,
+      "modified_time": "2026-10-16T11:06:30.832Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u05-dialogue.mp3",
+      "bytes": 71070,
+      "modified_time": "2026-10-16T11:06:27.272Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u04-reading.mp3",
+      "bytes": 92386,
+      "modified_time": "2026-10-16T11:06:21.060Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u04-dialogue.mp3",
+      "bytes": 62136,
+      "modified_time": "2026-10-16T11:06:15.396Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u03-reading.mp3",
+      "bytes": 80787,
+      "modified_time": "2026-10-16T11:06:07.036Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u03-dialogue.mp3",
+      "bytes": 76869,
+      "modified_time": "2026-10-16T11:06:03.583Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u02-reading.mp3",
+      "bytes": 89721,
+      "modified_time": "2026-10-16T11:05:59.897Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u02-dialogue.mp3",
+      "bytes": 101476,
+      "modified_time": "2026-10-16T11:05:55.445Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u01-reading.mp3",
+      "bytes": 88624,
+      "modified_time": "2026-10-16T11:05:50.143Z",
+      "checksum_returned": false
+    },
+    {
+      "name": "fr-a1-u01-dialogue.mp3",
+      "bytes": 102574,
+      "modified_time": "2026-10-16T11:05:46.687Z",
+      "checksum_returned": false
+    }
+  ]
+}

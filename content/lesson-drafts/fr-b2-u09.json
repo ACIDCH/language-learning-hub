@@ -1,0 +1,78 @@
+{
+  "id": "fr-b2-u09",
+  "title": "Interactions élaborées",
+  "language": "fr",
+  "level": "B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Negotiate and solve complex communication",
+  "prerequisite": "fr-b2-u08",
+  "context": "处理跨部门误解，以澄清、复述和协商维持合作。",
+  "grammar": "si je vous comprends bien 可提出可纠正的复述，plutôt que 可对比选择。间接问句不保留直接问句倒装：Pouvez-vous préciser quand la livraison aura lieu ?",
+  "common_mistake": "不要把自己的推断当成对方已经承认的立场。",
+  "vocabulary": [
+    [
+      "clarifier",
+      "澄清"
+    ],
+    [
+      "un malentendu",
+      "误会"
+    ],
+    [
+      "une marge",
+      "余地"
+    ],
+    [
+      "reformuler",
+      "换言表达"
+    ],
+    [
+      "une contrainte",
+      "限制"
+    ],
+    [
+      "un accord",
+      "共识"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Lors de la réunion, le service technique annonce qu'il ne peut pas garantir la date souhaitée.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "La responsable commerciale demande d'abord ce que recouvre exactement cette réserve.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Si je vous comprends bien, dit-elle, la partie principale sera prête, mais les tests restent incertains.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le technicien confirme cette distinction.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Lors de la réunion, le service technique annonce qu'il ne peut pas garantir la date souhaitée. La responsable commerciale demande d'abord ce que recouvre exactement cette réserve. Si je vous comprends bien, dit-elle, la partie principale sera prête, mais les tests restent incertains. Le technicien confirme cette distinction. Plutôt que de promettre une livraison complète, ils conviennent d'informer le client des étapes vérifiées. Ils fixent aussi une date pour réexaminer les points ouverts. L'accord porte ainsi sur une communication commune sans effacer l'incertitude technique.",
+  "listening_script": "Lors de la réunion, le service technique annonce qu'il ne peut pas garantir la date souhaitée. La responsable commerciale demande d'abord ce que recouvre exactement cette réserve. Si je vous comprends bien, dit-elle, la partie principale sera prête, mais les tests restent incertains. Le technicien confirme cette distinction. Plutôt que de promettre une livraison complète, ils conviennent d'informer le client des étapes vérifiées. Ils fixent aussi une date pour réexaminer les points ouverts. L'accord porte ainsi sur une communication commune sans effacer l'incertitude technique.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Sur quoi porte l'accord ?",
+      "answer": "Sur les étapes vérifiées à communiquer et la date de réexamen.",
+      "explanation": "不是把不确定的测试日期改成保证。"
+    },
+    {
+      "prompt": "改错：Précisez quand aura-t-elle lieu.",
+      "answer": "Précisez quand elle aura lieu.",
+      "explanation": "间接问句采用陈述句词序。"
+    }
+  ],
+  "pronunciation": "politesse avancée。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Négociez un accord",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

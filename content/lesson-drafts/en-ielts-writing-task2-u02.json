@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-writing-task2-u02",
+  "title": "Reasons, explanation and examples",
+  "language": "en",
+  "level": "B2-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply reasons, explanation and examples in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-writing-task2-u01",
+  "context": "为论点补上解释链，区分理由、例子和仅重复主张。",
+  "grammar": "有效段落结构可为 claim→mechanism→example→qualification。because 后解释为何结果发生，而非同义重复主张。自编例子应写为 hypothetical，不能冒充研究。",
+  "common_mistake": "‘公共空间重要，因为它们很重要’没有增加解释。",
+  "vocabulary": [
+    [
+      "claim",
+      "主张"
+    ],
+    [
+      "mechanism",
+      "机制"
+    ],
+    [
+      "illustrate",
+      "举例说明"
+    ],
+    [
+      "interaction",
+      "互动"
+    ],
+    [
+      "accessible",
+      "可达的"
+    ],
+    [
+      "qualification",
+      "限定"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Accessible public spaces can support informal contact between neighbours.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "A shared place gives people a reason to remain nearby rather than pass each other without speaking.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "For example, a hypothetical courtyard with seating might allow carers to talk while children play.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The example illustrates a possible mechanism; it is not evidence that every courtyard produces social trust.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Accessible public spaces can support informal contact between neighbours. A shared place gives people a reason to remain nearby rather than pass each other without speaking. For example, a hypothetical courtyard with seating might allow carers to talk while children play. The example illustrates a possible mechanism; it is not evidence that every courtyard produces social trust. Poor maintenance or an unwelcoming design could undermine the benefit. A strong paragraph therefore explains both how the proposed effect could arise and the conditions under which it might fail.",
+  "listening_script": "Accessible public spaces can support informal contact between neighbours. A shared place gives people a reason to remain nearby rather than pass each other without speaking. For example, a hypothetical courtyard with seating might allow carers to talk while children play. The example illustrates a possible mechanism; it is not evidence that every courtyard produces social trust. Poor maintenance or an unwelcoming design could undermine the benefit. A strong paragraph therefore explains both how the proposed effect could arise and the conditions under which it might fail.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Which sentence supplies a mechanism rather than restating the claim ?",
+      "answer": "A shared place gives people a reason to remain nearby.",
+      "explanation": "解释接触机会如何产生。"
+    },
+    {
+      "prompt": "Is the courtyard an observed research result ?",
+      "answer": "No, it is explicitly hypothetical.",
+      "explanation": "举例帮助理解，不自动证明普遍效果。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating reasons, explanation and examples",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

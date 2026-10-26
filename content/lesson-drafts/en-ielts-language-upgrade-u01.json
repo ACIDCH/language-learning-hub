@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-language-upgrade-u01",
+  "title": "Clause complexity and accuracy",
+  "language": "en",
+  "level": "B2-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply clause complexity and accuracy in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": null,
+  "context": "合并简单句时选择准确从句关系，不以句子长短判断水平。",
+  "grammar": "relative clause 修饰名词，adverbial clause 说明时间、原因或让步。restrictive 从句限定对象，non-restrictive 补充信息通常用逗号；标点可能改变所指范围。",
+  "common_mistake": "The students, who arrived early, got seats 暗示所指学生都早到；不能任意加逗号。",
+  "vocabulary": [
+    [
+      "clause",
+      "从句"
+    ],
+    [
+      "restrictive",
+      "限制性的"
+    ],
+    [
+      "relative",
+      "关系的"
+    ],
+    [
+      "concession",
+      "让步"
+    ],
+    [
+      "referent",
+      "所指"
+    ],
+    [
+      "accuracy",
+      "准确性"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Students who arrived early found seats near the front.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "This restrictive clause identifies a subset of the students.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "If the clause were set off by commas, the sentence would present early arrival as additional information about the students already identified.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "A longer sentence is therefore not automatically a more accurate one.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Students who arrived early found seats near the front. This restrictive clause identifies a subset of the students. If the clause were set off by commas, the sentence would present early arrival as additional information about the students already identified. A longer sentence is therefore not automatically a more accurate one. Writers need to decide which relationship they intend before combining ideas. Although complex structures can express useful distinctions, a clear short sentence remains preferable to a confusing chain of clauses.",
+  "listening_script": "Students who arrived early found seats near the front. This restrictive clause identifies a subset of the students. If the clause were set off by commas, the sentence would present early arrival as additional information about the students already identified. A longer sentence is therefore not automatically a more accurate one. Writers need to decide which relationship they intend before combining ideas. Although complex structures can express useful distinctions, a clear short sentence remains preferable to a confusing chain of clauses.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Does the first sentence state that every student arrived early ?",
+      "answer": "No, it identifies those who did.",
+      "explanation": "限制性关系从句限定子集。"
+    },
+    {
+      "prompt": "Combine Some students needed help. They attended the workshop. without claiming all students needed help.",
+      "answer": "The students who needed help attended the workshop.",
+      "explanation": "限制性从句明确群体；也可用 Some students needed help, so they attended…。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating clause complexity and accuracy",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

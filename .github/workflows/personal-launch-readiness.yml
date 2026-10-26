@@ -1,0 +1,32 @@
+name: Personal launch candidate — independent gate
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-personal-candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --no-fund
+      - name: Require personal functional, security and owner evidence
+        run: npm run personal:check
+      - name: Build personal candidate without weakening formal publication gate
+        env:
+          LLH_DEPLOY_TARGET: personal
+        run: npm run build
+      - name: Preserve candidate bundle for an explicitly authorized Cloudflare promotion
+        uses: actions/upload-artifact@v4
+        with:
+          name: personal-launch-candidate-${{ github.sha }}
+          path: dist
+          if-no-files-found: error
+          retention-days: 14

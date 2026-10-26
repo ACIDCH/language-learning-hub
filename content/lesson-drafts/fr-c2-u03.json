@@ -1,0 +1,78 @@
+{
+  "id": "fr-c2-u03",
+  "title": "Analyse intertextuelle",
+  "language": "fr",
+  "level": "C2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Synthesize across genres",
+  "prerequisite": "fr-c2-u02",
+  "context": "分析两篇原创微型文本之间的回声、反转与视角差异。",
+  "grammar": "互文分析需要逐词证据，而不是从主题相同推断借用。écho、réécriture、inversion 是不同关系；discours indirect libre 可能使叙述者与人物声音交织。",
+  "common_mistake": "共享‘门’意象不自动证明直接影响或同一立场。",
+  "vocabulary": [
+    [
+      "un écho",
+      "呼应"
+    ],
+    [
+      "un motif",
+      "母题"
+    ],
+    [
+      "une voix",
+      "声音"
+    ],
+    [
+      "détourner",
+      "转用"
+    ],
+    [
+      "une filiation",
+      "传承关系"
+    ],
+    [
+      "une interprétation",
+      "解读"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Dans le premier fragment original, une porte fermée protège le narrateur du vacarme de la rue : enfin, personne n'entrerait.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Dans le second, écrit pour cet exercice, la même formule conclut le récit d'une attente interminable : enfin, personne n'entrerait.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "La répétition verbale ne produit donc pas une identité de sens.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le premier contexte fait de l'isolement un refuge, tandis que le second peut y faire entendre un renoncement.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Dans le premier fragment original, une porte fermée protège le narrateur du vacarme de la rue : enfin, personne n'entrerait. Dans le second, écrit pour cet exercice, la même formule conclut le récit d'une attente interminable : enfin, personne n'entrerait. La répétition verbale ne produit donc pas une identité de sens. Le premier contexte fait de l'isolement un refuge, tandis que le second peut y faire entendre un renoncement. L'adverbe enfin hésite alors entre soulagement et amertume. Il serait toutefois prématuré de conclure à une ironie certaine sans examiner la totalité du second récit. Une lecture intertextuelle précise décrit d'abord l'élément repris, puis les déplacements de situation, de voix et de valeur. Elle distingue enfin la relation construite par notre exercice d'une filiation historique qui exigerait d'autres documents.",
+  "listening_script": "Dans le premier fragment original, une porte fermée protège le narrateur du vacarme de la rue : enfin, personne n'entrerait. Dans le second, écrit pour cet exercice, la même formule conclut le récit d'une attente interminable : enfin, personne n'entrerait. La répétition verbale ne produit donc pas une identité de sens. Le premier contexte fait de l'isolement un refuge, tandis que le second peut y faire entendre un renoncement. L'adverbe enfin hésite alors entre soulagement et amertume. Il serait toutefois prématuré de conclure à une ironie certaine sans examiner la totalité du second récit. Une lecture intertextuelle précise décrit d'abord l'élément repris, puis les déplacements de situation, de voix et de valeur. Elle distingue enfin la relation construite par notre exercice d'une filiation historique qui exigerait d'autres documents.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Pourquoi la formule répétée change-t-elle de valeur ?",
+      "answer": "Les situations de protection et d'attente modifient son interprétation.",
+      "explanation": "相同字面文本可以在不同语境承担不同功能。"
+    },
+    {
+      "prompt": "Quelle preuve manquerait pour une filiation historique ?",
+      "answer": "Des documents établissant la relation entre les textes et leurs auteurs.",
+      "explanation": "练习安排不能冒充文学史实证。"
+    }
+  ],
+  "pronunciation": "lecture expressive。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produisez une analyse croisée",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

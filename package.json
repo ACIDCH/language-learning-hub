@@ -5,9 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/enforce-release-build.mjs",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "release:report": "node scripts/release-readiness.mjs",
+    "release:check": "node scripts/release-readiness.mjs --require-ready",
+    "release:queue": "node scripts/review-queue.mjs",
+    "personal:report": "node scripts/personal-launch-readiness.mjs",
+    "personal:check": "node scripts/personal-launch-readiness.mjs --require-ready --probe",
+    "personal:probe": "node scripts/personal-launch-readiness.mjs --probe"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.110.0",

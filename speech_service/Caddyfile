@@ -1,0 +1,5 @@
+# Automatic HTTPS only when the owner points their DNS hostname to this VM.
+{$SPEECH_HOST} {
+  encode zstd gzip
+  reverse_proxy speech:7860
+}

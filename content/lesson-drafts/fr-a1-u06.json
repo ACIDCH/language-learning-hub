@@ -1,0 +1,78 @@
+{
+  "id": "fr-a1-u06",
+  "title": "Questions et échanges",
+  "language": "fr",
+  "level": "A1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Ask questions and request clarification",
+  "prerequisite": "fr-a1-u05",
+  "context": "第一次到语言学校，询问课程时间、教室和负责人。",
+  "grammar": "口语可用升调提出 oui/non 问题，也可用 est-ce que + 陈述句词序。où 问地点，quand 问时间，qui 问人。Est-ce que le cours commence à dix heures ? 不需要再次倒装。",
+  "common_mistake": "où 和 ou 不同：前者问哪里，后者表示或者。",
+  "vocabulary": [
+    [
+      "où",
+      "哪里"
+    ],
+    [
+      "quand",
+      "何时"
+    ],
+    [
+      "qui",
+      "谁"
+    ],
+    [
+      "une salle",
+      "教室"
+    ],
+    [
+      "commencer",
+      "开始"
+    ],
+    [
+      "un horaire",
+      "时间安排"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Bonjour, je cherche la salle de français.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le cours est au deuxième étage.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Est-ce que le cours commence à dix heures ?",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Non, il commence à dix heures et demie.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Bonjour, je cherche la salle de français. Le cours est au deuxième étage. Est-ce que le cours commence à dix heures ? Non, il commence à dix heures et demie. Qui est le professeur aujourd'hui ? C'est Madame Martin. Merci, et où est l'escalier ? Il est à droite, près de l'accueil.",
+  "listening_script": "Bonjour, je cherche la salle de français. Le cours est au deuxième étage. Est-ce que le cours commence à dix heures ? Non, il commence à dix heures et demie. Qui est le professeur aujourd'hui ? C'est Madame Martin. Merci, et où est l'escalier ? Il est à droite, près de l'accueil.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Le cours commence-t-il à dix heures ?",
+      "answer": "Non, à dix heures et demie.",
+      "explanation": "回答修正了提问中的时间，听读时要注意 Non 后的信息。"
+    },
+    {
+      "prompt": "选择询问地点的词：___ est l'escalier ?",
+      "answer": "Où",
+      "explanation": "答语 à droite 是地点信息，不能用 Quand。"
+    }
+  ],
+  "pronunciation": "questions montantes;groupes rythmiques。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Jouez une conversation de rencontre",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

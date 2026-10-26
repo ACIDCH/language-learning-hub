@@ -419,3 +419,24 @@ border:1px solid var(--foundation-border);padding:10px;overflow-wrap:anywhere}
  font:inherit;padding:8px;border:1px solid #9eb9c8;border-radius:8px}
 .ipa-studio-reading{border:1px solid #cfdee8;padding:15px;border-radius:11px;
  background:#fafcfe;margin-top:16px;max-height:70vh;overflow:auto}
+
+/* Color-coded *model evidence* for WebGPU/WASM phonemes, never a pronunciation grade. */
+.phoneme-gradient-panel{border:1px solid #c9dce7;border-radius:12px;background:var(--surface,#f8fbfd);
+ padding:14px;margin-top:18px;max-width:100%}
+.phoneme-gradient-panel h4{margin:0 0 9px;font-size:1.05rem}
+.phoneme-gradient-legend{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:12px 0}
+.phoneme-level{border:1px solid transparent;border-radius:8px;padding:4px 9px;font-size:.78rem;font-weight:650}
+.phoneme-level--strong{background:#c4edd2;color:#104e29;border-color:#64b882}
+.phoneme-level--close{background:#e4f5ce;color:#365a0d;border-color:#a5cd75}
+.phoneme-level--uncertain{background:#fff0bf;color:#795102;border-color:#e6c168}
+.phoneme-level--different{background:#ffe0d5;color:#933d27;border-color:#eb9b82}
+.phoneme-level--unknown{background:#e5eaf0;color:#445368;border-color:#b6c2cf}
+.phoneme-gradient-grid{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;list-style:none;padding:0;margin:12px 0}
+.phoneme-gradient-tile{display:flex;flex-direction:column;align-items:center;gap:3px;
+ min-width:86px;max-width:148px;flex:1 0 85px;min-height:94px;padding:10px 6px;
+ border:1.5px solid;border-radius:10px;text-align:center}
+.phoneme-gradient-tile strong{font-family:"Noto Sans","Arial Unicode MS",sans-serif;font-size:1.2rem;line-height:1.35}
+.phoneme-gradient-tile small{font-size:.69rem;line-height:1.4;overflow-wrap:anywhere}
+.phoneme-tile-grade{font-weight:750;font-size:.73rem}
+.phoneme-gradient-tile:focus-visible{outline:3px solid #2386bf;outline-offset:2px}
+@media(max-width:500px){.phoneme-gradient-tile{min-width:65px;flex-basis:65px}}

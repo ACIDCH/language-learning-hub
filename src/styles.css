@@ -2,3 +2,11 @@
 /* Public lesson navigation entry into authenticated cloud progress */
 .main-nav a.nav-link{display:inline-flex;align-items:center;justify-content:center;padding:.55rem .85rem;color:inherit;border-radius:.65rem;text-decoration:none;font:inherit}
 .main-nav a.nav-link:hover,.main-nav a.nav-link:focus-visible{background:rgba(37,119,151,.11);text-decoration:underline}
+
+
+/* Bilingual evidence stays aligned without turning the question and answer into slash-delimited prose. */
+.reception-study .curriculum-question .evidence-source,
+.reception-study .curriculum-question .evidence-translation{display:block;white-space:normal;overflow-wrap:anywhere}
+.reception-study .curriculum-question .evidence-translation{margin-top:.35rem;color:#516579;line-height:1.7;font-weight:400}
+.reception-study .curriculum-question .evidence-answers{margin-top:.6rem}
+.reception-study .curriculum-question .evidence-answers p{margin:.35rem 0;line-height:1.65}

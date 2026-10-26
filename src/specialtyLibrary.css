@@ -1,0 +1,413 @@
+/* Independent grammar/vocabulary studio, shared with the academic theme. */
+.v44 .specialty-page{width:100%;max-width:1750px;margin:0 auto;min-width:0}
+.v44 .specialty-top{margin:5px 0 18px}
+.v44 .specialty-top .eyebrow{letter-spacing:.07em}
+.v44 .specialty-top h1{font-size:clamp(25px,2.6vw,36px);margin:5px 0}
+.v44 .specialty-top>p:last-child{font-size:14px;line-height:1.75;color:var(--textMuted);margin:6px 0 0}
+.v44 .specialty-kind-tabs{display:flex;gap:11px;margin-bottom:15px;flex-wrap:wrap}
+.v44 .specialty-kind-tabs button{display:grid;gap:5px;align-content:center;text-align:left;
+ background:var(--pane);border:1px solid var(--border);border-radius:12px;padding:14px 19px;min-width:220px;
+ font-weight:720;color:var(--text);box-shadow:var(--shadow)}
+.v44 .specialty-kind-tabs button small{font-size:12px;color:var(--textMuted);font-weight:450}
+.v44 .specialty-kind-tabs button.active{border-color:var(--accent);background:var(--accentTint)}
+.v44 .specialty-layout{display:grid;grid-template-columns:clamp(225px,22vw,310px) minmax(0,1fr);
+ gap:clamp(12px,1.6vw,24px);align-items:start}
+.v44 .specialty-side{position:sticky;top:90px;max-height:calc(100dvh - 104px);overflow-y:auto;
+ scrollbar-width:thin;background:var(--pane);border:1px solid var(--border);padding:clamp(13px,1.4vw,20px);
+ border-radius:14px;box-shadow:var(--shadow);min-width:0}
+.v44 .specialty-side h2{font-size:17px;margin:0 0 14px}
+.v44 .specialty-side label{display:grid;gap:5px;font-size:12px;font-weight:650;color:var(--textMuted);margin-bottom:11px}
+.v44 .specialty-side select,.v44 .specialty-side input{max-width:100%;min-width:0;width:100%;min-height:38px;
+ border:1px solid var(--border);border-radius:9px;background:var(--paneSoft);color:var(--text);padding:7px 9px}
+.v44 .specialty-total{margin:13px 0 9px;color:var(--accent);font-size:12px;font-weight:700}
+.v44 .specialty-topic-list{display:grid;gap:6px}
+.v44 .specialty-topic-list button{background:transparent;text-align:left;display:grid;gap:4px;
+ border:1px solid transparent;border-radius:9px;padding:12px;min-width:0;color:var(--text)}
+.v44 .specialty-topic-list button strong{font-size:13px;line-height:1.4}
+.v44 .specialty-topic-list button span,.v44 .specialty-topic-list button small{font-size:11px;color:var(--textMuted)}
+.v44 .specialty-topic-list button:hover{background:var(--paneSoft)}
+.v44 .specialty-topic-list button.active{background:var(--accentTint);border-color:var(--accent)}
+.v44 .specialty-fineprint,.v44 .specialty-hint{font-size:11px!important;color:var(--textMuted);line-height:1.65}
+.v44 .specialty-main{min-width:0}
+.v44 .specialty-textbook{border:1px solid var(--border);border-radius:16px;
+ background:var(--pane);padding:clamp(16px,2.2vw,34px);box-shadow:var(--shadow);min-width:0}
+.v44 .specialty-article-head{display:flex;justify-content:space-between;align-items:center;gap:15px;
+ margin:0 0 20px;padding-bottom:15px;border-bottom:1px solid var(--border)}
+.v44 .specialty-article-head h1{font-size:clamp(22px,2vw,31px);margin:6px 0}
+.v44 .specialty-article-head p{color:var(--textMuted);margin:0;line-height:1.7}
+.v44 .specialty-kicker{color:var(--accent);font-weight:700;letter-spacing:.05em;font-size:11px}
+.v44 .specialty-course-link{border:1px solid var(--border);background:var(--paneSoft);border-radius:10px;
+ padding:10px 12px;white-space:nowrap;font-size:12px;align-self:flex-start}
+.v44 .specialty-objectives{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:17px}
+.v44 .specialty-objectives>div{background:var(--paneSoft);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.v44 .specialty-objectives strong{color:var(--accent);font-size:14px}
+.v44 .specialty-objectives p{margin:7px 0 0;line-height:1.8;font-size:14px}
+.v44 .specialty-section-nav{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0}
+.v44 .specialty-section-nav a{font-size:12px;color:var(--text);text-decoration:none;
+ padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--paneSoft)}
+.v44 .specialty-section-nav a:hover{border-color:var(--accent)}
+.v44 .specialty-progress{font-size:12px;color:var(--textMuted);padding:9px 0 12px}
+.v44 .specialty-chapter{border:1px solid var(--border);border-radius:13px;padding:clamp(14px,1.8vw,24px);
+ margin:0 0 17px;scroll-margin-top:90px}
+.v44 .specialty-chapter-title{display:flex;align-items:center;gap:12px;margin-bottom:13px}
+.v44 .specialty-chapter-title>span{flex:0 0 32px;height:32px;display:grid;place-items:center;
+ background:var(--accent);color:white;border-radius:9px;font-weight:750}
+.v44 .specialty-chapter-title h2{font-size:clamp(16px,1.5vw,21px);margin:0;line-height:1.4}
+.v44 .specialty-concept{font-size:15px;line-height:1.95;margin:9px 0 15px;max-width:100ch}
+.v44 .specialty-pattern{background:var(--accentTint);border-left:3px solid var(--accent);padding:12px 15px;
+ border-radius:0 9px 9px 0;overflow-wrap:anywhere;margin:10px 0 17px}
+.v44 .specialty-pattern strong{font-size:12px;color:var(--accent)}
+.v44 .specialty-pattern p{margin:6px 0 0;font-size:15px;line-height:1.75}
+.v44 .specialty-chapter h3{font-size:15px;margin:15px 0 10px}
+.v44 .specialty-example-stack{display:grid;gap:9px}
+.v44 .specialty-example{background:var(--paneSoft);border:1px solid var(--border);border-radius:10px;padding:13px 16px;min-width:0}
+.v44 .specialty-example-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,26px);align-items:start}
+.v44 .specialty-example-grid p{font-size:clamp(14px,1.2vw,18px);line-height:1.75;margin:0;min-width:0}
+.v44 .specialty-example-grid [lang]:first-child{font-family:var(--reading-font)}
+.v44 .specialty-example-grid button{display:inline;min-width:27px;margin-left:8px;border:1px solid var(--border);
+ border-radius:50%;background:var(--pane);color:var(--accent);font-size:11px;padding:5px}
+.v44 .specialty-analysis{border-top:1px dashed var(--border);color:var(--textMuted);
+ font-size:12px!important;line-height:1.8;margin:8px 0 0;padding-top:8px}
+.v44 .specialty-error{margin:14px 0;padding:12px 15px;border:1px solid var(--border);
+ background:var(--paneSoft);border-left:3px solid #a17d38;border-radius:0 9px 9px 0}
+.v44 .specialty-error strong{font-size:13px}
+.v44 .specialty-error p{margin:6px 0 0;font-size:13px;line-height:1.8}
+.v44 .specialty-check{display:flex;align-items:start;gap:7px;margin-top:14px;
+ font-size:12px;line-height:1.65;color:var(--textMuted)}
+.v44 .specialty-check input{margin-top:3px;accent-color:var(--accent)}
+.v44 .specialty-practice{border-top:1px solid var(--border);padding-top:16px}
+.v44 .specialty-practice h2{font-size:20px}
+.v44 .specialty-practice>p{font-size:13px;color:var(--textMuted);line-height:1.7}
+.v44 .specialty-question{display:grid;gap:10px;border:1px solid var(--border);padding:15px;
+ background:var(--paneSoft);margin:11px 0;border-radius:10px}
+.v44 .specialty-question label{font-size:14px;line-height:1.7}
+.v44 .specialty-question textarea,.v44 .specialty-production textarea{box-sizing:border-box;
+ background:var(--pane);border:1px solid var(--border);border-radius:9px;padding:12px;
+ min-width:0;width:100%;font:inherit;line-height:1.75;color:var(--text)}
+.v44 .specialty-question button,.v44 .specialty-production>button{justify-self:start;
+ border:1px solid var(--border);border-radius:9px;background:var(--pane);padding:9px 14px}
+.v44 .specialty-answer{background:var(--accentTint);padding:12px;border-radius:9px;font-size:14px;line-height:1.75}
+.v44 .specialty-answer p{margin:3px 0}
+.v44 .specialty-production{display:grid;gap:9px;padding:17px;border:1px solid var(--border);border-radius:12px}
+.v44 .specialty-production h3{margin:0;font-size:17px}
+.v44 .specialty-production p{line-height:1.8;font-size:14px}
+.v44 .specialty-production details,.v44 .specialty-references{border:1px solid var(--border);border-radius:10px;padding:12px}
+.v44 .specialty-production details .specialty-example{margin:8px 0}
+.v44 .specialty-references{margin-top:18px;color:var(--textMuted);font-size:12px;line-height:1.8}
+.v44 .specialty-references ul{padding-left:20px}
+.v44 .specialty-empty{padding:30px}
+.v44 .catalog-specialties{padding:13px 10px;background:var(--accentTint);border:1px solid var(--border);border-radius:11px;margin-bottom:12px;display:grid;gap:8px}
+.v44 .catalog-specialties h3{margin:0;color:var(--accent);font-size:15px}
+.v44 .catalog-specialties p{margin:0;color:var(--textMuted);line-height:1.5;font-size:11px}
+.v44 .catalog-specialty{display:grid;gap:3px;border:1px solid var(--border);border-radius:9px;padding:12px;
+ text-decoration:none!important;background:var(--pane);color:var(--text)!important}
+.v44 .catalog-specialty strong{font-size:14px}.v44 .catalog-specialty small{font-size:11px;color:var(--textMuted)}
+.v44 .catalog-specialty:hover{border-color:var(--accent)}
+.v44 .catalog-level-heading{font-size:12px;padding:10px 4px 4px;margin:0;color:var(--textMuted)}
+.v44 .reader-specialty-shortcuts{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.v44 .reader-specialty-shortcuts button{padding:8px 11px;background:var(--accentTint);color:var(--accent);
+ border:1px solid var(--border);border-radius:9px;font-size:12px}
+@media(max-width:1050px){
+ .v44 .specialty-layout{grid-template-columns:235px minmax(0,1fr)}
+ .v44 .specialty-example-grid{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+ .v44 .specialty-layout{grid-template-columns:1fr}
+ .v44 .specialty-side{position:static;max-height:none}
+ .v44 .specialty-topic-list{display:flex;gap:7px;overflow-x:auto}
+ .v44 .specialty-topic-list button{flex:0 0 210px}
+ .v44 .specialty-objectives{grid-template-columns:1fr}
+ .v44 .specialty-article-head{flex-wrap:wrap}
+ .v44 .specialty-kind-tabs button{min-width:140px;flex:1}
+}
+@media(max-width:460px){
+ .v44 .specialty-textbook{padding:12px}
+ .v44 .specialty-chapter{padding:12px}
+ .v44 .specialty-kind-tabs{gap:6px}
+ .v44 .specialty-kind-tabs button{padding:10px}
+}
+
+/* Mobile catalog keeps newly added specialty links inside the existing single-row
+   horizontally scrollable filter, not a 700px-tall nested cards column. */
+@media(max-width:750px){
+ .v44 .catalog-filter .catalog-specialties{display:contents!important}
+ .v44 .catalog-filter .catalog-specialties h3,
+ .v44 .catalog-filter .catalog-specialties p,
+ .v44 .catalog-filter .catalog-level-heading{display:none!important}
+ .v44 .catalog-filter .catalog-specialty{
+  display:flex!important;flex-direction:column;justify-content:center;gap:2px;
+  flex:0 0 auto;width:145px;min-width:145px;max-width:145px;
+  height:39px;min-height:39px;padding:4px 9px!important;margin:0!important;
+  border-radius:9px;white-space:nowrap;
+ }
+ .v44 .catalog-filter .catalog-specialty strong{font-size:12px;line-height:1.15}
+ .v44 .catalog-filter .catalog-specialty small{font-size:9px;line-height:1.1;white-space:nowrap}
+}
+
+/* Readable wide lesson + compact genuinely useful right-hand reference desk. */
+@media(min-width:1430px){
+ .v44 .specialty-main{display:grid;grid-template-columns:minmax(0,1fr) 242px;gap:15px;align-items:start}
+}
+.v44 .specialty-companion{
+ position:sticky;top:90px;max-height:calc(100dvh - 106px);overflow-y:auto;
+ display:grid;gap:11px;scrollbar-width:thin;min-width:0
+}
+.v44 .specialty-companion section{
+ border:1px solid var(--border);background:var(--pane);border-radius:12px;
+ padding:13px;box-shadow:var(--shadow);min-width:0
+}
+.v44 .specialty-companion h2{font-size:13px;color:var(--accent);margin:0 0 9px}
+.v44 .specialty-companion li{font-size:12px;line-height:1.7;margin:5px 0;color:var(--text)}
+.v44 .specialty-companion ul,.v44 .specialty-companion ol{padding-left:19px;margin:0}
+.v44 .specialty-companion a{color:var(--text);text-decoration:none}
+.v44 .specialty-companion a:hover{text-decoration:underline}
+.v44 .specialty-companion p{font-size:12px;line-height:1.7;margin:6px 0;overflow-wrap:anywhere}
+.v44 .specialty-companion-pattern{padding:7px 8px;background:var(--paneSoft);border-radius:8px}
+.v44 .specialty-companion button{
+ background:var(--accentTint);border:1px solid var(--border);color:var(--accent);
+ padding:8px 10px;border-radius:9px;font-size:12px}
+@media(max-width:1429px){
+ .v44 .specialty-companion{position:static;max-height:none;display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));margin-top:13px}
+ .v44 .specialty-companion section{padding:14px}
+}
+@media(max-width:600px){
+ .v44 .specialty-companion{grid-template-columns:minmax(0,1fr)}
+}
+
+
+/* Approved catalog hierarchy: the two knowledge tracks are primary; skills are secondary. */
+.v44 .catalog-specialties{padding:14px;gap:9px;background:var(--accentTint)}
+.v44 .catalog-specialties>h3{font-size:14px;line-height:1.4}
+.v44 .catalog-specialty-primary{
+ display:grid;grid-template-columns:40px minmax(0,1fr) 12px;gap:10px;
+ align-items:center;min-height:72px;padding:12px;border-radius:12px;
+ background:var(--pane);border:1px solid var(--border)}
+.v44 .catalog-specialty-icon{
+ display:grid;place-items:center;width:40px;height:40px;border-radius:10px;
+ background:var(--accentTint);color:var(--accent);font-size:23px}
+.v44 .catalog-specialty-copy{min-width:0;display:grid;gap:4px}
+.v44 .catalog-specialty-copy strong{font-size:15px}
+.v44 .catalog-specialty-copy small{font-size:11px;line-height:1.4;white-space:normal}
+.v44 .catalog-specialty-arrow{color:var(--accent);font-size:22px}
+.v44 .catalog-specialties .catalog-skills-title{
+ margin:6px 0 0;padding-top:11px;border-top:1px solid var(--border);
+ font-size:12px;color:var(--text)}
+.v44 .catalog-skill-link{
+ display:flex;align-items:center;justify-content:space-between;gap:8px;
+ padding:9px 11px;border:1px solid var(--border);border-radius:9px;
+ background:var(--pane);color:var(--text);text-decoration:none;font-size:12px}
+.v44 .catalog-skill-link small{font-size:10px;color:var(--textMuted)}
+.v44 .catalog-skill-link[aria-current="page"]{border-color:var(--accent);background:var(--accentTint)}
+.v44 .catalog-filter .filter-option{width:100%;text-align:left}
+.v44 .catalog-filter .filter-option small{font-size:11px;font-weight:450}
+.v44 .catalog-extra-tracks{border-top:1px solid var(--border);margin-top:13px;padding-top:12px}
+.v44 .catalog-extra-tracks summary{cursor:pointer;font-size:12px;color:var(--textMuted);padding:5px 0}
+.v44 .catalog-extra-tracks .filter-option{margin-top:5px}
+@media(max-width:750px){
+ .v44 .catalog-filter .catalog-specialty-primary{
+  display:flex!important;align-items:center;justify-content:center}
+ .v44 .catalog-filter .catalog-specialty-icon,
+ .v44 .catalog-filter .catalog-specialty-arrow,
+ .v44 .catalog-filter .catalog-skills-title,
+ .v44 .catalog-filter .catalog-skill-link{display:none!important}
+ .v44 .catalog-filter .catalog-specialty-copy{display:grid}
+ .v44 .catalog-filter .catalog-specialty-copy strong{font-size:12px}
+ .v44 .catalog-filter .catalog-specialty-copy small{font-size:9px;white-space:nowrap}
+ .v44 .catalog-extra-tracks{display:none}
+}
+
+/* Multiple independent topics may belong to a single course. */
+.v44 .reader-specialty-group{min-width:210px;max-width:100%;border:1px solid var(--border);border-radius:9px;background:var(--pane)}
+.v44 .reader-specialty-group summary{padding:9px 12px;cursor:pointer;color:var(--accent);font-size:12px;font-weight:700}
+.v44 .reader-specialty-group summary small{margin-left:8px;color:var(--textMuted);font-weight:450}
+.v44 .reader-specialty-options{display:flex;flex-wrap:wrap;gap:7px;padding:8px;border-top:1px solid var(--border)}
+.v44 .reader-specialty-options button{white-space:normal;text-align:left;line-height:1.45}
+@media(max-width:750px){
+ .v44 .catalog-filter .filter-option{width:auto;flex:0 0 auto}
+ .v44 .reader-specialty-group{min-width:0;width:100%}
+}
+/* On 390px readers, two collapsed topic groups share one row; opening either
+   group still provides the complete list, without a tall blank preamble. */
+@media(max-width:750px){
+ .v44 .reader-page .reader-specialty-shortcuts{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:5px!important;margin:4px 0!important;align-items:start}
+ .v44 .reader-page .reader-specialty-group{width:100%;min-width:0!important;margin:0}
+ .v44 .reader-page .reader-specialty-group summary{
+  padding:7px 6px;font-size:10px;line-height:1.35;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .v44 .reader-page .reader-specialty-group summary small{
+  font-size:9px;margin-left:3px}
+ .v44 .reader-page .reader-specialty-shortcuts>button{
+  min-width:0!important;margin:0;padding:7px 6px;font-size:10px;min-height:32px}
+ .v44 .reader-page .reader-specialty-options{display:grid;grid-template-columns:minmax(0,1fr)}
+ .v44 .reader-page .reader-top{margin:2px 0 8px!important}
+}
+
+/* V4.6 compact textbook workspace: use available screen width, not a 1750px
+   centered shell with large empty top-right margin. */
+.v44 .specialty-page{width:100%;max-width:none;margin-inline:0}
+.v44 .specialty-heading-row{
+ display:flex;align-items:center;justify-content:space-between;
+ gap:16px;min-width:0;margin:0 0 13px;padding:0 1px 10px;
+ border-bottom:1px solid var(--border)}
+.v44 .specialty-heading-row h1{margin:0;font-size:clamp(23px,2vw,31px);line-height:1.25}
+.v44 .specialty-heading-row .specialty-kind-tabs{margin:0;gap:6px;flex-wrap:nowrap}
+.v44 .specialty-heading-row .specialty-kind-tabs button{
+ display:block;min-width:80px;padding:9px 16px;border-radius:9px;
+ box-shadow:none;white-space:nowrap;font-size:13px;line-height:1.4;text-align:center}
+.v44 .specialty-layout{grid-template-columns:clamp(220px,16vw,270px) minmax(0,1fr);gap:clamp(12px,1.15vw,20px)}
+.v44 .specialty-side{padding:clamp(12px,1.1vw,18px)}
+.v44 .specialty-topic-list button{padding:9px 10px}
+.v44 .specialty-topic-list button span{display:none}
+.v44 .specialty-main{min-width:0}
+.v44 .specialty-textbook{padding:clamp(16px,1.6vw,28px)}
+.v44 .specialty-article-head{margin-bottom:13px;padding-bottom:12px}
+.v44 .specialty-article-head h1{font-size:clamp(21px,1.85vw,29px)}
+.v44 .specialty-article-head p{font-size:13px}
+.v44 .specialty-learning-goal{
+ display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+ padding:10px 12px;border-radius:9px;background:var(--paneSoft);
+ border:1px solid var(--border);font-size:13px;line-height:1.65}
+.v44 .specialty-learning-goal>strong{white-space:nowrap;color:var(--accent)}
+.v44 .specialty-learning-goal>span{flex:1;min-width:220px}
+.v44 .specialty-learning-goal details{font-size:12px;color:var(--textMuted)}
+.v44 .specialty-learning-goal details summary{cursor:pointer}
+.v44 .specialty-learning-goal details[open]{flex:1 0 100%}
+.v44 .specialty-learning-goal details p{margin:7px 0 0}
+.v44 .specialty-section-nav{gap:6px;margin:12px 0 14px}
+.v44 .specialty-section-nav a{padding:8px 10px}
+.v44 .specialty-section-nav .specialty-progress{
+ padding:8px 0 8px 8px;margin-left:auto;white-space:nowrap}
+.v44 .specialty-chapter{padding:clamp(15px,1.3vw,22px);margin-bottom:13px}
+.v44 .specialty-chapter-title{margin-bottom:8px}
+.v44 .specialty-concept{max-width:none;line-height:1.83}
+.v44 .specialty-companion{
+ display:grid;grid-template-columns:minmax(0,1fr)!important;
+ gap:10px;align-content:start;max-height:calc(100dvh - 106px);margin:0;
+ position:sticky;top:90px;overflow-y:auto}
+.v44 .specialty-companion section{padding:12px}
+.v44 .specialty-companion p{font-size:12px;line-height:1.65}
+.v44 .specialty-companion-pair{border-top:1px solid var(--border);padding:7px 0}
+.v44 .specialty-companion-pair:first-of-type{border-top:0}
+.v44 .specialty-companion-pair button{margin:4px 0 0}
+.v44 .specialty-companion .specialty-current-rule .specialty-companion-pattern{
+ color:var(--text);font-size:13px;line-height:1.8}
+.v44 .specialty-grammar-table{margin:13px 0;border:1px solid var(--border);border-radius:11px;overflow:hidden}
+.v44 .specialty-grammar-table h3{margin:0!important;padding:12px 14px;background:var(--paneSoft);font-size:14px}
+.v44 .specialty-table-scroll{overflow-x:auto}
+.v44 .specialty-grammar-table table{border-collapse:collapse;width:100%;min-width:420px;text-align:left}
+.v44 .specialty-grammar-table th,.v44 .specialty-grammar-table td{
+ border-bottom:1px solid var(--border);padding:10px 14px;font-size:13px;line-height:1.5}
+.v44 .specialty-grammar-table th{color:var(--accent);background:var(--accentTint)}
+.v44 .specialty-grammar-table td:nth-child(2){font-size:15px;font-weight:750;color:var(--text)}
+.v44 .specialty-grammar-table tr:last-child td{border-bottom:0}
+.v44 .specialty-grammar-table>p{margin:0;padding:10px 14px;font-size:12px;color:var(--textMuted);line-height:1.7}
+@media(min-width:1280px){
+ .v44 .specialty-main{display:grid;grid-template-columns:minmax(0,1fr) clamp(235px,16vw,295px);gap:clamp(12px,1vw,18px);align-items:start}
+}
+@media(min-width:930px) and (max-width:1279px){
+ .v44 .specialty-layout{grid-template-columns:minmax(0,1fr)}
+ .v44 .specialty-side{position:static;max-height:none;display:grid;
+  grid-template-columns:160px 150px minmax(150px,1fr);gap:8px;align-items:end}
+ .v44 .specialty-side h2,.v44 .specialty-total{grid-column:1/-1;margin:0}
+ .v44 .specialty-side label{margin:0}
+ .v44 .specialty-topic-list{grid-column:1/-1;display:flex;gap:7px;overflow-x:auto}
+ .v44 .specialty-topic-list button{flex:0 0 200px}
+ .v44 .specialty-main{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,25%);gap:12px}
+ .v44 .specialty-companion{position:sticky;max-height:calc(100dvh - 100px);margin:0}
+}
+@media(max-width:929px){
+ .v44 .specialty-layout{grid-template-columns:minmax(0,1fr)}
+ .v44 .specialty-side{position:static;max-height:none}
+ .v44 .specialty-topic-list{display:flex;gap:7px;overflow-x:auto}
+ .v44 .specialty-topic-list button{flex:0 0 200px}
+ .v44 .specialty-main{display:grid;grid-template-columns:minmax(0,1fr)}
+ .v44 .specialty-companion{position:static;max-height:none;display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;margin-top:12px}
+}
+@media(max-width:600px){
+ .v44 .specialty-heading-row{align-items:center}
+ .v44 .specialty-heading-row h1{font-size:22px}
+ .v44 .specialty-heading-row .specialty-kind-tabs button{min-width:58px;padding:7px 9px;font-size:12px}
+ .v44 .specialty-learning-goal>span{min-width:0}
+ .v44 .specialty-companion{grid-template-columns:minmax(0,1fr)!important}
+ .v44 .specialty-section-nav{flex-wrap:nowrap;overflow-x:auto;padding-bottom:7px}
+ .v44 .specialty-section-nav a{flex:0 0 auto}
+ .v44 .specialty-section-nav .specialty-progress{position:sticky;right:0;background:var(--pane)}
+ .v44 .specialty-grammar-table th,.v44 .specialty-grammar-table td{padding:9px 11px}
+}
+
+/* Editorial learning sequence: compact links appear after the completed lesson. */
+.v44 .specialty-learning-links{
+ display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 10px;padding:15px 0 0;
+ border-top:1px solid var(--border)}
+.v44 .specialty-learning-links button{
+ display:inline-flex;align-items:center;justify-content:flex-start;min-height:35px;
+ max-width:100%;white-space:normal;text-align:left;line-height:1.4;
+ font-size:12px;font-weight:650;color:var(--accent);
+ padding:9px 11px;background:var(--accentTint);border:1px solid var(--border);
+ border-radius:9px}
+.v44 .specialty-learning-links button:hover,.v44 .specialty-learning-links button:focus-visible{
+ border-color:var(--accent);outline-offset:2px}
+@media(max-width:650px){
+ .v44 .specialty-learning-links{display:grid;grid-template-columns:minmax(0,1fr)}
+ .v44 .specialty-learning-links button{width:100%}
+}
+
+
+/* Lesson directory: actual CEFR buckets, not one continuous undifferentiated list. */
+.v44 .specialty-topic-list .specialty-topic-group{
+ margin:11px 0 3px;padding:7px 9px 5px;border-bottom:1px solid var(--border);
+ color:var(--textMuted);font-size:11px;letter-spacing:.025em;font-weight:750;
+ line-height:1.5}
+.v44 .specialty-topic-list .specialty-topic-group:first-child{margin-top:0}
+.v44 .specialty-companion-jump{
+ display:grid;gap:4px;padding:9px;background:var(--pane);
+ border:1px solid var(--border);border-radius:10px;min-width:0}
+.v44 .specialty-companion-jump a{
+ display:block;line-height:1.5;padding:7px 8px;
+ font-size:11px;color:var(--textMuted);text-decoration:none;
+ border-radius:7px;overflow-wrap:anywhere}
+.v44 .specialty-companion-jump a[aria-current="location"]{
+ background:var(--accentTint);color:var(--accent);font-weight:750}
+.v44 .specialty-companion-jump a:hover,.v44 .specialty-companion-jump a:focus-visible{
+ color:var(--accent);text-decoration:underline}
+.v44 .specialty-chapter{scroll-margin-top:96px}
+.v44 .specialty-example-grid p{overflow-wrap:anywhere}
+.v44 .specialty-table-scroll{max-width:100%}
+@media(max-width:929px){
+ /* The topics become a horizontal ribbon here; section headers would occupy
+    entire ribbon pages. Every topic already carries its language/level tag. */
+ .v44 .specialty-topic-list .specialty-topic-group{display:none}
+ .v44 .specialty-companion-jump{align-self:start}
+}
+@media(max-width:600px){
+ .v44 .specialty-companion-jump{
+  display:flex;gap:6px;overflow-x:auto;flex-wrap:nowrap}
+ .v44 .specialty-companion-jump a{
+  flex:0 0 auto;max-width:min(240px,70vw);white-space:normal}
+}
+
+/* Long-form exemplars are documents, not dozens of isolated flash cards. */
+.v44 .specialty-essay{display:grid;gap:0;margin-top:12px}
+.v44 .specialty-essay-paragraph{
+ padding:18px 8px;border-bottom:1px solid var(--border);
+ min-width:0;overflow-wrap:anywhere}
+.v44 .specialty-essay-paragraph:last-child{border-bottom:none;padding-bottom:4px}
+.v44 .specialty-essay-original{
+ margin:0 0 10px;font-family:var(--reading-font);
+ font-size:clamp(15px,1.2vw,18px);line-height:1.9;color:var(--text)}
+.v44 .specialty-essay-translation{
+ margin:0;padding-left:13px;border-left:2px solid var(--accent);
+ font-size:13px;line-height:1.9;color:var(--textMuted)}
+.v44 .specialty-essay-notes{margin:8px 0 0;border:0!important;padding:4px 0!important}
+.v44 .specialty-essay-notes summary{font-size:12px;color:var(--accent)}
+.v44 .specialty-essay-notes ol{padding:6px 0 2px 22px;margin:0;color:var(--textMuted)}
+.v44 .specialty-essay-notes li{margin:4px 0;font-size:12px;line-height:1.7}
+@media(max-width:600px){
+ .v44 .specialty-essay-paragraph{padding:13px 0}
+ .v44 .specialty-essay-original{font-size:15px;line-height:1.82}
+ .v44 .specialty-essay-translation{font-size:12px;line-height:1.78}
+}

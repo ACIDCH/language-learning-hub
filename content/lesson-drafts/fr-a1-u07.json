@@ -1,0 +1,78 @@
+{
+  "id": "fr-a1-u07",
+  "title": "Goûts et loisirs",
+  "language": "fr",
+  "level": "A1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Express likes and leisure preferences",
+  "prerequisite": "fr-a1-u06",
+  "context": "两位朋友商量周末活动，用喜好和理由达成共同选择。",
+  "grammar": "aimer/adorer/préférer 后面可接不定式：J'aime lire。谈论一般喜好常用定冠词：J'aime le cinéma。否定书面形式为 ne/n' + 动词 + pas；Je n'aime pas courir。",
+  "common_mistake": "不要写 J'aime de lire；aimer 后的不定式不加 de。",
+  "vocabulary": [
+    [
+      "lire",
+      "阅读"
+    ],
+    [
+      "nager",
+      "游泳"
+    ],
+    [
+      "une promenade",
+      "散步"
+    ],
+    [
+      "le cinéma",
+      "电影"
+    ],
+    [
+      "préférer",
+      "更喜欢"
+    ],
+    [
+      "ensemble",
+      "一起"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Le samedi, Léa aime nager.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Son ami Hugo préfère faire une promenade.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Ils aiment tous les deux le cinéma.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Aujourd'hui, il pleut et ils choisissent un film.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Le samedi, Léa aime nager. Son ami Hugo préfère faire une promenade. Ils aiment tous les deux le cinéma. Aujourd'hui, il pleut et ils choisissent un film. Léa n'aime pas les films très longs. Hugo propose une comédie de quatre-vingt-dix minutes. Après le film, ils prennent un thé et parlent de leur semaine.",
+  "listening_script": "Le samedi, Léa aime nager. Son ami Hugo préfère faire une promenade. Ils aiment tous les deux le cinéma. Aujourd'hui, il pleut et ils choisissent un film. Léa n'aime pas les films très longs. Hugo propose une comédie de quatre-vingt-dix minutes. Après le film, ils prennent un thé et parlent de leur semaine.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Pourquoi choisissent-ils un film aujourd'hui ?",
+      "answer": "Parce qu'il pleut.",
+      "explanation": "下雨是当天选择室内活动的原因，不能从一般喜好推断当天去游泳。"
+    },
+    {
+      "prompt": "改错：J'aime de nager.",
+      "answer": "J'aime nager.",
+      "explanation": "aimer 直接接不定式。"
+    }
+  ],
+  "pronunciation": "r français introduction。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Parlez de trois loisirs",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

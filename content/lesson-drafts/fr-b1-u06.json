@@ -1,0 +1,78 @@
+{
+  "id": "fr-b1-u06",
+  "title": "Vie professionnelle",
+  "language": "fr",
+  "level": "B1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Explain work decisions",
+  "prerequisite": "fr-b1-u05",
+  "context": "向主管提出调整工作组织的请求，说明影响与可测试方案。",
+  "grammar": "条件式 je souhaiterais/serait-il possible 缓和请求；afin de + infinitif 说明目的。正式邮件先交代问题，再提出方案和预期影响，结尾邀请反馈。",
+  "common_mistake": "礼貌不意味着模糊；请求应包含具体时间和执行方式。",
+  "vocabulary": [
+    [
+      "un délai",
+      "期限"
+    ],
+    [
+      "une réunion",
+      "会议"
+    ],
+    [
+      "un compte rendu",
+      "会议纪要"
+    ],
+    [
+      "répartir",
+      "分配"
+    ],
+    [
+      "une tâche",
+      "任务"
+    ],
+    [
+      "convenir",
+      "适合"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Madame, je souhaiterais modifier l'horaire de notre réunion hebdomadaire.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Le créneau actuel coïncide avec l'accueil des nouveaux clients.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Plusieurs collègues doivent donc quitter la réunion avant la fin.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Serait-il possible de la déplacer au mardi après-midi pendant un mois ?",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Madame, je souhaiterais modifier l'horaire de notre réunion hebdomadaire. Le créneau actuel coïncide avec l'accueil des nouveaux clients. Plusieurs collègues doivent donc quitter la réunion avant la fin. Serait-il possible de la déplacer au mardi après-midi pendant un mois ? Je pourrais envoyer un compte rendu aux personnes absentes. Nous évaluerions ensuite si ce changement améliore la circulation de l'information. Je reste disponible pour discuter d'un autre horaire qui conviendrait à l'équipe.",
+  "listening_script": "Madame, je souhaiterais modifier l'horaire de notre réunion hebdomadaire. Le créneau actuel coïncide avec l'accueil des nouveaux clients. Plusieurs collègues doivent donc quitter la réunion avant la fin. Serait-il possible de la déplacer au mardi après-midi pendant un mois ? Je pourrais envoyer un compte rendu aux personnes absentes. Nous évaluerions ensuite si ce changement améliore la circulation de l'information. Je reste disponible pour discuter d'un autre horaire qui conviendrait à l'équipe.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quel problème motive la demande ?",
+      "answer": "La réunion coïncide avec l'accueil des clients.",
+      "explanation": "请求并非仅出于作者个人偏好。"
+    },
+    {
+      "prompt": "Relevez une formule de demande atténuée.",
+      "answer": "Serait-il possible de… ?",
+      "explanation": "条件式降低命令语气但仍提出明确方案。"
+    }
+  ],
+  "pronunciation": "enchaînement consonantique。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Présentez un projet de travail",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

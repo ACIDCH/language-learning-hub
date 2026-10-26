@@ -1,0 +1,78 @@
+{
+  "id": "fr-c1-u02",
+  "title": "Argumentation approfondie",
+  "language": "fr",
+  "level": "C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Structure layered arguments",
+  "prerequisite": "fr-c1-u01",
+  "context": "针对公共决策写多层论证，讨论效率与民主程序的冲突。",
+  "grammar": "论证区分规范前提（应该重视什么）和经验前提（实际发生什么）。quand bien même + conditionnel 表示即便假设成立，结论也不必改变；cela ne saurait… 是正式限定表达。",
+  "common_mistake": "不能从程序耗时直接推出应取消程序；还缺少价值权衡。",
+  "vocabulary": [
+    [
+      "la légitimité",
+      "正当性"
+    ],
+    [
+      "délibérer",
+      "审议"
+    ],
+    [
+      "un arbitrage",
+      "权衡"
+    ],
+    [
+      "une prémisse",
+      "前提"
+    ],
+    [
+      "proportionné",
+      "相称的"
+    ],
+    [
+      "une garantie",
+      "保障"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Accélérer une décision publique paraît souhaitable lorsque le retard lui-même produit des coûts.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Encore faut-il savoir lesquels et pour qui.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "La consultation est parfois présentée comme une simple friction administrative, alors qu'elle peut révéler des conséquences ignorées par le décideur.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Quand bien même un dispositif raccourcirait les délais, ce gain ne suffirait pas à établir sa légitimité.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Accélérer une décision publique paraît souhaitable lorsque le retard lui-même produit des coûts. Encore faut-il savoir lesquels et pour qui. La consultation est parfois présentée comme une simple friction administrative, alors qu'elle peut révéler des conséquences ignorées par le décideur. Quand bien même un dispositif raccourcirait les délais, ce gain ne suffirait pas à établir sa légitimité. L'objection inverse mérite cependant d'être examinée : un débat sans échéance peut empêcher toute action et favoriser le statu quo. Il ne s'agit donc pas d'opposer abstraitement vitesse et participation. Une procédure proportionnée devrait préciser les questions ouvertes, les personnes affectées et le moment où la décision devient révisable. L'efficacité peut alors être évaluée avec les garanties qui la rendent acceptable, plutôt qu'en soustrayant ces garanties du calcul.",
+  "listening_script": "Accélérer une décision publique paraît souhaitable lorsque le retard lui-même produit des coûts. Encore faut-il savoir lesquels et pour qui. La consultation est parfois présentée comme une simple friction administrative, alors qu'elle peut révéler des conséquences ignorées par le décideur. Quand bien même un dispositif raccourcirait les délais, ce gain ne suffirait pas à établir sa légitimité. L'objection inverse mérite cependant d'être examinée : un débat sans échéance peut empêcher toute action et favoriser le statu quo. Il ne s'agit donc pas d'opposer abstraitement vitesse et participation. Une procédure proportionnée devrait préciser les questions ouvertes, les personnes affectées et le moment où la décision devient révisable. L'efficacité peut alors être évaluée avec les garanties qui la rendent acceptable, plutôt qu'en soustrayant ces garanties du calcul.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quelle objection à une consultation illimitée est reconnue ?",
+      "answer": "Elle peut empêcher l'action et favoriser le statu quo.",
+      "explanation": "高级论证必须回应自己方案的真实局限。"
+    },
+    {
+      "prompt": "Le gain de temps constitue-t-il une prémisse normative suffisante ?",
+      "answer": "Non, il faut aussi justifier les effets et les garanties acceptables.",
+      "explanation": "经验上的速度提升不能独自解决规范问题。"
+    }
+  ],
+  "pronunciation": "prosodie de conviction。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Rédigez une tribune",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

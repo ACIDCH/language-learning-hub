@@ -1,0 +1,78 @@
+{
+  "id": "fr-c1-u04",
+  "title": "Interaction professionnelle",
+  "language": "fr",
+  "level": "C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Handle delicate nuanced conversations",
+  "prerequisite": "fr-c1-u03",
+  "context": "在专业会议中提出不同意见，同时让分歧可操作、可追踪。",
+  "grammar": "je m'interroge sur、dans la mesure où、sous réserve que + subjonctif 可精确缓和立场。礼貌缓和应降低人际威胁，而不是消除异议。区分对方法的质疑与对个人能力的评判。",
+  "common_mistake": "模糊的‘可能有点问题’无法告诉团队需要验证什么。",
+  "vocabulary": [
+    [
+      "une réserve",
+      "保留意见"
+    ],
+    [
+      "une hypothèse",
+      "假设"
+    ],
+    [
+      "un périmètre",
+      "范围"
+    ],
+    [
+      "une échéance",
+      "期限"
+    ],
+    [
+      "une validation",
+      "确认"
+    ],
+    [
+      "un désaccord",
+      "分歧"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Je partage l'objectif du calendrier proposé, mais je m'interroge sur l'hypothèse de disponibilité des données.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Leur transmission dépend d'un organisme dont nous ne maîtrisons pas les délais.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Plutôt que de remettre en cause tout le projet, je suggère de distinguer les livrables autonomes de ceux qui dépendent de cette transmission.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Nous pourrions confirmer les premiers et présenter les seconds sous réserve que les données soient reçues avant le 12.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Je partage l'objectif du calendrier proposé, mais je m'interroge sur l'hypothèse de disponibilité des données. Leur transmission dépend d'un organisme dont nous ne maîtrisons pas les délais. Plutôt que de remettre en cause tout le projet, je suggère de distinguer les livrables autonomes de ceux qui dépendent de cette transmission. Nous pourrions confirmer les premiers et présenter les seconds sous réserve que les données soient reçues avant le 12. Cette formulation rendrait notre engagement plus lisible pour le client. Elle éviterait aussi qu'une réserve technique soit interprétée comme un refus de coopération. Je propose enfin que nous consignions cette dépendance dans le compte rendu, avec une personne chargée d'en suivre l'évolution. Le désaccord devient ainsi une condition de décision explicite.",
+  "listening_script": "Je partage l'objectif du calendrier proposé, mais je m'interroge sur l'hypothèse de disponibilité des données. Leur transmission dépend d'un organisme dont nous ne maîtrisons pas les délais. Plutôt que de remettre en cause tout le projet, je suggère de distinguer les livrables autonomes de ceux qui dépendent de cette transmission. Nous pourrions confirmer les premiers et présenter les seconds sous réserve que les données soient reçues avant le 12. Cette formulation rendrait notre engagement plus lisible pour le client. Elle éviterait aussi qu'une réserve technique soit interprétée comme un refus de coopération. Je propose enfin que nous consignions cette dépendance dans le compte rendu, avec une personne chargée d'en suivre l'évolution. Le désaccord devient ainsi une condition de décision explicite.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quel engagement peut être confirmé immédiatement ?",
+      "answer": "Les livrables autonomes.",
+      "explanation": "区分依赖项，避免要么全承诺要么全取消。"
+    },
+    {
+      "prompt": "Pourquoi soient après sous réserve que ?",
+      "answer": "Cette locution introduit une condition avec le subjonctif.",
+      "explanation": "语法体现条件尚待满足，但不是专业结果保证。"
+    }
+  ],
+  "pronunciation": "intonation implicite。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Animez une réunion",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

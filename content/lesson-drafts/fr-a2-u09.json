@@ -1,0 +1,78 @@
+{
+  "id": "fr-a2-u09",
+  "title": "Vie pratique",
+  "language": "fr",
+  "level": "A2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Handle lodging, services and appointments",
+  "prerequisite": "fr-a2-u08",
+  "context": "到市政窗口办理借阅卡，准确理解材料与流程。",
+  "grammar": "il faut + 不定式表示一般必要条件，vous devez 表示对听者的要求。pour + 不定式说明目的。先整理需要的材料，再按 ensuite/enfin 执行步骤。",
+  "common_mistake": "il faut vous apportez 错误；用 il faut apporter 或 vous devez apporter。",
+  "vocabulary": [
+    [
+      "un formulaire",
+      "表格"
+    ],
+    [
+      "un justificatif",
+      "证明"
+    ],
+    [
+      "une adresse",
+      "地址"
+    ],
+    [
+      "remplir",
+      "填写"
+    ],
+    [
+      "une pièce d'identité",
+      "身份证件"
+    ],
+    [
+      "un délai",
+      "期限"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Pour obtenir une carte de bibliothèque, il faut remplir un formulaire.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Vous devez indiquer votre nom et votre adresse actuelle.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Il faut aussi présenter une pièce d'identité et un justificatif de domicile.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "L'agent vérifie les documents avant de créer le compte.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Pour obtenir une carte de bibliothèque, il faut remplir un formulaire. Vous devez indiquer votre nom et votre adresse actuelle. Il faut aussi présenter une pièce d'identité et un justificatif de domicile. L'agent vérifie les documents avant de créer le compte. Si un document manque, vous pouvez revenir un autre jour. La carte est gratuite pour les habitants de la commune. Une fois la carte prête, vous choisissez votre premier livre.",
+  "listening_script": "Pour obtenir une carte de bibliothèque, il faut remplir un formulaire. Vous devez indiquer votre nom et votre adresse actuelle. Il faut aussi présenter une pièce d'identité et un justificatif de domicile. L'agent vérifie les documents avant de créer le compte. Si un document manque, vous pouvez revenir un autre jour. La carte est gratuite pour les habitants de la commune. Une fois la carte prête, vous choisissez votre premier livre.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "La carte est-elle gratuite pour tout le monde ?",
+      "answer": "Le texte dit seulement qu'elle est gratuite pour les habitants de la commune.",
+      "explanation": "不能把限定群体扩大为所有人。"
+    },
+    {
+      "prompt": "改错：Il faut remplissez le formulaire.",
+      "answer": "Il faut remplir le formulaire.",
+      "explanation": "il faut 后直接接不定式。"
+    }
+  ],
+  "pronunciation": "schémas rythmiques。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Gérez une réservation",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-listening-u02",
+  "title": "Identifying speaker stance and purpose",
+  "language": "en",
+  "level": "B1-B2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply identifying speaker stance and purpose in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-listening-u01",
+  "context": "从用词和让步判断讲者对开放式办公室的立场。",
+  "grammar": "stance 不只来自 I think。worth considering、not necessarily、provided that 暗示有条件接受。先区分描述他人观点与讲者本人判断，避免把引用当成立场。",
+  "common_mistake": "讲者承认一个优势，不等于全面支持方案。",
+  "vocabulary": [
+    [
+      "collaboration",
+      "协作"
+    ],
+    [
+      "distraction",
+      "干扰"
+    ],
+    [
+      "provided that",
+      "只要"
+    ],
+    [
+      "reservation",
+      "保留意见"
+    ],
+    [
+      "flexibility",
+      "灵活性"
+    ],
+    [
+      "overstate",
+      "夸大"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Some managers describe open offices as a simple way to improve collaboration.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "I can see why the idea appeals to them, particularly when teams need quick exchanges.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Yet it is easy to overstate the benefit of constant visibility.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Staff who analyse complex material may need long periods without interruption.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Some managers describe open offices as a simple way to improve collaboration. I can see why the idea appeals to them, particularly when teams need quick exchanges. Yet it is easy to overstate the benefit of constant visibility. Staff who analyse complex material may need long periods without interruption. A shared office is worth considering provided that quiet spaces are genuinely available. My purpose is not to defend one layout for every workplace. It is to ask which activities a design supports and which it makes harder.",
+  "listening_script": "Some managers describe open offices as a simple way to improve collaboration. I can see why the idea appeals to them, particularly when teams need quick exchanges. Yet it is easy to overstate the benefit of constant visibility. Staff who analyse complex material may need long periods without interruption. A shared office is worth considering provided that quiet spaces are genuinely available. My purpose is not to defend one layout for every workplace. It is to ask which activities a design supports and which it makes harder.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Is the speaker's attitude unconditional support ?",
+      "answer": "No, it is conditional acceptance with reservations.",
+      "explanation": "provided that 明确限制条件。"
+    },
+    {
+      "prompt": "What is the purpose of the talk ?",
+      "answer": "To evaluate layouts against the activities they support.",
+      "explanation": "结尾明确评价标准，而非推荐统一布局。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating identifying speaker stance and purpose",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

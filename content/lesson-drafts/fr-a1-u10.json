@@ -1,0 +1,78 @@
+{
+  "id": "fr-a1-u10",
+  "title": "La maison et les habitudes",
+  "language": "fr",
+  "level": "A1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Describe home and environment",
+  "prerequisite": "fr-a1-u09",
+  "context": "给来访朋友介绍合租房和家中的日常规则。",
+  "grammar": "物主限定词随后面的名词变化：mon salon、ma cuisine、mes clés。on 可在口语中代替 nous，但动词用第三人称单数。表示频率可用 toujours、souvent、parfois。",
+  "common_mistake": "不能因为房主人是女性就说 ma salon；salon 是阳性名词。",
+  "vocabulary": [
+    [
+      "le salon",
+      "客厅"
+    ],
+    [
+      "la cuisine",
+      "厨房"
+    ],
+    [
+      "une clé",
+      "钥匙"
+    ],
+    [
+      "partager",
+      "共用"
+    ],
+    [
+      "ranger",
+      "收拾"
+    ],
+    [
+      "souvent",
+      "经常"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Nous partageons un petit appartement.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Notre salon donne sur un jardin.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Dans la cuisine, on prépare souvent le dîner ensemble.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Après le repas, chacun range son assiette.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Nous partageons un petit appartement. Notre salon donne sur un jardin. Dans la cuisine, on prépare souvent le dîner ensemble. Après le repas, chacun range son assiette. Mes clés sont près de la porte. Le dimanche, ma colocataire travaille et je fais les courses. Nous aimons cette maison calme.",
+  "listening_script": "Nous partageons un petit appartement. Notre salon donne sur un jardin. Dans la cuisine, on prépare souvent le dîner ensemble. Après le repas, chacun range son assiette. Mes clés sont près de la porte. Le dimanche, ma colocataire travaille et je fais les courses. Nous aimons cette maison calme.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Que fait chacun après le repas ?",
+      "answer": "Chacun range son assiette.",
+      "explanation": "chacun 指每个人，规则不只针对某一个室友。"
+    },
+    {
+      "prompt": "补全：On ___ le dîner. (préparer)",
+      "answer": "prépare",
+      "explanation": "on 配第三人称单数，不用 préparons。"
+    }
+  ],
+  "pronunciation": "e muet dans la phrase。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Présentez votre logement",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

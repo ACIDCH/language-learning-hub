@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-language-upgrade-u02",
+  "title": "Tense/aspect for evidence",
+  "language": "en",
+  "level": "B2-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply tense/aspect for evidence in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-language-upgrade-u01",
+  "context": "写研究背景与结果时选择时态和体，区分具体研究与持续议题。",
+  "grammar": "past simple 常描述特定过去研究动作；present perfect 连接过去研究与当前讨论；present simple 表述文章主张或稳定概念。has shown 不自动意味着永远成立。",
+  "common_mistake": "带明确过去时点的动作通常不用 present perfect：In 2020, researchers collected…。",
+  "vocabulary": [
+    [
+      "investigate",
+      "研究"
+    ],
+    [
+      "collect",
+      "收集"
+    ],
+    [
+      "ongoing",
+      "持续的"
+    ],
+    [
+      "establish",
+      "确立"
+    ],
+    [
+      "finding",
+      "发现"
+    ],
+    [
+      "time frame",
+      "时间范围"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "In 2020, the fictional research team collected travel diaries from thirty volunteers.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The diaries recorded journeys during a single working week.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Since then, the team has expanded its questions to include remote work.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The present report compares the original design with the revised one.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "In 2020, the fictional research team collected travel diaries from thirty volunteers. The diaries recorded journeys during a single working week. Since then, the team has expanded its questions to include remote work. The present report compares the original design with the revised one. It does not claim that the first sample represented every commuter. Choosing a tense helps locate each action, but the strength of a finding still depends on the method and evidence.",
+  "listening_script": "In 2020, the fictional research team collected travel diaries from thirty volunteers. The diaries recorded journeys during a single working week. Since then, the team has expanded its questions to include remote work. The present report compares the original design with the revised one. It does not claim that the first sample represented every commuter. Choosing a tense helps locate each action, but the strength of a finding still depends on the method and evidence.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Why collected rather than has collected after In 2020 ?",
+      "answer": "The sentence locates a completed action in a specified past period.",
+      "explanation": "时间框架明确封闭。"
+    },
+    {
+      "prompt": "What does has expanded connect ?",
+      "answer": "Work since the earlier study with the team's current scope.",
+      "explanation": "现在完成时建立过去到现在的关联。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating tense/aspect for evidence",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

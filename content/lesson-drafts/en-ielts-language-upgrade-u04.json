@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-language-upgrade-u04",
+  "title": "Paraphrase and meaning boundaries",
+  "language": "en",
+  "level": "B2-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply paraphrase and meaning boundaries in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-language-upgrade-u03",
+  "context": "改写学术句子时同时检查数量、因果与确定性。",
+  "grammar": "改写不是逐词换同义词。some→all、associated with→caused by、may→will 都会改变主张。可改变语态或名词/动词结构，但要验证逻辑等值。",
+  "common_mistake": "‘可降低风险’不能改写为‘防止所有问题’。",
+  "vocabulary": [
+    [
+      "preserve",
+      "保留"
+    ],
+    [
+      "boundary",
+      "边界"
+    ],
+    [
+      "association",
+      "关联"
+    ],
+    [
+      "causation",
+      "因果"
+    ],
+    [
+      "subset",
+      "子集"
+    ],
+    [
+      "equivalent",
+      "等值的"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Some respondents associated flexible hours with lower stress.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "A faithful paraphrase might state that a portion of those surveyed linked scheduling flexibility to reduced stress.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "It would be inaccurate to say that flexible hours eliminated stress for all workers.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "That version changes both the population and the strength of the relationship.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Some respondents associated flexible hours with lower stress. A faithful paraphrase might state that a portion of those surveyed linked scheduling flexibility to reduced stress. It would be inaccurate to say that flexible hours eliminated stress for all workers. That version changes both the population and the strength of the relationship. It also turns a reported association into an assured outcome. Effective paraphrasing therefore requires a meaning check after the wording has changed, not merely a count of replaced words.",
+  "listening_script": "Some respondents associated flexible hours with lower stress. A faithful paraphrase might state that a portion of those surveyed linked scheduling flexibility to reduced stress. It would be inaccurate to say that flexible hours eliminated stress for all workers. That version changes both the population and the strength of the relationship. It also turns a reported association into an assured outcome. Effective paraphrasing therefore requires a meaning check after the wording has changed, not merely a count of replaced words.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Name two distortions in the inaccurate version.",
+      "answer": "Some respondents becomes all workers; lower stress becomes eliminated stress.",
+      "explanation": "还可指出相关被改成确定结果。"
+    },
+    {
+      "prompt": "Does linked to necessarily mean caused by ?",
+      "answer": "No, association alone does not establish causation.",
+      "explanation": "语义边界不可由同义改写擅自跨越。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating paraphrase and meaning boundaries",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

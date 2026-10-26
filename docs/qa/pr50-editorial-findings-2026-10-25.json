@@ -1,0 +1,326 @@
+{
+  "schema": 1,
+  "asOf": "2026-10-25",
+  "reviewType": "author_assisted_source_anchored_correction",
+  "independentTeacherApproval": false,
+  "counts": {
+    "courseIdsTouched": 11,
+    "findingsClosed": 11,
+    "courseSemanticQAApproved": 0,
+    "audioVerified": 0,
+    "publishable": 0
+  },
+  "findings": [
+    {
+      "id": "LLH-IELTS-L-U04-01",
+      "courseId": "en-ielts-listening-u04",
+      "severity": "medium",
+      "file": "src/ieltsListeningU04U06Reception.ts",
+      "locations": [
+        "P1.zh"
+      ],
+      "sourceQuote": "the entrance used by visitors today",
+      "issue": "全称量词外推：原句没有说明所有访客均使用南门",
+      "before": "今天访客都从这里入园",
+      "after": "这是今天供访客入园的入口",
+      "verification": "tests/sourceReception.test.ts",
+      "status": "author_corrected_independent_review_pending"
+    },
+    {
+      "id": "LLH-IELTS-L-U05-01",
+      "courseId": "en-ielts-listening-u05",
+      "severity": "medium",
+      "file": "src/ieltsListeningU04U06Reception.ts",
+      "locations": [
+        "P3.zh",
+        "P4.zh",
+        "modelZh"
+      ],
+      "sourceQuote": "by Friday",
+      "issue": "截止含周五当天；周五前可能被误解为周四截止",
+      "before": "周五前支付",
+      "after": "最迟周五支付（含周五）",
+      "verification": "tests/sourceReception.test.ts",
+      "status": "author_corrected_independent_review_pending"
+    },
+    {
+      "id": "LLH-IELTS-L-U06-01",
+      "courseId": "en-ielts-listening-u06",
+      "severity": "medium",
+      "file": "src/ieltsListeningU04U06Reception.ts",
+      "locations": [
+        "languageNotes:measurement method as well as the result"
+      ],
+      "sourceQuote": "If the result has not yet been measured, students should not fabricate a value",
+      "issue": "‘两栏都必填’与尚未测量不得填写虚构结果存在指令冲突",
+      "before": "两栏都必填；未测数值仍应保持未知",
+      "after": "保留方法和结果字段，尚未测量时结果标记待测",
+      "verification": "tests/sourceReception.test.ts",
+      "status": "author_corrected_independent_review_pending"
+    },
+    {
+      "id": "LLH-IELTS-T1-U05-01",
+      "courseId": "en-ielts-writing-task1-u05",
+      "severity": "medium",
+      "file": "src/ieltsTask1U05U06Reception.ts",
+      "locations": [
+        "P3.zh"
+      ],
+      "sourceQuote": "pressing removes water, whereas drying reduces the remaining moisture",
+      "issue": "中文概述压干混合了压水和后续干燥工序",
+      "before": "压干",
+      "after": "压出水分并干燥",
+      "verification": "tests/sourceReception.test.ts",
+      "status": "author_corrected_independent_review_pending"
+    },
+    {
+      "id": "LLH-IELTS-T1-U07-01",
+      "courseId": "en-ielts-writing-task1-u07",
+      "severity": "high",
+      "file": "src/ieltsTask1U07U08Reception.ts",
+      "locations": [
+        "P3.target",
+        "P3.zh"
+      ],
+      "sourceQuote": "An increase in a share is not automatically an increase in the number of loans",
+      "issue": "仅有两组类别百分比但例句声称绝对借阅量升降，超出原表证据",
+      "before": "Paper borrowing declined, while digital borrowing increased / 纸本借阅下降，而数字借阅上升",
+      "after": "The paper-borrowing share declined, while the digital-borrowing share increased / 纸本借阅占比下降，而数字借阅占比上升",
+      "verification": "tests/sourceReception.test.ts",
+      "status": "author_corrected_independent_review_pending"
+    },
+    {
+      "id": "LLH-FR-A2-U05-01",
+      "courseId": "fr-a2-u05",
+      "severity": "medium",
+      "file": "src/nextBilingualReception.ts",
+      "locations": [
+        "P2.target",
+        "P2.zh"
+      ],
+      "sourceQuote": "Il note l'heure du rendez-vous pour ne pas l'oublier",
+      "issue": "原始稿明确 Paul 记录具体预约时间，但 P2 扩展用模糊‘记录收到的信息’遮蔽了病人知道时间与读者不知道具体几点的区分",
+      "before": "Paul note les informations reçues pour ne pas les oublier. / 保罗把收到的信息记下来，以免忘记",
+      "after": "Paul note l’heure du rendez-vous communiquée par la secrétaire pour ne pas l’oublier. / 保罗记下秘书告诉他的预约时间，读者仍不知道具体几点",
+      "verification": "tests/nextCurriculumBatch.test.tsx",
+      "status": "author_corrected_independent_review_pending"
+    },
+    {
+      "id": "LLH-IELTS-R-U05-01",
+      "courseId": "en-ielts-reading-u05",
+      "severity": "low",
+      "file": "src/ieltsReadingU05U08Reception.ts",
+      "locations": [
+        "P1.zh"
+      ],
+      "sourceQuote": "An imaginary local council introduced a programme of grants",
+      "issue": "译文将未说明类型的 local council 特指为城市议会，增加原文未提供的行政管辖范围",
+      "before": "一座虚构城市的议会",
+      "after": "一个虚构地区的地方议会",
+      "verification": "tests/sourceReception.test.ts",
+      "status": "author_corrected_independent_review_pending"
+    },
+    {
+      "id": "LLH-IELTS-R-U08-01",
+      "courseId": "en-ielts-reading-u08",
+      "severity": "medium",
+      "file": "src/ieltsReadingU05U08Reception.ts",
+      "locations": [
+        "P3.zh"
+      ],
+      "sourceQuote": "the evening connection involved an additional journey",
+      "issue": "原英文只说晚间接驳涉及额外行程，旧译文‘多走一段路’无依据地限定为步行",
+      "before": "晚间转乘需要多走一段路，难以每周都这样出行",
+      "after": "晚间接驳还涉及额外一段行程，每周这样往返并不现实",
+      "verification": "tests/sourceReception.test.ts",
+      "status": "author_corrected_independent_review_pending"
+    },
+    {
+      "id": "LLH-FR-A2-V-U02-01",
+      "courseId": "fr-a2-u02",
+      "severity": "low",
+      "file": "src/frA2Knowledge.ts",
+      "locations": [
+        "FR_A2_VOCABULARY.02[1].examples[1].zh"
+      ],
+      "sourceQuote": "Je passais du temps avec les enfants du voisinage.",
+      "issue": "原文只表一起度过时间，旧中文‘玩耍’无依据补充活动性质",
+      "before": "我常和邻居家的孩子一起玩耍相处。",
+      "after": "我过去常和街坊邻居家的孩子们待在一起。",
+      "verification": "tests/nextCurriculumBatch.test.tsx",
+      "status": "author_corrected_independent_review_pending"
+    },
+    {
+      "id": "LLH-FR-A2-V-U10-01",
+      "courseId": "fr-a2-u10",
+      "severity": "medium",
+      "file": "src/frA2Knowledge.ts",
+      "locations": [
+        "FR_A2_VOCABULARY.10[0].examples[0].zh"
+      ],
+      "sourceQuote": "Je cherche un stage dans une équipe internationale.",
+      "issue": "chercher un stage 描述申请/寻找；旧译‘我在国际团队寻找实习’容易造成已经处于国际团队的错误理解",
+      "before": "我在国际团队寻找实习。",
+      "after": "我正在寻找加入国际团队实习的机会。",
+      "verification": "tests/nextCurriculumBatch.test.tsx",
+      "status": "author_corrected_independent_review_pending"
+    },
+    {
+      "id": "LLH-FR-A2-G-U11-01",
+      "courseId": "fr-a2-u11",
+      "severity": "low",
+      "file": "src/frA2Knowledge.ts",
+      "locations": [
+        "FR_A2_GRAMMAR.11[1].examples[1].zh"
+      ],
+      "sourceQuote": "La réunion aura lieu mardi à dix-neuf heures.",
+      "issue": "周二十九点的文字连接易被误读为二十九点，须保留周二和十九时边界",
+      "before": "会议将于周二十九点举行。",
+      "after": "会议将于周二晚上七点（19:00）举行。",
+      "verification": "tests/nextCurriculumBatch.test.tsx",
+      "status": "author_corrected_independent_review_pending"
+    }
+  ],
+  "unreviewedScope": [
+    "remaining passages for all 156 lesson IDs",
+    "full question and model evidence checks",
+    "327 grammar/vocabulary specialties",
+    "legally usable audio alignment",
+    "independent teacher review",
+    "owner actual listening"
+  ],
+  "auditNote": "This is only a targeted error register. Do not use its 5 findings to raise approved course counts.",
+  "interactionFindings": [
+    {
+      "id": "LLH-AUDIO-REF-RESET-01",
+      "scope": "reference_audio_12_mapped_vocabulary_lessons",
+      "file": "src/ReferenceAudio.tsx",
+      "kind": "cross_lesson_state_leak",
+      "before": "A/B clip start/end, active loop and load error could persist when reusing the reference audio component for another lesson",
+      "after": "Reset start/end/loop/failed when lessonId changes; clear prior load error after next recording loads metadata",
+      "verification": "tests/audioCoverage.test.tsx",
+      "status": "regression_added_manual_playback_pending",
+      "manualPlaybackChecked": false,
+      "fullLessonRecordingApproved": false
+    },
+    {
+      "id": "LLH-RECEPTION-INDEX-RESET-01",
+      "scope": "six_paragraph_to_four_paragraph_course_switch",
+      "file": "src/ReceptionStudy.tsx",
+      "kind": "out_of_bounds_stale_selection",
+      "before": "Rerendering an existing reading component on a shorter course could carry a stale paragraph index into speech navigation",
+      "after": "Reset selection/status by courseId and clamp/validate paragraph navigation; invalidate stale old speech callbacks",
+      "verification": "tests/curriculumInteractions.test.tsx",
+      "status": "regression_added_CI_confirmation_required",
+      "manualDeviceVerified": false
+    }
+  ],
+  "bilingualQuestionCoverage": {
+    "reviewType": "source_preserving_author_translation_not_independent_editorial_approval",
+    "questionsAddedChinese": 156,
+    "unitsCovered": 39,
+    "units": [
+      {
+        "group": "IELTS Reading",
+        "ids": [
+          "en-ielts-reading-u03",
+          "en-ielts-reading-u04",
+          "en-ielts-reading-u05",
+          "en-ielts-reading-u06",
+          "en-ielts-reading-u07",
+          "en-ielts-reading-u08"
+        ],
+        "questions": 24
+      },
+      {
+        "group": "IELTS Listening",
+        "ids": [
+          "en-ielts-listening-u02",
+          "en-ielts-listening-u03",
+          "en-ielts-listening-u04",
+          "en-ielts-listening-u05",
+          "en-ielts-listening-u06",
+          "en-ielts-listening-u07",
+          "en-ielts-listening-u08"
+        ],
+        "questions": 28
+      },
+      {
+        "group": "French A2",
+        "ids": [
+          "fr-a2-u03",
+          "fr-a2-u05"
+        ],
+        "questions": 8
+      },
+      {
+        "group": "IELTS Writing Task 2",
+        "ids": [
+          "en-ielts-writing-task2-u01",
+          "en-ielts-writing-task2-u02",
+          "en-ielts-writing-task2-u03",
+          "en-ielts-writing-task2-u04",
+          "en-ielts-writing-task2-u05",
+          "en-ielts-writing-task2-u06",
+          "en-ielts-writing-task2-u07",
+          "en-ielts-writing-task2-u08"
+        ],
+        "questions": 32
+      },
+      {
+        "group": "IELTS Writing Task 1",
+        "ids": [
+          "en-ielts-writing-task1-u01",
+          "en-ielts-writing-task1-u02",
+          "en-ielts-writing-task1-u03",
+          "en-ielts-writing-task1-u04",
+          "en-ielts-writing-task1-u05",
+          "en-ielts-writing-task1-u06",
+          "en-ielts-writing-task1-u07",
+          "en-ielts-writing-task1-u08"
+        ],
+        "questions": 32
+      },
+      {
+        "group": "French A1",
+        "ids": [
+          "fr-a1-u05",
+          "fr-a1-u09",
+          "fr-a1-u06",
+          "fr-a1-u07",
+          "fr-a1-u08",
+          "fr-a1-u10",
+          "fr-a1-u11",
+          "fr-a1-u12"
+        ],
+        "questions": 32
+      }
+    ],
+    "sourceQuestionsPreserved": true,
+    "independentQAApproved": 0,
+    "full156CoverageClaim": false,
+    "constraints": [
+      "Reading U01/U02 already had Chinese questions and are not counted among the 52 newly translated questions.",
+      "English IELTS T/F/NG answer tokens and one-word listening answer remain exact on the English side; the Chinese side is a labelled explanation.",
+      "No course or specialty gains independent teacher QA approval from automatic or author-level translation.",
+      "Listening U01 and Reading U01/U02 previously contained bilingual source evidence questions and are not counted in this round's sixty newly translated items.",
+      "IELTS Task 2 bilingual question extensions preserve original English argument claims and evidence paragraph references, but do not imply an IELTS examiner has judged model quality.",
+      "IELTS Task 1 numerical bilingual answers distinguish absolute counts from shares, percentage points from percent change, and hypothetical mechanisms from established causal evidence.",
+      "The 124 additions are English-Chinese evidence exercise pairs, not human-certified translations or verification of the full 156 lessons.",
+      "A1 U05 and U09 additions preserve complete French answers to time, routine and street-directions questions and add separate Chinese evidence explanations.",
+      "A1 U06, U07, U08, U10, U11 and U12 add 24 paired beginner French and Chinese source-evidence questions; original French reference answers and paragraph citations remain unchanged.",
+      "156 newly bilingual exercises across 39 lessons must not be confused with full editorial verification of 156 courses."
+    ]
+  },
+  "specialtySampleAnalysis": {
+    "updatedUnits": 12,
+    "groups": [
+      "FR_A2_GRAMMAR U08-U12",
+      "FR_A2_VOCABULARY U02/U04/U07/U09-U12"
+    ],
+    "before": "Repeated generic manuscript / continuation commentary",
+    "after": "Source-specific bilingual language notes attached to each of the original and author-extended model examples, with manuscript boundary named",
+    "verification": "tests/nextCurriculumBatch.test.tsx",
+    "independentQAApproved": 0
+  }
+}

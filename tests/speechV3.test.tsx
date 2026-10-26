@@ -40,7 +40,7 @@ describe('browser lifecycle',()=>{
  });
 });
 describe('privacy and adapters',()=>{
- it('keeps remote evaluation disabled and only allows loopback',()=>{expect(ENGINES[2].available).toBe(false);expect(localAllowed('example.com')).toBe(false);expect(localAllowed('127.0.0.1')).toBe(true);});
+ it('offers configured remote evaluation but restricts local transport to loopback',()=>{expect(ENGINES[2].available).toBe(true);expect(localAllowed('example.com')).toBe(false);expect(localAllowed('127.0.0.1')).toBe(true);});
  it('clears the request PCM on network failure',async()=>{
   vi.stubGlobal('fetch',vi.fn().mockRejectedValue(new Error('offline')));const pcm=new Int16Array(8000).fill(123);await expect(evaluateLocal(pcm,'pain','fr',new AbortController().signal)).rejects.toThrow('offline');expect(pcm.every(x=>x===0)).toBe(true);
  });
@@ -204,7 +204,7 @@ describe('authenticated cross-device cloud speech adapter',()=>{
  it('keeps signed-out public speech lab free and without cloud-only account access',()=>{
   vi.stubEnv('VITE_SPEECH_API_URL','https://speech.example/');
   render(<SpeechPractice language="fr"/>);
-  expect((screen.getByRole('option',{name:'云端音素练习（登录后使用）'}) as HTMLOptionElement).disabled).toBe(true);
+  expect((screen.getByRole('option',{name:'云端模型分析（需在线声学服务）'}) as HTMLOptionElement).disabled).toBe(true);
   expect(screen.getByRole('button',{name:'② 开始跟读'})).toBeTruthy();
  });
 });

@@ -1,0 +1,78 @@
+{
+  "id": "fr-c2-u06",
+  "title": "Production académique",
+  "language": "fr",
+  "level": "C2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Write a polished expert document",
+  "prerequisite": "fr-c2-u05",
+  "context": "构建学术段落，明确研究空缺、主张和论证限度。",
+  "grammar": "学术定位需要说明现有解释不足在哪里，而非宣称‘此前无人研究’。il ressort de、ne permet pas de conclure、dans la limite de 校准论断。引用需区分作者原话、转述和自己的推论。",
+  "common_mistake": "用 nombreux travaux sans citation 不能充当证据；本练习资料是原创模拟材料。",
+  "vocabulary": [
+    [
+      "une problématique",
+      "研究问题"
+    ],
+    [
+      "une lacune",
+      "缺口"
+    ],
+    [
+      "un corpus",
+      "语料"
+    ],
+    [
+      "une portée",
+      "适用范围"
+    ],
+    [
+      "une objection",
+      "异议"
+    ],
+    [
+      "étayer",
+      "支持"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Les deux notices fictives fournies dans cet exercice abordent la participation à distance sous des angles distincts.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "L'une décrit la fréquence des interventions, l'autre la perception de leur utilité.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Notre question ne consiste pas à déterminer abstraitement si la distance favorise la participation, mais à examiner ce que chaque indicateur rend visible.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Une hausse du nombre de messages ne permet pas de conclure à une meilleure distribution de la parole.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Les deux notices fictives fournies dans cet exercice abordent la participation à distance sous des angles distincts. L'une décrit la fréquence des interventions, l'autre la perception de leur utilité. Notre question ne consiste pas à déterminer abstraitement si la distance favorise la participation, mais à examiner ce que chaque indicateur rend visible. Une hausse du nombre de messages ne permet pas de conclure à une meilleure distribution de la parole. Elle peut même coexister avec une concentration des échanges entre quelques personnes. L'analyse proposée articule donc quantité, répartition et reconnaissance des contributions. Sa portée demeure limitée par le caractère construit du corpus, qui sert à éprouver un raisonnement et non à établir un résultat empirique. Cette distinction devra figurer dans la conclusion aussi nettement que dans la méthode, afin que la précision de l'argument ne soit pas confondue avec une validation de terrain.",
+  "listening_script": "Les deux notices fictives fournies dans cet exercice abordent la participation à distance sous des angles distincts. L'une décrit la fréquence des interventions, l'autre la perception de leur utilité. Notre question ne consiste pas à déterminer abstraitement si la distance favorise la participation, mais à examiner ce que chaque indicateur rend visible. Une hausse du nombre de messages ne permet pas de conclure à une meilleure distribution de la parole. Elle peut même coexister avec une concentration des échanges entre quelques personnes. L'analyse proposée articule donc quantité, répartition et reconnaissance des contributions. Sa portée demeure limitée par le caractère construit du corpus, qui sert à éprouver un raisonnement et non à établir un résultat empirique. Cette distinction devra figurer dans la conclusion aussi nettement que dans la méthode, afin que la précision de l'argument ne soit pas confondue avec une validation de terrain.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quel est le statut du corpus ?",
+      "answer": "Un corpus fictif construit pour l'exercice.",
+      "explanation": "不得将模拟分析写成真实研究发现。"
+    },
+    {
+      "prompt": "Pourquoi compter les messages ne suffit-il pas ?",
+      "answer": "Le volume ne renseigne pas à lui seul sur la répartition et la reconnaissance de la parole.",
+      "explanation": "操作指标与研究概念不是一一对应。"
+    }
+  ],
+  "pronunciation": "défense orale。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Rédigez une critique approfondie",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

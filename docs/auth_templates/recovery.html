@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>找回 Language Hub 密码</title></head>
+<body style="font-family:Arial,'Noto Sans SC',sans-serif;color:#172329;background:#f6f8f7;padding:28px;line-height:1.65">
+<main style="max-width:520px;margin:auto;padding:28px;background:white;border:1px solid #e2e8e6;border-radius:14px">
+<h1 style="font-size:23px">重置 Language Learning Hub 登录密码</h1>
+<p>我们收到了你的密码重置请求。点击下方按钮进入安全的重新设置页面。</p>
+<p><a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#174d47;color:#fff;padding:11px 22px;border-radius:8px;text-decoration:none">设置新密码</a></p>
+<p>如果链接无法打开，可以复制：</p>
+<p style="overflow-wrap:anywhere;font-size:12px">{{ .ConfirmationURL }}</p>
+<p>如果网页要求输入六位恢复验证码，请输入：<strong>{{ .Token }}</strong></p>
+<p style="font-size:12px;color:#697875">如果你没有请求修改密码，请忽略本邮件，旧密码不会因此自动更改。请勿泄露此链接或验证码。</p>
+</main></body></html>

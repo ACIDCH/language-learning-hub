@@ -1,0 +1,78 @@
+{
+  "id": "fr-c2-u07",
+  "title": "Interprétation littéraire",
+  "language": "fr",
+  "level": "C2",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Discuss literary voice and perspective",
+  "prerequisite": "fr-c2-u06",
+  "context": "细读原创文学短段，提出多种有文本依据的解释。",
+  "grammar": "文学分析区分观察（时态、代词、节奏）与解释。conditionnel peut 表示解读可能性；叙述不可靠不能仅靠读者不喜欢人物来断言。留意时态改变如何切换记忆与眼前场景。",
+  "common_mistake": "意象不能机械对应固定象征词典；解释须返回段落证据。",
+  "vocabulary": [
+    [
+      "une focalisation",
+      "聚焦视角"
+    ],
+    [
+      "un rythme",
+      "节奏"
+    ],
+    [
+      "une ellipse",
+      "省略"
+    ],
+    [
+      "un seuil",
+      "门槛"
+    ],
+    [
+      "un souvenir",
+      "记忆"
+    ],
+    [
+      "une ambivalence",
+      "双重意味"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "Chaque soir, il laissait une tasse sur la table, bien que personne ne fût attendu.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Ce fragment original associe une habitude à une absence dont la cause demeure tue.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "L'imparfait installe la répétition ; le subjonctif imparfait fût, propre à un registre littéraire soutenu, marque ici la concession après bien que.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "La tasse pourrait figurer une fidélité au souvenir, mais aussi le refus d'admettre une rupture.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "Chaque soir, il laissait une tasse sur la table, bien que personne ne fût attendu. Ce fragment original associe une habitude à une absence dont la cause demeure tue. L'imparfait installe la répétition ; le subjonctif imparfait fût, propre à un registre littéraire soutenu, marque ici la concession après bien que. La tasse pourrait figurer une fidélité au souvenir, mais aussi le refus d'admettre une rupture. Aucun de ces sens n'est assuré par l'objet seul. Si la phrase suivante annonçait une visite régulière, notre lecture devrait être révisée. L'intérêt du commentaire tient précisément à cette disponibilité au texte. Il peut montrer comment la subordonnée contrarie l'attente créée par le geste, sans combler l'ellipse par une biographie inventée. L'ambivalence n'est pas un défaut à éliminer : elle constitue un effet à décrire avec exactitude.",
+  "listening_script": "Chaque soir, il laissait une tasse sur la table, bien que personne ne fût attendu. Ce fragment original associe une habitude à une absence dont la cause demeure tue. L'imparfait installe la répétition ; le subjonctif imparfait fût, propre à un registre littéraire soutenu, marque ici la concession après bien que. La tasse pourrait figurer une fidélité au souvenir, mais aussi le refus d'admettre une rupture. Aucun de ces sens n'est assuré par l'objet seul. Si la phrase suivante annonçait une visite régulière, notre lecture devrait être révisée. L'intérêt du commentaire tient précisément à cette disponibilité au texte. Il peut montrer comment la subordonnée contrarie l'attente créée par le geste, sans combler l'ellipse par une biographie inventée. L'ambivalence n'est pas un défaut à éliminer : elle constitue un effet à décrire avec exactitude.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Quel effet produit l'imparfait laissait ?",
+      "answer": "Il installe une habitude répétée.",
+      "explanation": "从可观察语法出发再谈意义。"
+    },
+    {
+      "prompt": "Peut-on affirmer que la tasse symbolise un deuil ?",
+      "answer": "Non, c'est une hypothèse qui nécessiterait d'autres indices.",
+      "explanation": "保留解读开放性，避免捏造人物背景。"
+    }
+  ],
+  "pronunciation": "lecture interprétative。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Présentez une lecture critique",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

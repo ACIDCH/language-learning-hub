@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
-import { createClient, type Session } from '@supabase/supabase-js';
+import { type Session } from '@supabase/supabase-js';
 import './cloud.css';
-import { cloudPublicDefaults } from './cloudPublicDefaults';
+import {cloudClient,apiBase} from './v44Connection';
+import {isCloudWorkspaceConfigured} from './previewWorker';
 import BackupImporter from './BackupImporter';
+import DriveLibrary from './DriveLibrary';
 import LessonReader from './LessonReader';
 import AudioVault from './AudioVault';
+import AudioCoverage from './AudioCoverage';
 import AITutor from './AITutor';
 import SpeechPractice from './SpeechPractice';
 import CourseAudit from './CourseAudit';
@@ -18,6 +21,7 @@ import FoundationStudio from './FoundationStudio';
 import CourseGuide from './CourseGuide.tsx';
 import StageCoverage from './StageCoverage';
 import type {PracticeCheck} from './courseGuide';
+import {mergeProgressDraft} from './progressMerge';
 
 type Course = { id: string; language: string; level: string; track: string | null;
   title: string; unit: number; text_complete: boolean; audio_verified: boolean; publishable: boolean };
@@ -25,11 +29,9 @@ type State = { stage?: number; notes?: string; completed?: boolean; [key: string
 type Progress = { course_id: string; state: State; updated_at: string };
 type PrivateLesson = { course_id: string; content_body: string; source_version: string; qa_status: string; updated_at: string };
 type AudioAsset = { asset_id:string;filename:string;duration_seconds:number;source_kind:string;decoded:boolean;exact_text:boolean;listened:boolean;audio_verified:boolean };
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL?.trim() || cloudPublicDefaults.supabaseUrl;
-const publicKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY?.trim() || cloudPublicDefaults.supabasePublishableKey;
-const apiBase = (import.meta.env.VITE_WORKER_API_URL?.trim() || cloudPublicDefaults.workerApiUrl).replace(/\/$/, '');
-const configured = Boolean(supabaseUrl && publicKey && /^https:\/\//.test(apiBase));
-const client = configured ? createClient(supabaseUrl, publicKey) : null;
+// Preview uses same-origin /api; an absolute HTTPS Worker is not required.
+const configured = isCloudWorkspaceConfigured(Boolean(cloudClient),apiBase);
+const client = configured ? cloudClient : null;
 const stages = ['情境', '语法', '词汇', '听读', '发音', '表达'];
 const draftKey = (uid: string,courseId: string) => 'llh-cloud-draft-v1:' + uid + ':' + courseId;
 
@@ -43,9 +45,8 @@ async function worker<T>(path: string, token?: string, init: RequestInit = {}): 
   return value as T;
 }
 
-export default function CloudWorkspace() {
+export default function CloudWorkspace({initialPanel='learn',initialCourse=''}:{initialPanel?:'learn'|'path'|'foundation'|'audio'|'speech'|'review'|'resources'|'ai';initialCourse?:string}) {
   const [session, setSession] = useState<Session | null>(null);
-  const [recoveryMode,setRecoveryMode] = useState(false);
   const [catalog, setCatalog] = useState<Course[]>([]);
   const [selected, setSelected] = useState('');
   const [state, setState] = useState<State>({});
@@ -57,15 +58,23 @@ export default function CloudWorkspace() {
   const [courseQuery,setCourseQuery]=useState('');
   const [status, setStatus] = useState('正在连接…');
   const [busy, setBusy] = useState(false);
-  const [activePanel,setActivePanel] = useState<'learn'|'path'|'foundation'|'audio'|'speech'|'review'|'resources'|'ai'>('learn');
+  const [activePanel,setActivePanel] = useState<'learn'|'path'|'foundation'|'audio'|'speech'|'review'|'resources'|'ai'>(initialPanel);
   const [overviewVersion,setOverviewVersion] = useState(0);
   const [progressReadyKey,setProgressReadyKey] = useState('');
+  const [progressReadError,setProgressReadError] = useState(false);
+  const [progressRetry,setProgressRetry] = useState(0);
   const selectedRef=useRef('');
+  const activeUserRef=useRef(session?.user.id||'');
+  activeUserRef.current=session?.user.id||'';
+  const draftRevisions=useRef<Record<string,number>>({});
+  const progressVersion=useRef<string|null>(null);
+  const [progressConflict,setProgressConflict]=useState<{local:State;remote:State}|null>(null);
   const progressKey=session?session.user.id+':'+selected:'';
   const progressReady=Boolean(selected&&progressReadyKey===progressKey);
   const currentLesson=lesson?.course_id===selected?lesson:null;
   function chooseCourse(id:string){
     selectedRef.current=id;
+    progressVersion.current=null;setProgressConflict(null);
     setSelected(id);setState({});setProgressReadyKey('');
   }
 
@@ -74,12 +83,9 @@ export default function CloudWorkspace() {
     let alive = true;
     const auth = client;
     void auth.auth.getSession().then(({data}) => {if (alive) setSession(data.session);});
-    const {data:listener} = auth.auth.onAuthStateChange((event,next) => {
-      setSession(next);
-      if(event==='PASSWORD_RECOVERY')setRecoveryMode(true);
-    });
+    const {data:listener} = auth.auth.onAuthStateChange((_event,next) => {setSession(next);});
     void worker<{courses:Course[]}>('/v1/courses')
-      .then(({courses}) => {if (alive) {setCatalog(courses); chooseCourse(courses[0]?.id || ''); setStatus('课程索引已加载。');}})
+      .then(({courses}) => {if (alive) {setCatalog(courses); chooseCourse(courses.some(c=>c.id===initialCourse)?initialCourse:courses[0]?.id || ''); setStatus('课程索引已加载。');}})
       .catch(e => {if (alive) setStatus('云端索引暂不可用：' + e.message);});
     return () => {alive = false; listener.subscription.unsubscribe();};
   }, []);
@@ -88,6 +94,7 @@ export default function CloudWorkspace() {
     if (!session || !selected) {setState({});setProgressReadyKey('');return;}
     let alive = true;
     setProgressReadyKey('');
+    setProgressReadError(false);setProgressConflict(null);
     setState({});
     setStatus('正在读取云端进度…');
     void worker<{progress:Progress|null}>('/v1/progress/' + encodeURIComponent(selected),session.access_token)
@@ -98,30 +105,39 @@ export default function CloudWorkspace() {
           const cached = localStorage.getItem(draftKey(session.user.id,selected));
           if (cached) draft = JSON.parse(cached);
         } catch { /* Storage may be disabled or unavailable. */ }
+        progressVersion.current=progress?.updated_at||null;
         const useDraft = draft?.state && draft.editedAt &&
           (!progress || new Date(draft.editedAt).getTime() > new Date(progress.updated_at).getTime());
-        setState(useDraft ? draft!.state : (progress?.state || {}));
+        if(draft?.state&&progress){
+          setState(draft.state);setProgressConflict({local:draft.state,remote:progress.state});
+          setStatus('云端与本机未同步草稿不同步；请选择版本，未确认前禁止保存。');
+          return;
+        }
+        setState(useDraft ? mergeProgressDraft(progress?.state||{},draft!.state) : (progress?.state || {}));
         setProgressReadyKey(session.user.id+':'+selected);
         setStatus(useDraft ? '已恢复本机未同步草稿，点击保存后才会写入云端。' : '云端进度已读取。');
       })
       .catch(e => {
         if (!alive) return;
+        setProgressReadError(true);
         try {
           const cached = localStorage.getItem(draftKey(session.user.id,selected));
           if (cached) {
             const draft = JSON.parse(cached) as {state?:State};
             if (draft?.state) {
               setState(draft.state);
-              setProgressReadyKey(session.user.id+':'+selected);
-              setStatus('远端读取失败，已保留本机未同步草稿：' + e.message);
+              // A local draft is NOT proof that the remote state was loaded.
+              // Block writes until the current remote version can be read.
+              setStatus('云端读取失败，已保留本机草稿（只读）；为防止覆盖已有进度，暂不允许保存：' + e.message);
               return;
             }
           }
         } catch { /* Local cache unavailable. */ }
-        setStatus('读取失败：' + e.message);
+        setStatus('读取失败，已禁止覆盖保存：' + e.message);
       });
     return () => {alive=false;};
-  },[session,selected]);
+  // Refreshing the same user's JWT must not reset an in-progress course editor.
+  },[session?.user.id,selected,progressRetry]);
 
   useEffect(() => {
     if (!session || !selected) {
@@ -171,6 +187,7 @@ export default function CloudWorkspace() {
   function editState(patch: Partial<State>) {
     if(!progressReady)return;
     const next = {...state,...patch};
+    if(session&&selected){const id=draftKey(session.user.id,selected);draftRevisions.current[id]=(draftRevisions.current[id]||0)+1;}
     setState(next);
     if (session && selected) {
       try {
@@ -180,51 +197,75 @@ export default function CloudWorkspace() {
       } catch { setStatus('浏览器存储不可用，请及时同步并保留当前页面。'); }
     }
   }
+  function resolveProgressConflict(choice:'cloud'|'local'){
+    if(!session||!selected||!progressConflict)return;
+    const next=choice==='cloud'?progressConflict.remote:mergeProgressDraft(progressConflict.remote,progressConflict.local);
+    setState(next);setProgressConflict(null);
+    if(choice==='cloud'){
+      try{localStorage.removeItem(draftKey(session.user.id,selected));}catch{}
+      setStatus('已选择云端进度；本机未同步草稿不再参与此次保存。');
+    }else{
+      const id=draftKey(session.user.id,selected);
+      draftRevisions.current[id]=(draftRevisions.current[id]||0)+1;
+      try{localStorage.setItem(id,JSON.stringify({state:next,editedAt:new Date().toISOString()}));}catch{}
+      setStatus('已选择保留本机草稿；请核对后再同步。');
+    }
+    setProgressReadError(false);
+    setProgressReadyKey(session.user.id+':'+selected);
+  }
   async function save() {
     if (!session || !selected || busy || !progressReady) return;
     const courseId=selected;
     const userId=session.user.id;
     const saveState={...state};
+    const draftId=draftKey(userId,courseId);
+    const revisionAtSave=draftRevisions.current[draftId]||0;
     setBusy(true);
     try {
       const result = await worker<{progress:Progress}>('/v1/progress/'+encodeURIComponent(courseId),
         session.access_token,{
           method:'PUT',
           headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({state:saveState})
+          body:JSON.stringify({state:saveState,expectedUpdatedAt:progressVersion.current})
         });
-      // A delayed response must not replace another course's notes.
-      if(selectedRef.current===courseId){
-        setState(result.progress.state);
-        try {localStorage.removeItem(draftKey(userId,courseId));} catch { /* no local cache */ }
-        setStatus('学习进度已保存：' + new Date(result.progress.updated_at).toLocaleString());
-      } else {
-        try {localStorage.removeItem(draftKey(userId,courseId));} catch { /* no local cache */ }
+      // Do not consume or erase a newer draft (or another account's UI state)
+      // when a slow save completes after navigation or another local edit.
+      const sameIdentity=selectedRef.current===courseId&&activeUserRef.current===userId;
+      const sameRevision=(draftRevisions.current[draftId]||0)===revisionAtSave;
+      if(sameIdentity){
+        progressVersion.current=result.progress.updated_at;
+        if(sameRevision){
+          setState(result.progress.state);
+          try{localStorage.removeItem(draftId);}catch{}
+          setStatus('学习进度已保存：' + new Date(result.progress.updated_at).toLocaleString());
+        }else{
+          setStatus('上一版本已同步；此后本机修改仍待再次保存。');
+        }
+      }else if(sameRevision){
+        try{localStorage.removeItem(draftId);}catch{}
       }
       setOverviewVersion(n=>n+1);
      } catch(e) {
-      if(selectedRef.current===courseId){
-        setStatus('保存失败，请保留本页内容：' + (e instanceof Error ? e.message : String(e)));
+      if(selectedRef.current===courseId&&activeUserRef.current===userId){
+        const detail=e instanceof Error?e.message:String(e);
+        if(detail==='progress_conflict'||detail==='progress_version_required'){
+          setProgressReadyKey('');setProgressReadError(true);
+          setStatus('云端进度发生并发变更，本机草稿已保留；请重新读取并选择版本。');
+        }else setStatus('保存失败，请保留本页内容：'+detail);
       }
     }
     finally {setBusy(false);}
   }
   return <main className="cloud-workspace">
     <header className="cloud-head">
-      <div><p className="cloud-kicker">LANGUAGE HUB / CLOUD</p><h1>云端学习进度</h1>
-        <p>108 课云端学习、私人音频与进度记录。Google Drive 保留课程和音频原件。</p></div>
-      <a href="/" className="cloud-return">返回公开课程 →</a>
+      <div><p className="cloud-kicker">MY LEARNING</p><h1>学习工作区</h1></div>
+      <a href="/" className="cloud-return">返回课程 →</a>
     </header>
     {!configured ? <section className="cloud-panel" role="status">
-      <h2>尚未启用云端连接</h2>
-      <p>前端仍可阅读公开课程。云端同步将在 Cloudflare Pages 的公开连接配置和 Worker 服务验证通过后开放。</p>
-      <p>无需在浏览器中粘贴任何数据库管理密钥。</p>
+      <h2>尚未启用云端连接</h2><p>请检查云端连接。</p>
     </section> : <>
-      <p role="status" className="cloud-status">{status}</p>
-      {!session || recoveryMode ? <AccountAccess client={client!}
-        recoveryMode={recoveryMode}
-        onRecoveryComplete={()=>setRecoveryMode(false)}
-        onNotify={setStatus}/> : <section className="cloud-panel">
+      {session&&status&&<p role="status" className="cloud-status">{status}</p>}
+      {!session ? <AccountAccess client={client!} onNotify={setStatus}/> : <section className="cloud-panel">
         <div className="cloud-flex"><h2>课程进度与笔记</h2>
           <button type="button" onClick={()=>{void client?.auth.signOut();setState({});setProgressReadyKey('');}}>退出账户</button></div>
         <p className="cloud-account">已登录：{session.user.email}</p>
@@ -249,20 +290,25 @@ export default function CloudWorkspace() {
         <nav className="cloud-panel-tabs" aria-label="学习系统模块">
           {([
             ['learn','课程学习'],['path','学习路径'],['foundation','零基础补充'],['audio','课程音频'],['speech','跟读练习'],
-            ['review','质量审校'],['resources','资源管理'],['ai','AI 教师（稍后）']
+            ['review','质量审校'],['resources','资源管理'],['ai','AI 教师']
           ] as const).map(([id,label])=>
             <button type="button" key={id} onClick={()=>setActivePanel(id)}
               aria-current={activePanel===id?'page':undefined}
               className={activePanel===id?'panel-active':''}>{label}</button>)}
         </nav>
         {activePanel==='learn'&&<>
-          <LearningOverview client={client!} session={session} courses={catalog}
+          <LearningOverview key={session.user.id} client={client!} session={session} courses={catalog}
             savedVersion={overviewVersion} onContinue={chooseCourse}/>
           <section className="cloud-reader" aria-label="本课学习进度与笔记">
             <h3>本课进度与笔记</h3>
             {!progressReady&&<p role="status" className="cloud-disclaimer">
-              正在读取此课程的进度，期间编辑和保存暂时锁定，避免混入另一门课程的笔记。
+              {progressReadError?'云端进度读取失败，当前保留的本机草稿为只读；为避免覆盖已有数据，编辑与保存已锁定。':'正在读取此课程的进度，期间编辑和保存暂时锁定。'}
             </p>}
+            {progressConflict&&<div role="group" aria-label="云端与本机未同步草稿冲突">
+              <button type="button" onClick={()=>resolveProgressConflict('cloud')}>使用云端进度</button>
+              <button type="button" onClick={()=>resolveProgressConflict('local')}>保留本机草稿并核对后同步</button>
+            </div>}
+            {progressReadError&&!progressConflict&&<button type="button" onClick={()=>setProgressRetry(x=>x+1)}>重新读取本课云端进度</button>}
             <fieldset className="cloud-stages" disabled={!progressReady||busy}>
               <legend>当前学习环节</legend>
               {stages.map((label,i)=><label key={label}><input type="radio"
@@ -285,8 +331,6 @@ export default function CloudWorkspace() {
             <h3>我的课程正文</h3>
             <p role="status" className="cloud-disclaimer">{lessonStatus}</p>
             {currentLesson&&<>
-              <p className="cloud-disclaimer">来源版本：{currentLesson.source_version} ·
-                状态：{currentLesson.qa_status==='approved'?'正文已审核':'草稿/待核验'}</p>
               <CourseGuide courseId={selected} disabled={!progressReady||busy}
                 check={(state.practiceChecklist&&typeof state.practiceChecklist==='object'&&
                   !Array.isArray(state.practiceChecklist)?state.practiceChecklist:{}) as PracticeCheck}
@@ -302,14 +346,16 @@ export default function CloudWorkspace() {
         {activePanel==='foundation'&&<FoundationStudio client={client!} session={session}
           onOpenCourses={()=>setActivePanel('learn')}/>}
         {activePanel==='audio'&&<>
+          <AudioCoverage client={client!} session={session} courseId={selected}/>
           <AudioVault client={client!} session={session}
             courseId={selected} assets={audioAssets} status={audioStatus}/>
+          <DriveLibrary key={'drive-audio-'+selected} client={client!} session={session} courseId={selected} mode="audio"/>
           <ReferenceAudio lessonId={selected}/>
         </>}
         {activePanel==='speech'&&<>
           <SpeechPractice key={selected} lessonText={currentLesson?.content_body||''}
-            language={catalog.find(c=>c.id===selected)?.language||'fr'} accessToken={session.access_token}/>
-          <p className="cloud-disclaimer"><a href="/speech-lab#ipa-studio">打开 IPA 全文音标阅读室：粘贴任意英语或法语文章，实时查看音标</a></p>
+            language={catalog.find(c=>c.id===selected)?.language||'fr'} session={session}
+            accessToken={session.access_token} variant="standalone"/><a href="/speech-lab#ipa-studio">全文 IPA 工具 →</a>
         </>}
         {activePanel==='review'&&<>
           <StageCoverage client={client!} session={session} onSelect={chooseCourse}/>
@@ -319,16 +365,15 @@ export default function CloudWorkspace() {
             session={session} courseId={currentLesson.course_id}
             qaStatus={currentLesson.qa_status}
             onUpdated={()=>setImportNonce(n=>n+1)}/>}
-          <p className="cloud-disclaimer">课程内容结构检查与真正的教学审校是两个不同环节。</p>
         </>}
         {activePanel==='resources'&&<>
+          <DriveLibrary key={'drive-resources-'+selected} client={client!} session={session} courseId={selected} mode="resources"/>
           <ReferenceIndex client={client!} session={session}/>
           <BackupImporter client={client!} session={session}
             knownIds={catalog.map(c=>c.id)} onImported={()=>setImportNonce(n=>n+1)}/>
         </>}
         {activePanel==='ai'&&<section className="cloud-reader">
-          <h3>AI 教师 · 最后阶段</h3>
-          <p className="cloud-disclaimer">按照当前开发计划，暂不进行 AI 模型联调，也不会自动发起付费模型请求。</p>
+          <h3>AI 教师</h3>
           <details>
             <summary>展开现有 AI 实验模块（手动启用）</summary>
             <AITutor key={'ai-'+selected} session={session} apiBase={apiBase}

@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-writing-task2-u08",
+  "title": "Editing claims, hedging and register",
+  "language": "en",
+  "level": "B2-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply editing claims, hedging and register in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-writing-task2-u07",
+  "context": "编辑过度绝对化的议论文，让语域正式但不空泛。",
+  "grammar": "all/always/inevitably 需要非常强的证据；may、often、in some contexts 可校准范围，但不能在每句机械堆叠。正式语体优先准确具体而非夸饰。",
+  "common_mistake": "把坏论证写得更复杂不会提高证据质量。",
+  "vocabulary": [
+    [
+      "hedge",
+      "限定表达"
+    ],
+    [
+      "register",
+      "语域"
+    ],
+    [
+      "generalisation",
+      "概括"
+    ],
+    [
+      "support",
+      "支持"
+    ],
+    [
+      "revise",
+      "修订"
+    ],
+    [
+      "precision",
+      "准确性"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "The first draft claimed that social media inevitably destroys genuine friendship.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "This statement combines an absolute outcome with an undefined standard of genuineness.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "A more defensible claim is that some patterns of use may displace time for face-to-face contact.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The revision identifies a possible mechanism and narrows the scope.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "The first draft claimed that social media inevitably destroys genuine friendship. This statement combines an absolute outcome with an undefined standard of genuineness. A more defensible claim is that some patterns of use may displace time for face-to-face contact. The revision identifies a possible mechanism and narrows the scope. It also leaves room for online communication to sustain relationships across distance. Formal writing does not require the writer to avoid a position. It requires the strength and range of that position to match the reasons offered in its support.",
+  "listening_script": "The first draft claimed that social media inevitably destroys genuine friendship. This statement combines an absolute outcome with an undefined standard of genuineness. A more defensible claim is that some patterns of use may displace time for face-to-face contact. The revision identifies a possible mechanism and narrows the scope. It also leaves room for online communication to sustain relationships across distance. Formal writing does not require the writer to avoid a position. It requires the strength and range of that position to match the reasons offered in its support.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Which word makes the initial claim absolute ?",
+      "answer": "Inevitably.",
+      "explanation": "必然性排除了所有例外，原稿没有提供相应证据。"
+    },
+    {
+      "prompt": "Why is the revised claim more precise ?",
+      "answer": "It specifies some patterns, a possible effect and a mechanism.",
+      "explanation": "不是单纯添加 may，而是明确对象与作用。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating editing claims, hedging and register",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-speaking-u07",
+  "title": "Connected speech and intonation",
+  "language": "en",
+  "level": "B1-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply connected speech and intonation in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-speaking-u06",
+  "context": "练习重音与语调如何突出信息；不把转写成功当成语音评分。",
+  "grammar": "对比重音改变焦点：I ordered TEA, not coffee；I ORDERED it, but it hasn't arrived。英语弱读与连读依语境和口音而变化，目标是清晰表达而不是模仿唯一口音。",
+  "common_mistake": "每词同样用力会掩盖新旧信息；重音不能仅由拼写判断。",
+  "vocabulary": [
+    [
+      "stress",
+      "重音"
+    ],
+    [
+      "intonation",
+      "语调"
+    ],
+    [
+      "contrast",
+      "对照"
+    ],
+    [
+      "chunk",
+      "意群"
+    ],
+    [
+      "emphasis",
+      "强调"
+    ],
+    [
+      "intelligibility",
+      "可懂度"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "I ordered tea, not coffee.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "The correction becomes clearer when tea carries contrastive stress.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "In a different situation, I might say that I ordered the tea but have not received it.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Here the action, rather than the drink, may deserve emphasis.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "I ordered tea, not coffee. The correction becomes clearer when tea carries contrastive stress. In a different situation, I might say that I ordered the tea but have not received it. Here the action, rather than the drink, may deserve emphasis. A short pause can also separate a concession from the main point. Practising these alternatives helps connect sound with meaning. Browser dictation may capture the same words in every version, so its transcript cannot establish whether the intended focus was audible.",
+  "listening_script": "I ordered tea, not coffee. The correction becomes clearer when tea carries contrastive stress. In a different situation, I might say that I ordered the tea but have not received it. Here the action, rather than the drink, may deserve emphasis. A short pause can also separate a concession from the main point. Practising these alternatives helps connect sound with meaning. Browser dictation may capture the same words in every version, so its transcript cannot establish whether the intended focus was audible.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "Which word is naturally contrasted with coffee in the first sentence ?",
+      "answer": "Tea.",
+      "explanation": "重音服务语义对照，不是机械强调动词。"
+    },
+    {
+      "prompt": "Can identical transcripts prove identical intonation ?",
+      "answer": "No, transcription does not reliably represent intonation.",
+      "explanation": "明确声学与文字证据的边界。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "分别朗读 I ordered TEA, not coffee 与 I ORDERED the tea, but it hasn't arrived。解释每句强调差异；用设备示范作参考，不给自己未经校准的音素总分。",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}

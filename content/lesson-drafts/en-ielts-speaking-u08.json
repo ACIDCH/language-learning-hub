@@ -1,0 +1,78 @@
+{
+  "id": "en-ielts-speaking-u08",
+  "title": "Long-form discussion and self-correction",
+  "language": "en",
+  "level": "B1-C1",
+  "version": "v44-original-1",
+  "content_status": "original_draft",
+  "qa_status": "pending",
+  "source": "Language Learning Hub · original V4.4 teaching draft, not an external textbook",
+  "audio_status": "missing_audio",
+  "goal": "Apply long-form discussion and self-correction in an original academic-English context and explain reasoning in coherent English",
+  "prerequisite": "en-ielts-speaking-u07",
+  "context": "在长讨论中自我修正，保持内容推进而不因小错误完全重启。",
+  "grammar": "more precisely、what I mean is、let me rephrase 能显式调整范围。修正应简短说明改变点；无需为每次错误长篇道歉。区分事实修正与换一种表述。",
+  "common_mistake": "为了修一个词从头重说整段会降低可理解性。",
+  "vocabulary": [
+    [
+      "clarify",
+      "澄清"
+    ],
+    [
+      "rephrase",
+      "换言表达"
+    ],
+    [
+      "qualify",
+      "限定"
+    ],
+    [
+      "consistent",
+      "一致的"
+    ],
+    [
+      "interruption",
+      "打断"
+    ],
+    [
+      "distinction",
+      "区别"
+    ]
+  ],
+  "examples": [
+    {
+      "text": "I initially said that all public facilities should open late.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "More precisely, I mean that essential services should consider hours that match local needs.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "A small rural office and a busy urban library may need different arrangements.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    },
+    {
+      "text": "Let me rephrase the main point: access should be assessed from the user's perspective, including travel and working hours.",
+      "note": "原文例句：结合本课知识讲解，辨认表达的功能与适用条件。"
+    }
+  ],
+  "reading": "I initially said that all public facilities should open late. More precisely, I mean that essential services should consider hours that match local needs. A small rural office and a busy urban library may need different arrangements. Let me rephrase the main point: access should be assessed from the user's perspective, including travel and working hours. This does not remove staffing or budget constraints. It means those constraints should be discussed alongside the barriers faced by users. The correction narrows my claim while allowing the discussion to continue.",
+  "listening_script": "I initially said that all public facilities should open late. More precisely, I mean that essential services should consider hours that match local needs. A small rural office and a busy urban library may need different arrangements. Let me rephrase the main point: access should be assessed from the user's perspective, including travel and working hours. This does not remove staffing or budget constraints. It means those constraints should be discussed alongside the barriers faced by users. The correction narrows my claim while allowing the discussion to continue.",
+  "listening_label": "原创文本脚本；可用设备 TTS 练习，未配对真人或教材音频",
+  "questions": [
+    {
+      "prompt": "What changes in the self-correction ?",
+      "answer": "All facilities opening late becomes essential services considering local needs.",
+      "explanation": "范围和政策强度都得到校准。"
+    },
+    {
+      "prompt": "Why does the correction help coherence ?",
+      "answer": "It makes the intended claim explicit without restarting the whole answer.",
+      "explanation": "清晰修正可以维持论证推进。"
+    }
+  ],
+  "pronunciation": "sentence stress; connected speech; intelligibility without a total score。先按意群朗读，再用选词面板练习；浏览器转写不能证明音素正确。",
+  "production": "Produce an original spoken explanation plus a written reflection demonstrating long-form discussion and self-correction",
+  "self_review": "核对任务是否回答完整、信息是否有原文证据、目标结构是否准确。记录一次修改及理由；开放题允许不同的有据答案，不计算官方等级分数。"
+}
