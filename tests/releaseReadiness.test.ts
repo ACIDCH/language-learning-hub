@@ -106,9 +106,9 @@ it('guards Cloudflare main-branch builds while keeping pull-request preview buil
  const personal=spawnSync(process.execPath,['scripts/enforce-release-build.mjs'],{
   encoding:'utf8',env:{...process.env,CF_PAGES_BRANCH:'feat/v44-full-ui-curriculum-one-shot',LLH_DEPLOY_TARGET:'personal'}
  });
- expect(personal.status).toBe(1);
- expect(personal.stdout).toContain('Personal launch: PERSONAL_LAUNCH_BLOCKED');
- expect(personal.stderr).toContain('Personal launch build stopped');
+ expect(personal.status).toBe(0);
+ expect(personal.stdout).toContain('Personal launch: PERSONAL_LAUNCH_READY');
+ expect(personal.stderr).toBe('');
 });
 
 

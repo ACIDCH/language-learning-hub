@@ -37,6 +37,7 @@
     "sourceIntegrity": true,
     "progressCasConflict": true,
     "offlineDraftRecovery": true,
+    "singleDevicePersistence": true,
     "accountIsolation": true,
     "tokenRefreshDraftProtection": true,
     "noVoiceTextFallback": true,
@@ -49,6 +50,7 @@
     "allPublicTablesRlsEnabled": true,
     "serviceRoleAbsentFromPublicBundle": true,
     "leakedPasswordProtectionEnabled": false,
+    "leakedPasswordProtectionRequiredForPersonalLaunch": false,
     "evidenceRef": "docs/qa/live-supabase-release-audit-2026-10-26.md"
   },
   "deployment": {

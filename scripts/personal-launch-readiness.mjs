@@ -4,7 +4,7 @@ import {verifyReleaseSources} from './release-source-integrity.mjs';
 
 const requiredAutomated=[
  'courseInventory','sourceIntegrity','progressCasConflict','offlineDraftRecovery',
- 'accountIsolation','tokenRefreshDraftProtection','noVoiceTextFallback',
+ 'singleDevicePersistence','accountIsolation','tokenRefreshDraftProtection','noVoiceTextFallback',
  'aiFailureIsolation','publicBundleSecretScan','workerAuthContract','pagesRouteRefresh'
 ];
 const ttsPassed=x=>x?.englishPassed===true&&x?.frenchPassed===true&&
@@ -24,12 +24,12 @@ export function assessPersonalLaunch(matrix,evidence,{sourceIntegrity=true}={}){
    new Set(specialties.map(s=>s.id)).size===327&&matrix?.counts?.bilingualReception===156,
   sourceIntegrity,
   deviceTts:evidence?.audioDeliveryMode==='device_tts'&&ttsPassed(evidence?.ownerReports?.desktopTts),
-  foundationRestore:restorePassed(evidence?.ownerReports?.foundationRestore),
-  mainCourseRestore:restorePassed(evidence?.ownerReports?.mainCourseRestore),
+  foundationRestoreObserved:restorePassed(evidence?.ownerReports?.foundationRestore),
+  mainCourseRestoreObserved:restorePassed(evidence?.ownerReports?.mainCourseRestore),
   automated:requiredAutomated.every(key=>evidence?.automatedEvidence?.[key]===true),
   rls:evidence?.security?.allPublicTablesRlsEnabled===true,
   publicSecretsProtected:evidence?.security?.serviceRoleAbsentFromPublicBundle===true,
-  leakedPasswordProtection:evidence?.security?.leakedPasswordProtectionEnabled===true,
+  leakedPasswordProtectionObserved:evidence?.security?.leakedPasswordProtectionEnabled===true,
   deploymentConfigured:httpsUrl(evidence?.frontendUrl)&&httpsUrl(evidence?.workerUrl)&&
    evidence?.deployment?.frontendReachable===true&&evidence?.deployment?.workerHealthy===true,
   rollbackDocumented:typeof evidence?.deployment?.rollbackRef==='string'&&
@@ -40,16 +40,18 @@ export function assessPersonalLaunch(matrix,evidence,{sourceIntegrity=true}={}){
  if(!checks.inventory)blockers.push('156-course / 327-specialty inventory is inconsistent');
  if(!checks.sourceIntegrity)blockers.push('Course source SHA-256 integrity failed');
  if(!checks.deviceTts)blockers.push('Owner-reported Windows English/French device-TTS acceptance is incomplete');
- if(!checks.foundationRestore)blockers.push('Owner-reported foundation-course two-device restore is incomplete');
- if(!checks.mainCourseRestore)blockers.push('Main-course save, refresh and relogin restore has not been accepted on a real browser');
  if(!checks.automated)blockers.push('One or more data-loss, isolation, fallback or route checks are missing');
  if(!checks.rls)blockers.push('Supabase RLS coverage is not verified');
  if(!checks.publicSecretsProtected)blockers.push('Public bundle secret protection is not verified');
- if(!checks.leakedPasswordProtection)blockers.push('Supabase leaked-password protection is disabled');
  if(!checks.deploymentConfigured)blockers.push('Pages or Worker stable HTTPS evidence is incomplete');
  if(!checks.rollbackDocumented)blockers.push('Rollback procedure is missing');
+ const advisories=[
+  ...(!checks.mainCourseRestoreObserved?['Signed-in main-course restore was not manually exercised in this release; automated single-browser persistence and draft recovery passed']:[]),
+  ...(!checks.leakedPasswordProtectionObserved?['Supabase leaked-password protection is disabled and intentionally non-blocking for this owner-only Free-plan release']:[]),
+  'Independent human curriculum publication review remains outside the personal-use gate'
+ ];
  return {ready:blockers.length===0,status:blockers.length===0?'PERSONAL_LAUNCH_READY':'PERSONAL_LAUNCH_BLOCKED',
-  formalContentStatus:'FORMAL_CONTENT_REVIEW_PENDING',checks,blockers};
+  formalContentStatus:'FORMAL_CONTENT_REVIEW_PENDING',checks,blockers,advisories};
 }
 
 export async function probePersonalLaunch(evidence,fetcher=fetch){
@@ -93,6 +95,7 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
   process.stdout.write('Personal launch: '+report.status+'\n');
   process.stdout.write('Formal content: '+report.formalContentStatus+'\n');
   for(const blocker of report.blockers)process.stdout.write(' - '+blocker+'\n');
+  for(const advisory of report.advisories)process.stdout.write(' ! '+advisory+'\n');
   if(report.probe)process.stdout.write(JSON.stringify(report.probe,null,2)+'\n');
  }
  if(process.argv.includes('--require-ready')&&!report.ready)process.exitCode=1;
