@@ -4,7 +4,7 @@
   "authorizedBy": "repository owner",
   "audioDeliveryMode": "device_tts",
   "frontendUrl": "https://personal-release.language-learning-hub.pages.dev/",
-  "workerUrl": "https://language-hub-api.xilu329.workers.dev",
+  "workerUrl": "https://personal-release-language-hub-api.xilu329.workers.dev",
   "ownerReports": {
     "desktopTts": {
       "reportedAt": "2026-10-26",
