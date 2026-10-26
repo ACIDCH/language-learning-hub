@@ -2,6 +2,8 @@ import {handle} from '../../cloudflare/learning-api/src/index.mjs';
 import {cloudPublicDefaults} from '../../src/cloudPublicDefaults.ts';
 
 const REVIEW_ORIGIN='https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev';
+const PERSONAL_ORIGIN='https://personal-release.language-learning-hub.pages.dev';
+const ALLOWED_ORIGINS=new Set([REVIEW_ORIGIN,PERSONAL_ORIGIN]);
 
 /**
  * Cloudflare Pages Functions review-only, same-origin API.
@@ -10,7 +12,7 @@ const REVIEW_ORIGIN='https://feat-v44-full-ui-curriculum.language-learning-hub.p
  */
 export function onRequest({request,env={}}){
   const url=new URL(request.url);
-  if(url.origin!==REVIEW_ORIGIN||!url.pathname.startsWith('/api/')){
+  if(!ALLOWED_ORIGINS.has(url.origin)||!url.pathname.startsWith('/api/')){
     return new Response(JSON.stringify({error:'preview_route_only'}),{
       status:404,headers:{'Content-Type':'application/json','Cache-Control':'no-store'}
     });
@@ -20,6 +22,6 @@ export function onRequest({request,env={}}){
   return handle(rewritten,{
     SUPABASE_URL:env.SUPABASE_URL||cloudPublicDefaults.supabaseUrl,
     SUPABASE_PUBLISHABLE_KEY:env.SUPABASE_PUBLISHABLE_KEY||cloudPublicDefaults.supabasePublishableKey,
-    FRONTEND_ORIGIN:REVIEW_ORIGIN
+    FRONTEND_ORIGIN:url.origin
   });
 }

@@ -3,8 +3,8 @@
   "scope": "personal_production_release",
   "authorizedBy": "repository owner",
   "audioDeliveryMode": "device_tts",
-  "frontendUrl": "https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev/",
-  "workerUrl": "https://feat-v44-full-ui-curriculum-one-shot-language-hub-api.xilu329.workers.dev",
+  "frontendUrl": "https://personal-release.language-learning-hub.pages.dev/",
+  "workerUrl": "https://language-hub-api.xilu329.workers.dev",
   "ownerReports": {
     "desktopTts": {
       "reportedAt": "2026-10-26",

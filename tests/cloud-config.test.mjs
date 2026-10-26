@@ -25,6 +25,7 @@ test('Cloudflare environment overrides continue to work',()=>{
   assert.match(cloud,/isCloudWorkspaceConfigured\(Boolean\(cloudClient\),apiBase\)/);
   assert.match(preview,/apiBase===PREVIEW_API_BASE/);
   assert.ok(preview.includes('https://feat-v44-full-ui-curriculum.language-learning-hub.pages.dev'));
+  assert.ok(preview.includes('https://personal-release.language-learning-hub.pages.dev'));
   assert.ok(preview.includes("PREVIEW_API_BASE='/api'"));
 });
 test('cloud progress still routes to authenticated Worker endpoints',()=>{

@@ -21,7 +21,7 @@ import AccountAccess from '../src/AccountAccess';
 import SelectionInspector from '../src/SelectionInspector';
 import {readRoute,parentRoute,routeCrumbs} from '../src/v44Routes';
 import {draftPublication,assertDraftDeploymentAllowed} from '../src/v44Publication';
-import {pickWorkerOrigin,PREVIEW_PAGES_ORIGIN,PREVIEW_API_BASE,isCloudWorkspaceConfigured} from '../src/previewWorker';
+import {pickWorkerOrigin,PREVIEW_PAGES_ORIGIN,PERSONAL_PAGES_ORIGIN,PREVIEW_API_BASE,isCloudWorkspaceConfigured} from '../src/previewWorker';
 import viteConfig from '../vite.config';
 import type {Session,SupabaseClient} from '@supabase/supabase-js';
 const request=vi.hoisted(()=>vi.fn());
@@ -100,6 +100,7 @@ describe('V4.4 integration contracts',()=>{
  });
  it('selects the same-origin Pages API only for the exact PR preview origin',()=>{
   expect(pickWorkerOrigin(PREVIEW_PAGES_ORIGIN+'/?course=fr-a1-u01', 'https://production.example/api')).toBe(PREVIEW_API_BASE);
+  expect(pickWorkerOrigin(PERSONAL_PAGES_ORIGIN+'/?course=fr-a1-u01', 'https://production.example/api')).toBe(PREVIEW_API_BASE);
   expect(pickWorkerOrigin(PREVIEW_PAGES_ORIGIN+'.attacker.test', 'https://production.example/api/')).toBe('https://production.example/api');
   expect(pickWorkerOrigin('https://language-learning-hub.pages.dev/', 'https://production.example/api/')).toBe('https://production.example/api');
  });
